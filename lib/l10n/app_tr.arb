@@ -1,0 +1,570 @@
+{
+  "@@locale": "tr",
+
+  "skip": "Atla",
+  "continueButton": "Devam Et",
+  "getStarted": "Başla",
+
+  "onboardingTitle1": "Hayatının Kontrolünü Eline Al",
+  "onboardingSubtitle1": "Yolculuğunu takip et, her başarını kutla ve her geçen gün daha sağlıklı biri ol.",
+  "onboardingTitle2": "Yapay Zeka Destekli İyileşme Yoldaşın",
+  "onboardingSubtitle2": "Yolculuğuna özel kişiselleştirilmiş rehberlik, sağlıklı alışkanlıklar, motivasyon hatırlatıcıları ve gelişim raporları al.",
+
+  "goodMorning": "Günaydın",
+  "goodAfternoon": "Tünaydın",
+  "goodEvening": "İyi Akşamlar",
+  "goodNight": "İyi Geceler",
+
+  "embracingClarity": "Her gün, adım adım zihinsel berraklığı kucaklıyoruz.",
+  "streakLabel": "SERİ",
+  "goalLabel": "HEDEF",
+  "daysStreak": "{count, plural, one{{count} Gün} other{{count} Gün}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium Plan",
+  "premiumPlanSubtitle": "Eksiksiz iyileşme deneyiminin kilidini açın",
+
+  "accountAndSupport": "HESAP VE DESTEK",
+  "privacyPolicy": "Gizlilik Politikası",
+  "privacyPolicySubtitle": "Veri paylaşımını ve hesap güvenliğini yönetin",
+  "termsOfService": "Hizmet Şartları",
+  "termsOfServiceSubtitle": "SSS, bize ulaşın ve kaynaklar",
+  "shareApp": "Uygulamayı Paylaş",
+  "shareAppSubtitle": "Uygulamayı arkadaşlarınızla paylaşın",
+  "resetData": "Verileri Sıfırla",
+  "resetDataSubtitle": "Bu cihazda kayıtlı her şeyi silin",
+
+  "resetAllDataTitle": "Tüm veriler sıfırlansın mı?",
+  "resetAllDataMessage": "Bu işlem cihazdaki profil, günlük girdileri ve ilerleme dahil her şeyi siler ve geri alınamaz.",
+  "cancel": "İptal",
+  "reset": "Sıfırla",
+
+  "chooseFromGallery": "Galeriden Seç",
+  "takePhoto": "Fotoğraf Çek",
+  "removePhoto": "Fotoğrafı Kaldır",
+  "couldNotUpdatePhoto": "Fotoğraf güncellenemedi: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Fotoğraf kaldırılamadı: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Bu fotoğraf sıkıştırıldıktan sonra bile çok büyük — lütfen başka bir fotoğraf deneyin.",
+
+  "unableToLoadProfile": "Profiliniz yüklenemedi",
+  "pleaseTryAgain": "Lütfen tekrar deneyin.",
+  "tryAgain": "Tekrar Deneyin",
+  "profileNotFound": "Profil bulunamadı",
+  "refresh": "Yenile",
+  "noProfileDataFound": "Bu cihazda henüz profil verisi bulunamadı.",
+
+  "couldNotResetData": "Veriler sıfırlanamadı: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Ana Sayfa",
+  "navStats": "İstatistikler",
+  "navJournal": "Günlük",
+  "navBadges": "Rozetler",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} özelliği yakında kullanıma sunulacak.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "SAĞLIK & YAŞAM",
+  "appTitle": "Sober Flow",
+  "splashSubtitle": "Alkolsuz bir hayata doğru\nilk adımı atın",
+  "preparingJourney": "Yolculuğunuz\nhazırlanıyor",
+
+  "taskMorningMeditation": "Sabah Meditasyonu (10dk)",
+  "taskReadChapter": "\"The Sober Diaries\" Kitabından 4. Bölümü Oku",
+  "taskEveningJournal": "Akşam Minnet Günlüğü",
+
+  "close": "Kapat",
+  "youAreDoingGreat": "Harika gidiyorsun!",
+  "shareMilestone": "Kilometre Taşını Paylaş",
+  "shareMilestoneMessage": "İyileşme yolculuğumun {days}. günündeyim! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "İyileşme kilometre taşım",
+
+  "weeklyReportReadyTitle": "Haftalık raporunuz hazır",
+  "weeklyReportReadySubtitle": "Haftanızın nasıl geçtiğini görmek için dokunun",
+
+  "howAreYouFeeling": "Nasıl hissediyorsun?",
+  "moodTough": "Zor",
+  "moodOkay": "İdare Eder",
+  "moodGood": "İyi",
+
+  "moneySaved": "Tasarruf Edilen Para",
+  "caloriesSaved": "Alınmayan Kalori",
+  "healthScore": "Sağlık Puanı",
+  "drinksAvoided": "İçilmeyen İçecek",
+  "estimated": "Tahmini",
+  "aiGenerated": "Yapay Zeka Tarafından Oluşturuldu",
+  "daysCapsLabel": "GÜN",
+
+  "todaysMotivation": "Günün Motivasyonu",
+  "defaultMotivationQuote": "Kararlılığınızı başarıyla sürdürdünüz. Pozitif değişim rüzgarını arkanıza almaya devam edin.",
+
+  "talkToCoach": "Koçla Konuş",
+  "havingACraving": "Canım Çok İstiyor",
+
+  "unlockWeeklyReportsTitle": "Haftalık Raporların Kilidini Açın",
+  "unlockWeeklyReportsMessage": "Alkol almadığınız günleri, duygu durumu trendlerinizi ve kişiselleştirilmiş YZ geri bildirimlerini her hafta görün. Kilidi açmak için Premium'a geçin.",
+  "maybeLater": "Belki Daha Sonra",
+  "upgrade": "Yükselt",
+
+  "weeklyReportTitle": "Haftalık Rapor",
+  "weeklyReportsPremiumTitle": "Haftalık raporlar bir Premium özelliğidir",
+  "weeklyReportsPremiumMessage": "Temiz kaldığınız günleri, duygu durumu eğilimlerini, istek krizlerini ve kişiselleştirilmiş YZ geri bildirimlerini her hafta görün.",
+  "upgradeToPremium": "Premium'a Yükselt",
+  "couldNotGenerateReport": "Şu anda raporunuz oluşturulamadı.",
+  "tryAgainLower": "Tekrar deneyin",
+
+  "statSoberDays": "Temiz günler",
+  "statAvgMood": "Ort. duygu durumu",
+  "statCravings": "İstek krizleri",
+  "statMoneySaved": "Tasarruf edilen para",
+  "coachFeedback": "Koç geri bildirimi",
+  "journalInsights": "Günlük analizleri",
+
+  "next": "İleri",
+
+  "question1Title": "Hedefiniz nedir?",
+  "question1Subtitle": "Sizin için en önemli olan\nhedefi seçin",
+  "goalQuitCompletely": "Tamamen Bırakmak",
+  "goalReduceDrinking": "Alkolü Azaltmak",
+  "goalTakeABreak": "Bir Süre Ara Vermek",
+  "goalBuildHealthierHabits": "Daha Sağlıklı Alışkanlıklar Edinmek",
+
+  "question3Title": "Bize rutininizden\nbahsedin",
+  "drinksPerWeek": "Haftalık içki sayısı",
+  "moneySpentPerWeek": "Haftalık harcanan para",
+  "drinkingLevel": "Alkol tüketim seviyesi",
+  "triggersLabel": "Tetikleyiciler",
+  "levelSocial": "Sosyal",
+  "levelRegular": "Düzenli",
+  "levelHeavy": "Yoğun",
+  "levelDependent": "Bağımlı",
+  "triggerStress": "Stres",
+  "triggerLoneliness": "Yalnızlık",
+  "triggerHabit": "Alışkanlık",
+  "triggerSadness": "Üzüntü",
+  "triggerAnger": "Öfke",
+  "triggerBoredom": "Can Sıkıntısı",
+  "triggerSocialPressure": "Sosyal Baskı",
+  "triggerCelebration": "Kutlama",
+  "triggerSleepProblems": "Uyku Sorunları",
+  "triggerWorkPressure": "İş Baskısı",
+
+  "question4Title": "Neden değişmek istiyorsunuz?",
+  "question4Subtitle": "Nedeniniz, motivasyonunuzu korumanıza yardımcı olacak.",
+  "reasonImproveHealth": "Sağlığımı İyileştirmek",
+  "reasonSaveMoney": "Para Tasarrufu Yapmak",
+  "reasonFamily": "Ailem İçin",
+  "reasonBetterSleep": "Daha İyi Uyumak",
+  "reasonMentalClarity": "Zihinsel Berraklık",
+  "reasonFitness": "Formda Kalmak",
+  "reasonSelfRespect": "Öz Saygı",
+  "reasonCareer": "Kariyer",
+
+  "milestoneUnlockedLabel": "KİLOMETRE TAŞI AÇILDI",
+  "incredibleNamePrefix": "İnanılmazsın, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} biriktirildi",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} adet içilmedi",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Kilometre taşımı paylaş",
+  "milestoneImageShareError": "Kilometre taşı görseli oluşturulamadı. Lütfen tekrar deneyin.",
+
+  "dailyCheckInTitle": "Günlük Kontrol",
+  "howAreYouFeelingToday": "Bugün nasıl hissediyorsun?",
+  "honestAnswerHelp": "Dürüst yanıtınız size daha iyi destek olmamızı sağlar",
+  "didYouDrinkToday": "Bugün alkol aldın mı?",
+  "noLabel": "Hayır",
+  "yesLabel": "Evet",
+  "cravingLevelNow": "Şu anki istek seviyen?",
+  "anythingOnMind": "Aklına takılan bir şey var mı?",
+  "optionalLabel": "(isteğe bağlı)",
+  "dailyNoteHint": "Gününüz, tetikleyicileriniz veya kazanımlarınız hakkında yazın...",
+  "alreadyCheckedInToday": "Bugün zaten kontrol yapıldı",
+  "saveCheckIn": "Kontrolü Kaydet",
+  "checkInsHelpTrack": "Günlük kontroller zaman içindeki ilerlemenizi takip etmeye yardımcı olur",
+  "alreadyCompletedTodayCheckIn": "Bugünkü kontrolünüzü zaten tamamladınız.",
+  "pleaseAnswerBothQuestions": "Lütfen önce yukarıdaki her iki soruyu da yanıtlayın",
+  "checkInSaved": "Kontrol kaydedildi",
+  "cravingNone": "Yok",
+  "cravingLow": "Düşük",
+  "cravingMedium": "Orta",
+  "cravingStrong": "Güçlü",
+  "moodBad": "Kötü",
+  "moodLow": "Düşük",
+  "moodOkay": "İdare Eder",
+  "moodGood": "İyi",
+  "moodGreat": "Harika",
+
+  "sosSupportTitle": "SOS Desteği",
+  "notAloneMessage": "Yalnız değilsin, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "İstek krizleri geçicidir. Bu anı atlatmanıza yardımcı olması için aşağıdan bir yöntem seçin.",
+  "breathingExercise": "Nefes egzersizi",
+  "breathingExerciseSubtitle": "Rehberli 4-7-8 tekniği, 2 dakika",
+  "rideTheWave": "Dalgayı yakala",
+  "rideTheWaveSubtitle": "15 dakikalık zamanlayıcı — istekler her zaman geçer",
+  "copingTips": "Başa çıkma ipuçları",
+  "copingTipsSubtitle": "Tetikleyicilerinize özel kişiselleştirilmiş stratejiler",
+  "talkToAiCoach": "YZ Koç ile konuş",
+  "talkToAiCoachSubtitle": "İyileşme yoldaşınızla sohbet edin",
+  "callSomeone": "Birini ara",
+  "callSomeoneSubtitle": "Güvendiğiniz bir kişiye ulaşın",
+  "contactsPermissionNeeded": "Bir kişiyi aramak için kişiler erişim izni gereklidir.",
+  "beatenCravingsPrefix": "Daha önce tam ",
+  "beatenCravingsCount": "{count} kez",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " bu isteği yendin. Yine başarabilirsin.",
+
+  "tellUsAboutYourself": "Kendinizden Bahsedin",
+  "detailsSubtitle": "Bu bilgiler iyileşme yolculuğunuzu kişiselleştirmemize ve doğru analizler sunmamıza yardımcı olur.",
+  "nameLabel": "İsim",
+  "nameHint": "ör. Ahmet Yılmaz",
+  "ageLabel": "Yaş",
+  "ageHint": "ör. 32",
+  "sexAssignedAtBirth": "Doğumda belirlenen cinsiyet",
+  "sexFemale": "Kadın",
+  "sexMale": "Erkek",
+  "heightLabel": "Boy",
+  "weightLabel": "Kilo",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Günlük sınıra ulaşıldı",
+  "dailyLimitReachedMessage": "Bugünkü tüm {limit} ücretsiz mesaj hakkınızı kullandınız. Sınırsız koç sohbeti için Premium'a yükseltin.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Şu anda bağlantı kurulamadı. Lütfen az sonra tekrar deneyin.",
+  "clearConversationTitle": "Sohbet temizlensin mi?",
+  "clearConversationMessage": "Bu işlem koç sohbet geçmişinizi kalıcı olarak silecektir.",
+  "clearLabel": "Temizle",
+  "recoveryCoachTitle": "İyileşme Koçu",
+  "onlineLabel": "Çevrim içi",
+  "clearConversationMenuItem": "Sohbeti temizle",
+  "chatGreeting": "Merhaba {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Yolculuğunun {days}. günündesin. Konuşmak istediğin her an buradayım.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "HIZLI İPUÇLARI",
+  "promptCravingLabel": "İstek krizim var",
+  "promptCravingSubtitle": "Hızlıca sakinleş",
+  "promptMotivationLabel": "Motivasyona ihtiyacım var",
+  "promptMotivationSubtitle": "Zor anlarda bir destek",
+  "promptSocialLabel": "Sosyal ortam",
+  "promptSocialSubtitle": "Bir daveti yönet",
+  "promptSlippedLabel": "Kayıp alkol aldım",
+  "promptSlippedSubtitle": "Yargılama yok, sadece destek",
+  "typeMessageHint": "Bir mesaj yazın...",
+
+  "editProfileTitle": "Profili Düzenle",
+  "couldNotSaveProfile": "Profil kaydedilemedi: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Boy (cm)",
+  "weightKgLabel": "Kilo (kg)",
+  "saveChangesLabel": "Değişiklikleri Kaydet",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Gelişmiş Analizler ve İstatistikler",
+  "featureUnlimitedJournal": "Sınırsız Günlük Girdisi",
+  "featureUnlimitedChat": "YZ Koç ile Sınırsız Sohbet",
+  "featureCommunityGroups": "Özel Topluluk Grupları",
+  "featurePrioritySupport": "Öncelikli Uzman Desteği",
+  "featureThemePacks": "Özel Tema Paketleri",
+  "featureDataExport": "Veri Dışa Aktarma",
+  "featureAdFree": "Reklamsız Deneyim",
+  "premiumMemberTitle": "Premium Üyesiniz",
+  "unlockFullRecoveryTitle": "Eksiksiz İyileşme Deneyiminin\nKilidini Açın",
+  "premiumMemberSubtitle": "İyileşme yolculuğunuzu desteklediğiniz için teşekkürler — aşağıdaki tüm premium özelliklerin kilidi açıldı.",
+  "premiumJoinSubtitle": "Premium araçlarımız ve kişiselleştirilmiş desteğimizle iyileşme süreçlerini hızlandıran binlerce kişilik topluluğa katılın.",
+  "monthlyPlanLabel": "Aylık",
+  "perMonthSuffix": "/ay",
+  "cancelAnytimeLabel": "İstediğiniz zaman iptal edin",
+  "yearlyPlanLabel": "Yıllık",
+  "billedAnnuallyLabel": "Yıllık {amount} olarak faturalandırılır",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "En Avantajlı",
+  "alreadyPremiumLabel": "Premium Üyesiniz ✓",
+  "startPremiumLabel": "Premium'u Başlat",
+  "manageSubscriptionLabel": "Cihazınızın abonelik ayarlarından yönetin veya iptal edin.",
+  "noCommitmentLabel": "Taahhüt yok. İstediğiniz zaman iptal edin.",
+  "continueFreePlanLabel": "Ücretsiz Plan ile Devam Et",
+  "backToHomeLabel": "Ana Sayfaya Dön",
+  "cancelPremiumLabel": "Premium'u İptal Et",
+  "cancelPremiumTitle": "Premium iptal edilsin mi?",
+  "cancelPremiumMessage": "Sınırsız günlük girdilerine, sınırsız koç sohbetine, istatistik analizlerine ve haftalık raporlara erişiminizi kaybedeceksiniz. İstediğiniz zaman yeniden abone olabilirsiniz.",
+  "keepPremiumLabel": "Premium'da Kal",
+  "nowPremiumMessage": "Artık Premium üyesiniz! Eksiksiz iyileşme deneyiminizin tadını çıkarın.",
+  "premiumCancelledMessage": "Premium iptal edildi. Ücretsiz plana geri döndünüz.",
+  "termsOfUseLabel": "Kullanım Şartları",
+
+  "navHomeLabel": "Ana Sayfa",
+  "navStatsLabel": "İstatistikler",
+  "navJournalLabel": "Günlük",
+  "navBadgesLabel": "Rozetler",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "İyileşme Hedefleri",
+  "goalLabel": "Hedef",
+  "drinksPerWeekLabel": "Haftalık içki sayısı",
+  "quitReasonsLabel": "Bırakma nedenleri",
+  "quitReasonsHelperText": "Birden fazla nedeni virgülle ayırın.",
+  "couldNotSaveRecoveryGoals": "İyileşme hedefleri kaydedilemedi: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ör. Tamamen Bırakmak",
+  "drinksPerWeekHint": "ör. 12",
+  "quitReasonsHint": "ör. Sağlık, Aile, Para",
+
+  "todaysPrompt": "Günün sorusu",
+  "defaultJournalPrompt": "Bugün aklınızdan neler geçiyor?",
+  "aiJournalInsights": "YZ günlük analizleri",
+  "unlockJournalInsightsMessage": "Günlük girdilerinizden haftalık kalıpların, duygu durumu eğilimlerinin ve kişiselleştirilmiş analizlerin kilidini açın.",
+  "notEnoughJournalData": "Henüz yeterli veri yok — bu hafta birkaç girdi yazıp tekrar kontrol edin.",
+  "openEntry": "Aç",
+  "editEntry": "Düzenle",
+  "deleteEntry": "Sil",
+  "searchJournalEntries": "Girdilerde ara...",
+  "writeNewEntry": "Yeni girdi yaz",
+  "recentEntries": "Son Girdiler",
+  "noJournalEntriesYet": "Henüz günlük girdisi yok — ilk düşüncenizi yukarıda paylaşın.",
+  "noEntriesMatchFilters": "Filtrelerinizle eşleşen girdi bulunamadı.",
+
+  "weeklyJournalLimitReached": "Haftalık sınıra ulaşıldı",
+  "weeklyJournalLimitMessage": "Bu haftaki tüm {limit} ücretsiz günlük girdinizi kullandınız. Sınırsız girdi için Premium'a yükseltin.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Yeni girdi",
+  "writeYourThoughts": "Düşüncelerinizi yazın",
+  "saveEntry": "Girdiyi Kaydet",
+  "freeEntriesLeftThisWeek": "Bu hafta kalan ücretsiz girdi: {remaining} / {limit}",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Girdi silinsin mi?",
+  "deleteEntryConfirmation": "Bu girdi kalıcı olarak silinecektir. Bu işlem geri alınamaz.",
+
+  "journalEntryNotFound": "Girdi bulunamadı",
+  "journalEntryMayHaveBeenDeleted": "Bu günlük girdisi silinmiş olabilir.",
+  "goBack": "Geri dön",
+  "journalEntryTitle": "Günlük Girdisi",
+
+  "moodStruggling": "Zorlanıyor",
+  "moodUnwell": "Kötü",
+  "moodNeutral": "Nötr",
+
+  "whatHappenedToday": "Bugün ne oldu?",
+  "trigger": "Tetikleyici",
+  "whatHelped": "Ne yardımcı oldu",
+  "whatIllTryNextTime": "Gelecek sefer ne deneyeceğim",
+  "journalPrivacyMessage": "Düşünceleriniz gizlidir ve günlüğünüze güvenle kaydedilir.",
+
+  "unlocked": "Kilit Açıldı",
+  "daysLeft": "{count, plural, one{{count} gün kaldı} other{{count} gün kaldı}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Gün",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "İlk\nDüşünce",
+  "oneJournalEntry": "1 Günlük Girdisi",
+  "openBook": "Açık Kitap",
+  "tenJournalEntries": "10 Günlük Girdisi",
+  "dedicatedWriter": "Kararlı\nYazar",
+  "thirtyJournalEntries": "30 Günlük Girdisi",
+  "firstConversation": "İlk\nSohbet",
+  "oneAiCoachChat": "1 YZ Koç Sohbeti",
+  "keepTalking": "Konuşmaya Devam Et",
+  "fiveConversations": "5 Sohbet",
+  "coachCompanion": "Koç\nYoldaşı",
+  "twentyConversations": "20 Sohbet",
+  "checkInHabit": "Kontrol\nAlışkanlığı",
+  "sevenCheckIns": "7 Kontrol",
+  "consistencyPro": "İstikrar\nUzmanı",
+  "thirtyCheckIns": "30 Kontrol",
+  "dedicatedJourney": "Adanmış\nYolculuk",
+  "hundredCheckIns": "100 Kontrol",
+  "goalGetter": "Hedef Odaklı",
+  "threeGoalsCompleted": "3 Hedef Tamamlandı",
+  "goalAchiever": "Hedef\nAvcısı",
+  "tenGoalsCompleted": "10 Hedef Tamamlandı",
+  "firstSavings": "İlk\nTasarruf",
+  "fiveHundredSaved": "$500 Biriktirildi",
+  "smartSaver": "Akıllı Birikimci",
+  "oneThousandSaved": "$1.000 Biriktirildi",
+  "bigSaver": "Büyük Birikimci",
+  "fiveThousandSaved": "$5.000 Biriktirildi",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Devam et — ilk kilometre taşın seni bekliyor!",
+  "badgesAndMilestones": "Rozetler ve Kilometre Taşları",
+  "yourMilestoneJourney": "Kilometre Taşı Yolculuğunuz",
+  "milestonesAchieved": "{count, plural, one{{count} kilometre taşı kazanıldı.\nGörüntülemek için dokunun} other{{count} kilometre taşı kazanıldı.\nGörüntülemek için dokunun}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Yolculuğunuzdaki {total} kilometre taşından {unlocked} tanesini tamamladınız.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Kalan",
+  "complete": "Tamamlandı",
+  "nextMilestone": "Sonraki Kilometre Taşı",
+  "percentThere": "{subtitle} · %{percent} tamamlandı",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Temizlik Kilometre Taşları",
+  "journeyBadges": "Yolculuk Rozetleri",
+  "bronze": "BRONZ",
+  "silver": "GÜMÜŞ",
+  "gold": "ALTIN",
+  "platinum": "PLATİN",
+  "diamond": "ELMAS",
+
+  "analyzingYourJourney": "Yolculuğunuz Analiz Ediliyor...",
+  "aiCreatingSanctuary": "Yapay zekamız size özel huzur alanınızı oluşturuyor.",
+  "understandingHabits": "Alışkanlıklar anlaşılıyor...",
+  "calculatingBaseline": "Başlangıç seviyeniz hesaplanıyor...",
+  "personalizingPlan": "Planınız kişiselleştiriliyor...",
+  "finalizingSanctuary": "Alanınız son haline getiriliyor...",
+  "creatingYourPlan": "Planınız oluşturuluyor...",
+  "personalizedPlanError": "Kişiselleştirilmiş planınız oluşturulamadı. Lütfen tekrar deneyin.",
+  "retry": "Tekrar Dene",
+
+  "breathInhale": "NEFES AL",
+  "breathHold": "TUT",
+  "breathExhale": "NEFES VER",
+  "breathDone": "BİTTİ",
+  "breathGreatJob": "Harika iş!",
+  "breathSessionsToday": "{count, plural, one{Bugün {count} seans} other{Bugün {count} seans}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Egzersizi Bitir",
+  "done": "Tamamlandı",
+
+  "noCopingTipsYet": "Henüz başa çıkma ipucu yok",
+  "copingStrategiesWillAppear": "İyileşme planınız oluşturulduktan sonra kişiselleştirilmiş başa çıkma stratejileriniz burada görünecektir.",
+  "strategiesTailoredToTriggers": "Tetikleyicilerinize özel stratejiler",
+
+  "cravingsPeakAndPass": "İstekler zirve yapar\nve geçer",
+  "rideTheWaveDescription": "Çoğu istek kriz 15 dakika içinde geçer. İsteğe göre hareket etmek zorunda değilsiniz — bizimle birlikte geçmesini bekleyin.",
+  "stayWithIt": "sabırla bekle",
+  "youMadeIt": "başardın",
+  "readyWhenYouAre": "hazır olduğunda başla",
+  "rideItAgain": "Yeniden dene",
+  "start15MinuteTimer": "15 Dakikalık Zamanlayıcıyı Başlat",
+  "rideTheWaveCompletedMessage": "Dalgayı atlattın. Bu gerçek bir güç! 💪",
+
+  "myProgress": "İlerlemem",
+  "weekLabel": "Hafta",
+  "monthLabel": "Ay",
+  "allLabel": "Tümü",
+  "daysSoberStatLabel": "Temiz\ngünler",
+  "savedStatLabel": "Tasarruf",
+  "avoidedStatLabel": "İçilmeyen",
+  "moodTrends": "Duygu durumu eğilimleri",
+  "cravingsPattern": "İstek krizi kalıpları",
+  "unlockLabel": "Kilidi Aç",
+  "unlockFullStats": "Tüm istatistiklerin kilidini aç",
+  "premiumStatsMessage": "Duygu durumu eğilimleri ve istek krizi kalıpları Premium özelliklerdir. Tüm istatistiklerinizi görmek için yükseltin.",
+  "healthMilestonesWillAppear": "Sağlık kilometre taşlarınız burada görünecektir.",
+  "healthMilestones": "Sağlık kilometre taşları",
+  "dayNumber": "{day}. Gün",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Temiz",
+  "slipLabel": "Kayıp",
+  "noDataLabel": "Veri yok",
+
+  "milestone24Hours": "24 Saat",
+  "milestoneOneWeek": "Bir Hafta",
+  "milestoneOneMonth": "Bir Ay",
+  "milestoneThreeMonths": "Üç Ay",
+  "milestoneSixMonths": "Altı Ay",
+  "milestoneOneYear": "Bir Yıl",
+  "milestoneDayCount": "{day}. Gün Kilometre Taşı",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

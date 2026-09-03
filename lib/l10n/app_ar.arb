@@ -1,0 +1,563 @@
+{
+  "@@locale": "ar",
+
+  "skip": "تخطي",
+  "continueButton": "متابعة",
+  "getStarted": "ابدأ الآن",
+
+  "onboardingTitle1": "تحكم في حياتك",
+  "onboardingSubtitle1": "تتبع رحلتك، احتفل بكل إنجاز، وكن أكثر صحة يومًا بعد يوم.",
+  "onboardingTitle2": "رفيقك الذكي في رحلة التعافي",
+  "onboardingSubtitle2": "احصل على إرشادات مخصصة، وعادات صحية، وتذكيرات تحفيزية، وتقارير تقدم مصممة خصيصًا لرحلتك.",
+
+  "goodMorning": "صباح الخير",
+  "goodAfternoon": "طاب نهارك",
+  "goodEvening": "مساء الخير",
+  "goodNight": "تصبح على خير",
+
+  "embracingClarity": "احتضان الوضوح، يومًا بعد يوم.",
+  "streakLabel": "التتابع",
+  "goalLabel": "الهدف",
+  "daysStreak": "{count, plural, one{يوم واحد} two{يومان} few{{count} أيام} many{{count} يومًا} other{{count} يوم}}",
+  "@daysStreak": { "placeholders": { "count": { "type": "int" } } },
+
+  "premiumPlan": "الخطة المميزة",
+  "premiumPlanSubtitle": "افتح تجربة التعافي الكاملة الخاصة بك",
+
+  "accountAndSupport": "الحساب والدعم",
+  "privacyPolicy": "سياسة الخصوصية",
+  "privacyPolicySubtitle": "إدارة مشاركة البيانات وأمان الحساب",
+  "termsOfService": "شروط الخدمة",
+  "termsOfServiceSubtitle": "الأسئلة الشائعة، تواصل معنا، والموارد",
+  "shareApp": "شارك التطبيق",
+  "shareAppSubtitle": "شارك التطبيق مع أصدقائك",
+  "resetData": "إعادة تعيين البيانات",
+  "resetDataSubtitle": "مسح كل ما تم حفظه على هذا الجهاز",
+
+  "resetAllDataTitle": "إعادة تعيين جميع البيانات؟",
+  "resetAllDataMessage": "سيؤدي هذا إلى مسح كل ما تم حفظه على هذا الجهاز - الملف الشخصي، وتدوينات اليوميات، والتقدم - ولا يمكن التراجع عن ذلك.",
+  "cancel": "إلغاء",
+  "reset": "إعادة تعيين",
+
+  "chooseFromGallery": "اختر من المعرض",
+  "takePhoto": "التقط صورة",
+  "removePhoto": "إزالة الصورة",
+  "couldNotUpdatePhoto": "تعذر تحديث الصورة: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "تعذر إزالة الصورة: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "هذه الصورة كبيرة جدًا حتى بعد الضغط - يرجى تجربة صورة أخرى.",
+
+  "unableToLoadProfile": "تعذر تحميل ملفك الشخصي",
+  "pleaseTryAgain": "يرجى المحاولة مرة أخرى.",
+  "tryAgain": "حاول مرة أخرى",
+  "profileNotFound": "الملف الشخصي غير موجود",
+  "refresh": "تحديث",
+  "noProfileDataFound": "لم يتم العثور على بيانات الملف الشخصي على هذا الجهاز بعد.",
+
+  "couldNotResetData": "تعذر إعادة تعيين البيانات: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "الرئيسية",
+  "navStats": "الإحصائيات",
+  "navJournal": "اليوميات",
+  "navBadges": "الشارات",
+  "navProfile": "الملف الشخصي",
+
+  "featureComingSoon": "{feature} ستكون متاحة قريبًا.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Sober Flow",
+  "splashSubtitle": "اتخذ الخطوة الأولى نحو\nحياة خالية من الكحول",
+  "preparingJourney": "نُجهّز\nرحلتك",
+
+  "taskMorningMeditation": "تأمل صباحي (10 دقائق)",
+  "taskReadChapter": "اقرأ الفصل الرابع من \"The Sober Diaries\"",
+  "taskEveningJournal": "يوميات الامتنان المسائية",
+
+  "close": "إغلاق",
+  "youAreDoingGreat": "أنت تبلي بلاءً حسنًا!",
+  "shareMilestone": "شارك الإنجاز",
+  "shareMilestoneMessage": "أنا في اليوم {days} من رحلة تعافي! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "إنجازي في التعافي",
+
+  "weeklyReportReadyTitle": "تقريرك الأسبوعي جاهز",
+  "weeklyReportReadySubtitle": "اضغط لمعرفة كيف كان أسبوعك",
+
+  "howAreYouFeeling": "كيف تشعر؟",
+  "moodTough": "صعب",
+  "moodOkay": "عادي",
+  "moodGood": "جيد",
+
+  "moneySaved": "المال الموفر",
+  "caloriesSaved": "السعرات الموفرة",
+  "healthScore": "درجة الصحة",
+  "drinksAvoided": "المشروبات المتجنبة",
+  "estimated": "تقديري",
+  "aiGenerated": "من الذكاء الاصطناعي",
+  "daysCapsLabel": "أيام",
+
+  "todaysMotivation": "تحفيز اليوم",
+  "defaultMotivationQuote": "لقد حافظت بنجاح على التزامك. استمر في ركوب موجة التغيير الإيجابي.",
+
+  "talkToCoach": "تحدث مع المدرب",
+  "havingACraving": "أشعر برغبة شديدة",
+
+  "unlockWeeklyReportsTitle": "افتح التقارير الأسبوعية",
+  "unlockWeeklyReportsMessage": "شاهد أيام تعافيك، اتجاهات مزاجك، وملاحظات مخصصة من الذكاء الاصطناعي كل أسبوع. قم بالترقية إلى بريميوم للفتح.",
+  "maybeLater": "ربما لاحقًا",
+  "upgrade": "ترقية",
+
+  "weeklyReportTitle": "التقرير الأسبوعي",
+  "weeklyReportsPremiumTitle": "التقارير الأسبوعية ميزة مميزة",
+  "weeklyReportsPremiumMessage": "شاهد أيام تعافيك، اتجاهات مزاجك، الرغبات الشديدة، وملاحظات مخصصة من الذكاء الاصطناعي كل أسبوع.",
+  "upgradeToPremium": "الترقية إلى بريميوم",
+  "couldNotGenerateReport": "تعذر إنشاء تقريرك الآن.",
+  "tryAgainLower": "حاول مرة أخرى",
+
+  "statSoberDays": "أيام التعافي",
+  "statAvgMood": "متوسط المزاج",
+  "statCravings": "الرغبات الشديدة",
+  "statMoneySaved": "المال الموفر",
+  "coachFeedback": "ملاحظات المدرب",
+  "journalInsights": "رؤى اليوميات",
+
+  "next": "التالي",
+
+    "question1Title": "ما هو هدفك",
+    "question1Subtitle": "اختر الهدف الأكثر أهمية\nبالنسبة لك",
+    "goalQuitCompletely": "الإقلاع تمامًا",
+    "goalReduceDrinking": "تقليل الشرب",
+    "goalTakeABreak": "أخذ استراحة",
+    "goalBuildHealthierHabits": "بناء عادات أكثر صحة",
+
+    "question3Title": "أخبرنا عن\nروتينك",
+    "drinksPerWeek": "المشروبات في الأسبوع",
+    "moneySpentPerWeek": "المال المُنفق أسبوعيًا",
+    "drinkingLevel": "مستوى الشرب",
+    "triggersLabel": "المحفزات",
+    "levelSocial": "اجتماعي",
+    "levelRegular": "منتظم",
+    "levelHeavy": "شديد",
+    "levelDependent": "معتمد",
+    "triggerStress": "التوتر",
+    "triggerLoneliness": "الوحدة",
+    "triggerHabit": "العادة",
+    "triggerSadness": "الحزن",
+    "triggerAnger": "الغضب",
+    "triggerBoredom": "الملل",
+    "triggerSocialPressure": "الضغط الاجتماعي",
+    "triggerCelebration": "الاحتفال",
+    "triggerSleepProblems": "مشاكل النوم",
+    "triggerWorkPressure": "ضغط العمل",
+
+    "question4Title": "لماذا تريد التغيير؟",
+    "question4Subtitle": "سيساعدك سببك على التحفيز.",
+    "reasonImproveHealth": "تحسين صحتي",
+    "reasonSaveMoney": "توفير المال",
+    "reasonFamily": "العائلة",
+    "reasonBetterSleep": "نوم أفضل",
+    "reasonMentalClarity": "الوضوح الذهني",
+    "reasonFitness": "اللياقة البدنية",
+    "reasonSelfRespect": "احترام الذات",
+    "reasonCareer": "المسيرة المهنية",
+
+      "milestoneUnlockedLabel": "الإنجاز مفتوح",
+      "incredibleNamePrefix": "رائع، {name}!",
+      "amountSavedLabel": "{amount} تم توفيرها",
+      "drinksAvoidedLabel": "{count} تم تجنبها",
+      "shareMyMilestone": "شارك إنجازي",
+      "milestoneImageShareError": "تعذر إنشاء صورة الإنجاز. حاول مرة أخرى.",
+
+      "dailyCheckInTitle": "تسجيل الدخول اليومي",
+      "howAreYouFeelingToday": "كيف تشعر اليوم؟",
+      "honestAnswerHelp": "إجابتك الصادقة تساعدنا على دعمك بشكل أفضل",
+      "didYouDrinkToday": "هل شربت اليوم؟",
+      "noLabel": "لا",
+      "yesLabel": "نعم",
+      "cravingLevelNow": "مستوى الرغبة الشديدة الآن؟",
+      "anythingOnMind": "هل يشغل بالك شيء؟",
+      "optionalLabel": "(اختياري)",
+      "dailyNoteHint": "اكتب عن يومك، محفزاتك، إنجازاتك...",
+      "alreadyCheckedInToday": "تم تسجيل الدخول اليوم بالفعل",
+      "saveCheckIn": "حفظ تسجيل الدخول",
+      "checkInsHelpTrack": "تسجيلات الدخول تساعد في تتبع تقدمك مع الوقت",
+      "alreadyCompletedTodayCheckIn": "لقد أكملت بالفعل تسجيل دخول اليوم.",
+      "pleaseAnswerBothQuestions": "يرجى الإجابة على السؤالين أعلاه أولاً",
+      "checkInSaved": "تم حفظ تسجيل الدخول",
+      "cravingNone": "لا شيء",
+      "cravingLow": "منخفض",
+      "cravingMedium": "متوسط",
+      "cravingStrong": "قوي",
+      "moodBad": "سيء",
+      "moodLow": "منخفض",
+      "moodOkay": "مقبول",
+      "moodGood": "جيد",
+      "moodGreat": "رائع",
+
+      "sosSupportTitle": "دعم الطوارئ",
+      "notAloneMessage": "لست وحدك، {name}",
+      "cravingsPassMessage": "الرغبة الشديدة تزول. اختر شيئًا أدناه لمساعدتك خلال هذه اللحظة.",
+      "breathingExercise": "تمرين التنفس",
+      "breathingExerciseSubtitle": "تقنية 4-7-8 الموجهة، دقيقتان",
+      "rideTheWave": "اركب الموجة",
+      "rideTheWaveSubtitle": "مؤقت 15 دقيقة — الرغبة الشديدة تزول دائمًا",
+      "copingTips": "نصائح للتأقلم",
+      "copingTipsSubtitle": "استراتيجيات مخصصة لمحفزاتك",
+      "talkToAiCoach": "تحدث مع مدرب الذكاء الاصطناعي",
+      "talkToAiCoachSubtitle": "تحدث مع رفيقك في التعافي",
+      "callSomeone": "اتصل بشخص ما",
+      "callSomeoneSubtitle": "تواصل مع جهة اتصال موثوقة",
+      "contactsPermissionNeeded": "إذن جهات الاتصال مطلوب للاتصال بجهة اتصال.",
+      "beatenCravingsPrefix": "لقد تغلبت على الرغبة الشديدة ",
+      "beatenCravingsCount": "{count} مرة",
+      "beatenCravingsSuffix": " من قبل. يمكنك فعل ذلك مرة أخرى.",
+
+      "tellUsAboutYourself": "أخبرنا عن نفسك",
+      "detailsSubtitle": "تساعدنا هذه المعلومات على تخصيص رحلة تعافيك وتقديم رؤى دقيقة.",
+      "nameLabel": "الاسم",
+      "nameHint": "مثال: أليكس ريفرز",
+      "ageLabel": "العمر",
+      "ageHint": "مثال: 32",
+      "sexAssignedAtBirth": "الجنس عند الولادة",
+      "sexFemale": "أنثى",
+      "sexMale": "ذكر",
+      "heightLabel": "الطول",
+      "weightLabel": "الوزن",
+      "heightHint": "170",
+      "weightHint": "70",
+
+        "dailyLimitReachedTitle": "تم الوصول إلى الحد اليومي",
+        "dailyLimitReachedMessage": "لقد استخدمت جميع رسائلك المجانية البالغة {limit} اليوم. قم بالترقية إلى Premium للحصول على محادثة غير محدودة مع المدرب.",
+        "coachConnectError": "تعذر الاتصال الآن. حاول مرة أخرى بعد قليل.",
+        "clearConversationTitle": "مسح المحادثة؟",
+        "clearConversationMessage": "سيؤدي هذا إلى إزالة سجل محادثة المدرب نهائيًا.",
+        "clearLabel": "مسح",
+        "recoveryCoachTitle": "مدرب التعافي",
+        "onlineLabel": "متصل",
+        "clearConversationMenuItem": "مسح المحادثة",
+        "chatGreeting": "مرحبًا {name} 👋",
+        "chatDaysIntro": "أنت في اليوم {days} من رحلتك. أنا هنا كلما أردت التحدث.",
+        "quickPromptsLabel": "اقتراحات سريعة",
+        "promptCravingLabel": "أشعر برغبة شديدة",
+        "promptCravingSubtitle": "استعد توازنك، بسرعة",
+        "promptMotivationLabel": "أحتاج إلى تحفيز",
+        "promptMotivationSubtitle": "دفعة عندما يصعب الأمر",
+        "promptSocialLabel": "موقف اجتماعي",
+        "promptSocialSubtitle": "تعامل مع تجمع",
+        "promptSlippedLabel": "لقد انتكست",
+        "promptSlippedSubtitle": "بدون حكم، فقط دعم",
+        "typeMessageHint": "اكتب رسالة...",
+
+        "editProfileTitle": "تعديل الملف الشخصي",
+        "couldNotSaveProfile": "تعذر حفظ الملف الشخصي: {error}",
+        "heightCmLabel": "الطول (سم)",
+        "weightKgLabel": "الوزن (كغ)",
+        "saveChangesLabel": "حفظ التغييرات",
+
+        "premiumBadgeLabel": "بريميوم",
+        "featureAdvancedInsights": "رؤى وتحليلات متقدمة",
+        "featureUnlimitedJournal": "إدخالات يومية غير محدودة",
+        "featureUnlimitedChat": "محادثة غير محدودة مع مدرب الذكاء الاصطناعي",
+        "featureCommunityGroups": "مجموعات مجتمعية حصرية",
+        "featurePrioritySupport": "دعم خبير ذو أولوية",
+        "featureThemePacks": "حزم سمات مخصصة",
+        "featureDataExport": "تصدير البيانات",
+        "featureAdFree": "تجربة بدون إعلانات",
+        "premiumMemberTitle": "أنت عضو بريميوم",
+        "unlockFullRecoveryTitle": "افتح تجربتك الكاملة\nللتعافي",
+        "premiumMemberSubtitle": "شكرًا لدعمك رحلة تعافيك — جميع ميزات بريميوم أدناه مفتوحة.",
+        "premiumJoinSubtitle": "انضم إلى مجتمع من الآلاف الذين\nيسرّعون رحلة شفائهم بأدواتنا\nالمتميزة والدعم الشخصي.",
+        "monthlyPlanLabel": "شهري",
+        "perMonthSuffix": "/شهر",
+        "cancelAnytimeLabel": "إلغاء في أي وقت",
+        "yearlyPlanLabel": "سنوي",
+        "billedAnnuallyLabel": "يُحاسب سنويًا بمبلغ {amount}",
+        "bestValueLabel": "أفضل قيمة",
+        "alreadyPremiumLabel": "أنت بريميوم ✓",
+        "startPremiumLabel": "ابدأ بريميوم",
+        "manageSubscriptionLabel": "إدارة أو إلغاء الاشتراك من إعدادات جهازك.",
+        "noCommitmentLabel": "بدون التزام. إلغاء في أي وقت.",
+        "continueFreePlanLabel": "المتابعة بالخطة المجانية",
+        "backToHomeLabel": "العودة إلى الرئيسية",
+        "cancelPremiumLabel": "إلغاء بريميوم",
+        "cancelPremiumTitle": "إلغاء بريميوم؟",
+        "cancelPremiumMessage": "ستفقد الوصول إلى الإدخالات اليومية غير المحدودة، ومحادثة المدرب غير المحدودة، ورؤى الإحصائيات، والتقارير الأسبوعية. يمكنك الاشتراك مرة أخرى في أي وقت.",
+        "keepPremiumLabel": "الاحتفاظ ببريميوم",
+        "nowPremiumMessage": "أنت الآن بريميوم! استمتع بتجربة تعافيك الكاملة.",
+        "premiumCancelledMessage": "تم إلغاء بريميوم. أنت الآن في الخطة المجانية.",
+        "termsOfUseLabel": "شروط الاستخدام",
+
+        "navHomeLabel": "الرئيسية",
+        "navStatsLabel": "الإحصائيات",
+        "navJournalLabel": "اليوميات",
+        "navBadgesLabel": "الأوسمة",
+        "navProfileLabel": "الملف الشخصي",
+
+          "goalHint": "مثال: الامتناع التام",
+          "drinksPerWeekHint": "مثال: 12",
+          "quitReasonsHint": "مثال: الصحة، العائلة، المال",
+
+        "recoveryGoalsTitle": "أهداف التعافي",
+        "goalLabel": "الهدف",
+        "drinksPerWeekLabel": "المشروبات أسبوعيًا",
+        "quitReasonsLabel": "أسباب الإقلاع",
+        "quitReasonsHelperText": "افصل بين الأسباب المتعددة بفاصلة.",
+        "couldNotSaveRecoveryGoals": "تعذر حفظ أهداف التعافي: {error}",
+
+      "todaysPrompt": "موجه اليوم",
+      "defaultJournalPrompt": "ما الذي يشغل بالك اليوم؟",
+      "aiJournalInsights": "رؤى اليوميات من الذكاء الاصطناعي",
+      "unlockJournalInsightsMessage": "اكتشف الأنماط الأسبوعية، واتجاهات المزاج، والرؤى المخصصة من إدخالات يومياتك.",
+      "notEnoughJournalData": "لا توجد بيانات كافية بعد — اكتب بعض الإدخالات هذا الأسبوع وتحقق مرة أخرى.",
+      "openEntry": "فتح",
+      "editEntry": "تعديل",
+      "deleteEntry": "حذف",
+      "searchJournalEntries": "البحث في الإدخالات...",
+      "writeNewEntry": "كتابة إدخال جديد",
+      "recentEntries": "الإدخالات الأخيرة",
+      "noJournalEntriesYet": "لا توجد إدخالات في اليوميات بعد — اكتب تأملك الأول أعلاه.",
+      "noEntriesMatchFilters": "لا توجد إدخالات تطابق عوامل التصفية.",
+
+    "weeklyJournalLimitReached": "تم الوصول إلى الحد الأسبوعي",
+    "weeklyJournalLimitMessage": "لقد استخدمت جميع إدخالات اليوميات المجانية البالغة {limit} هذا الأسبوع. قم بالترقية إلى Premium للحصول على إدخالات غير محدودة.",
+    "@weeklyJournalLimitMessage": {
+      "placeholders": {
+        "limit": {
+          "type": "int"
+        }
+      }
+    },
+
+    "newEntry": "إدخال جديد",
+    "writeYourThoughts": "اكتب أفكارك",
+    "saveEntry": "حفظ الإدخال",
+    "freeEntriesLeftThisWeek": "متبقي {remaining} من أصل {limit} إدخالات مجانية هذا الأسبوع",
+    "@freeEntriesLeftThisWeek": {
+      "placeholders": {
+        "remaining": {
+          "type": "String"
+        },
+        "limit": {
+          "type": "String"
+        }
+      }
+    },
+
+    "deleteEntryQuestion": "حذف الإدخال؟",
+    "deleteEntryConfirmation": "سيتم حذف هذا الإدخال نهائيًا. لا يمكن التراجع عن ذلك.",
+
+    "journalEntryNotFound": "الإدخال غير موجود",
+    "journalEntryMayHaveBeenDeleted": "ربما تم حذف إدخال اليوميات هذا.",
+    "goBack": "العودة",
+    "journalEntryTitle": "إدخال اليوميات",
+
+    "moodStruggling": "أشعر بصعوبة",
+    "moodUnwell": "لست بخير",
+    "moodNeutral": "محايد",
+
+    "whatHappenedToday": "ماذا حدث اليوم؟",
+    "trigger": "المحفز",
+    "whatHelped": "ما الذي ساعدك؟",
+    "whatIllTryNextTime": "ما سأجربه في المرة القادمة",
+    "journalPrivacyMessage": "تأملك خاص ومحفوظ في يومياتك.",
+
+   "unlocked": "تم الفتح",
+    "daysLeft": "متبقي {count} يوم{count, plural, =1{} other{ًا}}",
+    "@daysLeft": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "daysCount": "{count} يومًا",
+    "@daysCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "firstReflection": "أول\nتأمل",
+    "oneJournalEntry": "إدخال واحد في اليوميات",
+    "openBook": "كتاب مفتوح",
+    "tenJournalEntries": "10 إدخالات في اليوميات",
+    "dedicatedWriter": "كاتب\nملتزم",
+    "thirtyJournalEntries": "30 إدخالًا في اليوميات",
+    "firstConversation": "أول\nمحادثة",
+    "oneAiCoachChat": "محادثة واحدة مع مدرب الذكاء الاصطناعي",
+    "keepTalking": "واصل الحديث",
+    "fiveConversations": "5 محادثات",
+    "coachCompanion": "رفيق\nالمدرب",
+    "twentyConversations": "20 محادثة",
+    "checkInHabit": "عادة\nتسجيل الوصول",
+    "sevenCheckIns": "7 تسجيلات وصول",
+    "consistencyPro": "محترف\nالاستمرارية",
+    "thirtyCheckIns": "30 تسجيل وصول",
+    "dedicatedJourney": "رحلة\nملتزمة",
+    "hundredCheckIns": "100 تسجيل وصول",
+    "goalGetter": "صائد الأهداف",
+    "threeGoalsCompleted": "3 أهداف مكتملة",
+    "goalAchiever": "محقق\nالأهداف",
+    "tenGoalsCompleted": "10 أهداف مكتملة",
+    "firstSavings": "أول\nمدخرات",
+    "fiveHundredSaved": "تم توفير 500 دولار",
+    "smartSaver": "مدخر ذكي",
+    "oneThousandSaved": "تم توفير 1,000 دولار",
+    "bigSaver": "مدخر كبير",
+    "fiveThousandSaved": "تم توفير 5,000 دولار",
+    "currencyProgress": "{current} من {target}",
+    "@currencyProgress": {
+      "placeholders": {
+        "current": {
+          "type": "String"
+        },
+        "target": {
+          "type": "String"
+        }
+      }
+    },
+    "countProgress": "{current} من {target}",
+    "@countProgress": {
+      "placeholders": {
+        "current": {
+          "type": "int"
+        },
+        "target": {
+          "type": "int"
+        }
+      }
+    },
+    "firstMilestoneWaiting": "استمر — إنجازك الأول في انتظارك!",
+    "badgesAndMilestones": "الشارات والإنجازات",
+    "yourMilestoneJourney": "رحلة إنجازاتك",
+    "milestonesAchieved": "تم تحقيق {count} إنجاز{count, plural, =1{} other{ات}}.\nاضغط للعرض",
+    "@milestonesAchieved": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "unlockedMilestonesMessage": "لقد فتحت {unlocked} من أصل {total} إنجازات في رحلتك.",
+    "@unlockedMilestonesMessage": {
+      "placeholders": {
+        "unlocked": {
+          "type": "int"
+        },
+        "total": {
+          "type": "int"
+        }
+      }
+    },
+    "remaining": "متبقي",
+    "complete": "مكتمل",
+    "nextMilestone": "الإنجاز التالي",
+    "percentThere": "{subtitle} · {percent}% من الطريق",
+    "@percentThere": {
+      "placeholders": {
+        "subtitle": {
+          "type": "String"
+        },
+        "percent": {
+          "type": "int"
+        }
+      }
+    },
+    "sobrietyMilestones": "إنجازات التعافي",
+    "journeyBadges": "شارات الرحلة",
+    "bronze": "برونزي",
+    "silver": "فضي",
+    "gold": "ذهبي",
+    "platinum": "بلاتيني",
+    "diamond": "ماسي",
+
+    "analyzingYourJourney": "جارٍ تحليل رحلتك...",
+    "aiCreatingSanctuary": "يقوم الذكاء الاصطناعي بإنشاء خطة التعافي الشخصية الخاصة بك.",
+    "understandingHabits": "جارٍ فهم عاداتك...",
+    "calculatingBaseline": "جارٍ حساب خط الأساس الخاص بك...",
+    "personalizingPlan": "جارٍ تخصيص خطتك...",
+    "finalizingSanctuary": "جارٍ إنهاء خطة التعافي الخاصة بك...",
+    "creatingYourPlan": "جارٍ إنشاء خطتك...",
+    "personalizedPlanError": "تعذر إنشاء خطة التعافي الشخصية الخاصة بك. يرجى المحاولة مرة أخرى.",
+    "retry": "إعادة المحاولة",
+
+      "breathingExercise": "تمرين التنفس",
+      "breathInhale": "شهيق",
+      "breathHold": "احبس",
+      "breathExhale": "زفير",
+      "breathDone": "تم",
+      "breathGreatJob": "أحسنت!",
+      "remaining": "متبقي",
+      "breathSessionsToday": "{count, plural, one{{count} جلسة اليوم} other{{count} جلسات اليوم}}",
+      "@breathSessionsToday": {
+        "placeholders": {
+          "count": {
+            "type": "int"
+          }
+        }
+      },
+      "endExercise": "إنهاء التمرين",
+      "done": "تم",
+
+      "noCopingTipsYet": "لا توجد نصائح للتعامل بعد",
+      "copingStrategiesWillAppear": "ستظهر استراتيجيات التعامل المخصصة لك هنا بمجرد الانتهاء من إنشاء خطة التعافي الخاصة بك.",
+      "strategiesTailoredToTriggers": "استراتيجيات مخصصة لمحفزاتك",
+
+      "rideTheWave": "تجاوز الرغبة",
+      "cravingsPeakAndPass": "تبلغ الرغبات ذروتها\nثم تمر",
+      "rideTheWaveDescription": "تمر معظم الرغبات خلال 15 دقيقة. لا يتعين عليك الاستجابة لها — فقط تجاوزها معنا.",
+      "stayWithIt": "استمر",
+      "youMadeIt": "لقد نجحت",
+      "readyWhenYouAre": "جاهز عندما تكون",
+      "rideItAgain": "كررها مرة أخرى",
+      "start15MinuteTimer": "ابدأ مؤقت 15 دقيقة",
+      "rideTheWaveCompletedMessage": "لقد تجاوزت الرغبة. هذه قوة حقيقية. 💪",
+
+      "myProgress": "تقدمي",
+      "weekLabel": "أسبوع",
+      "monthLabel": "شهر",
+      "allLabel": "الكل",
+      "daysSoberStatLabel": "أيام\nبدون كحول",
+      "savedStatLabel": "المدخر",
+      "avoidedStatLabel": "تم تجنبه",
+      "moodTrends": "اتجاهات المزاج",
+      "cravingsPattern": "نمط الرغبات",
+      "unlockLabel": "فتح",
+      "unlockFullStats": "فتح الإحصائيات الكاملة",
+      "premiumStatsMessage": "اتجاهات المزاج وأنماط الرغبات من ميزات Premium. قم بالترقية لرؤية إحصائياتك الكاملة.",
+      "healthMilestonesWillAppear": "ستظهر إنجازاتك الصحية هنا.",
+      "healthMilestones": "الإنجازات الصحية",
+      "dayNumber": "اليوم {day}",
+      "@dayNumber": {
+        "placeholders": {
+          "day": {
+            "type": "int"
+          }
+        }
+      },
+      "soberLabel": "بدون كحول",
+      "slipLabel": "انتكاس",
+      "noDataLabel": "لا توجد بيانات",
+
+      "milestone24Hours": "24 ساعة",
+      "milestoneOneWeek": "أسبوع واحد",
+      "milestoneOneMonth": "شهر واحد",
+      "milestoneThreeMonths": "ثلاثة أشهر",
+      "milestoneSixMonths": "ستة أشهر",
+      "milestoneOneYear": "سنة واحدة",
+      "milestoneDayCount": "إنجاز اليوم {day}",
+      "@milestoneDayCount": {
+        "placeholders": {
+          "day": {
+            "type": "int"
+          }
+        }
+      },
+
+      "privacyPolicy": "سياسة الخصوصية"
+
+}

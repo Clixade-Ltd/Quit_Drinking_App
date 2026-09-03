@@ -1,0 +1,570 @@
+{
+  "@@locale": "ur",
+
+  "skip": "چھوڑیں",
+  "continueButton": "جاری رکھیں",
+  "getStarted": "شروع کریں",
+
+  "onboardingTitle1": "اپنی زندگی کا کنٹرول سنبھالیں",
+  "onboardingSubtitle1": "اپنے سفر کا حساب رکھیں، ہر کامیابی کا جشن منائیں اور دن بہ دن صحت مند بنیں۔",
+  "onboardingTitle2": "آپ کا AI ریکوری ساتھی",
+  "onboardingSubtitle2": "اپنے سفر کے مطابق ذاتی رہنمائی، صحت مند عادتیں، تحریکی یاد دہانیاں اور پیشرفت رپورٹس حاصل کریں۔",
+
+  "goodMorning": "صبح بخیر",
+  "goodAfternoon": "سہ پہر بخیر",
+  "goodEvening": "شام بخیر",
+  "goodNight": "شب بخیر",
+
+  "embracingClarity": "ہر دن ایک قدم، ذہنی شفافیت کی طرف۔",
+  "streakLabel": "تسلسل",
+  "goalLabel": "ہدف",
+  "daysStreak": "{count, plural, one{{count} دن} other{{count} دن}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "پریمیئم پلان",
+  "premiumPlanSubtitle": "مکمل ریکوری کے تجربے کو انلاک کریں",
+
+  "accountAndSupport": "اکاؤنٹ اور سپورٹ",
+  "privacyPolicy": "رازداری کی پالیسی",
+  "privacyPolicySubtitle": "ڈیٹا شیئرنگ اور اکاؤنٹ کی سیکیورٹی کو منظم کریں",
+  "termsOfService": "سروس کی شرائط",
+  "termsOfServiceSubtitle": "اکثر پوچھے گئے سوالات، ہم سے رابطہ کریں اور وسائل",
+  "shareApp": "ایپ شیئر کریں",
+  "shareAppSubtitle": "اپنے دوستوں کے ساتھ ایپ شیئر کریں",
+  "resetData": "ڈیٹا ری سیٹ کریں",
+  "resetDataSubtitle": "اس ڈیوائس پر محفوظ شدہ تمام ڈیٹا مٹائیں",
+
+  "resetAllDataTitle": "تمام ڈیٹا ری سیٹ کریں؟",
+  "resetAllDataMessage": "یہ اس ڈیوائس پر محفوظ تمام معلومات — پروفائل، جریدے کے اندراجات، اور پیشرفت — کو پاک کر دے گا اور اسے واپس نہیں لایا جا سکتا۔",
+  "cancel": "منسوخ کریں",
+  "reset": "ری سیٹ کریں",
+
+  "chooseFromGallery": "گیلری سے منتخب کریں",
+  "takePhoto": "تصویر لیں",
+  "removePhoto": "تصویر ہٹائیں",
+  "couldNotUpdatePhoto": "تصویر اپ ڈیٹ نہیں ہو سکی: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "تصویر نہیں ہٹائی جا سکی: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "یہ تصویر سائز میں بہت بڑی ہے — براہ کرم کوئی دوسری تصویر منتخب کریں۔",
+
+  "unableToLoadProfile": "آپ کی پروفائل لوڈ کرنے میں ناکامی",
+  "pleaseTryAgain": "براہ کرم دوبارہ کوشش کریں۔",
+  "tryAgain": "دوبارہ کوشش کریں",
+  "profileNotFound": "پروفائل نہیں ملی",
+  "refresh": "ریفریش کریں",
+  "noProfileDataFound": "اس ڈیوائس پر ابھی تک کوئی پروفائل ڈیٹا نہیں ملا۔",
+
+  "couldNotResetData": "ڈیٹا ری سیٹ نہیں ہو سکا: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "ہوم",
+  "navStats": "اعداد و شمار",
+  "navJournal": "جریدہ",
+  "navBadges": "بیجز",
+  "navProfile": "پروفائل",
+
+  "featureComingSoon": "{feature} جلد دستیاب ہو گا۔",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ویلنیس",
+  "appTitle": "Sober Flow",
+  "splashSubtitle": "شراب سے پاک زندگی کی طرف\nپہلا قدم اٹھائیں",
+  "preparingJourney": "آپ کا سفر\nتیار کیا جا رہا ہے",
+
+  "taskMorningMeditation": "صبح کی مراقبہ (10 منٹ)",
+  "taskReadChapter": "\"The Sober Diaries\" کا باب 4 پڑھیں",
+  "taskEveningJournal": "شام کا شکرگزاری کا جریدہ",
+
+  "close": "بند کریں",
+  "youAreDoingGreat": "آپ بہت اچھا کر رہے ہیں!",
+  "shareMilestone": "سنگ میل شیئر کریں",
+  "shareMilestoneMessage": "میں اپنے ریکوری کے سفر کے {days} ویں دن پر ہوں! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "میرا ریکوری کا سنگ میل",
+
+  "weeklyReportReadyTitle": "آپ کی ہفتہ وار رپورٹ تیار ہے",
+  "weeklyReportReadySubtitle": "یہ دیکھنے کے لیے ٹیپ کریں کہ آپ کا ہفتہ کیسا گزرا",
+
+  "howAreYouFeeling": "آپ کیسا محسوس کر رہے ہیں؟",
+  "moodTough": "مشکل",
+  "moodOkay": "مناسب",
+  "moodGood": "اچھا",
+
+  "moneySaved": "بچائے گئے پیسے",
+  "caloriesSaved": "بچائی گئی کیلوریز",
+  "healthScore": "صحت کا اسکور",
+  "drinksAvoided": "پرہیز کی گئی ڈرنکس",
+  "estimated": "تخمینہ شدہ",
+  "aiGenerated": "AI کی تیار کردہ",
+  "daysCapsLabel": "دن",
+
+  "todaysMotivation": "آج کی تحریک",
+  "defaultMotivationQuote": "آپ نے اپنے عزم کو کامیابی سے برقرار رکھا ہے۔ مثبت تبدیلی کے اس سفر کو جاری رکھیں۔",
+
+  "talkToCoach": "کوچ سے بات کریں",
+  "havingACraving": "شدید طلب ہو رہی ہے",
+
+  "unlockWeeklyReportsTitle": "ہفتہ وار رپورٹس انلاک کریں",
+  "unlockWeeklyReportsMessage": "ہر ہفتے اپنے پاک دن، موڈ کے رجحانات، اور AI کی ذاتی رائے دیکھیں۔ انلاک کرنے کے لیے پریمیئم پر اپ گریڈ کریں۔",
+  "maybeLater": "شاید بعد میں",
+  "upgrade": "اپ گریڈ کریں",
+
+  "weeklyReportTitle": "ہفتہ وار رپورٹ",
+  "weeklyReportsPremiumTitle": "ہفتہ وار رپورٹس پریمیئم خصوصیت ہیں",
+  "weeklyReportsPremiumMessage": "ہر ہفتے اپنے پاک دن، موڈ کے رجحانات، طلب کا پیٹرن، اور AI کی ذاتی رائے دیکھیں۔",
+  "upgradeToPremium": "پریمیئم پر اپ گریڈ کریں",
+  "couldNotGenerateReport": "اس وقت آپ کی رپورٹ تیار نہیں ہو سکی۔",
+  "tryAgainLower": "دوبارہ کوشش کریں",
+
+  "statSoberDays": "پاک دن",
+  "statAvgMood": "اوسط موڈ",
+  "statCravings": "طلب کا احساس",
+  "statMoneySaved": "بچائے گئے پیسے",
+  "coachFeedback": "کوچ کی رائے",
+  "journalInsights": "جریدے کی بصیرت",
+
+  "next": "آگے",
+
+  "question1Title": "آپ کا ہدف کیا ہے؟",
+  "question1Subtitle": "وہ ہدف منتخب کریں جو آپ کے لیے\nسب سے زیادہ اہم ہے",
+  "goalQuitCompletely": "مکمل طور پر چھوڑنا",
+  "goalReduceDrinking": "پینا کم کرنا",
+  "goalTakeABreak": "کچھ عرصے کا وقفہ لینا",
+  "goalBuildHealthierHabits": "صحت مند عادتیں اپنا نا",
+
+  "question3Title": "ہمیں اپنے معمولات کے\nبارے میں بتائیں",
+  "drinksPerWeek": "فی ہفتہ ڈرنکس",
+  "moneySpentPerWeek": "فی ہفتہ خرچ کی رقم",
+  "drinkingLevel": "پینے کی سطح",
+  "triggersLabel": "محرکات (Triggers)",
+  "levelSocial": "سماجی",
+  "levelRegular": "باقاعدہ",
+  "levelHeavy": "زیادہ",
+  "levelDependent": "منحصر/عادی",
+  "triggerStress": "تناؤ",
+  "triggerLoneliness": "تنہائی",
+  "triggerHabit": "عادت",
+  "triggerSadness": "وداسی",
+  "triggerAnger": "غصہ",
+  "triggerBoredom": "بوریت",
+  "triggerSocialPressure": "سماجی دباؤ",
+  "triggerCelebration": "جشن",
+  "triggerSleepProblems": "نیند کے مسائل",
+  "triggerWorkPressure": "کام کا دباؤ",
+
+  "question4Title": "آپ تبدیلی کیوں چاہتے ہیں؟",
+  "question4Subtitle": "آپ کی وجہ آپ کو متحرک رکھنے میں مدد کرے گی۔",
+  "reasonImproveHealth": "صحت کو بہتر بنانا",
+  "reasonSaveMoney": "پیسے بچانا",
+  "reasonFamily": "خاندان کے لیے",
+  "reasonBetterSleep": "بہتر نیند",
+  "reasonMentalClarity": "ذہنی شفافیت",
+  "reasonFitness": "فٹنس",
+  "reasonSelfRespect": "خود داری",
+  "reasonCareer": "کیریئر",
+
+  "milestoneUnlockedLabel": "سنگ میل حاصل ہو گیا",
+  "incredibleNamePrefix": "زبردست، {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} کی بچت",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} ڈرنکس سے پرہیز",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "میرا سنگ میل شیئر کریں",
+  "milestoneImageShareError": "سنگ میل کی تصویر نہیں بن سکی۔ براہ کرم دوبارہ کوشش کریں۔",
+
+  "dailyCheckInTitle": "روزانہ کا جائزہ",
+  "howAreYouFeelingToday": "آج آپ کیسا محسوس کر رہے ہیں؟",
+  "honestAnswerHelp": "آپ کا سچا جواب ہمیں آپ کی بہتر مدد کرنے میں مدد دیتا ہے",
+  "didYouDrinkToday": "کیا آپ نے آج شراب پی؟",
+  "noLabel": "نہیں",
+  "yesLabel": "ہاں",
+  "cravingLevelNow": "اس وقت طلب کی سطح کیا ہے؟",
+  "anythingOnMind": "کیا ذہن میں کوئی بات ہے؟",
+  "optionalLabel": "(اختیاری)",
+  "dailyNoteHint": "اپنے دن، محرکات یا کامیابیوں کے بارے میں لکھیں...",
+  "alreadyCheckedInToday": "آج کا جائزہ مکمل ہو چکا ہے",
+  "saveCheckIn": "جائزہ محفوظ کریں",
+  "checkInsHelpTrack": "روزانہ کا جائزہ وقت کے ساتھ آپ کی پیشرفت کو ٹریک کرنے میں مدد کرتا ہے",
+  "alreadyCompletedTodayCheckIn": "آپ آج کا جائزہ پہلے ہی مکمل کر چکے ہیں۔",
+  "pleaseAnswerBothQuestions": "براہ کرم پہلے اوپر دیے گئے دونوں سوالات کے جواب دیں",
+  "checkInSaved": "جائزہ محفوظ ہو گیا",
+  "cravingNone": "بالکل نہیں",
+  "cravingLow": "کم",
+  "cravingMedium": "درمیانی",
+  "cravingStrong": "شدید",
+  "moodBad": "خراب",
+  "moodLow": "کمزور",
+  "moodOkay": "مناسب",
+  "moodGood": "اچھا",
+  "moodGreat": "بہت اچھا",
+
+  "sosSupportTitle": "SOS مدد",
+  "notAloneMessage": "آپ اکیلے نہیں ہیں، {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "طلب کے لمحے گزر جاتے ہیں۔ اس وقت پر قابو پانے کے لیے نیچے سے کچھ منتخب کریں۔",
+  "breathingExercise": "سانس کی مشق",
+  "breathingExerciseSubtitle": "رہنمائی کے ساتھ 4-7-8 تکنیک، 2 منٹ",
+  "rideTheWave": "طلب کی لہر پر قابو پائیں",
+  "rideTheWaveSubtitle": "15 منٹ کا ٹائمر — طلب ہمیشہ ختم ہو جاتی ہے",
+  "copingTips": "قابو پانے کی تجاویز",
+  "copingTipsSubtitle": "آپ کے محرکات کے مطابق ذاتی حکمت عملی",
+  "talkToAiCoach": "AI کوچ سے بات کریں",
+  "talkToAiCoachSubtitle": "اپنے ریکوری کے ساتھی سے چیٹ کریں",
+  "callSomeone": "کسی کو کال کریں",
+  "callSomeoneSubtitle": "اپنے قابل اعتماد فرد سے رابطہ کریں",
+  "contactsPermissionNeeded": "رابطے کو کال کرنے کے لیے کانٹیکٹس کی اجازت ضروری ہے۔",
+  "beatenCravingsPrefix": "آپ پہلے بھی ",
+  "beatenCravingsCount": "{count} بار",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " طلب کو شکست دے چکے ہیں۔ آپ یہ دوبارہ کر سکتے ہیں۔",
+
+  "tellUsAboutYourself": "ہمیں اپنے بارے میں بتائیں",
+  "detailsSubtitle": "یہ معلومات آپ کے ریکوری کے سفر کو ذاتی بنانے اور درست بصیرت فراہم کرنے میں ہماری مدد کرتی ہے۔",
+  "nameLabel": "نام",
+  "nameHint": "مثلاً، علی خان",
+  "ageLabel": "عمر",
+  "ageHint": "مثلاً، 32",
+  "sexAssignedAtBirth": "پیدائشی جنس",
+  "sexFemale": "خاتون",
+  "sexMale": "مرد",
+  "heightLabel": "قد",
+  "weightLabel": "وزن",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "روزانہ کی حد ختم ہو گئی",
+  "dailyLimitReachedMessage": "آپ نے آج کے تمام {limit} مفت پیغامات استعمال کر لیے ہیں۔ نامحدود کوچ چیٹ کے لیے پریمیئم پر اپ گریڈ کریں۔",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "میں اس وقت رابطہ قائم نہیں کر سکا۔ براہ کرم کچھ دیر بعد دوبارہ کوشش کریں۔",
+  "clearConversationTitle": "گفتگو صاف کریں؟",
+  "clearConversationMessage": "یہ آپ کی کوچ چیٹ کی ہسٹری کو مستقل طور پر ہٹا دے گا۔",
+  "clearLabel": "صاف کریں",
+  "recoveryCoachTitle": "ریکوری کوچ",
+  "onlineLabel": "آن لائن",
+  "clearConversationMenuItem": "گفتگو صاف کریں",
+  "chatGreeting": "سلام {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "آپ اپنے سفر کے {days} ویں دن پر ہیں۔ جب بھی آپ بات کرنا چاہیں میں موجود ہوں۔",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "فوری سوالات",
+  "promptCravingLabel": "شدید طلب ہو رہی ہے",
+  "promptCravingSubtitle": "فوری طور پر حواس بحال کریں",
+  "promptMotivationLabel": "حوصلہ افزائی کی ضرورت ہے",
+  "promptMotivationSubtitle": "مشکل وقت میں ہمت",
+  "promptSocialLabel": "سماجی صورتحال",
+  "promptSocialSubtitle": "کسی تقریب کا سامنا کریں",
+  "promptSlippedLabel": "مجھ سے غلطی ہو گئی",
+  "promptSlippedSubtitle": "کوئی تنقید نہیں، صرف سپورٹ",
+  "typeMessageHint": "پیغام تحریر کریں...",
+
+  "editProfileTitle": "پروفائل ایڈٹ کریں",
+  "couldNotSaveProfile": "پروفائل محفوظ نہیں ہو سکی: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "قد (سینٹی میٹر)",
+  "weightKgLabel": "وزن (کلوگرام)",
+  "saveChangesLabel": "تبدیلیاں محفوظ کریں",
+
+  "premiumBadgeLabel": "پریمیئم",
+  "featureAdvancedInsights": "تفصیلی بصیرت اور اعداد و شمار",
+  "featureUnlimitedJournal": "نامحدود جریدے کے اندراجات",
+  "featureUnlimitedChat": "AI کوچ کے ساتھ نامحدود چیٹ",
+  "featureCommunityGroups": "خصوصی کمیونٹی گروپس",
+  "featurePrioritySupport": "ترجیحی ماہرین کی سپورٹ",
+  "featureThemePacks": "کسٹم تھیم بکس",
+  "featureDataExport": "ڈیٹا ایکسپورٹ",
+  "featureAdFree": "اشتہارات سے پاک تجربہ",
+  "premiumMemberTitle": "آپ پریمیئم ممبر ہیں",
+  "unlockFullRecoveryTitle": "اپنے مکمل ریکوری کے تجربے کو\nانلاک کریں",
+  "premiumMemberSubtitle": "اپنے ریکوری کے سفر کو سپورٹ کرنے کا شکریہ — نیچے دی گئی تمام پریمیئم خصوصیات انلاک ہیں۔",
+  "premiumJoinSubtitle": "ہزاروں افراد کی کمیونٹی میں شامل ہوں جو ہمارے پریمیئم ٹولز اور ذاتی سپورٹ کے ساتھ اپنی بحالی کو تیز کر رہے ہیں۔",
+  "monthlyPlanLabel": "ماہانہ",
+  "perMonthSuffix": "/ماہ",
+  "cancelAnytimeLabel": "کسی بھی وقت منسوخ کریں",
+  "yearlyPlanLabel": "سالانہ",
+  "billedAnnuallyLabel": "سالانہ بل {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "بہترین قیمت",
+  "alreadyPremiumLabel": "آپ پریمیئم پر ہیں ✓",
+  "startPremiumLabel": "پریمیئم شروع کریں",
+  "manageSubscriptionLabel": "اپنی ڈیوائس کی سبسکرپشن سیٹنگز سے انتظام یا منسوخ کریں۔",
+  "noCommitmentLabel": "کوئی پابندی نہیں۔ کسی بھی وقت منسوخ کریں۔",
+  "continueFreePlanLabel": "مفت پلان کے ساتھ جاری رکھیں",
+  "backToHomeLabel": "ہوم پر واپس جائیں",
+  "cancelPremiumLabel": "پریمیئم منسوخ کریں",
+  "cancelPremiumTitle": "پریمیئم منسوخ کریں؟",
+  "cancelPremiumMessage": "آپ نامحدود جریدے کے اندراجات، کوچ چیٹ، اعداد و شمار اور ہفتہ وار رپورٹس تک رسائی کھو دیں گے۔ آپ کسی بھی وقت دوبارہ سبسکرائب کر سکتے ہیں۔",
+  "keepPremiumLabel": "پریمیئم رکھیں",
+  "nowPremiumMessage": "آپ اب پریمیئم ممبر ہیں! اپنے مکمل ریکوری کے تجربے کا لطف اٹھائیں۔",
+  "premiumCancelledMessage": "پریمیئم منسوخ کر دیا گیا ہے۔ آپ واپس مفت پلان پر ہیں۔",
+  "termsOfUseLabel": "استعمال کی شرائط",
+
+  "navHomeLabel": "ہوم",
+  "navStatsLabel": "اعداد و شمار",
+  "navJournalLabel": "جریدہ",
+  "navBadgesLabel": "بیجز",
+  "navProfileLabel": "پروفائل",
+
+  "recoveryGoalsTitle": "ریکوری کے اہداف",
+  "goalLabel": "ہدف",
+  "drinksPerWeekLabel": "فی ہفتہ ڈرنکس",
+  "quitReasonsLabel": "چھوڑنے کی وجوہات",
+  "quitReasonsHelperText": "متعدد وجوہات کو کاما (،) سے الگ کریں۔",
+  "couldNotSaveRecoveryGoals": "ریکوری کے اہداف محفوظ نہیں ہو سکے: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "مثلاً، مکمل پرہیز",
+  "drinksPerWeekHint": "مثلاً، 12",
+  "quitReasonsHint": "مثلاً، صحت، خاندان، پیسہ",
+
+  "todaysPrompt": "آج کا سوال",
+  "defaultJournalPrompt": "آج آپ کے ذہن میں کیا ہے؟",
+  "aiJournalInsights": "AI جریدے کی بصیرت",
+  "unlockJournalInsightsMessage": "اپنے جریدے کے اندراجات سے ہفتہ وار پیٹرنز، موڈ کے رجحانات اور ذاتی بصیرت انلاک کریں۔",
+  "notEnoughJournalData": "ابھی کافی ڈیٹا موجود نہیں ہے — اس ہفتے چند تحریریں لکھیں اور دوبارہ چیک کریں۔",
+  "openEntry": "کھولیں",
+  "editEntry": "ایڈٹ کریں",
+  "deleteEntry": "مٹائیں",
+  "searchJournalEntries": "تحریریں تلاش کریں...",
+  "writeNewEntry": "نئی تحریر لکھیں",
+  "recentEntries": "حالیہ تحریریں",
+  "noJournalEntriesYet": "ابھی تک جریدے میں کوئی تحریر نہیں ہے — اوپر اپنا پہلا خیال لکھیں۔",
+  "noEntriesMatchFilters": "آپ کے فلٹرز سے کوئی تحریر مطابقت نہیں رکھتی۔",
+
+  "weeklyJournalLimitReached": "ہفتہ وار حد ختم ہو گئی",
+  "weeklyJournalLimitMessage": "آپ نے اس ہفتے کے تمام {limit} مفت اندراجات استعمال کر لیے ہیں۔ نامحدود اندراجات کے لیے پریمیئم پر اپ گریڈ کریں۔",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "نئی تحریر",
+  "writeYourThoughts": "اپنے خیالات لکھیں",
+  "saveEntry": "تحریر محفوظ کریں",
+  "freeEntriesLeftThisWeek": "اس ہفتے {limit} میں سے {remaining} مفت تحریریں باقی ہیں",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "تحریر مٹائیں؟",
+  "deleteEntryConfirmation": "یہ تحریر مستقل طور پر مٹا دی جائے گی۔ اس عمل کو واپس نہیں لایا جا سکتا۔",
+
+  "journalEntryNotFound": "تحریر نہیں ملی",
+  "journalEntryMayHaveBeenDeleted": "یہ تحریر شاید مٹا دی گئی ہے۔",
+  "goBack": "واپس جائیں",
+  "journalEntryTitle": "جریدے کی تحریر",
+
+  "moodStruggling": "مشکل میں",
+  "moodUnwell": "طبیعت خراب",
+  "moodNeutral": "درمیانہ",
+
+  "whatHappenedToday": "آج کیا ہوا؟",
+  "trigger": "محرک (Trigger)",
+  "whatHelped": "کس چیز سے مدد ملی",
+  "whatIllTryNextTime": "اگلی بار میں کیا کوشش کروں گا/گی",
+  "journalPrivacyMessage": "آپ کا خیال نجی ہے اور آپ کے جریدے میں محفوظ ہے۔",
+
+  "unlocked": "انلاک ہو گیا",
+  "daysLeft": "{count, plural, one{{count} دن باقی} other{{count} دن باقی}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} دن",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "پہلا\nخود جائزہ",
+  "oneJournalEntry": "1 جریدے کا اندراج",
+  "openBook": "کھلی کتاب",
+  "tenJournalEntries": "10 جریدے کے اندراجات",
+  "dedicatedWriter": "پختہ\nمصنف",
+  "thirtyJournalEntries": "30 جریدے کے اندراجات",
+  "firstConversation": "پہلی\nگفتگو",
+  "oneAiCoachChat": "1 AI کوچ چیٹ",
+  "keepTalking": "بات جاری رکھیں",
+  "fiveConversations": "5 گفتگوئیں",
+  "coachCompanion": "کوچ کا\nساتھی",
+  "twentyConversations": "20 گفتگوئیں",
+  "checkInHabit": "جائزے کی\nعادت",
+  "sevenCheckIns": "7 روزانہ جائزے",
+  "consistencyPro": "تسلسل کے\nماہر",
+  "thirtyCheckIns": "30 روزانہ جائزے",
+  "dedicatedJourney": "مخلصانہ\nسفر",
+  "hundredCheckIns": "100 روزانہ جائزے",
+  "goalGetter": "ہدف حاصل کنندہ",
+  "threeGoalsCompleted": "3 اہداف مکمل",
+  "goalAchiever": "اہداف کے\nفاتح",
+  "tenGoalsCompleted": "10 اہداف مکمل",
+  "firstSavings": "پہلی\nبچت",
+  "fiveHundredSaved": "$500 بچائے",
+  "smartSaver": "سمارٹ سیور",
+  "oneThousandSaved": "$1,000 بچائے",
+  "bigSaver": "بڑے بچت کنندہ",
+  "fiveThousandSaved": "$5,000 بچائے",
+  "currencyProgress": "${target} میں سے ${current}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{target} میں سے {current}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "جاری رکھیں — آپ کا پہلا سنگ میل آپ کا منتظر ہے!",
+  "badgesAndMilestones": "بیجز اور سنگ میل",
+  "yourMilestoneJourney": "آپ کا سنگ میل کا سفر",
+  "milestonesAchieved": "{count, plural, one{{count} سنگ میل حاصل ہوا۔\ndیکھنے کے لیے ٹیپ کریں} other{{count} سنگ میل حاصل ہوئے۔\ndیکھنے کے لیے ٹیپ کریں}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "آپ نے اپنے سفر میں {total} میں سے {unlocked} سنگ میل انلاک کر لیے ہیں۔",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "باقی",
+  "complete": "مکمل",
+  "nextMilestone": "اگلا سنگ میل",
+  "percentThere": "{subtitle} · {percent}% مکمل",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "پاکیزگی کے سنگ میل",
+  "journeyBadges": "سفر کے بیجز",
+  "bronze": "کانسی (BRONZE)",
+  "silver": "چاندی (SILVER)",
+  "gold": "سونا (GOLD)",
+  "platinum": "پلیٹینم (PLATINUM)",
+  "diamond": "ہیرا (DIAMOND)",
+
+  "analyzingYourJourney": "آپ کے سفر کا تجزیہ کیا جا رہا ہے...",
+  "aiCreatingSanctuary": "ہمارا AI آپ کا ذاتی پرسکون گوشہ تیار کر رہا ہے۔",
+  "understandingHabits": "عادتوں کو سمجھا جا رہا ہے...",
+  "calculatingBaseline": "آپ کی شروعاتی سطح کا حساب لگایا جا رہا ہے...",
+  "personalizingPlan": "آپ کا پلان ذاتی نوعیت کا بنایا جا رہا ہے...",
+  "finalizingSanctuary": "آپ کا گوشہ حتمی شکل پا رہا ہے...",
+  "creatingYourPlan": "آپ کا پلان تیار کیا جا رہا ہے...",
+  "personalizedPlanError": "ہم آپ کا ذاتی پلان تیار نہیں کر سکے۔ براہ کرم دوبارہ کوشش کریں۔",
+  "retry": "دوبارہ کوشش کریں",
+
+  "breathInhale": "سانس اندر کھینچیں",
+  "breathHold": "سانس روکیں",
+  "breathExhale": "سانس باہر نکالیں",
+  "breathDone": "مکمل",
+  "breathGreatJob": "بہت عمدہ!",
+  "breathSessionsToday": "{count, plural, one{آج {count} سیشن} other{آج {count} سیشنز}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "مشق ختم کریں",
+  "done": "مکمل",
+
+  "noCopingTipsYet": "ابھی کوئی تجاویز نہیں ہیں",
+  "copingStrategiesWillAppear": "آپ کا ریکوری پلان مکمل ہونے کے بعد قابو پانے کی ذاتی حکمت عملی یہاں ظاہر ہوگی۔",
+  "strategiesTailoredToTriggers": "آپ کے محرکات کے مطابق حکمت عملی",
+
+  "cravingsPeakAndPass": "طلب کا عروج ہوتا ہے\nاور پھر ختم ہو جاتی ہے",
+  "rideTheWaveDescription": "زیادہ تر طلب کے لمحے 15 منٹ میں گزر جاتے ہیں۔ آپ کو اس پر عمل کرنے کی ضرورت نہیں — بس ہمارے ساتھ صبر رکھیں۔",
+  "stayWithIt": "صبر سے کام لیں",
+  "youMadeIt": "آپ نے کر دکھایا",
+  "readyWhenYouAre": "جب آپ تیار ہوں",
+  "rideItAgain": "دوبارہ کوشش کریں",
+  "start15MinuteTimer": "15 منٹ کا ٹائمر شروع کریں",
+  "rideTheWaveCompletedMessage": "آپ نے اس مشکل لمحے پر قابو پا لیا۔ یہ حقیقی طاقت ہے۔ 💪",
+
+  "myProgress": "میری پیشرفت",
+  "weekLabel": "ہفتہ",
+  "monthLabel": "مہینہ",
+  "allLabel": "تمام",
+  "daysSoberStatLabel": "پاک\nدن",
+  "savedStatLabel": "بچت",
+  "avoidedStatLabel": "پرہیز",
+  "moodTrends": "موڈ کے رجحانات",
+  "cravingsPattern": "طلب کے پیٹرنز",
+  "unlockLabel": "انلاک کریں",
+  "unlockFullStats": "مکمل اعداد و شمار انلاک کریں",
+  "premiumStatsMessage": "موڈ کے رجحانات اور طلب کے پیٹرنز پریمیئم خصوصیات ہیں۔ تمام اعداد و شمار دیکھنے کے لیے اپ گریڈ کریں۔",
+  "healthMilestonesWillAppear": "آپ کی صحت کے سنگ میل یہاں ظاہر ہوں گے۔",
+  "healthMilestones": "صحت کے سنگ میل",
+  "dayNumber": "دن {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "پاک",
+  "slipLabel": "غلطی",
+  "noDataLabel": "کوئی ڈیٹا نہیں",
+
+  "milestone24Hours": "24 گھنٹے",
+  "milestoneOneWeek": "ایک ہفتہ",
+  "milestoneOneMonth": "ایک مہینہ",
+  "milestoneThreeMonths": "تین مہینے",
+  "milestoneSixMonths": "چھ مہینے",
+  "milestoneOneYear": "ایک سال",
+  "milestoneDayCount": "دن {day} کا سنگ میل",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

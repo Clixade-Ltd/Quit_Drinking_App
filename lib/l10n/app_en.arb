@@ -1,0 +1,578 @@
+{
+  "@@locale": "en",
+
+  "skip": "Skip",
+  "continueButton": "Continue",
+  "getStarted": "Get Started",
+
+  "onboardingTitle1": "Take Control of Your Life",
+  "onboardingSubtitle1": "Track your journey, celebrate every achievement, and become healthier one day at a time.",
+  "onboardingTitle2": "Your AI Recovery Companion",
+  "onboardingSubtitle2": "Receive personalized guidance, healthy habits, motivation reminders, and progress reports designed around your journey.",
+
+  "goodMorning": "Good Morning",
+  "goodAfternoon": "Good Afternoon",
+  "goodEvening": "Good Evening",
+  "goodNight": "Good Night",
+
+  "embracingClarity": "Embracing clarity, one day at a time.",
+  "streakLabel": "STREAK",
+  "goalLabel": "GOAL",
+  "daysStreak": "{count, plural, one{{count} Day} other{{count} Days}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium Plan",
+  "premiumPlanSubtitle": "Unlock your full recovery experience",
+
+  "accountAndSupport": "ACCOUNT & SUPPORT",
+  "privacyPolicy": "Privacy Policy",
+  "privacyPolicySubtitle": "Manage data sharing and account security",
+  "termsOfService": "Terms of Service",
+  "termsOfServiceSubtitle": "FAQs, contact us, and resources",
+  "shareApp": "Share App",
+  "shareAppSubtitle": "Share app with your friends",
+  "resetData": "Reset Data",
+  "resetDataSubtitle": "Erase everything saved on this device",
+
+  "resetAllDataTitle": "Reset all data?",
+  "resetAllDataMessage": "This clears everything saved on this device — profile, journal entries, and progress — and cannot be undone.",
+  "cancel": "Cancel",
+  "reset": "Reset",
+
+  "chooseFromGallery": "Choose from Gallery",
+  "takePhoto": "Take Photo",
+  "removePhoto": "Remove Photo",
+  "couldNotUpdatePhoto": "Could not update photo: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Could not remove photo: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "That photo is too large even after compression — please try a different one.",
+
+  "unableToLoadProfile": "Unable to load your profile",
+  "pleaseTryAgain": "Please try again.",
+  "tryAgain": "Try Again",
+  "profileNotFound": "Profile not found",
+  "refresh": "Refresh",
+  "noProfileDataFound": "No profile data found on this device yet.",
+
+  "couldNotResetData": "Could not reset data: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Home",
+  "navStats": "Stats",
+  "navJournal": "Journal",
+  "navBadges": "Badges",
+  "navProfile": "Profile",
+
+  "featureComingSoon": "{feature} will be available soon.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Sober Flow",
+  "splashSubtitle": "Take the first step towards an\nAlcohol free life",
+  "preparingJourney": "Preparing your\njourney",
+
+  "taskMorningMeditation": "Morning Meditation (10m)",
+  "taskReadChapter": "Read Chapter 4 of \"The Sober Diaries\"",
+  "taskEveningJournal": "Evening Gratitude Journal",
+
+  "close": "Close",
+  "youAreDoingGreat": "You're doing great!",
+  "shareMilestone": "Share Milestone",
+  "shareMilestoneMessage": "I'm on day {days} of my recovery journey! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "My recovery milestone",
+
+  "weeklyReportReadyTitle": "Your weekly report is ready",
+  "weeklyReportReadySubtitle": "Tap to see how your week went",
+
+  "howAreYouFeeling": "How are you feeling?",
+  "moodTough": "Tough",
+  "moodOkay": "Okay",
+  "moodGood": "Good",
+
+  "moneySaved": "Money Saved",
+  "caloriesSaved": "Calories Saved",
+  "healthScore": "Health Score",
+  "drinksAvoided": "Drinks Avoided",
+  "estimated": "Estimated",
+  "aiGenerated": "AI generated",
+  "daysCapsLabel": "DAYS",
+
+  "todaysMotivation": "Today's Motivation",
+  "defaultMotivationQuote": "You've successfully maintained your commitment. Keep riding the wave of positive change.",
+
+  "talkToCoach": "Talk to coach",
+  "havingACraving": "I'm Having a Craving",
+
+  "unlockWeeklyReportsTitle": "Unlock weekly reports",
+  "unlockWeeklyReportsMessage": "See your sober days, mood trends, and personalized AI feedback every week. Upgrade to Premium to unlock.",
+  "maybeLater": "Maybe later",
+  "upgrade": "Upgrade",
+
+  "weeklyReportTitle": "Weekly Report",
+  "weeklyReportsPremiumTitle": "Weekly reports are a Premium feature",
+  "weeklyReportsPremiumMessage": "See your sober days, mood trends, cravings, and personalized AI feedback every week.",
+  "upgradeToPremium": "Upgrade to Premium",
+  "couldNotGenerateReport": "Couldn't generate your report right now.",
+  "tryAgainLower": "Try again",
+
+  "statSoberDays": "Sober days",
+  "statAvgMood": "Avg mood",
+  "statCravings": "Cravings",
+  "statMoneySaved": "Money saved",
+  "coachFeedback": "Coach feedback",
+  "journalInsights": "Journal insights",
+
+    "next": "Next",
+
+    "question1Title": "What is your goal",
+    "question1Subtitle": "Choose the goal that matter\nmost to you",
+    "goalQuitCompletely": "Quit Completely",
+    "goalReduceDrinking": "Reduce drinking",
+    "goalTakeABreak": "Take a break",
+    "goalBuildHealthierHabits": "Build healthier habits",
+
+    "question3Title": "Tell us about your\nroutine",
+    "drinksPerWeek": "Drinks per week",
+    "moneySpentPerWeek": "Money spent per week",
+    "drinkingLevel": "Drinking level",
+    "triggersLabel": "Triggers",
+    "levelSocial": "Social",
+    "levelRegular": "Regular",
+    "levelHeavy": "Heavy",
+    "levelDependent": "Dependent",
+    "triggerStress": "Stress",
+    "triggerLoneliness": "Loneliness",
+    "triggerHabit": "Habit",
+    "triggerSadness": "Sadness",
+    "triggerAnger": "Anger",
+    "triggerBoredom": "Boredom",
+    "triggerSocialPressure": "Social pressure",
+    "triggerCelebration": "Celebration",
+    "triggerSleepProblems": "Sleep problems",
+    "triggerWorkPressure": "Work pressure",
+
+    "question4Title": "Why do you want to change?",
+    "question4Subtitle": "Your reason will help to motivate you.",
+    "reasonImproveHealth": "Improve My Health",
+    "reasonSaveMoney": "Save Money",
+    "reasonFamily": "Family",
+    "reasonBetterSleep": "Better Sleep",
+    "reasonMentalClarity": "Mental Clarity",
+    "reasonFitness": "Fitness",
+    "reasonSelfRespect": "Self Respect",
+    "reasonCareer": "Career",
+
+      "milestoneUnlockedLabel": "MILESTONE UNLOCKED",
+      "incredibleNamePrefix": "Incredible, {name}!",
+      "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+      "amountSavedLabel": "{amount} saved",
+      "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+      "drinksAvoidedLabel": "{count} avoided",
+      "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+      "shareMyMilestone": "Share my milestone",
+      "milestoneImageShareError": "Couldn't create the milestone image. Please try again.",
+
+      "dailyCheckInTitle": "Daily Check-in",
+      "howAreYouFeelingToday": "How are you feeling today?",
+      "honestAnswerHelp": "Your honest answer helps us support you better",
+      "didYouDrinkToday": "Did you drink today?",
+      "noLabel": "No",
+      "yesLabel": "Yes",
+      "cravingLevelNow": "Craving level right now?",
+      "anythingOnMind": "Anything on your mind?",
+      "optionalLabel": "(optional)",
+      "dailyNoteHint": "Write about your day, triggers, wins...",
+      "alreadyCheckedInToday": "Already checked in today",
+      "saveCheckIn": "Save check-in",
+      "checkInsHelpTrack": "Check-ins help track your progress over time",
+      "alreadyCompletedTodayCheckIn": "You have already completed today's check-in.",
+      "pleaseAnswerBothQuestions": "Please answer both questions above first",
+      "checkInSaved": "Check-in saved",
+      "cravingNone": "None",
+      "cravingLow": "Low",
+      "cravingMedium": "Medium",
+      "cravingStrong": "Strong",
+      "moodBad": "Bad",
+      "moodLow": "Low",
+      "moodOkay": "Okay",
+      "moodGood": "Good",
+      "moodGreat": "Great",
+
+      "sosSupportTitle": "SOS support",
+      "notAloneMessage": "You're not alone, {name}",
+      "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+      "cravingsPassMessage": "Cravings pass. Pick something below to help you through this moment.",
+      "breathingExercise": "Breathing exercise",
+      "breathingExerciseSubtitle": "Guided 4-7-8 technique, 2 minutes",
+      "rideTheWave": "Ride the wave",
+      "rideTheWaveSubtitle": "15 min timer — cravings always pass",
+      "copingTips": "Coping tips",
+      "copingTipsSubtitle": "Personalized strategies for your triggers",
+      "talkToAiCoach": "Talk to AI coach",
+      "talkToAiCoachSubtitle": "Chat with your recovery companion",
+      "callSomeone": "Call someone",
+      "callSomeoneSubtitle": "Reach your trusted contact",
+      "contactsPermissionNeeded": "Contacts permission is needed to call a contact.",
+      "beatenCravingsPrefix": "You've beaten cravings ",
+      "beatenCravingsCount": "{count} times",
+      "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+      "beatenCravingsSuffix": " before. You can do it again.",
+
+      "tellUsAboutYourself": "Tell Us About Yourself",
+      "detailsSubtitle": "This information helps us personalize your recovery journey and provide accurate insights.",
+      "nameLabel": "Name",
+      "nameHint": "e.g., Alex Rivers",
+      "ageLabel": "Age",
+      "ageHint": "e.g., 32",
+      "sexAssignedAtBirth": "Sex assigned at birth",
+      "sexFemale": "Female",
+      "sexMale": "Male",
+      "heightLabel": "Height",
+      "weightLabel": "Weight",
+      "heightHint": "170",
+      "weightHint": "70",
+
+    "dailyLimitReachedTitle": "Daily limit reached",
+            "dailyLimitReachedMessage": "You've used all {limit} free messages today. Upgrade to Premium for unlimited coach chat.",
+            "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+            "coachConnectError": "I couldn't connect right now. Please try again in a moment.",
+            "clearConversationTitle": "Clear conversation?",
+            "clearConversationMessage": "This will permanently remove your coach chat history.",
+            "clearLabel": "Clear",
+            "recoveryCoachTitle": "Recovery coach",
+            "onlineLabel": "Online",
+            "clearConversationMenuItem": "Clear conversation",
+            "chatGreeting": "Hi {name} 👋",
+            "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+            "chatDaysIntro": "You're on day {days} of your journey. I'm here whenever you want to talk things through.",
+            "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+            "quickPromptsLabel": "QUICK PROMPTS",
+            "promptCravingLabel": "Having a craving",
+            "promptCravingSubtitle": "Get grounded, fast",
+            "promptMotivationLabel": "Need motivation",
+            "promptMotivationSubtitle": "A boost when it's tough",
+            "promptSocialLabel": "Social situation",
+            "promptSocialSubtitle": "Navigate a gathering",
+            "promptSlippedLabel": "I slipped",
+            "promptSlippedSubtitle": "No judgment, just support",
+            "typeMessageHint": "Type a message...",
+
+            "editProfileTitle": "Edit Profile",
+            "couldNotSaveProfile": "Could not save profile: {error}",
+            "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+            "heightCmLabel": "Height (cm)",
+            "weightKgLabel": "Weight (kg)",
+            "saveChangesLabel": "Save Changes",
+
+            "premiumBadgeLabel": "PREMIUM",
+            "featureAdvancedInsights": "Advanced Insights & Analytics",
+            "featureUnlimitedJournal": "Unlimited Journal Entries",
+            "featureUnlimitedChat": "Unlimited Chat with AI Coach",
+            "featureCommunityGroups": "Exclusive Community Groups",
+            "featurePrioritySupport": "Priority Expert Support",
+            "featureThemePacks": "Custom Theme Packs",
+            "featureDataExport": "Data Export",
+            "featureAdFree": "Ad-Free Experience",
+            "premiumMemberTitle": "You're a Premium Member",
+            "unlockFullRecoveryTitle": "Unlock Your Full Recovery\nExperience",
+            "premiumMemberSubtitle": "Thanks for supporting your recovery journey — every premium feature below is unlocked.",
+            "premiumJoinSubtitle": "Join a community of thousands who are\naccelerating their healing journey with our\npremium tools and personalized support.",
+            "monthlyPlanLabel": "Monthly",
+            "perMonthSuffix": "/mo",
+            "cancelAnytimeLabel": "Cancel anytime",
+            "yearlyPlanLabel": "Yearly",
+            "billedAnnuallyLabel": "Billed annually at {amount}",
+            "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+            "bestValueLabel": "Best Value",
+            "alreadyPremiumLabel": "You're Premium ✓",
+            "startPremiumLabel": "Start Premium",
+            "manageSubscriptionLabel": "Manage or cancel from your device's subscription settings.",
+            "noCommitmentLabel": "No commitment. Cancel anytime.",
+            "continueFreePlanLabel": "Continue with Free Plan",
+            "backToHomeLabel": "Back to Home",
+            "cancelPremiumLabel": "Cancel Premium",
+            "cancelPremiumTitle": "Cancel Premium?",
+            "cancelPremiumMessage": "You'll lose access to unlimited journal entries, unlimited coach chat, stats insights, and weekly reports. You can re-subscribe anytime.",
+            "keepPremiumLabel": "Keep Premium",
+            "nowPremiumMessage": "You're now Premium! Enjoy your full recovery experience.",
+            "premiumCancelledMessage": "Premium cancelled. You're back on the free plan.",
+            "termsOfUseLabel": "Terms of Use",
+
+            "navHomeLabel": "Home",
+            "navStatsLabel": "Stats",
+            "navJournalLabel": "Journal",
+            "navBadgesLabel": "Badges",
+            "navProfileLabel": "Profile",
+
+         "recoveryGoalsTitle": "Recovery Goals",
+         "goalLabel": "Goal",
+         "drinksPerWeekLabel": "Drinks per week",
+         "quitReasonsLabel": "Quit reasons",
+         "quitReasonsHelperText": "Separate multiple reasons with a comma.",
+         "couldNotSaveRecoveryGoals": "Could not save recovery goals: {error}",
+         "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+           "goalHint": "e.g., Complete Abstinence",
+           "drinksPerWeekHint": "e.g., 12",
+           "quitReasonsHint": "e.g., Health, Family, Money",
+
+
+     "todaysPrompt": "Today's prompt",
+      "defaultJournalPrompt": "What's on your mind today?",
+      "aiJournalInsights": "AI journal insights",
+      "unlockJournalInsightsMessage": "Unlock weekly patterns, mood trends, and personalized insights from your journal entries.",
+      "notEnoughJournalData": "Not enough data yet — write a few entries this week and check back.",
+      "openEntry": "Open",
+      "editEntry": "Edit",
+      "deleteEntry": "Delete",
+      "searchJournalEntries": "Search entries...",
+      "writeNewEntry": "Write new entry",
+      "recentEntries": "Recent Entries",
+      "noJournalEntriesYet": "No journal entries yet — write your first reflection above.",
+      "noEntriesMatchFilters": "No entries match your filters.",
+
+     "weeklyJournalLimitReached": "Weekly limit reached",
+     "weeklyJournalLimitMessage": "You've used all {limit} free journal entries this week. Upgrade to Premium for unlimited entries.",
+     "@weeklyJournalLimitMessage": {
+       "placeholders": {
+         "limit": {
+           "type": "int"
+         }
+       }
+     },
+
+     "newEntry": "New entry",
+     "writeYourThoughts": "Write your thoughts",
+     "saveEntry": "Save Entry",
+     "freeEntriesLeftThisWeek": "{remaining} of {limit} free entries left this week",
+     "@freeEntriesLeftThisWeek": {
+       "placeholders": {
+         "remaining": {
+           "type": "String"
+         },
+         "limit": {
+           "type": "String"
+         }
+       }
+     },
+
+     "deleteEntryQuestion": "Delete entry?",
+     "deleteEntryConfirmation": "This entry will be permanently deleted. This can't be undone.",
+
+     "journalEntryNotFound": "Entry not found",
+     "journalEntryMayHaveBeenDeleted": "This journal entry may have been deleted.",
+     "goBack": "Go back",
+     "journalEntryTitle": "Journal Entry",
+
+     "moodStruggling": "Struggling",
+     "moodUnwell": "Unwell",
+     "moodNeutral": "Neutral",
+
+     "whatHappenedToday": "What happened today?",
+     "trigger": "Trigger",
+     "whatHelped": "What helped",
+     "whatIllTryNextTime": "What I'll try next time",
+     "journalPrivacyMessage": "Your reflection is private and saved in your journal.",
+
+    "unlocked": "Unlocked",
+    "daysLeft": "{count} day{count, plural, =1{} other{s}} left",
+    "@daysLeft": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "daysCount": "{count} Days",
+    "@daysCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "firstReflection": "First\nReflection",
+    "oneJournalEntry": "1 Journal Entry",
+    "openBook": "Open Book",
+    "tenJournalEntries": "10 Journal Entries",
+    "dedicatedWriter": "Dedicated\nWriter",
+    "thirtyJournalEntries": "30 Journal Entries",
+    "firstConversation": "First\nConversation",
+    "oneAiCoachChat": "1 AI Coach Chat",
+    "keepTalking": "Keep Talking",
+    "fiveConversations": "5 Conversations",
+    "coachCompanion": "Coach\nCompanion",
+    "twentyConversations": "20 Conversations",
+    "checkInHabit": "Check-In\nHabit",
+    "sevenCheckIns": "7 Check-Ins",
+    "consistencyPro": "Consistency\nPro",
+    "thirtyCheckIns": "30 Check-Ins",
+    "dedicatedJourney": "Dedicated\nJourney",
+    "hundredCheckIns": "100 Check-Ins",
+    "goalGetter": "Goal Getter",
+    "threeGoalsCompleted": "3 Goals Completed",
+    "goalAchiever": "Goal\nAchiever",
+    "tenGoalsCompleted": "10 Goals Completed",
+    "firstSavings": "First\nSavings",
+    "fiveHundredSaved": "$500 Saved",
+    "smartSaver": "Smart Saver",
+    "oneThousandSaved": "$1,000 Saved",
+    "bigSaver": "Big Saver",
+    "fiveThousandSaved": "$5,000 Saved",
+    "currencyProgress": "${current} of ${target}",
+    "@currencyProgress": {
+      "placeholders": {
+        "current": {
+          "type": "String"
+        },
+        "target": {
+          "type": "String"
+        }
+      }
+    },
+    "countProgress": "{current} of {target}",
+    "@countProgress": {
+      "placeholders": {
+        "current": {
+          "type": "int"
+        },
+        "target": {
+          "type": "int"
+        }
+      }
+    },
+    "firstMilestoneWaiting": "Keep going — your first milestone is waiting for you!",
+    "badgesAndMilestones": "Badges & Milestones",
+    "yourMilestoneJourney": "Your Milestone Journey",
+    "milestonesAchieved": "{count} milestone{count, plural, =1{} other{s}} achieved.\nTap to view",
+    "@milestonesAchieved": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "unlockedMilestonesMessage": "You've unlocked {unlocked} of {total} milestones on your journey.",
+    "@unlockedMilestonesMessage": {
+      "placeholders": {
+        "unlocked": {
+          "type": "int"
+        },
+        "total": {
+          "type": "int"
+        }
+      }
+    },
+    "remaining": "Remaining",
+    "complete": "Complete",
+    "nextMilestone": "Next Milestone",
+    "percentThere": "{subtitle} · {percent}% there",
+    "@percentThere": {
+      "placeholders": {
+        "subtitle": {
+          "type": "String"
+        },
+        "percent": {
+          "type": "int"
+        }
+      }
+    },
+    "sobrietyMilestones": "Sobriety Milestones",
+    "journeyBadges": "Journey Badges",
+    "bronze": "BRONZE",
+    "silver": "SILVER",
+    "gold": "GOLD",
+    "platinum": "PLATINUM",
+    "diamond": "DIAMOND",
+
+    "analyzingYourJourney": "Analyzing Your Journey...",
+    "aiCreatingSanctuary": "Our AI is creating your personalized sanctuary.",
+    "understandingHabits": "Understanding habits...",
+    "calculatingBaseline": "Calculating your baseline...",
+    "personalizingPlan": "Personalizing your plan...",
+    "finalizingSanctuary": "Finalizing your sanctuary...",
+    "creatingYourPlan": "Creating your plan...",
+    "personalizedPlanError": "We could not create your personalized plan. Please try again.",
+    "retry": "Retry",
+
+    "breathingExercise": "Breathing Exercise",
+      "breathInhale": "INHALE",
+      "breathHold": "HOLD",
+      "breathExhale": "EXHALE",
+      "breathDone": "DONE",
+      "breathGreatJob": "Great job!",
+      "remaining": "Remaining",
+      "breathSessionsToday": "{count, plural, one{{count} session today} other{{count} sessions today}}",
+      "@breathSessionsToday": {
+        "placeholders": {
+          "count": {
+            "type": "int"
+          }
+        }
+      },
+      "endExercise": "End Exercise",
+      "done": "Done",
+
+      "noCopingTipsYet": "No coping tips yet",
+      "copingStrategiesWillAppear": "Your personalized coping strategies will show up here once your recovery plan finishes generating.",
+      "strategiesTailoredToTriggers": "Strategies tailored to your triggers",
+
+      "rideTheWave": "Ride the Wave",
+      "cravingsPeakAndPass": "Cravings peak\nand pass",
+      "rideTheWaveDescription": "Most cravings pass within 15 minutes. You don't have to act on it — just ride it out with us.",
+      "stayWithIt": "stay with it",
+      "youMadeIt": "you made it",
+      "readyWhenYouAre": "ready when you are",
+      "rideItAgain": "Ride it again",
+      "start15MinuteTimer": "Start 15-Minute Timer",
+      "rideTheWaveCompletedMessage": "You rode the wave. That's real strength. 💪",
+
+      "myProgress": "My Progress",
+      "weekLabel": "Week",
+      "monthLabel": "Month",
+      "allLabel": "All",
+      "daysSoberStatLabel": "Days\nsober",
+      "savedStatLabel": "Saved",
+      "avoidedStatLabel": "Avoided",
+      "moodTrends": "Mood trends",
+      "cravingsPattern": "Cravings pattern",
+      "unlockLabel": "Unlock",
+      "unlockFullStats": "Unlock full stats",
+      "premiumStatsMessage": "Mood trends and craving patterns are Premium features. Upgrade to see your full stats.",
+      "healthMilestonesWillAppear": "Your health milestones will appear here.",
+      "healthMilestones": "Health milestones",
+      "dayNumber": "Day {day}",
+      "@dayNumber": {
+        "placeholders": {
+          "day": {
+            "type": "int"
+          }
+        }
+      },
+      "soberLabel": "Sober",
+      "slipLabel": "Slip",
+      "noDataLabel": "No data",
+
+      "milestone24Hours": "24 Hours",
+      "milestoneOneWeek": "One Week",
+      "milestoneOneMonth": "One Month",
+      "milestoneThreeMonths": "Three Months",
+      "milestoneSixMonths": "Six Months",
+      "milestoneOneYear": "One Year",
+      "milestoneDayCount": "Day {day} Milestone",
+      "@milestoneDayCount": {
+        "placeholders": {
+          "day": {
+            "type": "int"
+          }
+        }
+      },
+
+      "privacyPolicy": "Privacy Policy"
+
+
+}
