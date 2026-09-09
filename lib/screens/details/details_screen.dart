@@ -15,6 +15,12 @@ class DetailsScreen extends StatefulWidget {
 
 class _DetailsScreenState
     extends State<DetailsScreen> {
+
+  final FocusNode _nameFocus = FocusNode();
+  final FocusNode _ageFocus = FocusNode();
+  final FocusNode _heightFocus = FocusNode();
+  final FocusNode _weightFocus = FocusNode();
+
   final TextEditingController
   _nameController =
   TextEditingController();
@@ -292,6 +298,10 @@ class _DetailsScreenState
     _ageController.dispose();
     _heightController.dispose();
     _weightController.dispose();
+    _nameFocus.dispose();
+    _ageFocus.dispose();
+    _heightFocus.dispose();
+    _weightFocus.dispose();
     super.dispose();
   }
 
@@ -381,9 +391,11 @@ class _DetailsScreenState
                     ),
 
                     _buildTextField(
-                      controller:
-                      _nameController,
+                      controller: _nameController,
                       hint: l10n.nameHint,
+                      focusNode: _nameFocus,
+                      textInputAction: TextInputAction.next,
+                      onSubmitted: (_) => FocusScope.of(context).requestFocus(_ageFocus),
                     ),
 
                     const SizedBox(
@@ -397,11 +409,12 @@ class _DetailsScreenState
                     ),
 
                     _buildTextField(
-                      controller:
-                      _ageController,
+                      controller: _ageController,
                       hint: l10n.ageHint,
-                      keyboardType:
-                      TextInputType.number,
+                      keyboardType: TextInputType.number,
+                      focusNode: _ageFocus,
+                      textInputAction: TextInputAction.next,
+                      onSubmitted: (_) => FocusScope.of(context).requestFocus(_heightFocus),
                     ),
 
                     const SizedBox(
@@ -533,15 +546,14 @@ class _DetailsScreenState
                               ),
 
                               _buildUnitTextField(
-                                controller:
-                                _heightController,
+                                controller: _heightController,
                                 hint: l10n.heightHint,
-                                unit:
-                                _heightUnit,
-                                units:
-                                _heightUnits,
-                                onUnitChanged:
-                                _changeHeightUnit,
+                                unit: _heightUnit,
+                                units: _heightUnits,
+                                onUnitChanged: _changeHeightUnit,
+                                focusNode: _heightFocus,
+                                textInputAction: TextInputAction.next,
+                                onSubmitted: (_) => FocusScope.of(context).requestFocus(_weightFocus),
                               ),
                             ],
                           ),
@@ -566,15 +578,14 @@ class _DetailsScreenState
                               ),
 
                               _buildUnitTextField(
-                                controller:
-                                _weightController,
+                                controller: _weightController,
                                 hint: l10n.weightHint,
-                                unit:
-                                _weightUnit,
-                                units:
-                                _weightUnits,
-                                onUnitChanged:
-                                _changeWeightUnit,
+                                unit: _weightUnit,
+                                units: _weightUnits,
+                                onUnitChanged: _changeWeightUnit,
+                                focusNode: _weightFocus,
+                                textInputAction: TextInputAction.done,
+                                onSubmitted: (_) => _weightFocus.unfocus(),
                               ),
                             ],
                           ),
@@ -684,40 +695,33 @@ class _DetailsScreenState
   }
 
   Widget _buildTextField({
-    required TextEditingController
-    controller,
+    required TextEditingController controller,
     required String hint,
-    TextInputType keyboardType =
-        TextInputType.text,
+    TextInputType keyboardType = TextInputType.text,
+    FocusNode? focusNode,
+    TextInputAction textInputAction = TextInputAction.next,
+    ValueChanged<String>? onSubmitted,
   }) {
     return Container(
       decoration: BoxDecoration(
-        color:
-        AppColors.outlineGrey2,
-        borderRadius:
-        BorderRadius.circular(12),
+        color: AppColors.outlineGrey2,
+        borderRadius: BorderRadius.circular(12),
       ),
       child: TextField(
         controller: controller,
+        focusNode: focusNode,
         keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        onSubmitted: onSubmitted,
         style: const TextStyle(
           fontSize: 16,
-          color:
-          AppColors.textBlack,
+          color: AppColors.textBlack,
         ),
-        decoration:
-        InputDecoration(
+        decoration: InputDecoration(
           hintText: hint,
-          hintStyle:
-          const TextStyle(
-            color:
-            AppColors.textLightGrey,
-          ),
-          border:
-          InputBorder.none,
-          contentPadding:
-          const EdgeInsets
-              .symmetric(
+          hintStyle: const TextStyle(color: AppColors.textLightGrey),
+          border: InputBorder.none,
+          contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 16,
           ),
@@ -795,67 +799,42 @@ class _DetailsScreenState
   }
 
   Widget _buildUnitTextField({
-    required TextEditingController
-    controller,
+    required TextEditingController controller,
     required String hint,
     required String unit,
     required List<String> units,
-    required ValueChanged<String>
-    onUnitChanged,
+    required ValueChanged<String> onUnitChanged,
+    FocusNode? focusNode,
+    TextInputAction textInputAction = TextInputAction.next,
+    ValueChanged<String>? onSubmitted,
   }) {
     return Container(
       decoration: BoxDecoration(
-        color:
-        AppColors.outlineGrey2,
-        borderRadius:
-        BorderRadius.circular(12),
+        color: AppColors.outlineGrey2,
+        borderRadius: BorderRadius.circular(12),
       ),
       child: TextField(
         controller: controller,
-        keyboardType:
-        const TextInputType.numberWithOptions(
-          decimal: true,
-        ),
-        style: const TextStyle(
-          fontSize: 16,
-          color:
-          AppColors.textBlack,
-        ),
-        decoration:
-        InputDecoration(
+        focusNode: focusNode,
+        textInputAction: textInputAction,
+        onSubmitted: onSubmitted,
+        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+        style: const TextStyle(fontSize: 16, color: AppColors.textBlack),
+        decoration: InputDecoration(
           hintText: hint,
-          hintStyle:
-          const TextStyle(
-            color:
-            AppColors.textLightGrey,
-          ),
-          border:
-          InputBorder.none,
-          contentPadding:
-          const EdgeInsets
-              .symmetric(
-            horizontal: 16,
-            vertical: 16,
-          ),
-          suffixIconConstraints:
-          const BoxConstraints(
-            minWidth: 0,
-            minHeight: 0,
-          ),
+          hintStyle: const TextStyle(color: AppColors.textLightGrey),
+          border: InputBorder.none,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          suffixIconConstraints: const BoxConstraints(minWidth: 0, minHeight: 0),
           suffixIcon: Padding(
-            padding:
-            const EdgeInsets.only(
-              right: 14,
-            ),
+            padding: const EdgeInsets.only(right: 14),
             child: Align(
-              alignment:
-              Alignment.centerRight,
+              alignment: Alignment.centerRight,
               widthFactor: 1,
               child: _buildUnitToggle(
                 selectedUnit: unit,
                 units: units,
-                onUnitChanged:
-                onUnitChanged,
+                onUnitChanged: onUnitChanged,
               ),
             ),
           ),

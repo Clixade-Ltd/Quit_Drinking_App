@@ -10,6 +10,15 @@
   "onboardingTitle2": "آپ کا AI ریکوری ساتھی",
   "onboardingSubtitle2": "اپنے سفر کے مطابق ذاتی رہنمائی، صحت مند عادتیں، تحریکی یاد دہانیاں اور پیشرفت رپورٹس حاصل کریں۔",
 
+  "maybeLaterLabel": "شاید بعد میں",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "منسوخ کریں",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
   "goodMorning": "صبح بخیر",
   "goodAfternoon": "سہ پہر بخیر",
   "goodEvening": "شام بخیر",
@@ -70,7 +79,7 @@
   "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
 
   "appWordmark": "ویلنیس",
-  "appTitle": "Sober Flow",
+  "appTitle": "شراب نوشی ترک کریں",
   "splashSubtitle": "شراب سے پاک زندگی کی طرف\nپہلا قدم اٹھائیں",
   "preparingJourney": "آپ کا سفر\nتیار کیا جا رہا ہے",
 

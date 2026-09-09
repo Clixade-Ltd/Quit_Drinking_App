@@ -1,0 +1,584 @@
+{
+  "@@locale": "zu",
+
+  "skip": "Yeqa",
+  "continueButton": "Qhubeka",
+  "getStarted": "Qala",
+
+  "onboardingTitle1": "Lawula Impilo Yakho",
+  "onboardingSubtitle1": "Landela uhambo lwakho, bungaza yonke impumelelo, futhi ube nempilo engcono usuku nosuku.",
+  "onboardingTitle2": "Umlingani Wakho we-AI Wokululama",
+  "onboardingSubtitle2": "Thola isiqondiso esenziwe ngokwezifiso, imikhuba enempilo, izikhumbuzi zokukhuthaza, nemibiko yenqubekelaphambili ehambisana nohambo lwakho.",
+
+  "maybeLaterLabel": "Mhlawumbe kamuva",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Khansela",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Sawubona ekuseni",
+  "goodAfternoon": "Sawubona ntambama",
+  "goodEvening": "Sawubona kusihlwa",
+  "goodNight": "Ulale kahle",
+
+  "embracingClarity": "Yamukela ukucaca, usuku olulodwa ngesikhathi.",
+  "streakLabel": "UCHUNGECHUNGE",
+  "goalLabel": "INHLOSO",
+  "daysStreak": "{count, plural, one{{count} Usuku} other{{count} Izinsuku}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Uhlelo lwe-Premium",
+  "premiumPlanSubtitle": "Vula lonke ulwazi lwakho lokululama",
+
+  "accountAndSupport": "I-AKHAWUNTI NOKUSEKELELWA",
+  "privacyPolicy": "Inqubomgomo Yobumfihlo",
+  "privacyPolicySubtitle": "Phatha ukwabelana ngedatha nokuphepha kwe-akhawunti",
+  "termsOfService": "Imigomo Yesevisi",
+  "termsOfServiceSubtitle": "Imibuzo evame ukubuzwa, xhumana nathi, nezinsiza",
+  "shareApp": "Yabelana Ngohlelo Lokusebenza",
+  "shareAppSubtitle": "Yabelana ngohlelo lokusebenza nabangani bakho",
+  "resetData": "Setha Kabusha Idatha",
+  "resetDataSubtitle": "Sula konke okulondolozwe kule divayisi",
+
+  "resetAllDataTitle": "Setha kabusha yonke idatha?",
+  "resetAllDataMessage": "Lokhu kuzosula konke okulondolozwe kule divayisi — iphrofayela, okubhalwe kudayari, nenqubekelaphambili — futhi ngeke kuhlehliswe.",
+  "cancel": "Khansela",
+  "reset": "Setha kabusha",
+
+  "chooseFromGallery": "Khetha Kugalari",
+  "takePhoto": "Thatha Isithombe",
+  "removePhoto": "Susa Isithombe",
+  "couldNotUpdatePhoto": "Isithombe asikwazanga ukubuyekezwa: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Isithombe asikwazanga ukususwa: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Leso sithombe sikhulu kakhulu ngisho nangemva kokucindezelwa — sicela uzame esinye.",
+
+  "unableToLoadProfile": "Ayikwazanga ukulayisha iphrofayela yakho",
+  "pleaseTryAgain": "Sicela uzame futhi.",
+  "tryAgain": "Zama Futhi",
+  "profileNotFound": "Iphrofayela ayitholakalanga",
+  "refresh": "Vuselela",
+  "noProfileDataFound": "Ayikho idatha yephrofayela etholakele kule divayisi okwamanje.",
+
+  "couldNotResetData": "Idatha ayikwazanga ukusethwa kabusha: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Ikhaya",
+  "navStats": "Izibalo",
+  "navJournal": "Idayari",
+  "navBadges": "Amabheji",
+  "navProfile": "Iphrofayela",
+
+  "featureComingSoon": "{feature} izotholakala maduze.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "IMPILO",
+  "appTitle": "Yeka Ukuphuza",
+  "splashSubtitle": "Thatha isinyathelo sokuqala uye\nempilweni engenabo utshwala",
+  "preparingJourney": "Silungiselela\nuhambo lwakho",
+
+  "taskMorningMeditation": "Ukuzindla Kwasekuseni (imizuzu eyi-10)",
+  "taskReadChapter": "Funda Isahluko 4 se-\"The Sober Diaries\"",
+  "taskEveningJournal": "Idayari Yokubonga Yasebusuku",
+
+  "close": "Vala",
+  "youAreDoingGreat": "Wenza kahle kakhulu!",
+  "shareMilestone": "Yabelana Ngempumelelo",
+  "shareMilestoneMessage": "Ngisosukwini {days} lohambo lwami lokululama! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Impumelelo yami yokululama",
+
+  "weeklyReportReadyTitle": "Umbiko wakho wamasonto onke usulungile",
+  "weeklyReportReadySubtitle": "Thepha ukuze ubone ukuthi isonto lakho lihambe kanjani",
+
+  "howAreYouFeeling": "Uzizwa kanjani?",
+  "moodTough": "Kunzima",
+  "moodOkay": "Kulungile",
+  "moodGood": "Kuhle",
+
+  "moneySaved": "Imali Eyongiwe",
+  "caloriesSaved": "Ama-calorie Agciniwe",
+  "healthScore": "Amaphuzu Ezempilo",
+  "drinksAvoided": "Iziphuzo Ezigwenyiwe",
+  "estimated": "Okulinganiselwe",
+  "aiGenerated": "Kwenziwe yi-AI",
+  "daysCapsLabel": "IZINSUKU",
+
+  "todaysMotivation": "Ugqozi Lwanamuhla",
+  "defaultMotivationQuote": "Uphumelele ekugcineni ukuzibophezela kwakho. Qhubeka ugibele igagasi loshintsho oluhle.",
+
+  "talkToCoach": "Khuluma nomqeqeshi",
+  "havingACraving": "Ngifisa Ukuphuza",
+
+  "unlockWeeklyReportsTitle": "Vula Imibiko Yamasonto Onke",
+  "unlockWeeklyReportsMessage": "Bona izinsuku zakho ungaphuzile, izitayela zemizwa, kanye nempendulo ye-AI eyenzelwe wena masonto onke. Thuthukela ku-Premium ukuze uvule lokhu.",
+  "maybeLater": "Mhlawumbe kamuva",
+  "upgrade": "Thuthukela",
+
+  "weeklyReportTitle": "Umbiko Wamasonto Onke",
+  "weeklyReportsPremiumTitle": "Imibiko yamasonto onke iyisici se-Premium",
+  "weeklyReportsPremiumMessage": "Bona izinsuku zakho ungaphuzile, izitayela zemizwa, izifiso zokuphuza, kanye nempendulo ye-AI eyenzelwe wena masonto onke.",
+  "upgradeToPremium": "Thuthukela ku-Premium",
+  "couldNotGenerateReport": "Umbiko wakho awukwazanga ukwenziwa manje.",
+  "tryAgainLower": "Zama futhi",
+
+  "statSoberDays": "Izinsuku ungaphuzile",
+  "statAvgMood": "Imizwa emaphakathi",
+  "statCravings": "Izifiso zokuphuza",
+  "statMoneySaved": "Imali eyongiwe",
+  "coachFeedback": "Impendulo yomqeqeshi",
+  "journalInsights": "Ulwazi oluvela kudayari",
+
+  "next": "Okulandelayo",
+
+  "question1Title": "Iyini inhloso yakho",
+  "question1Subtitle": "Khetha inhloso ebaluleke\nkakhulu kuwe",
+  "goalQuitCompletely": "Yeka Ngokuphelele",
+  "goalReduceDrinking": "Nciphisa Ukuphuza",
+  "goalTakeABreak": "Thatha Ikhefu",
+  "goalBuildHealthierHabits": "Yakha Imikhuba Enempilo Kakhudlwana",
+
+  "question3Title": "Sitshele mayelana\nnesimiso sakho",
+  "drinksPerWeek": "Iziphuzo ngesonto",
+  "moneySpentPerWeek": "Imali esetshenziswa ngesonto",
+  "drinkingLevel": "Izinga lokuphuza",
+  "triggersLabel": "Izimbangela",
+  "levelSocial": "Kwezenhlalo",
+  "levelRegular": "Okuvamile",
+  "levelHeavy": "Kakhulu",
+  "levelDependent": "Okuncike kukho",
+  "triggerStress": "Ukucindezeleka",
+  "triggerLoneliness": "Isizungu",
+  "triggerHabit": "Umkhuba",
+  "triggerSadness": "Usizi",
+  "triggerAnger": "Intukuthelo",
+  "triggerBoredom": "Isithukuthezi",
+  "triggerSocialPressure": "Ingcindezi yomphakathi",
+  "triggerCelebration": "Ukugubha",
+  "triggerSleepProblems": "Izinkinga zokulala",
+  "triggerWorkPressure": "Ingcindezi yomsebenzi",
+
+  "question4Title": "Kungani ufuna ukushintsha?",
+  "question4Subtitle": "Isizathu sakho sizokusiza ukuthi uhlale unogqozi.",
+  "reasonImproveHealth": "Thuthukisa Impilo Yami",
+  "reasonSaveMoney": "Yonga Imali",
+  "reasonFamily": "Umndeni",
+  "reasonBetterSleep": "Ukulala Kangcono",
+  "reasonMentalClarity": "Ukucaca Kwengqondo",
+  "reasonFitness": "Ukuqina Komzimba",
+  "reasonSelfRespect": "Ukuzihlonipha",
+  "reasonCareer": "Umsebenzi",
+
+  "milestoneUnlockedLabel": "IMPUMELELO IVULIWE",
+  "incredibleNamePrefix": "Kuyamangalisa, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} oyongile",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} okugwenyiwe",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Yabelana ngempumelelo yami",
+  "milestoneImageShareError": "Isithombe sempumelelo asikwazanga ukwenziwa. Sicela uzame futhi.",
+
+  "dailyCheckInTitle": "Ukungena Kwansuku Zonke",
+  "howAreYouFeelingToday": "Uzizwa kanjani namuhla?",
+  "honestAnswerHelp": "Impendulo yakho eqotho isisiza ukuthi sikusekele kangcono",
+  "didYouDrinkToday": "Ingabe uphuze namuhla?",
+  "noLabel": "Cha",
+  "yesLabel": "Yebo",
+  "cravingLevelNow": "Sinamandla kangakanani isifiso sokuphuza manje?",
+  "anythingOnMind": "Ingabe kukhona okusemqondweni wakho?",
+  "optionalLabel": "(akuphoqelekile)",
+  "dailyNoteHint": "Bhala ngosuku lwakho, izimbangela, ukunqoba...",
+  "alreadyCheckedInToday": "Usungenile namuhla",
+  "saveCheckIn": "Londoloza ukungena",
+  "checkInsHelpTrack": "Ukungena kusiza ukulandelela inqubekelaphambili yakho ngokuhamba kwesikhathi",
+  "alreadyCompletedTodayCheckIn": "Usuku lwanamuhla lokungena seluqediwe.",
+  "pleaseAnswerBothQuestions": "Sicela uphendule yomibili imibuzo engenhla kuqala",
+  "checkInSaved": "Ukungena kulondoloziwe",
+  "cravingNone": "Akukho",
+  "cravingLow": "Kuphansi",
+  "cravingMedium": "Phakathi",
+  "cravingStrong": "Kunamandla",
+  "moodBad": "Kubi",
+  "moodLow": "Kuphansi",
+  "moodOkay": "Kulungile",
+  "moodGood": "Kuhle",
+  "moodGreat": "Kuhle kakhulu",
+
+  "sosSupportTitle": "Usizo lwe-SOS",
+  "notAloneMessage": "Awuwedwa, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Izifiso zokuphuza ziyadlula. Khetha okuthile ngezansi okuzokusiza udlule kulesi sikhathi.",
+  "breathingExercise": "Ukuzivocavoca Ngokuphefumula",
+  "breathingExerciseSubtitle": "Indlela eqondisiwe ye-4-7-8, imizuzu emi-2",
+  "rideTheWave": "Gibela Igagasi",
+  "rideTheWaveSubtitle": "Isibali-sikhathi semizuzu eyi-15 — izifiso zokuphuza zihlala zidlula",
+  "copingTips": "Amathiphu Okubhekana Nakho",
+  "copingTipsSubtitle": "Amasu enzelwe wena nezimbangela zakho",
+  "talkToAiCoach": "Khuluma nomqeqeshi we-AI",
+  "talkToAiCoachSubtitle": "Xoxa nomngane wakho wokululama",
+  "callSomeone": "Shayela umuntu",
+  "callSomeoneSubtitle": "Xhumana nomuntu omethembayo",
+  "contactsPermissionNeeded": "Imvume yoxhumana nabo iyadingeka ukuze ushayele umuntu.",
+  "beatenCravingsPrefix": "Usunqobe izifiso zokuphuza ",
+  "beatenCravingsCount": "{count} izikhathi",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " ngaphambilini. Ungakwenza futhi.",
+
+  "tellUsAboutYourself": "Sitshele Ngawe",
+  "detailsSubtitle": "Lolu lwazi lusisiza ukuthi senze uhambo lwakho lokululama lube ngokwezifiso futhi sinikeze ulwazi olunembile.",
+  "nameLabel": "Igama",
+  "nameHint": "isb., Alex Rivers",
+  "ageLabel": "Iminyaka",
+  "ageHint": "isb., 32",
+  "sexAssignedAtBirth": "Ubulili obabekwa ngesikhathi sokuzalwa",
+  "sexFemale": "Owesifazane",
+  "sexMale": "Owesilisa",
+  "heightLabel": "Ubude",
+  "weightLabel": "Isisindo",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Umkhawulo wansuku zonke usufinyelelwe",
+  "dailyLimitReachedMessage": "Usebenzise yonke imilayezo yamahhala engu-{limit} yanamuhla. Thuthukela ku-Premium ukuze uxoxe nomqeqeshi ngaphandle komkhawulo.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Angikwazanga ukuxhuma manje. Sicela uzame futhi ngemva kwesikhashana.",
+  "clearConversationTitle": "Sula ingxoxo?",
+  "clearConversationMessage": "Lokhu kuzosusa unomphela umlando wengxoxo yakho nomqeqeshi.",
+  "clearLabel": "Sula",
+  "recoveryCoachTitle": "Umqeqeshi Wokululama",
+  "onlineLabel": "Ku-inthanethi",
+  "clearConversationMenuItem": "Sula ingxoxo",
+  "chatGreeting": "Sawubona {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Usosukwini {days} lohambo lwakho. Ngikhona noma nini lapho ufuna ukukhuluma ngezinto.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "IZICELO EZISHESHAYO",
+  "promptCravingLabel": "Ngifisa ukuphuza",
+  "promptCravingSubtitle": "Zolisa ingqondo ngokushesha",
+  "promptMotivationLabel": "Ngidinga ugqozi",
+  "promptMotivationSubtitle": "Ukukhuthazwa lapho kunzima",
+  "promptSocialLabel": "Isimo senhlalo",
+  "promptSocialSubtitle": "Bhekana nomhlangano",
+  "promptSlippedLabel": "Ngiphinde ngaphuza",
+  "promptSlippedSubtitle": "Akukho ukwahlulela, ukwesekwa kuphela",
+  "typeMessageHint": "Bhala umlayezo...",
+
+  "editProfileTitle": "Hlela Iphrofayela",
+  "couldNotSaveProfile": "Iphrofayela ayikwazanga ukulondolozwa: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Ubude (cm)",
+  "weightKgLabel": "Isisindo (kg)",
+  "saveChangesLabel": "Londoloza Izinguquko",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Ulwazi Oluthuthukile Nokuhlaziywa",
+  "featureUnlimitedJournal": "Okubhalwe Kudayari Okungenamkhawulo",
+  "featureUnlimitedChat": "Ingxoxo Engenamkhawulo Nomqeqeshi we-AI",
+  "featureCommunityGroups": "Amaqembu Omphakathi Akhethekile",
+  "featurePrioritySupport": "Ukusekelwa Okubalulekile Kochwepheshe",
+  "featureThemePacks": "Amaphakheji Ezindikimba Ngokwezifiso",
+  "featureDataExport": "Ukuthunyelwa Kwedatha",
+  "featureAdFree": "Okuhlangenwe Nakho Okungenazo Izikhangiso",
+  "premiumMemberTitle": "Uyilungu le-Premium",
+  "unlockFullRecoveryTitle": "Vula Lonke Uhambo Lwakho\nLokululama",
+  "premiumMemberSubtitle": "Siyabonga ngokweseka uhambo lwakho lokululama — zonke izici ze-Premium ezingezansi zivuliwe.",
+  "premiumJoinSubtitle": "Joyina umphakathi wezinkulungwane zabantu\nabasheshisa uhambo lwabo lokuphulukisa ngamathuluzi ethu\nwe-Premium nokusekelwa okwenziwe ngokwezifiso.",
+  "monthlyPlanLabel": "Nyanga zonke",
+  "perMonthSuffix": "/ngenyanga",
+  "cancelAnytimeLabel": "Khansela noma nini",
+  "yearlyPlanLabel": "Ngonyaka",
+  "billedAnnuallyLabel": "Kukhokhwa minyaka yonke ngo-{amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Inani Elingcono Kakhulu",
+  "alreadyPremiumLabel": "Usuyi-Premium ✓",
+  "startPremiumLabel": "Qala i-Premium",
+  "manageSubscriptionLabel": "Phatha noma khansela kuzilungiselelo zokubhalisa zedivayisi yakho.",
+  "noCommitmentLabel": "Akukho ukuzibophezela. Khansela noma nini.",
+  "continueFreePlanLabel": "Qhubeka nohlelo lwamahhala",
+  "backToHomeLabel": "Buyela Ekhaya",
+  "cancelPremiumLabel": "Khansela i-Premium",
+  "cancelPremiumTitle": "Khansela i-Premium?",
+  "cancelPremiumMessage": "Uzolahlekelwa ukufinyelela kokubhalwe kudayari okungenamkhawulo, ingxoxo nomqeqeshi engenamkhawulo, ulwazi lwezibalo, nemibiko yamasonto onke. Ungabhalisa futhi noma nini.",
+  "keepPremiumLabel": "Gcina i-Premium",
+  "nowPremiumMessage": "Manje usuyi-Premium! Jabulela lonke ulwazi lwakho lokululama.",
+  "premiumCancelledMessage": "I-Premium ikhanseliwe. Usuphinde wabuyela ohlelweni lwamahhala.",
+  "termsOfUseLabel": "Imigomo Yokusebenzisa",
+
+  "navHomeLabel": "Ikhaya",
+  "navStatsLabel": "Izibalo",
+  "navJournalLabel": "Idayari",
+  "navBadgesLabel": "Amabheji",
+  "navProfileLabel": "Iphrofayela",
+
+  "recoveryGoalsTitle": "Izinhloso Zokululama",
+  "goalLabel": "Inhloso",
+  "drinksPerWeekLabel": "Iziphuzo ngesonto",
+  "quitReasonsLabel": "Izizathu Zokuyeka",
+  "quitReasonsHelperText": "Hlukanisa izizathu eziningi ngekhoma.",
+  "couldNotSaveRecoveryGoals": "Izinhloso zokululama azikwazanga ukulondolozwa: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "isb., Ukuyeka ngokuphelele",
+  "drinksPerWeekHint": "isb., 12",
+  "quitReasonsHint": "isb., Impilo, Umndeni, Imali",
+
+  "todaysPrompt": "Umbuzo wanamuhla",
+  "defaultJournalPrompt": "Yini esengqondweni yakho namuhla?",
+  "aiJournalInsights": "Ulwazi lwe-AI oluvela kudayari",
+  "unlockJournalInsightsMessage": "Vula amaphethini amasonto onke, izitayela zemizwa, nolwazi olwenziwe ngokwezifiso oluvela kokubhalwe kudayari yakho.",
+  "notEnoughJournalData": "Ayikho idatha eyanele okwamanje — bhala okubhaliwe okumbalwa kuleli sonto bese ubuya.",
+  "openEntry": "Vula",
+  "editEntry": "Hlela",
+  "deleteEntry": "Susa",
+  "searchJournalEntries": "Sesha okubhaliwe...",
+  "writeNewEntry": "Bhala okusha",
+  "recentEntries": "Okubhaliwe Kwakamuva",
+  "noJournalEntriesYet": "Akukho okubhaliwe kudayari okwamanje — bhala ukucabanga kwakho kokuqala ngenhla.",
+  "noEntriesMatchFilters": "Akukho okubhaliwe okuhambisana nezihlungi zakho.",
+
+  "weeklyJournalLimitReached": "Umkhawulo wamasonto usufinyelelwe",
+  "weeklyJournalLimitMessage": "Usebenzise konke okubhaliwe kwamahhala okungu-{limit} kuleli sonto. Thuthukela ku-Premium ukuze ubhale ngaphandle komkhawulo.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Okubhaliwe Okusha",
+  "writeYourThoughts": "Bhala imicabango yakho",
+  "saveEntry": "Londoloza Okubhaliwe",
+  "freeEntriesLeftThisWeek": "Kusele {remaining} kokungu-{limit} okubhaliwe kwamahhala kuleli sonto",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Susa okubhaliwe?",
+  "deleteEntryConfirmation": "Lokhu okubhaliwe kuzosuswa unomphela. Lokhu ngeke kuhlehliswe.",
+
+  "journalEntryNotFound": "Okubhaliwe akutholakalanga",
+  "journalEntryMayHaveBeenDeleted": "Lokhu okubhaliwe kudayari kungenzeka kususiwe.",
+  "goBack": "Buyela emuva",
+  "journalEntryTitle": "Okubhaliwe Kudayari",
+
+  "moodStruggling": "Ngiyazabalaza",
+  "moodUnwell": "Angizizwa kahle",
+  "moodNeutral": "Okuvamile",
+
+  "whatHappenedToday": "Kwenzekeni namuhla?",
+  "trigger": "Isimbangela",
+  "whatHelped": "Okusize",
+  "whatIllTryNextTime": "Engizozama ngakho ngokuzayo",
+  "journalPrivacyMessage": "Ukucabanga kwakho kuyimfihlo futhi kugcinwa kudayari yakho.",
+
+  "unlocked": "Kuvuliwe",
+  "daysLeft": "Kusele izinsuku ezingu-{count}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "Izinsuku ezingu-{count}",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Ukucabanga\nKokuqala",
+  "oneJournalEntry": "Okubhaliwe Kudayari oku-1",
+  "openBook": "Vula Incwadi",
+  "tenJournalEntries": "Okubhaliwe Kudayari okuyi-10",
+  "dedicatedWriter": "Umbhali\nOzinikele",
+  "thirtyJournalEntries": "Okubhaliwe Kudayari okungu-30",
+  "firstConversation": "Ingxoxo\nYokuqala",
+  "oneAiCoachChat": "Ingxoxo ye-AI Coach eyi-1",
+  "keepTalking": "Qhubeka Ukhuluma",
+  "fiveConversations": "Izingxoxo ezi-5",
+  "coachCompanion": "Umlingani\nWomqeqeshi",
+  "twentyConversations": "Izingxoxo ezingama-20",
+  "checkInHabit": "Umkhuba\nWokungena",
+  "sevenCheckIns": "Ukungena okungu-7",
+  "consistencyPro": "Uchwepheshe\nWokungaguquguquki",
+  "thirtyCheckIns": "Ukungena okungu-30",
+  "dedicatedJourney": "Uhambo\nOluzinikele",
+  "hundredCheckIns": "Ukungena okungu-100",
+  "goalGetter": "Umzuzi Wezinhloso",
+  "threeGoalsCompleted": "Izinhloso ezi-3 Ziqediwe",
+  "goalAchiever": "Umzuzi\nWezinhloso",
+  "tenGoalsCompleted": "Izinhloso eziyi-10 Ziqediwe",
+  "firstSavings": "Ukonga\nKokuqala",
+  "fiveHundredSaved": "$500 Oyongile",
+  "smartSaver": "Umlondolozi Ohlakaniphile",
+  "oneThousandSaved": "$1,000 Oyongile",
+  "bigSaver": "Umlondolozi Omkhulu",
+  "fiveThousandSaved": "$5,000 Oyongile",
+  "currencyProgress": "${current} kokungu-${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} kokungu-{target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Qhubeka — impumelelo yakho yokuqala ikulindile!",
+  "badgesAndMilestones": "Amabheji Nezimpumelelo",
+  "yourMilestoneJourney": "Uhambo Lwakho Lwezimpumelelo",
+  "milestonesAchieved": "Izimpumelelo ezingu-{count} sezitholakele.\nThepha ukuze ubuke",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Uvule izimpumelelo ezingu-{unlocked} kwezingu-{total} ohambweni lwakho.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Okusele",
+  "complete": "Kuqediwe",
+  "nextMilestone": "Impumelelo Elandelayo",
+  "percentThere": "{subtitle} · {percent}% usufikile",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Izimpumelelo Zokungaphuzi",
+  "journeyBadges": "Amabheji Ohambo",
+  "bronze": "ITHUSI",
+  "silver": "ISILIVA",
+  "gold": "IGOLIDE",
+  "platinum": "IPLATINUM",
+  "diamond": "IDAYAMONDI",
+
+  "analyzingYourJourney": "Ihlaziya Uhambo Lwakho...",
+  "aiCreatingSanctuary": "I-AI yethu idala indawo yakho yokululama eyenziwe ngokwezifiso.",
+  "understandingHabits": "Iqonda imikhuba...",
+  "calculatingBaseline": "Ibala isisekelo sakho...",
+  "personalizingPlan": "Yenza uhlelo lwakho lube ngokwezifiso...",
+  "finalizingSanctuary": "Iqedela indawo yakho yokululama...",
+  "creatingYourPlan": "Idala uhlelo lwakho...",
+  "personalizedPlanError": "Asikwazanga ukudala uhlelo lwakho olwenziwe ngokwezifiso. Sicela uzame futhi.",
+  "retry": "Zama futhi",
+
+  "breathingExercise": "Ukuzivocavoca Ngokuphefumula",
+  "breathInhale": "DONSELA UMFUTHO",
+  "breathHold": "BAMBA",
+  "breathExhale": "KHIPHA UMFUTHO",
+  "breathDone": "KUQEDIWE",
+  "breathGreatJob": "Wenze kahle!",
+  "remaining": "Okusele",
+  "breathSessionsToday": "{count, plural, one{{count} iseshini namuhla} other{{count} amaseshini namuhla}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Qeda Ukuzivocavoca",
+  "done": "Kwenziwe",
+
+  "noCopingTipsYet": "Awekho amathiphu okubhekana nakho okwamanje",
+  "copingStrategiesWillAppear": "Amasu akho okwenziwa ngokwezifiso azovela lapha uma uhlelo lwakho lokululama seluqediwe.",
+  "strategiesTailoredToTriggers": "Amasu enzelwe izimbangela zakho",
+
+  "rideTheWave": "Gibela Igagasi",
+  "cravingsPeakAndPass": "Izifiso zokuphuza ziyaphakama\nbese zidlula",
+  "rideTheWaveDescription": "Izifiso eziningi zokuphuza zidlula emizuzwini eyi-15. Akudingeki wenze okuthile ngazo — vele uzidlule nathi.",
+  "stayWithIt": "qhubeka",
+  "youMadeIt": "uphumelele",
+  "readyWhenYouAre": "silungele uma usulungile",
+  "rideItAgain": "Gibela futhi",
+  "start15MinuteTimer": "Qala Isibali-sikhathi Semizuzu eyi-15",
+  "rideTheWaveCompletedMessage": "Udlule egagasini. Lokho amandla angempela. 💪",
+
+  "myProgress": "Inqubekelaphambili Yami",
+  "weekLabel": "Isonto",
+  "monthLabel": "Inyanga",
+  "allLabel": "Konke",
+  "daysSoberStatLabel": "Izinsuku\nungaphuzile",
+  "savedStatLabel": "Oyongile",
+  "avoidedStatLabel": "Okugwenyiwe",
+  "moodTrends": "Izitayela Zemizwa",
+  "cravingsPattern": "Iphethini Yezifiso",
+  "unlockLabel": "Vula",
+  "unlockFullStats": "Vula zonke izibalo",
+  "premiumStatsMessage": "Izitayela zemizwa namaphethini ezifiso yizici ze-Premium. Thuthukela ukuze ubone zonke izibalo zakho.",
+  "healthMilestonesWillAppear": "Izimpumelelo zakho zezempilo zizovela lapha.",
+  "healthMilestones": "Izimpumelelo Zezempilo",
+  "dayNumber": "Usuku {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Awuphuzi",
+  "slipLabel": "Ukuphinda uphuze",
+  "noDataLabel": "Ayikho idatha",
+
+  "milestone24Hours": "Amahora angama-24",
+  "milestoneOneWeek": "Isonto Elilodwa",
+  "milestoneOneMonth": "Inyanga Eyodwa",
+  "milestoneThreeMonths": "Izinyanga Ezintathu",
+  "milestoneSixMonths": "Izinyanga Eziyisithupha",
+  "milestoneOneYear": "Unyaka Owodwa",
+  "milestoneDayCount": "Impumelelo Yosuku {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Inqubomgomo Yobumfihlo"
+}

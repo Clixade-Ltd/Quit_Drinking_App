@@ -1,0 +1,579 @@
+{
+  "@@locale": "eu",
+
+  "skip": "Saltatu",
+  "continueButton": "Jarraitu",
+  "getStarted": "Hasi",
+
+  "onboardingTitle1": "Hartu zure bizitzaren kontrola",
+  "onboardingSubtitle1": "Jarraitu zure bidea, ospatu lorpen bakoitza eta izan osasuntsuago egun bakoitzean.",
+  "onboardingTitle2": "Zure AI osatze laguna",
+  "onboardingSubtitle2": "Jaso orientazio pertsonalizatua, ohitura osasungarriak, motibazio abisuak eta zure bideari egokitutako aurrerapen erreportajeak.",
+
+  "maybeLaterLabel": "Beharbada geroago",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Utzi",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Egun on",
+  "goodAfternoon": "Arratsalde on",
+  "goodEvening": "Arratsalde on",
+  "goodNight": "Gabon",
+
+  "embracingClarity": "Argitasuna besarkatzen, egunez egun.",
+  "streakLabel": "RAXA",
+  "goalLabel": "HEBURUA",
+  "daysStreak": "{count, plural, one{Egun {count}} other{{count} Egun}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium Plana",
+  "premiumPlanSubtitle": "Desblokeatu zure osatze esperientzia osoa",
+
+  "accountAndSupport": "KONTUA ETA LAGUNTZA",
+  "privacyPolicy": "Pribatutasun politika",
+  "privacyPolicySubtitle": "Kudeatu datuak partekatzea eta kontuaren segurtasuna",
+  "termsOfService": "Zerbitzu-baldintzak",
+  "termsOfServiceSubtitle": "Galdera arruntak, kontaktua eta baliabideak",
+  "shareApp": "Partekatuko aplikazioa",
+  "shareAppSubtitle": "Partekatu aplikazioa zure lagunekin",
+  "resetData": "Berrabiarazi datuak",
+  "resetDataSubtitle": "Ezabatu gailu honetan gordetako guztia",
+
+  "resetAllDataTitle": "Datu guztiak berrabiarazi?",
+  "resetAllDataMessage": "Honek gailu honetan gordetako guztia garbitzen du — profila, egunkariko sarrerak eta aurrerapena — eta ezin da atzera egin.",
+  "cancel": "Ezeztatu",
+  "reset": "Berrabiarazi",
+
+  "chooseFromGallery": "Aukeratu galeriatik",
+  "takePhoto": "Atera argazkia",
+  "removePhoto": "Kendu argazkia",
+  "couldNotUpdatePhoto": "Ezin izan da argazkia eguneratu: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Ezin izan da argazkia kendu: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Argazki hori handiegia da konprimitu ondoren ere — mesedez, saiatu beste batekin.",
+
+  "unableToLoadProfile": "Ezin da zure profila kargatu",
+  "pleaseTryAgain": "Mesedez saiatu berriro.",
+  "tryAgain": "Saiatu berriro",
+  "profileNotFound": "Ez da profila aurkitu",
+  "refresh": "Eguneratu",
+  "noProfileDataFound": "Oraindik ez da profil daturik aurkitu gailu honetan.",
+
+  "couldNotResetData": "Ezin izan dira datuak berrabiarazi: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Hasiera",
+  "navStats": "Estatistikak",
+  "navJournal": "Egunkaria",
+  "navBadges": "Intsigniak",
+  "navProfile": "Profila",
+
+  "featureComingSoon": "{feature} laster egongo da erabilgarri.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "OSASUNA",
+  "appTitle": "Utzi edateari",
+  "splashSubtitle": "Egin lehen urratsa alkoholik gabeko\nbizitza baterantz",
+  "preparingJourney": "Zure bidaia\nprestatzen",
+
+  "taskMorningMeditation": "Goizeko meditazioa (10m)",
+  "taskReadChapter": "Irakurri \"The Sober Diaries\" liburuko 4. kapitulua",
+  "taskEveningJournal": "Arratsaldeko esker oneko egunkaria",
+
+  "close": "Itxi",
+  "youAreDoingGreat": "Oso ondo ari zara egiten!",
+  "shareMilestone": "Partekatu mugarria",
+  "shareMilestoneMessage": "{days}. egunean nago nire osatze bidaian! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Nire osatze mugarria",
+
+  "weeklyReportReadyTitle": "Zure asteko erreportajea prest dago",
+  "weeklyReportReadySubtitle": "Sakatuta ikusi nola joan den astea",
+
+  "howAreYouFeeling": "Nola sentitzen zara?",
+  "moodTough": "Zaila",
+  "moodOkay": "Ondo",
+  "moodGood": "Oso ondo",
+
+  "moneySaved": "Aurreztutako dirua",
+  "caloriesSaved": "Aurreztutako kaloriak",
+  "healthScore": "Osasun puntuazioa",
+  "drinksAvoided": "Saihestutako edariak",
+  "estimated": "Mugatu gabeko estimazioa",
+  "aiGenerated": "AI bidez sortua",
+  "daysCapsLabel": "EGUNAK",
+
+  "todaysMotivation": "Gaurko motibazioa",
+  "defaultMotivationQuote": "Arrakastaz eutsi diozu zure konpromisoari. Jarraitu aldaketa positiboaren olatua gidatzen.",
+
+  "talkToCoach": "Hitz egin entrenatzailearekin",
+  "havingACraving": "Gogo bizia dut",
+
+  "unlockWeeklyReportsTitle": "Desblokeatu asteko erreportajeak",
+  "unlockWeeklyReportsMessage": "Ikusi zure egun mozkortu gabeak, umore joerak eta AI bidezko gomendio pertsonalizatuak astero. Eguneratu Premium-era desblokeatzeko.",
+  "maybeLater": "Agian geroago",
+  "upgrade": "Eguneratu",
+
+  "weeklyReportTitle": "Asteko erreportajea",
+  "weeklyReportsPremiumTitle": "Asteko erreportajeak Premium ezaugarri bat dira",
+  "weeklyReportsPremiumMessage": "Ikusi zure egun mozkortu gabeak, umore joerak, gogo biziak eta AI bidezko ohar pertsonalizatuak astero.",
+  "upgradeToPremium": "Eguneratu Premium-era",
+  "couldNotGenerateReport": "Ezin izan da zure erreportajea sortu oraintxe bertan.",
+  "tryAgainLower": "Saiatu berriro",
+
+  "statSoberDays": "Mozkortu gabeko egunak",
+  "statAvgMood": "Batez besteko umorea",
+  "statCravings": "Gogo biziak",
+  "statMoneySaved": "Aurreztutako dirua",
+  "coachFeedback": "Entrenatzailearen oharrak",
+  "journalInsights": "Egunkariko ikuspegiak",
+
+  "next": "Hurrengoa",
+
+  "question1Title": "Zein da zure helburua",
+  "question1Subtitle": "Aukeratu gehien inporta zaizun\nhelburua",
+  "goalQuitCompletely": "Guztiz utzi",
+  "goalReduceDrinking": "Edatea murriztu",
+  "goalTakeABreak": "Atsedenaldi bat hartu",
+  "goalBuildHealthierHabits": "Ohitura osasungarriagoak eraiki",
+
+  "question3Title": "Esaguzu zure errutinari buruz",
+  "drinksPerWeek": "Edariak astean",
+  "moneySpentPerWeek": "Astean gastatutako dirua",
+  "drinkingLevel": "Edandako maila",
+  "triggersLabel": "Pizgarriak",
+  "levelSocial": "Soziala",
+  "levelRegular": "Erregularra",
+  "levelHeavy": "Ugariegia",
+  "levelDependent": "Mendekoa",
+  "triggerStress": "Estresa",
+  "triggerLoneliness": "Bakardadea",
+  "triggerHabit": "Ohitura",
+  "triggerSadness": "Trristura",
+  "triggerAnger": "Haserrea",
+  "triggerBoredom": "Nezkadura",
+  "triggerSocialPressure": "Presio soziala",
+  "triggerCelebration": "Ospakizuna",
+  "triggerSleepProblems": "Lo arazoak",
+  "triggerWorkPressure": "Laneko presioa",
+
+  "question4Title": "Zergatik aldatu nahi duzu?",
+  "question4Subtitle": "Zure arrazoiak motibatzen lagunduko dizu.",
+  "reasonImproveHealth": "Nire osasuna hobetu",
+  "reasonSaveMoney": "Dirua aurreztu",
+  "reasonFamily": "Familia",
+  "reasonBetterSleep": "Lo hobeto egin",
+  "reasonMentalClarity": "Argitasun mentala",
+  "reasonFitness": "Forma fisikoa",
+  "reasonSelfRespect": "Norberaganako errespetua",
+  "reasonCareer": "Karrera profesionala",
+
+  "milestoneUnlockedLabel": "MUGARRIA DESBLOKEATUTA",
+  "incredibleNamePrefix": "Miresgarria, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} aurreztuta",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} edari saihestuta",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Partekatu nire mugarria",
+  "milestoneImageShareError": "Ezin izan da mugarriaren irudia sortu. Mesedez, saiatu berriro.",
+
+  "dailyCheckInTitle": "Eguneroko azterketa",
+  "howAreYouFeelingToday": "Nola sentitzen zara gaur?",
+  "honestAnswerHelp": "Zure erantzun finak zuri hobeto laguntzen laguntzen digu",
+  "didYouDrinkToday": "Edan al duzu gaur?",
+  "noLabel": "Ez",
+  "yesLabel": "Bai",
+  "cravingLevelNow": "Zein da zure gogo bizia oraintxe bertan?",
+  "anythingOnMind": "Bada zerbait zure buruan?",
+  "optionalLabel": "(aukerakoa)",
+  "dailyNoteHint": "Idatzi zure egunari, pizgarriei, lorpenei buruz...",
+  "alreadyCheckedInToday": "Dagoeneko azterketa egina gaur",
+  "saveCheckIn": "Gorde azterketa",
+  "checkInsHelpTrack": "Azterketek denboran zehar zure aurrerapena jarraitzen laguntzen dute",
+  "alreadyCompletedTodayCheckIn": "Dagoeneko osatu duzu gaurko azterketa.",
+  "pleaseAnswerBothQuestions": "Mesedez erantzun goiko bi galderak lehenik",
+  "checkInSaved": "Azterketa gordeta",
+  "cravingNone": "Batere ez",
+  "cravingLow": "Baxua",
+  "cravingMedium": "Ertaina",
+  "cravingStrong": "Indartsua",
+  "moodBad": "Oso txarra",
+  "moodLow": "Txarra",
+  "moodOkay": "Ondo",
+  "moodGood": "Ona",
+  "moodGreat": "Oso ona",
+
+  "sosSupportTitle": "SOS Laguntza",
+  "notAloneMessage": "Ez zaude bakarrik, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Gogo biziak igaro egiten dira. Aukeratu beheko zerbait une hau igarotzen laguntzeko.",
+  "breathingExercise": "Arnasketa ariketa",
+  "breathingExerciseSubtitle": "Gidatutako 4-7-8 teknika, 2 minutu",
+  "rideTheWave": "Mugitu olatuarekin",
+  "rideTheWaveSubtitle": "15 minutuko tenporizadorea — gogo biziak beti igarotzen dira",
+  "copingTips": "Aurre egiteko aholkuak",
+  "copingTipsSubtitle": "Estratégia pertsonalizatuak zure pizgarrientzat",
+  "talkToAiCoach": "Hitz egin AI entrenatzailearekin",
+  "talkToAiCoachSubtitle": "Chateatu zure osatze lagunarekin",
+  "callSomeone": "Deitu norbaiti",
+  "callSomeoneSubtitle": "Jarri harremanetan zure konfiantzazko kontaktuarekin",
+  "contactsPermissionNeeded": "Kontaktuetarako baimena behar da norbaiti deitzeko.",
+  "beatenCravingsPrefix": "Gogo biziei irabazi diezu ",
+  "beatenCravingsCount": "{count} aldiz",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " aurretik. Berriro egin dezakezu.",
+
+  "tellUsAboutYourself": "Esaguzu zuri buruz",
+  "detailsSubtitle": "Informazio honek zure osatze bidaia pertsonalizatzen eta datu zehatzak ematen laguntzen digu.",
+  "nameLabel": "Izena",
+  "nameHint": "adib., Alex Rivers",
+  "ageLabel": "Adina",
+  "ageHint": "adib., 32",
+  "sexAssignedAtBirth": "Jaiotzean esleitutako sexua",
+  "sexFemale": "Emakumezkoa",
+  "sexMale": "Gizonezkoa",
+  "heightLabel": "Altuera",
+  "weightLabel": "Pisua",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Eguneko muga lortuta",
+  "dailyLimitReachedMessage": "Gaurko {limit} doako mezu guztiak erabili dituzu. Eguneratu Premium-era entrenatzailearekin mugarik gabe txateatzeko.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Ezin izan naiz konektatu oraintxe bertan. Mesedez saiatu berriro une bat barru.",
+  "clearConversationTitle": "Ekarpena garbitu?",
+  "clearConversationMessage": "Honek betiko kenduko du zure entrenatzailearen txat-historia.",
+  "clearLabel": "Garbitu",
+  "recoveryCoachTitle": "Osatze entrenatzailea",
+  "onlineLabel": "Konektatuta",
+  "clearConversationMenuItem": "Garbitu elkarrizketa",
+  "chatGreeting": "Kaixo {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Zure bidaiaren {days}. egunean zaude. Hemen nago gauzak hitz egin nahi dituzun bakoitzean.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "AZKARKO GALDERAK",
+  "promptCravingLabel": "Gogo bizia dut",
+  "promptCravingSubtitle": "Lasaitu zaitez, azkar",
+  "promptMotivationLabel": "Motibazioa behar dut",
+  "promptMotivationSubtitle": "Bultzada bat zaila denean",
+  "promptSocialLabel": "Egoera soziala",
+  "promptSocialSubtitle": "Maneiatu bilera bat",
+  "promptSlippedLabel": "Erori egin naiz",
+  "promptSlippedSubtitle": "Ejuiziorik gabe, laguntza soilik",
+  "typeMessageHint": "Idatzi mezu bat...",
+
+  "editProfileTitle": "Editatu profila",
+  "couldNotSaveProfile": "Ezin izan da profila gorde: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Altuera (cm)",
+  "weightKgLabel": "Pisua (kg)",
+  "saveChangesLabel": "Gorde aldaketak",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Ikuspegi eta analitika aurreratuak",
+  "featureUnlimitedJournal": "Mugarik gabeko egunkari sarrerak",
+  "featureUnlimitedChat": "Mugarik gabeko txata AI entrenatzailearekin",
+  "featureCommunityGroups": "Komunitate talde esklusiboak",
+  "featurePrioritySupport": "Lehentasunezko adituen laguntza",
+  "featureThemePacks": "Gai pertsonalizatuen paketeak",
+  "featureDataExport": "Datuak esportatzea",
+  "featureAdFree": "Publizitaterik gabeko esperientzia",
+  "premiumMemberTitle": "Premium kidea zara",
+  "unlockFullRecoveryTitle": "Desblokeatu zure osatze esperientzia\nosoa",
+  "premiumMemberSubtitle": "Eskerrik asko zure osatze bidaia laguntzeagatik — beheko premium ezaugarri guztiak desblokeatuta daude.",
+  "premiumJoinSubtitle": "Batu zaitez milaka pertsonako komunitate batera,\nure premium tresnekin eta laguntza pertsonalizatuarekin\nosatze bidaia azkartzen ari direnak.",
+  "monthlyPlanLabel": "Hilero",
+  "perMonthSuffix": "/hilabete",
+  "cancelAnytimeLabel": "Ezeztatu edozein unetan",
+  "yearlyPlanLabel": "Urtero",
+  "billedAnnuallyLabel": "Urtero fakturatua {amount}-tan",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Balio onena",
+  "alreadyPremiumLabel": "Premium zara ✓",
+  "startPremiumLabel": "Hasi Premium-a",
+  "manageSubscriptionLabel": "Kudeatu edo ezeztatu zure gailuko harpidetza ezarpenetatik.",
+  "noCommitmentLabel": "Konpromisorik gabe. Ezeztatu edozein unetan.",
+  "continueFreePlanLabel": "Jarraitu doako planarekin",
+  "backToHomeLabel": "Itzuli hasierara",
+  "cancelPremiumLabel": "Ezeztatu Premium-a",
+  "cancelPremiumTitle": "Ezeztatu Premium-a?",
+  "cancelPremiumMessage": "Mugarik gabeko egunkari sarrerak, entrenatzailearen txat mugagabea, estatistiken ikuspegiak eta asteko erreportajeak atzitzeko gaitasuna galduko duzu. Edozein unetan berridatzi zaitezke.",
+  "keepPremiumLabel": "Mantendu Premium-a",
+  "nowPremiumMessage": "Orain Premium zara! Gozatu zure osatze esperientzia osoaz.",
+  "premiumCancelledMessage": "Premium ezeztatua. Doako planean zaude berriro.",
+  "termsOfUseLabel": "Erabilera baldintzak",
+
+  "navHomeLabel": "Hasiera",
+  "navStatsLabel": "Estatistikak",
+  "navJournalLabel": "Egunkaria",
+  "navBadgesLabel": "Intsigniak",
+  "navProfileLabel": "Profila",
+
+  "recoveryGoalsTitle": "Osatze helburuak",
+  "goalLabel": "Helburua",
+  "drinksPerWeekLabel": "Edariak astean",
+  "quitReasonsLabel": "Uztekoko arrazoiak",
+  "quitReasonsHelperText": "Banatu hainbat arrazoi koma batekin.",
+  "couldNotSaveRecoveryGoals": "Ezin izan dira osatze helburuak gorde: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "adib., Abstinentzia osoa",
+  "drinksPerWeekHint": "adib., 12",
+  "quitReasonsHint": "adib., Osasuna, Familia, Dirua",
+
+  "todaysPrompt": "Gaurko galdera",
+  "defaultJournalPrompt": "Zer duzu buruan gaur?",
+  "aiJournalInsights": "AI egunkariko ikuspegiak",
+  "unlockJournalInsightsMessage": "Desblokeatu asteko patroiak, umore joerak eta ikuspegi pertsonalizatuak zure egunkariko sarreretatik.",
+  "notEnoughJournalData": "Oraindik ez dago nahiko daturik — idatzi sarrera batzuk aste honetan eta itzuli geroago.",
+  "openEntry": "Apertura",
+  "editEntry": "Editatu",
+  "deleteEntry": "Ezabatu",
+  "searchJournalEntries": "Bilatu sarrerak...",
+  "writeNewEntry": "Idatzi sarrera berria",
+  "recentEntries": "Azken sarrerak",
+  "noJournalEntriesYet": "Oraindik ez dago egunkari sarrerarik — idatzi zure lehen hausnarketa goian.",
+  "noEntriesMatchFilters": "Ez dago zure iragazkiekin bat datorren sarrerarik.",
+
+  "weeklyJournalLimitReached": "Asteko muga lortuta",
+  "weeklyJournalLimitMessage": "Aste honetako {limit} doako egunkari sarrera guztiak erabili dituzu. Eguneratu Premium-era mugarik gabeko sarrerak lortzeko.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Sarrera berria",
+  "writeYourThoughts": "Idatzi zure pentsamenduak",
+  "saveEntry": "Gorde sarrera",
+  "freeEntriesLeftThisWeek": "{remaining} / {limit} doako sarrera geratzen dira aste honetan",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Sarrera ezabatu?",
+  "deleteEntryConfirmation": "Sarrera hau betiko ezabatuko da. Ezin da atzera egin.",
+
+  "journalEntryNotFound": "Ez da sarrera aurkitu",
+  "journalEntryMayHaveBeenDeleted": "Baliteke egunkari sarrera hau ezabatua izana.",
+  "goBack": "Atzera egin",
+  "journalEntryTitle": "Egunkari sarrera",
+
+  "moodStruggling": "Zailtasunekin",
+  "moodUnwell": "Gaizki",
+  "moodNeutral": "Neutroa",
+
+  "whatHappenedToday": "Zer gertatu da gaur?",
+  "trigger": "Pizgarria",
+  "whatHelped": "Zerk lagundu du",
+  "whatIllTryNextTime": "Zer saiatuko naiz hurrengoan",
+  "journalPrivacyMessage": "Zure hausnarketa pribatua da eta zure egunkarian gordetzen da.",
+
+  "unlocked": "Desblokeatuta",
+  "daysLeft": "{count} egun geratzen dira",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Egun",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Lehen\nHausnarketa",
+  "oneJournalEntry": "Egunkari Sarrera 1",
+  "openBook": "Liburu Irekia",
+  "tenJournalEntries": "10 Egunkari Sarrera",
+  "dedicatedWriter": "Idazle\nDedikatua",
+  "thirtyJournalEntries": "30 Egunkari Sarrera",
+  "firstConversation": "Lehen\nElkarrizketa",
+  "oneAiCoachChat": "AI Entrenatzailearen Txat 1",
+  "keepTalking": "Jarraitu Hitz Egiten",
+  "fiveConversations": "5 Elkarrizketa",
+  "coachCompanion": "Entrenatzaile\nLaguna",
+  "twentyConversations": "20 Elkarrizketa",
+  "checkInHabit": "Azterketa\nOhitura",
+  "sevenCheckIns": "7 Azterketa",
+  "consistencyPro": "Konstantzia\nAditua",
+  "thirtyCheckIns": "30 Azterketa",
+  "dedicatedJourney": "Bidaia\nDedikatua",
+  "hundredCheckIns": "100 Azterketa",
+  "goalGetter": "Helburu Lortzailea",
+  "threeGoalsCompleted": "3 Helburu Osatuta",
+  "goalAchiever": "Helburu\nLortzailea",
+  "tenGoalsCompleted": "10 Helburu Osatuta",
+  "firstSavings": "Lehen\nAurreztuak",
+  "fiveHundredSaved": "$500 Aurreztuta",
+  "smartSaver": "Aurrezle Adimentsua",
+  "oneThousandSaved": "$1.000 Aurreztuta",
+  "bigSaver": "Aurrezle Handia",
+  "fiveThousandSaved": "$5.000 Aurreztuta",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Jarraitu aurrera — zure lehen mugarria zure zain dago!",
+  "badgesAndMilestones": "Intsigniak eta Mugarriak",
+  "yourMilestoneJourney": "Zure Mugarrien Bidaia",
+  "milestonesAchieved": "{count} mugarri lortuta.\nSakatuta ikusi",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "{total}-tik {unlocked} mugarri desblokeatu dituzu zure bidaian.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Geratzen direnak",
+  "complete": "Osatuta",
+  "nextMilestone": "Hurrengo Mugarria",
+  "percentThere": "{subtitle} · %{percent} eginda",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Mozkortu Gabeko Mugarriak",
+  "journeyBadges": "Bidaiaren Intsigniak",
+  "bronze": "BRONTZEA",
+  "silver": "ZIRTZILA",
+  "gold": "URREA",
+  "platinum": "PLATINOA",
+  "diamond": "DIAMANTEA",
+
+  "analyzingYourJourney": "Zure Bidaia Analizatzen...",
+  "aiCreatingSanctuary": "Gure AI-ak zure babesleku pertsonalizatua sortzen ari da.",
+  "understandingHabits": "Ohiturak ulertzen...",
+  "calculatingBaseline": "Zure oinarria kalkulatzen...",
+  "personalizingPlan": "Zure plana pertsonalizatzen...",
+  "finalizingSanctuary": "Babeslekua amaitzen...",
+  "creatingYourPlan": "Zure plana sortzen...",
+  "personalizedPlanError": "Ezin izan dugu zure plan pertsonalizatua sortu. Mesedez saiatu berriro.",
+  "retry": "Saiatu berriro",
+
+  "breathInhale": "ARNASTU",
+  "breathHold": "EUTSI",
+  "breathExhale": "BOTATU",
+  "breathDone": "EGINDA",
+  "breathGreatJob": "Lan bikaina!",
+  "breathSessionsToday": "{count, plural, one{Saio {count} gaur} other{{count} saio gaur}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Amaitu Ariketa",
+  "done": "Eginda",
+
+  "noCopingTipsYet": "Oraindik ez dago aurre egiteko aholkurik",
+  "copingStrategiesWillAppear": "Zure estrategia pertsonalizatuak hemen agertuko dira osatze plana sortzen amaitzen denean.",
+  "strategiesTailoredToTriggers": "Zure pizgarriei egokitutako estrategiak",
+
+  "cravingsPeakAndPass": "Gogo biziak gailurrera iristen dira\neta igaro egiten dira",
+  "rideTheWaveDescription": "Gogo bizi gehienak 15 minututan igarotzen dira. Ez duzu horren arabera jokatu behar — bide hori gurekin igaro soilik.",
+  "stayWithIt": "Eutsi horri",
+  "youMadeIt": "Lortu duzu",
+  "readyWhenYouAre": "Prest zaudenean",
+  "rideItAgain": "Berriro egin",
+  "start15MinuteTimer": "Hasi 15 Minutuko Tenporizadorea",
+  "rideTheWaveCompletedMessage": "Olatua igaro duzu. Hori benetako indarra da. 💪",
+
+  "myProgress": "Nire Aurrerapena",
+  "weekLabel": "Astea",
+  "monthLabel": "Hilabetea",
+  "allLabel": "Guztia",
+  "daysSoberStatLabel": "Mozkortu gabeko\negunak",
+  "savedStatLabel": "Aurreztuta",
+  "avoidedStatLabel": "Saihestuta",
+  "moodTrends": "Umore joerak",
+  "cravingsPattern": "Gogo bizien patroia",
+  "unlockLabel": "Desblokeatu",
+  "unlockFullStats": "Desblokeatu estatistika osoak",
+  "premiumStatsMessage": "Umore joerak eta gogo bizien patroiak Premium ezaugarriak dira. Eguneratu zure estatistika osoak ikusteko.",
+  "healthMilestonesWillAppear": "Zure osasun mugarriak hemen agertuko dira.",
+  "healthMilestones": "Osasun mugarriak",
+  "dayNumber": "{day}. eguna",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Mozkortu gabe",
+  "slipLabel": "Erorialdia",
+  "noDataLabel": "Daturik ez",
+
+  "milestone24Hours": "24 Ordu",
+  "milestoneOneWeek": "Aste Bat",
+  "milestoneOneMonth": "Hilabete Bat",
+  "milestoneThreeMonths": "Hiru Hilabete",
+  "milestoneSixMonths": "Sei Hilabete",
+  "milestoneOneYear": "Urte Bat",
+  "milestoneDayCount": "{day}. Eguneko Mugarria",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,9 +1,27 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:new_quit_drinking_app/firebase_options.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 import 'package:new_quit_drinking_app/screens/splash/splash_screen.dart';
+import 'package:new_quit_drinking_app/services/analytics_service.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await FirebaseMessaging.instance.requestPermission();
+
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+
+  final token = await FirebaseMessaging.instance.getToken();
+  print('FCM TOKEN: $token');
+
   runApp(const MyApp());
 }
 
@@ -15,6 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quit Drinking',
       debugShowCheckedModeBanner: false,
+      navigatorObservers: [AnalyticsService.instance.observer],
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

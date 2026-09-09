@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
-import '../../../constants/app_colors.dart';
+import '../../constants/app_colors.dart';
+import '../../services/analytics_service.dart';
 import '../details/details_screen.dart';
 import 'onboarding1/onboarding_screen_1.dart';
 import 'onboarding2/onboarding_screen_2.dart';
@@ -16,7 +17,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _controller = PageController();
   int _currentPage = 0;
 
+  @override
+  void initState() {
+    super.initState();
+
+    // NEW — onboarding flow started
+    AnalyticsService.instance.onboardingStart();
+  }
+
   void _goToDetails() {
+    // NOTE: onboardingComplete() intentionally NOT called here — this
+    // screen is just the 2-page intro (Skip/Continue leads to
+    // DetailsScreen, then the full QuestionsFlowScreen still follows).
+    // The real onboardingComplete() belongs wherever the
+    // onboardingCompleted profile flag actually gets set, most likely in
+    // AnalyzingJourneyScreen — will wire it there once that file is shared.
+
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const DetailsScreen()),
     );
@@ -70,12 +86,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // Swipeable pages
+            // Swipeable pages — swipe left/right works automatically
             Expanded(
               child: PageView(
                 controller: _controller,
+                physics: const BouncingScrollPhysics(),
                 onPageChanged: (index) {
                   setState(() => _currentPage = index);
+
+                  // NEW — a step of onboarding was completed, whether the
+                  // user got here by swiping or by tapping Continue (both
+                  // trigger onPageChanged, so this covers both paths
+                  // without double-logging).
+                  AnalyticsService.instance.onboardingStepComplete(index);
                 },
                 children: const [
                   OnboardingScreen1(),
@@ -84,7 +107,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // Progress indicator — synced with current page
+            // Progress indicator — synced with swipe AND button
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

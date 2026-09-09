@@ -1192,13 +1192,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
 
           Text(
             value,
             style: const TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 26,
+              fontSize: 23,
               letterSpacing: -0.32,
               color: AppColors.textBlack,
             ),
@@ -1208,6 +1208,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           Text(
             subtitle,
+            maxLines: 2,
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 12,

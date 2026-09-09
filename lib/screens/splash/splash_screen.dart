@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:new_quit_drinking_app/screens/onboardings/onboarding1/onboarding_screen_1.dart';
 import '../../constants/app_colors.dart';
 import '../../services/daily_check_in_service.dart';
 import '../../services/home_dashboard_service.dart';
@@ -11,6 +10,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 // ==================================================================
 import '../../services/milestone_service.dart';
 import '../milestones/milestone_achieved_screen.dart';
+import '../onboardings/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -64,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     if (!onboardingCompleted) {
       debugPrint('DESTINATION: ONBOARDING');
-      return const OnboardingScreen1();
+      return const OnboardingScreen();
     }
 
     final todayCheckIn = await DailyCheckInService.instance.getToday();
@@ -127,8 +127,8 @@ class _SplashScreenState extends State<SplashScreen>
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 128,
-                      height: 128,
+                      width: 130,
+                      height: 130,
                       decoration: const BoxDecoration(
                         color: AppColors.white,
                         shape: BoxShape.circle,
@@ -152,12 +152,14 @@ class _SplashScreenState extends State<SplashScreen>
                               },
                             ),
                           ),
-                          const SizedBox(height: 1),
+                          const SizedBox(height: 1.5),
                           Text(
                             l10n.appWordmark,
+                            maxLines: 2,
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 16,
+                              fontSize: 14,
                               letterSpacing: 1.0,
                               color: AppColors.textBlack,
                             ),
@@ -168,21 +170,21 @@ class _SplashScreenState extends State<SplashScreen>
                     const SizedBox(height: 20),
 
                     SizedBox(
-                      width: 247,
+                      width: double.infinity,
                       height: 57,
                       child: Text(
                         l10n.appTitle,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: 48,
+                          fontSize: 36,
                           letterSpacing: 0,
                           height: 1.0,
                           color: AppColors.primary,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 15),
 
                     SizedBox(
                       width: 242,

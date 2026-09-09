@@ -1,0 +1,577 @@
+{
+  "@@locale": "da",
+
+  "skip": "Spring over",
+  "continueButton": "Fortsæt",
+  "getStarted": "Kom i gang",
+
+  "onboardingTitle1": "Tag styringen over dit liv",
+  "onboardingSubtitle1": "Følg din rejse, fejr enhver succes, og bliv sundere dag for dag.",
+  "onboardingTitle2": "Din AI-restitutionsledsager",
+  "onboardingSubtitle2": "Få personlig vejledning, sunde vaner, motiverende påmindelser og fremskridtsrapporter skræddersyet til din rejse.",
+
+   "maybeLaterLabel": "Måske senere",
+   "@maybeLaterLabel": {
+     "description": "Button to dismiss the paywall dialog without upgrading"
+   },
+   "cancelLabel": "Annuller",
+   "@cancelLabel": {
+     "description": "Generic cancel button label"
+   },
+
+  "goodMorning": "Godmorgen",
+  "goodAfternoon": "Goddag",
+  "goodEvening": "Godaften",
+  "goodNight": "Godnat",
+
+  "embracingClarity": "Omfavn klarheden, én dag ad gangen.",
+  "streakLabel": "STREAK",
+  "goalLabel": "MÅL",
+  "daysStreak": "{count, plural, one{{count} dag} other{{count} dage}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium-abonnement",
+  "premiumPlanSubtitle": "Lås op for din fulde restitutionoplevelse",
+
+  "accountAndSupport": "KONTO OG SUPPORT",
+  "privacyPolicy": "Privatlivspolitik",
+  "privacyPolicySubtitle": "Administrer deling af data og kontosikkerhed",
+  "termsOfService": "Servicevilkår",
+  "termsOfServiceSubtitle": "Ofte stillede spørgsmål, kontakt os og ressourcer",
+  "shareApp": "Del appen",
+  "shareAppSubtitle": "Del appen med dine venner",
+  "resetData": "Nulstil data",
+  "resetDataSubtitle": "Slet alt gemt på denne enhed",
+
+  "resetAllDataTitle": "Nulstil alle data?",
+  "resetAllDataMessage": "Dette sletter alt gemt på denne enhed — profil, journalnotater og fremskridt — og kan ikke fortrydes.",
+  "cancel": "Annuller",
+  "reset": "Nulstil",
+
+  "chooseFromGallery": "Vælg fra galleri",
+  "takePhoto": "Tag foto",
+  "removePhoto": "Fjern foto",
+  "couldNotUpdatePhoto": "Kunne ikke opdatere foto: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Kunne ikke fjerne foto: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Billedet er for stort selv efter komprimering — prøv venligst et andet.",
+
+  "unableToLoadProfile": "Kunne ikke indlæse din profil",
+  "pleaseTryAgain": "Prøv venligst igen.",
+  "tryAgain": "Prøv igen",
+  "profileNotFound": "Profil ikke fundet",
+  "refresh": "Opdater",
+  "noProfileDataFound": "Ingen profildata fundet på denne enhed endnu.",
+
+  "couldNotResetData": "Kunne ikke nulstille data: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Hjem",
+  "navStats": "Statistik",
+  "navJournal": "Journal",
+  "navBadges": "Emblemer",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} vil snart være tilgængelig.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "VELVÆRE",
+  "appTitle": "Stop med at drikke",
+  "splashSubtitle": "Tag det første skridt mod et\nalkoholfrit liv",
+  "preparingJourney": "Forbereder din\nrejse",
+
+  "taskMorningMeditation": "Morgenmeditation (10 m)",
+  "taskReadChapter": "Læs kapitel 4 i \"The Sober Diaries\"",
+  "taskEveningJournal": "Aftenjournal over taknemmelighed",
+
+  "close": "Luk",
+  "youAreDoingGreat": "Du klarer det fantastisk!",
+  "shareMilestone": "Del milepæl",
+  "shareMilestoneMessage": "Jeg er på dag {days} af min restitutionsrejse! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Min restitutionsmilepæl",
+
+  "weeklyReportReadyTitle": "Din ugentlige rapport er klar",
+  "weeklyReportReadySubtitle": "Tryk for at se, hvordan din uge gik",
+
+  "howAreYouFeeling": "Hvordan har du det?",
+  "moodTough": "Svært",
+  "moodOkay": "Okey",
+  "moodGood": "Godt",
+
+  "moneySaved": "Penge sparret",
+  "caloriesSaved": "Kalorier sparet",
+  "healthScore": "Helbredsscore",
+  "drinksAvoided": "Undgåede genstande",
+  "estimated": "Estimeret",
+  "aiGenerated": "AI-genereret",
+  "daysCapsLabel": "DAGE",
+
+  "todaysMotivation": "Dagens motivation",
+  "defaultMotivationQuote": "Du har succesfuldt overholdt dit løfte. Bliv ved med at ride på bølgen af positiv forandring.",
+
+  "talkToCoach": "Tal med coach",
+  "havingACraving": "Jeg har en trang",
+
+  "unlockWeeklyReportsTitle": "Lås op for ugentlige rapporter",
+  "unlockWeeklyReportsMessage": "Se dine ædru dage, humørtrends og personlig AI-feedback hver uge. Opgrader til Premium for at låse op.",
+  "maybeLater": "Måske senere",
+  "upgrade": "Opgrader",
+
+  "weeklyReportTitle": "Ugentlig rapport",
+  "weeklyReportsPremiumTitle": "Ugentlige rapporter er en Premium-funktion",
+  "weeklyReportsPremiumMessage": "Se dine ædru dage, humørtrends, trang og personlig AI-feedback hver uge.",
+  "upgradeToPremium": "Opgrader til Premium",
+  "couldNotGenerateReport": "Kunne ikke generere din rapport lige nu.",
+  "tryAgainLower": "Prøv igen",
+
+  "statSoberDays": "Ædru dage",
+  "statAvgMood": "Gnsn. humør",
+  "statCravings": "Trang",
+  "statMoneySaved": "Penge sparret",
+  "coachFeedback": "Coach-feedback",
+  "journalInsights": "Journalindsigt",
+
+  "next": "Næste",
+
+  "question1Title": "Hvad er dit mål",
+  "question1Subtitle": "Vælg det mål, der betyder\nmest for dig",
+  "goalQuitCompletely": "Stop helt",
+  "goalReduceDrinking": "Reducer forbrug",
+  "goalTakeABreak": "Tag en pause",
+  "goalBuildHealthierHabits": "Opbyg sundere vaner",
+
+  "question3Title": "Fortæl os om din\nrutine",
+  "drinksPerWeek": "Genstande om ugen",
+  "moneySpentPerWeek": "Penge brugt om ugen",
+  "drinkingLevel": "Alkoholniveau",
+  "triggersLabel": "Udløsere",
+  "levelSocial": "Socialt",
+  "levelRegular": "Regelmæssigt",
+  "levelHeavy": "Tungt",
+  "levelDependent": "Afhængigt",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Ensomhed",
+  "triggerHabit": "Vane",
+  "triggerSadness": "Sorg",
+  "triggerAnger": "Vrede",
+  "triggerBoredom": "Kedsomhed",
+  "triggerSocialPressure": "Socialt pres",
+  "triggerCelebration": "Fejring",
+  "triggerSleepProblems": "Søvnproblemer",
+  "triggerWorkPressure": "Arbejdspres",
+
+  "question4Title": "Hvorfor vil du ændre dig?",
+  "question4Subtitle": "Din grund vil hjælpe med at motivere dig.",
+  "reasonImproveHealth": "Forbedre mit helbred",
+  "reasonSaveMoney": "Spare penge",
+  "reasonFamily": "Familie",
+  "reasonBetterSleep": "Bedre søvn",
+  "reasonMentalClarity": "Mental klarhed",
+  "reasonFitness": "Fitness",
+  "reasonSelfRespect": "Selvrespekt",
+  "reasonCareer": "Karriere",
+
+  "milestoneUnlockedLabel": "MILEPÆL LÅST OP",
+  "incredibleNamePrefix": "Fantastisk, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} sparret",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} undgået",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Del min milepæl",
+  "milestoneImageShareError": "Kunne ikke oprette milepælsbilledet. Prøv venligst igen.",
+
+  "dailyCheckInTitle": "Daglig tjek-ind",
+  "howAreYouFeelingToday": "Hvordan har du det i dag?",
+  "honestAnswerHelp": "Dit ærlige svar hjælper os med at støtte dig bedre",
+  "didYouDrinkToday": "Drak du i dag?",
+  "noLabel": "Nej",
+  "yesLabel": "Ja",
+  "cravingLevelNow": "Trangniveau lige nu?",
+  "anythingOnMind": "Har du noget på hjerte?",
+  "optionalLabel": "(valgfrit)",
+  "dailyNoteHint": "Skriv om din dag, udløsere, sejre...",
+  "alreadyCheckedInToday": "Allerede tjekket ind i dag",
+  "saveCheckIn": "Gem tjek-ind",
+  "checkInsHelpTrack": "Tjek-ind hjælper med at spore dine fremskridt over tid",
+  "alreadyCompletedTodayCheckIn": "Du har allerede fuldført dagens tjek-ind.",
+  "pleaseAnswerBothQuestions": "Besvar venligst begge spørgsmål ovenfor først",
+  "checkInSaved": "Tjek-ind gemt",
+  "cravingNone": "Ingen",
+  "cravingLow": "Lav",
+  "cravingMedium": "Mellem",
+  "cravingStrong": "Stærk",
+  "moodBad": "Dårligt",
+  "moodLow": "Lavt",
+  "moodOkay": "Okey",
+  "moodGood": "Godt",
+  "moodGreat": "Fremragende",
+
+  "sosSupportTitle": "SOS-support",
+  "notAloneMessage": "Du er ikke alene, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Trang går over. Vælg noget nedenfor til at hjælpe dig igennem dette øjeblik.",
+  "breathingExercise": "Andedrætsøvelse",
+  "breathingExerciseSubtitle": "Guidet 4-7-8 teknik, 2 minutter",
+  "rideTheWave": "Rid på bølgen",
+  "rideTheWaveSubtitle": "15 min nedtælling — trang går altid over",
+  "copingTips": "Mestringstips",
+  "copingTipsSubtitle": "Personlige strategier til dine udløsere",
+  "talkToAiCoach": "Tal med AI-coach",
+  "talkToAiCoachSubtitle": "Chat med din restitutionsledsager",
+  "callSomeone": "Ring til nogen",
+  "callSomeoneSubtitle": "Kontakt din betroede kontaktperson",
+  "contactsPermissionNeeded": "Der kræves kontakttilladelse for at ringe til en kontakt.",
+  "beatenCravingsPrefix": "Du har overvundet trang ",
+  "beatenCravingsCount": "{count} gange",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " før. Du kan gøre det igen.",
+
+  "tellUsAboutYourself": "Fortæl os om dig selv",
+  "detailsSubtitle": "Disse oplysninger hjælper os med at tilpasse din restitutionsrejse og give præcise indsigter.",
+  "nameLabel": "Navn",
+  "nameHint": "f.eks. Alex Rivers",
+  "ageLabel": "Alder",
+  "ageHint": "f.eks. 32",
+  "sexAssignedAtBirth": "Tildelt køn ved fødslen",
+  "sexFemale": "Kvinde",
+  "sexMale": "Mand",
+  "heightLabel": "Højde",
+  "weightLabel": "Vægt",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Daglig grænse nået",
+  "dailyLimitReachedMessage": "Du har brugt alle {limit} gratis beskeder i dag. Opgrader til Premium for ubegrænset coach-chat.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Jeg kunne ikke oprette forbindelse lige nu. Prøv venligst igen om et øjeblik.",
+  "clearConversationTitle": "Ryd samtale?",
+  "clearConversationMessage": "Dette vil permanent fjerne din chat-historik med coachen.",
+  "clearLabel": "Ryd",
+  "recoveryCoachTitle": "Restitutionscoach",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "Ryd samtale",
+  "chatGreeting": "Hej {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Du er på dag {days} af din rejse. Jeg er her, når du har brug for at tale om tingene.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "HURTIGE EMNER",
+  "promptCravingLabel": "Har en trang",
+  "promptCravingSubtitle": "Få jordforbindelse, hurtigt",
+  "promptMotivationLabel": "Brug for motivation",
+  "promptMotivationSubtitle": "Et skub når det er svært",
+  "promptSocialLabel": "Social situation",
+  "promptSocialSubtitle": "Naviger i et selskab",
+  "promptSlippedLabel": "Jeg faldt i",
+  "promptSlippedSubtitle": "Ingen fordømmelse, kun støtte",
+  "typeMessageHint": "Skriv en besked...",
+
+  "editProfileTitle": "Rediger profil",
+  "couldNotSaveProfile": "Kunne ikke gemme profil: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Højde (cm)",
+  "weightKgLabel": "Vægt (kg)",
+  "saveChangesLabel": "Gem ændringer",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Avancerede indsigter og analyser",
+  "featureUnlimitedJournal": "Ubegrænsede journalnotater",
+  "featureUnlimitedChat": "Ubegrænset chat med AI-coach",
+  "featureCommunityGroups": "Eksklusive fællesskabsgrupper",
+  "featurePrioritySupport": "Prioriteret ekspertsupport",
+  "featureThemePacks": "Anderledes temapakker",
+  "featureDataExport": "Dataeksport",
+  "featureAdFree": "Reklamefri oplevelse",
+  "premiumMemberTitle": "Du er Premium-medlem",
+  "unlockFullRecoveryTitle": "Lås op for din fulde\nrestitutionsoplevelse",
+  "premiumMemberSubtitle": "Tak fordi du støtter din restitutionsrejse — alle premium-funktioner nedenfor er låst op.",
+  "premiumJoinSubtitle": "Slut dig til tusindvis af andre, der fremskynder deres restitutionsrejse med vores premium-værktøjer og personlige støtte.",
+  "monthlyPlanLabel": "Månedlig",
+  "perMonthSuffix": "/md.",
+  "cancelAnytimeLabel": "Opsig når som helst",
+  "yearlyPlanLabel": "Årlig",
+  "billedAnnuallyLabel": "Faktureres årligt med {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Bedste værdi",
+  "alreadyPremiumLabel": "Du er Premium ✓",
+  "startPremiumLabel": "Start Premium",
+  "manageSubscriptionLabel": "Administrer eller annuller via din enheds abonnementsindstillinger.",
+  "noCommitmentLabel": "Ingen binding. Opsig når som helst.",
+  "continueFreePlanLabel": "Fortsæt med gratis abonnement",
+  "backToHomeLabel": "Tilbage til start",
+  "cancelPremiumLabel": "Annuller Premium",
+  "cancelPremiumTitle": "Annuller Premium?",
+  "cancelPremiumMessage": "Du mister adgangen til ubegrænsede journalnotater, ubegrænset coach-chat, statistikindsigt og ugentlige rapporter. Du kan til enhver tid tilmelde dig igen.",
+  "keepPremiumLabel": "Behold Premium",
+  "nowPremiumMessage": "Du er nu Premium! Nyd din fulde restitutionsoplevelse.",
+  "premiumCancelledMessage": "Premium annulleret. Du er tilbage på den gratis plan.",
+  "termsOfUseLabel": "Vilkår for anvendelse",
+
+  "navHomeLabel": "Hjem",
+  "navStatsLabel": "Statistik",
+  "navJournalLabel": "Journal",
+  "navBadgesLabel": "Emblemer",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "Restitutionsmål",
+  "quitReasonsLabel": "Grunde til at stoppe",
+  "quitReasonsHelperText": "Adskil flere grunde med komma.",
+  "couldNotSaveRecoveryGoals": "Kunne ikke gemme restitutionsmål: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "f.eks. Fuldstændig afholdenhed",
+  "drinksPerWeekHint": "f.eks. 12",
+  "quitReasonsHint": "f.eks. Helbred, Familie, Penge",
+
+  "todaysPrompt": "Dagens opfordring",
+  "defaultJournalPrompt": "Hvad tænker du på i dag?",
+  "aiJournalInsights": "AI-journalindsigter",
+  "unlockJournalInsightsMessage": "Lås op for ugentlige mønstre, humørtrends og personlige indsigter fra dine journalnotater.",
+  "notEnoughJournalData": "Ikke nok data endnu — skriv et par notater i denne uge og vend tilbage.",
+  "openEntry": "Åbn",
+  "editEntry": "Rediger",
+  "deleteEntry": "Slet",
+  "searchJournalEntries": "Søg i notater...",
+  "writeNewEntry": "Skriv nyt notat",
+  "recentEntries": "Seneste notater",
+  "noJournalEntriesYet": "Ingen journalnotater endnu — skriv din første refleksion ovenfor.",
+  "noEntriesMatchFilters": "Ingen notater matcher dine filtre.",
+
+  "weeklyJournalLimitReached": "Ugentlig grænse nået",
+  "weeklyJournalLimitMessage": "Du har brugt alle {limit} gratis journalnotater i denne uge. Opgrader til Premium for ubegrænsede notater.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Nyt notat",
+  "writeYourThoughts": "Skriv dine tanker",
+  "saveEntry": "Gem notat",
+  "freeEntriesLeftThisWeek": "{remaining} af {limit} gratis notater tilbage i denne uge",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Slet notat?",
+  "deleteEntryConfirmation": "Dette notat vil blive slettet permanent. Dette kan ikke fortrydes.",
+
+  "journalEntryNotFound": "Notat ikke fundet",
+  "journalEntryMayHaveBeenDeleted": "Dette journalnotat kan være blevet slettet.",
+  "goBack": "Gå tilbage",
+  "journalEntryTitle": "Journalnotat",
+
+  "moodStruggling": "Kæmper",
+  "moodUnwell": "Skidt",
+  "moodNeutral": "Neutral",
+
+  "whatHappenedToday": "Hvad skete der i dag?",
+  "trigger": "Udløser",
+  "whatHelped": "Hvad hjalp",
+  "whatIllTryNextTime": "Hvad jeg vil prøve næste gang",
+  "journalPrivacyMessage": "Din refleksion er privat og gemmes i din journal.",
+
+  "unlocked": "Låst op",
+  "daysLeft": "{count, plural, one{{count} dag tilbage} other{{count} dage tilbage}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Dage",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Første\nrefleksion",
+  "oneJournalEntry": "1 journalnotat",
+  "openBook": "Åben bog",
+  "tenJournalEntries": "10 journalnotater",
+  "dedicatedWriter": "Dedikeret\nskribent",
+  "thirtyJournalEntries": "30 journalnotater",
+  "firstConversation": "Første\nsamtale",
+  "oneAiCoachChat": "1 AI-coach-chat",
+  "keepTalking": "Bliv ved med at tale",
+  "fiveConversations": "5 samtaler",
+  "coachCompanion": "Coach-\nledsager",
+  "twentyConversations": "20 samtaler",
+  "checkInHabit": "Tjek-ind-\nvane",
+  "sevenCheckIns": "7 tjek-ind",
+  "consistencyPro": "Konsistens-\nekspert",
+  "thirtyCheckIns": "30 tjek-ind",
+  "dedicatedJourney": "Dedikeret\nrejse",
+  "hundredCheckIns": "100 tjek-ind",
+  "goalGetter": "Målsøger",
+  "threeGoalsCompleted": "3 mål fuldført",
+  "goalAchiever": "Mål-\nopnåer",
+  "tenGoalsCompleted": "10 mål fuldført",
+  "firstSavings": "Første\nsparepenge",
+  "fiveHundredSaved": "$500 sparret",
+  "smartSaver": "Klog sparer",
+  "oneThousandSaved": "$1.000 sparret",
+  "bigSaver": "Stor sparer",
+  "fiveThousandSaved": "$5.000 sparret",
+  "currencyProgress": "${current} af ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} af {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Bliv ved — din første milepæl venter på dig!",
+  "badgesAndMilestones": "Emblemer og milepæle",
+  "yourMilestoneJourney": "Din milepælsrejse",
+  "milestonesAchieved": "{count, plural, one{{count} milepæl opnået.\nTryk for at se} other{{count} milepæle opnået.\nTryk for at se}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Du har låst op for {unlocked} af {total} milepæle på din rejse.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Resterende",
+  "complete": "Fuldført",
+  "nextMilestone": "Næste milepæl",
+  "percentThere": "{subtitle} · {percent}% derhenne",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Ædruelighedsmilepæle",
+  "journeyBadges": "Rejseemblemer",
+  "bronze": "BRONZE",
+  "silver": "SØLV",
+  "gold": "GULD",
+  "platinum": "PLATIN",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Analyserer din rejse...",
+  "aiCreatingSanctuary": "Vores AI opretter dit personlige fristed.",
+  "understandingHabits": "Forstår vaner...",
+  "calculatingBaseline": "Beregner dit udgangspunkt...",
+  "personalizingPlan": "Tilpasser din plan...",
+  "finalizingSanctuary": "Færdiggør dit fristed...",
+  "creatingYourPlan": "Opretter din plan...",
+  "personalizedPlanError": "Vi kunne ikke oprette din personlige plan. Prøv venligst igen.",
+  "retry": "Prøv igen",
+
+  "breathInhale": "INDÅND",
+  "breathHold": "HOLD BOLDEN",
+  "breathExhale": "UDÅND",
+  "breathDone": "FÆRDIG",
+  "breathGreatJob": "Godt gået!",
+  "breathSessionsToday": "{count, plural, one{{count} session i dag} other{{count} sessioner i dag}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Afslut øvelse",
+  "done": "Færdig",
+
+  "noCopingTipsYet": "Ingen mestringstips endnu",
+  "copingStrategiesWillAppear": "Dine personlige mestringsstrategier vises her, når din restitutionsplan er færdiggenereret.",
+  "strategiesTailoredToTriggers": "Strategier skræddersyet til dine udløsere",
+
+  "cravingsPeakAndPass": "Trang topper\nog går over",
+  "rideTheWaveDescription": "De fleste trangsfaser går over inden for 15 minutter. Du behøver ikke reagere på den — rid blot stormen af sammen med os.",
+  "stayWithIt": "bliv ved",
+  "youMadeIt": "du klarede det",
+  "readyWhenYouAre": "klar når du er",
+  "rideItAgain": "Prøv igen",
+  "start15MinuteTimer": "Start 15-minutters timer",
+  "rideTheWaveCompletedMessage": "Du red bølgen af. Det er sand styrke. 💪",
+
+  "myProgress": "Mine fremskridt",
+  "weekLabel": "Uge",
+  "monthLabel": "Måned",
+  "allLabel": "Alt",
+  "daysSoberStatLabel": "Dage\nædru",
+  "savedStatLabel": "Sparret",
+  "avoidedStatLabel": "Undgået",
+  "moodTrends": "Humørtrends",
+  "cravingsPattern": "Trangmønster",
+  "unlockLabel": "Lås op",
+  "unlockFullStats": "Lås op for fuld statistik",
+  "premiumStatsMessage": "Humørtrends og trangmønstre er Premium-funktioner. Opgrader for at se din fulde statistik.",
+  "healthMilestonesWillAppear": "Dine sundhedsmilepæle vises her.",
+  "healthMilestones": "Sundhedsmilepæle",
+  "dayNumber": "Dag {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Ædru",
+  "slipLabel": "Smutter",
+  "noDataLabel": "Ingen data",
+
+  "milestone24Hours": "24 timer",
+  "milestoneOneWeek": "Én uge",
+  "milestoneOneMonth": "Én måned",
+  "milestoneThreeMonths": "Tre måneder",
+  "milestoneSixMonths": "Seks måneder",
+  "milestoneOneYear": "Et år",
+  "milestoneDayCount": "Dag {day} milepæl",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

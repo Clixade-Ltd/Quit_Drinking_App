@@ -1,0 +1,584 @@
+{
+  "@@locale": "vi",
+
+  "skip": "Bỏ qua",
+  "continueButton": "Tiếp tục",
+  "getStarted": "Bắt đầu",
+
+  "onboardingTitle1": "Làm chủ cuộc sống của bạn",
+  "onboardingSubtitle1": "Theo dõi hành trình, ăn mừng mọi thành tựu và trở nên khỏe mạnh hơn từng ngày.",
+  "onboardingTitle2": "Người bạn đồng hành AI trong hành trình phục hồi",
+  "onboardingSubtitle2": "Nhận hướng dẫn cá nhân hóa, thói quen lành mạnh, lời nhắc tạo động lực và báo cáo tiến trình được thiết kế cho hành trình của bạn.",
+
+  "maybeLaterLabel": "Có lẽ để sau",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Hủy",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Chào buổi sáng",
+  "goodAfternoon": "Chào buổi chiều",
+  "goodEvening": "Chào buổi tối",
+  "goodNight": "Chúc ngủ ngon",
+
+  "embracingClarity": "Đón nhận sự sáng suốt, từng ngày một.",
+  "streakLabel": "CHUỖI NGÀY",
+  "goalLabel": "MỤC TIÊU",
+  "daysStreak": "{count, plural, one{{count} ngày} other{{count} ngày}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Gói Premium",
+  "premiumPlanSubtitle": "Mở khóa toàn bộ trải nghiệm phục hồi",
+
+  "accountAndSupport": "TÀI KHOẢN & HỖ TRỢ",
+  "privacyPolicy": "Chính sách quyền riêng tư",
+  "privacyPolicySubtitle": "Quản lý chia sẻ dữ liệu và bảo mật tài khoản",
+  "termsOfService": "Điều khoản dịch vụ",
+  "termsOfServiceSubtitle": "Câu hỏi thường gặp, liên hệ và tài nguyên",
+  "shareApp": "Chia sẻ ứng dụng",
+  "shareAppSubtitle": "Chia sẻ ứng dụng với bạn bè",
+  "resetData": "Đặt lại dữ liệu",
+  "resetDataSubtitle": "Xóa mọi thứ đã lưu trên thiết bị này",
+
+  "resetAllDataTitle": "Đặt lại tất cả dữ liệu?",
+  "resetAllDataMessage": "Thao tác này sẽ xóa mọi thứ được lưu trên thiết bị — hồ sơ, nhật ký và tiến trình — và không thể hoàn tác.",
+  "cancel": "Hủy",
+  "reset": "Đặt lại",
+
+  "chooseFromGallery": "Chọn từ thư viện",
+  "takePhoto": "Chụp ảnh",
+  "removePhoto": "Xóa ảnh",
+  "couldNotUpdatePhoto": "Không thể cập nhật ảnh: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Không thể xóa ảnh: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Ảnh quá lớn ngay cả sau khi nén — vui lòng thử ảnh khác.",
+
+  "unableToLoadProfile": "Không thể tải hồ sơ của bạn",
+  "pleaseTryAgain": "Vui lòng thử lại.",
+  "tryAgain": "Thử lại",
+  "profileNotFound": "Không tìm thấy hồ sơ",
+  "refresh": "Làm mới",
+  "noProfileDataFound": "Chưa tìm thấy dữ liệu hồ sơ trên thiết bị này.",
+
+  "couldNotResetData": "Không thể đặt lại dữ liệu: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Trang chủ",
+  "navStats": "Thống kê",
+  "navJournal": "Nhật ký",
+  "navBadges": "Huy hiệu",
+  "navProfile": "Hồ sơ",
+
+  "featureComingSoon": "{feature} sẽ sớm khả dụng.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "SỨC KHỎE",
+  "appTitle": "Cai rượu",
+  "splashSubtitle": "Bước đầu tiên hướng tới\ncuộc sống không có rượu",
+  "preparingJourney": "Đang chuẩn bị\nhành trình của bạn",
+
+  "taskMorningMeditation": "Thiền buổi sáng (10 phút)",
+  "taskReadChapter": "Đọc Chương 4 của \"The Sober Diaries\"",
+  "taskEveningJournal": "Nhật ký biết ơn buổi tối",
+
+  "close": "Đóng",
+  "youAreDoingGreat": "Bạn đang làm rất tốt!",
+  "shareMilestone": "Chia sẻ cột mốc",
+  "shareMilestoneMessage": "Tôi đang ở ngày thứ {days} trong hành trình phục hồi! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Cột mốc phục hồi của tôi",
+
+  "weeklyReportReadyTitle": "Báo cáo hàng tuần của bạn đã sẵn sàng",
+  "weeklyReportReadySubtitle": "Nhấn để xem tuần vừa qua của bạn",
+
+  "howAreYouFeeling": "Bạn cảm thấy thế nào?",
+  "moodTough": "Khó khăn",
+  "moodOkay": "Ổn",
+  "moodGood": "Tốt",
+
+  "moneySaved": "Tiền tiết kiệm",
+  "caloriesSaved": "Calo tiết kiệm",
+  "healthScore": "Điểm sức khỏe",
+  "drinksAvoided": "Đồ uống đã tránh",
+  "estimated": "Ước tính",
+  "aiGenerated": "Được tạo bởi AI",
+  "daysCapsLabel": "NGÀY",
+
+  "todaysMotivation": "Động lực hôm nay",
+  "defaultMotivationQuote": "Bạn đã thành công trong việc giữ vững cam kết của mình. Hãy tiếp tục đón nhận làn sóng thay đổi tích cực.",
+
+  "talkToCoach": "Nói chuyện với huấn luyện viên",
+  "havingACraving": "Tôi đang thèm rượu",
+
+  "unlockWeeklyReportsTitle": "Mở khóa báo cáo hàng tuần",
+  "unlockWeeklyReportsMessage": "Xem số ngày không uống rượu, xu hướng tâm trạng và phản hồi AI cá nhân hóa mỗi tuần. Nâng cấp lên Premium để mở khóa.",
+  "maybeLater": "Để sau",
+  "upgrade": "Nâng cấp",
+
+  "weeklyReportTitle": "Báo cáo hàng tuần",
+  "weeklyReportsPremiumTitle": "Báo cáo hàng tuần là tính năng Premium",
+  "weeklyReportsPremiumMessage": "Xem số ngày không uống rượu, xu hướng tâm trạng, cơn thèm và phản hồi AI cá nhân hóa mỗi tuần.",
+  "upgradeToPremium": "Nâng cấp lên Premium",
+  "couldNotGenerateReport": "Không thể tạo báo cáo của bạn lúc này.",
+  "tryAgainLower": "Thử lại",
+
+  "statSoberDays": "Ngày không uống rượu",
+  "statAvgMood": "Tâm trạng TB",
+  "statCravings": "Cơn thèm",
+  "statMoneySaved": "Tiền tiết kiệm",
+  "coachFeedback": "Phản hồi từ huấn luyện viên",
+  "journalInsights": "Thông tin từ nhật ký",
+
+  "next": "Tiếp theo",
+
+  "question1Title": "Mục tiêu của bạn là gì",
+  "question1Subtitle": "Chọn mục tiêu quan trọng\nnhất với bạn",
+  "goalQuitCompletely": "Bỏ rượu hoàn toàn",
+  "goalReduceDrinking": "Giảm uống rượu",
+  "goalTakeABreak": "Tạm nghỉ",
+  "goalBuildHealthierHabits": "Xây dựng thói quen lành mạnh hơn",
+
+  "question3Title": "Hãy cho chúng tôi biết về\nthói quen của bạn",
+  "drinksPerWeek": "Số đồ uống mỗi tuần",
+  "moneySpentPerWeek": "Chi tiêu mỗi tuần",
+  "drinkingLevel": "Mức độ uống",
+  "triggersLabel": "Tác nhân kích hoạt",
+  "levelSocial": "Xã giao",
+  "levelRegular": "Thường xuyên",
+  "levelHeavy": "Nhiều",
+  "levelDependent": "Phụ thuộc",
+  "triggerStress": "Căng thẳng",
+  "triggerLoneliness": "Cô đơn",
+  "triggerHabit": "Thói quen",
+  "triggerSadness": "Buồn bã",
+  "triggerAnger": "Tức giận",
+  "triggerBoredom": "Chán nản",
+  "triggerSocialPressure": "Áp lực xã hội",
+  "triggerCelebration": "Ăn mừng",
+  "triggerSleepProblems": "Vấn đề về giấc ngủ",
+  "triggerWorkPressure": "Áp lực công việc",
+
+  "question4Title": "Tại sao bạn muốn thay đổi?",
+  "question4Subtitle": "Lý do của bạn sẽ giúp duy trì động lực.",
+  "reasonImproveHealth": "Cải thiện sức khỏe",
+  "reasonSaveMoney": "Tiết kiệm tiền",
+  "reasonFamily": "Gia đình",
+  "reasonBetterSleep": "Ngủ ngon hơn",
+  "reasonMentalClarity": "Tinh thần minh mẫn",
+  "reasonFitness": "Thể chất",
+  "reasonSelfRespect": "Tôn trọng bản thân",
+  "reasonCareer": "Sự nghiệp",
+
+  "milestoneUnlockedLabel": "ĐÃ MỞ KHÓA CỘT MỐC",
+  "incredibleNamePrefix": "Tuyệt vời, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "Đã tiết kiệm {amount}",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "Đã tránh {count}",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Chia sẻ cột mốc của tôi",
+  "milestoneImageShareError": "Không thể tạo hình ảnh cột mốc. Vui lòng thử lại.",
+
+  "dailyCheckInTitle": "Check-in hàng ngày",
+  "howAreYouFeelingToday": "Hôm nay bạn cảm thấy thế nào?",
+  "honestAnswerHelp": "Câu trả lời chân thật giúp chúng tôi hỗ trợ bạn tốt hơn",
+  "didYouDrinkToday": "Hôm nay bạn có uống rượu không?",
+  "noLabel": "Không",
+  "yesLabel": "Có",
+  "cravingLevelNow": "Mức độ thèm rượu ngay lúc này?",
+  "anythingOnMind": "Bạn đang suy nghĩ điều gì?",
+  "optionalLabel": "(không bắt buộc)",
+  "dailyNoteHint": "Viết về ngày hôm nay, tác nhân kích hoạt, thành công...",
+  "alreadyCheckedInToday": "Bạn đã check-in hôm nay",
+  "saveCheckIn": "Lưu check-in",
+  "checkInsHelpTrack": "Check-in giúp theo dõi tiến trình của bạn theo thời gian",
+  "alreadyCompletedTodayCheckIn": "Bạn đã hoàn thành check-in hôm nay.",
+  "pleaseAnswerBothQuestions": "Vui lòng trả lời cả hai câu hỏi trên trước",
+  "checkInSaved": "Đã lưu check-in",
+  "cravingNone": "Không có",
+  "cravingLow": "Thấp",
+  "cravingMedium": "Trung bình",
+  "cravingStrong": "Mạnh",
+  "moodBad": "Tệ",
+  "moodLow": "Không tốt",
+  "moodOkay": "Ổn",
+  "moodGood": "Tốt",
+  "moodGreat": "Tuyệt vời",
+
+  "sosSupportTitle": "Hỗ trợ SOS",
+  "notAloneMessage": "Bạn không cô đơn, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Cơn thèm sẽ qua. Chọn một điều bên dưới để giúp bạn vượt qua khoảnh khắc này.",
+  "breathingExercise": "Bài tập thở",
+  "breathingExerciseSubtitle": "Kỹ thuật 4-7-8 có hướng dẫn, 2 phút",
+  "rideTheWave": "Vượt qua cơn thèm",
+  "rideTheWaveSubtitle": "Hẹn giờ 15 phút — cơn thèm luôn qua đi",
+  "copingTips": "Mẹo đối phó",
+  "copingTipsSubtitle": "Chiến lược cá nhân hóa cho các tác nhân của bạn",
+  "talkToAiCoach": "Nói chuyện với AI coach",
+  "talkToAiCoachSubtitle": "Trò chuyện với người đồng hành phục hồi của bạn",
+  "callSomeone": "Gọi cho ai đó",
+  "callSomeoneSubtitle": "Liên hệ với người đáng tin cậy",
+  "contactsPermissionNeeded": "Cần quyền truy cập danh bạ để gọi cho một liên hệ.",
+  "beatenCravingsPrefix": "Bạn đã vượt qua cơn thèm ",
+  "beatenCravingsCount": "{count} lần",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " trước đây. Bạn có thể làm lại.",
+
+  "tellUsAboutYourself": "Hãy cho chúng tôi biết về bạn",
+  "detailsSubtitle": "Thông tin này giúp chúng tôi cá nhân hóa hành trình phục hồi và cung cấp thông tin chính xác.",
+  "nameLabel": "Tên",
+  "nameHint": "ví dụ: Alex Rivers",
+  "ageLabel": "Tuổi",
+  "ageHint": "ví dụ: 32",
+  "sexAssignedAtBirth": "Giới tính khi sinh",
+  "sexFemale": "Nữ",
+  "sexMale": "Nam",
+  "heightLabel": "Chiều cao",
+  "weightLabel": "Cân nặng",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Đã đạt giới hạn hàng ngày",
+  "dailyLimitReachedMessage": "Bạn đã sử dụng hết {limit} tin nhắn miễn phí hôm nay. Nâng cấp lên Premium để trò chuyện không giới hạn với coach.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Tôi không thể kết nối lúc này. Vui lòng thử lại sau một lát.",
+  "clearConversationTitle": "Xóa cuộc trò chuyện?",
+  "clearConversationMessage": "Thao tác này sẽ xóa vĩnh viễn lịch sử trò chuyện với coach.",
+  "clearLabel": "Xóa",
+  "recoveryCoachTitle": "Coach phục hồi",
+  "onlineLabel": "Trực tuyến",
+  "clearConversationMenuItem": "Xóa cuộc trò chuyện",
+  "chatGreeting": "Xin chào {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Bạn đang ở ngày thứ {days} trong hành trình của mình. Tôi luôn ở đây khi bạn muốn chia sẻ.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "GỢI Ý NHANH",
+  "promptCravingLabel": "Đang thèm rượu",
+  "promptCravingSubtitle": "Lấy lại bình tĩnh nhanh chóng",
+  "promptMotivationLabel": "Cần động lực",
+  "promptMotivationSubtitle": "Một chút động lực khi khó khăn",
+  "promptSocialLabel": "Tình huống xã hội",
+  "promptSocialSubtitle": "Xử lý một buổi gặp mặt",
+  "promptSlippedLabel": "Tôi đã lỡ uống",
+  "promptSlippedSubtitle": "Không phán xét, chỉ hỗ trợ",
+  "typeMessageHint": "Nhập tin nhắn...",
+
+  "editProfileTitle": "Chỉnh sửa hồ sơ",
+  "couldNotSaveProfile": "Không thể lưu hồ sơ: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Chiều cao (cm)",
+  "weightKgLabel": "Cân nặng (kg)",
+  "saveChangesLabel": "Lưu thay đổi",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Phân tích & thông tin chuyên sâu",
+  "featureUnlimitedJournal": "Nhật ký không giới hạn",
+  "featureUnlimitedChat": "Trò chuyện không giới hạn với AI Coach",
+  "featureCommunityGroups": "Nhóm cộng đồng độc quyền",
+  "featurePrioritySupport": "Hỗ trợ chuyên gia ưu tiên",
+  "featureThemePacks": "Bộ giao diện tùy chỉnh",
+  "featureDataExport": "Xuất dữ liệu",
+  "featureAdFree": "Trải nghiệm không quảng cáo",
+  "premiumMemberTitle": "Bạn là thành viên Premium",
+  "unlockFullRecoveryTitle": "Mở khóa toàn bộ\ntrải nghiệm phục hồi",
+  "premiumMemberSubtitle": "Cảm ơn bạn đã ủng hộ hành trình phục hồi — mọi tính năng Premium bên dưới đều đã được mở khóa.",
+  "premiumJoinSubtitle": "Tham gia cộng đồng hàng nghìn người đang\nđẩy nhanh hành trình chữa lành với các công cụ\nPremium và hỗ trợ cá nhân hóa của chúng tôi.",
+  "monthlyPlanLabel": "Hàng tháng",
+  "perMonthSuffix": "/tháng",
+  "cancelAnytimeLabel": "Hủy bất cứ lúc nào",
+  "yearlyPlanLabel": "Hàng năm",
+  "billedAnnuallyLabel": "Thanh toán hàng năm {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Giá trị tốt nhất",
+  "alreadyPremiumLabel": "Bạn đã là Premium ✓",
+  "startPremiumLabel": "Bắt đầu Premium",
+  "manageSubscriptionLabel": "Quản lý hoặc hủy trong cài đặt đăng ký của thiết bị.",
+  "noCommitmentLabel": "Không cam kết. Hủy bất cứ lúc nào.",
+  "continueFreePlanLabel": "Tiếp tục với gói miễn phí",
+  "backToHomeLabel": "Về trang chủ",
+  "cancelPremiumLabel": "Hủy Premium",
+  "cancelPremiumTitle": "Hủy Premium?",
+  "cancelPremiumMessage": "Bạn sẽ mất quyền truy cập vào nhật ký không giới hạn, trò chuyện không giới hạn với coach, thông tin thống kê và báo cáo hàng tuần. Bạn có thể đăng ký lại bất cứ lúc nào.",
+  "keepPremiumLabel": "Giữ Premium",
+  "nowPremiumMessage": "Bạn đã trở thành Premium! Hãy tận hưởng toàn bộ trải nghiệm phục hồi.",
+  "premiumCancelledMessage": "Premium đã được hủy. Bạn đã trở lại gói miễn phí.",
+  "termsOfUseLabel": "Điều khoản sử dụng",
+
+  "navHomeLabel": "Trang chủ",
+  "navStatsLabel": "Thống kê",
+  "navJournalLabel": "Nhật ký",
+  "navBadgesLabel": "Huy hiệu",
+  "navProfileLabel": "Hồ sơ",
+
+  "recoveryGoalsTitle": "Mục tiêu phục hồi",
+  "goalLabel": "Mục tiêu",
+  "drinksPerWeekLabel": "Đồ uống mỗi tuần",
+  "quitReasonsLabel": "Lý do bỏ rượu",
+  "quitReasonsHelperText": "Phân tách nhiều lý do bằng dấu phẩy.",
+  "couldNotSaveRecoveryGoals": "Không thể lưu mục tiêu phục hồi: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ví dụ: Cai hoàn toàn",
+  "drinksPerWeekHint": "ví dụ: 12",
+  "quitReasonsHint": "ví dụ: Sức khỏe, Gia đình, Tiền bạc",
+
+  "todaysPrompt": "Câu hỏi hôm nay",
+  "defaultJournalPrompt": "Hôm nay bạn đang nghĩ gì?",
+  "aiJournalInsights": "Thông tin chuyên sâu từ AI",
+  "unlockJournalInsightsMessage": "Mở khóa các xu hướng hàng tuần, xu hướng tâm trạng và thông tin cá nhân hóa từ các mục nhật ký của bạn.",
+  "notEnoughJournalData": "Chưa đủ dữ liệu — hãy viết vài mục trong tuần này rồi quay lại.",
+  "openEntry": "Mở",
+  "editEntry": "Chỉnh sửa",
+  "deleteEntry": "Xóa",
+  "searchJournalEntries": "Tìm kiếm nhật ký...",
+  "writeNewEntry": "Viết mục mới",
+  "recentEntries": "Mục gần đây",
+  "noJournalEntriesYet": "Chưa có mục nhật ký — hãy viết phản hồi đầu tiên ở phía trên.",
+  "noEntriesMatchFilters": "Không có mục nào phù hợp với bộ lọc của bạn.",
+
+  "weeklyJournalLimitReached": "Đã đạt giới hạn hàng tuần",
+  "weeklyJournalLimitMessage": "Bạn đã sử dụng hết {limit} mục nhật ký miễn phí trong tuần này. Nâng cấp lên Premium để có mục không giới hạn.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Mục mới",
+  "writeYourThoughts": "Viết suy nghĩ của bạn",
+  "saveEntry": "Lưu mục",
+  "freeEntriesLeftThisWeek": "Còn {remaining} trên {limit} mục miễn phí trong tuần này",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Xóa mục?",
+  "deleteEntryConfirmation": "Mục này sẽ bị xóa vĩnh viễn. Không thể hoàn tác.",
+
+  "journalEntryNotFound": "Không tìm thấy mục",
+  "journalEntryMayHaveBeenDeleted": "Mục nhật ký này có thể đã bị xóa.",
+  "goBack": "Quay lại",
+  "journalEntryTitle": "Mục nhật ký",
+
+  "moodStruggling": "Đang khó khăn",
+  "moodUnwell": "Không ổn",
+  "moodNeutral": "Bình thường",
+
+  "whatHappenedToday": "Hôm nay đã xảy ra chuyện gì?",
+  "trigger": "Tác nhân",
+  "whatHelped": "Điều gì đã giúp",
+  "whatIllTryNextTime": "Lần sau tôi sẽ thử gì",
+  "journalPrivacyMessage": "Những chia sẻ của bạn là riêng tư và được lưu trong nhật ký.",
+
+  "unlocked": "Đã mở khóa",
+  "daysLeft": "Còn {count} ngày",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} ngày",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Lần suy ngẫm\nđầu tiên",
+  "oneJournalEntry": "1 mục nhật ký",
+  "openBook": "Mở sách",
+  "tenJournalEntries": "10 mục nhật ký",
+  "dedicatedWriter": "Người viết\nchăm chỉ",
+  "thirtyJournalEntries": "30 mục nhật ký",
+  "firstConversation": "Cuộc trò chuyện\nđầu tiên",
+  "oneAiCoachChat": "1 cuộc trò chuyện với AI Coach",
+  "keepTalking": "Tiếp tục trò chuyện",
+  "fiveConversations": "5 cuộc trò chuyện",
+  "coachCompanion": "Người đồng hành\nCoach",
+  "twentyConversations": "20 cuộc trò chuyện",
+  "checkInHabit": "Thói quen\ncheck-in",
+  "sevenCheckIns": "7 lần check-in",
+  "consistencyPro": "Chuyên gia\nkiên trì",
+  "thirtyCheckIns": "30 lần check-in",
+  "dedicatedJourney": "Hành trình\nkiên định",
+  "hundredCheckIns": "100 lần check-in",
+  "goalGetter": "Người chinh phục mục tiêu",
+  "threeGoalsCompleted": "Hoàn thành 3 mục tiêu",
+  "goalAchiever": "Người đạt\nmục tiêu",
+  "tenGoalsCompleted": "Hoàn thành 10 mục tiêu",
+  "firstSavings": "Khoản tiết kiệm\nđầu tiên",
+  "fiveHundredSaved": "Đã tiết kiệm $500",
+  "smartSaver": "Người tiết kiệm thông minh",
+  "oneThousandSaved": "Đã tiết kiệm $1.000",
+  "bigSaver": "Người tiết kiệm lớn",
+  "fiveThousandSaved": "Đã tiết kiệm $5.000",
+  "currencyProgress": "${current} trên ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} trên {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Hãy tiếp tục — cột mốc đầu tiên đang chờ bạn!",
+  "badgesAndMilestones": "Huy hiệu & Cột mốc",
+  "yourMilestoneJourney": "Hành trình cột mốc của bạn",
+  "milestonesAchieved": "Đã đạt {count} cột mốc.\nNhấn để xem",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Bạn đã mở khóa {unlocked} trên tổng số {total} cột mốc trong hành trình.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Còn lại",
+  "complete": "Hoàn thành",
+  "nextMilestone": "Cột mốc tiếp theo",
+  "percentThere": "{subtitle} · đã đạt {percent}%",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Cột mốc không uống rượu",
+  "journeyBadges": "Huy hiệu hành trình",
+  "bronze": "ĐỒNG",
+  "silver": "BẠC",
+  "gold": "VÀNG",
+  "platinum": "BẠCH KIM",
+  "diamond": "KIM CƯƠNG",
+
+  "analyzingYourJourney": "Đang phân tích hành trình của bạn...",
+  "aiCreatingSanctuary": "AI đang tạo không gian phục hồi cá nhân hóa cho bạn.",
+  "understandingHabits": "Đang tìm hiểu thói quen...",
+  "calculatingBaseline": "Đang tính toán mức cơ sở của bạn...",
+  "personalizingPlan": "Đang cá nhân hóa kế hoạch...",
+  "finalizingSanctuary": "Đang hoàn thiện không gian phục hồi...",
+  "creatingYourPlan": "Đang tạo kế hoạch của bạn...",
+  "personalizedPlanError": "Chúng tôi không thể tạo kế hoạch cá nhân hóa của bạn. Vui lòng thử lại.",
+  "retry": "Thử lại",
+
+  "breathingExercise": "Bài tập thở",
+  "breathInhale": "HÍT VÀO",
+  "breathHold": "GIỮ",
+  "breathExhale": "THỞ RA",
+  "breathDone": "XONG",
+  "breathGreatJob": "Làm tốt lắm!",
+  "remaining": "Còn lại",
+  "breathSessionsToday": "{count, plural, one{{count} phiên hôm nay} other{{count} phiên hôm nay}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Kết thúc bài tập",
+  "done": "Xong",
+
+  "noCopingTipsYet": "Chưa có mẹo đối phó",
+  "copingStrategiesWillAppear": "Các chiến lược đối phó cá nhân hóa sẽ xuất hiện ở đây sau khi kế hoạch phục hồi của bạn hoàn tất.",
+  "strategiesTailoredToTriggers": "Chiến lược phù hợp với tác nhân của bạn",
+
+  "rideTheWave": "Vượt qua cơn thèm",
+  "cravingsPeakAndPass": "Cơn thèm đạt đỉnh\nrồi qua đi",
+  "rideTheWaveDescription": "Hầu hết cơn thèm sẽ qua trong vòng 15 phút. Bạn không cần hành động theo nó — chỉ cần vượt qua cùng chúng tôi.",
+  "stayWithIt": "tiếp tục",
+  "youMadeIt": "bạn đã làm được",
+  "readyWhenYouAre": "sẵn sàng khi bạn sẵn sàng",
+  "rideItAgain": "Vượt qua lần nữa",
+  "start15MinuteTimer": "Bắt đầu hẹn giờ 15 phút",
+  "rideTheWaveCompletedMessage": "Bạn đã vượt qua cơn thèm. Đó là sức mạnh thực sự. 💪",
+
+  "myProgress": "Tiến trình của tôi",
+  "weekLabel": "Tuần",
+  "monthLabel": "Tháng",
+  "allLabel": "Tất cả",
+  "daysSoberStatLabel": "Ngày\nkhông uống",
+  "savedStatLabel": "Đã tiết kiệm",
+  "avoidedStatLabel": "Đã tránh",
+  "moodTrends": "Xu hướng tâm trạng",
+  "cravingsPattern": "Mô hình cơn thèm",
+  "unlockLabel": "Mở khóa",
+  "unlockFullStats": "Mở khóa toàn bộ thống kê",
+  "premiumStatsMessage": "Xu hướng tâm trạng và mô hình cơn thèm là tính năng Premium. Nâng cấp để xem toàn bộ thống kê.",
+  "healthMilestonesWillAppear": "Các cột mốc sức khỏe của bạn sẽ xuất hiện ở đây.",
+  "healthMilestones": "Cột mốc sức khỏe",
+  "dayNumber": "Ngày {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Không uống",
+  "slipLabel": "Trượt ngã",
+  "noDataLabel": "Không có dữ liệu",
+
+  "milestone24Hours": "24 giờ",
+  "milestoneOneWeek": "Một tuần",
+  "milestoneOneMonth": "Một tháng",
+  "milestoneThreeMonths": "Ba tháng",
+  "milestoneSixMonths": "Sáu tháng",
+  "milestoneOneYear": "Một năm",
+  "milestoneDayCount": "Cột mốc ngày {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Chính sách quyền riêng tư"
+}

@@ -9,13 +9,17 @@ class OnboardingScreen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Column(
-      children: [
-        // Illustration — centered in the available upper area
-        Expanded(
-          child: Center(
-            child: Transform.translate(
-              offset: const Offset(0, 30),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        children: [
+          const SizedBox(height: 30),
+
+          // Illustration — same total height (353) as Screen1, image centered inside
+          SizedBox(
+            width: 353,
+            height: 353,
+            child: Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: AspectRatio(
@@ -39,49 +43,46 @@ class OnboardingScreen2 extends StatelessWidget {
               ),
             ),
           ),
-        ),
 
-        // Text section
-        Transform.translate(
-          offset: const Offset(0, -25),
-          child: Column(
-            children: [
-              SizedBox(
-                width: 260,
-                child: Text(
-                  l10n.onboardingTitle2,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontFamily: 'SF Pro',
-                    fontWeight: FontWeight.w700,
-                    fontSize: 28,
-                    letterSpacing: -0.56,
-                    height: 36 / 28,
-                    color: AppColors.textBlack,
-                  ),
-                ),
+          const SizedBox(height: 28),
+
+          // Heading — ab exact same Y position pe start hoga jaise Screen1
+          SizedBox(
+            width: 260,
+            child: Text(
+              l10n.onboardingTitle2,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontFamily: 'SF Pro',
+                fontWeight: FontWeight.w700,
+                fontSize: 28,
+                letterSpacing: -0.56,
+                height: 36 / 28,
+                color: AppColors.textBlack,
               ),
-
-              const SizedBox(height: 12),
-
-              SizedBox(
-                width: 300,
-                child: Text(
-                  l10n.onboardingSubtitle2,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontFamily: 'SF Pro',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    height: 24 / 16,
-                    color: AppColors.textGrey,
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-      ],
+
+          const SizedBox(height: 12),
+
+          SizedBox(
+            width: 300,
+            child: Text(
+              l10n.onboardingSubtitle2,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontFamily: 'SF Pro',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                height: 24 / 16,
+                color: AppColors.textGrey,
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 24),
+        ],
+      ),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/main_nav_screen.dart';
 
 import '../../../services/premium_service.dart';
+import '../../../services/analytics_service.dart';
 import '../home_screen.dart';
 
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
@@ -19,6 +20,8 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
   static const Color lightTeal = Color(0xFFEAF6F5);
   static const Color textBlack = Color(0xFF171717);
   static const Color textGrey = Color(0xFF777777);
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   bool _yearlySelected = true;
 
@@ -92,11 +95,15 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
   Future<void> _startPremium() async {
     if (_isProcessing || _isPremium) return;
 
+    final plan = _yearlySelected ? 'yearly' : 'monthly';
+
+    _analytics.premiumPurchaseStarted(plan);
+
     setState(() => _isProcessing = true);
 
     await PremiumService.instance.setPremium(
       true,
-      planType: _yearlySelected ? 'yearly' : 'monthly',
+      planType: plan,
     );
 
     if (!mounted) return;
@@ -105,6 +112,12 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
       _isProcessing = false;
       _isPremium = true;
     });
+
+    _analytics.purchase(
+      value: _yearlySelected ? 71.88 : 9.99,
+      currency: 'USD',
+      plan: plan,
+    );
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -167,7 +180,10 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
       },
     );
 
-    if (confirmed != true) return;
+    if (confirmed != true) {
+      _analytics.premiumCancelAborted();
+      return;
+    }
 
     setState(() => _isCancelling = true);
 
@@ -179,6 +195,8 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
       _isCancelling = false;
       _isPremium = false;
     });
+
+    _analytics.premiumCancelled();
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -328,6 +346,7 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
                         setState(() {
                           _yearlySelected = false;
                         });
+                        _analytics.premiumPlanSelected('monthly');
                       },
                     ),
                   ),
@@ -654,6 +673,7 @@ class _PersonalizedPlanScreenState extends State<PremiumPlanScreen> {
         setState(() {
           _yearlySelected = true;
         });
+        _analytics.premiumPlanSelected('yearly');
       },
       borderRadius: BorderRadius.circular(16),
       child: Container(

@@ -8,6 +8,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../models/milestone_definition.dart';
+import '../../services/analytics_service.dart';
 import '../../services/home_dashboard_service.dart';
 import '../bottom_nav/main_nav_screen.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
@@ -96,6 +97,16 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
 
       _isLoading = false;
     });
+
+    // NEW — milestone unlocked/shown.
+    // Using celebrationTitle as the milestone name since that's the
+    // human-readable label available on MilestoneDefinition here. If the
+    // model has a stable id/key field (e.g. "7_days"), swap it in below
+    // for cleaner analytics values instead of the full title string.
+    AnalyticsService.instance.milestoneUnlocked(
+      widget.milestone.celebrationTitle,
+      widget.milestone.days,
+    );
   }
 
   // ============================================================
@@ -161,6 +172,11 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
       await Share.shareXFiles(
         [XFile(file.path)],
         subject: l10n.shareMilestoneSubject,
+      );
+
+      // NEW — milestone successfully shared
+      AnalyticsService.instance.milestoneShared(
+        widget.milestone.celebrationTitle,
       );
     } catch (e) {
       debugPrint('Milestone screenshot share failed: $e');

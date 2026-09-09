@@ -1,0 +1,584 @@
+{
+  "@@locale": "sv",
+
+  "skip": "Hoppa över",
+  "continueButton": "Fortsätt",
+  "getStarted": "Kom igång",
+
+  "onboardingTitle1": "Ta kontroll över ditt liv",
+  "onboardingSubtitle1": "Följ din resa, fira varje framsteg och bli friskare en dag i taget.",
+  "onboardingTitle2": "Din AI-följeslagare på vägen mot återhämtning",
+  "onboardingSubtitle2": "Få personlig vägledning, hälsosamma vanor, motivationspåminnelser och framstegsrapporter anpassade efter din resa.",
+
+  "maybeLaterLabel": "Kanske senare",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Avbryt",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "God morgon",
+  "goodAfternoon": "God eftermiddag",
+  "goodEvening": "God kväll",
+  "goodNight": "God natt",
+
+  "embracingClarity": "Omfamna klarheten, en dag i taget.",
+  "streakLabel": "SVIT",
+  "goalLabel": "MÅL",
+  "daysStreak": "{count, plural, one{{count} dag} other{{count} dagar}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premiumplan",
+  "premiumPlanSubtitle": "Lås upp hela din återhämtningsupplevelse",
+
+  "accountAndSupport": "KONTO OCH SUPPORT",
+  "privacyPolicy": "Integritetspolicy",
+  "privacyPolicySubtitle": "Hantera datadelning och kontosäkerhet",
+  "termsOfService": "Användarvillkor",
+  "termsOfServiceSubtitle": "Vanliga frågor, kontakta oss och resurser",
+  "shareApp": "Dela appen",
+  "shareAppSubtitle": "Dela appen med dina vänner",
+  "resetData": "Återställ data",
+  "resetDataSubtitle": "Radera allt som sparats på den här enheten",
+
+  "resetAllDataTitle": "Återställa all data?",
+  "resetAllDataMessage": "Detta raderar allt som sparats på den här enheten — profil, journalanteckningar och framsteg — och kan inte ångras.",
+  "cancel": "Avbryt",
+  "reset": "Återställ",
+
+  "chooseFromGallery": "Välj från galleriet",
+  "takePhoto": "Ta foto",
+  "removePhoto": "Ta bort foto",
+  "couldNotUpdatePhoto": "Kunde inte uppdatera fotot: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Kunde inte ta bort fotot: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Fotot är för stort även efter komprimering — försök med ett annat.",
+
+  "unableToLoadProfile": "Kunde inte läsa in din profil",
+  "pleaseTryAgain": "Försök igen.",
+  "tryAgain": "Försök igen",
+  "profileNotFound": "Profilen hittades inte",
+  "refresh": "Uppdatera",
+  "noProfileDataFound": "Ingen profildata har hittats på den här enheten ännu.",
+
+  "couldNotResetData": "Kunde inte återställa data: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Hem",
+  "navStats": "Statistik",
+  "navJournal": "Journal",
+  "navBadges": "Märken",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} blir tillgänglig snart.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "VÄLMÅENDE",
+  "appTitle": "Sluta dricka",
+  "splashSubtitle": "Ta det första steget mot ett\nliv utan alkohol",
+  "preparingJourney": "Förbereder din\nresa",
+
+  "taskMorningMeditation": "Morgonmeditation (10 min)",
+  "taskReadChapter": "Läs kapitel 4 av \"The Sober Diaries\"",
+  "taskEveningJournal": "Kvällsjournal med tacksamhet",
+
+  "close": "Stäng",
+  "youAreDoingGreat": "Du gör ett fantastiskt jobb!",
+  "shareMilestone": "Dela milstolpe",
+  "shareMilestoneMessage": "Jag är på dag {days} av min återhämtningsresa! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Min återhämtningsmilstolpe",
+
+  "weeklyReportReadyTitle": "Din veckorapport är klar",
+  "weeklyReportReadySubtitle": "Tryck för att se hur din vecka gick",
+
+  "howAreYouFeeling": "Hur mår du?",
+  "moodTough": "Tufft",
+  "moodOkay": "Okej",
+  "moodGood": "Bra",
+
+  "moneySaved": "Sparade pengar",
+  "caloriesSaved": "Sparade kalorier",
+  "healthScore": "Hälsopoäng",
+  "drinksAvoided": "Undvikna drycker",
+  "estimated": "Beräknat",
+  "aiGenerated": "AI-genererat",
+  "daysCapsLabel": "DAGAR",
+
+  "todaysMotivation": "Dagens motivation",
+  "defaultMotivationQuote": "Du har hållit fast vid ditt åtagande. Fortsätt rida på vågen av positiv förändring.",
+
+  "talkToCoach": "Prata med coachen",
+  "havingACraving": "Jag har ett sug",
+
+  "unlockWeeklyReportsTitle": "Lås upp veckorapporter",
+  "unlockWeeklyReportsMessage": "Se dina dagar utan alkohol, humörtrender och personlig AI-feedback varje vecka. Uppgradera till Premium för att låsa upp.",
+  "maybeLater": "Kanske senare",
+  "upgrade": "Uppgradera",
+
+  "weeklyReportTitle": "Veckorapport",
+  "weeklyReportsPremiumTitle": "Veckorapporter är en Premium-funktion",
+  "weeklyReportsPremiumMessage": "Se dina dagar utan alkohol, humörtrender, sug och personlig AI-feedback varje vecka.",
+  "upgradeToPremium": "Uppgradera till Premium",
+  "couldNotGenerateReport": "Kunde inte skapa din rapport just nu.",
+  "tryAgainLower": "Försök igen",
+
+  "statSoberDays": "Dagar utan alkohol",
+  "statAvgMood": "Genomsnittligt humör",
+  "statCravings": "Sug",
+  "statMoneySaved": "Sparade pengar",
+  "coachFeedback": "Feedback från coachen",
+  "journalInsights": "Journalinsikter",
+
+  "next": "Nästa",
+
+  "question1Title": "Vad är ditt mål",
+  "question1Subtitle": "Välj det mål som betyder\nmest för dig",
+  "goalQuitCompletely": "Sluta helt",
+  "goalReduceDrinking": "Minska drickandet",
+  "goalTakeABreak": "Ta en paus",
+  "goalBuildHealthierHabits": "Skapa hälsosammare vanor",
+
+  "question3Title": "Berätta om din\nrutin",
+  "drinksPerWeek": "Drycker per vecka",
+  "moneySpentPerWeek": "Pengar spenderade per vecka",
+  "drinkingLevel": "Drickandenivå",
+  "triggersLabel": "Utlösare",
+  "levelSocial": "Socialt",
+  "levelRegular": "Regelbundet",
+  "levelHeavy": "Mycket",
+  "levelDependent": "Beroende",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Ensamhet",
+  "triggerHabit": "Vana",
+  "triggerSadness": "Sorg",
+  "triggerAnger": "Ilska",
+  "triggerBoredom": "Uttråkning",
+  "triggerSocialPressure": "Social press",
+  "triggerCelebration": "Firande",
+  "triggerSleepProblems": "Sömnproblem",
+  "triggerWorkPressure": "Arbetspress",
+
+  "question4Title": "Varför vill du förändras?",
+  "question4Subtitle": "Din anledning hjälper dig att hålla motivationen uppe.",
+  "reasonImproveHealth": "Förbättra min hälsa",
+  "reasonSaveMoney": "Spara pengar",
+  "reasonFamily": "Familj",
+  "reasonBetterSleep": "Bättre sömn",
+  "reasonMentalClarity": "Mental klarhet",
+  "reasonFitness": "Kondition",
+  "reasonSelfRespect": "Självrespekt",
+  "reasonCareer": "Karriär",
+
+  "milestoneUnlockedLabel": "MILSTOLPE UPPLÅST",
+  "incredibleNamePrefix": "Fantastiskt, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} sparat",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} undvikna",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Dela min milstolpe",
+  "milestoneImageShareError": "Kunde inte skapa milstolpebilden. Försök igen.",
+
+  "dailyCheckInTitle": "Daglig avstämning",
+  "howAreYouFeelingToday": "Hur mår du idag?",
+  "honestAnswerHelp": "Ditt ärliga svar hjälper oss att stötta dig bättre",
+  "didYouDrinkToday": "Drack du idag?",
+  "noLabel": "Nej",
+  "yesLabel": "Ja",
+  "cravingLevelNow": "Hur starkt är suget just nu?",
+  "anythingOnMind": "Är det något du tänker på?",
+  "optionalLabel": "(valfritt)",
+  "dailyNoteHint": "Skriv om din dag, utlösare, framgångar...",
+  "alreadyCheckedInToday": "Du har redan gjort dagens avstämning",
+  "saveCheckIn": "Spara avstämning",
+  "checkInsHelpTrack": "Avstämningar hjälper dig att följa dina framsteg över tid",
+  "alreadyCompletedTodayCheckIn": "Du har redan genomfört dagens avstämning.",
+  "pleaseAnswerBothQuestions": "Besvara båda frågorna ovan först",
+  "checkInSaved": "Avstämning sparad",
+  "cravingNone": "Inget",
+  "cravingLow": "Lågt",
+  "cravingMedium": "Medel",
+  "cravingStrong": "Starkt",
+  "moodBad": "Dåligt",
+  "moodLow": "Lågt",
+  "moodOkay": "Okej",
+  "moodGood": "Bra",
+  "moodGreat": "Fantastiskt",
+
+  "sosSupportTitle": "SOS-support",
+  "notAloneMessage": "Du är inte ensam, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Sug går över. Välj något nedan som kan hjälpa dig genom den här stunden.",
+  "breathingExercise": "Andningsövning",
+  "breathingExerciseSubtitle": "Guidad 4-7-8-teknik, 2 minuter",
+  "rideTheWave": "Rid ut vågen",
+  "rideTheWaveSubtitle": "15 minuters timer — sug går alltid över",
+  "copingTips": "Hanteringstips",
+  "copingTipsSubtitle": "Personliga strategier för dina utlösare",
+  "talkToAiCoach": "Prata med AI-coachen",
+  "talkToAiCoachSubtitle": "Chatta med din återhämtningsföljeslagare",
+  "callSomeone": "Ring någon",
+  "callSomeoneSubtitle": "Kontakta din betrodda kontakt",
+  "contactsPermissionNeeded": "Kontaktbehörighet krävs för att ringa en kontakt.",
+  "beatenCravingsPrefix": "Du har stått emot sug ",
+  "beatenCravingsCount": "{count} gånger",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " tidigare. Du kan göra det igen.",
+
+  "tellUsAboutYourself": "Berätta om dig själv",
+  "detailsSubtitle": "Den här informationen hjälper oss att anpassa din återhämtningsresa och ge korrekta insikter.",
+  "nameLabel": "Namn",
+  "nameHint": "t.ex. Alex Rivers",
+  "ageLabel": "Ålder",
+  "ageHint": "t.ex. 32",
+  "sexAssignedAtBirth": "Kön vid födseln",
+  "sexFemale": "Kvinna",
+  "sexMale": "Man",
+  "heightLabel": "Längd",
+  "weightLabel": "Vikt",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Daglig gräns nådd",
+  "dailyLimitReachedMessage": "Du har använt alla {limit} kostnadsfria meddelanden idag. Uppgradera till Premium för obegränsad coachchatt.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Jag kunde inte ansluta just nu. Försök igen om en stund.",
+  "clearConversationTitle": "Rensa konversation?",
+  "clearConversationMessage": "Detta tar permanent bort din chatthistorik med coachen.",
+  "clearLabel": "Rensa",
+  "recoveryCoachTitle": "Återhämtningscoach",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "Rensa konversation",
+  "chatGreeting": "Hej {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Du är på dag {days} av din resa. Jag finns här när du vill prata igenom saker.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "SNABBVAL",
+  "promptCravingLabel": "Har ett sug",
+  "promptCravingSubtitle": "Hitta lugnet, snabbt",
+  "promptMotivationLabel": "Behöver motivation",
+  "promptMotivationSubtitle": "En boost när det känns tufft",
+  "promptSocialLabel": "Social situation",
+  "promptSocialSubtitle": "Hantera en sammankomst",
+  "promptSlippedLabel": "Jag föll dit",
+  "promptSlippedSubtitle": "Ingen dömer dig, bara stöd",
+  "typeMessageHint": "Skriv ett meddelande...",
+
+  "editProfileTitle": "Redigera profil",
+  "couldNotSaveProfile": "Kunde inte spara profilen: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Längd (cm)",
+  "weightKgLabel": "Vikt (kg)",
+  "saveChangesLabel": "Spara ändringar",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Avancerade insikter och analyser",
+  "featureUnlimitedJournal": "Obegränsade journalanteckningar",
+  "featureUnlimitedChat": "Obegränsad chatt med AI-coach",
+  "featureCommunityGroups": "Exklusiva communitygrupper",
+  "featurePrioritySupport": "Prioriterad expertsupport",
+  "featureThemePacks": "Anpassade temapaket",
+  "featureDataExport": "Dataexport",
+  "featureAdFree": "Reklamfri upplevelse",
+  "premiumMemberTitle": "Du är Premium-medlem",
+  "unlockFullRecoveryTitle": "Lås upp hela din\nåterhämtningsupplevelse",
+  "premiumMemberSubtitle": "Tack för att du stödjer din återhämtningsresa — alla premiumfunktioner nedan är upplåsta.",
+  "premiumJoinSubtitle": "Gå med i en gemenskap av tusentals som\npåskyndar sin återhämtningsresa med våra\npremiumverktyg och personliga stöd.",
+  "monthlyPlanLabel": "Månadsvis",
+  "perMonthSuffix": "/mån",
+  "cancelAnytimeLabel": "Avsluta när som helst",
+  "yearlyPlanLabel": "Årsvis",
+  "billedAnnuallyLabel": "Debiteras årligen med {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Bäst värde",
+  "alreadyPremiumLabel": "Du är Premium ✓",
+  "startPremiumLabel": "Starta Premium",
+  "manageSubscriptionLabel": "Hantera eller avsluta från enhetens prenumerationsinställningar.",
+  "noCommitmentLabel": "Ingen bindningstid. Avsluta när som helst.",
+  "continueFreePlanLabel": "Fortsätt med gratisplanen",
+  "backToHomeLabel": "Tillbaka till hem",
+  "cancelPremiumLabel": "Avsluta Premium",
+  "cancelPremiumTitle": "Avsluta Premium?",
+  "cancelPremiumMessage": "Du förlorar tillgång till obegränsade journalanteckningar, obegränsad coachchatt, statistikinsikter och veckorapporter. Du kan prenumerera igen när som helst.",
+  "keepPremiumLabel": "Behåll Premium",
+  "nowPremiumMessage": "Du är nu Premium! Njut av hela din återhämtningsupplevelse.",
+  "premiumCancelledMessage": "Premium avslutat. Du är tillbaka på gratisplanen.",
+  "termsOfUseLabel": "Användarvillkor",
+
+  "navHomeLabel": "Hem",
+  "navStatsLabel": "Statistik",
+  "navJournalLabel": "Journal",
+  "navBadgesLabel": "Märken",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "Återhämtningsmål",
+  "goalLabel": "Mål",
+  "drinksPerWeekLabel": "Drycker per vecka",
+  "quitReasonsLabel": "Anledningar till att sluta",
+  "quitReasonsHelperText": "Separera flera anledningar med ett kommatecken.",
+  "couldNotSaveRecoveryGoals": "Kunde inte spara återhämtningsmål: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "t.ex. Fullständig avhållsamhet",
+  "drinksPerWeekHint": "t.ex. 12",
+  "quitReasonsHint": "t.ex. Hälsa, Familj, Pengar",
+
+  "todaysPrompt": "Dagens fråga",
+  "defaultJournalPrompt": "Vad tänker du på idag?",
+  "aiJournalInsights": "AI-insikter från journalen",
+  "unlockJournalInsightsMessage": "Lås upp veckomönster, humörtrender och personliga insikter från dina journalanteckningar.",
+  "notEnoughJournalData": "Inte tillräckligt med data ännu — skriv några anteckningar den här veckan och kom tillbaka.",
+  "openEntry": "Öppna",
+  "editEntry": "Redigera",
+  "deleteEntry": "Ta bort",
+  "searchJournalEntries": "Sök bland anteckningar...",
+  "writeNewEntry": "Skriv en ny anteckning",
+  "recentEntries": "Senaste anteckningar",
+  "noJournalEntriesYet": "Inga journalanteckningar ännu — skriv din första reflektion ovan.",
+  "noEntriesMatchFilters": "Inga anteckningar matchar dina filter.",
+
+  "weeklyJournalLimitReached": "Veckogränsen nådd",
+  "weeklyJournalLimitMessage": "Du har använt alla {limit} kostnadsfria journalanteckningar den här veckan. Uppgradera till Premium för obegränsade anteckningar.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Ny anteckning",
+  "writeYourThoughts": "Skriv dina tankar",
+  "saveEntry": "Spara anteckning",
+  "freeEntriesLeftThisWeek": "{remaining} av {limit} kostnadsfria anteckningar kvar den här veckan",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Ta bort anteckning?",
+  "deleteEntryConfirmation": "Den här anteckningen kommer att raderas permanent. Detta kan inte ångras.",
+
+  "journalEntryNotFound": "Anteckningen hittades inte",
+  "journalEntryMayHaveBeenDeleted": "Den här journalanteckningen kan ha tagits bort.",
+  "goBack": "Gå tillbaka",
+  "journalEntryTitle": "Journalanteckning",
+
+  "moodStruggling": "Kämpar",
+  "moodUnwell": "Mår dåligt",
+  "moodNeutral": "Neutral",
+
+  "whatHappenedToday": "Vad hände idag?",
+  "trigger": "Utlösare",
+  "whatHelped": "Vad hjälpte",
+  "whatIllTryNextTime": "Vad jag ska försöka nästa gång",
+  "journalPrivacyMessage": "Din reflektion är privat och sparas i din journal.",
+
+  "unlocked": "Upplåst",
+  "daysLeft": "{count} dag{count, plural, =1{} other{ar}} kvar",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} dagar",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Första\nreflektionen",
+  "oneJournalEntry": "1 journalanteckning",
+  "openBook": "Öppna boken",
+  "tenJournalEntries": "10 journalanteckningar",
+  "dedicatedWriter": "Engagerad\nskribent",
+  "thirtyJournalEntries": "30 journalanteckningar",
+  "firstConversation": "Första\nkonversationen",
+  "oneAiCoachChat": "1 AI-coachchatt",
+  "keepTalking": "Fortsätt prata",
+  "fiveConversations": "5 konversationer",
+  "coachCompanion": "Coach-\nföljeslagare",
+  "twentyConversations": "20 konversationer",
+  "checkInHabit": "Avstämnings-\nvana",
+  "sevenCheckIns": "7 avstämningar",
+  "consistencyPro": "Konsekvens-\nproffs",
+  "thirtyCheckIns": "30 avstämningar",
+  "dedicatedJourney": "Engagerad\nresa",
+  "hundredCheckIns": "100 avstämningar",
+  "goalGetter": "Måldrivare",
+  "threeGoalsCompleted": "3 mål slutförda",
+  "goalAchiever": "Mål-\nuppnåare",
+  "tenGoalsCompleted": "10 mål slutförda",
+  "firstSavings": "Första\nbesparingen",
+  "fiveHundredSaved": "$500 sparat",
+  "smartSaver": "Smart sparare",
+  "oneThousandSaved": "$1 000 sparat",
+  "bigSaver": "Stor sparare",
+  "fiveThousandSaved": "$5 000 sparat",
+  "currencyProgress": "${current} av ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} av {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Fortsätt — din första milstolpe väntar på dig!",
+  "badgesAndMilestones": "Märken och milstolpar",
+  "yourMilestoneJourney": "Din milstolpsresa",
+  "milestonesAchieved": "{count} milstolpe{count, plural, =1{} other{r}} uppnådd.\nTryck för att visa",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Du har låst upp {unlocked} av {total} milstolpar på din resa.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Återstår",
+  "complete": "Slutför",
+  "nextMilestone": "Nästa milstolpe",
+  "percentThere": "{subtitle} · {percent}% klart",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Milstolpar utan alkohol",
+  "journeyBadges": "Resemärken",
+  "bronze": "BRONS",
+  "silver": "SILVER",
+  "gold": "GULD",
+  "platinum": "PLATINA",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Analyserar din resa...",
+  "aiCreatingSanctuary": "Vår AI skapar din personliga fristad.",
+  "understandingHabits": "Förstår vanor...",
+  "calculatingBaseline": "Beräknar din baslinje...",
+  "personalizingPlan": "Anpassar din plan...",
+  "finalizingSanctuary": "Slutför din fristad...",
+  "creatingYourPlan": "Skapar din plan...",
+  "personalizedPlanError": "Vi kunde inte skapa din personliga plan. Försök igen.",
+  "retry": "Försök igen",
+
+  "breathingExercise": "Andningsövning",
+  "breathInhale": "ANDAS IN",
+  "breathHold": "HÅLL",
+  "breathExhale": "ANDAS UT",
+  "breathDone": "KLAR",
+  "breathGreatJob": "Bra jobbat!",
+  "remaining": "Återstår",
+  "breathSessionsToday": "{count, plural, one{{count} session idag} other{{count} sessioner idag}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Avsluta övningen",
+  "done": "Klar",
+
+  "noCopingTipsYet": "Inga hanteringstips ännu",
+  "copingStrategiesWillAppear": "Dina personliga hanteringsstrategier visas här när din återhämtningsplan har skapats.",
+  "strategiesTailoredToTriggers": "Strategier anpassade efter dina utlösare",
+
+  "rideTheWave": "Rid ut vågen",
+  "cravingsPeakAndPass": "Sug når sin topp\noch går över",
+  "rideTheWaveDescription": "De flesta sug går över inom 15 minuter. Du behöver inte agera på det — rid bara ut det tillsammans med oss.",
+  "stayWithIt": "håll ut",
+  "youMadeIt": "du klarade det",
+  "readyWhenYouAre": "redo när du är",
+  "rideItAgain": "Rid ut den igen",
+  "start15MinuteTimer": "Starta 15-minuterstimer",
+  "rideTheWaveCompletedMessage": "Du red ut vågen. Det är verklig styrka. 💪",
+
+  "myProgress": "Mina framsteg",
+  "weekLabel": "Vecka",
+  "monthLabel": "Månad",
+  "allLabel": "Alla",
+  "daysSoberStatLabel": "Dagar\nutan alkohol",
+  "savedStatLabel": "Sparat",
+  "avoidedStatLabel": "Undvikna",
+  "moodTrends": "Humörtrender",
+  "cravingsPattern": "Sugmönster",
+  "unlockLabel": "Lås upp",
+  "unlockFullStats": "Lås upp full statistik",
+  "premiumStatsMessage": "Humörtrender och sugmönster är Premium-funktioner. Uppgradera för att se fullständig statistik.",
+  "healthMilestonesWillAppear": "Dina hälsomilstolpar visas här.",
+  "healthMilestones": "Hälsomilstolpar",
+  "dayNumber": "Dag {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Utan alkohol",
+  "slipLabel": "Återfall",
+  "noDataLabel": "Ingen data",
+
+  "milestone24Hours": "24 timmar",
+  "milestoneOneWeek": "En vecka",
+  "milestoneOneMonth": "En månad",
+  "milestoneThreeMonths": "Tre månader",
+  "milestoneSixMonths": "Sex månader",
+  "milestoneOneYear": "Ett år",
+  "milestoneDayCount": "Dag {day}-milstolpe",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Integritetspolicy"
+}

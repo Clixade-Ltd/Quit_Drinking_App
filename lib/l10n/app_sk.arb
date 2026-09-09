@@ -1,0 +1,584 @@
+{
+  "@@locale": "sk",
+
+  "skip": "Preskočiť",
+  "continueButton": "Pokračovať",
+  "getStarted": "Začať",
+
+  "maybeLaterLabel": "Možno neskôr",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Zrušiť",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "Prevezmite kontrolu nad svojím životom",
+  "onboardingSubtitle1": "Sledujte svoju cestu, oslavujte každý úspech a buďte zdravší deň za dňom.",
+  "onboardingTitle2": "Váš AI spoločník na ceste k zotaveniu",
+  "onboardingSubtitle2": "Získajte personalizované rady, zdravé návyky, motivačné pripomienky a prehľady pokroku prispôsobené vašej ceste.",
+
+  "goodMorning": "Dobré ráno",
+  "goodAfternoon": "Dobré popoludnie",
+  "goodEvening": "Dobrý večer",
+  "goodNight": "Dobrú noc",
+
+  "embracingClarity": "S jasnejšou mysľou, jeden deň za druhým.",
+  "streakLabel": "SÉRIA",
+  "goalLabel": "CIEĽ",
+  "daysStreak": "{count, plural, one{{count} deň} few{{count} dni} many{{count} dní} other{{count} dní}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Prémiový plán",
+  "premiumPlanSubtitle": "Odomknite kompletný zážitok z vášho zotavenia",
+
+  "accountAndSupport": "ÚČET A PODPORA",
+  "privacyPolicy": "Zásady ochrany súkromia",
+  "privacyPolicySubtitle": "Spravujte zdieľanie údajov a zabezpečenie účtu",
+  "termsOfService": "Podmienky používania",
+  "termsOfServiceSubtitle": "Časté otázky, kontaktujte nás a zdroje",
+  "shareApp": "Zdieľať aplikáciu",
+  "shareAppSubtitle": "Zdieľajte aplikáciu so svojimi priateľmi",
+  "resetData": "Obnoviť údaje",
+  "resetDataSubtitle": "Vymazať všetko uložené v tomto zariadení",
+
+  "resetAllDataTitle": "Obnoviť všetky údaje?",
+  "resetAllDataMessage": "Týmto sa vymaže všetko uložené v tomto zariadení — profil, záznamy v denníku a pokrok — a túto akciu nemožno vrátiť späť.",
+  "cancel": "Zrušiť",
+  "reset": "Obnoviť",
+
+  "chooseFromGallery": "Vybrať z galérie",
+  "takePhoto": "Odfotiť",
+  "removePhoto": "Odstrániť fotografiu",
+  "couldNotUpdatePhoto": "Fotografiu sa nepodarilo aktualizovať: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Fotografiu sa nepodarilo odstrániť: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Táto fotografia je príliš veľká aj po kompresii — skúste inú.",
+
+  "unableToLoadProfile": "Profil sa nepodarilo načítať",
+  "pleaseTryAgain": "Skúste to znova.",
+  "tryAgain": "Skúsiť znova",
+  "profileNotFound": "Profil sa nenašiel",
+  "refresh": "Obnoviť",
+  "noProfileDataFound": "V tomto zariadení zatiaľ neboli nájdené žiadne údaje profilu.",
+
+  "couldNotResetData": "Údaje sa nepodarilo obnoviť: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Domov",
+  "navStats": "Štatistiky",
+  "navJournal": "Denník",
+  "navBadges": "Odznaky",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} bude čoskoro k dispozícii.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Prestať piť",
+  "splashSubtitle": "Urobte prvý krok k\nživotu bez alkoholu",
+  "preparingJourney": "Pripravujeme vašu\ncestu",
+
+  "taskMorningMeditation": "Ranná meditácia (10 min)",
+  "taskReadChapter": "Prečítajte si 4. kapitolu knihy „The Sober Diaries“",
+  "taskEveningJournal": "Večerný denník vďačnosti",
+
+  "close": "Zavrieť",
+  "youAreDoingGreat": "Darí sa vám skvele!",
+  "shareMilestone": "Zdieľať míľnik",
+  "shareMilestoneMessage": "Som na {days}. dni svojej cesty k zotaveniu! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Môj míľnik na ceste k zotaveniu",
+
+  "weeklyReportReadyTitle": "Vaša týždenná správa je pripravená",
+  "weeklyReportReadySubtitle": "Klepnutím zobrazíte, ako prebehol váš týždeň",
+
+  "howAreYouFeeling": "Ako sa cítite?",
+  "moodTough": "Ťažko",
+  "moodOkay": "V poriadku",
+  "moodGood": "Dobre",
+
+  "moneySaved": "Ušetrené peniaze",
+  "caloriesSaved": "Ušetrené kalórie",
+  "healthScore": "Skóre zdravia",
+  "drinksAvoided": "Vynechané nápoje",
+  "estimated": "Odhadované",
+  "aiGenerated": "Vygenerované AI",
+  "daysCapsLabel": "DNÍ",
+
+  "todaysMotivation": "Dnešná motivácia",
+  "defaultMotivationQuote": "Úspešne ste si udržali svoje odhodlanie. Pokračujte na vlne pozitívnej zmeny.",
+
+  "talkToCoach": "Porozprávať sa s koučom",
+  "havingACraving": "Mám chuť na alkohol",
+
+  "unlockWeeklyReportsTitle": "Odomknúť týždenné správy",
+  "unlockWeeklyReportsMessage": "Každý týždeň si pozrite svoje dni bez alkoholu, trendy nálady a personalizovanú spätnú väzbu AI. Pre odomknutie prejdite na Premium.",
+  "maybeLater": "Možno neskôr",
+  "upgrade": "Vylepšiť",
+
+  "weeklyReportTitle": "Týždenná správa",
+  "weeklyReportsPremiumTitle": "Týždenné správy sú prémiová funkcia",
+  "weeklyReportsPremiumMessage": "Každý týždeň si pozrite svoje dni bez alkoholu, trendy nálady, chute na alkohol a personalizovanú spätnú väzbu AI.",
+  "upgradeToPremium": "Prejsť na Premium",
+  "couldNotGenerateReport": "Správu sa teraz nepodarilo vygenerovať.",
+  "tryAgainLower": "Skúsiť znova",
+
+  "statSoberDays": "Dni bez alkoholu",
+  "statAvgMood": "Priem. nálada",
+  "statCravings": "Chute",
+  "statMoneySaved": "Ušetrené peniaze",
+  "coachFeedback": "Spätná väzba kouča",
+  "journalInsights": "Postrehy z denníka",
+
+  "next": "Ďalej",
+
+  "question1Title": "Aký je váš cieľ",
+  "question1Subtitle": "Vyberte si cieľ, ktorý je pre vás\nnajdôležitejší",
+  "goalQuitCompletely": "Úplne prestať",
+  "goalReduceDrinking": "Obmedziť pitie",
+  "goalTakeABreak": "Dať si prestávku",
+  "goalBuildHealthierHabits": "Vytvoriť si zdravšie návyky",
+
+  "question3Title": "Povedzte nám o svojej\nrutine",
+  "drinksPerWeek": "Nápojov za týždeň",
+  "moneySpentPerWeek": "Minuté peniaze za týždeň",
+  "drinkingLevel": "Úroveň pitia",
+  "triggersLabel": "Spúšťače",
+  "levelSocial": "Spoločenské",
+  "levelRegular": "Pravidelné",
+  "levelHeavy": "Nadmerné",
+  "levelDependent": "Závislé",
+  "triggerStress": "Stres",
+  "triggerLoneliness": "Osamelosť",
+  "triggerHabit": "Zvyk",
+  "triggerSadness": "Smutok",
+  "triggerAnger": "Hnev",
+  "triggerBoredom": "Nuda",
+  "triggerSocialPressure": "Spoločenský tlak",
+  "triggerCelebration": "Oslavy",
+  "triggerSleepProblems": "Problémy so spánkom",
+  "triggerWorkPressure": "Pracovný tlak",
+
+  "question4Title": "Prečo sa chcete zmeniť?",
+  "question4Subtitle": "Váš dôvod vám pomôže zostať motivovaní.",
+  "reasonImproveHealth": "Zlepšiť svoje zdravie",
+  "reasonSaveMoney": "Ušetriť peniaze",
+  "reasonFamily": "Rodina",
+  "reasonBetterSleep": "Lepší spánok",
+  "reasonMentalClarity": "Jasnejšia myseľ",
+  "reasonFitness": "Kondícia",
+  "reasonSelfRespect": "Sebaúcta",
+  "reasonCareer": "Kariéra",
+
+  "milestoneUnlockedLabel": "MÍĽNIK ODOMKNUTÝ",
+  "incredibleNamePrefix": "Úžasné, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} ušetrené",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} vynechaných",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Zdieľať môj míľnik",
+  "milestoneImageShareError": "Obrázok míľnika sa nepodarilo vytvoriť. Skúste to znova.",
+
+  "dailyCheckInTitle": "Denný Check-in",
+  "howAreYouFeelingToday": "Ako sa dnes cítite?",
+  "honestAnswerHelp": "Vaša úprimná odpoveď nám pomáha lepšie vás podporovať",
+  "didYouDrinkToday": "Pili ste dnes alkohol?",
+  "noLabel": "Nie",
+  "yesLabel": "Áno",
+  "cravingLevelNow": "Aká silná je teraz vaša chuť na alkohol?",
+  "anythingOnMind": "Máte niečo na mysli?",
+  "optionalLabel": "(voliteľné)",
+  "dailyNoteHint": "Napíšte o svojom dni, spúšťačoch, úspechoch...",
+  "alreadyCheckedInToday": "Dnešný Check-in už bol vyplnený",
+  "saveCheckIn": "Uložiť Check-in",
+  "checkInsHelpTrack": "Check-iny pomáhajú sledovať váš pokrok v priebehu času",
+  "alreadyCompletedTodayCheckIn": "Dnešný Check-in ste už dokončili.",
+  "pleaseAnswerBothQuestions": "Najprv odpovedzte na obe otázky vyššie",
+  "checkInSaved": "Check-in uložený",
+  "cravingNone": "Žiadna",
+  "cravingLow": "Nízka",
+  "cravingMedium": "Stredná",
+  "cravingStrong": "Silná",
+  "moodBad": "Zle",
+  "moodLow": "Nízka",
+  "moodOkay": "V poriadku",
+  "moodGood": "Dobre",
+  "moodGreat": "Skvele",
+
+  "sosSupportTitle": "SOS podpora",
+  "notAloneMessage": "Nie ste na to sami, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Chute na alkohol pominú. Vyberte si niečo nižšie, čo vám pomôže zvládnuť túto chvíľu.",
+  "breathingExercise": "Dychové cvičenie",
+  "breathingExerciseSubtitle": "Vedená technika 4-7-8, 2 minúty",
+  "rideTheWave": "Prečkajte vlnu",
+  "rideTheWaveSubtitle": "15-minútový časovač — chute vždy pominú",
+  "copingTips": "Tipy na zvládanie",
+  "copingTipsSubtitle": "Personalizované stratégie pre vaše spúšťače",
+  "talkToAiCoach": "Porozprávať sa s AI koučom",
+  "talkToAiCoachSubtitle": "Chatujte so svojím spoločníkom na ceste k zotaveniu",
+  "callSomeone": "Niekomu zavolať",
+  "callSomeoneSubtitle": "Kontaktujte dôveryhodnú osobu",
+  "contactsPermissionNeeded": "Na zavolanie kontaktu je potrebné povolenie pre kontakty.",
+  "beatenCravingsPrefix": "Chute na alkohol ste prekonali ",
+  "beatenCravingsCount": "{count}-krát",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " už predtým. Dokážete to znova.",
+
+  "tellUsAboutYourself": "Povedzte nám o sebe",
+  "detailsSubtitle": "Tieto informácie nám pomôžu personalizovať vašu cestu k zotaveniu a poskytovať presné prehľady.",
+  "nameLabel": "Meno",
+  "nameHint": "napr. Alex Rivers",
+  "ageLabel": "Vek",
+  "ageHint": "napr. 32",
+  "sexAssignedAtBirth": "Pohlavie pridelené pri narodení",
+  "sexFemale": "Žena",
+  "sexMale": "Muž",
+  "heightLabel": "Výška",
+  "weightLabel": "Hmotnosť",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Dosiahnutý denný limit",
+  "dailyLimitReachedMessage": "Dnes ste využili všetkých {limit} bezplatných správ. Pre neobmedzený chat s koučom prejdite na Premium.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Momentálne sa mi nepodarilo pripojiť. Skúste to znova o chvíľu.",
+  "clearConversationTitle": "Vymazať konverzáciu?",
+  "clearConversationMessage": "Týmto natrvalo odstránite históriu chatu s koučom.",
+  "clearLabel": "Vymazať",
+  "recoveryCoachTitle": "Kouč zotavenia",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "Vymazať konverzáciu",
+  "chatGreeting": "Ahoj {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Ste na {days}. dni svojej cesty. Som tu vždy, keď sa chcete porozprávať.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "RÝCHLE TÉMY",
+  "promptCravingLabel": "Mám chuť na alkohol",
+  "promptCravingSubtitle": "Rýchlo sa upokojte",
+  "promptMotivationLabel": "Potrebujem motiváciu",
+  "promptMotivationSubtitle": "Povzbudenie, keď je to ťažké",
+  "promptSocialLabel": "Spoločenská situácia",
+  "promptSocialSubtitle": "Ako zvládnuť spoločenské stretnutie",
+  "promptSlippedLabel": "Pošmykol/a som sa",
+  "promptSlippedSubtitle": "Bez odsudzovania, len podpora",
+  "typeMessageHint": "Napíšte správu...",
+
+  "editProfileTitle": "Upraviť profil",
+  "couldNotSaveProfile": "Profil sa nepodarilo uložiť: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Výška (cm)",
+  "weightKgLabel": "Hmotnosť (kg)",
+  "saveChangesLabel": "Uložiť zmeny",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Pokročilé prehľady a analýzy",
+  "featureUnlimitedJournal": "Neobmedzené záznamy v denníku",
+  "featureUnlimitedChat": "Neobmedzený chat s AI koučom",
+  "featureCommunityGroups": "Exkluzívne komunitné skupiny",
+  "featurePrioritySupport": "Prioritná odborná podpora",
+  "featureThemePacks": "Vlastné balíčky tém",
+  "featureDataExport": "Export údajov",
+  "featureAdFree": "Zážitok bez reklám",
+  "premiumMemberTitle": "Ste Premium člen",
+  "unlockFullRecoveryTitle": "Odomknite kompletný zážitok\nz vášho zotavenia",
+  "premiumMemberSubtitle": "Ďakujeme, že podporujete svoju cestu k zotaveniu — všetky nižšie uvedené prémiové funkcie sú odomknuté.",
+  "premiumJoinSubtitle": "Pridajte sa ku komunite tisícov ľudí, ktorí\nurýchľujú svoju cestu k uzdraveniu pomocou\nnašich prémiových nástrojov a personalizovanej podpory.",
+  "monthlyPlanLabel": "Mesačne",
+  "perMonthSuffix": "/mes.",
+  "cancelAnytimeLabel": "Zrušiť kedykoľvek",
+  "yearlyPlanLabel": "Ročne",
+  "billedAnnuallyLabel": "Účtované ročne vo výške {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Najlepšia hodnota",
+  "alreadyPremiumLabel": "Ste Premium ✓",
+  "startPremiumLabel": "Začať Premium",
+  "manageSubscriptionLabel": "Spravujte alebo zrušte predplatné v nastaveniach predplatného svojho zariadenia.",
+  "noCommitmentLabel": "Bez záväzkov. Zrušte kedykoľvek.",
+  "continueFreePlanLabel": "Pokračovať s bezplatným plánom",
+  "backToHomeLabel": "Späť na domov",
+  "cancelPremiumLabel": "Zrušiť Premium",
+  "cancelPremiumTitle": "Zrušiť Premium?",
+  "cancelPremiumMessage": "Stratíte prístup k neobmedzeným záznamom v denníku, neobmedzenému chatu s koučom, štatistickým prehľadom a týždenným správam. Kedykoľvek sa môžete znova prihlásiť na odber.",
+  "keepPremiumLabel": "Ponechať Premium",
+  "nowPremiumMessage": "Teraz máte Premium! Užite si kompletný zážitok z vášho zotavenia.",
+  "premiumCancelledMessage": "Premium bolo zrušené. Vrátili ste sa na bezplatný plán.",
+  "termsOfUseLabel": "Podmienky používania",
+
+  "navHomeLabel": "Domov",
+  "navStatsLabel": "Štatistiky",
+  "navJournalLabel": "Denník",
+  "navBadgesLabel": "Odznaky",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "Ciele zotavenia",
+  "goalLabel": "Cieľ",
+  "drinksPerWeekLabel": "Nápojov za týždeň",
+  "quitReasonsLabel": "Dôvody na ukončenie",
+  "quitReasonsHelperText": "Viacero dôvodov oddeľte čiarkou.",
+  "couldNotSaveRecoveryGoals": "Ciele zotavenia sa nepodarilo uložiť: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "napr. úplná abstinencia",
+  "drinksPerWeekHint": "napr. 12",
+  "quitReasonsHint": "napr. zdravie, rodina, peniaze",
+
+  "todaysPrompt": "Dnešná otázka",
+  "defaultJournalPrompt": "Na čo dnes myslíte?",
+  "aiJournalInsights": "AI prehľady z denníka",
+  "unlockJournalInsightsMessage": "Odomknite týždenné vzorce, trendy nálady a personalizované prehľady z vašich záznamov v denníku.",
+  "notEnoughJournalData": "Zatiaľ nie je dostatok údajov — tento týždeň napíšte niekoľko záznamov a skúste to znova.",
+  "openEntry": "Otvoriť",
+  "editEntry": "Upraviť",
+  "deleteEntry": "Vymazať",
+  "searchJournalEntries": "Hľadať v záznamoch...",
+  "writeNewEntry": "Napísať nový záznam",
+  "recentEntries": "Nedávne záznamy",
+  "noJournalEntriesYet": "Zatiaľ žiadne záznamy v denníku — napíšte svoju prvú reflexiu vyššie.",
+  "noEntriesMatchFilters": "Žiadne záznamy nezodpovedajú vašim filtrom.",
+
+  "weeklyJournalLimitReached": "Dosiahnutý týždenný limit",
+  "weeklyJournalLimitMessage": "Tento týždeň ste využili všetkých {limit} bezplatných záznamov v denníku. Pre neobmedzené záznamy prejdite na Premium.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Nový záznam",
+  "writeYourThoughts": "Napíšte svoje myšlienky",
+  "saveEntry": "Uložiť záznam",
+  "freeEntriesLeftThisWeek": "Tento týždeň vám zostáva {remaining} z {limit} bezplatných záznamov",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Vymazať záznam?",
+  "deleteEntryConfirmation": "Tento záznam bude natrvalo vymazaný. Túto akciu nemožno vrátiť späť.",
+
+  "journalEntryNotFound": "Záznam sa nenašiel",
+  "journalEntryMayHaveBeenDeleted": "Tento záznam v denníku mohol byť vymazaný.",
+  "goBack": "Späť",
+  "journalEntryTitle": "Záznam v denníku",
+
+  "moodStruggling": "Ťažkosti",
+  "moodUnwell": "Necítim sa dobre",
+  "moodNeutral": "Neutrálna",
+
+  "whatHappenedToday": "Čo sa dnes stalo?",
+  "trigger": "Spúšťač",
+  "whatHelped": "Čo pomohlo",
+  "whatIllTryNextTime": "Čo skúsim nabudúce",
+  "journalPrivacyMessage": "Vaša reflexia je súkromná a uložená vo vašom denníku.",
+
+  "unlocked": "Odomknuté",
+  "daysLeft": "Zostáva {count} deň{count, plural, =1{} few{dni} many{dní} other{dní}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} dní",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Prvá\nreflexia",
+  "oneJournalEntry": "1 záznam v denníku",
+  "openBook": "Otvoriť knihu",
+  "tenJournalEntries": "10 záznamov v denníku",
+  "dedicatedWriter": "Oddaný\npisateľ",
+  "thirtyJournalEntries": "30 záznamov v denníku",
+  "firstConversation": "Prvá\nkonverzácia",
+  "oneAiCoachChat": "1 chat s AI koučom",
+  "keepTalking": "Pokračovať v rozhovore",
+  "fiveConversations": "5 konverzácií",
+  "coachCompanion": "Spoločník\nkouča",
+  "twentyConversations": "20 konverzácií",
+  "checkInHabit": "Návyk\nCheck-in",
+  "sevenCheckIns": "7 Check-inov",
+  "consistencyPro": "Majster\nvytrvalosti",
+  "thirtyCheckIns": "30 Check-inov",
+  "dedicatedJourney": "Oddaná\ncesta",
+  "hundredCheckIns": "100 Check-inov",
+  "goalGetter": "Dosahovateľ cieľov",
+  "threeGoalsCompleted": "3 splnené ciele",
+  "goalAchiever": "Dosiahnutý\ncieľ",
+  "tenGoalsCompleted": "10 splnených cieľov",
+  "firstSavings": "Prvé\núspory",
+  "fiveHundredSaved": "Ušetrených $500",
+  "smartSaver": "Múdry sporiteľ",
+  "oneThousandSaved": "Ušetrených $1 000",
+  "bigSaver": "Veľký sporiteľ",
+  "fiveThousandSaved": "Ušetrených $5 000",
+  "currencyProgress": "${current} z ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} z {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Pokračujte — váš prvý míľnik na vás čaká!",
+  "badgesAndMilestones": "Odznaky a míľniky",
+  "yourMilestoneJourney": "Vaša cesta míľnikmi",
+  "milestonesAchieved": "Dosiahnuté míľniky: {count}.\nKlepnutím zobrazíte",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Na svojej ceste ste odomkli {unlocked} z {total} míľnikov.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Zostáva",
+  "complete": "Dokončené",
+  "nextMilestone": "Ďalší míľnik",
+  "percentThere": "{subtitle} · {percent}% hotovo",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Míľniky abstinencie",
+  "journeyBadges": "Odznaky na ceste",
+  "bronze": "BRONZ",
+  "silver": "STRIEBRO",
+  "gold": "ZLATO",
+  "platinum": "PLATINA",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Analyzujeme vašu cestu...",
+  "aiCreatingSanctuary": "Naša AI vytvára vaše personalizované bezpečné miesto.",
+  "understandingHabits": "Analyzujeme návyky...",
+  "calculatingBaseline": "Vypočítavame vašu základnú hodnotu...",
+  "personalizingPlan": "Personalizujeme váš plán...",
+  "finalizingSanctuary": "Dokončujeme vaše bezpečné miesto...",
+  "creatingYourPlan": "Vytvárame váš plán...",
+  "personalizedPlanError": "Váš personalizovaný plán sa nepodarilo vytvoriť. Skúste to znova.",
+  "retry": "Skúsiť znova",
+
+  "breathingExercise": "Dychové cvičenie",
+  "breathInhale": "NÁDYCH",
+  "breathHold": "ZADRŽAŤ",
+  "breathExhale": "VÝDYCH",
+  "breathDone": "HOTOVO",
+  "breathGreatJob": "Skvelá práca!",
+  "remaining": "Zostáva",
+  "breathSessionsToday": "{count, plural, one{Dnešná 1 relácia} few{Dnešné {count} relácie} many{Dnešných {count} relácií} other{Dnešných {count} relácií}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Ukončiť cvičenie",
+  "done": "Hotovo",
+
+  "noCopingTipsYet": "Zatiaľ žiadne tipy na zvládanie",
+  "copingStrategiesWillAppear": "Vaše personalizované stratégie zvládania sa zobrazia tu, keď sa dokončí vytváranie vášho plánu zotavenia.",
+  "strategiesTailoredToTriggers": "Stratégie prispôsobené vašim spúšťačom",
+
+  "rideTheWave": "Prečkajte vlnu",
+  "cravingsPeakAndPass": "Chute dosiahnu vrchol\na potom pominú",
+  "rideTheWaveDescription": "Väčšina chutí na alkohol pominie do 15 minút. Nemusíte podľa nich konať — jednoducho ich s nami prečkajte.",
+  "stayWithIt": "vydržte",
+  "youMadeIt": "zvládli ste to",
+  "readyWhenYouAre": "keď budete pripravení",
+  "rideItAgain": "Prečkať znova",
+  "start15MinuteTimer": "Spustiť 15-minútový časovač",
+  "rideTheWaveCompletedMessage": "Prečkali ste túto vlnu. To je skutočná sila. 💪",
+
+  "myProgress": "Môj pokrok",
+  "weekLabel": "Týždeň",
+  "monthLabel": "Mesiac",
+  "allLabel": "Všetko",
+  "daysSoberStatLabel": "Dni bez\nalkoholu",
+  "savedStatLabel": "Ušetrené",
+  "avoidedStatLabel": "Vynechané",
+  "moodTrends": "Trendy nálady",
+  "cravingsPattern": "Vzorec chutí",
+  "unlockLabel": "Odomknúť",
+  "unlockFullStats": "Odomknúť úplné štatistiky",
+  "premiumStatsMessage": "Trendy nálady a vzorce chutí sú prémiové funkcie. Prejdite na Premium a zobrazte si úplné štatistiky.",
+  "healthMilestonesWillAppear": "Vaše zdravotné míľniky sa zobrazia tu.",
+  "healthMilestones": "Zdravotné míľniky",
+  "dayNumber": "Deň {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Bez alkoholu",
+  "slipLabel": "Pošmyknutie",
+  "noDataLabel": "Žiadne údaje",
+
+  "milestone24Hours": "24 hodín",
+  "milestoneOneWeek": "Jeden týždeň",
+  "milestoneOneMonth": "Jeden mesiac",
+  "milestoneThreeMonths": "Tri mesiace",
+  "milestoneSixMonths": "Šesť mesiacov",
+  "milestoneOneYear": "Jeden rok",
+  "milestoneDayCount": "Míľnik dňa {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Zásady ochrany súkromia"
+}

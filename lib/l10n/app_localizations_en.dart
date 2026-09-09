@@ -180,7 +180,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appWordmark => 'WELLNESS';
 
   @override
-  String get appTitle => 'Sober Flow';
+  String get appTitle => 'Quit Drinking';
 
   @override
   String get splashSubtitle =>
@@ -323,7 +323,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get next => 'Next';
 
   @override
-  String get question1Title => 'What is your goal';
+  String get question1Title => 'What is your goal?';
 
   @override
   String get question1Subtitle => 'Choose the goal that matter\nmost to you';
@@ -341,7 +341,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get goalBuildHealthierHabits => 'Build healthier habits';
 
   @override
-  String get question3Title => 'Tell us about your\nroutine';
+  String get question3Title => 'Tell us about your\nroutine.';
 
   @override
   String get drinksPerWeek => 'Drinks per week';
@@ -1316,4 +1316,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String milestoneDayCount(int day) {
     return 'Day $day Milestone';
   }
+
+  @override
+  String get maybeLaterLabel => 'Maybe later';
+
+  @override
+  String get cancelLabel => 'Cancel';
 }

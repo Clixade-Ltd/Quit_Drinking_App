@@ -28,7 +28,7 @@
         <!-- Ye MainActivity ke BAAHAR hai, application ka direct child -->
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/UCropCropTheme"/>
 
         <meta-data
             android:name="flutterEmbedding"

@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
@@ -10,6 +12,9 @@ class GeminiService {
   GeminiService._();
 
   static final GeminiService instance = GeminiService._();
+
+  // Timeout used for every network call in this service.
+  static const Duration _requestTimeout = Duration(seconds: 30);
 
   // =========================================================
   // GENERATE PERSONALIZED RECOVERY PLAN
@@ -28,7 +33,8 @@ class GeminiService {
             '?key=${ApiConstants.geminiApiKey}',
       );
 
-      final response = await http.post(
+      final response = await http
+          .post(
         url,
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
@@ -43,6 +49,14 @@ class GeminiService {
             'responseMimeType': 'application/json',
           },
         }),
+      )
+          .timeout(
+        _requestTimeout,
+        onTimeout: () {
+          throw TimeoutException(
+            'Gemini request timed out while generating the personalized plan.',
+          );
+        },
       );
 
       log('the response from ai is ${response.body}');
@@ -115,6 +129,14 @@ class GeminiService {
       }
 
       return plan;
+    } on SocketException {
+      throw Exception(
+        'No internet connection. Please check your network and try again.',
+      );
+    } on TimeoutException {
+      throw Exception(
+        'The request timed out. Please check your connection and try again.',
+      );
     } catch (e) {
       throw Exception('Failed to generate personalized plan: $e');
     }
@@ -145,7 +167,8 @@ class GeminiService {
             '?key=${ApiConstants.geminiApiKey}',
       );
 
-      final response = await http.post(
+      final response = await http
+          .post(
         url,
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
@@ -160,6 +183,14 @@ class GeminiService {
             'responseMimeType': 'application/json',
           },
         }),
+      )
+          .timeout(
+        _requestTimeout,
+        onTimeout: () {
+          throw TimeoutException(
+            'Gemini request timed out while generating the daily update.',
+          );
+        },
       );
 
       if (response.statusCode != 200) {
@@ -252,6 +283,14 @@ class GeminiService {
       }
 
       return dailyUpdate;
+    } on SocketException {
+      throw Exception(
+        'No internet connection. Please check your network and try again.',
+      );
+    } on TimeoutException {
+      throw Exception(
+        'The request timed out. Please check your connection and try again.',
+      );
     } catch (e) {
       throw Exception('Failed to generate daily update: $e');
     }

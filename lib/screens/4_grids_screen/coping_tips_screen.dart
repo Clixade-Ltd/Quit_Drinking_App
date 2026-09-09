@@ -3,6 +3,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../constants/app_colors.dart';
 import '../../services/home_dashboard_service.dart';
+import '../../services/analytics_service.dart';
 
 class CopingTipsScreen extends StatefulWidget {
   const CopingTipsScreen({super.key});
@@ -12,6 +13,8 @@ class CopingTipsScreen extends StatefulWidget {
 }
 
 class _CopingTipsScreenState extends State<CopingTipsScreen> {
+  final AnalyticsService _analytics = AnalyticsService.instance;
+
   bool _isLoading = true;
 
   // trigger name -> list of strategies
@@ -21,6 +24,7 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
   void initState() {
     super.initState();
     _load();
+    _analytics.copingTipsViewed();
   }
 
   Future<void> _load() async {

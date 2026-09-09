@@ -1,0 +1,577 @@
+{
+  "@@locale": "et",
+
+  "skip": "Jäta vahele",
+  "continueButton": "Jätka",
+  "getStarted": "Alusta",
+
+  "onboardingTitle1": "Võta oma elu üle kontroll",
+  "onboardingSubtitle1": "Jälgi oma teekonda, tähista iga saavutust ja saa tervislikumaks päev-päevalt.",
+  "onboardingTitle2": "Sinu tehisintellektiga taastumiskaaslane",
+  "onboardingSubtitle2": "Saa isikupärastatud juhiseid, tervislikke harjumusi, motivatsioonimeeldetuletusi ja edenemisraporteid, mis on loodud sinu teekonna jaoks.",
+
+  "maybeLaterLabel": "Võib-olla hiljem",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Tühista",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Tere hommikust",
+  "goodAfternoon": "Tere päevast",
+  "goodEvening": "Tere õhtust",
+  "goodNight": "Head ööd",
+
+  "embracingClarity": "Mõtteselguse omaksvõtmine, üks päev korraga.",
+  "streakLabel": "JÄRJEPIDEVUS",
+  "goalLabel": "EESMÄRK",
+  "daysStreak": "{count, plural, one{{count} päev} other{{count} päeva}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium-pakett",
+  "premiumPlanSubtitle": "Ava oma täielik taastumiskogemus",
+
+  "accountAndSupport": "KONTO JA TUGI",
+  "privacyPolicy": "Privaatsuspoliitika",
+  "privacyPolicySubtitle": "Halda andmete jagamist ja konto turvalisust",
+  "termsOfService": "Teenusetingimused",
+  "termsOfServiceSubtitle": "KKK, võta ühendust ja ressursid",
+  "shareApp": "Jaga rakendust",
+  "shareAppSubtitle": "Jaga rakendust oma sõpradega",
+  "resetData": "Lähtesta andmed",
+  "resetDataSubtitle": "Kustuta kõik sellesse seadmesse salvestatu",
+
+  "resetAllDataTitle": "Kas lähtestada kõik andmed?",
+  "resetAllDataMessage": "See kustutab kõik sellesse seadmesse salvestatud andmed — profiili, päevikukanded ja edenemise — ning seda ei saa tagasi võtta.",
+  "cancel": "Tühista",
+  "reset": "Lähtesta",
+
+  "chooseFromGallery": "Vali galeriist",
+  "takePhoto": "Tee pilti",
+  "removePhoto": "Eemalda pilt",
+  "couldNotUpdatePhoto": "Pilti ei saanud värskendada: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Pilti ei saanud eemaldada: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "See pilt on isegi pärast tihendamist liiga suur — palun proovi teist.",
+
+  "unableToLoadProfile": "Sinu profiili ei saa laadida",
+  "pleaseTryAgain": "Palun proovi uuesti.",
+  "tryAgain": "Proovi uuesti",
+  "profileNotFound": "Profiili ei leitud",
+  "refresh": "Värskenda",
+  "noProfileDataFound": "Selles seadmes ei leitud veel profiiliandmeid.",
+
+  "couldNotResetData": "Andmeid ei saanud lähtestada: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Avaleht",
+  "navStats": "Statistika",
+  "navJournal": "Päevik",
+  "navBadges": "Märgid",
+  "navProfile": "Profiil",
+
+  "featureComingSoon": "{feature} on peagi saadaval.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "HEAOLU",
+  "appTitle": "Lõpetage joomine",
+  "splashSubtitle": "Astu esimene samm\nalkoholivaba elu poole",
+  "preparingJourney": "Valmistame ette sinu\nteekonda",
+
+  "taskMorningMeditation": "Hommikune meditatsioon (10 min)",
+  "taskReadChapter": "Loe raamatu \"The Sober Diaries\" 4. peatükki",
+  "taskEveningJournal": "Õhtune tänulikkuse päevik",
+
+  "close": "Sulge",
+  "youAreDoingGreat": "Sul läheb suurepäraselt!",
+  "shareMilestone": "Jaga tähist",
+  "shareMilestoneMessage": "Olen oma taastumisteekonna {days}. päeval! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Minu taastumise tähis",
+
+  "weeklyReportReadyTitle": "Sinu nädalaaruanne on valmis",
+  "weeklyReportReadySubtitle": "Puuduta, et näha, kuidas sul nädal läks",
+
+  "howAreYouFeeling": "Kuidas sa end tunned?",
+  "moodTough": "Raske",
+  "moodOkay": "Okei",
+  "moodGood": "Hästi",
+
+  "moneySaved": "Säästetud raha",
+  "caloriesSaved": "Säästetud kalorid",
+  "healthScore": "Terviseskoor",
+  "drinksAvoided": "Välditud joogid",
+  "estimated": "Hinnanguline",
+  "aiGenerated": "AI loodud",
+  "daysCapsLabel": "PÄEVA",
+
+  "todaysMotivation": "Tänane motivatsioon",
+  "defaultMotivationQuote": "Oled oma lubadust edukalt hoidnud. Jätka positiivsete muutuste lainel sõitmist.",
+
+  "talkToCoach": "Räägi nõustajaga",
+  "havingACraving": "Mul on isu",
+
+  "unlockWeeklyReportsTitle": "Ava nädalaaruanded",
+  "unlockWeeklyReportsMessage": "Vaata igal nädalal oma kaineid päevi, meeleolutrende ja isikupärastatud AI tagasisidet. Ava juurdepääs Premium-paketiga.",
+  "maybeLater": "Ehk hiljem",
+  "upgrade": "Uuenda",
+
+  "weeklyReportTitle": "Nädalaaruanne",
+  "weeklyReportsPremiumTitle": "Nädalaaruanded on Premium-funktsioon",
+  "weeklyReportsPremiumMessage": "Vaata igal nädalal oma kaineid päevi, meeleolutrende, isusid ja isikupärastatud AI tagasisidet.",
+  "upgradeToPremium": "Uuenda Premiumiks",
+  "couldNotGenerateReport": "Aruannet ei saanud praegu luua.",
+  "tryAgainLower": "Proovi uuesti",
+
+  "statSoberDays": "Kained päevad",
+  "statAvgMood": "Keskmine meeleolu",
+  "statCravings": "Isud",
+  "statMoneySaved": "Säästetud raha",
+  "coachFeedback": "Nõustaja tagasiside",
+  "journalInsights": "Päeviku ülevaated",
+
+  "next": "Edasi",
+
+  "question1Title": "Mis on sinu eesmärk",
+  "question1Subtitle": "Vali eesmärk, mis on sinu jaoks\nkõige olulisem",
+  "goalQuitCompletely": "Loobu täielikult",
+  "goalReduceDrinking": "Vähenda joomist",
+  "goalTakeABreak": "Tee paus",
+  "goalBuildHealthierHabits": "Kujunda tervislikumaid harjumusi",
+
+  "question3Title": "Räägi meile oma\nrutiinist",
+  "drinksPerWeek": "Jooke nädalas",
+  "moneySpentPerWeek": "Kulutatud raha nädalas",
+  "drinkingLevel": "Joomise tase",
+  "triggersLabel": "Päästikud",
+  "levelSocial": "Sotsiaalne",
+  "levelRegular": "Tavapärane",
+  "levelHeavy": "Tugev",
+  "levelDependent": "Sõltuv",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Üksindus",
+  "triggerHabit": "Harjumus",
+  "triggerSadness": "Kurbus",
+  "triggerAnger": "Viha",
+  "triggerBoredom": "Igavus",
+  "triggerSocialPressure": "Sotsiaalne surve",
+  "triggerCelebration": "Tähistamine",
+  "triggerSleepProblems": "Uneprobleemid",
+  "triggerWorkPressure": "Tööpinge",
+
+  "question4Title": "Miks sa soovid muutust?",
+  "question4Subtitle": "Sinu põhjus aitab sind motiveerida.",
+  "reasonImproveHealth": "Parandada oma tervist",
+  "reasonSaveMoney": "Säästa raha",
+  "reasonFamily": "Perekond",
+  "reasonBetterSleep": "Parem uni",
+  "reasonMentalClarity": "Vaimne selgus",
+  "reasonFitness": "Füüsiline vorm",
+  "reasonSelfRespect": "Eneseväärikus",
+  "reasonCareer": "Karjäär",
+
+  "milestoneUnlockedLabel": "TÄHIS AVATUD",
+  "incredibleNamePrefix": "Uskumatu, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} säästetud",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} välditud",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Jaga minu tähist",
+  "milestoneImageShareError": "Tähise pildi loomine ebaõnnestus. Palun proovi uuesti.",
+
+  "dailyCheckInTitle": "Igapäevane registreerimine",
+  "howAreYouFeelingToday": "Kuidas sa end täna tunned?",
+  "honestAnswerHelp": "Sinu aus vastus aitab meil sind paremini toetada",
+  "didYouDrinkToday": "Kas sa täna jõid?",
+  "noLabel": "Ei",
+  "yesLabel": "Jah",
+  "cravingLevelNow": "Isu tase praegusel hetkel?",
+  "anythingOnMind": "Kas miski vaevab südant?",
+  "optionalLabel": "(valikuline)",
+  "dailyNoteHint": "Kirjuta oma päevast, päästikutest, võitudest...",
+  "alreadyCheckedInToday": "Täna juba registreeritud",
+  "saveCheckIn": "Salvesta registreerimine",
+  "checkInsHelpTrack": "Registreerimised aitavad jälgida edenemist aja jooksul",
+  "alreadyCompletedTodayCheckIn": "Oled tänase registreerimise juba täitnud.",
+  "pleaseAnswerBothQuestions": "Palun vasta kõigepealt mõlemale ülaltoodud küsimusele",
+  "checkInSaved": "Registreerimine salvestatud",
+  "cravingNone": "Puudub",
+  "cravingLow": "Madal",
+  "cravingMedium": "Keskmine",
+  "cravingStrong": "Tugev",
+  "moodBad": "Halb",
+  "moodLow": "Madal",
+  "moodOkay": "Okei",
+  "moodGood": "Hea",
+  "moodGreat": "Suurepärane",
+
+  "sosSupportTitle": "SOS-tugi",
+  "notAloneMessage": "Sa ei ole alleen, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Isud mööduvad. Vali altpoolt midagi, mis aitab sul selle hetke üle elada.",
+  "breathingExercise": "Hingamisharjutus",
+  "breathingExerciseSubtitle": "Juhendatud 4-7-8 tehnikat, 2 minutit",
+  "rideTheWave": "Sõida lainel",
+  "rideTheWaveSubtitle": "15-minutiline taimer — isud mööduvad alati",
+  "copingTips": "Toimetulekunõuanded",
+  "copingTipsSubtitle": "Isikupärastatud strateegiad sinu päästikute jaoks",
+  "talkToAiCoach": "Räägi AI-nõustajaga",
+  "talkToAiCoachSubtitle": "Vestle oma taastumiskaaslasega",
+  "callSomeone": "Helista kellelegi",
+  "callSomeoneSubtitle": "Võta ühendust oma usaldusisikuga",
+  "contactsPermissionNeeded": "Kontaktile helistamiseks on vaja kontaktide luba.",
+  "beatenCravingsPrefix": "Oled isudest jagu saanud juba ",
+  "beatenCravingsCount": "{count} korda",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": ". Suudad seda uuesti.",
+
+  "tellUsAboutYourself": "Räägi meile endast",
+  "detailsSubtitle": "See teave aitab meil isikupärastada sinu taastumisteekonda ja pakkuda täpseid ülevaateid.",
+  "nameLabel": "Nimi",
+  "nameHint": "nt Alex Rivers",
+  "ageLabel": "Vanus",
+  "ageHint": "nt 32",
+  "sexAssignedAtBirth": "Sünnil määratud sugu",
+  "sexFemale": "Naine",
+  "sexMale": "Mees",
+  "heightLabel": "Pikkus",
+  "weightLabel": "Kaal",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Päevane limiit on käes",
+  "dailyLimitReachedMessage": "Oled täna kasutanud ära kõik {limit} tasuta teadet. Uuenda Premiumiks, et vestelda nõustajaga piiramatult.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Praegu ei saanud ühendust luua. Palun proovi hetke pärast uuesti.",
+  "clearConversationTitle": "Kas tühjendada vestlus?",
+  "clearConversationMessage": "See eemaldab jäädavalt sinu vestlusajaloo nõustajaga.",
+  "clearLabel": "Tühjenda",
+  "recoveryCoachTitle": "Taastumis nõustaja",
+  "onlineLabel": "Sisselogitud",
+  "clearConversationMenuItem": "Tühjenda vestlus",
+  "chatGreeting": "Tere {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Oled oma teekonna {days}. päeval. Olen siin, kui soovid asju arutada.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "KIIRMÄRKUSED",
+  "promptCravingLabel": "Mul on isu",
+  "promptCravingSubtitle": "Saa kiiresti tasakaal tagasi",
+  "promptMotivationLabel": "Vajan motivatsiooni",
+  "promptMotivationSubtitle": "Tõuge raskel hetkel",
+  "promptSocialLabel": "Sotsiaalne olukord",
+  "promptSocialSubtitle": "Tule toime koosviibimisel",
+  "promptSlippedLabel": "Eksisin teelt",
+  "promptSlippedSubtitle": "Hukkamõistuta, ainult tugi",
+  "typeMessageHint": "Kirjuta teade...",
+
+  "editProfileTitle": "Muuda profiili",
+  "couldNotSaveProfile": "Profiili ei saanud salvestada: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Pikkus (cm)",
+  "weightKgLabel": "Kaal (kg)",
+  "saveChangesLabel": "Salvesta muudatused",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Täpsemad ülevaated ja analüütika",
+  "featureUnlimitedJournal": "Piiramatu arv päevikukandeid",
+  "featureUnlimitedChat": "Piiramatu vestlus AI-nõustajaga",
+  "featureCommunityGroups": "Eksklusiivsed kogukonnagrupid",
+  "featurePrioritySupport": "Prioriteetne eksperttugi",
+  "featureThemePacks": "Kohandatud teemapaketid",
+  "featureDataExport": "Andmete eksportimine",
+  "featureAdFree": "Reklaamivaba kogemus",
+  "premiumMemberTitle": "Oled Premium-liige",
+  "unlockFullRecoveryTitle": "Ava oma täielik\ntaastumiskogemus",
+  "premiumMemberSubtitle": "Täname, et toetad oma taastumisteekonda — kõik allolevad funktsioonid on avatud.",
+  "premiumJoinSubtitle": "Liitu tuhandete inimestega, kes kiirendavad oma taastumisteekonda meie premium-tööriistade ja isikupärastatud toe abil.",
+  "monthlyPlanLabel": "Igakuine",
+  "perMonthSuffix": "/kuu",
+  "cancelAnytimeLabel": "Tühista igal ajal",
+  "yearlyPlanLabel": "Iga-aastane",
+  "billedAnnuallyLabel": "Arvutatakse kord aastas summas {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Parim väärtus",
+  "alreadyPremiumLabel": "Oled Premium ✓",
+  "startPremiumLabel": "Alusta Premiumit",
+  "manageSubscriptionLabel": "Halda või tühista seadme tellimuste seadetest.",
+  "noCommitmentLabel": "Lepingukohustuseta. Tühista igal ajal.",
+  "continueFreePlanLabel": "Jätka tasuta paketiga",
+  "backToHomeLabel": "Tagasi avalehele",
+  "cancelPremiumLabel": "Tühista Premium",
+  "cancelPremiumTitle": "Kas tühistada Premium?",
+  "cancelPremiumMessage": "Kaotad juurdepääsu piiramatutele päevikukannetele, piiramatule nõustajavestlusele, statistikaülevaadetele ja nädalaaruannetele. Võid igal ajal uuesti tellida.",
+  "keepPremiumLabel": "Jäta Premium alles",
+  "nowPremiumMessage": "Oled nüüd Premium-kasutaja! Naudi oma täielikku taastumiskogemust.",
+  "premiumCancelledMessage": "Premium tühistatud. Oled tagasi tasuta paketil.",
+  "termsOfUseLabel": "Kasutustingimused",
+
+  "navHomeLabel": "Avaleht",
+  "navStatsLabel": "Statistika",
+  "navJournalLabel": "Päevik",
+  "navBadgesLabel": "Märgid",
+  "navProfileLabel": "Profiil",
+
+  "recoveryGoalsTitle": "Taastumise eesmärgid",
+  "quitReasonsLabel": "Loobumise põhjused",
+  "quitReasonsHelperText": "Eralda mitu põhjust komaga.",
+  "couldNotSaveRecoveryGoals": "Taastumise eesmärke ei saanud salvestada: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "nt Täielik karskus",
+  "drinksPerWeekHint": "nt 12",
+  "quitReasonsHint": "nt Tervis, Perekond, Raha",
+
+  "todaysPrompt": "Tänane teema",
+  "defaultJournalPrompt": "Mis sul täna mõttes on?",
+  "aiJournalInsights": "AI päevikuülevaated",
+  "unlockJournalInsightsMessage": "Ava oma päevikukannetest iganädalased mustrid, meeleolutrendid ja isikupärastatud ülevaated.",
+  "notEnoughJournalData": "Andmeid pole veel piisavalt — kirjuta sel nädalal mõni kanne ja vaata uuesti.",
+  "openEntry": "Ava",
+  "editEntry": "Muuda",
+  "deleteEntry": "Kustuta",
+  "searchJournalEntries": "Otsi kandeid...",
+  "writeNewEntry": "Kirjuta uus kanne",
+  "recentEntries": "Hiljutised kanded",
+  "noJournalEntriesYet": "Päevikukandeid veel pole — kirjuta oma esimene mõtisklus ülalpool.",
+  "noEntriesMatchFilters": "Ükski kanne ei vasta filtritele.",
+
+  "weeklyJournalLimitReached": "Nädala limiit on käes",
+  "weeklyJournalLimitMessage": "Oled kasutanud sel nädalal ära kõik {limit} tasuta päevikukanne. Uuenda Premiumiks piiramatute kannete jaoks.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Uus kanne",
+  "writeYourThoughts": "Kirjuta oma mõtted",
+  "saveEntry": "Salvesta kanne",
+  "freeEntriesLeftThisWeek": "Sel nädalal on jäänud {remaining} tasuta kanti {limit}-st",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Kas kustutada kanne?",
+  "deleteEntryConfirmation": "See kanne kustutatakse jäädavalt. Seda ei saa tagasi võtta.",
+
+  "journalEntryNotFound": "Kannet ei leitud",
+  "journalEntryMayHaveBeenDeleted": "See päevikukanne võib olla kustutatud.",
+  "goBack": "Mine tagasi",
+  "journalEntryTitle": "Päevikukanne",
+
+  "moodStruggling": "Raskustes",
+  "moodUnwell": "Halb enesetunne",
+  "moodNeutral": "Neutraalne",
+
+  "whatHappenedToday": "Mis täna juhtus?",
+  "trigger": "Päästik",
+  "whatHelped": "Mis aitas",
+  "whatIllTryNextTime": "Mida proovin järgmisel korral",
+  "journalPrivacyMessage": "Sinu mõtisklus on privaatne ja salvestatud päevikusse.",
+
+  "unlocked": "Avatud",
+  "daysLeft": "{count, plural, one{{count} päev jäänud} other{{count} päeva jäänud}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} päeva",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Esimene\nmõtisklus",
+  "oneJournalEntry": "1 päevikukanne",
+  "openBook": "Avatud raamat",
+  "tenJournalEntries": "10 päevikukanne",
+  "dedicatedWriter": "Pühendunud\nkirjutaja",
+  "thirtyJournalEntries": "30 päevikukanne",
+  "firstConversation": "Esimene\nvestlus",
+  "oneAiCoachChat": "1 AI-nõustaja vestlus",
+  "keepTalking": "Räägi edasi",
+  "fiveConversations": "5 vestlust",
+  "coachCompanion": "Nõustaja-\nkaaslane",
+  "twentyConversations": "20 vestlust",
+  "checkInHabit": "Registreerimise\nharjumus",
+  "sevenCheckIns": "7 registreerimist",
+  "consistencyPro": "Järjepidevuse\nmeister",
+  "thirtyCheckIns": "30 registreerimist",
+  "dedicatedJourney": "Pühendunud\nteekond",
+  "hundredCheckIns": "100 registreerimist",
+  "goalGetter": "Eesmärgi püüdja",
+  "threeGoalsCompleted": "3 eesmärki täidetud",
+  "goalAchiever": "Eesmärkide\ntäitja",
+  "tenGoalsCompleted": "10 eesmärki täidetud",
+  "firstSavings": "Esimene\nsääst",
+  "fiveHundredSaved": "$500 säästetud",
+  "smartSaver": "Nuti säästja",
+  "oneThousandSaved": "$1000 säästetud",
+  "bigSaver": "Suur säästja",
+  "fiveThousandSaved": "$5000 säästetud",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Jätka samas vaimus — sinu esimene tähis ootab sind!",
+  "badgesAndMilestones": "Märgid ja tähised",
+  "yourMilestoneJourney": "Sinu tähiste teekond",
+  "milestonesAchieved": "{count, plural, one{{count} tähis saavutatud.\nPuuduta vaatamiseks} other{{count} tähist saavutatud.\nPuuduta vaatamiseks}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Oled oma teekonnal avanud {unlocked} tähist {total}-st.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Järelejäänud",
+  "complete": "Tehtud",
+  "nextMilestone": "Järgmine tähis",
+  "percentThere": "{subtitle} · {percent}% tehtud",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Karskuse tähised",
+  "journeyBadges": "Teekonna märgid",
+  "bronze": "PRONKS",
+  "silver": "HÕBE",
+  "gold": "KULD",
+  "platinum": "PLAATINA",
+  "diamond": "TEEMANT",
+
+  "analyzingYourJourney": "Sinu teekonna analüüsimine...",
+  "aiCreatingSanctuary": "Meie AI loob sinu isiklikku turvapaika.",
+  "understandingHabits": "Harjumuste mõistmine...",
+  "calculatingBaseline": "Algseisu arvutamine...",
+  "personalizingPlan": "Plaani isikupärastamine...",
+  "finalizingSanctuary": "Turvapaiga viimistlemine...",
+  "creatingYourPlan": "Plaani loomine...",
+  "personalizedPlanError": "Sinu isikupärastatud plaani ei saanud luua. Palun proovi uuesti.",
+  "retry": "Proovi uuesti",
+
+  "breathInhale": "HINGA SISSE",
+  "breathHold": "HOIA HINGE KINNI",
+  "breathExhale": "HINGA VÄLJA",
+  "breathDone": "VALMIS",
+  "breathGreatJob": "Tubli töö!",
+  "breathSessionsToday": "{count, plural, one{{count} seanss täna} other{{count} seanssi täna}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Lõpeta harjutus",
+  "done": "Valmis",
+
+  "noCopingTipsYet": "Toimetulekunõuandeid veel pole",
+  "copingStrategiesWillAppear": "Sinu isikupärastatud toimetulekustrateegiad ilmuvad siia, kui sinu taastumisplaan on loodud.",
+  "strategiesTailoredToTriggers": "Sinu päästikutele kohandatud strateegiad",
+
+  "cravingsPeakAndPass": "Isud tõusevad tipput\nja mööduvad",
+  "rideTheWaveDescription": "Enamik isusid möödub 15 minuti jooksul. Sa ei pea selle kohaselt tegutsema — sõida sellest lihtsalt koos meiega üle.",
+  "stayWithIt": "püsi selles",
+  "youMadeIt": "said hakkama",
+  "readyWhenYouAre": "valmis, kui sina oled",
+  "rideItAgain": "Sõida uuesti",
+  "start15MinuteTimer": "Käivita 15-minutiline taimer",
+  "rideTheWaveCompletedMessage": "Sa sõitsid lainest üle. See on tõeline tugevus. 💪",
+
+  "myProgress": "Minu edenemine",
+  "weekLabel": "Nädal",
+  "monthLabel": "Kuu",
+  "allLabel": "Kõik",
+  "daysSoberStatLabel": "Päeva\nkaine",
+  "savedStatLabel": "Säästetud",
+  "avoidedStatLabel": "Välditud",
+  "moodTrends": "Meeleolutrendid",
+  "cravingsPattern": "Isude muster",
+  "unlockLabel": "Ava",
+  "unlockFullStats": "Ava täielik statistika",
+  "premiumStatsMessage": "Meeleolutrendid ja isude mustrid on Premium-funktsioonid. Uuenda oma täieliku statistika nägemiseks.",
+  "healthMilestonesWillAppear": "Sinu tervisenäitajate tähised ilmuvad siia.",
+  "healthMilestones": "Tervise tähised",
+  "dayNumber": "{day}. päev",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Kaine",
+  "slipLabel": "Eksimus",
+  "noDataLabel": "Andmed puuduvad",
+
+  "milestone24Hours": "24 tundi",
+  "milestoneOneWeek": "Üks nädal",
+  "milestoneOneMonth": "Üks kuu",
+  "milestoneThreeMonths": "Kolm kuud",
+  "milestoneSixMonths": "Kuus kuud",
+  "milestoneOneYear": "Üks aasta",
+  "milestoneDayCount": "{day}. päeva tähis",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

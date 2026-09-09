@@ -3,6 +3,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../../constants/app_colors.dart';
 import '../../../models/journal_draft_store.dart';
+import '../../../services/analytics_service.dart';
 import 'today_reflection_screen.dart';
 
 class JournalEntryViewScreen extends StatefulWidget {
@@ -27,6 +28,8 @@ class _JournalEntryViewScreenState
     Icons.sentiment_satisfied,
     Icons.sentiment_very_satisfied,
   ];
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   void _edit() async {
     final entry =
@@ -105,6 +108,8 @@ class _JournalEntryViewScreenState
     if (confirmed == true) {
       JournalDraftStore.instance
           .deleteEntry(widget.entryId);
+
+      _analytics.journalEntryDeleted();
 
       if (mounted) {
         Navigator.pop(context);

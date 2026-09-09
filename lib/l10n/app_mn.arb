@@ -1,0 +1,584 @@
+{
+  "@@locale": "mn",
+
+  "skip": "Алгасах",
+  "continueButton": "Үргэлжлүүлэх",
+  "getStarted": "Эхлэх",
+
+  "onboardingTitle1": "Амьдралаа удирдаарай",
+  "onboardingSubtitle1": "Замналаа хянаж, амжилт бүрээ тэмдэглэн, өдөр бүр бага багаар эрүүл болоорой.",
+  "onboardingTitle2": "Таны AI сэргэлтийн хамтрагч",
+  "onboardingSubtitle2": "Таны замналд тохирсон хувийн зөвлөгөө, эрүүл дадал, урам зоригийн сануулга болон ахицын тайланг хүлээн аваарай.",
+
+  "maybeLaterLabel": "Магадгүй дараа",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Цуцлах",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Өглөөний мэнд",
+  "goodAfternoon": "Өдрийн мэнд",
+  "goodEvening": "Оройн мэнд",
+  "goodNight": "Сайхан амраарай",
+
+  "embracingClarity": "Өдөр бүр нэг алхмаар сэтгэл санаагаа цэгцэлж байна.",
+  "streakLabel": "ДАРААЛАЛ",
+  "goalLabel": "ЗОРИЛГО",
+  "daysStreak": "{count, plural, one{{count} өдөр} other{{count} өдөр}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Премиум багц",
+  "premiumPlanSubtitle": "Сэргэлтийн бүрэн боломжоо нээгээрэй",
+
+  "accountAndSupport": "БҮРТГЭЛ БА ТУСЛАМЖ",
+  "privacyPolicy": "Нууцлалын бодлого",
+  "privacyPolicySubtitle": "Өгөгдөл хуваалцах болон бүртгэлийн аюулгүй байдлаа удирдах",
+  "termsOfService": "Үйлчилгээний нөхцөл",
+  "termsOfServiceSubtitle": "Түгээмэл асуулт, бидэнтэй холбогдох болон нөөцүүд",
+  "shareApp": "Апп хуваалцах",
+  "shareAppSubtitle": "Аппыг найзуудтайгаа хуваалцах",
+  "resetData": "Өгөгдлийг дахин тохируулах",
+  "resetDataSubtitle": "Энэ төхөөрөмж дээр хадгалсан бүх зүйлийг устгах",
+
+  "resetAllDataTitle": "Бүх өгөгдлийг дахин тохируулах уу?",
+  "resetAllDataMessage": "Энэ нь төхөөрөмж дээр хадгалсан профайл, тэмдэглэл болон ахиц зэрэг бүх зүйлийг устгах бөгөөд буцаах боломжгүй.",
+  "cancel": "Цуцлах",
+  "reset": "Дахин тохируулах",
+
+  "chooseFromGallery": "Галерейгаас сонгох",
+  "takePhoto": "Зураг авах",
+  "removePhoto": "Зургийг устгах",
+  "couldNotUpdatePhoto": "Зургийг шинэчилж чадсангүй: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Зургийг устгаж чадсангүй: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Энэ зураг шахсан ч хэтэрхий том байна — өөр зураг сонгоно уу.",
+
+  "unableToLoadProfile": "Таны профайлыг ачаалж чадсангүй",
+  "pleaseTryAgain": "Дахин оролдоно уу.",
+  "tryAgain": "Дахин оролдох",
+  "profileNotFound": "Профайл олдсонгүй",
+  "refresh": "Шинэчлэх",
+  "noProfileDataFound": "Энэ төхөөрөмж дээр одоогоор профайлын мэдээлэл алга байна.",
+
+  "couldNotResetData": "Өгөгдлийг дахин тохируулж чадсангүй: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Нүүр",
+  "navStats": "Статистик",
+  "navJournal": "Тэмдэглэл",
+  "navBadges": "Тэмдгүүд",
+  "navProfile": "Профайл",
+
+  "featureComingSoon": "{feature} удахгүй боломжтой болно.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ЭРҮҮЛ МЭНД",
+  "appTitle": "Архи уухаа болих",
+  "splashSubtitle": "Архигүй амьдралынхаа\nэхний алхмыг хийгээрэй",
+  "preparingJourney": "Таны\nзамналыг бэлдэж байна",
+
+  "taskMorningMeditation": "Өглөөний бясалгал (10 мин)",
+  "taskReadChapter": "\"Архигүй амьдралын тэмдэглэл\" номын 4-р бүлгийг унших",
+  "taskEveningJournal": "Оройн талархлын тэмдэглэл",
+
+  "close": "Хаах",
+  "youAreDoingGreat": "Та маш сайн явж байна!",
+  "shareMilestone": "Чухал үе шатаа хуваалцах",
+  "shareMilestoneMessage": "Би сэргэлтийн замналынхаа {days} дахь өдөрт явж байна! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Миний сэргэлтийн чухал үе шат",
+
+  "weeklyReportReadyTitle": "Таны долоо хоногийн тайлан бэлэн боллоо",
+  "weeklyReportReadySubtitle": "Долоо хоног тань хэр өнгөрснийг харахын тулд товшино уу",
+
+  "howAreYouFeeling": "Та ямар санагдаж байна?",
+  "moodTough": "Хэцүү",
+  "moodOkay": "Зүгээр",
+  "moodGood": "Сайн",
+
+  "moneySaved": "Хэмнэсэн мөнгө",
+  "caloriesSaved": "Хэмнэсэн калори",
+  "healthScore": "Эрүүл мэндийн оноо",
+  "drinksAvoided": "Зайлсхийсэн ундааны тоо",
+  "estimated": "Тооцоолсон",
+  "aiGenerated": "AI үүсгэсэн",
+  "daysCapsLabel": "ӨДӨР",
+
+  "todaysMotivation": "Өнөөдрийн урам зориг",
+  "defaultMotivationQuote": "Та өөрийн амлалтаа амжилттай биелүүлсээр байна. Эерэг өөрчлөлтийн энэ давалгааг үргэлжлүүлээрэй.",
+
+  "talkToCoach": "Дасгалжуулагчтай ярилцах",
+  "havingACraving": "Би архи уух хүсэл төрж байна",
+
+  "unlockWeeklyReportsTitle": "Долоо хоногийн тайланг нээх",
+  "unlockWeeklyReportsMessage": "Архигүй өдрүүд, сэтгэл санааны чиг хандлага болон долоо хоног бүрийн хувийн AI зөвлөгөөг хараарай. Нээхийн тулд Премиум руу шилжинэ үү.",
+  "maybeLater": "Дараа болъё",
+  "upgrade": "Шинэчлэх",
+
+  "weeklyReportTitle": "Долоо хоногийн тайлан",
+  "weeklyReportsPremiumTitle": "Долоо хоногийн тайлан нь Премиум боломж",
+  "weeklyReportsPremiumMessage": "Архигүй өдрүүд, сэтгэл санааны чиг хандлага, архи уух хүсэл болон хувийн AI зөвлөгөөг долоо хоног бүр хараарай.",
+  "upgradeToPremium": "Премиум руу шилжих",
+  "couldNotGenerateReport": "Таны тайланг одоогоор үүсгэж чадсангүй.",
+  "tryAgainLower": "Дахин оролдох",
+
+  "statSoberDays": "Архигүй өдрүүд",
+  "statAvgMood": "Дундаж сэтгэл санаа",
+  "statCravings": "Архи уух хүсэл",
+  "statMoneySaved": "Хэмнэсэн мөнгө",
+  "coachFeedback": "Дасгалжуулагчийн зөвлөгөө",
+  "journalInsights": "Тэмдэглэлийн мэдээлэл",
+
+  "next": "Дараагийн",
+
+  "question1Title": "Таны зорилго юу вэ?",
+  "question1Subtitle": "Танд хамгийн их ач холбогдолтой\nзорилгоо сонгоно уу",
+  "goalQuitCompletely": "Бүрэн зогсоох",
+  "goalReduceDrinking": "Архи уухаа багасгах",
+  "goalTakeABreak": "Завсарлага авах",
+  "goalBuildHealthierHabits": "Эрүүл дадал бий болгох",
+
+  "question3Title": "Өдөр тутмынхаа\nхэвшлийн талаар хэлнэ үү",
+  "drinksPerWeek": "Долоо хоногт уудаг ундаа",
+  "moneySpentPerWeek": "Долоо хоногт зарцуулдаг мөнгө",
+  "drinkingLevel": "Архи хэрэглээний түвшин",
+  "triggersLabel": "Өдөөгч хүчин зүйлс",
+  "levelSocial": "Нийгмийн",
+  "levelRegular": "Тогтмол",
+  "levelHeavy": "Их",
+  "levelDependent": "Хамааралтай",
+  "triggerStress": "Стресс",
+  "triggerLoneliness": "Ганцаардал",
+  "triggerHabit": "Дадал",
+  "triggerSadness": "Гуниг",
+  "triggerAnger": "Уур",
+  "triggerBoredom": "Уйтгар",
+  "triggerSocialPressure": "Нийгмийн дарамт",
+  "triggerCelebration": "Баяр ёслол",
+  "triggerSleepProblems": "Нойрны асуудал",
+  "triggerWorkPressure": "Ажлын дарамт",
+
+  "question4Title": "Та яагаад өөрчлөгдөхийг хүсэж байна вэ?",
+  "question4Subtitle": "Таны шалтгаан танд урам зориг өгөх болно.",
+  "reasonImproveHealth": "Эрүүл мэндээ сайжруулах",
+  "reasonSaveMoney": "Мөнгө хэмнэх",
+  "reasonFamily": "Гэр бүл",
+  "reasonBetterSleep": "Илүү сайн унтах",
+  "reasonMentalClarity": "Оюун санааны цэвэр байдал",
+  "reasonFitness": "Биеийн тамир",
+  "reasonSelfRespect": "Өөрийгөө хүндлэх",
+  "reasonCareer": "Карьер",
+
+  "milestoneUnlockedLabel": "ЧУХАЛ ҮЕ ШАТ НЭЭГДЛЭЭ",
+  "incredibleNamePrefix": "Гайхалтай, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} хэмнэсэн",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} зайлсхийсэн",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Чухал үе шатаа хуваалцах",
+  "milestoneImageShareError": "Чухал үе шатны зургийг үүсгэж чадсангүй. Дахин оролдоно уу.",
+
+  "dailyCheckInTitle": "Өдөр тутмын бүртгэл",
+  "howAreYouFeelingToday": "Өнөөдөр танд ямар санагдаж байна?",
+  "honestAnswerHelp": "Таны үнэн зөв хариулт бидэнд танд илүү сайн туслахад тусална",
+  "didYouDrinkToday": "Та өнөөдөр архи уусан уу?",
+  "noLabel": "Үгүй",
+  "yesLabel": "Тийм",
+  "cravingLevelNow": "Одоо архи уух хүсэл ямар түвшинд байна?",
+  "anythingOnMind": "Таны санаанд юу байна?",
+  "optionalLabel": "(заавал биш)",
+  "dailyNoteHint": "Өдөр, өдөөгч хүчин зүйлс, амжилтынхаа талаар бичээрэй...",
+  "alreadyCheckedInToday": "Өнөөдрийн бүртгэлийг аль хэдийн хийсэн байна",
+  "saveCheckIn": "Бүртгэлийг хадгалах",
+  "checkInsHelpTrack": "Өдөр тутмын бүртгэл нь таны ахицыг цаг хугацааны явцад хянахад тусална",
+  "alreadyCompletedTodayCheckIn": "Та өнөөдрийн бүртгэлийг аль хэдийн хийсэн байна.",
+  "pleaseAnswerBothQuestions": "Эхлээд дээрх хоёр асуултад хариулна уу",
+  "checkInSaved": "Бүртгэл хадгалагдлаа",
+  "cravingNone": "Огт байхгүй",
+  "cravingLow": "Бага",
+  "cravingMedium": "Дунд",
+  "cravingStrong": "Хүчтэй",
+  "moodBad": "Муу",
+  "moodLow": "Тааруу",
+  "moodOkay": "Зүгээр",
+  "moodGood": "Сайн",
+  "moodGreat": "Маш сайн",
+
+  "sosSupportTitle": "SOS тусламж",
+  "notAloneMessage": "Та ганцаараа биш, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Архи уух хүсэл өнгөрдөг. Энэ мөчийг даван туулахад туслах доорх зүйлсээс сонгоно уу.",
+  "breathingExercise": "Амьсгалын дасгал",
+  "breathingExerciseSubtitle": "Удирдамжтай 4-7-8 техник, 2 минут",
+  "rideTheWave": "Давалгааг даван туулах",
+  "rideTheWaveSubtitle": "15 минутын таймер — хүсэл үргэлж өнгөрдөг",
+  "copingTips": "Даван туулах зөвлөмж",
+  "copingTipsSubtitle": "Таны өдөөгч хүчин зүйлд тохирсон стратеги",
+  "talkToAiCoach": "AI дасгалжуулагчтай ярилцах",
+  "talkToAiCoachSubtitle": "Таны сэргэлтийн хамтрагчтай чатлах",
+  "callSomeone": "Хэн нэгэн рүү залгах",
+  "callSomeoneSubtitle": "Итгэдэг хүнтэйгээ холбогдох",
+  "contactsPermissionNeeded": "Харилцагч руу залгахын тулд Contacts зөвшөөрөл шаардлагатай.",
+  "beatenCravingsPrefix": "Та архи уух хүслийг ",
+  "beatenCravingsCount": "{count} удаа давсан",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " өмнө нь. Та дахин чадна.",
+
+  "tellUsAboutYourself": "Өөрийнхөө талаар хэлнэ үү",
+  "detailsSubtitle": "Энэ мэдээлэл нь таны сэргэлтийн замналыг хувийн болгож, зөв мэдээлэл өгөхөд тусална.",
+  "nameLabel": "Нэр",
+  "nameHint": "жишээ нь, Alex Rivers",
+  "ageLabel": "Нас",
+  "ageHint": "жишээ нь, 32",
+  "sexAssignedAtBirth": "Төрөх үед бүртгэгдсэн хүйс",
+  "sexFemale": "Эмэгтэй",
+  "sexMale": "Эрэгтэй",
+  "heightLabel": "Өндөр",
+  "weightLabel": "Жин",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Өдрийн хязгаарт хүрлээ",
+  "dailyLimitReachedMessage": "Та өнөөдөр үнэгүй ашиглах боломжтой {limit} мессежээ бүгдийг ашигласан байна. Хязгааргүй дасгалжуулагчийн чат авахын тулд Премиум руу шилжинэ үү.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Одоогоор холбогдож чадсангүй. Хэсэг хугацааны дараа дахин оролдоно уу.",
+  "clearConversationTitle": "Яриаг арилгах уу?",
+  "clearConversationMessage": "Энэ нь таны дасгалжуулагчийн чатны түүхийг бүрмөсөн устгана.",
+  "clearLabel": "Арилгах",
+  "recoveryCoachTitle": "Сэргэлтийн дасгалжуулагч",
+  "onlineLabel": "Онлайн",
+  "clearConversationMenuItem": "Яриаг арилгах",
+  "chatGreeting": "Сайн уу, {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Та замналынхаа {days} дахь өдөрт явж байна. Ярилцахыг хүссэн үед тань би энд байна.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "ШУУРХАЙ САНАЛУУД",
+  "promptCravingLabel": "Архи уух хүсэл төрж байна",
+  "promptCravingSubtitle": "Хурдан тайвшрах",
+  "promptMotivationLabel": "Урам зориг хэрэгтэй",
+  "promptMotivationSubtitle": "Хэцүү үед багахан дэмжлэг",
+  "promptSocialLabel": "Нийгмийн нөхцөл байдал",
+  "promptSocialSubtitle": "Цуглааныг даван туулах",
+  "promptSlippedLabel": "Би алдчихлаа",
+  "promptSlippedSubtitle": "Шүүмжлэлгүй, зөвхөн дэмжлэг",
+  "typeMessageHint": "Мессеж бичих...",
+
+  "editProfileTitle": "Профайл засах",
+  "couldNotSaveProfile": "Профайлыг хадгалж чадсангүй: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Өндөр (см)",
+  "weightKgLabel": "Жин (кг)",
+  "saveChangesLabel": "Өөрчлөлтийг хадгалах",
+
+  "premiumBadgeLabel": "ПРЕМИУМ",
+  "featureAdvancedInsights": "Дэвшилтэт мэдээлэл ба аналитик",
+  "featureUnlimitedJournal": "Хязгааргүй тэмдэглэл",
+  "featureUnlimitedChat": "AI дасгалжуулагчтай хязгааргүй чат",
+  "featureCommunityGroups": "Онцгой нийгэмлэгийн бүлгүүд",
+  "featurePrioritySupport": "Мэргэжилтний тэргүүлэх дэмжлэг",
+  "featureThemePacks": "Захиалгат загварын багцууд",
+  "featureDataExport": "Өгөгдөл экспортлох",
+  "featureAdFree": "Зар сурталчилгаагүй хэрэглээ",
+  "premiumMemberTitle": "Та Премиум гишүүн",
+  "unlockFullRecoveryTitle": "Сэргэлтийн бүрэн\nболомжоо нээгээрэй",
+  "premiumMemberSubtitle": "Сэргэлтийн замналаа дэмжиж байгаад баярлалаа — доорх бүх Премиум боломж нээгдсэн.",
+  "premiumJoinSubtitle": "Сэргэлтийн замналаа манай\nПремиум хэрэгслүүд болон хувийн\nдэмжлэгээр хурдасгаж буй мянга мянган хүмүүст нэгдээрэй.",
+  "monthlyPlanLabel": "Сар бүр",
+  "perMonthSuffix": "/сар",
+  "cancelAnytimeLabel": "Хэзээ ч цуцалж болно",
+  "yearlyPlanLabel": "Жил бүр",
+  "billedAnnuallyLabel": "Жил бүр {amount}-оор төлбөр тооцно",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Хамгийн ашигтай",
+  "alreadyPremiumLabel": "Та Премиум ✓",
+  "startPremiumLabel": "Премиум эхлүүлэх",
+  "manageSubscriptionLabel": "Төхөөрөмжийнхөө захиалгын тохиргооноос удирдах эсвэл цуцална уу.",
+  "noCommitmentLabel": "Ямар ч үүрэг хариуцлагагүй. Хэзээ ч цуцалж болно.",
+  "continueFreePlanLabel": "Үнэгүй багцаар үргэлжлүүлэх",
+  "backToHomeLabel": "Нүүр рүү буцах",
+  "cancelPremiumLabel": "Премиумыг цуцлах",
+  "cancelPremiumTitle": "Премиумыг цуцлах уу?",
+  "cancelPremiumMessage": "Та хязгааргүй тэмдэглэл, хязгааргүй дасгалжуулагчийн чат, статистикийн мэдээлэл болон долоо хоногийн тайлангийн эрхээ алдана. Та хүссэн үедээ дахин захиалж болно.",
+  "keepPremiumLabel": "Премиумыг хадгалах",
+  "nowPremiumMessage": "Та одоо Премиум хэрэглэгч боллоо! Сэргэлтийн бүрэн боломжоо ашиглаарай.",
+  "premiumCancelledMessage": "Премиум цуцлагдлаа. Та үнэгүй багцдаа буцаж орлоо.",
+  "termsOfUseLabel": "Ашиглах нөхцөл",
+
+  "navHomeLabel": "Нүүр",
+  "navStatsLabel": "Статистик",
+  "navJournalLabel": "Тэмдэглэл",
+  "navBadgesLabel": "Тэмдгүүд",
+  "navProfileLabel": "Профайл",
+
+  "recoveryGoalsTitle": "Сэргэлтийн зорилгууд",
+  "goalLabel": "Зорилго",
+  "drinksPerWeekLabel": "Долоо хоногт уудаг ундаа",
+  "quitReasonsLabel": "Зогсоох шалтгаан",
+  "quitReasonsHelperText": "Олон шалтгааныг таслалаар тусгаарлана уу.",
+  "couldNotSaveRecoveryGoals": "Сэргэлтийн зорилгыг хадгалж чадсангүй: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "жишээ нь, бүрэн татгалзах",
+  "drinksPerWeekHint": "жишээ нь, 12",
+  "quitReasonsHint": "жишээ нь, Эрүүл мэнд, Гэр бүл, Мөнгө",
+
+  "todaysPrompt": "Өнөөдрийн асуулт",
+  "defaultJournalPrompt": "Өнөөдөр таны санаанд юу байна?",
+  "aiJournalInsights": "AI тэмдэглэлийн мэдээлэл",
+  "unlockJournalInsightsMessage": "Тэмдэглэлээсээ долоо хоногийн хэв маяг, сэтгэл санааны чиг хандлага болон хувийн мэдээллийг нээгээрэй.",
+  "notEnoughJournalData": "Одоогоор мэдээлэл хангалтгүй байна — энэ долоо хоногт хэдэн тэмдэглэл бичээд дараа дахин шалгана уу.",
+  "openEntry": "Нээх",
+  "editEntry": "Засах",
+  "deleteEntry": "Устгах",
+  "searchJournalEntries": "Тэмдэглэл хайх...",
+  "writeNewEntry": "Шинэ тэмдэглэл бичих",
+  "recentEntries": "Сүүлийн тэмдэглэлүүд",
+  "noJournalEntriesYet": "Одоогоор тэмдэглэл алга — дээрх хэсэгт анхны бодлоо бичээрэй.",
+  "noEntriesMatchFilters": "Таны шүүлтүүрт тохирох тэмдэглэл алга.",
+
+  "weeklyJournalLimitReached": "Долоо хоногийн хязгаарт хүрлээ",
+  "weeklyJournalLimitMessage": "Та энэ долоо хоногт үнэгүй ашиглах боломжтой {limit} тэмдэглэлээ бүгдийг ашигласан байна. Хязгааргүй тэмдэглэл авахын тулд Премиум руу шилжинэ үү.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Шинэ тэмдэглэл",
+  "writeYourThoughts": "Бодол санаагаа бичээрэй",
+  "saveEntry": "Тэмдэглэл хадгалах",
+  "freeEntriesLeftThisWeek": "Энэ долоо хоногт {remaining} / {limit} үнэгүй тэмдэглэл үлдсэн",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Тэмдэглэлийг устгах уу?",
+  "deleteEntryConfirmation": "Энэ тэмдэглэл бүрмөсөн устах бөгөөд буцаах боломжгүй.",
+
+  "journalEntryNotFound": "Тэмдэглэл олдсонгүй",
+  "journalEntryMayHaveBeenDeleted": "Энэ тэмдэглэл устсан байж болзошгүй.",
+  "goBack": "Буцах",
+  "journalEntryTitle": "Тэмдэглэл",
+
+  "moodStruggling": "Хэцүү байна",
+  "moodUnwell": "Тавгүй",
+  "moodNeutral": "Төвийг сахисан",
+
+  "whatHappenedToday": "Өнөөдөр юу болсон бэ?",
+  "trigger": "Өдөөгч",
+  "whatHelped": "Юу тус болсон",
+  "whatIllTryNextTime": "Дараагийн удаа би юу туршиж үзэх вэ",
+  "journalPrivacyMessage": "Таны эргэцүүлэл нууц бөгөөд тэмдэглэлд тань хадгалагдана.",
+
+  "unlocked": "Нээгдсэн",
+  "daysLeft": "{count} өдөр үлдлээ",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} өдөр",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Анхны\nэргэцүүлэл",
+  "oneJournalEntry": "1 тэмдэглэл",
+  "openBook": "Ном нээх",
+  "tenJournalEntries": "10 тэмдэглэл",
+  "dedicatedWriter": "Тууштай\nбичигч",
+  "thirtyJournalEntries": "30 тэмдэглэл",
+  "firstConversation": "Анхны\nяриа",
+  "oneAiCoachChat": "1 AI дасгалжуулагчийн чат",
+  "keepTalking": "Яриагаа үргэлжлүүлэх",
+  "fiveConversations": "5 яриа",
+  "coachCompanion": "Дасгалжуулагчийн\nхамтрагч",
+  "twentyConversations": "20 яриа",
+  "checkInHabit": "Бүртгэлийн\nдадал",
+  "sevenCheckIns": "7 бүртгэл",
+  "consistencyPro": "Тууштай байдлын\nмэргэжилтэн",
+  "thirtyCheckIns": "30 бүртгэл",
+  "dedicatedJourney": "Тууштай\nзамнал",
+  "hundredCheckIns": "100 бүртгэл",
+  "goalGetter": "Зорилгодоо хүрэгч",
+  "threeGoalsCompleted": "3 зорилго биелүүлсэн",
+  "goalAchiever": "Зорилго\nбиелүүлэгч",
+  "tenGoalsCompleted": "10 зорилго биелүүлсэн",
+  "firstSavings": "Анхны\nхуримтлал",
+  "fiveHundredSaved": "$500 хэмнэсэн",
+  "smartSaver": "Ухаалаг хэмнэгч",
+  "oneThousandSaved": "$1,000 хэмнэсэн",
+  "bigSaver": "Их хэмнэгч",
+  "fiveThousandSaved": "$5,000 хэмнэсэн",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Үргэлжлүүлээрэй — таны анхны чухал үе шат таныг хүлээж байна!",
+  "badgesAndMilestones": "Тэмдэг ба чухал үе шатууд",
+  "yourMilestoneJourney": "Таны чухал үе шатын замнал",
+  "milestonesAchieved": "{count} чухал үе шат биеллээ.\nҮзэхийн тулд товшино уу",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Та замналынхаа {total} чухал үе шатаас {unlocked}-г нээсэн байна.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Үлдсэн",
+  "complete": "Бүрэн",
+  "nextMilestone": "Дараагийн чухал үе шат",
+  "percentThere": "{subtitle} · {percent}% хүрсэн",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Архигүй байдлын чухал үе шатууд",
+  "journeyBadges": "Замналын тэмдгүүд",
+  "bronze": "ХҮРЭЛ",
+  "silver": "МӨНГӨН",
+  "gold": "АЛТАН",
+  "platinum": "ПЛАТИН",
+  "diamond": "АЛМАЗ",
+
+  "analyzingYourJourney": "Таны замналыг шинжилж байна...",
+  "aiCreatingSanctuary": "Манай AI танд зориулсан хувийн орон зайг үүсгэж байна.",
+  "understandingHabits": "Дадлуудыг ойлгож байна...",
+  "calculatingBaseline": "Таны суурь үзүүлэлтийг тооцоолж байна...",
+  "personalizingPlan": "Төлөвлөгөөг тань хувийн болгож байна...",
+  "finalizingSanctuary": "Таны хувийн орон зайг эцэслэж байна...",
+  "creatingYourPlan": "Таны төлөвлөгөөг үүсгэж байна...",
+  "personalizedPlanError": "Таны хувийн төлөвлөгөөг үүсгэж чадсангүй. Дахин оролдоно уу.",
+  "retry": "Дахин оролдох",
+
+  "breathingExercise": "Амьсгалын дасгал",
+  "breathInhale": "АМЬСГАЛ АВАХ",
+  "breathHold": "БАРИХ",
+  "breathExhale": "АМЬСГАЛ ГАРГАХ",
+  "breathDone": "БОЛСОН",
+  "breathGreatJob": "Маш сайн!",
+  "remaining": "Үлдсэн",
+  "breathSessionsToday": "{count, plural, one{{count} сесс өнөөдөр} other{{count} сесс өнөөдөр}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Дасгалыг дуусгах",
+  "done": "Болсон",
+
+  "noCopingTipsYet": "Одоогоор даван туулах зөвлөмж алга",
+  "copingStrategiesWillAppear": "Таны сэргэлтийн төлөвлөгөө үүсэж дуусмагц танд зориулсан даван туулах стратегиуд энд харагдана.",
+  "strategiesTailoredToTriggers": "Таны өдөөгч хүчин зүйлд тохирсон стратегиуд",
+
+  "rideTheWave": "Давалгааг даван туулах",
+  "cravingsPeakAndPass": "Хүсэл оргилдоо хүрээд\nөнгөрдөг",
+  "rideTheWaveDescription": "Ихэнх архи уух хүсэл 15 минутын дотор өнгөрдөг. Та түүнд автах шаардлагагүй — бидэнтэй хамт түүнийг даван туул.",
+  "stayWithIt": "тэвчээртэй бай",
+  "youMadeIt": "та чадлаа",
+  "readyWhenYouAre": "та бэлэн болмогц",
+  "rideItAgain": "Дахин даван туулах",
+  "start15MinuteTimer": "15 минутын таймер эхлүүлэх",
+  "rideTheWaveCompletedMessage": "Та энэ давалгааг даван гарлаа. Энэ бол жинхэнэ хүч чадал. 💪",
+
+  "myProgress": "Миний ахиц",
+  "weekLabel": "Долоо хоног",
+  "monthLabel": "Сар",
+  "allLabel": "Бүгд",
+  "daysSoberStatLabel": "Архигүй\nөдөр",
+  "savedStatLabel": "Хэмнэсэн",
+  "avoidedStatLabel": "Зайлсхийсэн",
+  "moodTrends": "Сэтгэл санааны чиг хандлага",
+  "cravingsPattern": "Архи уух хүслийн хэв маяг",
+  "unlockLabel": "Нээх",
+  "unlockFullStats": "Бүх статистикийг нээх",
+  "premiumStatsMessage": "Сэтгэл санааны чиг хандлага болон архи уух хүслийн хэв маяг нь Премиум боломжууд юм. Бүх статистикээ харахын тулд шинэчлээрэй.",
+  "healthMilestonesWillAppear": "Таны эрүүл мэндийн чухал үе шатууд энд харагдана.",
+  "healthMilestones": "Эрүүл мэндийн чухал үе шатууд",
+  "dayNumber": "{day} дахь өдөр",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Архигүй",
+  "slipLabel": "Алдаа",
+  "noDataLabel": "Мэдээлэл алга",
+
+  "milestone24Hours": "24 цаг",
+  "milestoneOneWeek": "Нэг долоо хоног",
+  "milestoneOneMonth": "Нэг сар",
+  "milestoneThreeMonths": "Гурван сар",
+  "milestoneSixMonths": "Зургаан сар",
+  "milestoneOneYear": "Нэг жил",
+  "milestoneDayCount": "{day} дахь өдрийн чухал үе шат",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Нууцлалын бодлого"
+}

@@ -1,0 +1,584 @@
+{
+  "@@locale": "ja",
+
+  "skip": "スキップ",
+  "continueButton": "続ける",
+  "getStarted": "始める",
+
+  "maybeLaterLabel": "また今度",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "キャンセル",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "人生を自分でコントロールする",
+  "onboardingSubtitle1": "歩みを記録し、すべての達成を祝い、一日ずつ健康になりましょう。",
+  "onboardingTitle2": "あなたのAI回復パートナー",
+  "onboardingSubtitle2": "あなたの歩みに合わせたパーソナライズされたガイダンス、健康的な習慣、モチベーションリマインダー、進捗レポートを受け取りましょう。",
+
+  "goodMorning": "おはようございます",
+  "goodAfternoon": "こんにちは",
+  "goodEvening": "こんばんは",
+  "goodNight": "おやすみなさい",
+
+  "embracingClarity": "一日ずつ、心の明晰さを取り戻しましょう。",
+  "streakLabel": "連続記録",
+  "goalLabel": "目標",
+  "daysStreak": "{count, plural, one{{count}日} other{{count}日}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "プレミアムプラン",
+  "premiumPlanSubtitle": "完全な回復体験を解放しましょう",
+
+  "accountAndSupport": "アカウントとサポート",
+  "privacyPolicy": "プライバシーポリシー",
+  "privacyPolicySubtitle": "データ共有とアカウントのセキュリティを管理",
+  "termsOfService": "利用規約",
+  "termsOfServiceSubtitle": "よくある質問、お問い合わせ、リソース",
+  "shareApp": "アプリを共有",
+  "shareAppSubtitle": "友達とアプリを共有する",
+  "resetData": "データをリセット",
+  "resetDataSubtitle": "このデバイスに保存されたすべてを削除",
+
+  "resetAllDataTitle": "すべてのデータをリセットしますか？",
+  "resetAllDataMessage": "プロフィール、日記、進捗など、このデバイスに保存されたすべてが削除されます。この操作は元に戻せません。",
+  "cancel": "キャンセル",
+  "reset": "リセット",
+
+  "chooseFromGallery": "ギャラリーから選択",
+  "takePhoto": "写真を撮る",
+  "removePhoto": "写真を削除",
+  "couldNotUpdatePhoto": "写真を更新できませんでした：{error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "写真を削除できませんでした：{error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "圧縮しても写真が大きすぎます。別の写真をお試しください。",
+
+  "unableToLoadProfile": "プロフィールを読み込めません",
+  "pleaseTryAgain": "もう一度お試しください。",
+  "tryAgain": "もう一度試す",
+  "profileNotFound": "プロフィールが見つかりません",
+  "refresh": "更新",
+  "noProfileDataFound": "このデバイスにはまだプロフィールデータがありません。",
+
+  "couldNotResetData": "データをリセットできませんでした：{error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "ホーム",
+  "navStats": "統計",
+  "navJournal": "日記",
+  "navBadges": "バッジ",
+  "navProfile": "プロフィール",
+
+  "featureComingSoon": "{feature}は近日利用可能になります。",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ウェルネス",
+  "appTitle": "飲酒をやめる",
+  "splashSubtitle": "アルコールのない人生への\n最初の一歩を踏み出しましょう",
+  "preparingJourney": "あなたの旅を\n準備しています",
+
+  "taskMorningMeditation": "朝の瞑想（10分）",
+  "taskReadChapter": "「The Sober Diaries」の第4章を読む",
+  "taskEveningJournal": "夜の感謝日記",
+
+  "close": "閉じる",
+  "youAreDoingGreat": "よく頑張っています！",
+  "shareMilestone": "達成を共有",
+  "shareMilestoneMessage": "回復への旅を{days}日目まで続けています！ 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "私の回復の達成",
+
+  "weeklyReportReadyTitle": "週間レポートの準備ができました",
+  "weeklyReportReadySubtitle": "タップして今週の振り返りを見る",
+
+  "howAreYouFeeling": "今の気分はいかがですか？",
+  "moodTough": "つらい",
+  "moodOkay": "まあまあ",
+  "moodGood": "良い",
+
+  "moneySaved": "節約したお金",
+  "caloriesSaved": "節約したカロリー",
+  "healthScore": "健康スコア",
+  "drinksAvoided": "避けた飲酒",
+  "estimated": "推定",
+  "aiGenerated": "AI生成",
+  "daysCapsLabel": "日",
+
+  "todaysMotivation": "今日のモチベーション",
+  "defaultMotivationQuote": "あなたは約束を守り続けることに成功しています。前向きな変化の波に乗り続けましょう。",
+
+  "talkToCoach": "コーチと話す",
+  "havingACraving": "今、飲みたい気持ちがあります",
+
+  "unlockWeeklyReportsTitle": "週間レポートを解放",
+  "unlockWeeklyReportsMessage": "毎週、飲酒していない日数、気分の傾向、あなたに合わせたAIフィードバックを確認できます。Premiumにアップグレードして解放しましょう。",
+  "maybeLater": "後で",
+  "upgrade": "アップグレード",
+
+  "weeklyReportTitle": "週間レポート",
+  "weeklyReportsPremiumTitle": "週間レポートはPremium機能です",
+  "weeklyReportsPremiumMessage": "毎週、飲酒していない日数、気分の傾向、飲酒欲求、パーソナライズされたAIフィードバックを確認できます。",
+  "upgradeToPremium": "Premiumにアップグレード",
+  "couldNotGenerateReport": "現在、レポートを作成できませんでした。",
+  "tryAgainLower": "もう一度試す",
+
+  "statSoberDays": "飲酒していない日数",
+  "statAvgMood": "平均気分",
+  "statCravings": "飲酒欲求",
+  "statMoneySaved": "節約したお金",
+  "coachFeedback": "コーチのフィードバック",
+  "journalInsights": "日記のインサイト",
+
+  "next": "次へ",
+
+  "question1Title": "あなたの目標は何ですか？",
+  "question1Subtitle": "あなたにとって最も\n大切な目標を選んでください",
+  "goalQuitCompletely": "完全にやめる",
+  "goalReduceDrinking": "飲酒量を減らす",
+  "goalTakeABreak": "休む",
+  "goalBuildHealthierHabits": "より健康的な習慣を作る",
+
+  "question3Title": "あなたの\n習慣について教えてください",
+  "drinksPerWeek": "週あたりの飲酒量",
+  "moneySpentPerWeek": "週あたりの飲酒費用",
+  "drinkingLevel": "飲酒レベル",
+  "triggersLabel": "きっかけ",
+  "levelSocial": "社交的",
+  "levelRegular": "習慣的",
+  "levelHeavy": "多量",
+  "levelDependent": "依存",
+  "triggerStress": "ストレス",
+  "triggerLoneliness": "孤独",
+  "triggerHabit": "習慣",
+  "triggerSadness": "悲しみ",
+  "triggerAnger": "怒り",
+  "triggerBoredom": "退屈",
+  "triggerSocialPressure": "社会的プレッシャー",
+  "triggerCelebration": "お祝い",
+  "triggerSleepProblems": "睡眠の問題",
+  "triggerWorkPressure": "仕事のプレッシャー",
+
+  "question4Title": "なぜ変わりたいのですか？",
+  "question4Subtitle": "あなたの理由がモチベーションにつながります。",
+  "reasonImproveHealth": "健康を改善する",
+  "reasonSaveMoney": "お金を節約する",
+  "reasonFamily": "家族",
+  "reasonBetterSleep": "より良い睡眠",
+  "reasonMentalClarity": "精神的な明晰さ",
+  "reasonFitness": "フィットネス",
+  "reasonSelfRespect": "自尊心",
+  "reasonCareer": "キャリア",
+
+  "milestoneUnlockedLabel": "マイルストーン達成",
+  "incredibleNamePrefix": "素晴らしい、{name}さん！",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount}節約",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count}杯回避",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "マイルストーンを共有",
+  "milestoneImageShareError": "マイルストーン画像を作成できませんでした。もう一度お試しください。",
+
+  "dailyCheckInTitle": "毎日のチェックイン",
+  "howAreYouFeelingToday": "今日の気分はいかがですか？",
+  "honestAnswerHelp": "正直な回答が、より良いサポートにつながります",
+  "didYouDrinkToday": "今日は飲酒しましたか？",
+  "noLabel": "いいえ",
+  "yesLabel": "はい",
+  "cravingLevelNow": "今の飲酒欲求の強さは？",
+  "anythingOnMind": "何か気になっていることはありますか？",
+  "optionalLabel": "（任意）",
+  "dailyNoteHint": "今日の出来事、きっかけ、うまくいったことなどを書いてください...",
+  "alreadyCheckedInToday": "今日はすでにチェックイン済みです",
+  "saveCheckIn": "チェックインを保存",
+  "checkInsHelpTrack": "チェックインで時間の経過とともに進捗を追跡できます",
+  "alreadyCompletedTodayCheckIn": "今日のチェックインはすでに完了しています。",
+  "pleaseAnswerBothQuestions": "まず上の2つの質問に答えてください",
+  "checkInSaved": "チェックインを保存しました",
+  "cravingNone": "なし",
+  "cravingLow": "低い",
+  "cravingMedium": "中程度",
+  "cravingStrong": "強い",
+  "moodBad": "悪い",
+  "moodLow": "低い",
+  "moodOkay": "まあまあ",
+  "moodGood": "良い",
+  "moodGreat": "とても良い",
+
+  "sosSupportTitle": "SOSサポート",
+  "notAloneMessage": "あなたは一人ではありません、{name}さん",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "飲酒欲求はやがて過ぎ去ります。今この瞬間を乗り越えるために、以下から一つ選んでください。",
+  "breathingExercise": "呼吸エクササイズ",
+  "breathingExerciseSubtitle": "ガイド付き4-7-8呼吸法、2分間",
+  "rideTheWave": "波を乗り越える",
+  "rideTheWaveSubtitle": "15分タイマー — 飲酒欲求は必ず過ぎ去ります",
+  "copingTips": "対処のヒント",
+  "copingTipsSubtitle": "あなたのきっかけに合わせた対処法",
+  "talkToAiCoach": "AIコーチと話す",
+  "talkToAiCoachSubtitle": "回復パートナーとチャットする",
+  "callSomeone": "誰かに電話する",
+  "callSomeoneSubtitle": "信頼できる連絡先に連絡する",
+  "contactsPermissionNeeded": "連絡先に電話するには連絡先へのアクセス許可が必要です。",
+  "beatenCravingsPrefix": "これまでに飲酒欲求を乗り越えた回数：",
+  "beatenCravingsCount": "{count}回",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": "。もう一度できます。",
+
+  "tellUsAboutYourself": "あなたについて教えてください",
+  "detailsSubtitle": "この情報は、あなたの回復への旅をパーソナライズし、正確なインサイトを提供するために役立ちます。",
+  "nameLabel": "名前",
+  "nameHint": "例：Alex Rivers",
+  "ageLabel": "年齢",
+  "ageHint": "例：32",
+  "sexAssignedAtBirth": "出生時の性別",
+  "sexFemale": "女性",
+  "sexMale": "男性",
+  "heightLabel": "身長",
+  "weightLabel": "体重",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "1日の上限に達しました",
+  "dailyLimitReachedMessage": "本日の無料メッセージ{limit}件をすべて使用しました。Premiumにアップグレードするとコーチとのチャットが無制限になります。",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "現在接続できません。しばらくしてからもう一度お試しください。",
+  "clearConversationTitle": "会話を削除しますか？",
+  "clearConversationMessage": "コーチとのチャット履歴が完全に削除されます。",
+  "clearLabel": "削除",
+  "recoveryCoachTitle": "回復コーチ",
+  "onlineLabel": "オンライン",
+  "clearConversationMenuItem": "会話を削除",
+  "chatGreeting": "こんにちは、{name}さん 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "あなたは回復の旅の{days}日目です。話したいときはいつでもここにいます。",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "クイックプロンプト",
+  "promptCravingLabel": "飲みたい気持ちがある",
+  "promptCravingSubtitle": "すぐに気持ちを落ち着かせる",
+  "promptMotivationLabel": "モチベーションが必要",
+  "promptMotivationSubtitle": "つらいときの後押し",
+  "promptSocialLabel": "社交的な場面",
+  "promptSocialSubtitle": "集まりを乗り切る",
+  "promptSlippedLabel": "飲んでしまった",
+  "promptSlippedSubtitle": "責めずに、ただサポートします",
+  "typeMessageHint": "メッセージを入力...",
+
+  "editProfileTitle": "プロフィールを編集",
+  "couldNotSaveProfile": "プロフィールを保存できませんでした：{error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "身長（cm）",
+  "weightKgLabel": "体重（kg）",
+  "saveChangesLabel": "変更を保存",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "高度なインサイトと分析",
+  "featureUnlimitedJournal": "日記エントリー無制限",
+  "featureUnlimitedChat": "AIコーチとのチャット無制限",
+  "featureCommunityGroups": "限定コミュニティグループ",
+  "featurePrioritySupport": "優先エキスパートサポート",
+  "featureThemePacks": "カスタムテーマパック",
+  "featureDataExport": "データエクスポート",
+  "featureAdFree": "広告なし体験",
+  "premiumMemberTitle": "あなたはPremiumメンバーです",
+  "unlockFullRecoveryTitle": "完全な回復体験を\n解放しましょう",
+  "premiumMemberSubtitle": "回復への旅をサポートしていただきありがとうございます — 以下のPremium機能はすべて利用できます。",
+  "premiumJoinSubtitle": "何千人もの人々とともに、\nPremiumツールとパーソナライズされたサポートで\n回復への旅を加速しましょう。",
+  "monthlyPlanLabel": "月額",
+  "perMonthSuffix": "/月",
+  "cancelAnytimeLabel": "いつでもキャンセル可能",
+  "yearlyPlanLabel": "年額",
+  "billedAnnuallyLabel": "{amount}を年払い",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "お得なプラン",
+  "alreadyPremiumLabel": "Premium利用中 ✓",
+  "startPremiumLabel": "Premiumを始める",
+  "manageSubscriptionLabel": "デバイスのサブスクリプション設定から管理またはキャンセルできます。",
+  "noCommitmentLabel": "契約の縛りなし。いつでもキャンセルできます。",
+  "continueFreePlanLabel": "無料プランを続ける",
+  "backToHomeLabel": "ホームに戻る",
+  "cancelPremiumLabel": "Premiumをキャンセル",
+  "cancelPremiumTitle": "Premiumをキャンセルしますか？",
+  "cancelPremiumMessage": "無制限の日記エントリー、無制限のコーチチャット、統計インサイト、週間レポートへのアクセスを失います。いつでも再登録できます。",
+  "keepPremiumLabel": "Premiumを続ける",
+  "nowPremiumMessage": "Premiumになりました！完全な回復体験をお楽しみください。",
+  "premiumCancelledMessage": "Premiumをキャンセルしました。無料プランに戻りました。",
+  "termsOfUseLabel": "利用条件",
+
+  "navHomeLabel": "ホーム",
+  "navStatsLabel": "統計",
+  "navJournalLabel": "日記",
+  "navBadgesLabel": "バッジ",
+  "navProfileLabel": "プロフィール",
+
+  "recoveryGoalsTitle": "回復の目標",
+  "goalLabel": "目標",
+  "drinksPerWeekLabel": "週あたりの飲酒量",
+  "quitReasonsLabel": "やめる理由",
+  "quitReasonsHelperText": "複数の理由はカンマで区切ってください。",
+  "couldNotSaveRecoveryGoals": "回復目標を保存できませんでした：{error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "例：完全禁酒",
+  "drinksPerWeekHint": "例：12",
+  "quitReasonsHint": "例：健康、家族、お金",
+
+  "todaysPrompt": "今日のプロンプト",
+  "defaultJournalPrompt": "今日、何を考えていますか？",
+  "aiJournalInsights": "AI日記インサイト",
+  "unlockJournalInsightsMessage": "日記エントリーから、週間パターン、気分の傾向、パーソナライズされたインサイトを解放しましょう。",
+  "notEnoughJournalData": "まだデータが足りません — 今週いくつか日記を書いて、後でもう一度確認してください。",
+  "openEntry": "開く",
+  "editEntry": "編集",
+  "deleteEntry": "削除",
+  "searchJournalEntries": "エントリーを検索...",
+  "writeNewEntry": "新しいエントリーを書く",
+  "recentEntries": "最近のエントリー",
+  "noJournalEntriesYet": "まだ日記エントリーがありません — 上で最初の振り返りを書いてみましょう。",
+  "noEntriesMatchFilters": "条件に一致するエントリーはありません。",
+
+  "weeklyJournalLimitReached": "週間上限に達しました",
+  "weeklyJournalLimitMessage": "今週の無料日記エントリー{limit}件をすべて使用しました。Premiumにアップグレードすると無制限になります。",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "新しいエントリー",
+  "writeYourThoughts": "あなたの考えを書く",
+  "saveEntry": "エントリーを保存",
+  "freeEntriesLeftThisWeek": "今週残り{remaining}/{limit}件の無料エントリー",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "エントリーを削除しますか？",
+  "deleteEntryConfirmation": "このエントリーは完全に削除されます。この操作は元に戻せません。",
+
+  "journalEntryNotFound": "エントリーが見つかりません",
+  "journalEntryMayHaveBeenDeleted": "この日記エントリーは削除された可能性があります。",
+  "goBack": "戻る",
+  "journalEntryTitle": "日記エントリー",
+
+  "moodStruggling": "苦戦中",
+  "moodUnwell": "不調",
+  "moodNeutral": "普通",
+
+  "whatHappenedToday": "今日は何がありましたか？",
+  "trigger": "きっかけ",
+  "whatHelped": "役立ったこと",
+  "whatIllTryNextTime": "次回試してみること",
+  "journalPrivacyMessage": "あなたの振り返りは非公開で、日記に保存されます。",
+
+  "unlocked": "解放済み",
+  "daysLeft": "残り{count}日",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count}日",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "初めての\n振り返り",
+  "oneJournalEntry": "日記1件",
+  "openBook": "本を開く",
+  "tenJournalEntries": "日記10件",
+  "dedicatedWriter": "熱心な\nライター",
+  "thirtyJournalEntries": "日記30件",
+  "firstConversation": "初めての\n会話",
+  "oneAiCoachChat": "AIコーチチャット1回",
+  "keepTalking": "話し続ける",
+  "fiveConversations": "会話5回",
+  "coachCompanion": "コーチ\nパートナー",
+  "twentyConversations": "会話20回",
+  "checkInHabit": "チェックイン\n習慣",
+  "sevenCheckIns": "チェックイン7回",
+  "consistencyPro": "継続の\nプロ",
+  "thirtyCheckIns": "チェックイン30回",
+  "dedicatedJourney": "献身的な\n旅",
+  "hundredCheckIns": "チェックイン100回",
+  "goalGetter": "目標達成者",
+  "threeGoalsCompleted": "目標3件達成",
+  "goalAchiever": "目標\n達成者",
+  "tenGoalsCompleted": "目標10件達成",
+  "firstSavings": "初めての\n節約",
+  "fiveHundredSaved": "$500節約",
+  "smartSaver": "賢い節約家",
+  "oneThousandSaved": "$1,000節約",
+  "bigSaver": "大きな節約家",
+  "fiveThousandSaved": "$5,000節約",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "続けましょう — 最初のマイルストーンがあなたを待っています！",
+  "badgesAndMilestones": "バッジとマイルストーン",
+  "yourMilestoneJourney": "あなたのマイルストーンの旅",
+  "milestonesAchieved": "{count}個のマイルストーンを達成しました。\nタップして表示",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "あなたの旅で{total}個中{unlocked}個のマイルストーンを解放しました。",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "残り",
+  "complete": "完了",
+  "nextMilestone": "次のマイルストーン",
+  "percentThere": "{subtitle} · {percent}%達成",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "禁酒マイルストーン",
+  "journeyBadges": "旅のバッジ",
+  "bronze": "ブロンズ",
+  "silver": "シルバー",
+  "gold": "ゴールド",
+  "platinum": "プラチナ",
+  "diamond": "ダイヤモンド",
+
+  "analyzingYourJourney": "あなたの旅を分析しています...",
+  "aiCreatingSanctuary": "AIがあなた専用の回復スペースを作成しています。",
+  "understandingHabits": "習慣を分析しています...",
+  "calculatingBaseline": "基準値を計算しています...",
+  "personalizingPlan": "プランをパーソナライズしています...",
+  "finalizingSanctuary": "回復スペースを仕上げています...",
+  "creatingYourPlan": "プランを作成しています...",
+  "personalizedPlanError": "パーソナライズされたプランを作成できませんでした。もう一度お試しください。",
+  "retry": "再試行",
+
+  "breathingExercise": "呼吸エクササイズ",
+  "breathInhale": "吸う",
+  "breathHold": "止める",
+  "breathExhale": "吐く",
+  "breathDone": "完了",
+  "breathGreatJob": "よくできました！",
+  "remaining": "残り",
+  "breathSessionsToday": "{count, plural, one{{count}回のセッション（今日）} other{{count}回のセッション（今日）}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "エクササイズを終了",
+  "done": "完了",
+
+  "noCopingTipsYet": "まだ対処法のヒントはありません",
+  "copingStrategiesWillAppear": "回復プランの作成が完了すると、あなたに合わせた対処法がここに表示されます。",
+  "strategiesTailoredToTriggers": "あなたのきっかけに合わせた対処法",
+
+  "rideTheWave": "波を乗り越える",
+  "cravingsPeakAndPass": "飲酒欲求は\nピークを越えて去ります",
+  "rideTheWaveDescription": "ほとんどの飲酒欲求は15分以内に過ぎ去ります。行動する必要はありません — 私たちと一緒に乗り越えましょう。",
+  "stayWithIt": "そのまま続ける",
+  "youMadeIt": "乗り越えました",
+  "readyWhenYouAre": "準備ができたら",
+  "rideItAgain": "もう一度乗り越える",
+  "start15MinuteTimer": "15分タイマーを開始",
+  "rideTheWaveCompletedMessage": "波を乗り越えました。それは本当の強さです。💪",
+
+  "myProgress": "私の進捗",
+  "weekLabel": "週",
+  "monthLabel": "月",
+  "allLabel": "すべて",
+  "daysSoberStatLabel": "禁酒\n日数",
+  "savedStatLabel": "節約",
+  "avoidedStatLabel": "回避",
+  "moodTrends": "気分の傾向",
+  "cravingsPattern": "飲酒欲求のパターン",
+  "unlockLabel": "解放",
+  "unlockFullStats": "すべての統計を解放",
+  "premiumStatsMessage": "気分の傾向と飲酒欲求のパターンはPremium機能です。アップグレードしてすべての統計を確認しましょう。",
+  "healthMilestonesWillAppear": "健康のマイルストーンがここに表示されます。",
+  "healthMilestones": "健康のマイルストーン",
+  "dayNumber": "{day}日目",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "禁酒中",
+  "slipLabel": "再飲酒",
+  "noDataLabel": "データなし",
+
+  "milestone24Hours": "24時間",
+  "milestoneOneWeek": "1週間",
+  "milestoneOneMonth": "1か月",
+  "milestoneThreeMonths": "3か月",
+  "milestoneSixMonths": "6か月",
+  "milestoneOneYear": "1年",
+  "milestoneDayCount": "{day}日目のマイルストーン",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "プライバシーポリシー"
+}

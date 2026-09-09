@@ -1,0 +1,579 @@
+{
+  "@@locale": "my",
+
+  "skip": "ကျော်သွားရန်",
+  "continueButton": "ဆက်လက်လုပ်ဆောင်ရန်",
+  "getStarted": "စတင်ရန်",
+
+  "onboardingTitle1": "သင့်ဘဝကို စနစ်တကျထိန်းချုပ်ပါ",
+  "onboardingSubtitle1": "သင့်ခရီးလမ်းကို မှတ်တမ်းတင်ပါ၊ အောင်မြင်မှုတိုင်းကို အတူတကွဂုဏ်ပြုပြီး တစ်ရက်ထက်တစ်ရက် ပိုမိုကျန်းမာလာပါစေ။",
+  "onboardingTitle2": "သင့် AI ပြန်လည်ထူထောင်ရေး အဖော်မွန်",
+  "onboardingSubtitle2": "သင့်ခရီးလမ်းအတွက် သီးသန့်ရေးဆွဲထားသော လမ်းညွှန်ချက်များ၊ ကျန်းမာရေးဆိုင်ရာ အလေ့အကျင့်များ၊ ခွန်အားဖြစ်စေမည့် အမှတ်ရစရာများနှင့် တိုးတက်မှုအစီရင်ခံစာများကို ရယူပါ။",
+
+  "maybeLaterLabel": "နောက်မှ ဖြစ်နိုင်သည်",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "ပယ်ဖျက်ရန်",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "မင်္ဂလာနံနက်ခင်းပါ",
+  "goodAfternoon": "မင်္ဂလာနေ့လယ်ခင်းပါ",
+  "goodEvening": "မင်္ဂလာညနေခင်းပါ",
+  "goodNight": "မင်္ဂလာညချမ်းပါ",
+
+  "embracingClarity": "တစ်ရက်ပြီးတစ်ရက် ကြည်လင်ဆန်းသစ်သော စိတ်ဓာတ်ကို မွေးမြူပါ။",
+  "streakLabel": "ရက်ဆက် တန်းစီမှု",
+  "goalLabel": "ရည်မှန်းချက်",
+  "daysStreak": "{count} ရက်",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium အစီအစဉ်",
+  "premiumPlanSubtitle": "သင့်ပြန်လည်ထူထောင်ရေး အတွေ့အကြုံ အပြည့်အဝကို ရယူပါ",
+
+  "accountAndSupport": "အကောင့်နှင့် အကူအညီ",
+  "privacyPolicy": "ကိုယ်ရေးအချက်အလက် မူဝါဒ",
+  "privacyPolicySubtitle": "ဒေတာမျှဝေမှုနှင့် အကောင့်လုံခြုံရေးကို စီမံရန်",
+  "termsOfService": "ဝန်ဆောင်မှု စည်းမျဉ်းများ",
+  "termsOfServiceSubtitle": "မေးလေ့ရှိသော မေးခွန်းများ၊ ဆက်သွယ်ရန်နှင့် အရင်းအမြစ်များ",
+  "shareApp": "အက်ပ်အား မျှဝေရန်",
+  "shareAppSubtitle": "သင့်မိတ်ဆွေများနှင့် အက်ပ်ကို မျှဝေပါ",
+  "resetData": "ဒေတာများ ပြန်စတင်ရန်",
+  "resetDataSubtitle": "ဤစက်ပစ္စည်းပေါ်တွင် သိမ်းဆည်းထားသည်များကို ဖျက်ရန်",
+
+  "resetAllDataTitle": "ဒေတာအားလုံးကို ပြန်စတင်မလား?",
+  "resetAllDataMessage": "ဤလုပ်ဆောင်ချက်သည် စက်ပေါ်ရှိ ကိုယ်ရေးအချက်အလက်၊ ဂျာနယ်မှတ်တမ်းများနှင့် တိုးတက်မှု အားလုံးကို ဖျက်ပစ်မည်ဖြစ်ပြီး ပြန်လည်ရယူနိုင်မည် မဟုတ်ပါ။",
+  "cancel": "မလုပ်တော့ပါ",
+  "reset": "ပြန်စတင်ရန်",
+
+  "chooseFromGallery": "ဓာတ်ပုံအရalbumမှ ရွေးချယ်ရန်",
+  "takePhoto": "ဓာတ်ပုံရိုက်ရန်",
+  "removePhoto": "ဓာတ်ပုံဖျက်ရန်",
+  "couldNotUpdatePhoto": "ဓာတ်ပုံကို ပြင်ဆင်၍မရပါ: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "ဓာတ်ပုံကို ဖျက်၍မရပါ: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "ဓာတ်ပုံအရွယ်အစားသည် သေးငယ်အောင်ပြုလုပ်ပြီးသည့်တိုင် ကြီးမားနေသေးပါ - အခြားဓာတ်ပုံတစ်ပုံ ပြောင်းသုံးကြည့်ပါ။",
+
+  "unableToLoadProfile": "သင့်ပရိုဖိုင်ကို ဖွင့်၍မရပါ",
+  "pleaseTryAgain": "ကျေးဇူးပြု၍ ပြန်လည်ကြိုးစားပါ။",
+  "tryAgain": "ပြန်လည်ကြိုးစားရန်",
+  "profileNotFound": "ပရိုဖိုင် ရှာမတွေ့ပါ",
+  "refresh": "ပြန်လည်စတင်ပါ",
+  "noProfileDataFound": "ဤစက်ပစ္စည်းပေါ်တွင် ပရိုဖိုင်ဒေတာ မရှိသေးပါ။",
+
+  "couldNotResetData": "ဒေတာများ ပြန်စတင်၍ မရပါ: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "ပင်မစာမျက်နှာ",
+  "navStats": "စာရင်းဇယား",
+  "navJournal": "ဂျာနယ်",
+  "navBadges": "တံဆိပ်များ",
+  "navProfile": "ပရိုဖိုင်",
+
+  "featureComingSoon": "{feature} လုပ်ဆောင်ချက်ကို မကြာမီ ရရှိနိုင်တော့မည်။",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ကျန်းမာရေး",
+  "appTitle": "အရက်သောက်ခြင်းကို ရပ်လိုက်ပါ",
+  "splashSubtitle": "အရက်ကင်းစင်သော ဘဝတစ်ခုသို့ ရောက်ရှိရန်\nပထမဆုံး ခြေလှမ်းကို လှမ်းလိုက်ပါ",
+  "preparingJourney": "သင့်ခရီးစဉ်ကို ပြင်ဆင်နေပါသည်",
+
+  "taskMorningMeditation": "နံနက်ခင်း တရားဘာဝနာပွားများခြင်း (၁၀ မိနစ်)",
+  "taskReadChapter": "\"The Sober Diaries\" စာအုပ်၏ အခန်း (၄) ကို ဖတ်ပါ",
+  "taskEveningJournal": "ညနေခင်း ကျေးဇူးတင်လွှာ ဂျာနယ်",
+
+  "close": "ပိတ်ရန်",
+  "youAreDoingGreat": "သင် အလွန်ကောင်းမွန်စွာ လုပ်ဆောင်နေပါတယ်!",
+  "shareMilestone": "အောင်မြင်မှု မိုင်တိုင်ကို မျှဝေရန်",
+  "shareMilestoneMessage": "ကျွန်ုပ်ရဲ့ ပြန်လည်ထူထောင်ရေးခရီးစဉ် {days} ရက်မြောက်နေ့သို့ ရောက်ရှိခဲ့ပါပြီ! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "ကျွန်ုပ်၏ ပြန်လည်ထူထောင်ရေး အောင်မြင်မှု မိုင်တိုင်",
+
+  "weeklyReportReadyTitle": "သင့်အပတ်စဉ် အစီရင်ခံစာ အသင့်ဖြစ်ပါပြီ",
+  "weeklyReportReadySubtitle": "သင့်အပတ်စဉ် တိုးတက်မှုကို ကြည့်ရှုရန် နှိပ်ပါ",
+
+  "howAreYouFeeling": "သင် ဘယ်လိုခံစားနေရသလဲ?",
+  "moodTough": "ခက်ခဲသည်",
+  "moodOkay": "အဆင်ပြေသည်",
+  "moodGood": "ကောင်းမွန်သည်",
+
+  "moneySaved": "စုဆောင်းမိသော ငွေပမာဏ",
+  "caloriesSaved": "လျှော့ချနိုင်ခဲ့သော ကယ်လိုရီ",
+  "healthScore": "ကျန်းမာရေး ရမှတ်",
+  "drinksAvoided": "ရှောင်ကြဉ်ခဲ့သော သောက်စရာများ",
+  "estimated": "ခန့်မှန်းခြေ",
+  "aiGenerated": "AI မှ ဖန်တီးထားသည်",
+  "daysCapsLabel": "ရက်များ",
+
+  "todaysMotivation": "ဒီနေ့အတွက် ခွန်အားဖြည့်စကား",
+  "defaultMotivationQuote": "သင်၏ ကတိကဝတ်ကို အောင်မြင်စွာ ထိန်းသိမ်းနိုင်ခဲ့ပါပြီ။ အပြုသဘောဆောင်သော အပြောင်းအလဲများကို ဆက်လက် ထိန်းသိမ်းသွားပါ။",
+
+  "talkToCoach": "အကြံပေးနှင့် စကားပြောရန်",
+  "havingACraving": "သောက်ချင်စိတ် ပေါ်ပေါက်နေပါသည်",
+
+  "unlockWeeklyReportsTitle": "အပတ်စဉ် အစီရင်ခံစာများကို ရယူပါ",
+  "unlockWeeklyReportsMessage": "အရက်ကင်းစင်သောရက်များ၊ စိတ်ခံစားမှုပုံစံများနှင့် AI ၏ အကြံပြုချက်များကို အပတ်စဉ် ကြည့်ရှုပါ။ သုံးစွဲရန် Premium သို့ အဆင့်မြှင့်ပါ။",
+  "maybeLater": "နောက်မှ လုပ်ပါမည်",
+  "upgrade": "အဆင့်မြှင့်ရန်",
+
+  "weeklyReportTitle": "အပတ်စဉ် အစီရင်ခံစာ",
+  "weeklyReportsPremiumTitle": "အပတ်စဉ် အစီရင်ခံစာများသည် Premium သုံးစွဲသူများအတွက်သာ ဖြစ်သည်",
+  "weeklyReportsPremiumMessage": "အရက်ကင်းစင်သောရက်များ၊ စိတ်ခံစားမှု အပြောင်းအလဲများ၊ သောက်ချင်စိတ်များ နှင့် AI ၏ အကြံပြုချက်များကို အပတ်စဉ် ကြည့်ရှုပါ။",
+  "upgradeToPremium": "Premium သို့ အဆင့်မြှင့်ရန်",
+  "couldNotGenerateReport": "လက်ရှိတွင် အစီရင်ခံစာကို ထုတ်ယူ၍ မရသေးပါ။",
+  "tryAgainLower": "ပြန်လည် ကြိုးစားရန်",
+
+  "statSoberDays": "အရက်ကင်းစင်သော ရက်များ",
+  "statAvgMood": "ပျမ်းမျှ စိတ်ခံစားမှု",
+  "statCravings": "သောက်ချင်စိတ် ဖြစ်ပေါ်မှုများ",
+  "statMoneySaved": "စုဆောင်းမိသော ငွေပမာဏ",
+  "coachFeedback": "အကြံပေး၏ တုံ့ပြန်ချက်",
+  "journalInsights": "ဂျာနယ်မှ သုံးသပ်ချက်များ",
+
+  "next": "ရှေ့သို့",
+
+  "question1Title": "သင့်ရည်မှန်းချက်က ဘာလဲ",
+  "question1Subtitle": "သင့်အတွက် အရေးကြီးဆုံး ရည်မှန်းချက်ကို ရွေးချယ်ပါ",
+  "goalQuitCompletely": "လုံးဝ ရပ်တန့်ရန်",
+  "goalReduceDrinking": "သောက်သုံးမှုကို လျှော့ချရန်",
+  "goalTakeABreak": "ခဏတာ အနားယူရန်",
+  "goalBuildHealthierHabits": "ပိုမိုကျန်းမာသော အလေ့အကျင့်များ တည်ဆောက်ရန်",
+
+  "question3Title": "သင့်နေ့စဉ် ပုံမှန်အလေ့အထကို ပြောပြပါ",
+  "drinksPerWeek": "တစ်ပတ်လျှင် သောက်သုံးသော ပမာဏ",
+  "moneySpentPerWeek": "တစ်ပတ်လျှင် ကုန်ကျစရိတ်",
+  "drinkingLevel": "သောက်သုံးမှု အဆင့်",
+  "triggersLabel": "တိုက်တွန်းစုံဆော်မှုများ",
+  "levelSocial": "ပေါင်းသင်းဆက်ဆံရေး အဆင့်",
+  "levelRegular": "ပုံမှန် အဆင့်",
+  "levelHeavy": "အလွန်အကျွံ အဆင့်",
+  "levelDependent": "စွဲလမ်းမှု အဆင့်",
+  "triggerStress": "စိတ်ဖိစီးမှု",
+  "triggerLoneliness": "တစ်ယောက်တည်း ပျင်းရိမှု",
+  "triggerHabit": "အလေ့အထ",
+  "triggerSadness": "ဝမ်းနည်းမှု",
+  "triggerAnger": "ဒေါသထွက်မှု",
+  "triggerBoredom": "ပျင်းရိမှု",
+  "triggerSocialPressure": "ပေါင်းသင်းဆက်ဆံရေး ဖိအား",
+  "triggerCelebration": "ပွဲလမ်းသဘင်များ",
+  "triggerSleepProblems": "အိပ်မပျော်သော ပြဿနာများ",
+  "triggerWorkPressure": "လုပ်ငန်းခွင် ဖိအား",
+
+  "question4Title": "ဘာကြောင့် ပြောင်းလဲချင်တာလဲ?",
+  "question4Subtitle": "သင့်အကြောင်းပြချက်က သင့်ကို ခွန်အားဖြစ်စေပါလိမ့်မည်။",
+  "reasonImproveHealth": "ကျန်းမာရေး ပိုမိုကောင်းမွန်စေရန်",
+  "reasonSaveMoney": "ငွေကြေး စုဆောင်းရန်",
+  "reasonFamily": "မိသားစုအတွက်",
+  "reasonBetterSleep": "ပိုမိုကောင်းမွန်စွာ အိပ်စက်နိုင်ရန်",
+  "reasonMentalClarity": "စိတ်ဓာတ် ကြည်လင်ရှင်းလင်းစေရန်",
+  "reasonFitness": "ခန္ဓာကိုယ် ကြံ့ခိုင်စေရန်",
+  "reasonSelfRespect": "မိမိကိုယ်ကို လေးစားမှုရှိစေရန်",
+  "reasonCareer": "အလုပ်အကိုင် တိုးတက်စေရန်",
+
+  "milestoneUnlockedLabel": "မိုင်တိုင်တစ်ခု အောင်မြင်ခဲ့ပြီ",
+  "incredibleNamePrefix": "အံ့ဩစရာပါပဲ၊ {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} စုဆောင်းနိုင်ခဲ့သည်",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} ကြိမ် ရှောင်ကြဉ်နိုင်ခဲ့သည်",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "ကျွန်ုပ်၏ မိုင်တိုင်ကို မျှဝေရန်",
+  "milestoneImageShareError": "မိုင်တိုင်ပုံရိပ်ကို ဖန်တီး၍ မရပါ။ ကျေးဇူးပြု၍ ပြန်လည်ကြိုးစားပါ။",
+
+  "dailyCheckInTitle": "နေ့စဉ် စစ်ဆေးချက်",
+  "howAreYouFeelingToday": "ဒီနေ့ ဘယ်လိုခံစားရလဲ?",
+  "honestAnswerHelp": "သင့်စိတ်ရင်းမှန်ဖြင့် ဖြေကြားချက်က သင့်ကို ပိုမိုကူညီပေးနိုင်ပါတယ်",
+  "didYouDrinkToday": "ဒီနေ့ အရက်သောက်ခဲ့သလား?",
+  "noLabel": "မသောက်ပါ",
+  "yesLabel": "သောက်ခဲ့ပါသည်",
+  "cravingLevelNow": "လက်ရှိ သောက်ချင်စိတ် မည်မျှရှိသနည်း?",
+  "anythingOnMind": "စိတ်ထဲ၌ တစ်ခုခု ရင်ဖွင့်ချင်ပါသလား?",
+  "optionalLabel": "(စိတ်ကြိုက်)",
+  "dailyNoteHint": "ဒီနေ့အကြောင်း၊ စိတ်ဆွေ့မှုများ၊ အောင်မြင်မှုများကို ရေးသားပါ...",
+  "alreadyCheckedInToday": "ဒီနေ့အတွက် စစ်ဆေးပြီးပါပြီ",
+  "saveCheckIn": "စစ်ဆေးချက်ကို သိမ်းဆည်းရန်",
+  "checkInsHelpTrack": "နေ့စဉ် စစ်ဆေးချက်များသည် အချိန်နှင့်အမျှ သင့်တိုးတက်မှုကို မှတ်တမ်းတင်ပေးပါသည်",
+  "alreadyCompletedTodayCheckIn": "ဒီနေ့အတွက် စစ်ဆေးချက် ပြီးစီးသွားပါပြီ။",
+  "pleaseAnswerBothQuestions": "ကျေးဇူးပြု၍ အထက်ပါ မေးခွန်းနှစ်ခုလုံးကို မဖြစ်မနေ ဖြေကြားပေးပါ",
+  "checkInSaved": "စစ်ဆေးချက် သိမ်းဆည်းပြီးပါပြီ",
+  "cravingNone": "လုံးဝမရှိပါ",
+  "cravingLow": "နည်းနည်းရှိသည်",
+  "cravingMedium": "သင့်တော်ရုံရှိသည်",
+  "cravingStrong": "အလွန်ရှိသည်",
+  "moodBad": "ဆိုးရွားသည်",
+  "moodLow": "စိတ်ဓာတ်ကျသည်",
+  "moodOkay": "ပုံမှန်ပဲ",
+  "moodGood": "ကောင်းမွန်သည်",
+  "moodGreat": "အလွန်ကောင်းသည်",
+
+  "sosSupportTitle": "SOS အရေးပေါ် ကူညီမှု",
+  "notAloneMessage": "သင် တစ်ယောက်တည်း မဟုတ်ပါ၊ {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "သောက်ချင်စိတ်ဆိုတာ ခဏတာပါ။ ဒီအချိန်ကို ကျော်လွှားနိုင်ဖို့ အောက်ပါအတိုင်း ပြုလုပ်ကြည့်ပါ။",
+  "breathingExercise": "အသက်ရှူ လေ့ကျင့်ခန်း",
+  "breathingExerciseSubtitle": "လမ်းညွှန်ချက်အတိုင်း 4-7-8 နည်းလမ်းကို ၂ မိနစ် ပြုလုပ်ပါ",
+  "rideTheWave": "စိတ်ကို ထိန်းချုပ်ပါ",
+  "rideTheWaveSubtitle": "၁၅ မိနစ် အချိန်သတ်မှတ်ချက် — သောက်ချင်စိတ်များ အမြဲတမ်း ပျောက်ကွယ်သွားပါလိမ့်မည်",
+  "copingTips": "ရင်ဆိုင်ကျော်လွှားနည်း အကြံပြုချက်များ",
+  "copingTipsSubtitle": "သင့်အတွက် သီးသန့် နည်းဗျူဟာများ",
+  "talkToAiCoach": "AI အကြံပေးနှင့် စကားပြောရန်",
+  "talkToAiCoachSubtitle": "သင့်အဖော်မွန်နှင့် စကားပြောဆိုပါ",
+  "callSomeone": "တစ်ယောက်ယောက်ထံ ဖုန်းခေါ်ရန်",
+  "callSomeoneSubtitle": "သင်ယုံကြည်ရသူထံ ဆက်သွယ်ပါ",
+  "contactsPermissionNeeded": "ဖုန်းခေါ်ဆိုရန်အတွက် အဆက်အသွယ်Permission လိုအပ်ပါသည်။",
+  "beatenCravingsPrefix": "သင်သည် သောက်ချင်စိတ်ကို ",
+  "beatenCravingsCount": "{count} ကြိမ်",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " တိုင်အောင် ကျော်လွှားနိုင်ခဲ့ဖူးသည်။ အခုလည်း ထပ်မံ ကျော်လွှားနိုင်ပါသေးသည်။",
+
+  "tellUsAboutYourself": "သင့်အကြောင်း ပြောပြပါ",
+  "detailsSubtitle": "ဤအချက်အလက်များသည် သင့်ခရီးစဉ်ကို သီးသန့်ဖန်တီးပေးရန်နှင့် တိကျသော အချက်အလက်များ ထောက်ပံ့ပေးရန် ကူညီပေးပါသည်။",
+  "nameLabel": "အမည်",
+  "nameHint": "ဥပမာ - Alex Rivers",
+  "ageLabel": "အသက်",
+  "ageHint": "ဥပမာ - ၃၂",
+  "sexAssignedAtBirth": "မွေးရာပါ လိင်",
+  "sexFemale": "အမျိုးသမီး",
+  "sexMale": "အမျိုးသား",
+  "heightLabel": "အရပ်",
+  "weightLabel": "ကိုယ်အလေးချိန်",
+  "heightHint": "၁၇၀",
+  "weightHint": "၇၀",
+
+  "dailyLimitReachedTitle": "တစ်နေ့တာ ကန့်သတ်ချက် ပြည့်သွားပါပြီ",
+  "dailyLimitReachedMessage": "ဒီနေ့အတွက် အခမဲ့ စာတို {limit} စာစောင်လုံးကို အသုံးပြုပြီးပါပြီ။ ကန့်သတ်ချက်မရှိ စကားပြောရန် Premium သို့ အဆင့်မြှင့်ပါ။",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "လက်ရှိတွင် ချိတ်ဆက်၍ မရပါ။ ခဏအကြာတွင် ပြန်လည်ကြိုးစားပါ။",
+  "clearConversationTitle": "စကားပြောဆိုမှုများကို ဖျက်မလား?",
+  "clearConversationMessage": "ဤလုပ်ဆောင်ချက်သည် သင့်အကြံပေးနှင့် ပြောဆိုထားသည့် မှတ်တမ်းများကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်သည်။",
+  "clearLabel": "ဖျက်မည်",
+  "recoveryCoachTitle": "ပြန်လည်ထူထောင်ရေး အကြံပေး",
+  "onlineLabel": "လိုင်းပေါ်တွင်ရှိသည်",
+  "clearConversationMenuItem": "စကားပြောဆိုမှု ဖျက်ရန်",
+  "chatGreeting": "မင်္ဂလာပါ {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "သင် ခရီးစဉ်၏ {days} ရက်မြောက်နေ့သို့ ရောက်ရှိနေပါပြီ။ စကားပြောချင်သည့် အချိန်တိုင်း ကျွန်ုပ် ရှိနေပေးပါမည်။",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "အမြန် မေးခွန်းများ",
+  "promptCravingLabel": "သောက်ချင်စိတ် ဖြစ်ပေါ်နေသည်",
+  "promptCravingSubtitle": "စိတ်ကို အမြန် တည်ငြိမ်စေရန်",
+  "promptMotivationLabel": "ခွန်အား လိုအပ်နေသည်",
+  "promptMotivationSubtitle": "ခက်ခဲချိန်တွင် အားပေးစကား",
+  "promptSocialLabel": "လူမှုရေး အခြေအနေ",
+  "promptSocialSubtitle": "ပွဲလမ်းသဘင်များတွင် ပြုမူရန်",
+  "promptSlippedLabel": "ကျွန်ုပ် မှားယွင်းသောက်သုံးမိသည်",
+  "promptSlippedSubtitle": "အပြစ်တင်ခြင်းမရှိဘဲ ကူညီပေးမည်",
+  "typeMessageHint": "စာတို ရေးသားပါ...",
+
+  "editProfileTitle": "ပရိုဖိုင် ပြင်ဆင်ရန်",
+  "couldNotSaveProfile": "ပရိုဖိုင် သိမ်းဆည်း၍ မရပါ: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "အရပ် (စင်တီမီတာ)",
+  "weightKgLabel": "ကိုယ်အလေးချိန် (ကီလိုဂရမ်)",
+  "saveChangesLabel": "ပြင်ဆင်ချက်များကို သိမ်းရန်",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "အဆင့်မြင့် သုံးသပ်ချက်များနှင့် စာရင်းဇယားများ",
+  "featureUnlimitedJournal": "ကန့်သတ်ချက်မရှိ ဂျာနယ် မှတ်တမ်းများ",
+  "featureUnlimitedChat": "AI အကြံပေးနှင့် ကန့်သတ်ချက်မရှိ စကားပြောဆိုနိုင်မှု",
+  "featureCommunityGroups": "သီးသန့် အသိုင်းအဝိုင်း အဖွဲ့များ",
+  "featurePrioritySupport": "ဦးစားပေး ကျွမ်းကျင်သူ အကူအညီ",
+  "featureThemePacks": "စိတ်ကြိုက် နောက်ခံပုံစံများ",
+  "featureDataExport": "ဒေတာများ ထုတ်ယူနိုင်မှု",
+  "featureAdFree": "ကြော်ငြာမပါသော အတွေ့အကြုံ",
+  "premiumMemberTitle": "သင်သည် Premium အဖွဲ့ဝင်ဖြစ်ပါသည်",
+  "unlockFullRecoveryTitle": "သင့်ပြန်လည်ထူထောင်ရေး အတွေ့အကြုံ\nအပြည့်အဝကို ရယူပါ",
+  "premiumMemberSubtitle": "သင့်ပြန်လည်ထူထောင်ရေး ခရီးစဉ်ကို အားပေးသည့်အတွက် ကျေးဇူးတင်ပါသည် — အောက်ပါ Premium လုပ်ဆောင်ချက် အားလုံးကို အသုံးပြုနိုင်ပါပြီ။",
+  "premiumJoinSubtitle": "ကျွန်ုပ်တို့၏ Premium ကိရိယာများနှင့် သီးသန့် ကူညီမှုများဖြင့်\nပြန်လည်ကျန်းမာရေးကို မြန်ဆန်စေနေသော\nလူပေါင်းထောင်ချီရှိသည့် အသိုင်းအဝိုင်းသို့ ဝင်ရောက်ပါ။",
+  "monthlyPlanLabel": "တစ်လစာ",
+  "perMonthSuffix": "/လ",
+  "cancelAnytimeLabel": "ကြိုက်သည့်အချိန်တွင် ပယ်ဖျက်နိုင်သည်",
+  "yearlyPlanLabel": "တစ်နှစ်စာ",
+  "billedAnnuallyLabel": "တစ်နှစ်လျှင် {amount} ကျသင့်မည်",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "အတန်ဆုံး အစီအစဉ်",
+  "alreadyPremiumLabel": "သင်သည် Premium အသုံးပြုသူဖြစ်သည် ✓",
+  "startPremiumLabel": "Premium စတင်ရန်",
+  "manageSubscriptionLabel": "သင့်စက်၏ Subscription ဆက်တင်များမှတစ်ဆင့် စီမံခန့်ခွဲပါ သို့မဟုတ် ပယ်ဖျက်ပါ။",
+  "noCommitmentLabel": "ရေရှည်ကတိကဝတ်ပြုရန် မလိုပါ။ ကြိုက်သည့်အချိန် ပယ်ဖျက်ပါ။",
+  "continueFreePlanLabel": "အခမဲ့ အစီအစဉ်ဖြင့် ဆက်လက်သုံးမည်",
+  "backToHomeLabel": "ပင်မစာမျက်နှာသို့ ပြန်သွားရန်",
+  "cancelPremiumLabel": "Premium ပယ်ဖျက်ရန်",
+  "cancelPremiumTitle": "Premium ကို ပယ်ဖျက်မလား?",
+  "cancelPremiumMessage": "ကန့်သတ်ချက်မရှိ ဂျာနယ်မှတ်တမ်းများ၊ အကြံပေးနှင့် စကားပြောဆိုမှု၊ သုံးသပ်ချက်များနှင့် အပတ်စဉ် အစီရင်ခံစာများ အသုံးပြုခွင့် ဆုံးရှုံးပါမည်။ ကြိုက်သည့်အချိန် ပြန်လည်ဝယ်ယူနိုင်ပါသည်။",
+  "keepPremiumLabel": "Premium ကို ဆက်လက်ထားရှိမည်",
+  "nowPremiumMessage": "သင်သည် Premium ဖြစ်သွားပါပြီ! အတွေ့အကြုံ အပြည့်အဝကို ခံစားလိုက်ပါ။",
+  "premiumCancelledMessage": "Premium ပယ်ဖျက်ပြီးပါပြီ။ အခမဲ့ အစီအစဉ်သို့ ပြန်ရောက်သွားပါပြီ။",
+  "termsOfUseLabel": "အသုံးပြုမှု စည်းမျဉ်းများ",
+
+  "navHomeLabel": "ပင်မ",
+  "navStatsLabel": "စာရင်းဇယား",
+  "navJournalLabel": "ဂျာနယ်",
+  "navBadgesLabel": "တံဆိပ်များ",
+  "navProfileLabel": "ပရိုဖိုင်",
+
+  "recoveryGoalsTitle": "ပြန်လည်ထူထောင်ရေး ရည်မှန်းချက်များ",
+  "goalLabel": "ရည်မှန်းချက်",
+  "drinksPerWeekLabel": "တစ်ပတ်လျှင် သောက်သုံးသော ပမာဏ",
+  "quitReasonsLabel": "ဖြတ်ရသည့် အကြောင်းအရင်းများ",
+  "quitReasonsHelperText": "အကြောင်းအရင်း အများအပြားကို ကော်မာ (,) ခြား၍ ရေးပါ။",
+  "couldNotSaveRecoveryGoals": "ရည်မှန်းချက်များကို သိမ်းဆည်း၍ မရပါ: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ဥပမာ - လုံးဝဖြတ်ရန်",
+  "drinksPerWeekHint": "ဥပမာ - ၁၂",
+  "quitReasonsHint": "ဥပမာ - ကျန်းမာရေး၊ မိသားစု၊ ငွေကြေး",
+
+  "todaysPrompt": "ဒီနေ့အတွက် ခေါင်းစဉ်",
+  "defaultJournalPrompt": "ဒီနေ့ စိတ်ထဲမှာ ဘာတွေတွေးနေလဲ?",
+  "aiJournalInsights": "AI ၏ ဂျာနယ် သုံးသပ်ချက်များ",
+  "unlockJournalInsightsMessage": "သင့်ဂျာနယ် အချက်အလက်များမှတစ်ဆင့် အပတ်စဉ် ပုံစံများ၊ စိတ်ခံစားမှုများနှင့် သီးသန့် အကြံပြုချက်များကို ရယူပါ။",
+  "notEnoughJournalData": "အချက်အလက် မလုံလောက်သေးပါ — ဒီအပတ်တွင် ဂျာနယ် အနည်းငယ် ရေးသားပြီး ပြန်လည်စစ်ဆေးပါ။",
+  "openEntry": "ဖွင့်ရန်",
+  "editEntry": "ပြင်ဆင်ရန်",
+  "deleteEntry": "ဖျက်ရန်",
+  "searchJournalEntries": "မှတ်တမ်းများ ရှာဖွေရန်...",
+  "writeNewEntry": "မှတ်တမ်းအသစ် ရေးရန်",
+  "recentEntries": "လတ်တလော မှတ်တမ်းများ",
+  "noJournalEntriesYet": "ဂျာနယ် မှတ်တမ်းများ မရှိသေးပါ — အထက်တွင် သင့်အတွေးများကို စတင်ရေးသားပါ။",
+  "noEntriesMatchFilters": "ရှာဖွေမှုနှင့် ကိုက်ညီသော မှတ်တမ်းမရှိပါ။",
+
+  "weeklyJournalLimitReached": "တစ်ပတ်တာ ကန့်သတ်ချက် ပြည့်သွားပါပြီ",
+  "weeklyJournalLimitMessage": "ဒီအပတ်အတွက် အခမဲ့ ဂျာနယ်မှတ်တမ်း {limit} ခုလုံးကို အသုံးပြုပြီးပါပြီ။ ကန့်သတ်ချက်မရှိ သုံးရန် Premium သို့ အဆင့်မြှင့်ပါ။",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "မှတ်တမ်းအသစ်",
+  "writeYourThoughts": "သင့်အတွေးများကို ရေးသားပါ",
+  "saveEntry": "မှတ်တမ်း သိမ်းရန်",
+  "freeEntriesLeftThisWeek": "ဒီအပတ်အတွက် အခမဲ့ {limit} ခုအနက် {remaining} ခု ကျန်ရှိပါသေးသည်",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "မှတ်တမ်းကို ဖျက်မလား?",
+  "deleteEntryConfirmation": "ဤမှတ်တမ်းကို အပြီးတိုင် ဖျက်ပစ်မည်ဖြစ်ပြီး ပြန်လည်ရယူနိုင်မည် မဟုတ်ပါ။",
+
+  "journalEntryNotFound": "မှတ်တမ်း ရှာမတွေ့ပါ",
+  "journalEntryMayHaveBeenDeleted": "ဤဂျာနယ်မှတ်တမ်း ဖျက်ဆီးခံရခြင်း ဖြစ်နိုင်ပါသည်။",
+  "goBack": "နောက်သို့ ပြန်သွားရန်",
+  "journalEntryTitle": "ဂျာနယ် မှတ်တမ်း",
+
+  "moodStruggling": "ရုန်းကန်နေရသည်",
+  "moodUnwell": "နေမကောင်းပါ",
+  "moodNeutral": "မကောင်းမဆိုး",
+
+  "whatHappenedToday": "ဒီနေ့ ဘာတွေဖြစ်ပျက်ခဲ့သလဲ?",
+  "trigger": "တိုက်တွန်းဆွေ့ဆော်မှု",
+  "whatHelped": "ဘာက ကူညီပေးခဲ့သလဲ",
+  "whatIllTryNextTime": "နောက်တစ်ကြိမ်တွင် ဘာကို ကြိုးစားမလဲ",
+  "journalPrivacyMessage": "သင့်စိတ်ကူးများသည် သီးသန့်ဖြစ်ပြီး သင့်ဂျာနယ်ထဲတွင် လုံခြုံစွာ သိမ်းဆည်းထားပါသည်။",
+
+  "unlocked": "ရရှိပြီးပါပြီ",
+  "daysLeft": "{count} ရက် ကျန်ရှိသေးသည်",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} ရက်",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "ပထမဆုံး\nဆင်ခြင်သုံးသပ်မှု",
+  "oneJournalEntry": "ဂျာနယ်မှတ်တမ်း ၁ ခု",
+  "openBook": "စာအုပ်တစ်အုပ်",
+  "tenJournalEntries": "ဂျာနယ်မှတ်တမ်း ၁၀ ခု",
+  "dedicatedWriter": "ဇွဲရှိသော\nစာရေးသူ",
+  "thirtyJournalEntries": "ဂျာနယ်မှတ်တမ်း ၃၀",
+  "firstConversation": "ပထမဆုံး\nစကားပြောဆိုမှု",
+  "oneAiCoachChat": "AI အကြံပေး စကားပြောဆိုမှု ၁ ခု",
+  "keepTalking": "ဆက်လက်ပြောဆိုပါ",
+  "fiveConversations": "စကားပြောဆိုမှု ၅ ကြိမ်",
+  "coachCompanion": "အကြံပေး\nအဖော်မွန်",
+  "twentyConversations": "စကားပြောဆိုမှု ၂၀",
+  "checkInHabit": "စစ်ဆေးမှု\nအလေ့အကျင့်",
+  "sevenCheckIns": "စစ်ဆေးမှု ၇ ကြိမ်",
+  "consistencyPro": "မှန်မှန်ပြုလုပ်သူ\nကျွမ်းကျင်သူ",
+  "thirtyCheckIns": "စစ်ဆေးမှု ၃၀",
+  "dedicatedJourney": "ဇွဲရှိသော\nခရီးစဉ်",
+  "hundredCheckIns": "စစ်ဆေးမှု ၁၀၀",
+  "goalGetter": "ရည်မှန်းချက် အကောင်အထည်ဖော်သူ",
+  "threeGoalsCompleted": "ရည်မှန်းချက် ၃ ခု ပြီးစီးခဲ့သည်",
+  "goalAchiever": "ရည်မှန်းချက်\nအောင်မြင်သူ",
+  "tenGoalsCompleted": "ရည်မှန်းချက် ၁၀ ခု ပြီးစီးခဲ့သည်",
+  "firstSavings": "ပထမဆုံး\nစုဆောင်းငွေ",
+  "fiveHundredSaved": "$500 စုဆောင်းနိုင်ခဲ့သည်",
+  "smartSaver": "ပါးနပ်သော စုဆောင်းသူ",
+  "oneThousandSaved": "$1,000 စုဆောင်းနိုင်ခဲ့သည်",
+  "bigSaver": "ငွေပမာဏအမြောက်အမြား စုဆောင်းသူ",
+  "fiveThousandSaved": "$5,000 စုဆောင်းနိုင်ခဲ့သည်",
+  "currencyProgress": "${target} တွင် ${current}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{target} တွင် {current}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "ဆက်လက်ကြိုးစားပါ — သင့်ရဲ့ ပထမဆုံး အောင်မြင်မှု မိုင်တိုင်က စောင့်ကြိုနေပါတယ်!",
+  "badgesAndMilestones": "တံဆိပ်များနှင့် အောင်မြင်မှု မိုင်တိုင်များ",
+  "yourMilestoneJourney": "သင့်အောင်မြင်မှု မိုင်တိုင် ခရီးစဉ်",
+  "milestonesAchieved": "အောင်မြင်မှု မိုင်တိုင် {count} ခု ရရှိခဲ့ပြီးပါပြီ။\nကြည့်ရှုရန် နှိပ်ပါ",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "သင်သည် ခရီးစဉ်၏ မိုင်တိုင် {total} ခုအနက် {unlocked} ခုကို ရရှိခဲ့ပြီးပါပြီ။",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "ကျန်ရှိနေသေးသော",
+  "complete": "ပြီးစီးပါပြီ",
+  "nextMilestone": "နောက်ထပ် မိုင်တိုင်",
+  "percentThere": "{subtitle} · {percent}% ရောက်ရှိပါပြီ",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "အရက်ကင်းစင်မှု အောင်မြင်မှု မိုင်တိုင်များ",
+  "journeyBadges": "ခရီးစဉ် တံဆိပ်များ",
+  "bronze": "ကြေးတံဆိပ်",
+  "silver": "ငွေတံဆိပ်",
+  "gold": "ရွှေတံဆိပ်",
+  "platinum": "ပလက်တီနမ်တံဆိပ်",
+  "diamond": "စိန်တံဆိပ်",
+
+  "analyzingYourJourney": "သင့်ခရီးစဉ်ကို သုံးသပ်နေပါသည်...",
+  "aiCreatingSanctuary": "ကျွန်ုပ်တို့၏ AI က သင့်အတွက် သီးသန့်နေရာတစ်ခု ဖန်တီးပေးနေပါသည်။",
+  "understandingHabits": "အလေ့အကျင့်များကို လေ့လာနေပါသည်...",
+  "calculatingBaseline": "သင့်အခြေခံအချက်အလက်များကို တွက်ချက်နေပါသည်...",
+  "personalizingPlan": "သင့်အစီအစဉ်ကို သီးသန့်ပြင်ဆင်နေပါသည်...",
+  "finalizingSanctuary": "သင့်နေရာကို အပြီးသတ် ပြင်ဆင်နေပါသည်...",
+  "creatingYourPlan": "သင့်အစီအစဉ်ကို ဖန်တီးနေပါသည်...",
+  "personalizedPlanError": "သင့်အတွက် သီးသန့်အစီအစဉ်ကို မဖန်တီးနိုင်ခဲ့ပါ။ ကျေးဇူးပြု၍ ပြန်လည်ကြိုးစားပါ။",
+  "retry": "ပြန်လည်ကြိုးစားရန်",
+
+  "breathInhale": "ရှူသွင်းပါ",
+  "breathHold": "အသက်အောင့်ထားပါ",
+  "breathExhale": "ရှူထုတ်ပါ",
+  "breathDone": "ပြီးပါပြီ",
+  "breathGreatJob": "အလွန်ကောင်းမွန်ပါသည်!",
+  "breathSessionsToday": "ဒီနေ့အတွက် လေ့ကျင့်မှု {count} ကြိမ်",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "လေ့ကျင့်ခန်း အဆုံးသတ်ရန်",
+  "done": "ပြီးပြီ",
+
+  "noCopingTipsYet": "ရင်ဆိုင်ကျော်လွှားနည်း အကြံပြုချက်များ မရှိသေးပါ",
+  "copingStrategiesWillAppear": "သင့်အစီအစဉ် ရေးဆွဲပြီးစီးပါက သင့်အတွက် သီးသန့် နည်းဗျူဟာများ ဤနေရာတွင် ပေါ်လာပါမည်။",
+  "strategiesTailoredToTriggers": "သင့်စိတ်ဆွေ့မှုများနှင့် ကိုက်ညီသော နည်းဗျူဟာများ",
+
+  "cravingsPeakAndPass": "သောက်ချင်စိတ်များသည် အမြင့်ဆုံးသို့ ရောက်ရှိပြီးမှ\nပြန်လည် ပျောက်ကွယ်သွားတတ်သည်",
+  "rideTheWaveDescription": "သောက်ချင်စိတ် အများစုသည် ၁၅ မိနစ်အတွင်း ပျောက်ကွယ်သွားပါသည်။ သင် ဘာမှလိုက်လုပ်စရာ မလိုပါ — ကျွန်ုပ်တို့နှင့်အတူ သည်းခံကျော်လွှားလိုက်ပါ။",
+  "stayWithIt": "ကြံ့ကြံ့ခံပါ",
+  "youMadeIt": "သင် အောင်မြင်သွားပါပြီ",
+  "readyWhenYouAre": "သင် အသင့်ဖြစ်သည့်အချိန်တွင် စတင်ပါ",
+  "rideItAgain": "နောက်တစ်ကြိမ် ကြိုးစားရန်",
+  "start15MinuteTimer": "၁၅ မိနစ် အချိန်သတ်မှတ်ချက် စတင်ရန်",
+  "rideTheWaveCompletedMessage": "သင် စိတ်ကို ထိန်းချုပ်နိုင်ခဲ့ပါပြီ။ ဒါဟာ တကယ့် ခွန်အားပါပဲ။ 💪",
+
+  "myProgress": "ကျွန်ုပ်၏ တိုးတက်မှု",
+  "weekLabel": "အပတ်",
+  "monthLabel": "လ",
+  "allLabel": "အားလုံး",
+  "daysSoberStatLabel": "အရက်ကင်းစင်သော\nရက်များ",
+  "savedStatLabel": "စုဆောင်းမိသော",
+  "avoidedStatLabel": "ရှောင်ကြဉ်ခဲ့သော",
+  "moodTrends": "စိတ်ခံစားမှု အပြောင်းအလဲများ",
+  "cravingsPattern": "သောက်ချင်စိတ် ပုံစံများ",
+  "unlockLabel": "ရယူရန်",
+  "unlockFullStats": "စာရင်းဇယား အပြည့်အဝကို ရယူပါ",
+  "premiumStatsMessage": "စိတ်ခံစားမှု အပြောင်းအလဲနှင့် သောက်ချင်စိတ် ပုံစံများသည် Premium အင်္ဂါရပ်များ ဖြစ်သည်။ အပြည့်အဝ ကြည့်ရှုရန် အဆင့်မြှင့်ပါ။",
+  "healthMilestonesWillAppear": "သင့်ကျန်းမာရေးဆိုင်ရာ အောင်မြင်မှု မိုင်တိုင်များ ဤနေရာတွင် ပေါ်လာပါမည်။",
+  "healthMilestones": "ကျန်းမာရေးဆိုင်ရာ မိုင်တိုင်များ",
+  "dayNumber": "{day} ရက်မြောက်နေ့",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "အရက်ကင်းစင်သည်",
+  "slipLabel": "မှားယွင်းသောက်သုံးမိသည်",
+  "noDataLabel": "ဒေတာမရှိပါ",
+
+  "milestone24Hours": "၂၄ နာရီ",
+  "milestoneOneWeek": "တစ်ပတ်",
+  "milestoneOneMonth": "တစ်လ",
+  "milestoneThreeMonths": "သုံးလ",
+  "milestoneSixMonths": "ခြောက်လ",
+  "milestoneOneYear": "တစ်နှစ်",
+  "milestoneDayCount": "{day} ရက်မြောက် အောင်မြင်မှု မိုင်တိုင်",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

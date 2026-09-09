@@ -1,0 +1,579 @@
+{
+  "@@locale": "be",
+
+  "skip": "Прапусціць",
+  "continueButton": "Працягнуць",
+  "getStarted": "Пачаць",
+
+  "onboardingTitle1": "Вазьміце жыццё пад кантроль",
+  "onboardingSubtitle1": "Адсочвайце свой шлях, святкуйце кожнае дасягненне і станавіцеся здаравейшымі з кожным днём.",
+  "onboardingTitle2": "Ваш ШІ-памочнік у аднаўленні",
+  "onboardingSubtitle2": "Атрымлівайце персаналізаваныя парады, здаровыя звычкі, матывацыйныя нагадванні і справаздачы пра прагрэс.",
+
+  "maybeLaterLabel": "Магчыма пазней",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Скасаваць",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Добрай раніцы",
+  "goodAfternoon": "Добры дзень",
+  "goodEvening": "Добры вечар",
+  "goodNight": "Добрай ночы",
+
+  "embracingClarity": "Крок за крокам да яснасці думкамі.",
+  "streakLabel": "СЕРЫЯ",
+  "goalLabel": "МЭТА",
+  "daysStreak": "{count, plural, one{{count} дзень} few{{count} дні} many{{count} дзён} other{{count} дзён}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Преміум-план",
+  "premiumPlanSubtitle": "Разблакуйце поўны функцыянал аднаўлення",
+
+  "accountAndSupport": "АКУНТ І ПАДТРЫМКА",
+  "privacyPolicy": "Палітыка прыватнасці",
+  "privacyPolicySubtitle": "Кіраванне данымі і бяспека акаўнта",
+  "termsOfService": "Умовы выкарыстання",
+  "termsOfServiceSubtitle": "FAQ, кантакты і рэсурсы",
+  "shareApp": "Падзяліцца праграмай",
+  "shareAppSubtitle": "Падзяліцеся праграмай з сябрамі",
+  "resetData": "Скінуць даныя",
+  "resetDataSubtitle": "Выдаліць усе захаваныя даныя на гэтай прыладзе",
+
+  "resetAllDataTitle": "Скінуць усе даныя?",
+  "resetAllDataMessage": "Гэта выдаліць усе захаваныя на прыладзе даныя: профіль, запісы ў дзённіку і прагрэс. Дзеянне нельга адмяніць.",
+  "cancel": "Адмена",
+  "reset": "Скінуць",
+
+  "chooseFromGallery": "Выбраць з галерэі",
+  "takePhoto": "Зрабіць фота",
+  "removePhoto": "Выдаліць фота",
+  "couldNotUpdatePhoto": "Не ўдалося абнавіць фота: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Не ўдалося выдаліць фота: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Фота занадта вялікае нават пасля сціскання — паспрабуйце іншае.",
+
+  "unableToLoadProfile": "Не ўдалося загрузіць профіль",
+  "pleaseTryAgain": "Паспрабуйце яшчэ раз.",
+  "tryAgain": "Паўтарыць",
+  "profileNotFound": "Профіль не знойдзены",
+  "refresh": "Абнавіць",
+  "noProfileDataFound": "На гэтай прыладзе пакуль няма даных профілю.",
+
+  "couldNotResetData": "Не ўдалося скінуць даныя: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Галоўная",
+  "navStats": "Статыстыка",
+  "navJournal": "Дзённік",
+  "navBadges": "Значкі",
+  "navProfile": "Профіль",
+
+  "featureComingSoon": "Функцыя «{feature}» хутка стане даступнай.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ЗДАРОЎЕ",
+  "appTitle": "Sober Flow",
+  "splashSubtitle": "Зрабіце першы крок да\nцвярозага жыцця",
+  "preparingJourney": "Падрыхтоўка вашага\nшляху",
+
+  "taskMorningMeditation": "Унітраняя медытацыя (10хв)",
+  "taskReadChapter": "Прачытаць главу 4 з \"The Sober Diaries\"",
+  "taskEveningJournal": "Вячэрні дзённік удзячнасці",
+
+  "close": "Зачыніць",
+  "youAreDoingGreat": "Вы выдатна трымаецеся!",
+  "shareMilestone": "Падзяліцца дасягненнем",
+  "shareMilestoneMessage": "Я ўжо {days}-і дзень на шляху да цвярозасці! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Маё дасягненне ў цвярозасці",
+
+  "weeklyReportReadyTitle": "Ваша тыднёвая справаздача гатова",
+  "weeklyReportReadySubtitle": "Націсніце, каб убачыць вынікі тыдня",
+
+  "howAreYouFeeling": "Як вы сябе адчуваеце?",
+  "moodTough": "Цяжка",
+  "moodOkay": "Нармальна",
+  "moodGood": "Добра",
+
+  "moneySaved": "Захавана грошай",
+  "caloriesSaved": "Сэканомлена калорый",
+  "healthScore": "Індэкс здароўя",
+  "drinksAvoided": "Прапушчана напіткаў",
+  "estimated": "Прыблізна",
+  "aiGenerated": "Згенеравана ШІ",
+  "daysCapsLabel": "ДЗЁН",
+
+  "todaysMotivation": "Матывацыя на сёння",
+  "defaultMotivationQuote": "Вы паспяхова прытрымліваецеся свайго абяцання. Працягвайце рухацца да станоўчых змен.",
+
+  "talkToCoach": "Пагаварыць з настаўнікам",
+  "havingACraving": "Адчуваю цягу",
+
+  "unlockWeeklyReportsTitle": "Разблакаваць тыднёвыя справаздачы",
+  "unlockWeeklyReportsMessage": "Сачыце за цвярозымі днямі, дынамікай настрою і атрымлівайце парады ад ШІ кожны тыдзень. Перайдзіце на Преміум.",
+  "maybeLater": "Магчыма, пазней",
+  "upgrade": "Абнавіць",
+
+  "weeklyReportTitle": "Тыднёвая справаздача",
+  "weeklyReportsPremiumTitle": "Тыднёвыя справаздачы — функцыя Преміум",
+  "weeklyReportsPremiumMessage": "Аналізуйце свае цвярозыя дні, змены настрою, усыпыскі цягі і атрымлівайце персаналізаваны аналіз ад ШІ.",
+  "upgradeToPremium": "Перайсці на Преміум",
+  "couldNotGenerateReport": "Не ўдалося сфарміраваць справаздачу прама зараз.",
+  "tryAgainLower": "Паспрабаваць зноў",
+
+  "statSoberDays": "Цвярозыя дні",
+  "statAvgMood": "Сярэдні настрой",
+  "statCravings": "Успышкі цягі",
+  "statMoneySaved": "Захаваныя грошы",
+  "coachFeedback": "Парады настаўніка",
+  "journalInsights": "Аналіз дзённіка",
+
+  "next": "Далей",
+
+  "question1Title": "Якая ваша мэта",
+  "question1Subtitle": "Выберыце мэту, якая найбольш\nважная для вас",
+  "goalQuitCompletely": "Кінуць цалкам",
+  "goalReduceDrinking": "Зменшыць ужыванне",
+  "goalTakeABreak": "Зрабіць перапынак",
+  "goalBuildHealthierHabits": "Сфарміраваць карысныя звычкі",
+
+  "question3Title": "Раскажыце пра ваш\nзвычайны рэжым",
+  "drinksPerWeek": "Порцый у тыдзень",
+  "moneySpentPerWeek": "Выдаткі ў тыдзень",
+  "drinkingLevel": "Узровень ужывання",
+  "triggersLabel": "Трыгеры",
+  "levelSocial": "Па святах",
+  "levelRegular": "Рэгулярна",
+  "levelHeavy": "Шмат",
+  "levelDependent": "Залежнасць",
+  "triggerStress": "Стрэс",
+  "triggerLoneliness": "Адната",
+  "triggerHabit": "Звычка",
+  "triggerSadness": "Смутак",
+  "triggerAnger": "Злосць",
+  "triggerBoredom": "Нуда",
+  "triggerSocialPressure": "Ціск асяроддзя",
+  "triggerCelebration": "Святкаванне",
+  "triggerSleepProblems": "Праблы з сном",
+  "triggerWorkPressure": "Працоўны ціск",
+
+  "question4Title": "Чаму вы хочаце змяніцца?",
+  "question4Subtitle": "Ваша прычына дапаможа захаваць матывацыю.",
+  "reasonImproveHealth": "Палепшыць здароўе",
+  "reasonSaveMoney": "Сэканоміць грошы",
+  "reasonFamily": "Сям'я",
+  "reasonBetterSleep": "Лепшы сон",
+  "reasonMentalClarity": "Яснасць розуму",
+  "reasonFitness": "Фізічная форма",
+  "reasonSelfRespect": "Павага да сябе",
+  "reasonCareer": "Кар'ера",
+
+  "milestoneUnlockedLabel": "ДАСЯГНЕННЕ РАЗБЛАКАВАНА",
+  "incredibleNamePrefix": "Неверагодна, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "Захавана {amount}",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "Прапушчана порцый: {count}",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Падзяліцца дасягненнем",
+  "milestoneImageShareError": "Не ўдалося стварыць малюнак дасягнення. Паспрабуйце зноў.",
+
+  "dailyCheckInTitle": "Штодзённая адзнака",
+  "howAreYouFeelingToday": "Як вы сябе адчуваеце сёння?",
+  "honestAnswerHelp": "Шчыры адказ дапаможа нам лепш падтрымаць вас",
+  "didYouDrinkToday": "Вы пілі сёння?",
+  "noLabel": "Ні",
+  "yesLabel": "Так",
+  "cravingLevelNow": "Узровень цягі зараз?",
+  "anythingOnMind": "Што ў вас на душы?",
+  "optionalLabel": "(неабавязкова)",
+  "dailyNoteHint": "Напішыце пра свой дзень, трыгеры, перамогі...",
+  "alreadyCheckedInToday": "Вы ўжо адзначыліся сёння",
+  "saveCheckIn": "Захаваць адзнаку",
+  "checkInsHelpTrack": "Штодзённыя адзнакі дапамагаюць сачыць за прагрэсам",
+  "alreadyCompletedTodayCheckIn": "Вы ўжо прайшлі адзнаку на сёння.",
+  "pleaseAnswerBothQuestions": "Калі ласка, спачатку адкажыце на абодва пытанні вышэй",
+  "checkInSaved": "Адзнака захавана",
+  "cravingNone": "Няма",
+  "cravingLow": "Нізкі",
+  "cravingMedium": "Сярэдні",
+  "cravingStrong": "Сильны",
+  "moodBad": "Дрэнны",
+  "moodLow": "Прыгнечаны",
+  "moodOkay": "Нармальны",
+  "moodGood": "Добра",
+  "moodGreat": "Выдатна",
+
+  "sosSupportTitle": "SOS Падтрымка",
+  "notAloneMessage": "Вы не адны, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Цяга праходзіць. Выберыце што-небудзь ніжэй, каб пераадолець гэты момант.",
+  "breathingExercise": "Дыхальныя практыкаванні",
+  "breathingExerciseSubtitle": "Тэхніка 4-7-8 з інструкцыямі, 2 хвіліны",
+  "rideTheWave": "Перачакаць хвалю",
+  "rideTheWaveSubtitle": "Таймер на 15 хвілін — цяга заўсёды праходзіць",
+  "copingTips": "Парады па супакаенні",
+  "copingTipsSubtitle": "Персанальныя стратэгіі для вашых трыгераў",
+  "talkToAiCoach": "Пагаварыць з ШІ-настаўнікам",
+  "talkToAiCoachSubtitle": "Чат з вашым памочнікам па аднаўленні",
+  "callSomeone": "Патэлефанаваць камусьці",
+  "callSomeoneSubtitle": "Звязацца з давераным кантактам",
+  "contactsPermissionNeeded": "Дазвол на доступ да кантактаў патрэбны для званка.",
+  "beatenCravingsPrefix": "Вы ўжо пераадольвалі цягу ",
+  "beatenCravingsCount": "{count} разоў",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": ". Вы зможаце зрабіць гэта зноў.",
+
+  "tellUsAboutYourself": "Раскажыце пра сябе",
+  "detailsSubtitle": "Гэтая інфармацыя дапаможа нам персаналізаваць ваш шлях і прадастаўляць точныя звесткі.",
+  "nameLabel": "Імя",
+  "nameHint": "напрыклад, Аляксей",
+  "ageLabel": "Узрост",
+  "ageHint": "напрыклад, 32",
+  "sexAssignedAtBirth": "Біялагічны пол",
+  "sexFemale": "Жаночы",
+  "sexMale": "Мужчынскі",
+  "heightLabel": "Рост",
+  "weightLabel": "Вага",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Дасягнуты дзённы ліміт",
+  "dailyLimitReachedMessage": "Вы выкарысталі ўсе {limit} бясплатныя паведамленні на сёння. Перайдзіце на Преміум для неабмежаванага чата.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Не ўдалося падключыцца. Калі ласка, паспрабуйце трохі пазней.",
+  "clearConversationTitle": "Ачысціць дыялог?",
+  "clearConversationMessage": "Гэта незваротна выдаліць гісторыю чата з настаўнікам.",
+  "clearLabel": "Ачысціць",
+  "recoveryCoachTitle": "Настаўнік па аднаўленні",
+  "onlineLabel": "У сетцы",
+  "clearConversationMenuItem": "Ачысціць дыялог",
+  "chatGreeting": "Прывіт, {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Вы ўжо {days}-і дзень у дарозе. Я тут, калі вам спатрэбіцца пагаварыць.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "ХУТКІЯ ПЫТАННІ",
+  "promptCravingLabel": "Адчуваю цягу",
+  "promptCravingSubtitle": "Хутка супакоіцца",
+  "promptMotivationLabel": "Патрэбна матывацыя",
+  "promptMotivationSubtitle": "Падтрымка ў цяжкі момант",
+  "promptSocialLabel": "Сацыяльная сітуацыя",
+  "promptSocialSubtitle": "Як паводзіць сябе на сустрэчы",
+  "promptSlippedLabel": "Я сарваўся(лася)",
+  "promptSlippedSubtitle": "Без асуджэння, толькі падтрымка",
+  "typeMessageHint": "Напішыце паведамленне...",
+
+  "editProfileTitle": "Рэдагаваць профіль",
+  "couldNotSaveProfile": "Не ўдалося захаваць профіль: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Рост (см)",
+  "weightKgLabel": "Вага (кг)",
+  "saveChangesLabel": "Захаваць змены",
+
+  "premiumBadgeLabel": "ПРЕМІУМ",
+  "featureAdvancedInsights": "Пашыраны аналіз і статыстыка",
+  "featureUnlimitedJournal": "Неабмежаваныя запісы ў дзённіку",
+  "featureUnlimitedChat": "Неабмежаваны чат з ШІ-настаўнікам",
+  "featureCommunityGroups": "Эксклюзіўныя групы супольнасці",
+  "featurePrioritySupport": "Прыярытэтная падтрымка экспертаў",
+  "featureThemePacks": "Уласныя кастомныя тэмы",
+  "featureDataExport": "Экспарт даных",
+  "featureAdFree": "Без рэкламы",
+  "premiumMemberTitle": "Вы Преміум-карыстальнік",
+  "unlockFullRecoveryTitle": "Разблакуйце ўсе магчымасці\nвашага аднаўлення",
+  "premiumMemberSubtitle": "Дзякуй за падтрымку вашага шляху — усе преміум-функцыі ніжэй разблакаваны.",
+  "premiumJoinSubtitle": "Далучайцеся да супольнасці тысяч людзей,\nякія паскараюць сваё аднаўленне з дапамогай\nнашых преміум-інструментаў.",
+  "monthlyPlanLabel": "За месяц",
+  "perMonthSuffix": "/мес",
+  "cancelAnytimeLabel": "Адмена ў любы час",
+  "yearlyPlanLabel": "За год",
+  "billedAnnuallyLabel": "Спісваецца {amount} у год",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Самае выгаднае",
+  "alreadyPremiumLabel": "У вас Преміум ✓",
+  "startPremiumLabel": "Пачаць Преміум",
+  "manageSubscriptionLabel": "Кіруйце падпіскай або адмяняйце яе ў наладах прылады.",
+  "noCommitmentLabel": "Без абавязацельстваў. Адмена ў любы час.",
+  "continueFreePlanLabel": "Працягнуць з бясплатным планам",
+  "backToHomeLabel": "На галоўную",
+  "cancelPremiumLabel": "Адмяніць Преміум",
+  "cancelPremiumTitle": "Адмяніць Преміум?",
+  "cancelPremiumMessage": "Вы страціце доступ да неабмежаванага дзённіка, чата з настаўнікам, пашыранай статыстыкі і тыднёвых справаздач. Вы зможаце падпісацца зноў у любы час.",
+  "keepPremiumLabel": "Пакінуць Преміум",
+  "nowPremiumMessage": "Цяпер у вас Преміум! Карыстайцеся ўсімі магчымасцямі.",
+  "premiumCancelledMessage": "Преміум скасаваны. Вы вярнуліся на бясплатны план.",
+  "termsOfUseLabel": "Умовы выкарыстання",
+
+  "navHomeLabel": "Галоўная",
+  "navStatsLabel": "Статыстыка",
+  "navJournalLabel": "Дзённік",
+  "navBadgesLabel": "Значкі",
+  "navProfileLabel": "Профіль",
+
+  "recoveryGoalsTitle": "Мэты аднаўлення",
+  "goalLabel": "Мэта",
+  "drinksPerWeekLabel": "Порцый у тыдзень",
+  "quitReasonsLabel": "Прычыны кінуць",
+  "quitReasonsHelperText": "Задзяляйце некалькі прычын коскай.",
+  "couldNotSaveRecoveryGoals": "Не ўдалося захаваць мэты: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "напрыклад, Поўны адмова",
+  "drinksPerWeekHint": "напрыклад, 12",
+  "quitReasonsHint": "напрыклад, Здароўе, Сям'я, Грошы",
+
+  "todaysPrompt": "Тэма дня",
+  "defaultJournalPrompt": "Пра што вы думаеце сёння?",
+  "aiJournalInsights": "Аналіз дзённіка ад ШІ",
+  "unlockJournalInsightsMessage": "Разблакуйце аналіз за тыдзень, трэнды настрою і індывідуальныя высновы на аснове вашых запісаў.",
+  "notEnoughJournalData": "Пакуль недастаткова даных — зрабіце некалькі запісаў на гэтым тыдні і зазірніце пазней.",
+  "openEntry": "Адкрыць",
+  "editEntry": "Рэдагаваць",
+  "deleteEntry": "Выдаліць",
+  "searchJournalEntries": "Пошук запісаў...",
+  "writeNewEntry": "Новы запіс",
+  "recentEntries": "Aпошнія запісы",
+  "noJournalEntriesYet": "Запісаў у дзённіку пакуль няма — напішыце сваю першую думку вышэй.",
+  "noEntriesMatchFilters": "Няма запісаў, якія адпавядаюць фільтрам.",
+
+  "weeklyJournalLimitReached": "Дасягнуты тыднёвы ліміт",
+  "weeklyJournalLimitMessage": "Вы выкарысталі ўсе {limit} бясплатныя запісы на гэтым тыдні. Перайдзіце на Преміум для неабмежаваных запісаў.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Новы запіс",
+  "writeYourThoughts": "Запішыце свае думкі",
+  "saveEntry": "Захаваць запіс",
+  "freeEntriesLeftThisWeek": "Засталося бясплатных запісаў на тыдні: {remaining} з {limit}",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Выдаліць запіс?",
+  "deleteEntryConfirmation": "Гэты запіс будзе выдалены канчаткова. Дзеянне нельга адмяніць.",
+
+  "journalEntryNotFound": "Запіс не знойдзены",
+  "journalEntryMayHaveBeenDeleted": "Магчыма, гэты запіс у дзённіку быў выдалены.",
+  "goBack": "Назад",
+  "journalEntryTitle": "Запіс у дзённіку",
+
+  "moodStruggling": "Цяжка",
+  "moodUnwell": "Дрэнна",
+  "moodNeutral": "Нейтральна",
+
+  "whatHappenedToday": "Што здарылася сёння?",
+  "trigger": "Трыгер",
+  "whatHelped": "Што дапамагло",
+  "whatIllTryNextTime": "Што я паспрабую ў наступны раз",
+  "journalPrivacyMessage": "Вашы разважанні прыватныя і захаваны ў вашым дзённіку.",
+
+  "unlocked": "Разблакавана",
+  "daysLeft": "Засталося дзён: {count}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count, plural, one{{count} дзень} few{{count} дні} many{{count} дзён} other{{count} дзён}}",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Першыя\nдумкі",
+  "oneJournalEntry": "1 запіс у дзённіку",
+  "openBook": "Адкрытая кніга",
+  "tenJournalEntries": "10 запісаў у дзённіку",
+  "dedicatedWriter": "Адданы\nаўтар",
+  "thirtyJournalEntries": "30 запісаў у дзённіку",
+  "firstConversation": "Першы\nдыялог",
+  "oneAiCoachChat": "1 чат з ШІ-настаўнікам",
+  "keepTalking": "Працягвайце дыялог",
+  "fiveConversations": "5 дыялогаў",
+  "coachCompanion": "Настаўнік і\nпамочнік",
+  "twentyConversations": "20 дыялогаў",
+  "checkInHabit": "Звычка\nадзначацца",
+  "sevenCheckIns": "7 адзнак",
+  "consistencyPro": "Майстар\nпастаянства",
+  "thirtyCheckIns": "30 адзнак",
+  "dedicatedJourney": "Адданы\nшлях",
+  "hundredCheckIns": "100 адзнак",
+  "goalGetter": "Цэлеспрэмлены",
+  "threeGoalsCompleted": "3 дасягнутыя мэты",
+  "goalAchiever": "Дасягальнік\nмэт",
+  "tenGoalsCompleted": "10 дасягнутых мэт",
+  "firstSavings": "Першыя\nашчаджэнні",
+  "fiveHundredSaved": "Сэканомлена $500",
+  "smartSaver": "Разумны эканом",
+  "oneThousandSaved": "Сэканомлена $1,000",
+  "bigSaver": "Вялікі эканом",
+  "fiveThousandSaved": "Сэканомлена $5,000",
+  "currencyProgress": "${current} з ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} з {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Рухайцеся далей — ваша першае дасягненне чакае вас!",
+  "badgesAndMilestones": "Значкі і дасягненні",
+  "yourMilestoneJourney": "Ваш шлях дасягненняў",
+  "milestonesAchieved": "Дасягнута: {count}.\nНацісніце для прагляду",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Вы разблакавалі {unlocked} з {total} дасягненняў на сваім шляху.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Засталося",
+  "complete": "Завершана",
+  "nextMilestone": "Наступнае дасягненне",
+  "percentThere": "{subtitle} · {percent}% прайдзена",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Дасягненні ў цвярозасці",
+  "journeyBadges": "Значкі шляху",
+  "bronze": "БРОНЗА",
+  "silver": "СРАБРА",
+  "gold": "ЗОЛАТА",
+  "platinum": "ПЛАТІНА",
+  "diamond": "ДЫЯМАНТ",
+
+  "analyzingYourJourney": "Аналіз вашага шляху...",
+  "aiCreatingSanctuary": "Наш ШІ стварае вашу персанальную прастору.",
+  "understandingHabits": "Аналіз звычак...",
+  "calculatingBaseline": "Разлік пачатковага ўзроўню...",
+  "personalizingPlan": "Персаналізацыя плана...",
+  "finalizingSanctuary": "Завяршэнне стварэння прасторы...",
+  "creatingYourPlan": "Стварэнне вашага плана...",
+  "personalizedPlanError": "Не ўдалося стварыць ваш індывідуальны план. Паспрабуйце зноў.",
+  "retry": "Паўтарыць",
+
+  "breathInhale": "УДЫХ",
+  "breathHold": "ЗАТРЫМКА",
+  "breathExhale": "ВЫДЫХ",
+  "breathDone": "ГАТОВА",
+  "breathGreatJob": "Выдатная праца!",
+  "breathSessionsToday": "{count, plural, one{{count} сеанс сёння} few{{count} сеансы сёння} many{{count} сеансаў сёння} other{{count} сеансаў сёння}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Завяршыць практыкаванне",
+  "done": "Гатова",
+
+  "noCopingTipsYet": "Парадаў пакуль няма",
+  "copingStrategiesWillAppear": "Вашы персанальныя стратэгіі з'явяцца тут пасля завяршэння генерацыі плана.",
+  "strategiesTailoredToTriggers": "Стратэгіі, адаптаваныя пад вашы трыгеры",
+
+  "cravingsPeakAndPass": "Цяга дасягае піку\nі праходзіць",
+  "rideTheWaveDescription": "Большасць успышак цягі праходзяць за 15 хвілін. Вам не трэба паддавацца — basit перачакайце гэта разам з намі.",
+  "stayWithIt": "Трымайцеся",
+  "youMadeIt": "Вы зрабілі гэта",
+  "readyWhenYouAre": "Гатовы, калі вы гатовы",
+  "rideItAgain": "Перачакаць яшчэ раз",
+  "start15MinuteTimer": "Запусціць таймер на 15 хвілін",
+  "rideTheWaveCompletedMessage": "Вы перачакалі хвалю. Гэта сапраўдная сіла. 💪",
+
+  "myProgress": "Мой прагрэс",
+  "weekLabel": "Тыдзень",
+  "monthLabel": "Месяц",
+  "allLabel": "Усе",
+  "daysSoberStatLabel": "Цвярозыя\nдні",
+  "savedStatLabel": "Захавана",
+  "avoidedStatLabel": "Прапушчана",
+  "moodTrends": "Трэнды настрою",
+  "cravingsPattern": "Патэрны цягі",
+  "unlockLabel": "Разблакаваць",
+  "unlockFullStats": "Разблакаваць поўную статыстыку",
+  "premiumStatsMessage": "Аналітыка настрою і патэрны цягі даступныя ў Преміум. Абнавіцеся для поўнага доступу.",
+  "healthMilestonesWillAppear": "Вашы дасягненні ў здароўі з'явяцца тут.",
+  "healthMilestones": "Дасягненні ў здароўі",
+  "dayNumber": "Дзень {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Цвярозасць",
+  "slipLabel": "Срыў",
+  "noDataLabel": "Няма даных",
+
+  "milestone24Hours": "24 гадзіны",
+  "milestoneOneWeek": "Адзін тыдзень",
+  "milestoneOneMonth": "Адзін месяц",
+  "milestoneThreeMonths": "Тры месяцы",
+  "milestoneSixMonths": "Шэсць месяцаў",
+  "milestoneOneYear": "Адзін год",
+  "milestoneDayCount": "Дасягненне: дзень {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

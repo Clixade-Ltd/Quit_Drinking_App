@@ -1,0 +1,577 @@
+{
+  "@@locale": "fil",
+
+  "skip": "Laktawan",
+  "continueButton": "Magpatuloy",
+  "getStarted": "Magsimula",
+
+  "onboardingTitle1": "Hawakan ang Kontrol sa Iyong Buhay",
+  "onboardingSubtitle1": "Subaybayan ang iyong paglalakbay, ipagdiwang ang bawat tagumpay, at maging mas malusog araw-araw.",
+  "onboardingTitle2": "Ang Iyong AI Recovery Companion",
+  "onboardingSubtitle2": "Makatanggap ng personalized na gabay, malulusog na gawi, paalala para sa motibasyon, at mga ulat sa pag-unlad na idinisenyo para sa iyo.",
+
+  "goodMorning": "Magandang Umaga",
+  "goodAfternoon": "Magandang Hapon",
+  "goodEvening": "Magandang Gabi",
+  "goodNight": "Magandang Gabi",
+
+  "embracingClarity": "Pagyakap sa kalinawan, isang araw sa bawat pagkakataon.",
+  "streakLabel": "STREAK",
+  "goalLabel": "LAYUNIN",
+  "daysStreak": "{count, plural, one{{count} Araw} other{{count} Araw}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+   "maybeLaterLabel": "Võib-olla hiljem",
+   "@maybeLaterLabel": {
+     "description": "Button to dismiss the paywall dialog without upgrading"
+   },
+   "cancelLabel": "Tühista",
+   "@cancelLabel": {
+     "description": "Generic cancel button label"
+   },
+
+  "premiumPlan": "Premium Plan",
+  "premiumPlanSubtitle": "I-unlock ang buong karanasan sa iyong paggaling",
+
+  "accountAndSupport": "ACCOUNT AT SUPORTA",
+  "privacyPolicy": "Patakaran sa Pagkapribado",
+  "privacyPolicySubtitle": "Pamahalaan ang pagbabahagi ng data at seguridad ng account",
+  "termsOfService": "Mga Tuntunin ng Serbisyo",
+  "termsOfServiceSubtitle": "Mga FAQ, makipag-ugnayan sa amin, at mga mapagkukunan",
+  "shareApp": "Ibahagi ang App",
+  "shareAppSubtitle": "Ibahagi ang app sa iyong mga kaibigan",
+  "resetData": "I-reset ang Data",
+  "resetDataSubtitle": "I-burado ang lahat ng naka-save sa device na ito",
+
+  "resetAllDataTitle": "I-reset ang lahat ng data?",
+  "resetAllDataMessage": "Aalisin nito ang lahat ng naka-save sa device na ito — profile, mga entry sa journal, at pag-unlad — at hindi na mababawi.",
+  "cancel": "Kanselahin",
+  "reset": "I-reset",
+
+  "chooseFromGallery": "Pumili sa Gallery",
+  "takePhoto": "Kumuha ng Larawan",
+  "removePhoto": "Alisin ang Larawan",
+  "couldNotUpdatePhoto": "Hindi ma-update ang larawan: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Hindi maalis ang larawan: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Masyadong malaki ang larawang iyon kahit pagkatapos i-compress — pakisubukan ang iba.",
+
+  "unableToLoadProfile": "Hindi ma-load ang iyong profile",
+  "pleaseTryAgain": "Pakiulit muli.",
+  "tryAgain": "Subukan Ulit",
+  "profileNotFound": "Hindi natagpuan ang profile",
+  "refresh": "I-refresh",
+  "noProfileDataFound": "Wala pang data ng profile na natagpuan sa device na ito.",
+
+  "couldNotResetData": "Hindi ma-reset ang data: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Home",
+  "navStats": "Stats",
+  "navJournal": "Journal",
+  "navBadges": "Badges",
+  "navProfile": "Profile",
+
+  "featureComingSoon": "Magiging available na ang {feature} sa lalong madaling panahon.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Itigil ang pag-inom",
+  "splashSubtitle": "Gawin ang unang hakbang tungo sa\nisang buhay na walang alak",
+  "preparingJourney": "Inihahanda ang iyong\npaglalakbay",
+
+  "taskMorningMeditation": "Pagninilay sa Umaga (10 m)",
+  "taskReadChapter": "Basahin ang Kabanata 4 ng \"The Sober Diaries\"",
+  "taskEveningJournal": "Journal ng Pagpapasalamat sa Gabi",
+
+  "close": "Isara",
+  "youAreDoingGreat": "Mahusay ang ginagawa mo!",
+  "shareMilestone": "Ibahagi ang Milestone",
+  "shareMilestoneMessage": "Nasa ika-{days} araw na ako ng aking paglalakbay tungo sa paggaling! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Ang aking milestone sa paggaling",
+
+  "weeklyReportReadyTitle": "Handa na ang iyong lingguhang ulat",
+  "weeklyReportReadySubtitle": "I-tap para makita ang naging takbo ng iyong linggo",
+
+  "howAreYouFeeling": "Ano ang pakiramdam mo?",
+  "moodTough": "Mahirap",
+  "moodOkay": "Okey lang",
+  "moodGood": "Mabuti",
+
+  "moneySaved": "Pera na Naipon",
+  "caloriesSaved": "Kalarong Naipon",
+  "healthScore": "Iskor sa Kalusugan",
+  "drinksAvoided": "Inuming Iniiwasan",
+  "estimated": "Tinataya",
+  "aiGenerated": "Gawa ng AI",
+  "daysCapsLabel": "MGA ARAW",
+
+  "todaysMotivation": "Motibasyon Ngayong Araw",
+  "defaultMotivationQuote": "Matagumpay mong napanatili ang iyong pangako. Ipagpatuloy ang pagsabay sa daloy ng positibong pagbabago.",
+
+  "talkToCoach": "Makisalamuha sa coach",
+  "havingACraving": "Nakatatakam Ako",
+
+  "unlockWeeklyReportsTitle": "I-unlock ang mga lingguhang ulat",
+  "unlockWeeklyReportsMessage": "Tingnan ang iyong mga araw ng pagiging sober, mga trend ng mood, at personalized na AI feedback bawat linggo. Mag-upgrade sa Premium para ma-unlock.",
+  "maybeLater": "Mamaya na lang",
+  "upgrade": "Mag-upgrade",
+
+  "weeklyReportTitle": "Lingguhang Ulat",
+  "weeklyReportsPremiumTitle": "Isang Premium na tampok ang lingguhang ulat",
+  "weeklyReportsPremiumMessage": "Tingnan ang iyong mga araw ng pagiging sober, mga trend ng mood, mga paghahangad, at personalized na AI feedback bawat linggo.",
+  "upgradeToPremium": "Mag-upgrade sa Premium",
+  "couldNotGenerateReport": "Hindi magawa ang iyong ulat sa ngayon.",
+  "tryAgainLower": "Subukan muli",
+
+  "statSoberDays": "Mga araw na sober",
+  "statAvgMood": "Grap ng mood",
+  "statCravings": "Paghahangad",
+  "statMoneySaved": "Naipong pera",
+  "coachFeedback": "Puna ng Coach",
+  "journalInsights": "Mga insight sa Journal",
+
+  "next": "Susunod",
+
+  "question1Title": "Ano ang iyong layunin",
+  "question1Subtitle": "Pumili ng layunin na pinakamahalaga\nsa iyo",
+  "goalQuitCompletely": "TUMIGIL NANG LUBUSAN",
+  "goalReduceDrinking": "Bawasan ang pag-inom",
+  "goalTakeABreak": "Magpahinga muna",
+  "goalBuildHealthierHabits": "Bumuo ng mas malusog na gawi",
+
+  "question3Title": "Ikwento sa amin ang iyong\nrutina",
+  "drinksPerWeek": "Mga inumin bawat linggo",
+  "moneySpentPerWeek": "Gagastusin bawat linggo",
+  "drinkingLevel": "Antas ng pag-inom",
+  "triggersLabel": "Mga nag-uudyok",
+  "levelSocial": "Sosyal",
+  "levelRegular": "Regular",
+  "levelHeavy": "Mabigat",
+  "levelDependent": "Depende",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Kalungkutan",
+  "triggerHabit": "Gawi",
+  "triggerSadness": "Dalamhati",
+  "triggerAnger": "Galit",
+  "triggerBoredom": "Pagkabagot",
+  "triggerSocialPressure": "Presyur sa lipunan",
+  "triggerCelebration": "Pagdiriwang",
+  "triggerSleepProblems": "Problema sa pagtulog",
+  "triggerWorkPressure": "Presyur sa trabaho",
+
+  "question4Title": "Bakit mo gustong magbago?",
+  "question4Subtitle": "Ang iyong dahilan ay makatutulong upang mag-udyok sa iyo.",
+  "reasonImproveHealth": "Pagbutihin ang Aking Kalusugan",
+  "reasonSaveMoney": "Mag-ipon ng Pera",
+  "reasonFamily": "Pamilya",
+  "reasonBetterSleep": "Mas Magandang Pagtulog",
+  "reasonMentalClarity": "Kalinawan ng Isip",
+  "reasonFitness": "Kaangkupang Pisikal",
+  "reasonSelfRespect": "Paggalang sa Sarili",
+  "reasonCareer": "Karera",
+
+  "milestoneUnlockedLabel": "NA-UNLOCK ANG MILESTONE",
+  "incredibleNamePrefix": "Kahanga-hanga, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} ang naipon",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} ang naiwasan",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Ibahagi ang aking milestone",
+  "milestoneImageShareError": "Hindi magawa ang larawan ng milestone. Pakisubukan muli.",
+
+  "dailyCheckInTitle": "Araw-araw na Check-in",
+  "howAreYouFeelingToday": "Ano ang pakiramdam mo ngayong araw?",
+  "honestAnswerHelp": "Ang iyong tapat na sagot ay nakatutulong sa amin na mas suportahan ka",
+  "didYouDrinkToday": "Uminom ka ba ngayong araw?",
+  "noLabel": "Hindi",
+  "yesLabel": "Oo",
+  "cravingLevelNow": "Antas ng paghahangad ngayon?",
+  "anythingOnMind": "Mayroon ka bang naiisip?",
+  "optionalLabel": "(opsyonal)",
+  "dailyNoteHint": "Isulat ang tungkol sa iyong araw, mga trigger, mga tagumpay...",
+  "alreadyCheckedInToday": "Naka-check in na ngayong araw",
+  "saveCheckIn": "I-save ang check-in",
+  "checkInsHelpTrack": "Nakatutulong ang mga check-in upang masubaybayan ang iyong pag-unlad",
+  "alreadyCompletedTodayCheckIn": "Pumatak na ang iyong check-in para sa araw na ito.",
+  "pleaseAnswerBothQuestions": "Paki-sagutan muna ang dalawang tanong sa itaas",
+  "checkInSaved": "Nai-save ang check-in",
+  "cravingNone": "Wala",
+  "cravingLow": "Mababa",
+  "cravingMedium": "Katamtaman",
+  "cravingStrong": "Mataas",
+  "moodBad": "Masama",
+  "moodLow": "Mababa",
+  "moodOkay": "Okey lang",
+  "moodGood": "Mabuti",
+  "moodGreat": "Napakahusay",
+
+  "sosSupportTitle": "Tulong sa SOS",
+  "notAloneMessage": "Hindi ka nag-iisa, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Lumalipas din ang paghahangad. Pumili sa ibaba ng makatutulong sa iyo sa sandaling ito.",
+  "breathingExercise": "Pagsasanay sa paghinga",
+  "breathingExerciseSubtitle": "Pamatayang teknik na 4-7-8, 2 minuto",
+  "rideTheWave": "Sumabay sa alon",
+  "rideTheWaveSubtitle": "15 minutong timer — laging lumalipas ang paghahangad",
+  "copingTips": "Mga tip sa pagharap",
+  "copingTipsSubtitle": "Mga diskarteng nakatutok sa iyong mga trigger",
+  "talkToAiCoach": "Makisalamuha sa AI coach",
+  "talkToAiCoachSubtitle": "Makipag-usap sa iyong kasama sa paggaling",
+  "callSomeone": "Tawagan ang isang tao",
+  "callSomeoneSubtitle": "Makipag-ugnayan sa iyong pinagkakatiwalaang contact",
+  "contactsPermissionNeeded": "Kailangan ng pahintulot sa mga contact para makatawag.",
+  "beatenCravingsPrefix": "Nalagpasan mo na ang paghahangad nang ",
+  "beatenCravingsCount": "{count} beses",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " noong una. Magagawa mo itong muli.",
+
+  "tellUsAboutYourself": "Ikwento sa Amin ang Tungkol sa Iyong Sarili",
+  "detailsSubtitle": "Nakatutulong ang impormasyong ito upang maiakma ang iyong paglalakbay at makapagbigay ng tumpak na mga insight.",
+  "nameLabel": "Pangalan",
+  "nameHint": "hal., Alex Rivers",
+  "ageLabel": "Edad",
+  "ageHint": "hal., 32",
+  "sexAssignedAtBirth": "Kasarian nang ipinanganak",
+  "sexFemale": "Babae",
+  "sexMale": "Lalaki",
+  "heightLabel": "Taas",
+  "weightLabel": "Timbang",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Nakarating na sa araw-araw na limitasyon",
+  "dailyLimitReachedMessage": "Nagamit mo na ang lahat ng {limit} libreng mensahe ngayong araw. Mag-upgrade sa Premium para sa walang limitasyong chat sa coach.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Hindi ako makakonekta sa ngayon. Pakisubukan muli sa isang sandali.",
+  "clearConversationTitle": "I-clear ang usapan?",
+  "clearConversationMessage": "Permanenteng aalisin nito ang kasaysayan ng iyong chat sa coach.",
+  "clearLabel": "I-clear",
+  "recoveryCoachTitle": "Coach sa Paggaling",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "I-clear ang usapan",
+  "chatGreeting": "Kamusta {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Nasa ika-{days} araw ka na ng iyong paglalakbay. Nandito ako tuwing gusto mong makipag-usap.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "MABILIS NA PROMPTS",
+  "promptCravingLabel": "Nakatatakam ako",
+  "promptCravingSubtitle": "Kumalma kaagad",
+  "promptMotivationLabel": "Kailangan ng motibasyon",
+  "promptMotivationSubtitle": "Pampatag sa mahirap na sandali",
+  "promptSocialLabel": "Sitwasyong sosyal",
+  "promptSocialSubtitle": "Makisalamuha sa pagtitipon",
+  "promptSlippedLabel": "Nagkamali ako",
+  "promptSlippedSubtitle": "Walang panghuhusga, suporta lang",
+  "typeMessageHint": "Mag-type ng mensahe...",
+
+  "editProfileTitle": "I-edit ang Profile",
+  "couldNotSaveProfile": "Hindi ma-save ang profile: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Taas (cm)",
+  "weightKgLabel": "Timbang (kg)",
+  "saveChangesLabel": "I-save ang mga Pagbabago",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Mga Advanced na Insight at Analitika",
+  "featureUnlimitedJournal": "Walang Limitasyong Entry sa Journal",
+  "featureUnlimitedChat": "Walang Limitasyong Chat sa AI Coach",
+  "featureCommunityGroups": "Eksklusibong Grupo sa Komunidad",
+  "featurePrioritySupport": "Pangunahing Suporta mula sa Eksperto",
+  "featureThemePacks": "Mapanlikhang Pack ng Tema",
+  "featureDataExport": "Pag-export ng Data",
+  "featureAdFree": "Karanasang Walang Ad",
+  "premiumMemberTitle": "Miyembro ka ng Premium",
+  "unlockFullRecoveryTitle": "I-unlock ang Buo Mong Karanasan\nsa Paggaling",
+  "premiumMemberSubtitle": "Salamat sa pagsuporta sa iyong paglalakbay — lahat ng premium na tampok sa ibaba ay naka-unlock na.",
+  "premiumJoinSubtitle": "Makiisa sa libo-libong nagpapabilis ng kanilang paggaling gamit ang aming mga premium na tool at suporta.",
+  "monthlyPlanLabel": "Buwanan",
+  "perMonthSuffix": "/buwan",
+  "cancelAnytimeLabel": "Kanselahin anumang oras",
+  "yearlyPlanLabel": "Taunan",
+  "billedAnnuallyLabel": "Sisingilin taun-taon sa halagang {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Pinakamahusay na Halaga",
+  "alreadyPremiumLabel": "Premium ka na ✓",
+  "startPremiumLabel": "Simulan ang Premium",
+  "manageSubscriptionLabel": "Pamahalaan o kanselahin mula sa mga setting ng subscription ng iyong device.",
+  "noCommitmentLabel": "Walang kontrata. Kanselahin anumang oras.",
+  "continueFreePlanLabel": "Magpatuloy sa Libreng Plan",
+  "backToHomeLabel": "Bumalik sa Home",
+  "cancelPremiumLabel": "Kanselahin ang Premium",
+  "cancelPremiumTitle": "Kanselahin ang Premium?",
+  "cancelPremiumMessage": "Mawawalan ka ng access sa walang limitasyong journal, chat sa coach, mga insight sa stats, at lingguhang ulat. Puwede kang mag-subscribe muli anumang oras.",
+  "keepPremiumLabel": "Panatilihin ang Premium",
+  "nowPremiumMessage": "Premium ka na ngayon! Masiyahan sa iyong buong karanasan sa paggaling.",
+  "premiumCancelledMessage": "Nai-kansela ang Premium. Nagbalik ka sa libreng plan.",
+  "termsOfUseLabel": "Mga Tuntunin sa Paggamit",
+
+  "navHomeLabel": "Home",
+  "navStatsLabel": "Stats",
+  "navJournalLabel": "Journal",
+  "navBadgesLabel": "Badges",
+  "navProfileLabel": "Profile",
+
+  "recoveryGoalsTitle": "Mga Layunin sa Paggaling",
+  "quitReasonsLabel": "Mga dahilan ng pagtigil",
+  "quitReasonsHelperText": "Ihiwalay ang maramihang dahilan gamit ang kuwit.",
+  "couldNotSaveRecoveryGoals": "Hindi ma-save ang mga layunin sa paggaling: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "hal., Lubos na Pag-iwas",
+  "drinksPerWeekHint": "hal., 12",
+  "quitReasonsHint": "hal., Kalusugan, Pamilya, Pera",
+
+  "todaysPrompt": "Paksang ngayong araw",
+  "defaultJournalPrompt": "Ano ang naiisip mo ngayong araw?",
+  "aiJournalInsights": "Mga insight sa AI journal",
+  "unlockJournalInsightsMessage": "I-unlock ang mga lingguhang pattern, trend ng mood, at mga insight mula sa iyong mga entry sa journal.",
+  "notEnoughJournalData": "Kulang pa sa data — sumulat ng ilang entry ngayong linggo at bumalik muli.",
+  "openEntry": "Buksan",
+  "editEntry": "I-edit",
+  "deleteEntry": "Burahin",
+  "searchJournalEntries": "Maghanap ng mga entry...",
+  "writeNewEntry": "Sumulat ng bagong entry",
+  "recentEntries": "Mga Bagong Entry",
+  "noJournalEntriesYet": "Wala pang mga entry sa journal — isulat ang iyong unang pagninilay sa itaas.",
+  "noEntriesMatchFilters": "Walang mga entry na tumutugma sa iyong mga filter.",
+
+  "weeklyJournalLimitReached": "Naabot na ang lingguhang limitasyon",
+  "weeklyJournalLimitMessage": "Nagamit mo na ang lahat ng {limit} libreng entry sa journal ngayong linggo. Mag-upgrade sa Premium para sa walang limitasyong mga entry.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Bagong entry",
+  "writeYourThoughts": "Isulat ang iyong mga naiisip",
+  "saveEntry": "I-save ang Entry",
+  "freeEntriesLeftThisWeek": "{remaining} sa {limit} libreng entry na lang ang natitira ngayong linggo",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Burahin ang entry?",
+  "deleteEntryConfirmation": "Permanenteng buburahin ang entry na ito. Hindi na ito mababawi.",
+
+  "journalEntryNotFound": "Hindi natagpuan ang entry",
+  "journalEntryMayHaveBeenDeleted": "Maaaring nabura na ang entry sa journal na ito.",
+  "goBack": "Bumalik",
+  "journalEntryTitle": "Entry sa Journal",
+
+  "moodStruggling": "Nakaharap sa pagsubok",
+  "moodUnwell": "Hindi mabuti",
+  "moodNeutral": "Katamtaman",
+
+  "whatHappenedToday": "Ano ang nangyari ngayong araw?",
+  "trigger": "Trigger",
+  "whatHelped": "Ano ang nakatulong",
+  "whatIllTryNextTime": "Ano ang susubukan ko sa susunod",
+  "journalPrivacyMessage": "Ang iyong pagninilay ay pribado at naka-save sa iyong journal.",
+
+  "unlocked": "Naka-unlock",
+  "daysLeft": "{count, plural, one{{count} araw na lang} other{{count} araw na lang}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Araw",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Unang\nPagninilay",
+  "oneJournalEntry": "1 Entry sa Journal",
+  "openBook": "Bukas na Aklat",
+  "tenJournalEntries": "10 Entry sa Journal",
+  "dedicatedWriter": "Masisipag na\nManunulat",
+  "thirtyJournalEntries": "30 Entry sa Journal",
+  "firstConversation": "Unang\nUsapan",
+  "oneAiCoachChat": "1 Chat sa AI Coach",
+  "keepTalking": "Magpatuloy sa Pag-uusap",
+  "fiveConversations": "5 Usapan",
+  "coachCompanion": "Kasamang\nCoach",
+  "twentyConversations": "20 Usapan",
+  "checkInHabit": "Gawi sa\nCheck-In",
+  "sevenCheckIns": "7 Check-In",
+  "consistencyPro": "Eksperto sa\nPagpapatuloy",
+  "thirtyCheckIns": "30 Check-In",
+  "dedicatedJourney": "Nakatalagang\nPaglalakbay",
+  "hundredCheckIns": "100 Check-In",
+  "goalGetter": "Panginoon ng Layunin",
+  "threeGoalsCompleted": "3 Natapos na Layunin",
+  "goalAchiever": "Nagkamit ng\nLayunin",
+  "tenGoalsCompleted": "10 Natapos na Layunin",
+  "firstSavings": "Unang\nNaipon",
+  "fiveHundredSaved": "$500 Naipon",
+  "smartSaver": "Matalinong Nag-iipon",
+  "oneThousandSaved": "$1,000 Naipon",
+  "bigSaver": "Malaking Nag-iipon",
+  "fiveThousandSaved": "$5,000 Naipon",
+  "currencyProgress": "${current} sa ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} sa {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Ipagpatuloy lang — naghihintay na ang iyong unang milestone!",
+  "badgesAndMilestones": "Mga Badge at Milestone",
+  "yourMilestoneJourney": "Ang Iyong Paglalakbay sa Milestone",
+  "milestonesAchieved": "{count, plural, one{{count} milestone ang nakamit.\nI-tap para tingnan} other{{count} milestone ang nakamit.\nI-tap para tingnan}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Naka-unlock ka ng {unlocked} sa {total} na milestone sa iyong paglalakbay.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Natitira",
+  "complete": "Kumpleto",
+  "nextMilestone": "Susunod na Milestone",
+  "percentThere": "{subtitle} · {percent}% na roon",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Mga Milestone sa Sobriety",
+  "journeyBadges": "Mga Badge sa Paglalakbay",
+  "bronze": "BRONSE",
+  "silver": "PILAK",
+  "gold": "GINTO",
+  "platinum": "PLATINUM",
+  "diamond": "DIAMANTE",
+
+  "analyzingYourJourney": "Sinusuri ang Iyong Paglalakbay...",
+  "aiCreatingSanctuary": "Gumagawa ang aming AI ng iyong personalized na tirahan.",
+  "understandingHabits": "Inuunawa ang mga gawi...",
+  "calculatingBaseline": "Kina-kalkula ang baseline...",
+  "personalizingPlan": "Iniaangkop ang iyong plano...",
+  "finalizingSanctuary": "Tinatapos ang iyong tirahan...",
+  "creatingYourPlan": "Ginigawa ang iyong plano...",
+  "personalizedPlanError": "Hindi namin magawa ang iyong personalized na plano. Pakisubukan muli.",
+  "retry": "Subukan Ulit",
+
+  "breathInhale": "HUMINGA NANG MALALIM",
+  "breathHold": "PIGILAN",
+  "breathExhale": "I-HIBO",
+  "breathDone": "TAPOS NA",
+  "breathGreatJob": "Napakahusay!",
+  "breathSessionsToday": "{count, plural, one{{count} sesyon ngayong araw} other{{count} sesyon ngayong araw}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Tapusin ang Pagsasanay",
+  "done": "Tapos na",
+
+  "noCopingTipsYet": "Wala pang mga tip sa pagharap",
+  "copingStrategiesWillAppear": "Lalabas dito ang iyong mga personalized na diskarte kapag natapos na ang paggawa ng iyong plano sa paggaling.",
+  "strategiesTailoredToTriggers": "Mga diskarteng nakatutok sa iyong mga trigger",
+
+  "cravingsPeakAndPass": "Tumaas at lumilipas\nang paghahangad",
+  "rideTheWaveDescription": "Karamihan sa paghahangad ay lumilipas sa loob ng 15 minuto. Hindi mo kailangang kumilos — sumabay lang sa amin.",
+  "stayWithIt": "manatili rito",
+  "youMadeIt": "nagtagumpay ka",
+  "readyWhenYouAre": "handa na kapag handa ka na",
+  "rideItAgain": "Sumabay muli",
+  "start15MinuteTimer": "Simulan ang 15-Minutong Timer",
+  "rideTheWaveCompletedMessage": "Nalagpasan mo ang alon. Tunay na lakas 'yan. 💪",
+
+  "myProgress": "Aking Pag-unlad",
+  "weekLabel": "Linggo",
+  "monthLabel": "Buwan",
+  "allLabel": "Lahat",
+  "daysSoberStatLabel": "Mga araw na\nsober",
+  "savedStatLabel": "Naipon",
+  "avoidedStatLabel": "Naiwasan",
+  "moodTrends": "Mga trend ng mood",
+  "cravingsPattern": "Pattern ng paghahangad",
+  "unlockLabel": "I-unlock",
+  "unlockFullStats": "I-unlock ang buong stats",
+  "premiumStatsMessage": "Ang mga trend ng mood at pattern ng paghahangad ay tampok sa Premium. Mag-upgrade para makita ang buong stats.",
+  "healthMilestonesWillAppear": "Lalabas dito ang iyong mga milestone sa kalusugan.",
+  "healthMilestones": "Mga milestone sa kalusugan",
+  "dayNumber": "Araw {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Sober",
+  "slipLabel": "Pagkakamali",
+  "noDataLabel": "Walang data",
+
+  "milestone24Hours": "24 na Oras",
+  "milestoneOneWeek": "Isang Linggo",
+  "milestoneOneMonth": "Isang Buwan",
+  "milestoneThreeMonths": "Tatlong Buwan",
+  "milestoneSixMonths": "Anim na Buwan",
+  "milestoneOneYear": "Isang Taon",
+  "milestoneDayCount": "Milestone sa Araw {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

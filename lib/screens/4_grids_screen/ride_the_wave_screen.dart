@@ -5,6 +5,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../constants/app_colors.dart';
 import '../../services/local_storage_service.dart';
+import '../../services/analytics_service.dart';
 
 class RideTheWaveScreen extends StatefulWidget {
   const RideTheWaveScreen({super.key});
@@ -21,6 +22,8 @@ class _RideTheWaveScreenState
 
   static const String _cravingsBeatenKey =
       'cravings_beaten_count';
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   Timer? _countdownTimer;
   Duration _remaining = _timerDuration;
@@ -39,6 +42,8 @@ class _RideTheWaveScreenState
       _isComplete = false;
       _remaining = _timerDuration;
     });
+
+    _analytics.rideTheWaveStarted();
 
     _countdownTimer = Timer.periodic(
       const Duration(seconds: 1),
@@ -77,6 +82,8 @@ class _RideTheWaveScreenState
 
   Future<void> _onTimerComplete() async {
     await _incrementCravingsBeaten();
+
+    _analytics.rideTheWaveCompleted();
 
     if (!mounted) return;
 

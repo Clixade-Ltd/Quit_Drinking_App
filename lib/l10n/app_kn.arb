@@ -1,0 +1,583 @@
+{
+  "@@locale": "kn",
+
+  "skip": "ಬಿಟ್ಟುಬಿಡಿ",
+  "continueButton": "ಮುಂದುವರಿಸಿ",
+  "getStarted": "ಪ್ರಾರಂಭಿಸಿ",
+
+  "maybeLaterLabel": "ಬಹುಶಃ ನಂತರ",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "ರದ್ದುಮಾಡಿ",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+  "onboardingTitle1": "ನಿಮ್ಮ ಜೀವನದ ನಿಯಂತ್ರಣ ಪಡೆಯಿರಿ",
+  "onboardingSubtitle1": "ನಿಮ್ಮ ಪ್ರಯಾಣವನ್ನು ದಾಖಲಿಸಿ, ಪ್ರತಿಯೊಂದು ಸಾಧನೆಯನ್ನು ಆಚರಿಸಿ ಮತ್ತು ಪ್ರತಿದಿನವೂ ಆರೋಗ್ಯಕರರಾಗಿರಿ.",
+  "onboardingTitle2": "ನಿಮ್ಮ AI ಚೇತರಿಕೆ ಸಹಚರ",
+  "onboardingSubtitle2": "ನಿಮ್ಮ ಪ್ರಯಾಣಕ್ಕೆ ಅನುಗುಣವಾಗಿ ವೈಯಕ್ತೀಕರಿಸಿದ ಮಾರ್ಗದರ್ಶನ, ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು, ಪ್ರೇರಣೆಯ ಜ್ಞಾಪನೆಗಳು ಮತ್ತು ಪ್ರಗತಿ ವರದಿಗಳನ್ನು ಪಡೆಯಿರಿ.",
+
+  "goodMorning": "ಶುಭೋದಯ",
+  "goodAfternoon": "ಶುಭ ಮಧ್ಯಾಹ್ನ",
+  "goodEvening": "ಶುಭ ಸಂಜೆ",
+  "goodNight": "ಶುಭ ರಾತ್ರಿ",
+
+  "embracingClarity": "ಒಂದು ದಿನದಂತೆ ಒಂದೊಂದು ದಿನ, ಸ್ಪಷ್ಟತೆಯನ್ನು ಅಳವಡಿಸಿಕೊಳ್ಳಿ.",
+  "streakLabel": "ನಿರಂತರತೆ",
+  "goalLabel": "ಗುರಿ",
+  "daysStreak": "{count, plural, one{{count} ದಿನ} other{{count} ದಿನಗಳು}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "ಪ್ರೀಮಿಯಂ ಯೋಜನೆ",
+  "premiumPlanSubtitle": "ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚೇತರಿಕೆ ಅನುಭವವನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+
+  "accountAndSupport": "ಖಾತೆ ಮತ್ತು ಬೆಂಬಲ",
+  "privacyPolicy": "ಗೌಪ್ಯತಾ ನೀತಿ",
+  "privacyPolicySubtitle": "ಡೇಟಾ ಹಂಚಿಕೆ ಮತ್ತು ಖಾತೆಯ ಭದ್ರತೆಯನ್ನು ನಿರ್ವಹಿಸಿ",
+  "termsOfService": "ಸೇವಾ ನಿಯಮಗಳು",
+  "termsOfServiceSubtitle": "FAQಗಳು, ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ ಮತ್ತು ಸಂಪನ್ಮೂಲಗಳು",
+  "shareApp": "ಆ್ಯಪ್ ಹಂಚಿಕೊಳ್ಳಿ",
+  "shareAppSubtitle": "ನಿಮ್ಮ ಸ್ನೇಹಿತರೊಂದಿಗೆ ಆ್ಯಪ್ ಹಂಚಿಕೊಳ್ಳಿ",
+  "resetData": "ಡೇಟಾ ಮರುಹೊಂದಿಸಿ",
+  "resetDataSubtitle": "ಈ ಸಾಧನದಲ್ಲಿ ಉಳಿಸಿರುವ ಎಲ್ಲವನ್ನೂ ಅಳಿಸಿ",
+
+  "resetAllDataTitle": "ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಮರುಹೊಂದಿಸುವುದೇ?",
+  "resetAllDataMessage": "ಇದು ಈ ಸಾಧನದಲ್ಲಿ ಉಳಿಸಿರುವ ಪ್ರೊಫೈಲ್, ಜರ್ನಲ್ ನಮೂದುಗಳು ಮತ್ತು ಪ್ರಗತಿ ಸೇರಿದಂತೆ ಎಲ್ಲವನ್ನೂ ಅಳಿಸುತ್ತದೆ — ಮತ್ತು ಇದನ್ನು ಹಿಂತಿರುಗಿಸಲಾಗುವುದಿಲ್ಲ.",
+  "cancel": "ರದ್ದುಮಾಡಿ",
+  "reset": "ಮರುಹೊಂದಿಸಿ",
+
+  "chooseFromGallery": "ಗ್ಯಾಲರಿಯಿಂದ ಆಯ್ಕೆಮಾಡಿ",
+  "takePhoto": "ಫೋಟೋ ತೆಗೆಯಿರಿ",
+  "removePhoto": "ಫೋಟೋ ತೆಗೆದುಹಾಕಿ",
+  "couldNotUpdatePhoto": "ಫೋಟೋವನ್ನು ನವೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "ಫೋಟೋವನ್ನು ತೆಗೆದುಹಾಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "ಸಂಕುಚಿಸಿದ ನಂತರವೂ ಆ ಫೋಟೋ ತುಂಬಾ ದೊಡ್ಡದಾಗಿದೆ — ದಯವಿಟ್ಟು ಬೇರೆ ಫೋಟೋ ಪ್ರಯತ್ನಿಸಿ.",
+
+  "unableToLoadProfile": "ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+  "pleaseTryAgain": "ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+  "profileNotFound": "ಪ್ರೊಫೈಲ್ ಕಂಡುಬಂದಿಲ್ಲ",
+  "refresh": "ರಿಫ್ರೆಶ್",
+  "noProfileDataFound": "ಈ ಸಾಧನದಲ್ಲಿ ಇನ್ನೂ ಯಾವುದೇ ಪ್ರೊಫೈಲ್ ಡೇಟಾ ಕಂಡುಬಂದಿಲ್ಲ.",
+
+  "couldNotResetData": "ಡೇಟಾವನ್ನು ಮರುಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "ಮುಖಪುಟ",
+  "navStats": "ಅಂಕಿಅಂಶಗಳು",
+  "navJournal": "ಜರ್ನಲ್",
+  "navBadges": "ಬ್ಯಾಡ್ಜ್‌ಗಳು",
+  "navProfile": "ಪ್ರೊಫೈಲ್",
+
+  "featureComingSoon": "{feature} ಶೀಘ್ರದಲ್ಲೇ ಲಭ್ಯವಾಗಲಿದೆ.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ",
+  "appTitle": "ಮದ್ಯಪಾನ ತ್ಯಜಿಸಿ",
+  "splashSubtitle": "ಮದ್ಯರಹಿತ ಜೀವನದತ್ತ\nಮೊದಲ ಹೆಜ್ಜೆ ಇಡಿ",
+  "preparingJourney": "ನಿಮ್ಮ\nಪ್ರಯಾಣವನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗುತ್ತಿದೆ",
+
+  "taskMorningMeditation": "ಬೆಳಗಿನ ಧ್ಯಾನ (10 ನಿಮಿಷ)",
+  "taskReadChapter": "\"The Sober Diaries\" ಅಧ್ಯಾಯ 4 ಓದಿ",
+  "taskEveningJournal": "ಸಂಜೆಯ ಕೃತಜ್ಞತಾ ಜರ್ನಲ್",
+
+  "close": "ಮುಚ್ಚಿ",
+  "youAreDoingGreat": "ನೀವು ಅದ್ಭುತವಾಗಿ ಮಾಡುತ್ತಿದ್ದೀರಿ!",
+  "shareMilestone": "ಸಾಧನೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ",
+  "shareMilestoneMessage": "ನನ್ನ ಚೇತರಿಕೆಯ ಪ್ರಯಾಣದಲ್ಲಿ ನಾನು {days}ನೇ ದಿನದಲ್ಲಿದ್ದೇನೆ! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "ನನ್ನ ಚೇತರಿಕೆಯ ಸಾಧನೆ",
+
+  "weeklyReportReadyTitle": "ನಿಮ್ಮ ವಾರದ ವರದಿ ಸಿದ್ಧವಾಗಿದೆ",
+  "weeklyReportReadySubtitle": "ನಿಮ್ಮ ವಾರ ಹೇಗಿತ್ತು ಎಂಬುದನ್ನು ನೋಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+
+  "howAreYouFeeling": "ನಿಮಗೆ ಹೇಗನಿಸುತ್ತಿದೆ?",
+  "moodTough": "ಕಷ್ಟವಾಗಿದೆ",
+  "moodOkay": "ಪರವಾಗಿಲ್ಲ",
+  "moodGood": "ಚೆನ್ನಾಗಿದೆ",
+
+  "moneySaved": "ಉಳಿಸಿದ ಹಣ",
+  "caloriesSaved": "ಉಳಿಸಿದ ಕ್ಯಾಲೊರಿಗಳು",
+  "healthScore": "ಆರೋಗ್ಯ ಸ್ಕೋರ್",
+  "drinksAvoided": "ತಪ್ಪಿಸಿದ ಪಾನೀಯಗಳು",
+  "estimated": "ಅಂದಾಜು",
+  "aiGenerated": "AI ರಚಿಸಿದ",
+  "daysCapsLabel": "ದಿನಗಳು",
+
+  "todaysMotivation": "ಇಂದಿನ ಪ್ರೇರಣೆ",
+  "defaultMotivationQuote": "ನಿಮ್ಮ ಬದ್ಧತೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಕಾಪಾಡಿಕೊಂಡಿದ್ದೀರಿ. ಸಕಾರಾತ್ಮಕ ಬದಲಾವಣೆಯ ಅಲೆಯ ಮೇಲೆ ಮುಂದುವರಿಯಿರಿ.",
+
+  "talkToCoach": "ಕೋಚ್ ಜೊತೆ ಮಾತನಾಡಿ",
+  "havingACraving": "ನನಗೆ ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆ ಬರುತ್ತಿದೆ",
+
+  "unlockWeeklyReportsTitle": "ವಾರದ ವರದಿಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "unlockWeeklyReportsMessage": "ಪ್ರತಿ ವಾರ ನಿಮ್ಮ ಮದ್ಯರಹಿತ ದಿನಗಳು, ಮನಸ್ಥಿತಿಯ ಪ್ರವೃತ್ತಿಗಳು ಮತ್ತು ವೈಯಕ್ತೀಕರಿಸಿದ AI ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ನೋಡಿ. ಅನ್ಲಾಕ್ ಮಾಡಲು ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ.",
+  "maybeLater": "ಬಹುಶಃ ನಂತರ",
+  "upgrade": "ಅಪ್‌ಗ್ರೇಡ್",
+
+  "weeklyReportTitle": "ವಾರದ ವರದಿ",
+  "weeklyReportsPremiumTitle": "ವಾರದ ವರದಿಗಳು ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯವಾಗಿದೆ",
+  "weeklyReportsPremiumMessage": "ಪ್ರತಿ ವಾರ ನಿಮ್ಮ ಮದ್ಯರಹಿತ ದಿನಗಳು, ಮನಸ್ಥಿತಿಯ ಪ್ರವೃತ್ತಿಗಳು, ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಗಳು ಮತ್ತು ವೈಯಕ್ತೀಕರಿಸಿದ AI ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ನೋಡಿ.",
+  "upgradeToPremium": "ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ",
+  "couldNotGenerateReport": "ಈಗ ನಿಮ್ಮ ವರದಿಯನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
+  "tryAgainLower": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+
+  "statSoberDays": "ಮದ್ಯರಹಿತ ದಿನಗಳು",
+  "statAvgMood": "ಸರಾಸರಿ ಮನಸ್ಥಿತಿ",
+  "statCravings": "ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಗಳು",
+  "statMoneySaved": "ಉಳಿಸಿದ ಹಣ",
+  "coachFeedback": "ಕೋಚ್ ಪ್ರತಿಕ್ರಿಯೆ",
+  "journalInsights": "ಜರ್ನಲ್ ಒಳನೋಟಗಳು",
+
+  "next": "ಮುಂದೆ",
+
+  "question1Title": "ನಿಮ್ಮ ಗುರಿ ಏನು?",
+  "question1Subtitle": "ನಿಮಗೆ ಹೆಚ್ಚು ಮುಖ್ಯವಾದ\nಗುರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "goalQuitCompletely": "ಸಂಪೂರ್ಣವಾಗಿ ತ್ಯಜಿಸಿ",
+  "goalReduceDrinking": "ಕುಡಿಯುವುದನ್ನು ಕಡಿಮೆ ಮಾಡಿ",
+  "goalTakeABreak": "ವಿರಾಮ ತೆಗೆದುಕೊಳ್ಳಿ",
+  "goalBuildHealthierHabits": "ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ",
+
+  "question3Title": "ನಿಮ್ಮ\nದಿನಚರಿಯ ಬಗ್ಗೆ ತಿಳಿಸಿ",
+  "drinksPerWeek": "ವಾರಕ್ಕೆ ಪಾನೀಯಗಳು",
+  "moneySpentPerWeek": "ವಾರಕ್ಕೆ ಖರ್ಚು ಮಾಡುವ ಹಣ",
+  "drinkingLevel": "ಕುಡಿಯುವ ಮಟ್ಟ",
+  "triggersLabel": "ಪ್ರಚೋದಕಗಳು",
+  "levelSocial": "ಸಾಮಾಜಿಕ",
+  "levelRegular": "ನಿಯಮಿತ",
+  "levelHeavy": "ಹೆಚ್ಚು",
+  "levelDependent": "ಅವಲಂಬಿತ",
+  "triggerStress": "ಒತ್ತಡ",
+  "triggerLoneliness": "ಒಂಟಿತನ",
+  "triggerHabit": "ಅಭ್ಯಾಸ",
+  "triggerSadness": "ದುಃಖ",
+  "triggerAnger": "ಕೋಪ",
+  "triggerBoredom": "ಬೇಸರ",
+  "triggerSocialPressure": "ಸಾಮಾಜಿಕ ಒತ್ತಡ",
+  "triggerCelebration": "ಆಚರಣೆ",
+  "triggerSleepProblems": "ನಿದ್ರೆಯ ಸಮಸ್ಯೆಗಳು",
+  "triggerWorkPressure": "ಕೆಲಸದ ಒತ್ತಡ",
+
+  "question4Title": "ನೀವು ಏಕೆ ಬದಲಾಗಲು ಬಯಸುತ್ತೀರಿ?",
+  "question4Subtitle": "ನಿಮ್ಮ ಕಾರಣವು ನಿಮ್ಮನ್ನು ಪ್ರೇರೇಪಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+  "reasonImproveHealth": "ನನ್ನ ಆರೋಗ್ಯವನ್ನು ಸುಧಾರಿಸಿ",
+  "reasonSaveMoney": "ಹಣ ಉಳಿಸಿ",
+  "reasonFamily": "ಕುಟುಂಬ",
+  "reasonBetterSleep": "ಉತ್ತಮ ನಿದ್ರೆ",
+  "reasonMentalClarity": "ಮಾನಸಿಕ ಸ್ಪಷ್ಟತೆ",
+  "reasonFitness": "ಫಿಟ್ನೆಸ್",
+  "reasonSelfRespect": "ಸ್ವಾಭಿಮಾನ",
+  "reasonCareer": "ವೃತ್ತಿಜೀವನ",
+
+  "milestoneUnlockedLabel": "ಸಾಧನೆ ಅನ್ಲಾಕ್ ಆಗಿದೆ",
+  "incredibleNamePrefix": "ಅದ್ಭುತ, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} ಉಳಿಸಲಾಗಿದೆ",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} ತಪ್ಪಿಸಲಾಗಿದೆ",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "ನನ್ನ ಸಾಧನೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ",
+  "milestoneImageShareError": "ಸಾಧನೆಯ ಚಿತ್ರವನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+
+  "dailyCheckInTitle": "ದೈನಂದಿನ ಚೆಕ್-ಇನ್",
+  "howAreYouFeelingToday": "ಇಂದು ನಿಮಗೆ ಹೇಗನಿಸುತ್ತಿದೆ?",
+  "honestAnswerHelp": "ನಿಮ್ಮ ಪ್ರಾಮಾಣಿಕ ಉತ್ತರವು ನಿಮಗೆ ಉತ್ತಮವಾಗಿ ಬೆಂಬಲ ನೀಡಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ",
+  "didYouDrinkToday": "ನೀವು ಇಂದು ಕುಡಿದಿದ್ದೀರಾ?",
+  "noLabel": "ಇಲ್ಲ",
+  "yesLabel": "ಹೌದು",
+  "cravingLevelNow": "ಈಗ ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಯ ಮಟ್ಟ ಎಷ್ಟು?",
+  "anythingOnMind": "ನಿಮ್ಮ ಮನಸ್ಸಿನಲ್ಲಿ ಏನಾದರೂ ಇದೆಯೇ?",
+  "optionalLabel": "(ಐಚ್ಛಿಕ)",
+  "dailyNoteHint": "ನಿಮ್ಮ ದಿನ, ಪ್ರಚೋದಕಗಳು, ಸಾಧನೆಗಳ ಬಗ್ಗೆ ಬರೆಯಿರಿ...",
+  "alreadyCheckedInToday": "ಇಂದು ಈಗಾಗಲೇ ಚೆಕ್-ಇನ್ ಮಾಡಲಾಗಿದೆ",
+  "saveCheckIn": "ಚೆಕ್-ಇನ್ ಉಳಿಸಿ",
+  "checkInsHelpTrack": "ಚೆಕ್-ಇನ್‌ಗಳು ಕಾಲಾನಂತರದಲ್ಲಿ ನಿಮ್ಮ ಪ್ರಗತಿಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ",
+  "alreadyCompletedTodayCheckIn": "ನೀವು ಇಂದಿನ ಚೆಕ್-ಇನ್ ಅನ್ನು ಈಗಾಗಲೇ ಪೂರ್ಣಗೊಳಿಸಿದ್ದೀರಿ.",
+  "pleaseAnswerBothQuestions": "ದಯವಿಟ್ಟು ಮೊದಲು ಮೇಲಿನ ಎರಡೂ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ",
+  "checkInSaved": "ಚೆಕ್-ಇನ್ ಉಳಿಸಲಾಗಿದೆ",
+  "cravingNone": "ಯಾವುದೂ ಇಲ್ಲ",
+  "cravingLow": "ಕಡಿಮೆ",
+  "cravingMedium": "ಮಧ್ಯಮ",
+  "cravingStrong": "ತೀವ್ರ",
+  "moodBad": "ಕೆಟ್ಟದು",
+  "moodLow": "ಕಡಿಮೆ",
+  "moodOkay": "ಪರವಾಗಿಲ್ಲ",
+  "moodGood": "ಚೆನ್ನಾಗಿದೆ",
+  "moodGreat": "ಅತ್ಯುತ್ತಮ",
+
+  "sosSupportTitle": "SOS ಬೆಂಬಲ",
+  "notAloneMessage": "ನೀವು ಒಬ್ಬರೇ ಅಲ್ಲ, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಗಳು ಕಳೆದುಹೋಗುತ್ತವೆ. ಈ ಕ್ಷಣವನ್ನು ದಾಟಲು ಸಹಾಯ ಮಾಡುವ ಯಾವುದನ್ನಾದರೂ ಕೆಳಗಿನಿಂದ ಆಯ್ಕೆಮಾಡಿ.",
+  "breathingExercise": "ಉಸಿರಾಟದ ವ್ಯಾಯಾಮ",
+  "breathingExerciseSubtitle": "ಮಾರ್ಗದರ್ಶಿತ 4-7-8 ತಂತ್ರ, 2 ನಿಮಿಷಗಳು",
+  "rideTheWave": "ಅಲೆಯನ್ನು ದಾಟಿ",
+  "rideTheWaveSubtitle": "15 ನಿಮಿಷಗಳ ಟೈಮರ್ — ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಗಳು ಯಾವಾಗಲೂ ಕಳೆದುಹೋಗುತ್ತವೆ",
+  "copingTips": "ನಿಭಾಯಿಸುವ ಸಲಹೆಗಳು",
+  "copingTipsSubtitle": "ನಿಮ್ಮ ಪ್ರಚೋದಕಗಳಿಗೆ ವೈಯಕ್ತೀಕರಿಸಿದ ತಂತ್ರಗಳು",
+  "talkToAiCoach": "AI ಕೋಚ್ ಜೊತೆ ಮಾತನಾಡಿ",
+  "talkToAiCoachSubtitle": "ನಿಮ್ಮ ಚೇತರಿಕೆ ಸಹಚರರೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಿ",
+  "callSomeone": "ಯಾರಿಗಾದರೂ ಕರೆ ಮಾಡಿ",
+  "callSomeoneSubtitle": "ನಿಮ್ಮ ವಿಶ್ವಾಸಾರ್ಹ ಸಂಪರ್ಕವನ್ನು ಸಂಪರ್ಕಿಸಿ",
+  "contactsPermissionNeeded": "ಸಂಪರ್ಕಕ್ಕೆ ಕರೆ ಮಾಡಲು ಸಂಪರ್ಕಗಳ ಅನುಮತಿ ಅಗತ್ಯವಿದೆ.",
+  "beatenCravingsPrefix": "ನೀವು ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಯನ್ನು ",
+  "beatenCravingsCount": "{count} ಬಾರಿ",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " ಎದುರಿಸಿದ್ದೀರಿ. ನೀವು ಮತ್ತೆ ಮಾಡಬಹುದು.",
+
+  "tellUsAboutYourself": "ನಿಮ್ಮ ಬಗ್ಗೆ ತಿಳಿಸಿ",
+  "detailsSubtitle": "ಈ ಮಾಹಿತಿಯು ನಿಮ್ಮ ಚೇತರಿಕೆಯ ಪ್ರಯಾಣವನ್ನು ವೈಯಕ್ತೀಕರಿಸಲು ಮತ್ತು ನಿಖರವಾದ ಒಳನೋಟಗಳನ್ನು ನೀಡಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+  "nameLabel": "ಹೆಸರು",
+  "nameHint": "ಉದಾ., Alex Rivers",
+  "ageLabel": "ವಯಸ್ಸು",
+  "ageHint": "ಉದಾ., 32",
+  "sexAssignedAtBirth": "ಜನನದ ಸಮಯದಲ್ಲಿ ನಿಗದಿಪಡಿಸಿದ ಲಿಂಗ",
+  "sexFemale": "ಮಹಿಳೆ",
+  "sexMale": "ಪುರುಷ",
+  "heightLabel": "ಎತ್ತರ",
+  "weightLabel": "ತೂಕ",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "ದೈನಂದಿನ ಮಿತಿ ತಲುಪಿದೆ",
+  "dailyLimitReachedMessage": "ನೀವು ಇಂದು ಎಲ್ಲಾ {limit} ಉಚಿತ ಸಂದೇಶಗಳನ್ನು ಬಳಸಿದ್ದೀರಿ. ಅನಿಯಮಿತ ಕೋಚ್ ಚಾಟ್‌ಗಾಗಿ ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "ಈಗ ಸಂಪರ್ಕಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "clearConversationTitle": "ಸಂಭಾಷಣೆಯನ್ನು ತೆರವುಗೊಳಿಸುವುದೇ?",
+  "clearConversationMessage": "ಇದು ನಿಮ್ಮ ಕೋಚ್ ಚಾಟ್ ಇತಿಹಾಸವನ್ನು ಶಾಶ್ವತವಾಗಿ ತೆಗೆದುಹಾಕುತ್ತದೆ.",
+  "clearLabel": "ತೆರವುಗೊಳಿಸಿ",
+  "recoveryCoachTitle": "ಚೇತರಿಕೆ ಕೋಚ್",
+  "onlineLabel": "ಆನ್‌ಲೈನ್",
+  "clearConversationMenuItem": "ಸಂಭಾಷಣೆ ತೆರವುಗೊಳಿಸಿ",
+  "chatGreeting": "ಹಾಯ್ {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "ನಿಮ್ಮ ಪ್ರಯಾಣದ {days}ನೇ ದಿನದಲ್ಲಿದ್ದೀರಿ. ವಿಷಯಗಳನ್ನು ಮಾತನಾಡಲು ಬಯಸಿದಾಗಲೆಲ್ಲ ನಾನು ಇಲ್ಲಿದ್ದೇನೆ.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "ತ್ವರಿತ ಪ್ರಾಂಪ್ಟ್‌ಗಳು",
+  "promptCravingLabel": "ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆ ಇದೆ",
+  "promptCravingSubtitle": "ತ್ವರಿತವಾಗಿ ಮನಸ್ಸನ್ನು ಸ್ಥಿರಗೊಳಿಸಿ",
+  "promptMotivationLabel": "ಪ್ರೇರಣೆ ಬೇಕು",
+  "promptMotivationSubtitle": "ಕಷ್ಟವಾದಾಗ ಒಂದು ಉತ್ತೇಜನ",
+  "promptSocialLabel": "ಸಾಮಾಜಿಕ ಪರಿಸ್ಥಿತಿ",
+  "promptSocialSubtitle": "ಒಂದು ಸಮಾರಂಭವನ್ನು ನಿಭಾಯಿಸಿ",
+  "promptSlippedLabel": "ನಾನು ತಪ್ಪಿಹೋದೆ",
+  "promptSlippedSubtitle": "ಯಾವುದೇ ತೀರ್ಪಿಲ್ಲ, ಕೇವಲ ಬೆಂಬಲ",
+  "typeMessageHint": "ಸಂದೇಶವನ್ನು ಟೈಪ್ ಮಾಡಿ...",
+
+  "editProfileTitle": "ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ",
+  "couldNotSaveProfile": "ಪ್ರೊಫೈಲ್ ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "ಎತ್ತರ (ಸೆಂ.ಮೀ.)",
+  "weightKgLabel": "ತೂಕ (ಕೆ.ಜಿ.)",
+  "saveChangesLabel": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ",
+
+  "premiumBadgeLabel": "ಪ್ರೀಮಿಯಂ",
+  "featureAdvancedInsights": "ಸುಧಾರಿತ ಒಳನೋಟಗಳು ಮತ್ತು ವಿಶ್ಲೇಷಣೆ",
+  "featureUnlimitedJournal": "ಅನಿಯಮಿತ ಜರ್ನಲ್ ನಮೂದುಗಳು",
+  "featureUnlimitedChat": "AI ಕೋಚ್ ಜೊತೆ ಅನಿಯಮಿತ ಚಾಟ್",
+  "featureCommunityGroups": "ವಿಶೇಷ ಸಮುದಾಯ ಗುಂಪುಗಳು",
+  "featurePrioritySupport": "ಆದ್ಯತೆಯ ತಜ್ಞರ ಬೆಂಬಲ",
+  "featureThemePacks": "ಕಸ್ಟಮ್ ಥೀಮ್ ಪ್ಯಾಕ್‌ಗಳು",
+  "featureDataExport": "ಡೇಟಾ ರಫ್ತು",
+  "featureAdFree": "ಜಾಹೀರಾತು-ಮುಕ್ತ ಅನುಭವ",
+  "premiumMemberTitle": "ನೀವು ಪ್ರೀಮಿಯಂ ಸದಸ್ಯರಾಗಿದ್ದೀರಿ",
+  "unlockFullRecoveryTitle": "ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚೇತರಿಕೆ\nಅನುಭವವನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "premiumMemberSubtitle": "ನಿಮ್ಮ ಚೇತರಿಕೆಯ ಪ್ರಯಾಣವನ್ನು ಬೆಂಬಲಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು — ಕೆಳಗಿನ ಎಲ್ಲಾ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳು ಅನ್ಲಾಕ್ ಆಗಿವೆ.",
+  "premiumJoinSubtitle": "ನಮ್ಮ ಪ್ರೀಮಿಯಂ ಸಾಧನಗಳು ಮತ್ತು ವೈಯಕ್ತೀಕರಿಸಿದ ಬೆಂಬಲದೊಂದಿಗೆ\nತಮ್ಮ ಚೇತರಿಕೆಯ ಪ್ರಯಾಣವನ್ನು ವೇಗಗೊಳಿಸುತ್ತಿರುವ\nಸಾವಿರಾರು ಜನರ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ.",
+  "monthlyPlanLabel": "ಮಾಸಿಕ",
+  "perMonthSuffix": "/ತಿಂಗಳು",
+  "cancelAnytimeLabel": "ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ರದ್ದುಮಾಡಿ",
+  "yearlyPlanLabel": "ವಾರ್ಷಿಕ",
+  "billedAnnuallyLabel": "{amount} ವಾರ್ಷಿಕವಾಗಿ ವಿಧಿಸಲಾಗುತ್ತದೆ",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "ಅತ್ಯುತ್ತಮ ಮೌಲ್ಯ",
+  "alreadyPremiumLabel": "ನೀವು ಪ್ರೀಮಿಯಂ ✓",
+  "startPremiumLabel": "ಪ್ರೀಮಿಯಂ ಪ್ರಾರಂಭಿಸಿ",
+  "manageSubscriptionLabel": "ನಿಮ್ಮ ಸಾಧನದ ಚಂದಾದಾರಿಕೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಂದ ನಿರ್ವಹಿಸಿ ಅಥವಾ ರದ್ದುಮಾಡಿ.",
+  "noCommitmentLabel": "ಯಾವುದೇ ಬದ್ಧತೆ ಇಲ್ಲ. ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಮಾಡಿ.",
+  "continueFreePlanLabel": "ಉಚಿತ ಯೋಜನೆಯೊಂದಿಗೆ ಮುಂದುವರಿಸಿ",
+  "backToHomeLabel": "ಮುಖಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+  "cancelPremiumLabel": "ಪ್ರೀಮಿಯಂ ರದ್ದುಮಾಡಿ",
+  "cancelPremiumTitle": "ಪ್ರೀಮಿಯಂ ರದ್ದುಮಾಡುವುದೇ?",
+  "cancelPremiumMessage": "ನೀವು ಅನಿಯಮಿತ ಜರ್ನಲ್ ನಮೂದುಗಳು, ಅನಿಯಮಿತ ಕೋಚ್ ಚಾಟ್, ಅಂಕಿಅಂಶಗಳ ಒಳನೋಟಗಳು ಮತ್ತು ವಾರದ ವರದಿಗಳಿಗೆ ಪ್ರವೇಶವನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತೀರಿ. ಯಾವಾಗ ಬೇಕಾದರೂ ಮರುಚಂದಾದಾರರಾಗಬಹುದು.",
+  "keepPremiumLabel": "ಪ್ರೀಮಿಯಂ ಮುಂದುವರಿಸಿ",
+  "nowPremiumMessage": "ಈಗ ನೀವು ಪ್ರೀಮಿಯಂ ಸದಸ್ಯರಾಗಿದ್ದೀರಿ! ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಚೇತರಿಕೆ ಅನುಭವವನ್ನು ಆನಂದಿಸಿ.",
+  "premiumCancelledMessage": "ಪ್ರೀಮಿಯಂ ರದ್ದುಮಾಡಲಾಗಿದೆ. ನೀವು ಮತ್ತೆ ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿದ್ದೀರಿ.",
+  "termsOfUseLabel": "ಬಳಕೆಯ ನಿಯಮಗಳು",
+
+  "navHomeLabel": "ಮುಖಪುಟ",
+  "navStatsLabel": "ಅಂಕಿಅಂಶಗಳು",
+  "navJournalLabel": "ಜರ್ನಲ್",
+  "navBadgesLabel": "ಬ್ಯಾಡ್ಜ್‌ಗಳು",
+  "navProfileLabel": "ಪ್ರೊಫೈಲ್",
+
+  "recoveryGoalsTitle": "ಚೇತರಿಕೆಯ ಗುರಿಗಳು",
+  "goalLabel": "ಗುರಿ",
+  "drinksPerWeekLabel": "ವಾರಕ್ಕೆ ಪಾನೀಯಗಳು",
+  "quitReasonsLabel": "ತ್ಯಜಿಸುವ ಕಾರಣಗಳು",
+  "quitReasonsHelperText": "ಹಲವು ಕಾರಣಗಳನ್ನು ಅಲ್ಪವಿರಾಮದಿಂದ ಬೇರ್ಪಡಿಸಿ.",
+  "couldNotSaveRecoveryGoals": "ಚೇತರಿಕೆಯ ಗುರಿಗಳನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ಉದಾ., ಸಂಪೂರ್ಣ ತ್ಯಜಿಸುವಿಕೆ",
+  "drinksPerWeekHint": "ಉದಾ., 12",
+  "quitReasonsHint": "ಉದಾ., ಆರೋಗ್ಯ, ಕುಟುಂಬ, ಹಣ",
+
+  "todaysPrompt": "ಇಂದಿನ ಪ್ರಾಂಪ್ಟ್",
+  "defaultJournalPrompt": "ಇಂದು ನಿಮ್ಮ ಮನಸ್ಸಿನಲ್ಲಿ ಏನಿದೆ?",
+  "aiJournalInsights": "AI ಜರ್ನಲ್ ಒಳನೋಟಗಳು",
+  "unlockJournalInsightsMessage": "ನಿಮ್ಮ ಜರ್ನಲ್ ನಮೂದುಗಳಿಂದ ವಾರದ ಮಾದರಿಗಳು, ಮನಸ್ಥಿತಿಯ ಪ್ರವೃತ್ತಿಗಳು ಮತ್ತು ವೈಯಕ್ತೀಕರಿಸಿದ ಒಳನೋಟಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ.",
+  "notEnoughJournalData": "ಇನ್ನೂ ಸಾಕಷ್ಟು ಡೇಟಾ ಇಲ್ಲ — ಈ ವಾರ ಕೆಲವು ನಮೂದುಗಳನ್ನು ಬರೆಯಿರಿ ಮತ್ತು ಮತ್ತೆ ಪರಿಶೀಲಿಸಿ.",
+  "openEntry": "ತೆರೆಯಿರಿ",
+  "editEntry": "ಸಂಪಾದಿಸಿ",
+  "deleteEntry": "ಅಳಿಸಿ",
+  "searchJournalEntries": "ನಮೂದುಗಳನ್ನು ಹುಡುಕಿ...",
+  "writeNewEntry": "ಹೊಸ ನಮೂದು ಬರೆಯಿರಿ",
+  "recentEntries": "ಇತ್ತೀಚಿನ ನಮೂದುಗಳು",
+  "noJournalEntriesYet": "ಇನ್ನೂ ಯಾವುದೇ ಜರ್ನಲ್ ನಮೂದುಗಳಿಲ್ಲ — ಮೇಲಿನ ನಿಮ್ಮ ಮೊದಲ ಪ್ರತಿಬಿಂಬವನ್ನು ಬರೆಯಿರಿ.",
+  "noEntriesMatchFilters": "ನಿಮ್ಮ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಹೊಂದುವ ಯಾವುದೇ ನಮೂದುಗಳಿಲ್ಲ.",
+
+  "weeklyJournalLimitReached": "ವಾರದ ಮಿತಿ ತಲುಪಿದೆ",
+  "weeklyJournalLimitMessage": "ನೀವು ಈ ವಾರದ ಎಲ್ಲಾ {limit} ಉಚಿತ ಜರ್ನಲ್ ನಮೂದುಗಳನ್ನು ಬಳಸಿದ್ದೀರಿ. ಅನಿಯಮಿತ ನಮೂದುಗಳಿಗಾಗಿ ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "ಹೊಸ ನಮೂದು",
+  "writeYourThoughts": "ನಿಮ್ಮ ಆಲೋಚನೆಗಳನ್ನು ಬರೆಯಿರಿ",
+  "saveEntry": "ನಮೂದು ಉಳಿಸಿ",
+  "freeEntriesLeftThisWeek": "ಈ ವಾರ {limit}ರಲ್ಲಿ {remaining} ಉಚಿತ ನಮೂದುಗಳು ಉಳಿದಿವೆ",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "ನಮೂದನ್ನು ಅಳಿಸುವುದೇ?",
+  "deleteEntryConfirmation": "ಈ ನಮೂದನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತದೆ. ಇದನ್ನು ಹಿಂತಿರುಗಿಸಲಾಗುವುದಿಲ್ಲ.",
+
+  "journalEntryNotFound": "ನಮೂದು ಕಂಡುಬಂದಿಲ್ಲ",
+  "journalEntryMayHaveBeenDeleted": "ಈ ಜರ್ನಲ್ ನಮೂದನ್ನು ಅಳಿಸಲಾಗಿರಬಹುದು.",
+  "goBack": "ಹಿಂದಕ್ಕೆ ಹೋಗಿ",
+  "journalEntryTitle": "ಜರ್ನಲ್ ನಮೂದು",
+
+  "moodStruggling": "ಸಂಕಷ್ಟದಲ್ಲಿದೆ",
+  "moodUnwell": "ಅಸ್ವಸ್ಥ",
+  "moodNeutral": "ತಟಸ್ಥ",
+
+  "whatHappenedToday": "ಇಂದು ಏನಾಯಿತು?",
+  "trigger": "ಪ್ರಚೋದಕ",
+  "whatHelped": "ಏನು ಸಹಾಯ ಮಾಡಿತು",
+  "whatIllTryNextTime": "ಮುಂದಿನ ಬಾರಿ ನಾನು ಪ್ರಯತ್ನಿಸುವುದು",
+  "journalPrivacyMessage": "ನಿಮ್ಮ ಪ್ರತಿಬಿಂಬ ಖಾಸಗಿಯಾಗಿದ್ದು ನಿಮ್ಮ ಜರ್ನಲ್‌ನಲ್ಲಿ ಉಳಿಸಲಾಗುತ್ತದೆ.",
+
+  "unlocked": "ಅನ್ಲಾಕ್ ಆಗಿದೆ",
+  "daysLeft": "{count} ದಿನಗಳು ಉಳಿದಿವೆ",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} ದಿನಗಳು",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "ಮೊದಲ\nಪ್ರತಿಬಿಂಬ",
+  "oneJournalEntry": "1 ಜರ್ನಲ್ ನಮೂದು",
+  "openBook": "ಪುಸ್ತಕ ತೆರೆಯಿರಿ",
+  "tenJournalEntries": "10 ಜರ್ನಲ್ ನಮೂದುಗಳು",
+  "dedicatedWriter": "ಸಮರ್ಪಿತ\nಬರಹಗಾರ",
+  "thirtyJournalEntries": "30 ಜರ್ನಲ್ ನಮೂದುಗಳು",
+  "firstConversation": "ಮೊದಲ\nಸಂಭಾಷಣೆ",
+  "oneAiCoachChat": "1 AI ಕೋಚ್ ಚಾಟ್",
+  "keepTalking": "ಮಾತನಾಡುತ್ತಿರಿ",
+  "fiveConversations": "5 ಸಂಭಾಷಣೆಗಳು",
+  "coachCompanion": "ಕೋಚ್\nಸಹಚರ",
+  "twentyConversations": "20 ಸಂಭಾಷಣೆಗಳು",
+  "checkInHabit": "ಚೆಕ್-ಇನ್\nಅಭ್ಯಾಸ",
+  "sevenCheckIns": "7 ಚೆಕ್-ಇನ್‌ಗಳು",
+  "consistencyPro": "ನಿರಂತರತೆಯ\nಪ್ರೊ",
+  "thirtyCheckIns": "30 ಚೆಕ್-ಇನ್‌ಗಳು",
+  "dedicatedJourney": "ಸಮರ್ಪಿತ\nಪ್ರಯಾಣ",
+  "hundredCheckIns": "100 ಚೆಕ್-ಇನ್‌ಗಳು",
+  "goalGetter": "ಗುರಿ ಸಾಧಕ",
+  "threeGoalsCompleted": "3 ಗುರಿಗಳು ಪೂರ್ಣಗೊಂಡಿವೆ",
+  "goalAchiever": "ಗುರಿ\nಸಾಧಕ",
+  "tenGoalsCompleted": "10 ಗುರಿಗಳು ಪೂರ್ಣಗೊಂಡಿವೆ",
+  "firstSavings": "ಮೊದಲ\nಉಳಿತಾಯ",
+  "fiveHundredSaved": "$500 ಉಳಿಸಲಾಗಿದೆ",
+  "smartSaver": "ಬುದ್ಧಿವಂತ ಉಳಿತಾಯಗಾರ",
+  "oneThousandSaved": "$1,000 ಉಳಿಸಲಾಗಿದೆ",
+  "bigSaver": "ದೊಡ್ಡ ಉಳಿತಾಯಗಾರ",
+  "fiveThousandSaved": "$5,000 ಉಳಿಸಲಾಗಿದೆ",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "ಮುಂದುವರಿಯಿರಿ — ನಿಮ್ಮ ಮೊದಲ ಸಾಧನೆ ನಿಮಗಾಗಿ ಕಾಯುತ್ತಿದೆ!",
+  "badgesAndMilestones": "ಬ್ಯಾಡ್ಜ್‌ಗಳು ಮತ್ತು ಸಾಧನೆಗಳು",
+  "yourMilestoneJourney": "ನಿಮ್ಮ ಸಾಧನೆಯ ಪ್ರಯಾಣ",
+  "milestonesAchieved": "{count} ಸಾಧನೆಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲಾಗಿದೆ.\nವೀಕ್ಷಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "ನಿಮ್ಮ ಪ್ರಯಾಣದಲ್ಲಿ ಒಟ್ಟು {total}ರಲ್ಲಿ {unlocked} ಸಾಧನೆಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿದ್ದೀರಿ.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "ಉಳಿದಿದೆ",
+  "complete": "ಪೂರ್ಣ",
+  "nextMilestone": "ಮುಂದಿನ ಸಾಧನೆ",
+  "percentThere": "{subtitle} · {percent}% ಪೂರ್ಣ",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "ಮದ್ಯರಹಿತ ಸಾಧನೆಗಳು",
+  "journeyBadges": "ಪ್ರಯಾಣದ ಬ್ಯಾಡ್ಜ್‌ಗಳು",
+  "bronze": "ಕಂಚು",
+  "silver": "ಬೆಳ್ಳಿ",
+  "gold": "ಚಿನ್ನ",
+  "platinum": "ಪ್ಲಾಟಿನಂ",
+  "diamond": "ವಜ್ರ",
+
+  "analyzingYourJourney": "ನಿಮ್ಮ ಪ್ರಯಾಣವನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+  "aiCreatingSanctuary": "ನಿಮಗಾಗಿ ವೈಯಕ್ತೀಕರಿಸಿದ ಚೇತರಿಕೆ ಸ್ಥಳವನ್ನು ನಮ್ಮ AI ರಚಿಸುತ್ತಿದೆ.",
+  "understandingHabits": "ಅಭ್ಯಾಸಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲಾಗುತ್ತಿದೆ...",
+  "calculatingBaseline": "ನಿಮ್ಮ ಮೂಲಮಟ್ಟವನ್ನು ಲೆಕ್ಕಹಾಕಲಾಗುತ್ತಿದೆ...",
+  "personalizingPlan": "ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ವೈಯಕ್ತೀಕರಿಸಲಾಗುತ್ತಿದೆ...",
+  "finalizingSanctuary": "ನಿಮ್ಮ ಚೇತರಿಕೆ ಸ್ಥಳವನ್ನು ಅಂತಿಮಗೊಳಿಸಲಾಗುತ್ತಿದೆ...",
+  "creatingYourPlan": "ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ...",
+  "personalizedPlanError": "ನಿಮ್ಮ ವೈಯಕ್ತೀಕರಿಸಿದ ಯೋಜನೆಯನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+  "retry": "ಮರುಪ್ರಯತ್ನಿಸಿ",
+
+  "breathingExercise": "ಉಸಿರಾಟದ ವ್ಯಾಯಾಮ",
+  "breathInhale": "ಉಸಿರೆಳೆದುಕೊಳ್ಳಿ",
+  "breathHold": "ಹಿಡಿದುಕೊಳ್ಳಿ",
+  "breathExhale": "ಉಸಿರು ಬಿಡಿ",
+  "breathDone": "ಮುಗಿದಿದೆ",
+  "breathGreatJob": "ಅದ್ಭುತ ಕೆಲಸ!",
+  "remaining": "ಉಳಿದಿದೆ",
+  "breathSessionsToday": "{count, plural, one{{count} ಸೆಷನ್ ಇಂದು} other{{count} ಸೆಷನ್‌ಗಳು ಇಂದು}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "ವ್ಯಾಯಾಮ ಮುಗಿಸಿ",
+  "done": "ಮುಗಿದಿದೆ",
+
+  "noCopingTipsYet": "ಇನ್ನೂ ಯಾವುದೇ ನಿಭಾಯಿಸುವ ಸಲಹೆಗಳಿಲ್ಲ",
+  "copingStrategiesWillAppear": "ನಿಮ್ಮ ಚೇತರಿಕೆ ಯೋಜನೆ ರಚನೆಯಾದ ನಂತರ ನಿಮ್ಮ ವೈಯಕ್ತೀಕರಿಸಿದ ನಿಭಾಯಿಸುವ ತಂತ್ರಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.",
+  "strategiesTailoredToTriggers": "ನಿಮ್ಮ ಪ್ರಚೋದಕಗಳಿಗೆ ಹೊಂದಿಕೊಂಡ ತಂತ್ರಗಳು",
+
+  "rideTheWave": "ಅಲೆಯನ್ನು ದಾಟಿ",
+  "cravingsPeakAndPass": "ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಗಳು\nಉಕ್ಕಿ ಬಂದು ಕಳೆದುಹೋಗುತ್ತವೆ",
+  "rideTheWaveDescription": "ಹೆಚ್ಚಿನ ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಗಳು 15 ನಿಮಿಷಗಳಲ್ಲಿ ಕಳೆದುಹೋಗುತ್ತವೆ. ನೀವು ಅದರಂತೆ ನಡೆದುಕೊಳ್ಳಬೇಕಾಗಿಲ್ಲ — ನಮ್ಮೊಂದಿಗೆ ಅದನ್ನು ದಾಟಿ.",
+  "stayWithIt": "ಮುಂದುವರಿಯಿರಿ",
+  "youMadeIt": "ನೀವು ಸಾಧಿಸಿದ್ದೀರಿ",
+  "readyWhenYouAre": "ನೀವು ಸಿದ್ಧರಾದಾಗ",
+  "rideItAgain": "ಮತ್ತೆ ದಾಟಿ",
+  "start15MinuteTimer": "15 ನಿಮಿಷಗಳ ಟೈಮರ್ ಪ್ರಾರಂಭಿಸಿ",
+  "rideTheWaveCompletedMessage": "ನೀವು ಅಲೆಯನ್ನು ದಾಟಿದ್ದೀರಿ. ಅದು ನಿಜವಾದ ಶಕ್ತಿ. 💪",
+
+  "myProgress": "ನನ್ನ ಪ್ರಗತಿ",
+  "weekLabel": "ವಾರ",
+  "monthLabel": "ತಿಂಗಳು",
+  "allLabel": "ಎಲ್ಲಾ",
+  "daysSoberStatLabel": "ಮದ್ಯರಹಿತ\nದಿನಗಳು",
+  "savedStatLabel": "ಉಳಿಸಲಾಗಿದೆ",
+  "avoidedStatLabel": "ತಪ್ಪಿಸಲಾಗಿದೆ",
+  "moodTrends": "ಮನಸ್ಥಿತಿಯ ಪ್ರವೃತ್ತಿಗಳು",
+  "cravingsPattern": "ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಯ ಮಾದರಿ",
+  "unlockLabel": "ಅನ್ಲಾಕ್",
+  "unlockFullStats": "ಸಂಪೂರ್ಣ ಅಂಕಿಅಂಶಗಳನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ",
+  "premiumStatsMessage": "ಮನಸ್ಥಿತಿಯ ಪ್ರವೃತ್ತಿಗಳು ಮತ್ತು ಕುಡಿಯಬೇಕೆಂಬ ಆಸೆಯ ಮಾದರಿಗಳು ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳಾಗಿವೆ. ನಿಮ್ಮ ಸಂಪೂರ್ಣ ಅಂಕಿಅಂಶಗಳನ್ನು ನೋಡಲು ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ.",
+  "healthMilestonesWillAppear": "ನಿಮ್ಮ ಆರೋಗ್ಯದ ಸಾಧನೆಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ.",
+  "healthMilestones": "ಆರೋಗ್ಯದ ಸಾಧನೆಗಳು",
+  "dayNumber": "{day}ನೇ ದಿನ",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "ಮದ್ಯರಹಿತ",
+  "slipLabel": "ಮತ್ತೆ ಕುಡಿದದ್ದು",
+  "noDataLabel": "ಯಾವುದೇ ಡೇಟಾ ಇಲ್ಲ",
+
+  "milestone24Hours": "24 ಗಂಟೆಗಳು",
+  "milestoneOneWeek": "ಒಂದು ವಾರ",
+  "milestoneOneMonth": "ಒಂದು ತಿಂಗಳು",
+  "milestoneThreeMonths": "ಮೂರು ತಿಂಗಳು",
+  "milestoneSixMonths": "ಆರು ತಿಂಗಳು",
+  "milestoneOneYear": "ಒಂದು ವರ್ಷ",
+  "milestoneDayCount": "{day}ನೇ ದಿನದ ಸಾಧನೆ",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "ಗೌಪ್ಯತಾ ನೀತಿ"
+}

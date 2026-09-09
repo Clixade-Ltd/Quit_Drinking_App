@@ -9,56 +9,57 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get skip => 'Skip';
+  String get skip => 'Atla';
 
   @override
-  String get continueButton => 'Continue';
+  String get continueButton => 'Devam Et';
 
   @override
-  String get getStarted => 'Get Started';
+  String get getStarted => 'Başla';
 
   @override
-  String get onboardingTitle1 => 'Take Control of Your Life';
+  String get onboardingTitle1 => 'Hayatının Kontrolünü Eline Al';
 
   @override
   String get onboardingSubtitle1 =>
-      'Track your journey, celebrate every achievement, and become healthier one day at a time.';
+      'Yolculuğunu takip et, her başarını kutla ve her geçen gün daha sağlıklı biri ol.';
 
   @override
-  String get onboardingTitle2 => 'Your AI Recovery Companion';
+  String get onboardingTitle2 => 'Yapay Zeka Destekli İyileşme Yoldaşın';
 
   @override
   String get onboardingSubtitle2 =>
-      'Receive personalized guidance, healthy habits, motivation reminders, and progress reports designed around your journey.';
+      'Yolculuğuna özel kişiselleştirilmiş rehberlik, sağlıklı alışkanlıklar, motivasyon hatırlatıcıları ve gelişim raporları al.';
 
   @override
-  String get goodMorning => 'Good Morning';
+  String get goodMorning => 'Günaydın';
 
   @override
-  String get goodAfternoon => 'Good Afternoon';
+  String get goodAfternoon => 'Tünaydın';
 
   @override
-  String get goodEvening => 'Good Evening';
+  String get goodEvening => 'İyi Akşamlar';
 
   @override
-  String get goodNight => 'Good Night';
+  String get goodNight => 'İyi Geceler';
 
   @override
-  String get embracingClarity => 'Embracing clarity, one day at a time.';
+  String get embracingClarity =>
+      'Her gün, adım adım zihinsel berraklığı kucaklıyoruz.';
 
   @override
-  String get streakLabel => 'STREAK';
+  String get streakLabel => 'SERİ';
 
   @override
-  String get goalLabel => 'Goal';
+  String get goalLabel => 'Hedef';
 
   @override
   String daysStreak(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Days',
-      one: '$count Day',
+      other: '$count Gün',
+      one: '$count Gün',
     );
     return '$_temp0';
   }
@@ -67,554 +68,559 @@ class AppLocalizationsTr extends AppLocalizations {
   String get premiumPlan => 'Premium Plan';
 
   @override
-  String get premiumPlanSubtitle => 'Unlock your full recovery experience';
+  String get premiumPlanSubtitle =>
+      'Eksiksiz iyileşme deneyiminin kilidini açın';
 
   @override
-  String get accountAndSupport => 'ACCOUNT & SUPPORT';
+  String get accountAndSupport => 'HESAP VE DESTEK';
 
   @override
   String get privacyPolicy => 'Gizlilik Politikası';
 
   @override
   String get privacyPolicySubtitle =>
-      'Manage data sharing and account security';
+      'Veri paylaşımını ve hesap güvenliğini yönetin';
 
   @override
   String get termsOfService => 'Hizmet Şartları';
 
   @override
-  String get termsOfServiceSubtitle => 'FAQs, contact us, and resources';
+  String get termsOfServiceSubtitle => 'SSS, bize ulaşın ve kaynaklar';
 
   @override
   String get shareApp => 'Uygulamayı Paylaş';
 
   @override
-  String get shareAppSubtitle => 'Share app with your friends';
+  String get shareAppSubtitle => 'Uygulamayı arkadaşlarınızla paylaşın';
 
   @override
-  String get resetData => 'Reset Data';
+  String get resetData => 'Verileri Sıfırla';
 
   @override
-  String get resetDataSubtitle => 'Erase everything saved on this device';
+  String get resetDataSubtitle => 'Bu cihazda kayıtlı her şeyi silin';
 
   @override
-  String get resetAllDataTitle => 'Reset all data?';
+  String get resetAllDataTitle => 'Tüm veriler sıfırlansın mı?';
 
   @override
   String get resetAllDataMessage =>
-      'This clears everything saved on this device — profile, journal entries, and progress — and cannot be undone.';
+      'Bu işlem cihazdaki profil, günlük girdileri ve ilerleme dahil her şeyi siler ve geri alınamaz.';
 
   @override
-  String get cancel => 'Cancel';
+  String get cancel => 'İptal';
 
   @override
-  String get reset => 'Reset';
+  String get reset => 'Sıfırla';
 
   @override
-  String get chooseFromGallery => 'Choose from Gallery';
+  String get chooseFromGallery => 'Galeriden Seç';
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'Fotoğraf Çek';
 
   @override
-  String get removePhoto => 'Remove Photo';
+  String get removePhoto => 'Fotoğrafı Kaldır';
 
   @override
   String couldNotUpdatePhoto(String error) {
-    return 'Could not update photo: $error';
+    return 'Fotoğraf güncellenemedi: $error';
   }
 
   @override
   String couldNotRemovePhoto(String error) {
-    return 'Could not remove photo: $error';
+    return 'Fotoğraf kaldırılamadı: $error';
   }
 
   @override
   String get photoTooLarge =>
-      'That photo is too large even after compression — please try a different one.';
+      'Bu fotoğraf sıkıştırıldıktan sonra bile çok büyük — lütfen başka bir fotoğraf deneyin.';
 
   @override
-  String get unableToLoadProfile => 'Unable to load your profile';
+  String get unableToLoadProfile => 'Profiliniz yüklenemedi';
 
   @override
-  String get pleaseTryAgain => 'Please try again.';
+  String get pleaseTryAgain => 'Lütfen tekrar deneyin.';
 
   @override
-  String get tryAgain => 'Try Again';
+  String get tryAgain => 'Tekrar Deneyin';
 
   @override
-  String get profileNotFound => 'Profile not found';
+  String get profileNotFound => 'Profil bulunamadı';
 
   @override
-  String get refresh => 'Refresh';
+  String get refresh => 'Yenile';
 
   @override
-  String get noProfileDataFound => 'No profile data found on this device yet.';
+  String get noProfileDataFound => 'Bu cihazda henüz profil verisi bulunamadı.';
 
   @override
   String couldNotResetData(String error) {
-    return 'Could not reset data: $error';
+    return 'Veriler sıfırlanamadı: $error';
   }
 
   @override
-  String get navHome => 'Home';
+  String get navHome => 'Ana Sayfa';
 
   @override
-  String get navStats => 'Stats';
+  String get navStats => 'İstatistikler';
 
   @override
-  String get navJournal => 'Journal';
+  String get navJournal => 'Günlük';
 
   @override
-  String get navBadges => 'Badges';
+  String get navBadges => 'Rozetler';
 
   @override
-  String get navProfile => 'Profile';
+  String get navProfile => 'Profil';
 
   @override
   String featureComingSoon(String feature) {
-    return '$feature will be available soon.';
+    return '$feature özelliği yakında kullanıma sunulacak.';
   }
 
   @override
-  String get appWordmark => 'WELLNESS';
+  String get appWordmark => 'SAĞLIK & YAŞAM';
 
   @override
-  String get appTitle => 'Sober Flow';
+  String get appTitle => 'İçkiyi Bırak';
 
   @override
-  String get splashSubtitle =>
-      'Take the first step towards an\nAlcohol free life';
+  String get splashSubtitle => 'Alkolsuz bir hayata doğru\nilk adımı atın';
 
   @override
-  String get preparingJourney => 'Preparing your\njourney';
+  String get preparingJourney => 'Yolculuğunuz\nhazırlanıyor';
 
   @override
-  String get taskMorningMeditation => 'Morning Meditation (10m)';
+  String get taskMorningMeditation => 'Sabah Meditasyonu (10dk)';
 
   @override
-  String get taskReadChapter => 'Read Chapter 4 of \"The Sober Diaries\"';
+  String get taskReadChapter =>
+      '\"The Sober Diaries\" Kitabından 4. Bölümü Oku';
 
   @override
-  String get taskEveningJournal => 'Evening Gratitude Journal';
+  String get taskEveningJournal => 'Akşam Minnet Günlüğü';
 
   @override
-  String get close => 'Close';
+  String get close => 'Kapat';
 
   @override
-  String get youAreDoingGreat => 'You\'re doing great!';
+  String get youAreDoingGreat => 'Harika gidiyorsun!';
 
   @override
-  String get shareMilestone => 'Share Milestone';
+  String get shareMilestone => 'Kilometre Taşını Paylaş';
 
   @override
   String shareMilestoneMessage(int days) {
-    return 'I\'m on day $days of my recovery journey! 💪';
+    return 'İyileşme yolculuğumun $days. günündeyim! 💪';
   }
 
   @override
-  String get shareMilestoneSubject => 'My recovery milestone';
+  String get shareMilestoneSubject => 'İyileşme kilometre taşım';
 
   @override
-  String get weeklyReportReadyTitle => 'Your weekly report is ready';
+  String get weeklyReportReadyTitle => 'Haftalık raporunuz hazır';
 
   @override
-  String get weeklyReportReadySubtitle => 'Tap to see how your week went';
+  String get weeklyReportReadySubtitle =>
+      'Haftanızın nasıl geçtiğini görmek için dokunun';
 
   @override
-  String get howAreYouFeeling => 'How are you feeling?';
+  String get howAreYouFeeling => 'Nasıl hissediyorsun?';
 
   @override
-  String get moodTough => 'Tough';
+  String get moodTough => 'Zor';
 
   @override
-  String get moodOkay => 'Okay';
+  String get moodOkay => 'İdare Eder';
 
   @override
-  String get moodGood => 'Good';
+  String get moodGood => 'İyi';
 
   @override
-  String get moneySaved => 'Money Saved';
+  String get moneySaved => 'Tasarruf Edilen Para';
 
   @override
-  String get caloriesSaved => 'Calories Saved';
+  String get caloriesSaved => 'Alınmayan Kalori';
 
   @override
-  String get healthScore => 'Health Score';
+  String get healthScore => 'Sağlık Puanı';
 
   @override
-  String get drinksAvoided => 'Drinks Avoided';
+  String get drinksAvoided => 'İçilmeyen İçecek';
 
   @override
-  String get estimated => 'Estimated';
+  String get estimated => 'Tahmini';
 
   @override
-  String get aiGenerated => 'AI generated';
+  String get aiGenerated => 'Yapay Zeka Tarafından Oluşturuldu';
 
   @override
-  String get daysCapsLabel => 'DAYS';
+  String get daysCapsLabel => 'GÜN';
 
   @override
-  String get todaysMotivation => 'Today\'s Motivation';
+  String get todaysMotivation => 'Günün Motivasyonu';
 
   @override
   String get defaultMotivationQuote =>
-      'You\'ve successfully maintained your commitment. Keep riding the wave of positive change.';
+      'Kararlılığınızı başarıyla sürdürdünüz. Pozitif değişim rüzgarını arkanıza almaya devam edin.';
 
   @override
-  String get talkToCoach => 'Talk to coach';
+  String get talkToCoach => 'Koçla Konuş';
 
   @override
-  String get havingACraving => 'I\'m Having a Craving';
+  String get havingACraving => 'Canım Çok İstiyor';
 
   @override
-  String get unlockWeeklyReportsTitle => 'Unlock weekly reports';
+  String get unlockWeeklyReportsTitle => 'Haftalık Raporların Kilidini Açın';
 
   @override
   String get unlockWeeklyReportsMessage =>
-      'See your sober days, mood trends, and personalized AI feedback every week. Upgrade to Premium to unlock.';
+      'Alkol almadığınız günleri, duygu durumu trendlerinizi ve kişiselleştirilmiş YZ geri bildirimlerini her hafta görün. Kilidi açmak için Premium\'a geçin.';
 
   @override
-  String get maybeLater => 'Maybe later';
+  String get maybeLater => 'Belki Daha Sonra';
 
   @override
-  String get upgrade => 'Upgrade';
+  String get upgrade => 'Yükselt';
 
   @override
-  String get weeklyReportTitle => 'Weekly Report';
+  String get weeklyReportTitle => 'Haftalık Rapor';
 
   @override
   String get weeklyReportsPremiumTitle =>
-      'Weekly reports are a Premium feature';
+      'Haftalık raporlar bir Premium özelliğidir';
 
   @override
   String get weeklyReportsPremiumMessage =>
-      'See your sober days, mood trends, cravings, and personalized AI feedback every week.';
+      'Temiz kaldığınız günleri, duygu durumu eğilimlerini, istek krizlerini ve kişiselleştirilmiş YZ geri bildirimlerini her hafta görün.';
 
   @override
-  String get upgradeToPremium => 'Upgrade to Premium';
+  String get upgradeToPremium => 'Premium\'a Yükselt';
 
   @override
-  String get couldNotGenerateReport =>
-      'Couldn\'t generate your report right now.';
+  String get couldNotGenerateReport => 'Şu anda raporunuz oluşturulamadı.';
 
   @override
-  String get tryAgainLower => 'Try again';
+  String get tryAgainLower => 'Tekrar deneyin';
 
   @override
-  String get statSoberDays => 'Sober days';
+  String get statSoberDays => 'Temiz günler';
 
   @override
-  String get statAvgMood => 'Avg mood';
+  String get statAvgMood => 'Ort. duygu durumu';
 
   @override
-  String get statCravings => 'Cravings';
+  String get statCravings => 'İstek krizleri';
 
   @override
-  String get statMoneySaved => 'Money saved';
+  String get statMoneySaved => 'Tasarruf edilen para';
 
   @override
-  String get coachFeedback => 'Coach feedback';
+  String get coachFeedback => 'Koç geri bildirimi';
 
   @override
-  String get journalInsights => 'Journal insights';
+  String get journalInsights => 'Günlük analizleri';
 
   @override
-  String get next => 'Next';
+  String get next => 'İleri';
 
   @override
-  String get question1Title => 'What is your goal';
+  String get question1Title => 'Hedefiniz nedir?';
 
   @override
-  String get question1Subtitle => 'Choose the goal that matter\nmost to you';
+  String get question1Subtitle => 'Sizin için en önemli olan\nhedefi seçin';
 
   @override
-  String get goalQuitCompletely => 'Quit Completely';
+  String get goalQuitCompletely => 'Tamamen Bırakmak';
 
   @override
-  String get goalReduceDrinking => 'Reduce drinking';
+  String get goalReduceDrinking => 'Alkolü Azaltmak';
 
   @override
-  String get goalTakeABreak => 'Take a break';
+  String get goalTakeABreak => 'Bir Süre Ara Vermek';
 
   @override
-  String get goalBuildHealthierHabits => 'Build healthier habits';
+  String get goalBuildHealthierHabits => 'Daha Sağlıklı Alışkanlıklar Edinmek';
 
   @override
-  String get question3Title => 'Tell us about your\nroutine';
+  String get question3Title => 'Bize rutininizden\nbahsedin';
 
   @override
-  String get drinksPerWeek => 'Drinks per week';
+  String get drinksPerWeek => 'Haftalık içki sayısı';
 
   @override
-  String get moneySpentPerWeek => 'Money spent per week';
+  String get moneySpentPerWeek => 'Haftalık harcanan para';
 
   @override
-  String get drinkingLevel => 'Drinking level';
+  String get drinkingLevel => 'Alkol tüketim seviyesi';
 
   @override
-  String get triggersLabel => 'Triggers';
+  String get triggersLabel => 'Tetikleyiciler';
 
   @override
-  String get levelSocial => 'Social';
+  String get levelSocial => 'Sosyal';
 
   @override
-  String get levelRegular => 'Regular';
+  String get levelRegular => 'Düzenli';
 
   @override
-  String get levelHeavy => 'Heavy';
+  String get levelHeavy => 'Yoğun';
 
   @override
-  String get levelDependent => 'Dependent';
+  String get levelDependent => 'Bağımlı';
 
   @override
-  String get triggerStress => 'Stress';
+  String get triggerStress => 'Stres';
 
   @override
-  String get triggerLoneliness => 'Loneliness';
+  String get triggerLoneliness => 'Yalnızlık';
 
   @override
-  String get triggerHabit => 'Habit';
+  String get triggerHabit => 'Alışkanlık';
 
   @override
-  String get triggerSadness => 'Sadness';
+  String get triggerSadness => 'Üzüntü';
 
   @override
-  String get triggerAnger => 'Anger';
+  String get triggerAnger => 'Öfke';
 
   @override
-  String get triggerBoredom => 'Boredom';
+  String get triggerBoredom => 'Can Sıkıntısı';
 
   @override
-  String get triggerSocialPressure => 'Social pressure';
+  String get triggerSocialPressure => 'Sosyal Baskı';
 
   @override
-  String get triggerCelebration => 'Celebration';
+  String get triggerCelebration => 'Kutlama';
 
   @override
-  String get triggerSleepProblems => 'Sleep problems';
+  String get triggerSleepProblems => 'Uyku Sorunları';
 
   @override
-  String get triggerWorkPressure => 'Work pressure';
+  String get triggerWorkPressure => 'İş Baskısı';
 
   @override
-  String get question4Title => 'Why do you want to change?';
+  String get question4Title => 'Neden değişmek istiyorsunuz?';
 
   @override
-  String get question4Subtitle => 'Your reason will help to motivate you.';
+  String get question4Subtitle =>
+      'Nedeniniz, motivasyonunuzu korumanıza yardımcı olacak.';
 
   @override
-  String get reasonImproveHealth => 'Improve My Health';
+  String get reasonImproveHealth => 'Sağlığımı İyileştirmek';
 
   @override
-  String get reasonSaveMoney => 'Save Money';
+  String get reasonSaveMoney => 'Para Tasarrufu Yapmak';
 
   @override
-  String get reasonFamily => 'Family';
+  String get reasonFamily => 'Ailem İçin';
 
   @override
-  String get reasonBetterSleep => 'Better Sleep';
+  String get reasonBetterSleep => 'Daha İyi Uyumak';
 
   @override
-  String get reasonMentalClarity => 'Mental Clarity';
+  String get reasonMentalClarity => 'Zihinsel Berraklık';
 
   @override
-  String get reasonFitness => 'Fitness';
+  String get reasonFitness => 'Formda Kalmak';
 
   @override
-  String get reasonSelfRespect => 'Self Respect';
+  String get reasonSelfRespect => 'Öz Saygı';
 
   @override
-  String get reasonCareer => 'Career';
+  String get reasonCareer => 'Kariyer';
 
   @override
-  String get milestoneUnlockedLabel => 'MILESTONE UNLOCKED';
+  String get milestoneUnlockedLabel => 'KİLOMETRE TAŞI AÇILDI';
 
   @override
   String incredibleNamePrefix(String name) {
-    return 'Incredible, $name!';
+    return 'İnanılmazsın, $name!';
   }
 
   @override
   String amountSavedLabel(String amount) {
-    return '$amount saved';
+    return '$amount biriktirildi';
   }
 
   @override
   String drinksAvoidedLabel(String count) {
-    return '$count avoided';
+    return '$count adet içilmedi';
   }
 
   @override
-  String get shareMyMilestone => 'Share my milestone';
+  String get shareMyMilestone => 'Kilometre taşımı paylaş';
 
   @override
   String get milestoneImageShareError =>
-      'Couldn\'t create the milestone image. Please try again.';
+      'Kilometre taşı görseli oluşturulamadı. Lütfen tekrar deneyin.';
 
   @override
-  String get dailyCheckInTitle => 'Daily Check-in';
+  String get dailyCheckInTitle => 'Günlük Kontrol';
 
   @override
-  String get howAreYouFeelingToday => 'How are you feeling today?';
+  String get howAreYouFeelingToday => 'Bugün nasıl hissediyorsun?';
 
   @override
   String get honestAnswerHelp =>
-      'Your honest answer helps us support you better';
+      'Dürüst yanıtınız size daha iyi destek olmamızı sağlar';
 
   @override
-  String get didYouDrinkToday => 'Did you drink today?';
+  String get didYouDrinkToday => 'Bugün alkol aldın mı?';
 
   @override
-  String get noLabel => 'No';
+  String get noLabel => 'Hayır';
 
   @override
-  String get yesLabel => 'Yes';
+  String get yesLabel => 'Evet';
 
   @override
-  String get cravingLevelNow => 'Craving level right now?';
+  String get cravingLevelNow => 'Şu anki istek seviyen?';
 
   @override
-  String get anythingOnMind => 'Anything on your mind?';
+  String get anythingOnMind => 'Aklına takılan bir şey var mı?';
 
   @override
-  String get optionalLabel => '(optional)';
+  String get optionalLabel => '(isteğe bağlı)';
 
   @override
-  String get dailyNoteHint => 'Write about your day, triggers, wins...';
+  String get dailyNoteHint =>
+      'Gününüz, tetikleyicileriniz veya kazanımlarınız hakkında yazın...';
 
   @override
-  String get alreadyCheckedInToday => 'Already checked in today';
+  String get alreadyCheckedInToday => 'Bugün zaten kontrol yapıldı';
 
   @override
-  String get saveCheckIn => 'Save check-in';
+  String get saveCheckIn => 'Kontrolü Kaydet';
 
   @override
   String get checkInsHelpTrack =>
-      'Check-ins help track your progress over time';
+      'Günlük kontroller zaman içindeki ilerlemenizi takip etmeye yardımcı olur';
 
   @override
   String get alreadyCompletedTodayCheckIn =>
-      'You have already completed today\'s check-in.';
+      'Bugünkü kontrolünüzü zaten tamamladınız.';
 
   @override
   String get pleaseAnswerBothQuestions =>
-      'Please answer both questions above first';
+      'Lütfen önce yukarıdaki her iki soruyu da yanıtlayın';
 
   @override
-  String get checkInSaved => 'Check-in saved';
+  String get checkInSaved => 'Kontrol kaydedildi';
 
   @override
-  String get cravingNone => 'None';
+  String get cravingNone => 'Yok';
 
   @override
-  String get cravingLow => 'Low';
+  String get cravingLow => 'Düşük';
 
   @override
-  String get cravingMedium => 'Medium';
+  String get cravingMedium => 'Orta';
 
   @override
-  String get cravingStrong => 'Strong';
+  String get cravingStrong => 'Güçlü';
 
   @override
-  String get moodBad => 'Bad';
+  String get moodBad => 'Kötü';
 
   @override
-  String get moodLow => 'Low';
+  String get moodLow => 'Düşük';
 
   @override
-  String get moodGreat => 'Great';
+  String get moodGreat => 'Harika';
 
   @override
-  String get sosSupportTitle => 'SOS support';
+  String get sosSupportTitle => 'SOS Desteği';
 
   @override
   String notAloneMessage(String name) {
-    return 'You\'re not alone, $name';
+    return 'Yalnız değilsin, $name';
   }
 
   @override
   String get cravingsPassMessage =>
-      'Cravings pass. Pick something below to help you through this moment.';
+      'İstek krizleri geçicidir. Bu anı atlatmanıza yardımcı olması için aşağıdan bir yöntem seçin.';
 
   @override
-  String get breathingExercise => 'Breathing Exercise';
+  String get breathingExercise => 'Nefes egzersizi';
 
   @override
-  String get breathingExerciseSubtitle => 'Guided 4-7-8 technique, 2 minutes';
+  String get breathingExerciseSubtitle => 'Rehberli 4-7-8 tekniği, 2 dakika';
 
   @override
-  String get rideTheWave => 'Ride the Wave';
+  String get rideTheWave => 'Dalgayı yakala';
 
   @override
-  String get rideTheWaveSubtitle => '15 min timer — cravings always pass';
+  String get rideTheWaveSubtitle =>
+      '15 dakikalık zamanlayıcı — istekler her zaman geçer';
 
   @override
-  String get copingTips => 'Coping tips';
+  String get copingTips => 'Başa çıkma ipuçları';
 
   @override
-  String get copingTipsSubtitle => 'Personalized strategies for your triggers';
+  String get copingTipsSubtitle =>
+      'Tetikleyicilerinize özel kişiselleştirilmiş stratejiler';
 
   @override
-  String get talkToAiCoach => 'Talk to AI coach';
+  String get talkToAiCoach => 'YZ Koç ile konuş';
 
   @override
-  String get talkToAiCoachSubtitle => 'Chat with your recovery companion';
+  String get talkToAiCoachSubtitle => 'İyileşme yoldaşınızla sohbet edin';
 
   @override
-  String get callSomeone => 'Call someone';
+  String get callSomeone => 'Birini ara';
 
   @override
-  String get callSomeoneSubtitle => 'Reach your trusted contact';
+  String get callSomeoneSubtitle => 'Güvendiğiniz bir kişiye ulaşın';
 
   @override
   String get contactsPermissionNeeded =>
-      'Contacts permission is needed to call a contact.';
+      'Bir kişiyi aramak için kişiler erişim izni gereklidir.';
 
   @override
-  String get beatenCravingsPrefix => 'You\'ve beaten cravings ';
+  String get beatenCravingsPrefix => 'Daha önce tam ';
 
   @override
   String beatenCravingsCount(int count) {
-    return '$count times';
+    return '$count kez';
   }
 
   @override
-  String get beatenCravingsSuffix => ' before. You can do it again.';
+  String get beatenCravingsSuffix => ' bu isteği yendin. Yine başarabilirsin.';
 
   @override
-  String get tellUsAboutYourself => 'Tell Us About Yourself';
+  String get tellUsAboutYourself => 'Kendinizden Bahsedin';
 
   @override
   String get detailsSubtitle =>
-      'This information helps us personalize your recovery journey and provide accurate insights.';
+      'Bu bilgiler iyileşme yolculuğunuzu kişiselleştirmemize ve doğru analizler sunmamıza yardımcı olur.';
 
   @override
-  String get nameLabel => 'Name';
+  String get nameLabel => 'İsim';
 
   @override
-  String get nameHint => 'e.g., Alex Rivers';
+  String get nameHint => 'ör. Ahmet Yılmaz';
 
   @override
-  String get ageLabel => 'Age';
+  String get ageLabel => 'Yaş';
 
   @override
-  String get ageHint => 'e.g., 32';
+  String get ageHint => 'ör. 32';
 
   @override
-  String get sexAssignedAtBirth => 'Sex assigned at birth';
+  String get sexAssignedAtBirth => 'Doğumda belirlenen cinsiyet';
 
   @override
-  String get sexFemale => 'Female';
+  String get sexFemale => 'Kadın';
 
   @override
-  String get sexMale => 'Male';
+  String get sexMale => 'Erkek';
 
   @override
-  String get heightLabel => 'Height';
+  String get heightLabel => 'Boy';
 
   @override
-  String get weightLabel => 'Weight';
+  String get weightLabel => 'Kilo';
 
   @override
   String get heightHint => '170';
@@ -623,697 +629,705 @@ class AppLocalizationsTr extends AppLocalizations {
   String get weightHint => '70';
 
   @override
-  String get dailyLimitReachedTitle => 'Daily limit reached';
+  String get dailyLimitReachedTitle => 'Günlük sınıra ulaşıldı';
 
   @override
   String dailyLimitReachedMessage(int limit) {
-    return 'You\'ve used all $limit free messages today. Upgrade to Premium for unlimited coach chat.';
+    return 'Bugünkü tüm $limit ücretsiz mesaj hakkınızı kullandınız. Sınırsız koç sohbeti için Premium\'a yükseltin.';
   }
 
   @override
   String get coachConnectError =>
-      'I couldn\'t connect right now. Please try again in a moment.';
+      'Şu anda bağlantı kurulamadı. Lütfen az sonra tekrar deneyin.';
 
   @override
-  String get clearConversationTitle => 'Clear conversation?';
+  String get clearConversationTitle => 'Sohbet temizlensin mi?';
 
   @override
   String get clearConversationMessage =>
-      'This will permanently remove your coach chat history.';
+      'Bu işlem koç sohbet geçmişinizi kalıcı olarak silecektir.';
 
   @override
-  String get clearLabel => 'Clear';
+  String get clearLabel => 'Temizle';
 
   @override
-  String get recoveryCoachTitle => 'Recovery coach';
+  String get recoveryCoachTitle => 'İyileşme Koçu';
 
   @override
-  String get onlineLabel => 'Online';
+  String get onlineLabel => 'Çevrim içi';
 
   @override
-  String get clearConversationMenuItem => 'Clear conversation';
+  String get clearConversationMenuItem => 'Sohbeti temizle';
 
   @override
   String chatGreeting(String name) {
-    return 'Hi $name 👋';
+    return 'Merhaba $name 👋';
   }
 
   @override
   String chatDaysIntro(int days) {
-    return 'You\'re on day $days of your journey. I\'m here whenever you want to talk things through.';
+    return 'Yolculuğunun $days. günündesin. Konuşmak istediğin her an buradayım.';
   }
 
   @override
-  String get quickPromptsLabel => 'QUICK PROMPTS';
+  String get quickPromptsLabel => 'HIZLI İPUÇLARI';
 
   @override
-  String get promptCravingLabel => 'Having a craving';
+  String get promptCravingLabel => 'İstek krizim var';
 
   @override
-  String get promptCravingSubtitle => 'Get grounded, fast';
+  String get promptCravingSubtitle => 'Hızlıca sakinleş';
 
   @override
-  String get promptMotivationLabel => 'Need motivation';
+  String get promptMotivationLabel => 'Motivasyona ihtiyacım var';
 
   @override
-  String get promptMotivationSubtitle => 'A boost when it\'s tough';
+  String get promptMotivationSubtitle => 'Zor anlarda bir destek';
 
   @override
-  String get promptSocialLabel => 'Social situation';
+  String get promptSocialLabel => 'Sosyal ortam';
 
   @override
-  String get promptSocialSubtitle => 'Navigate a gathering';
+  String get promptSocialSubtitle => 'Bir daveti yönet';
 
   @override
-  String get promptSlippedLabel => 'I slipped';
+  String get promptSlippedLabel => 'Kayıp alkol aldım';
 
   @override
-  String get promptSlippedSubtitle => 'No judgment, just support';
+  String get promptSlippedSubtitle => 'Yargılama yok, sadece destek';
 
   @override
-  String get typeMessageHint => 'Type a message...';
+  String get typeMessageHint => 'Bir mesaj yazın...';
 
   @override
-  String get editProfileTitle => 'Edit Profile';
+  String get editProfileTitle => 'Profili Düzenle';
 
   @override
   String couldNotSaveProfile(String error) {
-    return 'Could not save profile: $error';
+    return 'Profil kaydedilemedi: $error';
   }
 
   @override
-  String get heightCmLabel => 'Height (cm)';
+  String get heightCmLabel => 'Boy (cm)';
 
   @override
-  String get weightKgLabel => 'Weight (kg)';
+  String get weightKgLabel => 'Kilo (kg)';
 
   @override
-  String get saveChangesLabel => 'Save Changes';
+  String get saveChangesLabel => 'Değişiklikleri Kaydet';
 
   @override
   String get premiumBadgeLabel => 'PREMIUM';
 
   @override
-  String get featureAdvancedInsights => 'Advanced Insights & Analytics';
+  String get featureAdvancedInsights => 'Gelişmiş Analizler ve İstatistikler';
 
   @override
-  String get featureUnlimitedJournal => 'Unlimited Journal Entries';
+  String get featureUnlimitedJournal => 'Sınırsız Günlük Girdisi';
 
   @override
-  String get featureUnlimitedChat => 'Unlimited Chat with AI Coach';
+  String get featureUnlimitedChat => 'YZ Koç ile Sınırsız Sohbet';
 
   @override
-  String get featureCommunityGroups => 'Exclusive Community Groups';
+  String get featureCommunityGroups => 'Özel Topluluk Grupları';
 
   @override
-  String get featurePrioritySupport => 'Priority Expert Support';
+  String get featurePrioritySupport => 'Öncelikli Uzman Desteği';
 
   @override
-  String get featureThemePacks => 'Custom Theme Packs';
+  String get featureThemePacks => 'Özel Tema Paketleri';
 
   @override
-  String get featureDataExport => 'Data Export';
+  String get featureDataExport => 'Veri Dışa Aktarma';
 
   @override
-  String get featureAdFree => 'Ad-Free Experience';
+  String get featureAdFree => 'Reklamsız Deneyim';
 
   @override
-  String get premiumMemberTitle => 'You\'re a Premium Member';
+  String get premiumMemberTitle => 'Premium Üyesiniz';
 
   @override
-  String get unlockFullRecoveryTitle => 'Unlock Your Full Recovery\nExperience';
+  String get unlockFullRecoveryTitle =>
+      'Eksiksiz İyileşme Deneyiminin\nKilidini Açın';
 
   @override
   String get premiumMemberSubtitle =>
-      'Thanks for supporting your recovery journey — every premium feature below is unlocked.';
+      'İyileşme yolculuğunuzu desteklediğiniz için teşekkürler — aşağıdaki tüm premium özelliklerin kilidi açıldı.';
 
   @override
   String get premiumJoinSubtitle =>
-      'Join a community of thousands who are\naccelerating their healing journey with our\npremium tools and personalized support.';
+      'Premium araçlarımız ve kişiselleştirilmiş desteğimizle iyileşme süreçlerini hızlandıran binlerce kişilik topluluğa katılın.';
 
   @override
-  String get monthlyPlanLabel => 'Monthly';
+  String get monthlyPlanLabel => 'Aylık';
 
   @override
-  String get perMonthSuffix => '/mo';
+  String get perMonthSuffix => '/ay';
 
   @override
-  String get cancelAnytimeLabel => 'Cancel anytime';
+  String get cancelAnytimeLabel => 'İstediğiniz zaman iptal edin';
 
   @override
-  String get yearlyPlanLabel => 'Yearly';
+  String get yearlyPlanLabel => 'Yıllık';
 
   @override
   String billedAnnuallyLabel(String amount) {
-    return 'Billed annually at $amount';
+    return 'Yıllık $amount olarak faturalandırılır';
   }
 
   @override
-  String get bestValueLabel => 'Best Value';
+  String get bestValueLabel => 'En Avantajlı';
 
   @override
-  String get alreadyPremiumLabel => 'You\'re Premium ✓';
+  String get alreadyPremiumLabel => 'Premium Üyesiniz ✓';
 
   @override
-  String get startPremiumLabel => 'Start Premium';
+  String get startPremiumLabel => 'Premium\'u Başlat';
 
   @override
   String get manageSubscriptionLabel =>
-      'Manage or cancel from your device\'s subscription settings.';
+      'Cihazınızın abonelik ayarlarından yönetin veya iptal edin.';
 
   @override
-  String get noCommitmentLabel => 'No commitment. Cancel anytime.';
+  String get noCommitmentLabel => 'Taahhüt yok. İstediğiniz zaman iptal edin.';
 
   @override
-  String get continueFreePlanLabel => 'Continue with Free Plan';
+  String get continueFreePlanLabel => 'Ücretsiz Plan ile Devam Et';
 
   @override
-  String get backToHomeLabel => 'Back to Home';
+  String get backToHomeLabel => 'Ana Sayfaya Dön';
 
   @override
-  String get cancelPremiumLabel => 'Cancel Premium';
+  String get cancelPremiumLabel => 'Premium\'u İptal Et';
 
   @override
-  String get cancelPremiumTitle => 'Cancel Premium?';
+  String get cancelPremiumTitle => 'Premium iptal edilsin mi?';
 
   @override
   String get cancelPremiumMessage =>
-      'You\'ll lose access to unlimited journal entries, unlimited coach chat, stats insights, and weekly reports. You can re-subscribe anytime.';
+      'Sınırsız günlük girdilerine, sınırsız koç sohbetine, istatistik analizlerine ve haftalık raporlara erişiminizi kaybedeceksiniz. İstediğiniz zaman yeniden abone olabilirsiniz.';
 
   @override
-  String get keepPremiumLabel => 'Keep Premium';
+  String get keepPremiumLabel => 'Premium\'da Kal';
 
   @override
   String get nowPremiumMessage =>
-      'You\'re now Premium! Enjoy your full recovery experience.';
+      'Artık Premium üyesiniz! Eksiksiz iyileşme deneyiminizin tadını çıkarın.';
 
   @override
   String get premiumCancelledMessage =>
-      'Premium cancelled. You\'re back on the free plan.';
+      'Premium iptal edildi. Ücretsiz plana geri döndünüz.';
 
   @override
-  String get termsOfUseLabel => 'Terms of Use';
+  String get termsOfUseLabel => 'Kullanım Şartları';
 
   @override
-  String get navHomeLabel => 'Home';
+  String get navHomeLabel => 'Ana Sayfa';
 
   @override
-  String get navStatsLabel => 'Stats';
+  String get navStatsLabel => 'İstatistikler';
 
   @override
-  String get navJournalLabel => 'Journal';
+  String get navJournalLabel => 'Günlük';
 
   @override
-  String get navBadgesLabel => 'Badges';
+  String get navBadgesLabel => 'Rozetler';
 
   @override
-  String get navProfileLabel => 'Profile';
+  String get navProfileLabel => 'Profil';
 
   @override
-  String get recoveryGoalsTitle => 'Recovery Goals';
+  String get recoveryGoalsTitle => 'İyileşme Hedefleri';
 
   @override
-  String get drinksPerWeekLabel => 'Drinks per week';
+  String get drinksPerWeekLabel => 'Haftalık içki sayısı';
 
   @override
-  String get quitReasonsLabel => 'Quit reasons';
+  String get quitReasonsLabel => 'Bırakma nedenleri';
 
   @override
-  String get quitReasonsHelperText => 'Separate multiple reasons with a comma.';
+  String get quitReasonsHelperText => 'Birden fazla nedeni virgülle ayırın.';
 
   @override
   String couldNotSaveRecoveryGoals(String error) {
-    return 'Could not save recovery goals: $error';
+    return 'İyileşme hedefleri kaydedilemedi: $error';
   }
 
   @override
-  String get goalHint => 'e.g., Complete Abstinence';
+  String get goalHint => 'ör. Tamamen Bırakmak';
 
   @override
-  String get drinksPerWeekHint => 'e.g., 12';
+  String get drinksPerWeekHint => 'ör. 12';
 
   @override
-  String get quitReasonsHint => 'e.g., Health, Family, Money';
+  String get quitReasonsHint => 'ör. Sağlık, Aile, Para';
 
   @override
-  String get todaysPrompt => 'Today\'s prompt';
+  String get todaysPrompt => 'Günün sorusu';
 
   @override
-  String get defaultJournalPrompt => 'What\'s on your mind today?';
+  String get defaultJournalPrompt => 'Bugün aklınızdan neler geçiyor?';
 
   @override
-  String get aiJournalInsights => 'AI journal insights';
+  String get aiJournalInsights => 'YZ günlük analizleri';
 
   @override
   String get unlockJournalInsightsMessage =>
-      'Unlock weekly patterns, mood trends, and personalized insights from your journal entries.';
+      'Günlük girdilerinizden haftalık kalıpların, duygu durumu eğilimlerinin ve kişiselleştirilmiş analizlerin kilidini açın.';
 
   @override
   String get notEnoughJournalData =>
-      'Not enough data yet — write a few entries this week and check back.';
+      'Henüz yeterli veri yok — bu hafta birkaç girdi yazıp tekrar kontrol edin.';
 
   @override
-  String get openEntry => 'Open';
+  String get openEntry => 'Aç';
 
   @override
-  String get editEntry => 'Edit';
+  String get editEntry => 'Düzenle';
 
   @override
-  String get deleteEntry => 'Delete';
+  String get deleteEntry => 'Sil';
 
   @override
-  String get searchJournalEntries => 'Search entries...';
+  String get searchJournalEntries => 'Girdilerde ara...';
 
   @override
-  String get writeNewEntry => 'Write new entry';
+  String get writeNewEntry => 'Yeni girdi yaz';
 
   @override
-  String get recentEntries => 'Recent Entries';
+  String get recentEntries => 'Son Girdiler';
 
   @override
   String get noJournalEntriesYet =>
-      'No journal entries yet — write your first reflection above.';
+      'Henüz günlük girdisi yok — ilk düşüncenizi yukarıda paylaşın.';
 
   @override
-  String get noEntriesMatchFilters => 'No entries match your filters.';
+  String get noEntriesMatchFilters =>
+      'Filtrelerinizle eşleşen girdi bulunamadı.';
 
   @override
-  String get weeklyJournalLimitReached => 'Weekly limit reached';
+  String get weeklyJournalLimitReached => 'Haftalık sınıra ulaşıldı';
 
   @override
   String weeklyJournalLimitMessage(int limit) {
-    return 'You\'ve used all $limit free journal entries this week. Upgrade to Premium for unlimited entries.';
+    return 'Bu haftaki tüm $limit ücretsiz günlük girdinizi kullandınız. Sınırsız girdi için Premium\'a yükseltin.';
   }
 
   @override
-  String get newEntry => 'New entry';
+  String get newEntry => 'Yeni girdi';
 
   @override
-  String get writeYourThoughts => 'Write your thoughts';
+  String get writeYourThoughts => 'Düşüncelerinizi yazın';
 
   @override
-  String get saveEntry => 'Save Entry';
+  String get saveEntry => 'Girdiyi Kaydet';
 
   @override
   String freeEntriesLeftThisWeek(String remaining, String limit) {
-    return '$remaining of $limit free entries left this week';
+    return 'Bu hafta kalan ücretsiz girdi: $remaining / $limit';
   }
 
   @override
-  String get deleteEntryQuestion => 'Delete entry?';
+  String get deleteEntryQuestion => 'Girdi silinsin mi?';
 
   @override
   String get deleteEntryConfirmation =>
-      'This entry will be permanently deleted. This can\'t be undone.';
+      'Bu girdi kalıcı olarak silinecektir. Bu işlem geri alınamaz.';
 
   @override
-  String get journalEntryNotFound => 'Entry not found';
+  String get journalEntryNotFound => 'Girdi bulunamadı';
 
   @override
   String get journalEntryMayHaveBeenDeleted =>
-      'This journal entry may have been deleted.';
+      'Bu günlük girdisi silinmiş olabilir.';
 
   @override
-  String get goBack => 'Go back';
+  String get goBack => 'Geri dön';
 
   @override
-  String get journalEntryTitle => 'Journal Entry';
+  String get journalEntryTitle => 'Günlük Girdisi';
 
   @override
-  String get moodStruggling => 'Struggling';
+  String get moodStruggling => 'Zorlanıyor';
 
   @override
-  String get moodUnwell => 'Unwell';
+  String get moodUnwell => 'Kötü';
 
   @override
-  String get moodNeutral => 'Neutral';
+  String get moodNeutral => 'Nötr';
 
   @override
-  String get whatHappenedToday => 'What happened today?';
+  String get whatHappenedToday => 'Bugün ne oldu?';
 
   @override
-  String get trigger => 'Trigger';
+  String get trigger => 'Tetikleyici';
 
   @override
-  String get whatHelped => 'What helped';
+  String get whatHelped => 'Ne yardımcı oldu';
 
   @override
-  String get whatIllTryNextTime => 'What I\'ll try next time';
+  String get whatIllTryNextTime => 'Gelecek sefer ne deneyeceğim';
 
   @override
   String get journalPrivacyMessage =>
-      'Your reflection is private and saved in your journal.';
+      'Düşünceleriniz gizlidir ve günlüğünüze güvenle kaydedilir.';
 
   @override
-  String get unlocked => 'Unlocked';
+  String get unlocked => 'Kilit Açıldı';
 
   @override
   String daysLeft(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 's',
-      one: '',
+      other: '$count gün kaldı',
+      one: '$count gün kaldı',
     );
-    return '$count day$_temp0 left';
+    return '$_temp0';
   }
 
   @override
   String daysCount(int count) {
-    return '$count Days';
+    return '$count Gün';
   }
 
   @override
-  String get firstReflection => 'First\nReflection';
+  String get firstReflection => 'İlk\nDüşünce';
 
   @override
-  String get oneJournalEntry => '1 Journal Entry';
+  String get oneJournalEntry => '1 Günlük Girdisi';
 
   @override
-  String get openBook => 'Open Book';
+  String get openBook => 'Açık Kitap';
 
   @override
-  String get tenJournalEntries => '10 Journal Entries';
+  String get tenJournalEntries => '10 Günlük Girdisi';
 
   @override
-  String get dedicatedWriter => 'Dedicated\nWriter';
+  String get dedicatedWriter => 'Kararlı\nYazar';
 
   @override
-  String get thirtyJournalEntries => '30 Journal Entries';
+  String get thirtyJournalEntries => '30 Günlük Girdisi';
 
   @override
-  String get firstConversation => 'First\nConversation';
+  String get firstConversation => 'İlk\nSohbet';
 
   @override
-  String get oneAiCoachChat => '1 AI Coach Chat';
+  String get oneAiCoachChat => '1 YZ Koç Sohbeti';
 
   @override
-  String get keepTalking => 'Keep Talking';
+  String get keepTalking => 'Konuşmaya Devam Et';
 
   @override
-  String get fiveConversations => '5 Conversations';
+  String get fiveConversations => '5 Sohbet';
 
   @override
-  String get coachCompanion => 'Coach\nCompanion';
+  String get coachCompanion => 'Koç\nYoldaşı';
 
   @override
-  String get twentyConversations => '20 Conversations';
+  String get twentyConversations => '20 Sohbet';
 
   @override
-  String get checkInHabit => 'Check-In\nHabit';
+  String get checkInHabit => 'Kontrol\nAlışkanlığı';
 
   @override
-  String get sevenCheckIns => '7 Check-Ins';
+  String get sevenCheckIns => '7 Kontrol';
 
   @override
-  String get consistencyPro => 'Consistency\nPro';
+  String get consistencyPro => 'İstikrar\nUzmanı';
 
   @override
-  String get thirtyCheckIns => '30 Check-Ins';
+  String get thirtyCheckIns => '30 Kontrol';
 
   @override
-  String get dedicatedJourney => 'Dedicated\nJourney';
+  String get dedicatedJourney => 'Adanmış\nYolculuk';
 
   @override
-  String get hundredCheckIns => '100 Check-Ins';
+  String get hundredCheckIns => '100 Kontrol';
 
   @override
-  String get goalGetter => 'Goal Getter';
+  String get goalGetter => 'Hedef Odaklı';
 
   @override
-  String get threeGoalsCompleted => '3 Goals Completed';
+  String get threeGoalsCompleted => '3 Hedef Tamamlandı';
 
   @override
-  String get goalAchiever => 'Goal\nAchiever';
+  String get goalAchiever => 'Hedef\nAvcısı';
 
   @override
-  String get tenGoalsCompleted => '10 Goals Completed';
+  String get tenGoalsCompleted => '10 Hedef Tamamlandı';
 
   @override
-  String get firstSavings => 'First\nSavings';
+  String get firstSavings => 'İlk\nTasarruf';
 
   @override
-  String get fiveHundredSaved => '\$500 Saved';
+  String get fiveHundredSaved => '\$500 Biriktirildi';
 
   @override
-  String get smartSaver => 'Smart Saver';
+  String get smartSaver => 'Akıllı Birikimci';
 
   @override
-  String get oneThousandSaved => '\$1,000 Saved';
+  String get oneThousandSaved => '\$1.000 Biriktirildi';
 
   @override
-  String get bigSaver => 'Big Saver';
+  String get bigSaver => 'Büyük Birikimci';
 
   @override
-  String get fiveThousandSaved => '\$5,000 Saved';
+  String get fiveThousandSaved => '\$5.000 Biriktirildi';
 
   @override
   String currencyProgress(String current, String target) {
-    return '\$$current of \$$target';
+    return '\$$current / \$$target';
   }
 
   @override
   String countProgress(int current, int target) {
-    return '$current of $target';
+    return '$current / $target';
   }
 
   @override
   String get firstMilestoneWaiting =>
-      'Keep going — your first milestone is waiting for you!';
+      'Devam et — ilk kilometre taşın seni bekliyor!';
 
   @override
-  String get badgesAndMilestones => 'Badges & Milestones';
+  String get badgesAndMilestones => 'Rozetler ve Kilometre Taşları';
 
   @override
-  String get yourMilestoneJourney => 'Your Milestone Journey';
+  String get yourMilestoneJourney => 'Kilometre Taşı Yolculuğunuz';
 
   @override
   String milestonesAchieved(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 's',
-      one: '',
+      other: '$count kilometre taşı kazanıldı.\nGörüntülemek için dokunun',
+      one: '$count kilometre taşı kazanıldı.\nGörüntülemek için dokunun',
     );
-    return '$count milestone$_temp0 achieved.\nTap to view';
+    return '$_temp0';
   }
 
   @override
   String unlockedMilestonesMessage(int unlocked, int total) {
-    return 'You\'ve unlocked $unlocked of $total milestones on your journey.';
+    return 'Yolculuğunuzdaki $total kilometre taşından $unlocked tanesini tamamladınız.';
   }
 
   @override
-  String get remaining => 'Remaining';
+  String get remaining => 'Kalan';
 
   @override
-  String get complete => 'Complete';
+  String get complete => 'Tamamlandı';
 
   @override
-  String get nextMilestone => 'Next Milestone';
+  String get nextMilestone => 'Sonraki Kilometre Taşı';
 
   @override
   String percentThere(String subtitle, int percent) {
-    return '$subtitle · $percent% there';
+    return '$subtitle · %$percent tamamlandı';
   }
 
   @override
-  String get sobrietyMilestones => 'Sobriety Milestones';
+  String get sobrietyMilestones => 'Temizlik Kilometre Taşları';
 
   @override
-  String get journeyBadges => 'Journey Badges';
+  String get journeyBadges => 'Yolculuk Rozetleri';
 
   @override
-  String get bronze => 'BRONZE';
+  String get bronze => 'BRONZ';
 
   @override
-  String get silver => 'SILVER';
+  String get silver => 'GÜMÜŞ';
 
   @override
-  String get gold => 'GOLD';
+  String get gold => 'ALTIN';
 
   @override
-  String get platinum => 'PLATINUM';
+  String get platinum => 'PLATİN';
 
   @override
-  String get diamond => 'DIAMOND';
+  String get diamond => 'ELMAS';
 
   @override
-  String get analyzingYourJourney => 'Analyzing Your Journey...';
+  String get analyzingYourJourney => 'Yolculuğunuz Analiz Ediliyor...';
 
   @override
   String get aiCreatingSanctuary =>
-      'Our AI is creating your personalized sanctuary.';
+      'Yapay zekamız size özel huzur alanınızı oluşturuyor.';
 
   @override
-  String get understandingHabits => 'Understanding habits...';
+  String get understandingHabits => 'Alışkanlıklar anlaşılıyor...';
 
   @override
-  String get calculatingBaseline => 'Calculating your baseline...';
+  String get calculatingBaseline => 'Başlangıç seviyeniz hesaplanıyor...';
 
   @override
-  String get personalizingPlan => 'Personalizing your plan...';
+  String get personalizingPlan => 'Planınız kişiselleştiriliyor...';
 
   @override
-  String get finalizingSanctuary => 'Finalizing your sanctuary...';
+  String get finalizingSanctuary => 'Alanınız son haline getiriliyor...';
 
   @override
-  String get creatingYourPlan => 'Creating your plan...';
+  String get creatingYourPlan => 'Planınız oluşturuluyor...';
 
   @override
   String get personalizedPlanError =>
-      'We could not create your personalized plan. Please try again.';
+      'Kişiselleştirilmiş planınız oluşturulamadı. Lütfen tekrar deneyin.';
 
   @override
-  String get retry => 'Retry';
+  String get retry => 'Tekrar Dene';
 
   @override
-  String get breathInhale => 'INHALE';
+  String get breathInhale => 'NEFES AL';
 
   @override
-  String get breathHold => 'HOLD';
+  String get breathHold => 'TUT';
 
   @override
-  String get breathExhale => 'EXHALE';
+  String get breathExhale => 'NEFES VER';
 
   @override
-  String get breathDone => 'DONE';
+  String get breathDone => 'BİTTİ';
 
   @override
-  String get breathGreatJob => 'Great job!';
+  String get breathGreatJob => 'Harika iş!';
 
   @override
   String breathSessionsToday(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count sessions today',
-      one: '$count session today',
+      other: 'Bugün $count seans',
+      one: 'Bugün $count seans',
     );
     return '$_temp0';
   }
 
   @override
-  String get endExercise => 'End Exercise';
+  String get endExercise => 'Egzersizi Bitir';
 
   @override
-  String get done => 'Done';
+  String get done => 'Tamamlandı';
 
   @override
-  String get noCopingTipsYet => 'No coping tips yet';
+  String get noCopingTipsYet => 'Henüz başa çıkma ipucu yok';
 
   @override
   String get copingStrategiesWillAppear =>
-      'Your personalized coping strategies will show up here once your recovery plan finishes generating.';
+      'İyileşme planınız oluşturulduktan sonra kişiselleştirilmiş başa çıkma stratejileriniz burada görünecektir.';
 
   @override
   String get strategiesTailoredToTriggers =>
-      'Strategies tailored to your triggers';
+      'Tetikleyicilerinize özel stratejiler';
 
   @override
-  String get cravingsPeakAndPass => 'Cravings peak\nand pass';
+  String get cravingsPeakAndPass => 'İstekler zirve yapar\nve geçer';
 
   @override
   String get rideTheWaveDescription =>
-      'Most cravings pass within 15 minutes. You don\'t have to act on it — just ride it out with us.';
+      'Çoğu istek kriz 15 dakika içinde geçer. İsteğe göre hareket etmek zorunda değilsiniz — bizimle birlikte geçmesini bekleyin.';
 
   @override
-  String get stayWithIt => 'stay with it';
+  String get stayWithIt => 'sabırla bekle';
 
   @override
-  String get youMadeIt => 'you made it';
+  String get youMadeIt => 'başardın';
 
   @override
-  String get readyWhenYouAre => 'ready when you are';
+  String get readyWhenYouAre => 'hazır olduğunda başla';
 
   @override
-  String get rideItAgain => 'Ride it again';
+  String get rideItAgain => 'Yeniden dene';
 
   @override
-  String get start15MinuteTimer => 'Start 15-Minute Timer';
+  String get start15MinuteTimer => '15 Dakikalık Zamanlayıcıyı Başlat';
 
   @override
   String get rideTheWaveCompletedMessage =>
-      'You rode the wave. That\'s real strength. 💪';
+      'Dalgayı atlattın. Bu gerçek bir güç! 💪';
 
   @override
-  String get myProgress => 'My Progress';
+  String get myProgress => 'İlerlemem';
 
   @override
-  String get weekLabel => 'Week';
+  String get weekLabel => 'Hafta';
 
   @override
-  String get monthLabel => 'Month';
+  String get monthLabel => 'Ay';
 
   @override
-  String get allLabel => 'All';
+  String get allLabel => 'Tümü';
 
   @override
-  String get daysSoberStatLabel => 'Days\nsober';
+  String get daysSoberStatLabel => 'Temiz\ngünler';
 
   @override
-  String get savedStatLabel => 'Saved';
+  String get savedStatLabel => 'Tasarruf';
 
   @override
-  String get avoidedStatLabel => 'Avoided';
+  String get avoidedStatLabel => 'İçilmeyen';
 
   @override
-  String get moodTrends => 'Mood trends';
+  String get moodTrends => 'Duygu durumu eğilimleri';
 
   @override
-  String get cravingsPattern => 'Cravings pattern';
+  String get cravingsPattern => 'İstek krizi kalıpları';
 
   @override
-  String get unlockLabel => 'Unlock';
+  String get unlockLabel => 'Kilidi Aç';
 
   @override
-  String get unlockFullStats => 'Unlock full stats';
+  String get unlockFullStats => 'Tüm istatistiklerin kilidini aç';
 
   @override
   String get premiumStatsMessage =>
-      'Mood trends and craving patterns are Premium features. Upgrade to see your full stats.';
+      'Duygu durumu eğilimleri ve istek krizi kalıpları Premium özelliklerdir. Tüm istatistiklerinizi görmek için yükseltin.';
 
   @override
   String get healthMilestonesWillAppear =>
-      'Your health milestones will appear here.';
+      'Sağlık kilometre taşlarınız burada görünecektir.';
 
   @override
-  String get healthMilestones => 'Health milestones';
+  String get healthMilestones => 'Sağlık kilometre taşları';
 
   @override
   String dayNumber(int day) {
-    return 'Day $day';
+    return '$day. Gün';
   }
 
   @override
-  String get soberLabel => 'Sober';
+  String get soberLabel => 'Temiz';
 
   @override
-  String get slipLabel => 'Slip';
+  String get slipLabel => 'Kayıp';
 
   @override
-  String get noDataLabel => 'No data';
+  String get noDataLabel => 'Veri yok';
 
   @override
-  String get milestone24Hours => '24 Hours';
+  String get milestone24Hours => '24 Saat';
 
   @override
-  String get milestoneOneWeek => 'One Week';
+  String get milestoneOneWeek => 'Bir Hafta';
 
   @override
-  String get milestoneOneMonth => 'One Month';
+  String get milestoneOneMonth => 'Bir Ay';
 
   @override
-  String get milestoneThreeMonths => 'Three Months';
+  String get milestoneThreeMonths => 'Üç Ay';
 
   @override
-  String get milestoneSixMonths => 'Six Months';
+  String get milestoneSixMonths => 'Altı Ay';
 
   @override
-  String get milestoneOneYear => 'One Year';
+  String get milestoneOneYear => 'Bir Yıl';
 
   @override
   String milestoneDayCount(int day) {
-    return 'Day $day Milestone';
+    return '$day. Gün Kilometre Taşı';
   }
+
+  @override
+  String get maybeLaterLabel => 'Belki sonra';
+
+  @override
+  String get cancelLabel => 'İptal';
 }

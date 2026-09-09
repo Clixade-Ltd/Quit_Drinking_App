@@ -1,0 +1,585 @@
+{
+  "@@locale": "ru",
+
+  "skip": "Пропустить",
+  "continueButton": "Продолжить",
+  "getStarted": "Начать",
+
+  "onboardingTitle1": "Возьмите жизнь под свой контроль",
+  "onboardingSubtitle1": "Отслеживайте свой путь, отмечайте каждое достижение и становитесь здоровее день за днём.",
+  "onboardingTitle2": "Ваш AI-компаньон по восстановлению",
+  "onboardingSubtitle2": "Получайте персональные рекомендации, полезные привычки, напоминания для мотивации и отчёты о прогрессе, созданные специально для вашего пути.",
+
+  "maybeLaterLabel": "Может быть позже",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Отмена",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+  "goodMorning": "Доброе утро",
+  "goodAfternoon": "Добрый день",
+  "goodEvening": "Добрый вечер",
+  "goodNight": "Спокойной ночи",
+
+  "embracingClarity": "К ясности — шаг за шагом, день за днём.",
+  "streakLabel": "СЕРИЯ",
+  "goalLabel": "ЦЕЛЬ",
+  "daysStreak": "{count, plural, one{{count} день} few{{count} дня} many{{count} дней} other{{count} дня}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "План Premium",
+  "premiumPlanSubtitle": "Откройте полный опыт восстановления",
+
+  "accountAndSupport": "АККАУНТ И ПОДДЕРЖКА",
+  "privacyPolicy": "Политика конфиденциальности",
+  "privacyPolicySubtitle": "Управление обменом данными и безопасностью аккаунта",
+  "termsOfService": "Условия использования",
+  "termsOfServiceSubtitle": "Часто задаваемые вопросы, связь с нами и полезные ресурсы",
+  "shareApp": "Поделиться приложением",
+  "shareAppSubtitle": "Поделитесь приложением с друзьями",
+  "resetData": "Сбросить данные",
+  "resetDataSubtitle": "Удалить всё сохранённое на этом устройстве",
+
+  "resetAllDataTitle": "Сбросить все данные?",
+  "resetAllDataMessage": "Это удалит всё сохранённое на этом устройстве — профиль, записи дневника и прогресс — и действие нельзя будет отменить.",
+  "cancel": "Отмена",
+  "reset": "Сбросить",
+
+  "chooseFromGallery": "Выбрать из галереи",
+  "takePhoto": "Сделать фото",
+  "removePhoto": "Удалить фото",
+  "couldNotUpdatePhoto": "Не удалось обновить фото: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Не удалось удалить фото: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Это фото слишком большое даже после сжатия — попробуйте другое.",
+
+  "unableToLoadProfile": "Не удалось загрузить ваш профиль",
+  "pleaseTryAgain": "Пожалуйста, попробуйте ещё раз.",
+  "tryAgain": "Повторить",
+  "profileNotFound": "Профиль не найден",
+  "refresh": "Обновить",
+  "noProfileDataFound": "На этом устройстве пока нет данных профиля.",
+
+  "couldNotResetData": "Не удалось сбросить данные: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Главная",
+  "navStats": "Статистика",
+  "navJournal": "Дневник",
+  "navBadges": "Значки",
+  "navProfile": "Профиль",
+
+  "featureComingSoon": "{feature} скоро будет доступна.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Бросить пить",
+  "splashSubtitle": "Сделайте первый шаг к жизни\nбез алкоголя",
+  "preparingJourney": "Подготовка вашего\nпути",
+
+  "taskMorningMeditation": "Утренняя медитация (10 мин)",
+  "taskReadChapter": "Прочитать главу 4 из «The Sober Diaries»",
+  "taskEveningJournal": "Вечерний дневник благодарности",
+
+  "close": "Закрыть",
+  "youAreDoingGreat": "Вы отлично справляетесь!",
+  "shareMilestone": "Поделиться достижением",
+  "shareMilestoneMessage": "Сегодня {days}-й день моего пути к восстановлению! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Моё достижение на пути к восстановлению",
+
+  "weeklyReportReadyTitle": "Ваш недельный отчёт готов",
+  "weeklyReportReadySubtitle": "Нажмите, чтобы узнать, как прошла ваша неделя",
+
+  "howAreYouFeeling": "Как вы себя чувствуете?",
+  "moodTough": "Тяжело",
+  "moodOkay": "Нормально",
+  "moodGood": "Хорошо",
+
+  "moneySaved": "Сэкономлено денег",
+  "caloriesSaved": "Сохранено калорий",
+  "healthScore": "Оценка здоровья",
+  "drinksAvoided": "Избегаемые напитки",
+  "estimated": "Расчётное",
+  "aiGenerated": "Создано AI",
+  "daysCapsLabel": "ДНЕЙ",
+
+  "todaysMotivation": "Мотивация на сегодня",
+  "defaultMotivationQuote": "Вы успешно придерживаетесь своего решения. Продолжайте двигаться на волне позитивных изменений.",
+
+  "talkToCoach": "Поговорить с коучем",
+  "havingACraving": "У меня сильная тяга",
+
+  "unlockWeeklyReportsTitle": "Открыть недельные отчёты",
+  "unlockWeeklyReportsMessage": "Каждую неделю просматривайте дни без алкоголя, тенденции настроения и персональную обратную связь AI. Перейдите на Premium, чтобы открыть эту функцию.",
+  "maybeLater": "Возможно, позже",
+  "upgrade": "Перейти на Premium",
+
+  "weeklyReportTitle": "Недельный отчёт",
+  "weeklyReportsPremiumTitle": "Недельные отчёты доступны в Premium",
+  "weeklyReportsPremiumMessage": "Каждую неделю просматривайте дни без алкоголя, тенденции настроения, тягу и персональную обратную связь AI.",
+  "upgradeToPremium": "Перейти на Premium",
+  "couldNotGenerateReport": "Не удалось создать ваш отчёт прямо сейчас.",
+  "tryAgainLower": "Попробовать снова",
+
+  "statSoberDays": "Дни без алкоголя",
+  "statAvgMood": "Среднее настроение",
+  "statCravings": "Тяга",
+  "statMoneySaved": "Сэкономлено",
+  "coachFeedback": "Отзыв коуча",
+  "journalInsights": "Анализ дневника",
+
+  "next": "Далее",
+
+  "question1Title": "Какова ваша цель",
+  "question1Subtitle": "Выберите цель, которая важнее\nвсего для вас",
+  "goalQuitCompletely": "Полностью отказаться",
+  "goalReduceDrinking": "Сократить употребление",
+  "goalTakeABreak": "Сделать перерыв",
+  "goalBuildHealthierHabits": "Сформировать здоровые привычки",
+
+  "question3Title": "Расскажите о своей\nрутине",
+  "drinksPerWeek": "Напитков в неделю",
+  "moneySpentPerWeek": "Расходы в неделю",
+  "drinkingLevel": "Уровень употребления",
+  "triggersLabel": "Триггеры",
+  "levelSocial": "Социальный",
+  "levelRegular": "Регулярный",
+  "levelHeavy": "Высокий",
+  "levelDependent": "Зависимый",
+  "triggerStress": "Стресс",
+  "triggerLoneliness": "Одиночество",
+  "triggerHabit": "Привычка",
+  "triggerSadness": "Грусть",
+  "triggerAnger": "Гнев",
+  "triggerBoredom": "Скука",
+  "triggerSocialPressure": "Социальное давление",
+  "triggerCelebration": "Праздник",
+  "triggerSleepProblems": "Проблемы со сном",
+  "triggerWorkPressure": "Рабочее давление",
+
+  "question4Title": "Почему вы хотите измениться?",
+  "question4Subtitle": "Ваша причина поможет вам сохранять мотивацию.",
+  "reasonImproveHealth": "Улучшить здоровье",
+  "reasonSaveMoney": "Сэкономить деньги",
+  "reasonFamily": "Семья",
+  "reasonBetterSleep": "Лучший сон",
+  "reasonMentalClarity": "Ясность мышления",
+  "reasonFitness": "Фитнес",
+  "reasonSelfRespect": "Самоуважение",
+  "reasonCareer": "Карьера",
+
+  "milestoneUnlockedLabel": "ДОСТИЖЕНИЕ ОТКРЫТО",
+  "incredibleNamePrefix": "Невероятно, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} сэкономлено",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} не выпито",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Поделиться достижением",
+  "milestoneImageShareError": "Не удалось создать изображение достижения. Попробуйте ещё раз.",
+
+  "dailyCheckInTitle": "Ежедневная отметка",
+  "howAreYouFeelingToday": "Как вы себя чувствуете сегодня?",
+  "honestAnswerHelp": "Ваш честный ответ помогает нам лучше вас поддерживать",
+  "didYouDrinkToday": "Вы пили сегодня?",
+  "noLabel": "Нет",
+  "yesLabel": "Да",
+  "cravingLevelNow": "Насколько сильна тяга сейчас?",
+  "anythingOnMind": "Что-нибудь вас беспокоит?",
+  "optionalLabel": "(необязательно)",
+  "dailyNoteHint": "Напишите о своём дне, триггерах, победах...",
+  "alreadyCheckedInToday": "Сегодня вы уже отметились",
+  "saveCheckIn": "Сохранить отметку",
+  "checkInsHelpTrack": "Ежедневные отметки помогают отслеживать ваш прогресс",
+  "alreadyCompletedTodayCheckIn": "Вы уже завершили сегодняшнюю отметку.",
+  "pleaseAnswerBothQuestions": "Сначала ответьте на оба вопроса выше",
+  "checkInSaved": "Отметка сохранена",
+  "cravingNone": "Нет",
+  "cravingLow": "Слабая",
+  "cravingMedium": "Средняя",
+  "cravingStrong": "Сильная",
+  "moodBad": "Плохо",
+  "moodLow": "Низкое",
+  "moodOkay": "Нормально",
+  "moodGood": "Хорошо",
+  "moodGreat": "Отлично",
+
+  "sosSupportTitle": "SOS-поддержка",
+  "notAloneMessage": "Вы не одиноки, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Тяга проходит. Выберите что-нибудь ниже, чтобы справиться с этим моментом.",
+  "breathingExercise": "Дыхательное упражнение",
+  "breathingExerciseSubtitle": "Управляемая техника 4-7-8, 2 минуты",
+  "rideTheWave": "Пережить волну",
+  "rideTheWaveSubtitle": "Таймер на 15 минут — тяга всегда проходит",
+  "copingTips": "Советы по преодолению",
+  "copingTipsSubtitle": "Персональные стратегии для ваших триггеров",
+  "talkToAiCoach": "Поговорить с AI-коучем",
+  "talkToAiCoachSubtitle": "Пообщайтесь со своим помощником по восстановлению",
+  "callSomeone": "Позвонить кому-нибудь",
+  "callSomeoneSubtitle": "Свяжитесь с доверенным человеком",
+  "contactsPermissionNeeded": "Для звонка контакту необходимо разрешение на доступ к контактам.",
+  "beatenCravingsPrefix": "Вы уже преодолели тягу ",
+  "beatenCravingsCount": "{count} раз",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " раньше. Вы сможете сделать это снова.",
+
+  "tellUsAboutYourself": "Расскажите о себе",
+  "detailsSubtitle": "Эта информация помогает персонализировать ваш путь восстановления и предоставлять точные сведения.",
+  "nameLabel": "Имя",
+  "nameHint": "например, Алекс Риверс",
+  "ageLabel": "Возраст",
+  "ageHint": "например, 32",
+  "sexAssignedAtBirth": "Пол при рождении",
+  "sexFemale": "Женский",
+  "sexMale": "Мужской",
+  "heightLabel": "Рост",
+  "weightLabel": "Вес",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Достигнут дневной лимит",
+  "dailyLimitReachedMessage": "Вы использовали все {limit} бесплатных сообщений на сегодня. Перейдите на Premium для неограниченного общения с коучем.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Не удалось подключиться сейчас. Попробуйте ещё раз через несколько минут.",
+  "clearConversationTitle": "Очистить разговор?",
+  "clearConversationMessage": "История чата с коучем будет удалена навсегда.",
+  "clearLabel": "Очистить",
+  "recoveryCoachTitle": "Коуч по восстановлению",
+  "onlineLabel": "В сети",
+  "clearConversationMenuItem": "Очистить разговор",
+  "chatGreeting": "Привет, {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Сегодня {days}-й день вашего пути. Я здесь, когда вы захотите поговорить.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "БЫСТРЫЕ ЗАПРОСЫ",
+  "promptCravingLabel": "Меня тянет выпить",
+  "promptCravingSubtitle": "Быстро вернуться в равновесие",
+  "promptMotivationLabel": "Нужна мотивация",
+  "promptMotivationSubtitle": "Поддержка, когда тяжело",
+  "promptSocialLabel": "Социальная ситуация",
+  "promptSocialSubtitle": "Как справиться с мероприятием",
+  "promptSlippedLabel": "Я сорвался",
+  "promptSlippedSubtitle": "Без осуждения, только поддержка",
+  "typeMessageHint": "Введите сообщение...",
+
+  "editProfileTitle": "Редактировать профиль",
+  "couldNotSaveProfile": "Не удалось сохранить профиль: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Рост (см)",
+  "weightKgLabel": "Вес (кг)",
+  "saveChangesLabel": "Сохранить изменения",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Расширенная аналитика и сведения",
+  "featureUnlimitedJournal": "Неограниченные записи в дневнике",
+  "featureUnlimitedChat": "Неограниченный чат с AI-коучем",
+  "featureCommunityGroups": "Эксклюзивные группы сообщества",
+  "featurePrioritySupport": "Приоритетная помощь экспертов",
+  "featureThemePacks": "Пользовательские наборы тем",
+  "featureDataExport": "Экспорт данных",
+  "featureAdFree": "Без рекламы",
+  "premiumMemberTitle": "Вы участник Premium",
+  "unlockFullRecoveryTitle": "Откройте полный опыт\nвосстановления",
+  "premiumMemberSubtitle": "Спасибо за поддержку вашего пути восстановления — все функции Premium ниже уже доступны.",
+  "premiumJoinSubtitle": "Присоединяйтесь к сообществу тысяч людей, которые\nускоряют свой путь к восстановлению с помощью наших\nPremium-инструментов и персональной поддержки.",
+  "monthlyPlanLabel": "Ежемесячно",
+  "perMonthSuffix": "/мес.",
+  "cancelAnytimeLabel": "Отмена в любое время",
+  "yearlyPlanLabel": "Ежегодно",
+  "billedAnnuallyLabel": "Ежегодная оплата: {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Лучшая цена",
+  "alreadyPremiumLabel": "У вас Premium ✓",
+  "startPremiumLabel": "Начать Premium",
+  "manageSubscriptionLabel": "Управляйте подпиской или отменяйте её в настройках подписок вашего устройства.",
+  "noCommitmentLabel": "Без обязательств. Отменить можно в любое время.",
+  "continueFreePlanLabel": "Продолжить с бесплатным планом",
+  "backToHomeLabel": "Вернуться на главную",
+  "cancelPremiumLabel": "Отменить Premium",
+  "cancelPremiumTitle": "Отменить Premium?",
+  "cancelPremiumMessage": "Вы потеряете доступ к неограниченным записям дневника, неограниченному чату с коучем, статистике и недельным отчётам. Вы сможете оформить подписку снова в любое время.",
+  "keepPremiumLabel": "Оставить Premium",
+  "nowPremiumMessage": "Теперь у вас Premium! Наслаждайтесь полным опытом восстановления.",
+  "premiumCancelledMessage": "Premium отменён. Вы вернулись на бесплатный план.",
+  "termsOfUseLabel": "Условия использования",
+
+  "navHomeLabel": "Главная",
+  "navStatsLabel": "Статистика",
+  "navJournalLabel": "Дневник",
+  "navBadgesLabel": "Значки",
+  "navProfileLabel": "Профиль",
+
+  "recoveryGoalsTitle": "Цели восстановления",
+  "goalLabel": "Цель",
+  "drinksPerWeekLabel": "Напитков в неделю",
+  "quitReasonsLabel": "Причины отказаться",
+  "quitReasonsHelperText": "Разделяйте несколько причин запятыми.",
+  "couldNotSaveRecoveryGoals": "Не удалось сохранить цели восстановления: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "например, Полный отказ",
+  "drinksPerWeekHint": "например, 12",
+  "quitReasonsHint": "например, Здоровье, Семья, Деньги",
+
+  "todaysPrompt": "Вопрос дня",
+  "defaultJournalPrompt": "О чём вы думаете сегодня?",
+  "aiJournalInsights": "AI-анализ дневника",
+  "unlockJournalInsightsMessage": "Откройте недельные закономерности, тенденции настроения и персональные сведения из записей вашего дневника.",
+  "notEnoughJournalData": "Пока недостаточно данных — сделайте несколько записей на этой неделе и загляните снова.",
+  "openEntry": "Открыть",
+  "editEntry": "Редактировать",
+  "deleteEntry": "Удалить",
+  "searchJournalEntries": "Поиск записей...",
+  "writeNewEntry": "Написать новую запись",
+  "recentEntries": "Недавние записи",
+  "noJournalEntriesYet": "Записей в дневнике пока нет — напишите свою первую запись выше.",
+  "noEntriesMatchFilters": "Нет записей, соответствующих вашим фильтрам.",
+
+  "weeklyJournalLimitReached": "Достигнут недельный лимит",
+  "weeklyJournalLimitMessage": "Вы использовали все {limit} бесплатных записей дневника на этой неделе. Перейдите на Premium для неограниченных записей.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Новая запись",
+  "writeYourThoughts": "Запишите свои мысли",
+  "saveEntry": "Сохранить запись",
+  "freeEntriesLeftThisWeek": "Осталось {remaining} из {limit} бесплатных записей на этой неделе",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Удалить запись?",
+  "deleteEntryConfirmation": "Эта запись будет удалена навсегда. Действие нельзя отменить.",
+
+  "journalEntryNotFound": "Запись не найдена",
+  "journalEntryMayHaveBeenDeleted": "Возможно, эта запись дневника была удалена.",
+  "goBack": "Назад",
+  "journalEntryTitle": "Запись дневника",
+
+  "moodStruggling": "Тяжело",
+  "moodUnwell": "Плохо",
+  "moodNeutral": "Нейтрально",
+
+  "whatHappenedToday": "Что произошло сегодня?",
+  "trigger": "Триггер",
+  "whatHelped": "Что помогло",
+  "whatIllTryNextTime": "Что я попробую в следующий раз",
+  "journalPrivacyMessage": "Ваша запись конфиденциальна и сохранена в дневнике.",
+
+  "unlocked": "Открыто",
+  "daysLeft": "Остался {count} день{count, plural, =1{} few{я} many{дней} other{дня}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} дней",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Первая\nрефлексия",
+  "oneJournalEntry": "1 запись дневника",
+  "openBook": "Открыть книгу",
+  "tenJournalEntries": "10 записей дневника",
+  "dedicatedWriter": "Преданный\nписатель",
+  "thirtyJournalEntries": "30 записей дневника",
+  "firstConversation": "Первый\nразговор",
+  "oneAiCoachChat": "1 чат с AI-коучем",
+  "keepTalking": "Продолжайте общаться",
+  "fiveConversations": "5 разговоров",
+  "coachCompanion": "Компаньон\nкоуча",
+  "twentyConversations": "20 разговоров",
+  "checkInHabit": "Привычка\nотмечаться",
+  "sevenCheckIns": "7 отметок",
+  "consistencyPro": "Мастер\nпостоянства",
+  "thirtyCheckIns": "30 отметок",
+  "dedicatedJourney": "Преданный\nпуть",
+  "hundredCheckIns": "100 отметок",
+  "goalGetter": "Достигатор",
+  "threeGoalsCompleted": "3 цели выполнены",
+  "goalAchiever": "Достигатор\nцелей",
+  "tenGoalsCompleted": "10 целей выполнено",
+  "firstSavings": "Первая\nэкономия",
+  "fiveHundredSaved": "$500 сэкономлено",
+  "smartSaver": "Разумный экономист",
+  "oneThousandSaved": "$1,000 сэкономлено",
+  "bigSaver": "Большой экономист",
+  "fiveThousandSaved": "$5,000 сэкономлено",
+
+  "currencyProgress": "${current} из ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} из {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+
+  "firstMilestoneWaiting": "Продолжайте — ваше первое достижение уже ждёт вас!",
+  "badgesAndMilestones": "Значки и достижения",
+  "yourMilestoneJourney": "Ваш путь достижений",
+  "milestonesAchieved": "{count} достижени{count, plural, =1{е} few{я} many{й} other{я}} выполнено.\nНажмите, чтобы посмотреть",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Вы открыли {unlocked} из {total} достижений на своём пути.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Осталось",
+  "complete": "Выполнено",
+  "nextMilestone": "Следующее достижение",
+  "percentThere": "{subtitle} · {percent}% выполнено",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Достижения трезвости",
+  "journeyBadges": "Значки пути",
+  "bronze": "БРОНЗА",
+  "silver": "СЕРЕБРО",
+  "gold": "ЗОЛОТО",
+  "platinum": "ПЛАТИНА",
+  "diamond": "АЛМАЗ",
+
+  "analyzingYourJourney": "Анализируем ваш путь...",
+  "aiCreatingSanctuary": "Наш AI создаёт ваше персональное пространство для восстановления.",
+  "understandingHabits": "Изучаем привычки...",
+  "calculatingBaseline": "Рассчитываем вашу исходную точку...",
+  "personalizingPlan": "Персонализируем ваш план...",
+  "finalizingSanctuary": "Завершаем создание вашего пространства...",
+  "creatingYourPlan": "Создаём ваш план...",
+  "personalizedPlanError": "Не удалось создать ваш персональный план. Попробуйте ещё раз.",
+  "retry": "Повторить",
+
+  "breathingExercise": "Дыхательное упражнение",
+  "breathInhale": "ВДОХ",
+  "breathHold": "ЗАДЕРЖИТЕ",
+  "breathExhale": "ВЫДОХ",
+  "breathDone": "ГОТОВО",
+  "breathGreatJob": "Отличная работа!",
+  "remaining": "Осталось",
+  "breathSessionsToday": "{count, plural, one{{count} сеанс сегодня} few{{count} сеанса сегодня} many{{count} сеансов сегодня} other{{count} сеанса сегодня}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Завершить упражнение",
+  "done": "Готово",
+
+  "noCopingTipsYet": "Советов пока нет",
+  "copingStrategiesWillAppear": "Ваши персональные стратегии преодоления появятся здесь после завершения создания плана восстановления.",
+  "strategiesTailoredToTriggers": "Стратегии с учётом ваших триггеров",
+
+  "rideTheWave": "Пережить волну",
+  "cravingsPeakAndPass": "Тяга достигает пика\nи проходит",
+  "rideTheWaveDescription": "Большинство приступов тяги проходят в течение 15 минут. Вам не нужно поддаваться — просто переждите этот момент вместе с нами.",
+  "stayWithIt": "оставайтесь с этим",
+  "youMadeIt": "вы справились",
+  "readyWhenYouAre": "когда будете готовы",
+  "rideItAgain": "Пережить снова",
+  "start15MinuteTimer": "Запустить таймер на 15 минут",
+  "rideTheWaveCompletedMessage": "Вы пережили эту волну. Это настоящая сила. 💪",
+
+  "myProgress": "Мой прогресс",
+  "weekLabel": "Неделя",
+  "monthLabel": "Месяц",
+  "allLabel": "Всё",
+  "daysSoberStatLabel": "Дней\nбез алкоголя",
+  "savedStatLabel": "Сэкономлено",
+  "avoidedStatLabel": "Избегнуто",
+  "moodTrends": "Тенденции настроения",
+  "cravingsPattern": "Динамика тяги",
+  "unlockLabel": "Открыть",
+  "unlockFullStats": "Открыть полную статистику",
+  "premiumStatsMessage": "Тенденции настроения и динамика тяги доступны в Premium. Перейдите на Premium, чтобы увидеть полную статистику.",
+  "healthMilestonesWillAppear": "Ваши достижения в области здоровья появятся здесь.",
+  "healthMilestones": "Достижения для здоровья",
+  "dayNumber": "День {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Без алкоголя",
+  "slipLabel": "Срыв",
+  "noDataLabel": "Нет данных",
+
+  "milestone24Hours": "24 часа",
+  "milestoneOneWeek": "Одна неделя",
+  "milestoneOneMonth": "Один месяц",
+  "milestoneThreeMonths": "Три месяца",
+  "milestoneSixMonths": "Шесть месяцев",
+  "milestoneOneYear": "Один год",
+  "milestoneDayCount": "Достижение дня {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Политика конфиденциальности"
+}

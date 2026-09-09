@@ -1,0 +1,577 @@
+{
+  "@@locale": "nl",
+
+  "skip": "Overslaan",
+  "continueButton": "Doorgaan",
+  "getStarted": "Aan de slag",
+
+  "maybeLaterLabel": "Misschien later",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Annuleren",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "Neem de regie over je leven",
+  "onboardingSubtitle1": "Volg je reis, vier elke mijlpaal en word elke dag een stukje gezonder.",
+  "onboardingTitle2": "Je AI-herstelcoach",
+  "onboardingSubtitle2": "Ontvang gepersonaliseerde begeleiding, gezonde gewoonten, motivatieherinneringen en voortgangsrapporten op maat.",
+
+  "goodMorning": "Goedemorgen",
+  "goodAfternoon": "Goedemiddag",
+  "goodEvening": "Goedenavond",
+  "goodNight": "Goedenacht",
+
+  "embracingClarity": "Helderheid omarmen, één dag tegelijk.",
+  "streakLabel": "STREAK",
+  "goalLabel": "DOEL",
+  "daysStreak": "{count, plural, one{{count} dag} other{{count} dagen}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium-abonnement",
+  "premiumPlanSubtitle": "Ontgrendel je volledige herstelervaring",
+
+  "accountAndSupport": "ACCOUNT & ONDERSTEUNING",
+  "privacyPolicy": "Privacybeleid",
+  "privacyPolicySubtitle": "Beheer het delen van gegevens en accountbeveiliging",
+  "termsOfService": "Servicevoorwaarden",
+  "termsOfServiceSubtitle": "Veelgestelde vragen, contact en hulpmiddelen",
+  "shareApp": "App delen",
+  "shareAppSubtitle": "Deel de app met je vrienden",
+  "resetData": "Gegevens resetten",
+  "resetDataSubtitle": "Wis alles wat op dit apparaat is opgeslagen",
+
+  "resetAllDataTitle": "Alle gegevens resetten?",
+  "resetAllDataMessage": "Dit wist alles wat op dit apparaat is opgeslagen — profiel, dagboekaantekeningen en voortgang — en kan niet ongedaan worden gemaakt.",
+  "cancel": "Annuleren",
+  "reset": "Resetten",
+
+  "chooseFromGallery": "Kiezen uit galerij",
+  "takePhoto": "Foto maken",
+  "removePhoto": "Foto verwijderen",
+  "couldNotUpdatePhoto": "Foto kon niet worden bijgewerkt: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Foto kon niet worden verwijderd: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Die foto is zelfs na compressie te groot — probeer een andere.",
+
+  "unableToLoadProfile": "Kan je profiel niet laden",
+  "pleaseTryAgain": "Probeer het opnieuw.",
+  "tryAgain": "Probeer opnieuw",
+  "profileNotFound": "Profiel niet gevonden",
+  "refresh": "Vernieuwen",
+  "noProfileDataFound": "Nog geen profielgegevens gevonden op dit apparaat.",
+
+  "couldNotResetData": "Kon gegevens niet resetten: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Home",
+  "navStats": "Statistieken",
+  "navJournal": "Dagboek",
+  "navBadges": "Badges",
+  "navProfile": "Profiel",
+
+  "featureComingSoon": "{feature} is binnenkort beschikbaar.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELZIJN",
+  "appTitle": "Stop met drinken",
+  "splashSubtitle": "Zet de eerste stap naar een\nalcoholvrij leven",
+  "preparingJourney": "Je reis wordt\nvoorbereid",
+
+  "taskMorningMeditation": "Ochtendmeditatie (10m)",
+  "taskReadChapter": "Lees hoofdstuk 4 van \"The Sober Diaries\"",
+  "taskEveningJournal": "Avonddankbaarheidsdagboek",
+
+  "close": "Sluiten",
+  "youAreDoingGreat": "Je doet het geweldig!",
+  "shareMilestone": "Mijlpaal delen",
+  "shareMilestoneMessage": "Ik zit op dag {days} van mijn herstelreis! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Mijn herstelmijlpaal",
+
+  "weeklyReportReadyTitle": "Je weekrapport staat klaar",
+  "weeklyReportReadySubtitle": "Tik om te zien hoe je week is gegaan",
+
+  "howAreYouFeeling": "Hoe voel je je?",
+  "moodTough": "Zwaar",
+  "moodOkay": "Okee",
+  "moodGood": "Goed",
+
+  "moneySaved": "Geld bespaard",
+  "caloriesSaved": "Calorieën bespaard",
+  "healthScore": "Gezondheidsscore",
+  "drinksAvoided": "Drankjes vermeden",
+  "estimated": "Geschat",
+  "aiGenerated": "AI-genereerd",
+  "daysCapsLabel": "DAGEN",
+
+  "todaysMotivation": "Motivatie van vandaag",
+  "defaultMotivationQuote": "Je hebt je toezegging met succes nagekomen. Blijf meesurfen op de golf van positieve verandering.",
+
+  "talkToCoach": "Praat met coach",
+  "havingACraving": "Ik heb trek",
+
+  "unlockWeeklyReportsTitle": "Ontgrendel wekelijkse rapporten",
+  "unlockWeeklyReportsMessage": "Bekijk elke week je nuchtere dagen, stemmingstrends en gepersonaliseerde AI-feedback. Upgrade naar Premium om te ontgrendelen.",
+  "maybeLater": "Misschien later",
+  "upgrade": "Upgraden",
+
+  "weeklyReportTitle": "Weekrapport",
+  "weeklyReportsPremiumTitle": "Wekelijkse rapporten zijn een Premium-functie",
+  "weeklyReportsPremiumMessage": "Bekijk elke week je nuchtere dagen, stemmingstrends, trek en gepersonaliseerde AI-feedback.",
+  "upgradeToPremium": "Upgraden naar Premium",
+  "couldNotGenerateReport": "Kon je rapport op dit moment niet genereren.",
+  "tryAgainLower": "Probeer opnieuw",
+
+  "statSoberDays": "Nuchtere dagen",
+  "statAvgMood": "Gem. stemming",
+  "statCravings": "Trek",
+  "statMoneySaved": "Geld bespaard",
+  "coachFeedback": "Coach-feedback",
+  "journalInsights": "Dagboekinzichten",
+
+  "next": "Volgende",
+
+  "question1Title": "Wat is je doel",
+  "question1Subtitle": "Kies het doel dat voor jou\nhet belangrijkst is",
+  "goalQuitCompletely": "Volledig stoppen",
+  "goalReduceDrinking": "Minder drinken",
+  "goalTakeABreak": "Pauze nemen",
+  "goalBuildHealthierHabits": "Gezondere gewoonten opbouwen",
+
+  "question3Title": "Vertel ons over je\nroutine",
+  "drinksPerWeek": "Glazen per week",
+  "moneySpentPerWeek": "Uitgegeven geld per week",
+  "drinkingLevel": "Drinkniveau",
+  "triggersLabel": "Prikkels",
+  "levelSocial": "Sociaal",
+  "levelRegular": "Regelmatig",
+  "levelHeavy": "Zwaar",
+  "levelDependent": "Afhankelijk",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Eenzaamheid",
+  "triggerHabit": "Gewoonte",
+  "triggerSadness": "Verdriet",
+  "triggerAnger": "Boosheid",
+  "triggerBoredom": "Verveling",
+  "triggerSocialPressure": "Groepsdruk",
+  "triggerCelebration": "Feestje",
+  "triggerSleepProblems": "Slaapproblemen",
+  "triggerWorkPressure": "Werkdruk",
+
+  "question4Title": "Waarom wil je veranderen?",
+  "question4Subtitle": "Je reden zal je helpen om gemotiveerd te blijven.",
+  "reasonImproveHealth": "Mijn gezondheid verbeteren",
+  "reasonSaveMoney": "Geld besparen",
+  "reasonFamily": "Familie",
+  "reasonBetterSleep": "Beter slapen",
+  "reasonMentalClarity": "Mentale helderheid",
+  "reasonFitness": "Fitheid",
+  "reasonSelfRespect": "Zelfrespect",
+  "reasonCareer": "Carrière",
+
+  "milestoneUnlockedLabel": "MIJLPAAL ONTGRENDELD",
+  "incredibleNamePrefix": "Ongelooflijk, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} bespaard",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} vermeden",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Mijn mijlpaal delen",
+  "milestoneImageShareError": "Kon de afbeelding van de mijlpaal niet maken. Probeer het opnieuw.",
+
+  "dailyCheckInTitle": "Dagelijkse check-in",
+  "howAreYouFeelingToday": "Hoe voel je je vandaag?",
+  "honestAnswerHelp": "Je eerlijke antwoord helpt ons om je beter te ondersteunen",
+  "didYouDrinkToday": "Heb je vandaag gedronken?",
+  "noLabel": "Nee",
+  "yesLabel": "Ja",
+  "cravingLevelNow": "Mate van trek op dit moment?",
+  "anythingOnMind": "Iets wat je bezighoudt?",
+  "optionalLabel": "(optioneel)",
+  "dailyNoteHint": "Schrijf over je dag, prikkels, succesmomenten...",
+  "alreadyCheckedInToday": "Vandaag al ingecheckt",
+  "saveCheckIn": "Check-in opslaan",
+  "checkInsHelpTrack": "Check-ins helpen je voortgang in de loop van de tijd te volgen",
+  "alreadyCompletedTodayCheckIn": "Je hebt de check-in van vandaag al afgerond.",
+  "pleaseAnswerBothQuestions": "Beantwoord eerst beide bovenstaande vragen",
+  "checkInSaved": "Check-in opgeslagen",
+  "cravingNone": "Geen",
+  "cravingLow": "Laag",
+  "cravingMedium": "Gemiddeld",
+  "cravingStrong": "Sterk",
+  "moodBad": "Slecht",
+  "moodLow": "Minder goed",
+  "moodOkay": "Okee",
+  "moodGood": "Goed",
+  "moodGreat": "Geweldig",
+
+  "sosSupportTitle": "SOS-ondersteuning",
+  "notAloneMessage": "Je staat er niet alleen voor, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Trek waait over. Kies hieronder iets om je door dit moment heen te helpen.",
+  "breathingExercise": "Ademhalingsoefening",
+  "breathingExerciseSubtitle": "Begeleide 4-7-8 techniek, 2 minuten",
+  "rideTheWave": "Surf op de golf",
+  "rideTheWaveSubtitle": "Timer van 15 min — trek gaat altijd voorbij",
+  "copingTips": "Omgangstips",
+  "copingTipsSubtitle": "Gepersonaliseerde strategieën voor jouw prikkels",
+  "talkToAiCoach": "Praat met AI-coach",
+  "talkToAiCoachSubtitle": "Chat met je herstelpartner",
+  "callSomeone": "Belf iemand",
+  "callSomeoneSubtitle": "Bereik je vertrouwde contactpersoon",
+  "contactsPermissionNeeded": "Toestemming voor contacten is nodig om een contactpersoon te bellen.",
+  "beatenCravingsPrefix": "Je hebt al ",
+  "beatenCravingsCount": "{count} keer",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " trek weerstaan. Je kunt het nog een keer.",
+
+  "tellUsAboutYourself": "Vertel ons over jezelf",
+  "detailsSubtitle": "Deze informatie helpt ons om je herstelreis te personaliseren en nauwkeurige inzichten te bieden.",
+  "nameLabel": "Naam",
+  "nameHint": "bijv. Alex Rivers",
+  "ageLabel": "Leeftijd",
+  "ageHint": "bijv. 32",
+  "sexAssignedAtBirth": "Geslacht toegewezen bij geboorte",
+  "sexFemale": "Vrouw",
+  "sexMale": "Man",
+  "heightLabel": "Lengte",
+  "weightLabel": "Gewicht",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Dagelijkse limiet bereikt",
+  "dailyLimitReachedMessage": "Je hebt vandaag alle {limit} gratis berichten gebruikt. Upgrade naar Premium voor onbeperkt chatten met je coach.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Ik kon op dit moment geen verbinding maken. Probeer het zo opnieuw.",
+  "clearConversationTitle": "Gesprek wisssen?",
+  "clearConversationMessage": "Dit verwijdert je chatgeschiedenis met de coach definitief.",
+  "clearLabel": "Wissen",
+  "recoveryCoachTitle": "Herstelcoach",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "Gesprek wissen",
+  "chatGreeting": "Hoi {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Je zit op dag {days} van je reis. Ik ben er voor je als je ergens over wilt praten.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "SNELLE VRAGEN",
+  "promptCravingLabel": "Ik heb trek",
+  "promptCravingSubtitle": "Kom snel weer tot rust",
+  "promptMotivationLabel": "Motivatie nodig",
+  "promptMotivationSubtitle": "Een steuntje in de rug als het zwaar is",
+  "promptSocialLabel": "Sociale situatie",
+  "promptSocialSubtitle": "Navigeer door een bijeenkomst",
+  "promptSlippedLabel": "Ik ben uitgegleden",
+  "promptSlippedSubtitle": "Geen oordeel, alleen steun",
+  "typeMessageHint": "Typ een bericht...",
+
+  "editProfileTitle": "Profiel bewerken",
+  "couldNotSaveProfile": "Kon profiel niet opslaan: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Lengte (cm)",
+  "weightKgLabel": "Gewicht (kg)",
+  "saveChangesLabel": "Wijzigingen opslaan",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Geavanceerde inzichten & analyses",
+  "featureUnlimitedJournal": "Onbeperkt aantal dagboekaantekeningen",
+  "featureUnlimitedChat": "Onbeperkt chatten met AI-coach",
+  "featureCommunityGroups": "Exclusieve communitygroepen",
+  "featurePrioritySupport": "Prioritaire deskundige ondersteuning",
+  "featureThemePacks": "Aangepaste themapakketten",
+  "featureDataExport": "Gegevens exporteren",
+  "featureAdFree": "Reclamevrije ervaring",
+  "premiumMemberTitle": "Je bent Premium-lid",
+  "unlockFullRecoveryTitle": "Ontgrendel je volledige\nherstelervaring",
+  "premiumMemberSubtitle": "Bedankt voor het ondersteunen van je herstelreis — alle onderstaande premium-functies zijn ontgrendeld.",
+  "premiumJoinSubtitle": "Sluit je aan bij duizenden anderen die hun herstelproces versnellen met onze premium tools en persoonlijke ondersteuning.",
+  "monthlyPlanLabel": "Maandelijks",
+  "perMonthSuffix": "/pm",
+  "cancelAnytimeLabel": "Annuleer wanneer je wilt",
+  "yearlyPlanLabel": "Jaarlijks",
+  "billedAnnuallyLabel": "Jaarlijks gefactureerd voor {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Beste waarde",
+  "alreadyPremiumLabel": "Je bent Premium ✓",
+  "startPremiumLabel": "Start Premium",
+  "manageSubscriptionLabel": "Beheer of annuleer via de abonnementsinstellingen van je apparaat.",
+  "noCommitmentLabel": "Nergens aan vast. Annuleer wanneer je wilt.",
+  "continueFreePlanLabel": "Doorgaan met gratis abonnement",
+  "backToHomeLabel": "Terug naar Home",
+  "cancelPremiumLabel": "Premium annuleren",
+  "cancelPremiumTitle": "Premium annuleren?",
+  "cancelPremiumMessage": "Je verliest toegang tot onbeperkte dagboekaantekeningen, onbeperkt chatten met de coach, statistiekinzichten en wekelijkse rapporten. Je kunt je op elk moment opnieuw abonneren.",
+  "keepPremiumLabel": "Premium behouden",
+  "nowPremiumMessage": "Je bent nu Premium! Geniet van je volledige herstelervaring.",
+  "premiumCancelledMessage": "Premium geannuleerd. Je bent terug op het gratis abonnement.",
+  "termsOfUseLabel": "Gebruiksvoorwaarden",
+
+  "navHomeLabel": "Home",
+  "navStatsLabel": "Statistieken",
+  "navJournalLabel": "Dagboek",
+  "navBadgesLabel": "Badges",
+  "navProfileLabel": "Profiel",
+
+  "recoveryGoalsTitle": "Hersteldoelen",
+  "quitReasonsLabel": "Redenen om te stoppen",
+  "quitReasonsHelperText": "Scheid meerdere redenen met een komma.",
+  "couldNotSaveRecoveryGoals": "Kon hersteldoelen niet opslaan: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "bijv. Volledige onthouding",
+  "drinksPerWeekHint": "bijv. 12",
+  "quitReasonsHint": "bijv. Gezondheid, Familie, Geld",
+
+  "todaysPrompt": "Vraag van vandaag",
+  "defaultJournalPrompt": "Wat houdt je vandaag bezig?",
+  "aiJournalInsights": "AI-dagboekinzichten",
+  "unlockJournalInsightsMessage": "Ontgrendel wekelijkse patronen, stemmingstrends en gepersonaliseerde inzichten uit je dagboekaantekeningen.",
+  "notEnoughJournalData": "Nog niet genoeg gegevens — schrijf deze week een paar aantekeningen en kom terug.",
+  "openEntry": "Openen",
+  "editEntry": "Bewerken",
+  "deleteEntry": "Verwijderen",
+  "searchJournalEntries": "Aantekeningen zoeken...",
+  "writeNewEntry": "Nieuwe aantekening schrijven",
+  "recentEntries": "Recente aantekeningen",
+  "noJournalEntriesYet": "Nog geen dagboekaantekeningen — schrijf hierboven je eerste reflectie.",
+  "noEntriesMatchFilters": "Geen aantekeningen die voldoen aan je filters.",
+
+  "weeklyJournalLimitReached": "Wekelijkse limiet bereikt",
+  "weeklyJournalLimitMessage": "Je hebt deze week alle {limit} gratis dagboekaantekeningen gebruikt. Upgrade naar Premium voor onbeperkte aantekeningen.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Nieuwe aantekening",
+  "writeYourThoughts": "Schrijf je gedachten op",
+  "saveEntry": "Aantekening opslaan",
+  "freeEntriesLeftThisWeek": "Nog {remaining} van {limit} gratis aantekeningen over deze week",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Aantekening verwijderen?",
+  "deleteEntryConfirmation": "Deze aantekening wordt definitief verwijderd. Dit kan niet ongedaan worden gemaakt.",
+
+  "journalEntryNotFound": "Aantekening niet gevonden",
+  "journalEntryMayHaveBeenDeleted": "Deze dagboekaantekening is mogelijk verwijderd.",
+  "goBack": "Ga terug",
+  "journalEntryTitle": "Dagboekaantekening",
+
+  "moodStruggling": "Moeizaam",
+  "moodUnwell": "Niet goed",
+  "moodNeutral": "Neutraal",
+
+  "whatHappenedToday": "Wat is er vandaag gebeurd?",
+  "trigger": "Prikkel",
+  "whatHelped": "Wat hielp",
+  "whatIllTryNextTime": "Wat ik de volgende keer ga proberen",
+  "journalPrivacyMessage": "Je reflectie is privé en opgeslagen in je dagboek.",
+
+  "unlocked": "Ontgrendeld",
+  "daysLeft": "Nog {count, plural, one{{count} dag} other{{count} dagen}} over",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Dagen",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Eerste\nreflectie",
+  "oneJournalEntry": "1 dagboekaantekening",
+  "openBook": "Open boek",
+  "tenJournalEntries": "10 dagboekaantekeningen",
+  "dedicatedWriter": "Toegewijde\nschrijver",
+  "thirtyJournalEntries": "30 dagboekaantekeningen",
+  "firstConversation": "Eerste\ngesprek",
+  "oneAiCoachChat": "1 AI-coachgesprek",
+  "keepTalking": "Blijf praten",
+  "fiveConversations": "5 gesprekken",
+  "coachCompanion": "Coach-\npartner",
+  "twentyConversations": "20 gesprekken",
+  "checkInHabit": "Check-in-\ngewoonte",
+  "sevenCheckIns": "7 check-ins",
+  "consistencyPro": "Consistentie-\nexpert",
+  "thirtyCheckIns": "30 check-ins",
+  "dedicatedJourney": "Toegewijde\nreis",
+  "hundredCheckIns": "100 check-ins",
+  "goalGetter": "Doelzoeker",
+  "threeGoalsCompleted": "3 doelen behaald",
+  "goalAchiever": "Doel-\nbereiker",
+  "tenGoalsCompleted": "10 doelen behaald",
+  "firstSavings": "Eerste\nbesparing",
+  "fiveHundredSaved": "$500 bespaard",
+  "smartSaver": "Slimme spaarder",
+  "oneThousandSaved": "$1.000 bespaard",
+  "bigSaver": "Grote spaarder",
+  "fiveThousandSaved": "$5.000 bespaard",
+  "currencyProgress": "${current} van ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} van {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Ga zo door — je eerste mijlpaal staat op je te wachten!",
+  "badgesAndMilestones": "Badges & Mijlpalen",
+  "yourMilestoneJourney": "Jouw mijlpalenreis",
+  "milestonesAchieved": "{count, plural, one{{count} mijlpaal behaald.\nTik om te bekijken} other{{count} mijlpalen behaald.\nTik om te bekijken}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Je hebt {unlocked} van de {total} mijlpalen op je reis ontgrendeld.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Resterend",
+  "complete": "Voltooid",
+  "nextMilestone": "Volgende mijlpaal",
+  "percentThere": "{subtitle} · {percent}% op weg",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Nuchterheidsmijlpalen",
+  "journeyBadges": "Reisbadges",
+  "bronze": "BRONS",
+  "silver": "ZILVER",
+  "gold": "GOUD",
+  "platinum": "PLATINA",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Je reis analyseren...",
+  "aiCreatingSanctuary": "Onze AI bouwt aan jouw persoonlijke rustplek.",
+  "understandingHabits": "Gewoonten begrijpen...",
+  "calculatingBaseline": "Je uitgangspunt berekenen...",
+  "personalizingPlan": "Je plan personaliseren...",
+  "finalizingSanctuary": "Je rustplek afronden...",
+  "creatingYourPlan": "Je plan maken...",
+  "personalizedPlanError": "We konden je gepersonaliseerde plan niet maken. Probeer het opnieuw.",
+  "retry": "Opnieuw proberen",
+
+  "breathInhale": "INADEMEN",
+  "breathHold": "VASTHOUDEN",
+  "breathExhale": "UITADEMEN",
+  "breathDone": "KLAAR",
+  "breathGreatJob": "Goed gedaan!",
+  "breathSessionsToday": "{count, plural, one{{count} sessie vandaag} other{{count} sessies vandaag}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Oefening beëindigen",
+  "done": "Klaar",
+
+  "noCopingTipsYet": "Nog geen omgangstips",
+  "copingStrategiesWillAppear": "Je gepersonaliseerde omgangsstrategieën verschijnen hier zodra je herstelplan is gegenereerd.",
+  "strategiesTailoredToTriggers": "Strategieën afgestemd op jouw prikkels",
+
+  "cravingsPeakAndPass": "Trek piekt\nen gaat voorbij",
+  "rideTheWaveDescription": "De meeste trek gaat binnen 15 minuten voorbij. Je hoeft er niks mee te doen — surf er gewoon samen met ons doorheen.",
+  "stayWithIt": "blijf erbij",
+  "youMadeIt": "het is je gelukt",
+  "readyWhenYouAre": "klaar wanneer jij dat bent",
+  "rideItAgain": "Nog eens surfen",
+  "start15MinuteTimer": "Start timer van 15 minuten",
+  "rideTheWaveCompletedMessage": "Je hebt de golf uitgezeten. Dat is echte kracht. 💪",
+
+  "myProgress": "Mijn voortgang",
+  "weekLabel": "Week",
+  "monthLabel": "Maand",
+  "allLabel": "Alles",
+  "daysSoberStatLabel": "Dagen\nnuchter",
+  "savedStatLabel": "Bespaard",
+  "avoidedStatLabel": "Vermeden",
+  "moodTrends": "Stemmingstrends",
+  "cravingsPattern": "Patroon van trek",
+  "unlockLabel": "Ontgrendel",
+  "unlockFullStats": "Volledige statistieken ontgrendelen",
+  "premiumStatsMessage": "Stemmingstrends en trekpatronen zijn Premium-functies. Upgrade om je volledige statistieken te zien.",
+  "healthMilestonesWillAppear": "Je gezondheidsmijlpalen verschijnen hier.",
+  "healthMilestones": "Gezondheidsmijlpalen",
+  "dayNumber": "Dag {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Nuchter",
+  "slipLabel": "Atempause",
+  "noDataLabel": "Geen gegevens",
+
+  "milestone24Hours": "24 uur",
+  "milestoneOneWeek": "Eén week",
+  "milestoneOneMonth": "Eén maand",
+  "milestoneThreeMonths": "Drie maanden",
+  "milestoneSixMonths": "Zes maanden",
+  "milestoneOneYear": "Eén jaar",
+  "milestoneDayCount": "Mijlpaal Dag {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

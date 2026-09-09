@@ -1,0 +1,579 @@
+{
+  "@@locale": "kk",
+
+  "skip": "Өткізіп жіберу",
+  "continueButton": "Жалғастыру",
+  "getStarted": "Бастау",
+
+  "onboardingTitle1": "Өміріңізді бақылауға алыңыз",
+  "onboardingSubtitle1": "Сапарыңызды бақылаңыз, әр жетістікті атап өтіңіз және күн сайын сау бола беріңіз.",
+  "onboardingTitle2": "Сіздің AI сауығу серігіңіз",
+  "onboardingSubtitle2": "Сапарыңызға арналған жеке кеңестер, пайдалы әдеттер, мотивациялық еске салғыштар мен прогресс есептерін алыңыз.",
+
+  "goodMorning": "Қайырлы таң",
+  "goodAfternoon": "Қайырлы күн",
+  "goodEvening": "Қайырлы кеш",
+  "goodNight": "Қайырлы түн",
+
+  "embracingClarity": "Күн сайын айқындықты қабылдау.",
+  "streakLabel": "СЕРИЯ",
+  "goalLabel": "МАҚСАТ",
+  "daysStreak": "{count, plural, one{{count} күн} other{{count} күн}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Премиум жоспар",
+  "premiumPlanSubtitle": "Толық сауығу тәжірибесін ашыңыз",
+
+  "accountAndSupport": "АККАУНТ ЖӘНЕ ҚОЛДАУ",
+  "privacyPolicy": "Құпиялылық саясаты",
+  "privacyPolicySubtitle": "Деректерді бөлісу және аккаунт қауіпсіздігін басқару",
+  "termsOfService": "Қызмет көрсету шарттары",
+  "termsOfServiceSubtitle": "Жиі қойылатын сұрақтар, бізбен байланыс және ресурстар",
+  "shareApp": "Қолданбамен бөлісу",
+  "shareAppSubtitle": "Қолданбаны достарыңызбен бөлісіңіз",
+  "resetData": "Деректерді қалпына келтіру",
+  "resetDataSubtitle": "Осы құрылғыда сақталған барлық деректерді өшіру",
+
+  "resetAllDataTitle": "Барлық деректерді қалпына келтіру керек пе?",
+  "resetAllDataMessage": "Бұл әрекет осы құрылғыда сақталған барлық деректерді — профильді, күнделік жазбаларын және прогресті — өшіреді және оны болдырмау мүмкін емес.",
+  "cancel": "Бас тарту",
+  "reset": "Қалпына келтіру",
+
+  "chooseFromGallery": "Галереядан таңдау",
+  "takePhoto": "Фотосурет түсіру",
+  "removePhoto": "Фотосуретті өшіру",
+  "couldNotUpdatePhoto": "Фотосуретті жаңарту мүмкін болмады: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Фотосуретті өшіру мүмкін болмады: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Бұл фотосурет сығымдаудан кейін де тым үлкен — басқасын қолданып көріңіз.",
+
+  "unableToLoadProfile": "Профиліңізді жүктеу мүмкін болмады",
+  "pleaseTryAgain": "Қайталап көріңіз.",
+  "tryAgain": "Қайта көру",
+  "profileNotFound": "Профиль табылмады",
+  "refresh": "Жаңарту",
+  "noProfileDataFound": "Бұл құрылғыда әлі профиль деректері табылмады.",
+
+  "couldNotResetData": "Деректерді қалпына келтіру мүмкін болмады: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Басты бет",
+  "navStats": "Статистика",
+  "navJournal": "Күнделік",
+  "navBadges": "Наградалар",
+  "navProfile": "Профиль",
+
+  "featureComingSoon": "{feature} жақында қолжетімді болады.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Ішуден бас тарту",
+  "splashSubtitle": "Алкогольсіз өмірге апаратын\nбірінші қадамды жасаңыз",
+  "preparingJourney": "Сапарыңыз\nдайындалуда",
+
+  "taskMorningMeditation": "Таңертеңгі медитация (10 мин)",
+  "taskReadChapter": "«The Sober Diaries» кітабының 4-тарауын оқу",
+  "taskEveningJournal": "Кешкі алғыс күнделігі",
+
+  "close": "Жабу",
+  "youAreDoingGreat": "Сіз керемет істеп жатырсыз!",
+  "shareMilestone": "Кезеңмен бөлісу",
+  "shareMilestoneMessage": "Мен сауығу сапарымның {days}-күніндемін! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Менің сауығу кезеңім",
+
+  "weeklyReportReadyTitle": "Апталық есебіңіз дайын",
+  "weeklyReportReadySubtitle": "Апта қалай өткенін көру үшін түртіңіз",
+
+  "howAreYouFeeling": "Өзіңізді қалай сезініп жатырсыз?",
+  "moodTough": "Қиын",
+  "moodOkay": "Жаман емес",
+  "moodGood": "Жақсы",
+
+  "moneySaved": "Үнемделген ақша",
+  "caloriesSaved": "Үнемделген калория",
+  "healthScore": "Денсаулық көрсеткіші",
+  "drinksAvoided": "Ішілмеген сусындар",
+  "estimated": "Болжамды",
+  "aiGenerated": "AI жасаған",
+  "daysCapsLabel": "КҮН",
+
+  "todaysMotivation": "Бүгінгі мотивация",
+  "defaultMotivationQuote": "Сіз серттіңізді сәтті сақтап келесіз. Оң өзгерістер толқынымен жүруді жалғастырыңыз.",
+
+  "talkToCoach": "Коучпен сөйлесу",
+  "havingACraving": "Мен ынтызарлық сезініп тұрмын",
+
+  "unlockWeeklyReportsTitle": "Апталық есептерді ашу",
+  "unlockWeeklyReportsMessage": "Тыныш күндеріңізді, көңіл-күй үрдістерін және жеке AI пікірлерін апта сайын көріңіз. Ашу үшін Премиумға жаңартыңыз.",
+  "maybeLater": "Мүмкін кейінірек",
+  "upgrade": "Жаңарту",
+
+  "weeklyReportTitle": "Апталық есеп",
+  "weeklyReportsPremiumTitle": "Апталық есептер — Премиум мүмкіндігі",
+  "weeklyReportsPremiumMessage": "Тыныш күндеріңізді, көңіл-күй үрдістерін, ынтызарлықтарды және жеке AI пікірлерін апта сайын көріңіз.",
+  "upgradeToPremium": "Премиумға жаңарту",
+  "couldNotGenerateReport": "Қазір есебіңізді жасау мүмкін болмады.",
+  "tryAgainLower": "Қайта көру",
+
+  "statSoberDays": "Тыныш күндер",
+  "statAvgMood": "Орт. көңіл-күй",
+  "statCravings": "Ынтызарлықтар",
+  "statMoneySaved": "Үнемделген ақша",
+  "coachFeedback": "Коучтың пікірі",
+  "journalInsights": "Күнделік талдауы",
+
+  "next": "Келесі",
+
+  "question1Title": "Мақсатыңыз қандай?",
+  "question1Subtitle": "Сізге ең маңызды\nмақсатты таңдаңыз",
+  "goalQuitCompletely": "Толығымен тастау",
+  "goalReduceDrinking": "Ішуді азайту",
+  "goalTakeABreak": "Демалыс алу",
+  "goalBuildHealthierHabits": "Салауатты әдеттер қалыптастыру",
+
+  "question3Title": "Күнделікті режиміңіз\nтуралы айтыңыз.",
+  "drinksPerWeek": "Аптасына сусын саны",
+  "moneySpentPerWeek": "Аптасына жұмсалатын ақша",
+  "drinkingLevel": "Ішу деңгейі",
+  "triggersLabel": "Триггерлер",
+  "levelSocial": "Әлеуметтік",
+  "levelRegular": "Тұрақты",
+  "levelHeavy": "Ауыр",
+  "levelDependent": "Тәуелді",
+  "triggerStress": "Стресс",
+  "triggerLoneliness": "Жалғыздық",
+  "triggerHabit": "Әдет",
+  "triggerSadness": "Мұң",
+  "triggerAnger": "Ашу",
+  "triggerBoredom": "Зерігу",
+  "triggerSocialPressure": "Әлеуметтік қысым",
+  "triggerCelebration": "Мереке",
+  "triggerSleepProblems": "Ұйқы мәселелері",
+  "triggerWorkPressure": "Жұмыс қысымы",
+
+  "question4Title": "Неге өзгергіңіз келеді?",
+  "question4Subtitle": "Себебіңіз сізді ынталандыруға көмектеседі.",
+  "reasonImproveHealth": "Денсаулығымды жақсарту",
+  "reasonSaveMoney": "Ақша үнемдеу",
+  "reasonFamily": "Отбасы",
+  "reasonBetterSleep": "Жақсырақ ұйқы",
+  "reasonMentalClarity": "Ой айқындығы",
+  "reasonFitness": "Дене шынықтыру",
+  "reasonSelfRespect": "Өзін-өзі құрметтеу",
+  "reasonCareer": "Мансап",
+
+  "milestoneUnlockedLabel": "КЕЗЕҢ АШЫЛДЫ",
+  "incredibleNamePrefix": "Керемет, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} үнемделді",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} ішілмеді",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Кезеңіммен бөлісу",
+  "milestoneImageShareError": "Кезең суретін жасау мүмкін болмады. Қайталап көріңіз.",
+
+  "dailyCheckInTitle": "Күнделікті тексеру",
+  "howAreYouFeelingToday": "Бүгін өзіңізді қалай сезініп тұрсыз?",
+  "honestAnswerHelp": "Шыншыл жауабыңыз сізге жақсырақ көмектесуге мүмкіндік береді",
+  "didYouDrinkToday": "Бүгін іштіңіз бе?",
+  "noLabel": "Жоқ",
+  "yesLabel": "Иә",
+  "cravingLevelNow": "Қазіргі ынтызарлық деңгейі қандай?",
+  "anythingOnMind": "Ойыңызда бірдеңе бар ма?",
+  "optionalLabel": "(міндетті емес)",
+  "dailyNoteHint": "Күніңіз, триггерлеріңіз, жетістіктеріңіз туралы жазыңыз...",
+  "alreadyCheckedInToday": "Бүгін тексеру жасалды",
+  "saveCheckIn": "Тексеруді сақтау",
+  "checkInsHelpTrack": "Тексерулер прогресіңізді уақыт бойы бақылауға көмектеседі",
+  "alreadyCompletedTodayCheckIn": "Сіз бүгінгі тексеруді толтырдыңыз.",
+  "pleaseAnswerBothQuestions": "Алдымен жоғарыдағы екі сұраққа жауап беріңіз",
+  "checkInSaved": "Тексеру сақталды",
+  "cravingNone": "Жоқ",
+  "cravingLow": "Төмен",
+  "cravingMedium": "Орташа",
+  "cravingStrong": "Күшті",
+  "moodBad": "Нашар",
+  "moodLow": "Төмен",
+  "moodOkay": "Жаман емес",
+  "moodGood": "Жақсы",
+  "moodGreat": "Керемет",
+
+  "sosSupportTitle": "SOS қолдау",
+  "notAloneMessage": "Сіз жалғыз емессіз, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Ынтызарлықтар өтеді. Осы сәтте көмектесу үшін төменнен таңдаңыз.",
+  "breathingExerciseSubtitle": "4-7-8 техникасы бойынша бағыттама, 2 минут",
+  "rideTheWave": "Толқынмен жүру",
+  "rideTheWaveSubtitle": "15 мин таймер — ынтызарлықтар әрқашан өтеді",
+  "copingTips": "Күресу кеңестері",
+  "copingTipsSubtitle": "Триггерлеріңізге арналған жеке стратегиялар",
+  "talkToAiCoach": "AI коучпен сөйлесу",
+  "talkToAiCoachSubtitle": "Сауығу серігіңізбен сөйлесіңіз",
+  "callSomeone": "Біреуге қоңырау шалу",
+  "callSomeoneSubtitle": "Сенімді контактіңізге хабарласыңыз",
+  "contactsPermissionNeeded": "Контактіге қоңырау шалу үшін контактілерге рұқсат қажет.",
+  "beatenCravingsPrefix": "Сіз ынтызарлықты ",
+  "beatenCravingsCount": "{count} рет жеңдіңіз",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " бұрын. Сіз тағы жеңе аласыз.",
+
+  "tellUsAboutYourself": "Өзіңіз туралы айтыңыз",
+  "detailsSubtitle": "Бұл ақпарат сауығу сапарыңызды жекелендіруге және дәл талдаулар беруге көмектеседі.",
+  "nameLabel": "Аты",
+  "nameHint": "мыс., Alex Rivers",
+  "ageLabel": "Жасы",
+  "ageHint": "мыс., 32",
+  "sexAssignedAtBirth": "Туылғанда белгіленген жынысы",
+  "sexFemale": "Әйел",
+  "sexMale": "Ер",
+  "heightLabel": "Бойы",
+  "weightLabel": "Салмағы",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Күнделікті шектеуге жетті",
+  "dailyLimitReachedMessage": "Сіз бүгін барлық {limit} тегін хабарламаны қолдандыңыз. Шексіз коуч чаты үшін Премиумға жаңартыңыз.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Қазір қосыла алмадым. Сәл кейінірек қайталап көріңіз.",
+  "clearConversationTitle": "Әңгімені тазалау керек пе?",
+  "clearConversationMessage": "Бұл коуч чат тарихыңызды толығымен өшіреді.",
+  "clearLabel": "Тазалау",
+  "recoveryCoachTitle": "Сауығу коучі",
+  "onlineLabel": "Онлайн",
+  "clearConversationMenuItem": "Әңгімені тазалау",
+  "chatGreeting": "Сәлем, {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Сіз сапарыңыздың {days}-күніндесіз. Мен сөйлескіңіз келгенде осындамын.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "ЖЫЛДАМ СҰРАУЛАР",
+  "promptCravingLabel": "Ынтызарлық сезінемін",
+  "promptCravingSubtitle": "Тез тұрақтану",
+  "promptMotivationLabel": "Мотивация керек",
+  "promptMotivationSubtitle": "Қиын кезде күш беру",
+  "promptSocialLabel": "Әлеуметтік жағдай",
+  "promptSocialSubtitle": "Жиналысты жеңу",
+  "promptSlippedLabel": "Мен сүрінідім",
+  "promptSlippedSubtitle": "Айыптаусыз, тек қолдау",
+  "typeMessageHint": "Хабарлама жазыңыз...",
+
+  "editProfileTitle": "Профильді өзгерту",
+  "couldNotSaveProfile": "Профильді сақтау мүмкін болмады: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Бойы (см)",
+  "weightKgLabel": "Салмағы (кг)",
+  "saveChangesLabel": "Өзгерістерді сақтау",
+
+  "premiumBadgeLabel": "ПРЕМИУМ",
+  "featureAdvancedInsights": "Жетілдірілген талдаулар мен аналитика",
+  "featureUnlimitedJournal": "Шексіз күнделік жазбалары",
+  "featureUnlimitedChat": "AI коучпен шексіз чат",
+  "featureCommunityGroups": "Ерекше қауымдастық топтары",
+  "featurePrioritySupport": "Басым сарапшы қолдауы",
+  "featureThemePacks": "Арнайы тақырып пакеттері",
+  "featureDataExport": "Деректерді экспорттау",
+  "featureAdFree": "Жарнамасыз тәжірибе",
+  "premiumMemberTitle": "Сіз Премиум мүшесіз",
+  "unlockFullRecoveryTitle": "Толық сауығу\nтәжірибеңізді ашыңыз",
+  "premiumMemberSubtitle": "Сауығу сапарыңызды қолдағаныңыз үшін рахмет — төмендегі әрбір премиум мүмкіндік ашылды.",
+  "premiumJoinSubtitle": "Біздің премиум құралдарымыз бен жеке қолдауымызбен\nсауығуын жеделдетіп жатқан мыңдаған адамдар\nқауымдастығына қосылыңыз.",
+  "monthlyPlanLabel": "Айлық",
+  "perMonthSuffix": "/ай",
+  "cancelAnytimeLabel": "Кез келген уақытта бас тартуға болады",
+  "yearlyPlanLabel": "Жылдық",
+  "billedAnnuallyLabel": "Жылына {amount} есептеледі",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Ең тиімді",
+  "alreadyPremiumLabel": "Сіз Премиумсыз ✓",
+  "startPremiumLabel": "Премиумды бастау",
+  "manageSubscriptionLabel": "Құрылғыңыздың жазылым баптауларынан басқарыңыз немесе бас тартыңыз.",
+  "noCommitmentLabel": "Міндеттеме жоқ. Кез келген уақытта бас тартуға болады.",
+  "continueFreePlanLabel": "Тегін жоспармен жалғастыру",
+  "backToHomeLabel": "Басты бетке оралу",
+  "cancelPremiumLabel": "Премиумнан бас тарту",
+  "cancelPremiumTitle": "Премиумнан бас тарту керек пе?",
+  "cancelPremiumMessage": "Сіз шексіз күнделік жазбаларына, шексіз коуч чатына, статистика талдауларына және апталық есептерге қол жеткізуден айырыласыз. Кез келген уақытта қайта жазыла аласыз.",
+  "keepPremiumLabel": "Премиумды сақтау",
+  "nowPremiumMessage": "Сіз енді Премиумсыз! Толық сауығу тәжірибеңізді пайдаланыңыз.",
+  "premiumCancelledMessage": "Премиум бас тартылды. Сіз тегін жоспарға оралдыңыз.",
+  "termsOfUseLabel": "Пайдалану шарттары",
+
+  "navHomeLabel": "Басты бет",
+  "navStatsLabel": "Статистика",
+  "navJournalLabel": "Күнделік",
+  "navBadgesLabel": "Наградалар",
+  "navProfileLabel": "Профиль",
+
+  "recoveryGoalsTitle": "Сауығу мақсаттары",
+  "drinksPerWeekLabel": "Аптасына сусын саны",
+  "quitReasonsLabel": "Тастау себептері",
+  "quitReasonsHelperText": "Бірнеше себепті үтірмен бөліңіз.",
+  "couldNotSaveRecoveryGoals": "Сауығу мақсаттарын сақтау мүмкін болмады: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "мыс., Толық бас тарту",
+  "drinksPerWeekHint": "мыс., 12",
+  "quitReasonsHint": "мыс., Денсаулық, Отбасы, Ақша",
+
+  "todaysPrompt": "Бүгінгі сұрау",
+  "defaultJournalPrompt": "Бүгін ойыңызда не бар?",
+  "aiJournalInsights": "AI күнделік талдауы",
+  "unlockJournalInsightsMessage": "Күнделік жазбаларыңыздан апталық үлгілерді, көңіл-күй үрдістерін және жеке талдауларды ашыңыз.",
+  "notEnoughJournalData": "Әзірге деректер жеткіліксіз — осы апта бірнеше жазба жазып, кейін қайта тексеріңіз.",
+  "openEntry": "Ашу",
+  "editEntry": "Өзгерту",
+  "deleteEntry": "Өшіру",
+  "searchJournalEntries": "Жазбаларды іздеу...",
+  "writeNewEntry": "Жаңа жазба жазу",
+  "recentEntries": "Соңғы жазбалар",
+  "noJournalEntriesYet": "Әлі күнделік жазбалары жоқ — алғашқы ойыңызды жоғарыда жазыңыз.",
+  "noEntriesMatchFilters": "Сүзгілеріңізге сәйкес жазба жоқ.",
+
+  "weeklyJournalLimitReached": "Апталық шектеуге жетті",
+  "weeklyJournalLimitMessage": "Сіз осы апта барлық {limit} тегін күнделік жазбасын қолдандыңыз. Шексіз жазбалар үшін Премиумға жаңартыңыз.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Жаңа жазба",
+  "writeYourThoughts": "Ойларыңызды жазыңыз",
+  "saveEntry": "Жазбаны сақтау",
+  "freeEntriesLeftThisWeek": "Осы аптада {limit} тегін жазбадан {remaining} қалды",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Жазбаны өшіру керек пе?",
+  "deleteEntryConfirmation": "Бұл жазба толығымен өшіріледі. Оны болдырмау мүмкін емес.",
+
+  "journalEntryNotFound": "Жазба табылмады",
+  "journalEntryMayHaveBeenDeleted": "Бұл күнделік жазбасы өшірілген болуы мүмкін.",
+  "goBack": "Артқа қайту",
+  "journalEntryTitle": "Күнделік жазбасы",
+
+  "moodStruggling": "Қиналуда",
+  "moodUnwell": "Сергек емес",
+  "moodNeutral": "Бейтарап",
+
+  "whatHappenedToday": "Бүгін не болды?",
+  "trigger": "Триггер",
+  "whatHelped": "Не көмектесті",
+  "whatIllTryNextTime": "Келесі жолы не істеп көремін",
+  "journalPrivacyMessage": "Ойыңыз құпия және күнделігіңізде сақталады.",
+
+  "unlocked": "Ашылды",
+  "daysLeft": "{count} күн қалды",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} күн",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Алғашқы\nОй",
+  "oneJournalEntry": "1 күнделік жазбасы",
+  "openBook": "Ашық кітап",
+  "tenJournalEntries": "10 күнделік жазбасы",
+  "dedicatedWriter": "Берілген\nЖазушы",
+  "thirtyJournalEntries": "30 күнделік жазбасы",
+  "firstConversation": "Алғашқы\nӘңгіме",
+  "oneAiCoachChat": "1 AI коуч чаты",
+  "keepTalking": "Сөйлесуді жалғастыру",
+  "fiveConversations": "5 әңгіме",
+  "coachCompanion": "Коуч\nСерігі",
+  "twentyConversations": "20 әңгіме",
+  "checkInHabit": "Тексеру\nӘдеті",
+  "sevenCheckIns": "7 тексеру",
+  "consistencyPro": "Тұрақтылық\nПрофессионалы",
+  "thirtyCheckIns": "30 тексеру",
+  "dedicatedJourney": "Берілген\nСапар",
+  "hundredCheckIns": "100 тексеру",
+  "goalGetter": "Мақсатқа жетуші",
+  "threeGoalsCompleted": "3 мақсат орындалды",
+  "goalAchiever": "Мақсатқа\nЖетуші",
+  "tenGoalsCompleted": "10 мақсат орындалды",
+  "firstSavings": "Алғашқы\nЖинақ",
+  "fiveHundredSaved": "$500 үнемделді",
+  "smartSaver": "Ақылды жинақтаушы",
+  "oneThousandSaved": "$1,000 үнемделді",
+  "bigSaver": "Үлкен жинақтаушы",
+  "fiveThousandSaved": "$5,000 үнемделді",
+  "currencyProgress": "${target} ішінен ${current}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{target} ішінен {current}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Жалғастырыңыз — алғашқы кезеңіңіз сізді күтуде!",
+  "badgesAndMilestones": "Наградалар мен кезеңдер",
+  "yourMilestoneJourney": "Сіздің кезең сапарыңыз",
+  "milestonesAchieved": "{count} кезеңге қол жеткізілді.\nКөру үшін түртіңіз",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Сіз сапарыңызда {total} кезеңнің {unlocked} санын аштыңыз.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Қалды",
+  "complete": "Аяқталды",
+  "nextMilestone": "Келесі кезең",
+  "percentThere": "{subtitle} · {percent}% жетті",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Тыныш болу кезеңдері",
+  "journeyBadges": "Сапар наградалары",
+  "bronze": "ҚОЛА",
+  "silver": "КҮМІС",
+  "gold": "АЛТЫН",
+  "platinum": "ПЛАТИНА",
+  "diamond": "АЛМАС",
+
+  "analyzingYourJourney": "Сапарыңыз талдануда...",
+  "aiCreatingSanctuary": "Біздің AI сізге жеке пана жасап жатыр.",
+  "understandingHabits": "Әдеттеріңізді түсіну...",
+  "calculatingBaseline": "Бастапқы деректеріңіз есептелуде...",
+  "personalizingPlan": "Жоспарыңыз жекелендірілуде...",
+  "finalizingSanctuary": "Панаңыз аяқталуда...",
+  "creatingYourPlan": "Жоспарыңыз жасалуда...",
+  "personalizedPlanError": "Жеке жоспарыңызды жасай алмадық. Қайталап көріңіз.",
+  "retry": "Қайталау",
+
+  "breathingExercise": "Тыныс алу жаттығуы",
+  "breathInhale": "ДЕМ АЛУ",
+  "breathHold": "ҰСТАП ТҰРУ",
+  "breathExhale": "ДЕМ ШЫҒАРУ",
+  "breathDone": "АЯҚТАЛДЫ",
+  "breathGreatJob": "Керемет жұмыс!",
+  "breathSessionsToday": "{count, plural, one{Бүгін {count} сессия} other{Бүгін {count} сессия}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Жаттығуды аяқтау",
+  "done": "Дайын",
+
+  "noCopingTipsYet": "Әлі күресу кеңестері жоқ",
+  "copingStrategiesWillAppear": "Сауығу жоспарыңыз жасалып болғаннан кейін жеке күресу стратегияларыңыз осында пайда болады.",
+  "strategiesTailoredToTriggers": "Триггерлеріңізге бейімделген стратегиялар",
+
+  "cravingsPeakAndPass": "Ынтызарлықтар шарықтап,\nсодан кейін өтеді",
+  "rideTheWaveDescription": "Ынтызарлықтардың көбі 15 минут ішінде өтеді. Оған әрекет етудің қажеті жоқ — бізбен бірге сол сәтті өткеріп жіберіңіз.",
+  "stayWithIt": "жалғастыра беріңіз",
+  "youMadeIt": "сіз жасадыңыз",
+  "readyWhenYouAre": "дайын болғанда бастаймыз",
+  "rideItAgain": "Тағы да толқынмен жүру",
+  "start15MinuteTimer": "15 минуттық таймерді бастау",
+  "rideTheWaveCompletedMessage": "Сіз толқынмен жүрдіңіз. Бұл нағыз күш. 💪",
+
+  "myProgress": "Менің прогресім",
+  "weekLabel": "Апта",
+  "monthLabel": "Ай",
+  "allLabel": "Барлығы",
+  "daysSoberStatLabel": "Тыныш\nкүндер",
+  "savedStatLabel": "Үнемделді",
+  "avoidedStatLabel": "Ішілмеді",
+  "moodTrends": "Көңіл-күй үрдістері",
+  "cravingsPattern": "Ынтызарлық үлгісі",
+  "unlockLabel": "Ашу",
+  "unlockFullStats": "Толық статистиканы ашу",
+  "premiumStatsMessage": "Көңіл-күй үрдістері мен ынтызарлық үлгілері — Премиум мүмкіндіктері. Толық статистикаңызды көру үшін жаңартыңыз.",
+  "healthMilestonesWillAppear": "Денсаулық кезеңдеріңіз осында пайда болады.",
+  "healthMilestones": "Денсаулық кезеңдері",
+  "dayNumber": "{day}-күн",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Тыныш",
+  "slipLabel": "Сүрінді",
+  "noDataLabel": "Деректер жоқ",
+
+  "milestone24Hours": "24 сағат",
+  "milestoneOneWeek": "Бір апта",
+  "milestoneOneMonth": "Бір ай",
+  "milestoneThreeMonths": "Үш ай",
+  "milestoneSixMonths": "Алты ай",
+  "milestoneOneYear": "Бір жыл",
+  "milestoneDayCount": "{day}-күн кезеңі",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "maybeLaterLabel": "Мүмкін кейінірек",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+
+  "cancelLabel": "Бас тарту",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  }
+}

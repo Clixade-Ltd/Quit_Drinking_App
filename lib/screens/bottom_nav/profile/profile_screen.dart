@@ -9,9 +9,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:new_quit_drinking_app/constants/app_colors.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/premium_plan_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/edit_profile_screen.dart';
-import 'package:new_quit_drinking_app/screens/bottom_nav/profile/recovery_goals_screen.dart' hide EditProfileScreen;
+import 'package:new_quit_drinking_app/screens/bottom_nav/profile/recovery_goals_screen.dart';
 import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
 import 'package:new_quit_drinking_app/services/local_storage_service.dart';
+import 'package:new_quit_drinking_app/services/analytics_service.dart';
 
 import '../../details/details_screen.dart';
 
@@ -26,6 +27,8 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final HomeDashboardService _service = HomeDashboardService.instance;
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   bool _isLoading = true;
   String? _errorMessage;
@@ -288,6 +291,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         };
         _isUploadingPhoto = false;
       });
+
+      _analytics.profilePhotoChanged(
+        source == ImageSource.gallery ? 'gallery' : 'camera',
+      );
     } catch (e) {
       if (!mounted) return;
       setState(() => _isUploadingPhoto = false);
@@ -311,6 +318,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _profileData?.remove('photoBase64');
         _isUploadingPhoto = false;
       });
+
+      _analytics.profilePhotoChanged('removed');
     } catch (e) {
       if (!mounted) return;
       setState(() => _isUploadingPhoto = false);
@@ -341,6 +350,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     if (updated == true) {
       _loadProfile();
+      _analytics.profileUpdated();
     }
   }
 
@@ -351,6 +361,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     if (updated == true) {
       _loadProfile();
+      _analytics.profileUpdated();
     }
   }
 
@@ -387,6 +398,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     try {
       await LocalStorageService.instance.clearAll();
+
+      _analytics.dataResetConfirmed();
 
       if (!mounted) return;
 

@@ -1,0 +1,553 @@
+{
+  "@@locale": "ms",
+
+  "skip": "Langkau",
+  "continueButton": "Teruskan",
+  "getStarted": "Mulakan",
+
+  "maybeLaterLabel": "Mungkin kemudian",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Batal",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "Kawal Kehidupan Anda",
+  "onboardingSubtitle1": "Jejaki perjalanan anda, raikan setiap pencapaian dan menjadi lebih sihat hari demi hari.",
+  "onboardingTitle2": "Teman Pemulihan AI Anda",
+  "onboardingSubtitle2": "Terima panduan yang diperibadikan, tabiat sihat, peringatan motivasi dan laporan kemajuan yang direka mengikut perjalanan anda.",
+
+  "goodMorning": "Selamat Pagi",
+  "goodAfternoon": "Selamat Tengah Hari",
+  "goodEvening": "Selamat Petang",
+  "goodNight": "Selamat Malam",
+
+  "embracingClarity": "Menemui kejelasan, satu hari demi satu hari.",
+  "streakLabel": "BERTURUT-TURUT",
+  "goalLabel": "MATLAMAT",
+  "daysStreak": "{count, plural, one{{count} Hari} other{{count} Hari}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Pelan Premium",
+  "premiumPlanSubtitle": "Buka pengalaman pemulihan anda sepenuhnya",
+
+  "accountAndSupport": "AKAUN & SOKONGAN",
+  "privacyPolicy": "Dasar Privasi",
+  "privacyPolicySubtitle": "Urus perkongsian data dan keselamatan akaun",
+  "termsOfService": "Syarat Perkhidmatan",
+  "termsOfServiceSubtitle": "Soalan lazim, hubungi kami dan sumber",
+  "shareApp": "Kongsi Aplikasi",
+  "shareAppSubtitle": "Kongsi aplikasi dengan rakan anda",
+  "resetData": "Tetapkan Semula Data",
+  "resetDataSubtitle": "Padam semua yang disimpan pada peranti ini",
+
+  "resetAllDataTitle": "Tetapkan semula semua data?",
+  "resetAllDataMessage": "Ini akan memadam semua yang disimpan pada peranti ini — profil, catatan jurnal dan kemajuan — dan tindakan ini tidak boleh dibuat asal.",
+  "cancel": "Batal",
+  "reset": "Tetapkan Semula",
+
+  "chooseFromGallery": "Pilih daripada Galeri",
+  "takePhoto": "Ambil Foto",
+  "removePhoto": "Buang Foto",
+  "couldNotUpdatePhoto": "Tidak dapat mengemas kini foto: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Tidak dapat membuang foto: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Foto itu terlalu besar walaupun selepas dimampatkan — sila cuba foto lain.",
+
+  "unableToLoadProfile": "Tidak dapat memuatkan profil anda",
+  "pleaseTryAgain": "Sila cuba lagi.",
+  "tryAgain": "Cuba Lagi",
+  "profileNotFound": "Profil tidak ditemui",
+  "refresh": "Muat Semula",
+  "noProfileDataFound": "Tiada data profil ditemui pada peranti ini lagi.",
+
+  "couldNotResetData": "Tidak dapat menetapkan semula data: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Utama",
+  "navStats": "Statistik",
+  "navJournal": "Jurnal",
+  "navBadges": "Lencana",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} akan tersedia tidak lama lagi.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "KESEJAHTERAAN",
+  "appTitle": "Berhenti Minum",
+  "splashSubtitle": "Ambil langkah pertama menuju\nkehidupan bebas alkohol",
+  "preparingJourney": "Menyediakan\nperjalanan anda",
+
+  "taskMorningMeditation": "Meditasi Pagi (10 min)",
+  "taskReadChapter": "Baca Bab 4 \"Diari Tanpa Alkohol\"",
+  "taskEveningJournal": "Jurnal Kesyukuran Petang",
+
+  "close": "Tutup",
+  "youAreDoingGreat": "Anda melakukannya dengan hebat!",
+  "shareMilestone": "Kongsi Pencapaian",
+  "shareMilestoneMessage": "Saya berada di hari ke-{days} dalam perjalanan pemulihan saya! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Pencapaian pemulihan saya",
+
+  "weeklyReportReadyTitle": "Laporan mingguan anda sudah tersedia",
+  "weeklyReportReadySubtitle": "Ketik untuk melihat perjalanan minggu anda",
+
+  "howAreYouFeeling": "Bagaimana perasaan anda?",
+  "moodTough": "Sukar",
+  "moodOkay": "Okey",
+  "moodGood": "Baik",
+
+  "moneySaved": "Wang Dijimatkan",
+  "caloriesSaved": "Kalori Dijimatkan",
+  "healthScore": "Skor Kesihatan",
+  "drinksAvoided": "Minuman Dielakkan",
+  "estimated": "Anggaran",
+  "aiGenerated": "Dijana oleh AI",
+  "daysCapsLabel": "HARI",
+
+  "todaysMotivation": "Motivasi Hari Ini",
+  "defaultMotivationQuote": "Anda telah berjaya mengekalkan komitmen anda. Teruskan perubahan positif ini.",
+
+  "talkToCoach": "Bercakap dengan jurulatih",
+  "havingACraving": "Saya Sedang Mengidam",
+
+  "unlockWeeklyReportsTitle": "Buka laporan mingguan",
+  "unlockWeeklyReportsMessage": "Lihat hari tanpa alkohol, trend emosi dan maklum balas AI yang diperibadikan setiap minggu. Naik taraf ke Premium untuk membukanya.",
+  "maybeLater": "Mungkin nanti",
+  "upgrade": "Naik Taraf",
+
+  "weeklyReportTitle": "Laporan Mingguan",
+  "weeklyReportsPremiumTitle": "Laporan mingguan ialah ciri Premium",
+  "weeklyReportsPremiumMessage": "Lihat hari tanpa alkohol, trend emosi, keinginan dan maklum balas AI yang diperibadikan setiap minggu.",
+  "upgradeToPremium": "Naik Taraf ke Premium",
+  "couldNotGenerateReport": "Tidak dapat menjana laporan anda sekarang.",
+  "tryAgainLower": "Cuba lagi",
+
+  "statSoberDays": "Hari tanpa alkohol",
+  "statAvgMood": "Purata emosi",
+  "statCravings": "Keinginan",
+  "statMoneySaved": "Wang dijimatkan",
+  "coachFeedback": "Maklum balas jurulatih",
+  "journalInsights": "Wawasan jurnal",
+
+  "next": "Seterusnya",
+
+  "question1Title": "Apakah matlamat anda",
+  "question1Subtitle": "Pilih matlamat yang paling\npenting bagi anda",
+  "goalQuitCompletely": "Berhenti Sepenuhnya",
+  "goalReduceDrinking": "Kurangkan minum",
+  "goalTakeABreak": "Berehat daripada minum",
+  "goalBuildHealthierHabits": "Bina tabiat lebih sihat",
+
+  "question3Title": "Beritahu kami tentang\nrutin anda",
+  "drinksPerWeek": "Minuman setiap minggu",
+  "moneySpentPerWeek": "Wang dibelanjakan setiap minggu",
+  "drinkingLevel": "Tahap pengambilan alkohol",
+  "triggersLabel": "Pencetus",
+  "levelSocial": "Sosial",
+  "levelRegular": "Biasa",
+  "levelHeavy": "Berat",
+  "levelDependent": "Bergantung",
+  "triggerStress": "Tekanan",
+  "triggerLoneliness": "Kesunyian",
+  "triggerHabit": "Tabiat",
+  "triggerSadness": "Kesedihan",
+  "triggerAnger": "Kemarahan",
+  "triggerBoredom": "Kebosanan",
+  "triggerSocialPressure": "Tekanan sosial",
+  "triggerCelebration": "Sambutan",
+  "triggerSleepProblems": "Masalah tidur",
+  "triggerWorkPressure": "Tekanan kerja",
+
+  "question4Title": "Mengapa anda mahu berubah?",
+  "question4Subtitle": "Sebab anda akan membantu memberi motivasi.",
+  "reasonImproveHealth": "Tingkatkan Kesihatan Saya",
+  "reasonSaveMoney": "Jimat Wang",
+  "reasonFamily": "Keluarga",
+  "reasonBetterSleep": "Tidur Lebih Baik",
+  "reasonMentalClarity": "Kejelasan Mental",
+  "reasonFitness": "Kecergasan",
+  "reasonSelfRespect": "Hormat Diri",
+  "reasonCareer": "Kerjaya",
+
+  "milestoneUnlockedLabel": "PENCAPAIAN DIBUKA",
+  "incredibleNamePrefix": "Hebat, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} dijimatkan",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} dielakkan",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Kongsi pencapaian saya",
+  "milestoneImageShareError": "Tidak dapat mencipta imej pencapaian. Sila cuba lagi.",
+
+  "dailyCheckInTitle": "Daftar Masuk Harian",
+  "howAreYouFeelingToday": "Bagaimana perasaan anda hari ini?",
+  "honestAnswerHelp": "Jawapan jujur anda membantu kami menyokong anda dengan lebih baik",
+  "didYouDrinkToday": "Adakah anda minum hari ini?",
+  "noLabel": "Tidak",
+  "yesLabel": "Ya",
+  "cravingLevelNow": "Apakah tahap keinginan anda sekarang?",
+  "anythingOnMind": "Ada apa-apa yang bermain di fikiran anda?",
+  "optionalLabel": "(pilihan)",
+  "dailyNoteHint": "Tulis tentang hari anda, pencetus, kejayaan...",
+  "alreadyCheckedInToday": "Sudah daftar masuk hari ini",
+  "saveCheckIn": "Simpan daftar masuk",
+  "checkInsHelpTrack": "Daftar masuk membantu menjejaki kemajuan anda dari masa ke masa",
+  "alreadyCompletedTodayCheckIn": "Anda telah melengkapkan daftar masuk hari ini.",
+  "pleaseAnswerBothQuestions": "Sila jawab kedua-dua soalan di atas dahulu",
+  "checkInSaved": "Daftar masuk disimpan",
+  "cravingNone": "Tiada",
+  "cravingLow": "Rendah",
+  "cravingMedium": "Sederhana",
+  "cravingStrong": "Kuat",
+  "moodBad": "Teruk",
+  "moodLow": "Rendah",
+  "moodOkay": "Okey",
+  "moodGood": "Baik",
+  "moodGreat": "Sangat Baik",
+
+  "sosSupportTitle": "Sokongan SOS",
+  "notAloneMessage": "Anda tidak keseorangan, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Keinginan akan berlalu. Pilih sesuatu di bawah untuk membantu anda melalui saat ini.",
+  "breathingExercise": "Latihan pernafasan",
+  "breathingExerciseSubtitle": "Teknik 4-7-8 berpandu, 2 minit",
+  "rideTheWave": "Hadapi gelombang",
+  "rideTheWaveSubtitle": "Pemasa 15 minit — keinginan sentiasa berlalu",
+  "copingTips": "Petua menangani",
+  "copingTipsSubtitle": "Strategi diperibadikan untuk pencetus anda",
+  "talkToAiCoach": "Bercakap dengan jurulatih AI",
+  "talkToAiCoachSubtitle": "Berbual dengan teman pemulihan anda",
+  "callSomeone": "Hubungi seseorang",
+  "callSomeoneSubtitle": "Hubungi kenalan yang anda percayai",
+  "contactsPermissionNeeded": "Kebenaran kenalan diperlukan untuk memanggil kenalan.",
+  "beatenCravingsPrefix": "Anda telah mengatasi keinginan ",
+  "beatenCravingsCount": "{count} kali",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " sebelum ini. Anda boleh melakukannya lagi.",
+
+  "tellUsAboutYourself": "Beritahu Kami Tentang Diri Anda",
+  "detailsSubtitle": "Maklumat ini membantu kami memperibadikan perjalanan pemulihan anda dan memberikan wawasan yang tepat.",
+  "nameLabel": "Nama",
+  "nameHint": "cth., Alex Rivers",
+  "ageLabel": "Umur",
+  "ageHint": "cth., 32",
+  "sexAssignedAtBirth": "Jantina ditetapkan semasa lahir",
+  "sexFemale": "Perempuan",
+  "sexMale": "Lelaki",
+  "heightLabel": "Ketinggian",
+  "weightLabel": "Berat",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Had harian dicapai",
+  "dailyLimitReachedMessage": "Anda telah menggunakan semua {limit} mesej percuma hari ini. Naik taraf ke Premium untuk sembang jurulatih tanpa had.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Saya tidak dapat berhubung sekarang. Sila cuba lagi sebentar lagi.",
+  "clearConversationTitle": "Kosongkan perbualan?",
+  "clearConversationMessage": "Ini akan memadam sejarah sembang dengan jurulatih anda secara kekal.",
+  "clearLabel": "Kosongkan",
+  "recoveryCoachTitle": "Jurulatih pemulihan",
+  "onlineLabel": "Dalam Talian",
+  "clearConversationMenuItem": "Kosongkan perbualan",
+  "chatGreeting": "Hai {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Anda berada di hari ke-{days} dalam perjalanan anda. Saya sentiasa di sini apabila anda mahu berbincang.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "CADANGAN PANTAS",
+  "promptCravingLabel": "Sedang mengidam",
+  "promptCravingSubtitle": "Tenangkan diri dengan cepat",
+  "promptMotivationLabel": "Perlukan motivasi",
+  "promptMotivationSubtitle": "Sokongan ketika sukar",
+  "promptSocialLabel": "Situasi sosial",
+  "promptSocialSubtitle": "Hadapi perhimpunan",
+  "promptSlippedLabel": "Saya tersasar",
+  "promptSlippedSubtitle": "Tiada penghakiman, hanya sokongan",
+  "typeMessageHint": "Taip mesej...",
+
+  "editProfileTitle": "Edit Profil",
+  "couldNotSaveProfile": "Tidak dapat menyimpan profil: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Ketinggian (cm)",
+  "weightKgLabel": "Berat (kg)",
+  "saveChangesLabel": "Simpan Perubahan",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Wawasan & Analitik Lanjutan",
+  "featureUnlimitedJournal": "Catatan Jurnal Tanpa Had",
+  "featureUnlimitedChat": "Sembang Tanpa Had dengan Jurulatih AI",
+  "featureCommunityGroups": "Kumpulan Komuniti Eksklusif",
+  "featurePrioritySupport": "Sokongan Pakar Keutamaan",
+  "featureThemePacks": "Pakej Tema Tersuai",
+  "featureDataExport": "Eksport Data",
+  "featureAdFree": "Pengalaman Tanpa Iklan",
+  "premiumMemberTitle": "Anda Ahli Premium",
+  "unlockFullRecoveryTitle": "Buka Pengalaman\nPemulihan Penuh Anda",
+  "premiumMemberSubtitle": "Terima kasih kerana menyokong perjalanan pemulihan anda — semua ciri premium di bawah telah dibuka.",
+  "premiumJoinSubtitle": "Sertai komuniti ribuan orang yang sedang\nmempercepatkan perjalanan pemulihan mereka\ndengan alat premium dan sokongan diperibadikan kami.",
+  "monthlyPlanLabel": "Bulanan",
+  "perMonthSuffix": "/bln",
+  "cancelAnytimeLabel": "Batal bila-bila masa",
+  "yearlyPlanLabel": "Tahunan",
+  "billedAnnuallyLabel": "Dibilkan setiap tahun sebanyak {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Nilai Terbaik",
+  "alreadyPremiumLabel": "Anda Premium ✓",
+  "startPremiumLabel": "Mulakan Premium",
+  "manageSubscriptionLabel": "Urus atau batalkan melalui tetapan langganan peranti anda.",
+  "noCommitmentLabel": "Tiada komitmen. Batal bila-bila masa.",
+  "continueFreePlanLabel": "Teruskan dengan Pelan Percuma",
+  "backToHomeLabel": "Kembali ke Utama",
+  "cancelPremiumLabel": "Batal Premium",
+  "cancelPremiumTitle": "Batal Premium?",
+  "cancelPremiumMessage": "Anda akan kehilangan akses kepada catatan jurnal tanpa had, sembang jurulatih tanpa had, wawasan statistik dan laporan mingguan. Anda boleh melanggan semula pada bila-bila masa.",
+  "keepPremiumLabel": "Kekalkan Premium",
+  "nowPremiumMessage": "Anda kini Premium! Nikmati pengalaman pemulihan penuh anda.",
+  "premiumCancelledMessage": "Premium dibatalkan. Anda kembali ke pelan percuma.",
+  "termsOfUseLabel": "Syarat Penggunaan",
+
+  "navHomeLabel": "Utama",
+  "navStatsLabel": "Statistik",
+  "navJournalLabel": "Jurnal",
+  "navBadgesLabel": "Lencana",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "Matlamat Pemulihan",
+  "goalLabel": "Matlamat",
+  "drinksPerWeekLabel": "Minuman setiap minggu",
+  "quitReasonsLabel": "Sebab berhenti",
+  "quitReasonsHelperText": "Pisahkan beberapa sebab dengan koma.",
+  "couldNotSaveRecoveryGoals": "Tidak dapat menyimpan matlamat pemulihan: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "cth., Berhenti Sepenuhnya",
+  "drinksPerWeekHint": "cth., 12",
+  "quitReasonsHint": "cth., Kesihatan, Keluarga, Wang",
+
+  "todaysPrompt": "Soalan Hari Ini",
+  "defaultJournalPrompt": "Apa yang bermain di fikiran anda hari ini?",
+  "aiJournalInsights": "Wawasan jurnal AI",
+  "unlockJournalInsightsMessage": "Buka corak mingguan, trend emosi dan wawasan diperibadikan daripada catatan jurnal anda.",
+  "notEnoughJournalData": "Data belum mencukupi — tulis beberapa catatan minggu ini dan semak semula.",
+  "openEntry": "Buka",
+  "editEntry": "Edit",
+  "deleteEntry": "Padam",
+  "searchJournalEntries": "Cari catatan...",
+  "writeNewEntry": "Tulis catatan baharu",
+  "recentEntries": "Catatan Terkini",
+  "noJournalEntriesYet": "Tiada catatan jurnal lagi — tulis refleksi pertama anda di atas.",
+  "noEntriesMatchFilters": "Tiada catatan sepadan dengan penapis anda.",
+
+  "weeklyJournalLimitReached": "Had mingguan dicapai",
+  "weeklyJournalLimitMessage": "Anda telah menggunakan semua {limit} catatan jurnal percuma minggu ini. Naik taraf ke Premium untuk catatan tanpa had.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Catatan baharu",
+  "writeYourThoughts": "Tulis fikiran anda",
+  "saveEntry": "Simpan Catatan",
+  "freeEntriesLeftThisWeek": "{remaining} daripada {limit} catatan percuma berbaki minggu ini",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Padam catatan?",
+  "deleteEntryConfirmation": "Catatan ini akan dipadam secara kekal. Tindakan ini tidak boleh dibuat asal.",
+
+  "journalEntryNotFound": "Catatan tidak ditemui",
+  "journalEntryMayHaveBeenDeleted": "Catatan jurnal ini mungkin telah dipadam.",
+  "goBack": "Kembali",
+  "journalEntryTitle": "Catatan Jurnal",
+
+  "moodStruggling": "Bergelut",
+  "moodUnwell": "Tidak Sihat",
+  "moodNeutral": "Neutral",
+
+  "whatHappenedToday": "Apa yang berlaku hari ini?",
+  "trigger": "Pencetus",
+  "whatHelped": "Apa yang membantu",
+  "whatIllTryNextTime": "Apa yang akan saya cuba lain kali",
+  "journalPrivacyMessage": "Refleksi anda adalah peribadi dan disimpan dalam jurnal anda.",
+
+  "unlocked": "Dibuka",
+  "daysLeft": "{count} hari{count, plural, =1{} other{}} lagi",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Hari",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Refleksi\nPertama",
+  "oneJournalEntry": "1 Catatan Jurnal",
+  "openBook": "Buka Buku",
+  "tenJournalEntries": "10 Catatan Jurnal",
+  "dedicatedWriter": "Penulis\nBerdedikasi",
+  "thirtyJournalEntries": "30 Catatan Jurnal",
+  "firstConversation": "Perbualan\nPertama",
+  "oneAiCoachChat": "1 Sembang Jurulatih AI",
+  "keepTalking": "Teruskan Berbual",
+  "fiveConversations": "5 Perbualan",
+  "coachCompanion": "Teman\nJurulatih",
+  "twentyConversations": "20 Perbualan",
+  "checkInHabit": "Tabiat\nDaftar Masuk",
+  "sevenCheckIns": "7 Daftar Masuk",
+  "consistencyPro": "Pro\nKonsisten",
+  "thirtyCheckIns": "30 Daftar Masuk",
+  "dedicatedJourney": "Perjalanan\nBerdedikasi",
+  "hundredCheckIns": "100 Daftar Masuk",
+  "goalGetter": "Pencapai Matlamat",
+  "threeGoalsCompleted": "3 Matlamat Selesai",
+  "goalAchiever": "Pencapai\nMatlamat",
+  "tenGoalsCompleted": "10 Matlamat Selesai",
+  "firstSavings": "Simpanan\nPertama",
+  "fiveHundredSaved": "$500 Dijimatkan",
+  "smartSaver": "Penyimpan Bijak",
+  "oneThousandSaved": "$1,000 Dijimatkan",
+  "bigSaver": "Penyimpan Besar",
+  "fiveThousandSaved": "$5,000 Dijimatkan",
+  "currencyProgress": "${current} daripada ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": { "type": "String" },
+      "target": { "type": "String" }
+    }
+  },
+  "countProgress": "{current} daripada {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "target": { "type": "int" }
+    }
+  },
+  "firstMilestoneWaiting": "Teruskan — pencapaian pertama anda sedang menanti!",
+  "badgesAndMilestones": "Lencana & Pencapaian",
+  "yourMilestoneJourney": "Perjalanan Pencapaian Anda",
+  "milestonesAchieved": "{count} pencapaian{count, plural, =1{} other{}} dicapai.\nKetik untuk melihat",
+  "@milestonesAchieved": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "unlockedMilestonesMessage": "Anda telah membuka {unlocked} daripada {total} pencapaian dalam perjalanan anda.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "remaining": "Baki",
+  "complete": "Selesai",
+  "nextMilestone": "Pencapaian Seterusnya",
+  "percentThere": "{subtitle} · {percent}% selesai",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": { "type": "String" },
+      "percent": { "type": "int" }
+    }
+  },
+  "sobrietyMilestones": "Pencapaian Tanpa Alkohol",
+  "journeyBadges": "Lencana Perjalanan",
+  "bronze": "GANGSA",
+  "silver": "PERAK",
+  "gold": "EMAS",
+  "platinum": "PLATINUM",
+  "diamond": "BERLIAN",
+
+  "analyzingYourJourney": "Menganalisis Perjalanan Anda...",
+  "aiCreatingSanctuary": "AI kami sedang mencipta ruang pemulihan yang diperibadikan untuk anda.",
+  "understandingHabits": "Memahami tabiat...",
+  "calculatingBaseline": "Mengira tahap asas anda...",
+  "personalizingPlan": "Memperibadikan pelan anda...",
+  "finalizingSanctuary": "Memuktamadkan ruang pemulihan anda...",
+  "creatingYourPlan": "Mencipta pelan anda...",
+  "personalizedPlanError": "Kami tidak dapat mencipta pelan diperibadikan anda. Sila cuba lagi.",
+  "retry": "Cuba Lagi",
+
+  "breathingExercise": "Latihan Pernafasan",
+  "breathInhale": "TARIK NAFAS",
+  "breathHold": "TAHAN",
+  "breathExhale": "HEMBUSKAN",
+  "breathDone": "SELESAI",
+  "breathGreatJob": "Syabas!",
+  "remaining": "Baki",
+  "breathSessionsToday": "{count, plural, one{{count} sesi hari ini} other{{count} sesi hari ini}}",
+  "@breathSessionsToday": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "endExercise": "Tamatkan Latihan",
+  "done": "Selesai",
+
+  "noCopingTipsYet": "Belum ada petua menangani",
+  "copingStrategiesWillAppear": "Strategi menangani yang diperibadikan akan muncul di sini setelah pelan pemulihan anda selesai dijana.",
+  "strategiesTailoredToTriggers": "Strategi disesuaikan dengan pencetus anda",
+
+  "rideTheWave": "Hadapi Gelombang",
+  "cravingsPeakAndPass": "Keinginan memuncak\ndan berlalu",
+  "rideTheWaveDescription": "Kebanyakan keinginan berlalu dalam masa 15 minit. Anda tidak perlu bertindak mengikutnya — hadapinya bersama kami.",
+  "stayWithIt": "teruskan",
+  "youMadeIt": "anda berjaya",
+  "readyWhenYouAre": "apabila anda sudah bersedia",
+  "rideItAgain": "Hadapinya lagi",
+  "start15MinuteTimer": "Mulakan Pemasa 15 Minit",
+  "rideTheWaveCompletedMessage": "Anda berjaya melalui gelombang itu. Itulah kekuatan sebenar. 💪",
+
+  "myProgress": "Kemajuan Saya",
+  "weekLabel": "Minggu",
+  "monthLabel": "Bulan",
+  "allLabel": "Semua",
+  "daysSoberStatLabel": "Hari\ntanpa alkohol",
+  "savedStatLabel": "Dijimatkan",
+  "avoidedStatLabel": "Dielakkan",
+  "moodTrends": "Trend emosi",
+  "cravingsPattern": "Corak keinginan",
+  "unlockLabel": "Buka",
+  "unlockFullStats": "Buka statistik penuh",
+  "premiumStatsMessage": "Trend emosi dan corak keinginan ialah ciri Premium. Naik taraf untuk melihat statistik penuh anda.",
+  "healthMilestonesWillAppear": "Pencapaian kesihatan anda akan muncul di sini.",
+  "healthMilestones": "Pencapaian kesihatan",
+  "dayNumber": "Hari {day}",
+  "@dayNumber": {
+    "placeholders": { "day": { "type": "int" } }
+  },
+  "soberLabel": "Tanpa alkohol",
+  "slipLabel": "Tersasar",
+  "noDataLabel": "Tiada data",
+
+  "milestone24Hours": "24 Jam",
+  "milestoneOneWeek": "Satu Minggu",
+  "milestoneOneMonth": "Satu Bulan",
+  "milestoneThreeMonths": "Tiga Bulan",
+  "milestoneSixMonths": "Enam Bulan",
+  "milestoneOneYear": "Satu Tahun",
+  "milestoneDayCount": "Pencapaian Hari {day}",
+  "@milestoneDayCount": {
+    "placeholders": { "day": { "type": "int" } }
+  },
+
+  "privacyPolicy": "Dasar Privasi"
+}
+

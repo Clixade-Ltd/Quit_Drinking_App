@@ -1,0 +1,584 @@
+{
+  "@@locale": "th",
+
+  "skip": "ข้าม",
+  "continueButton": "ดำเนินการต่อ",
+  "getStarted": "เริ่มต้น",
+
+  "onboardingTitle1": "ควบคุมชีวิตของคุณ",
+  "onboardingSubtitle1": "ติดตามเส้นทางของคุณ เฉลิมฉลองทุกความสำเร็จ และมีสุขภาพที่ดีขึ้นทีละวัน",
+  "onboardingTitle2": "เพื่อนคู่ใจ AI เพื่อการฟื้นฟูของคุณ",
+  "onboardingSubtitle2": "รับคำแนะนำเฉพาะบุคคล นิสัยที่ดีต่อสุขภาพ การแจ้งเตือนสร้างแรงจูงใจ และรายงานความก้าวหน้าที่ออกแบบมาเพื่อเส้นทางของคุณ",
+
+  "maybeLaterLabel": "อาจจะทีหลัง",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "ยกเลิก",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "สวัสดีตอนเช้า",
+  "goodAfternoon": "สวัสดีตอนบ่าย",
+  "goodEvening": "สวัสดีตอนเย็น",
+  "goodNight": "ราตรีสวัสดิ์",
+
+  "embracingClarity": "ก้าวสู่ความชัดเจนทีละวัน",
+  "streakLabel": "ต่อเนื่อง",
+  "goalLabel": "เป้าหมาย",
+  "daysStreak": "{count, plural, one{{count} วัน} other{{count} วัน}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "แผน Premium",
+  "premiumPlanSubtitle": "ปลดล็อกประสบการณ์การฟื้นฟูอย่างเต็มรูปแบบ",
+
+  "accountAndSupport": "บัญชีและการสนับสนุน",
+  "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+  "privacyPolicySubtitle": "จัดการการแชร์ข้อมูลและความปลอดภัยของบัญชี",
+  "termsOfService": "ข้อกำหนดการใช้บริการ",
+  "termsOfServiceSubtitle": "คำถามที่พบบ่อย ติดต่อเรา และแหล่งข้อมูล",
+  "shareApp": "แชร์แอป",
+  "shareAppSubtitle": "แชร์แอปกับเพื่อนของคุณ",
+  "resetData": "รีเซ็ตข้อมูล",
+  "resetDataSubtitle": "ลบทุกอย่างที่บันทึกไว้ในอุปกรณ์นี้",
+
+  "resetAllDataTitle": "รีเซ็ตข้อมูลทั้งหมดหรือไม่?",
+  "resetAllDataMessage": "การดำเนินการนี้จะลบทุกอย่างที่บันทึกไว้ในอุปกรณ์นี้ ทั้งโปรไฟล์ รายการบันทึก และความก้าวหน้า และไม่สามารถยกเลิกได้",
+  "cancel": "ยกเลิก",
+  "reset": "รีเซ็ต",
+
+  "chooseFromGallery": "เลือกจากแกลเลอรี",
+  "takePhoto": "ถ่ายรูป",
+  "removePhoto": "ลบรูป",
+  "couldNotUpdatePhoto": "ไม่สามารถอัปเดตรูปได้: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "ไม่สามารถลบรูปได้: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "รูปนี้มีขนาดใหญ่เกินไปแม้หลังจากบีบอัดแล้ว โปรดลองใช้รูปอื่น",
+
+  "unableToLoadProfile": "ไม่สามารถโหลดโปรไฟล์ของคุณได้",
+  "pleaseTryAgain": "โปรดลองอีกครั้ง",
+  "tryAgain": "ลองอีกครั้ง",
+  "profileNotFound": "ไม่พบโปรไฟล์",
+  "refresh": "รีเฟรช",
+  "noProfileDataFound": "ยังไม่พบข้อมูลโปรไฟล์ในอุปกรณ์นี้",
+
+  "couldNotResetData": "ไม่สามารถรีเซ็ตข้อมูลได้: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "หน้าหลัก",
+  "navStats": "สถิติ",
+  "navJournal": "บันทึก",
+  "navBadges": "เหรียญรางวัล",
+  "navProfile": "โปรไฟล์",
+
+  "featureComingSoon": "{feature} จะพร้อมใช้งานเร็ว ๆ นี้",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "สุขภาพดี",
+  "appTitle": "เลิกดื่ม",
+  "splashSubtitle": "ก้าวแรกสู่ชีวิตที่\nปราศจากแอลกอฮอล์",
+  "preparingJourney": "กำลังเตรียม\nเส้นทางของคุณ",
+
+  "taskMorningMeditation": "สมาธิยามเช้า (10 นาที)",
+  "taskReadChapter": "อ่านบทที่ 4 ของ \"The Sober Diaries\"",
+  "taskEveningJournal": "บันทึกความขอบคุณยามเย็น",
+
+  "close": "ปิด",
+  "youAreDoingGreat": "คุณทำได้ยอดเยี่ยมมาก!",
+  "shareMilestone": "แชร์ความสำเร็จ",
+  "shareMilestoneMessage": "วันนี้ฉันอยู่ในวันที่ {days} ของเส้นทางการฟื้นฟู! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "ความสำเร็จบนเส้นทางการฟื้นฟูของฉัน",
+
+  "weeklyReportReadyTitle": "รายงานประจำสัปดาห์ของคุณพร้อมแล้ว",
+  "weeklyReportReadySubtitle": "แตะเพื่อดูว่าสัปดาห์ของคุณเป็นอย่างไรบ้าง",
+
+  "howAreYouFeeling": "คุณรู้สึกอย่างไร?",
+  "moodTough": "ยากลำบาก",
+  "moodOkay": "โอเค",
+  "moodGood": "ดี",
+
+  "moneySaved": "เงินที่ประหยัดได้",
+  "caloriesSaved": "แคลอรีที่ประหยัดได้",
+  "healthScore": "คะแนนสุขภาพ",
+  "drinksAvoided": "เครื่องดื่มที่หลีกเลี่ยงได้",
+  "estimated": "โดยประมาณ",
+  "aiGenerated": "สร้างโดย AI",
+  "daysCapsLabel": "วัน",
+
+  "todaysMotivation": "แรงบันดาลใจวันนี้",
+  "defaultMotivationQuote": "คุณรักษาคำมั่นสัญญาของตัวเองได้สำเร็จ เดินหน้าต่อไปบนคลื่นแห่งการเปลี่ยนแปลงเชิงบวก",
+
+  "talkToCoach": "คุยกับโค้ช",
+  "havingACraving": "ฉันกำลังอยากดื่ม",
+
+  "unlockWeeklyReportsTitle": "ปลดล็อกรายงานประจำสัปดาห์",
+  "unlockWeeklyReportsMessage": "ดูวันที่ปราศจากแอลกอฮอล์ แนวโน้มอารมณ์ และคำแนะนำจาก AI เฉพาะบุคคลทุกสัปดาห์ อัปเกรดเป็น Premium เพื่อปลดล็อก",
+  "maybeLater": "ไว้ทีหลัง",
+  "upgrade": "อัปเกรด",
+
+  "weeklyReportTitle": "รายงานประจำสัปดาห์",
+  "weeklyReportsPremiumTitle": "รายงานประจำสัปดาห์เป็นฟีเจอร์ Premium",
+  "weeklyReportsPremiumMessage": "ดูวันที่ปราศจากแอลกอฮอล์ แนวโน้มอารมณ์ ความอยากดื่ม และคำแนะนำจาก AI เฉพาะบุคคลทุกสัปดาห์",
+  "upgradeToPremium": "อัปเกรดเป็น Premium",
+  "couldNotGenerateReport": "ไม่สามารถสร้างรายงานของคุณได้ในขณะนี้",
+  "tryAgainLower": "ลองอีกครั้ง",
+
+  "statSoberDays": "วันที่ไม่ดื่ม",
+  "statAvgMood": "อารมณ์เฉลี่ย",
+  "statCravings": "ความอยากดื่ม",
+  "statMoneySaved": "เงินที่ประหยัดได้",
+  "coachFeedback": "คำแนะนำจากโค้ช",
+  "journalInsights": "ข้อมูลเชิงลึกจากบันทึก",
+
+  "next": "ถัดไป",
+
+  "question1Title": "เป้าหมายของคุณคืออะไร",
+  "question1Subtitle": "เลือกเป้าหมายที่สำคัญ\nที่สุดสำหรับคุณ",
+  "goalQuitCompletely": "เลิกดื่มโดยสิ้นเชิง",
+  "goalReduceDrinking": "ลดการดื่ม",
+  "goalTakeABreak": "พักจากการดื่ม",
+  "goalBuildHealthierHabits": "สร้างนิสัยที่ดีต่อสุขภาพ",
+
+  "question3Title": "เล่าให้เราฟังเกี่ยวกับ\nกิจวัตรของคุณ",
+  "drinksPerWeek": "จำนวนเครื่องดื่มต่อสัปดาห์",
+  "moneySpentPerWeek": "เงินที่ใช้ต่อสัปดาห์",
+  "drinkingLevel": "ระดับการดื่ม",
+  "triggersLabel": "สิ่งกระตุ้น",
+  "levelSocial": "เข้าสังคม",
+  "levelRegular": "เป็นประจำ",
+  "levelHeavy": "หนัก",
+  "levelDependent": "พึ่งพา",
+  "triggerStress": "ความเครียด",
+  "triggerLoneliness": "ความเหงา",
+  "triggerHabit": "ความเคยชิน",
+  "triggerSadness": "ความเศร้า",
+  "triggerAnger": "ความโกรธ",
+  "triggerBoredom": "ความเบื่อ",
+  "triggerSocialPressure": "แรงกดดันทางสังคม",
+  "triggerCelebration": "การเฉลิมฉลอง",
+  "triggerSleepProblems": "ปัญหาการนอนหลับ",
+  "triggerWorkPressure": "แรงกดดันจากงาน",
+
+  "question4Title": "ทำไมคุณถึงอยากเปลี่ยนแปลง?",
+  "question4Subtitle": "เหตุผลของคุณจะช่วยสร้างแรงจูงใจให้คุณ",
+  "reasonImproveHealth": "ปรับปรุงสุขภาพ",
+  "reasonSaveMoney": "ประหยัดเงิน",
+  "reasonFamily": "ครอบครัว",
+  "reasonBetterSleep": "นอนหลับได้ดีขึ้น",
+  "reasonMentalClarity": "ความปลอดโปร่งทางจิตใจ",
+  "reasonFitness": "สมรรถภาพร่างกาย",
+  "reasonSelfRespect": "เคารพตัวเอง",
+  "reasonCareer": "อาชีพ",
+
+  "milestoneUnlockedLabel": "ปลดล็อกความสำเร็จแล้ว",
+  "incredibleNamePrefix": "ยอดเยี่ยมมาก {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "ประหยัดได้ {amount}",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "หลีกเลี่ยงได้ {count}",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "แชร์ความสำเร็จของฉัน",
+  "milestoneImageShareError": "ไม่สามารถสร้างรูปภาพความสำเร็จได้ โปรดลองอีกครั้ง",
+
+  "dailyCheckInTitle": "เช็กอินประจำวัน",
+  "howAreYouFeelingToday": "วันนี้คุณรู้สึกอย่างไร?",
+  "honestAnswerHelp": "คำตอบที่จริงใจของคุณช่วยให้เราสนับสนุนคุณได้ดียิ่งขึ้น",
+  "didYouDrinkToday": "วันนี้คุณดื่มหรือไม่?",
+  "noLabel": "ไม่",
+  "yesLabel": "ใช่",
+  "cravingLevelNow": "ตอนนี้คุณอยากดื่มมากแค่ไหน?",
+  "anythingOnMind": "มีอะไรอยู่ในใจของคุณไหม?",
+  "optionalLabel": "(ไม่บังคับ)",
+  "dailyNoteHint": "เขียนเกี่ยวกับวันนี้ สิ่งกระตุ้น ความสำเร็จ...",
+  "alreadyCheckedInToday": "คุณเช็กอินวันนี้แล้ว",
+  "saveCheckIn": "บันทึกเช็กอิน",
+  "checkInsHelpTrack": "การเช็กอินช่วยติดตามความก้าวหน้าของคุณในระยะยาว",
+  "alreadyCompletedTodayCheckIn": "คุณทำเช็กอินวันนี้เสร็จแล้ว",
+  "pleaseAnswerBothQuestions": "โปรดตอบคำถามทั้งสองข้อด้านบนก่อน",
+  "checkInSaved": "บันทึกเช็กอินแล้ว",
+  "cravingNone": "ไม่มี",
+  "cravingLow": "ต่ำ",
+  "cravingMedium": "ปานกลาง",
+  "cravingStrong": "มาก",
+  "moodBad": "แย่",
+  "moodLow": "ไม่ค่อยดี",
+  "moodOkay": "โอเค",
+  "moodGood": "ดี",
+  "moodGreat": "ดีมาก",
+
+  "sosSupportTitle": "ความช่วยเหลือ SOS",
+  "notAloneMessage": "คุณไม่ได้อยู่คนเดียว {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "ความอยากดื่มจะผ่านไป เลือกสิ่งใดสิ่งหนึ่งด้านล่างเพื่อช่วยให้คุณผ่านช่วงเวลานี้",
+  "breathingExercise": "แบบฝึกหัดการหายใจ",
+  "breathingExerciseSubtitle": "เทคนิค 4-7-8 พร้อมคำแนะนำ ใช้เวลา 2 นาที",
+  "rideTheWave": "โต้คลื่นความอยาก",
+  "rideTheWaveSubtitle": "จับเวลา 15 นาที — ความอยากดื่มจะผ่านไปเสมอ",
+  "copingTips": "เคล็ดลับรับมือ",
+  "copingTipsSubtitle": "กลยุทธ์เฉพาะบุคคลสำหรับสิ่งกระตุ้นของคุณ",
+  "talkToAiCoach": "คุยกับโค้ช AI",
+  "talkToAiCoachSubtitle": "แชตกับเพื่อนคู่ใจในการฟื้นฟูของคุณ",
+  "callSomeone": "โทรหาใครสักคน",
+  "callSomeoneSubtitle": "ติดต่อผู้ติดต่อที่คุณไว้วางใจ",
+  "contactsPermissionNeeded": "จำเป็นต้องอนุญาตให้เข้าถึงรายชื่อผู้ติดต่อเพื่อโทรหาผู้ติดต่อ",
+  "beatenCravingsPrefix": "คุณเอาชนะความอยากดื่มมาแล้ว ",
+  "beatenCravingsCount": "{count} ครั้ง",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " คุณทำได้อีกครั้ง",
+
+  "tellUsAboutYourself": "บอกเราเกี่ยวกับตัวคุณ",
+  "detailsSubtitle": "ข้อมูลนี้ช่วยให้เราปรับเส้นทางการฟื้นฟูของคุณให้เหมาะกับคุณและให้ข้อมูลเชิงลึกที่แม่นยำ",
+  "nameLabel": "ชื่อ",
+  "nameHint": "เช่น Alex Rivers",
+  "ageLabel": "อายุ",
+  "ageHint": "เช่น 32",
+  "sexAssignedAtBirth": "เพศที่กำหนดเมื่อแรกเกิด",
+  "sexFemale": "หญิง",
+  "sexMale": "ชาย",
+  "heightLabel": "ส่วนสูง",
+  "weightLabel": "น้ำหนัก",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "ถึงขีดจำกัดรายวันแล้ว",
+  "dailyLimitReachedMessage": "คุณใช้ข้อความฟรีครบ {limit} ข้อความสำหรับวันนี้แล้ว อัปเกรดเป็น Premium เพื่อแชตกับโค้ชได้ไม่จำกัด",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "ไม่สามารถเชื่อมต่อได้ในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่",
+  "clearConversationTitle": "ล้างการสนทนาหรือไม่?",
+  "clearConversationMessage": "การดำเนินการนี้จะลบประวัติการแชตกับโค้ชของคุณอย่างถาวร",
+  "clearLabel": "ล้าง",
+  "recoveryCoachTitle": "โค้ชการฟื้นฟู",
+  "onlineLabel": "ออนไลน์",
+  "clearConversationMenuItem": "ล้างการสนทนา",
+  "chatGreeting": "สวัสดี {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "คุณอยู่ในวันที่ {days} ของเส้นทางของคุณ ฉันอยู่ที่นี่เสมอเมื่อคุณต้องการพูดคุย",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "หัวข้อด่วน",
+  "promptCravingLabel": "กำลังอยากดื่ม",
+  "promptCravingSubtitle": "ตั้งสติอย่างรวดเร็ว",
+  "promptMotivationLabel": "ต้องการแรงจูงใจ",
+  "promptMotivationSubtitle": "กำลังใจเมื่อช่วงเวลานั้นยาก",
+  "promptSocialLabel": "สถานการณ์ทางสังคม",
+  "promptSocialSubtitle": "รับมือกับงานสังสรรค์",
+  "promptSlippedLabel": "ฉันพลาด",
+  "promptSlippedSubtitle": "ไม่มีการตัดสิน มีเพียงการสนับสนุน",
+  "typeMessageHint": "พิมพ์ข้อความ...",
+
+  "editProfileTitle": "แก้ไขโปรไฟล์",
+  "couldNotSaveProfile": "ไม่สามารถบันทึกโปรไฟล์ได้: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "ส่วนสูง (ซม.)",
+  "weightKgLabel": "น้ำหนัก (กก.)",
+  "saveChangesLabel": "บันทึกการเปลี่ยนแปลง",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "ข้อมูลเชิงลึกและการวิเคราะห์ขั้นสูง",
+  "featureUnlimitedJournal": "บันทึกไดอารี่ไม่จำกัด",
+  "featureUnlimitedChat": "แชตกับโค้ช AI ไม่จำกัด",
+  "featureCommunityGroups": "กลุ่มชุมชนพิเศษ",
+  "featurePrioritySupport": "การสนับสนุนจากผู้เชี่ยวชาญแบบเร่งด่วน",
+  "featureThemePacks": "ชุดธีมที่กำหนดเอง",
+  "featureDataExport": "ส่งออกข้อมูล",
+  "featureAdFree": "ประสบการณ์ไร้โฆษณา",
+  "premiumMemberTitle": "คุณเป็นสมาชิก Premium",
+  "unlockFullRecoveryTitle": "ปลดล็อกประสบการณ์\nการฟื้นฟูอย่างเต็มรูปแบบ",
+  "premiumMemberSubtitle": "ขอบคุณที่สนับสนุนเส้นทางการฟื้นฟูของคุณ — ฟีเจอร์ Premium ทั้งหมดด้านล่างปลดล็อกแล้ว",
+  "premiumJoinSubtitle": "เข้าร่วมชุมชนของผู้คนหลายพันคนที่กำลัง\nเร่งเส้นทางการเยียวยาด้วยเครื่องมือ Premium\nและการสนับสนุนเฉพาะบุคคลของเรา",
+  "monthlyPlanLabel": "รายเดือน",
+  "perMonthSuffix": "/เดือน",
+  "cancelAnytimeLabel": "ยกเลิกได้ทุกเมื่อ",
+  "yearlyPlanLabel": "รายปี",
+  "billedAnnuallyLabel": "เรียกเก็บเงินรายปี {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "คุ้มค่าที่สุด",
+  "alreadyPremiumLabel": "คุณเป็น Premium แล้ว ✓",
+  "startPremiumLabel": "เริ่ม Premium",
+  "manageSubscriptionLabel": "จัดการหรือยกเลิกผ่านการตั้งค่าการสมัครสมาชิกของอุปกรณ์",
+  "noCommitmentLabel": "ไม่มีข้อผูกมัด ยกเลิกได้ทุกเมื่อ",
+  "continueFreePlanLabel": "ใช้แผนฟรีต่อ",
+  "backToHomeLabel": "กลับหน้าหลัก",
+  "cancelPremiumLabel": "ยกเลิก Premium",
+  "cancelPremiumTitle": "ยกเลิก Premium หรือไม่?",
+  "cancelPremiumMessage": "คุณจะสูญเสียสิทธิ์เข้าถึงบันทึกไดอารี่ไม่จำกัด แชตกับโค้ชไม่จำกัด ข้อมูลเชิงลึกจากสถิติ และรายงานประจำสัปดาห์ คุณสามารถสมัครสมาชิกใหม่ได้ทุกเมื่อ",
+  "keepPremiumLabel": "ใช้ Premium ต่อ",
+  "nowPremiumMessage": "ตอนนี้คุณเป็น Premium แล้ว! เพลิดเพลินกับประสบการณ์การฟื้นฟูอย่างเต็มรูปแบบ",
+  "premiumCancelledMessage": "ยกเลิก Premium แล้ว คุณกลับมาใช้แผนฟรี",
+  "termsOfUseLabel": "ข้อกำหนดการใช้งาน",
+
+  "navHomeLabel": "หน้าหลัก",
+  "navStatsLabel": "สถิติ",
+  "navJournalLabel": "บันทึก",
+  "navBadgesLabel": "เหรียญรางวัล",
+  "navProfileLabel": "โปรไฟล์",
+
+  "recoveryGoalsTitle": "เป้าหมายการฟื้นฟู",
+  "goalLabel": "เป้าหมาย",
+  "drinksPerWeekLabel": "เครื่องดื่มต่อสัปดาห์",
+  "quitReasonsLabel": "เหตุผลที่เลิกดื่ม",
+  "quitReasonsHelperText": "แยกหลายเหตุผลด้วยเครื่องหมายจุลภาค",
+  "couldNotSaveRecoveryGoals": "ไม่สามารถบันทึกเป้าหมายการฟื้นฟูได้: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "เช่น งดดื่มโดยสิ้นเชิง",
+  "drinksPerWeekHint": "เช่น 12",
+  "quitReasonsHint": "เช่น สุขภาพ, ครอบครัว, เงิน",
+
+  "todaysPrompt": "คำถามวันนี้",
+  "defaultJournalPrompt": "วันนี้คุณกำลังคิดอะไรอยู่?",
+  "aiJournalInsights": "ข้อมูลเชิงลึกจาก AI",
+  "unlockJournalInsightsMessage": "ปลดล็อกรูปแบบรายสัปดาห์ แนวโน้มอารมณ์ และข้อมูลเชิงลึกเฉพาะบุคคลจากบันทึกของคุณ",
+  "notEnoughJournalData": "ยังมีข้อมูลไม่เพียงพอ — เขียนบันทึกสักสองสามรายการในสัปดาห์นี้แล้วกลับมาดูอีกครั้ง",
+  "openEntry": "เปิด",
+  "editEntry": "แก้ไข",
+  "deleteEntry": "ลบ",
+  "searchJournalEntries": "ค้นหาบันทึก...",
+  "writeNewEntry": "เขียนบันทึกใหม่",
+  "recentEntries": "บันทึกล่าสุด",
+  "noJournalEntriesYet": "ยังไม่มีบันทึก — เขียนการสะท้อนความคิดครั้งแรกของคุณด้านบน",
+  "noEntriesMatchFilters": "ไม่มีบันทึกที่ตรงกับตัวกรองของคุณ",
+
+  "weeklyJournalLimitReached": "ถึงขีดจำกัดรายสัปดาห์แล้ว",
+  "weeklyJournalLimitMessage": "คุณใช้บันทึกฟรีครบ {limit} รายการสำหรับสัปดาห์นี้แล้ว อัปเกรดเป็น Premium เพื่อเขียนบันทึกได้ไม่จำกัด",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "บันทึกใหม่",
+  "writeYourThoughts": "เขียนความคิดของคุณ",
+  "saveEntry": "บันทึก",
+  "freeEntriesLeftThisWeek": "เหลือบันทึกฟรี {remaining} จาก {limit} รายการในสัปดาห์นี้",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "ลบบันทึกหรือไม่?",
+  "deleteEntryConfirmation": "บันทึกนี้จะถูกลบอย่างถาวรและไม่สามารถยกเลิกได้",
+
+  "journalEntryNotFound": "ไม่พบบันทึก",
+  "journalEntryMayHaveBeenDeleted": "บันทึกนี้อาจถูกลบไปแล้ว",
+  "goBack": "ย้อนกลับ",
+  "journalEntryTitle": "บันทึก",
+
+  "moodStruggling": "กำลังลำบาก",
+  "moodUnwell": "ไม่สบายใจ",
+  "moodNeutral": "เป็นกลาง",
+
+  "whatHappenedToday": "วันนี้เกิดอะไรขึ้น?",
+  "trigger": "สิ่งกระตุ้น",
+  "whatHelped": "อะไรช่วยได้บ้าง",
+  "whatIllTryNextTime": "ครั้งหน้าฉันจะลองอะไร",
+  "journalPrivacyMessage": "การสะท้อนความคิดของคุณเป็นส่วนตัวและบันทึกไว้ในไดอารี่",
+
+  "unlocked": "ปลดล็อกแล้ว",
+  "daysLeft": "เหลืออีก {count} วัน",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} วัน",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "การสะท้อน\nความคิดครั้งแรก",
+  "oneJournalEntry": "บันทึก 1 รายการ",
+  "openBook": "เปิดหนังสือ",
+  "tenJournalEntries": "บันทึก 10 รายการ",
+  "dedicatedWriter": "นักเขียน\nผู้มุ่งมั่น",
+  "thirtyJournalEntries": "บันทึก 30 รายการ",
+  "firstConversation": "การสนทนา\nครั้งแรก",
+  "oneAiCoachChat": "แชตกับโค้ช AI 1 ครั้ง",
+  "keepTalking": "พูดคุยต่อไป",
+  "fiveConversations": "สนทนา 5 ครั้ง",
+  "coachCompanion": "เพื่อนคู่ใจ\nของโค้ช",
+  "twentyConversations": "สนทนา 20 ครั้ง",
+  "checkInHabit": "นิสัย\nการเช็กอิน",
+  "sevenCheckIns": "เช็กอิน 7 ครั้ง",
+  "consistencyPro": "มืออาชีพด้าน\nความสม่ำเสมอ",
+  "thirtyCheckIns": "เช็กอิน 30 ครั้ง",
+  "dedicatedJourney": "เส้นทาง\nผู้มุ่งมั่น",
+  "hundredCheckIns": "เช็กอิน 100 ครั้ง",
+  "goalGetter": "ผู้พิชิตเป้าหมาย",
+  "threeGoalsCompleted": "บรรลุ 3 เป้าหมาย",
+  "goalAchiever": "ผู้บรรลุ\nเป้าหมาย",
+  "tenGoalsCompleted": "บรรลุ 10 เป้าหมาย",
+  "firstSavings": "การออม\nครั้งแรก",
+  "fiveHundredSaved": "ประหยัดได้ $500",
+  "smartSaver": "นักออมอัจฉริยะ",
+  "oneThousandSaved": "ประหยัดได้ $1,000",
+  "bigSaver": "นักออมตัวยง",
+  "fiveThousandSaved": "ประหยัดได้ $5,000",
+  "currencyProgress": "${current} จาก ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} จาก {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "เดินหน้าต่อไป — ความสำเร็จแรกของคุณกำลังรออยู่!",
+  "badgesAndMilestones": "เหรียญรางวัลและความสำเร็จ",
+  "yourMilestoneJourney": "เส้นทางความสำเร็จของคุณ",
+  "milestonesAchieved": "บรรลุความสำเร็จ {count} รายการแล้ว\nแตะเพื่อดู",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "คุณปลดล็อกความสำเร็จ {unlocked} จากทั้งหมด {total} รายการบนเส้นทางของคุณ",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "เหลือ",
+  "complete": "เสร็จสมบูรณ์",
+  "nextMilestone": "ความสำเร็จถัดไป",
+  "percentThere": "{subtitle} · ถึงแล้ว {percent}%",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "ความสำเร็จในการไม่ดื่ม",
+  "journeyBadges": "เหรียญรางวัลเส้นทาง",
+  "bronze": "บรอนซ์",
+  "silver": "เงิน",
+  "gold": "ทอง",
+  "platinum": "แพลทินัม",
+  "diamond": "เพชร",
+
+  "analyzingYourJourney": "กำลังวิเคราะห์เส้นทางของคุณ...",
+  "aiCreatingSanctuary": "AI ของเรากำลังสร้างพื้นที่ปลอดภัยเฉพาะสำหรับคุณ",
+  "understandingHabits": "กำลังทำความเข้าใจพฤติกรรม...",
+  "calculatingBaseline": "กำลังคำนวณข้อมูลพื้นฐานของคุณ...",
+  "personalizingPlan": "กำลังปรับแผนให้เหมาะกับคุณ...",
+  "finalizingSanctuary": "กำลังเตรียมพื้นที่ปลอดภัยของคุณให้เสร็จสมบูรณ์...",
+  "creatingYourPlan": "กำลังสร้างแผนของคุณ...",
+  "personalizedPlanError": "เราไม่สามารถสร้างแผนเฉพาะบุคคลของคุณได้ โปรดลองอีกครั้ง",
+  "retry": "ลองอีกครั้ง",
+
+  "breathingExercise": "แบบฝึกหัดการหายใจ",
+  "breathInhale": "หายใจเข้า",
+  "breathHold": "กลั้นหายใจ",
+  "breathExhale": "หายใจออก",
+  "breathDone": "เสร็จสิ้น",
+  "breathGreatJob": "ทำได้ดีมาก!",
+  "remaining": "เหลือ",
+  "breathSessionsToday": "{count, plural, one{{count} ครั้งวันนี้} other{{count} ครั้งวันนี้}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "จบการฝึก",
+  "done": "เสร็จสิ้น",
+
+  "noCopingTipsYet": "ยังไม่มีเคล็ดลับรับมือ",
+  "copingStrategiesWillAppear": "กลยุทธ์รับมือเฉพาะบุคคลของคุณจะแสดงที่นี่เมื่อแผนการฟื้นฟูสร้างเสร็จแล้ว",
+  "strategiesTailoredToTriggers": "กลยุทธ์ที่ปรับให้เหมาะกับสิ่งกระตุ้นของคุณ",
+
+  "rideTheWave": "โต้คลื่นความอยาก",
+  "cravingsPeakAndPass": "ความอยากดื่มถึงจุดสูงสุด\nแล้วผ่านไป",
+  "rideTheWaveDescription": "ความอยากดื่มส่วนใหญ่จะผ่านไปภายใน 15 นาที คุณไม่จำเป็นต้องทำตามความอยาก แค่ปล่อยให้มันผ่านไปพร้อมกับเรา",
+  "stayWithIt": "อดทนต่อไป",
+  "youMadeIt": "คุณทำได้แล้ว",
+  "readyWhenYouAre": "พร้อมเมื่อคุณพร้อม",
+  "rideItAgain": "โต้คลื่นอีกครั้ง",
+  "start15MinuteTimer": "เริ่มจับเวลา 15 นาที",
+  "rideTheWaveCompletedMessage": "คุณโต้คลื่นความอยากผ่านมาได้ นั่นคือความแข็งแกร่งที่แท้จริง 💪",
+
+  "myProgress": "ความก้าวหน้าของฉัน",
+  "weekLabel": "สัปดาห์",
+  "monthLabel": "เดือน",
+  "allLabel": "ทั้งหมด",
+  "daysSoberStatLabel": "วันที่\nไม่ดื่ม",
+  "savedStatLabel": "ประหยัดได้",
+  "avoidedStatLabel": "หลีกเลี่ยงได้",
+  "moodTrends": "แนวโน้มอารมณ์",
+  "cravingsPattern": "รูปแบบความอยากดื่ม",
+  "unlockLabel": "ปลดล็อก",
+  "unlockFullStats": "ปลดล็อกสถิติทั้งหมด",
+  "premiumStatsMessage": "แนวโน้มอารมณ์และรูปแบบความอยากดื่มเป็นฟีเจอร์ Premium อัปเกรดเพื่อดูสถิติทั้งหมดของคุณ",
+  "healthMilestonesWillAppear": "ความสำเร็จด้านสุขภาพของคุณจะแสดงที่นี่",
+  "healthMilestones": "ความสำเร็จด้านสุขภาพ",
+  "dayNumber": "วันที่ {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "ไม่ดื่ม",
+  "slipLabel": "พลาด",
+  "noDataLabel": "ไม่มีข้อมูล",
+
+  "milestone24Hours": "24 ชั่วโมง",
+  "milestoneOneWeek": "หนึ่งสัปดาห์",
+  "milestoneOneMonth": "หนึ่งเดือน",
+  "milestoneThreeMonths": "สามเดือน",
+  "milestoneSixMonths": "หกเดือน",
+  "milestoneOneYear": "หนึ่งปี",
+  "milestoneDayCount": "ความสำเร็จวันที่ {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "นโยบายความเป็นส่วนตัว"
+}

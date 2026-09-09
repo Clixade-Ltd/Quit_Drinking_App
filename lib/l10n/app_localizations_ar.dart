@@ -180,10 +180,10 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get appWordmark => 'WELLNESS';
+  String get appWordmark => 'العافية';
 
   @override
-  String get appTitle => 'Sober Flow';
+  String get appTitle => 'الإقلاع عن الشرب';
 
   @override
   String get splashSubtitle => 'اتخذ الخطوة الأولى نحو\nحياة خالية من الكحول';
@@ -1311,4 +1311,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String milestoneDayCount(int day) {
     return 'إنجاز اليوم $day';
   }
+
+  @override
+  String get maybeLaterLabel => 'ربما لاحقًا';
+
+  @override
+  String get cancelLabel => 'إلغاء';
 }

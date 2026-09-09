@@ -6,6 +6,7 @@ import '../../models/daily_check_in.dart';
 import '../../services/daily_check_in_service.dart';
 import '../bottom_nav/main_nav_screen.dart';
 import '../../services/home_dashboard_service.dart';
+import '../../services/analytics_service.dart';
 
 class DailyCheckInScreen extends StatefulWidget {
   const DailyCheckInScreen({super.key});
@@ -33,6 +34,16 @@ class _DailyCheckInScreenState
     '😄',
   ];
 
+  // ============================================================
+  // ANALYTICS (fixed, locale-independent keys)
+  // ============================================================
+
+  static const List<String> _cravingKeys = ['none', 'low', 'medium', 'strong'];
+
+  static const List<String> _moodKeys = ['bad', 'low', 'okay', 'good', 'great'];
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
+
   bool? _stayedOnTrack;
 
   // 0 = None
@@ -55,6 +66,7 @@ class _DailyCheckInScreenState
   void initState() {
     super.initState();
     _loadExistingCheckIn();
+    _analytics.checkInStarted();
   }
 
   @override
@@ -161,6 +173,19 @@ class _DailyCheckInScreenState
 
       return;
     }
+
+    // ============================================================
+    // LOG SUCCESSFUL CHECK-IN
+    // ============================================================
+    // Note: in this screen's UI, the "No" choice card sets
+    // _stayedOnTrack = true and "Yes" sets it to false, so
+    // drankToday is the inverse of _stayedOnTrack.
+
+    _analytics.checkInSaved(
+      drankToday: !_stayedOnTrack!,
+      craving: _cravingKeys[_cravingLevel],
+      mood: _moodKeys[_moodIndex!],
+    );
 
     // Invalidate today's AI update so HomeScreen
     // can refresh today's motivation + health score.

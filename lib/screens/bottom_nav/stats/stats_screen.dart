@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../../constants/app_colors.dart';
+import '../../../services/analytics_service.dart';
 import '../../../services/home_dashboard_service.dart';
 import '../../../services/premium_service.dart';
 
@@ -36,6 +37,12 @@ class _StatsScreenState extends State<StatsScreen>
   Map<String, int> _calendarData = {};
 
   List<Map<String, dynamic>> _milestones = [];
+
+  // =========================================================
+  // ANALYTICS / PERIOD
+  // =========================================================
+
+  String _selectedPeriod = 'week';
 
   @override
   void initState() {
@@ -122,6 +129,10 @@ class _StatsScreenState extends State<StatsScreen>
     }
   }
 
+  // =========================================================
+  // BUILD
+  // =========================================================
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -197,7 +208,9 @@ class _StatsScreenState extends State<StatsScreen>
   // APP BAR
   // =========================================================
 
-  Widget _buildAppBar(AppLocalizations l10n) {
+  Widget _buildAppBar(
+      AppLocalizations l10n,
+      ) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(
         16,
@@ -234,15 +247,17 @@ class _StatsScreenState extends State<StatsScreen>
                   children: [
                     _buildPeriodButton(
                       l10n.weekLabel,
-                      selected: true,
+                      period: 'week',
                     ),
+
                     _buildPeriodButton(
                       l10n.monthLabel,
-                      selected: false,
+                      period: 'month',
                     ),
+
                     _buildPeriodButton(
                       l10n.allLabel,
-                      selected: false,
+                      period: 'all',
                     ),
                   ],
                 ),
@@ -263,28 +278,47 @@ class _StatsScreenState extends State<StatsScreen>
 
   Widget _buildPeriodButton(
       String text, {
-        required bool selected,
+        required String period,
       }) {
-    return Container(
-      height: 30,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 12,
-      ),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: selected
-            ? AppColors.primary
-            : Colors.transparent,
-        borderRadius: BorderRadius.circular(7),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontWeight: FontWeight.w700,
-          fontSize: 13,
+    final selected =
+        _selectedPeriod == period;
+
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () async {
+        if (_selectedPeriod == period) {
+          return;
+        }
+
+        setState(() {
+          _selectedPeriod = period;
+        });
+
+        await AnalyticsService.instance
+            .statsPeriodChanged(period);
+      },
+      child: Container(
+        height: 30,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 12,
+        ),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
           color: selected
-              ? AppColors.white
-              : AppColors.textGrey,
+              ? AppColors.primary
+              : Colors.transparent,
+          borderRadius:
+          BorderRadius.circular(7),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 13,
+            color: selected
+                ? AppColors.white
+                : AppColors.textGrey,
+          ),
         ),
       ),
     );
@@ -294,7 +328,9 @@ class _StatsScreenState extends State<StatsScreen>
   // TOP STATS
   // =========================================================
 
-  Widget _buildTopStats(AppLocalizations l10n) {
+  Widget _buildTopStats(
+      AppLocalizations l10n,
+      ) {
     return Row(
       children: [
         Expanded(
@@ -339,7 +375,8 @@ class _StatsScreenState extends State<StatsScreen>
       ),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius:
+        BorderRadius.circular(12),
         border: Border.all(
           color: AppColors.outlineGrey,
           width: 0.7,
@@ -352,7 +389,8 @@ class _StatsScreenState extends State<StatsScreen>
           Text(
             value,
             maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+            overflow:
+            TextOverflow.ellipsis,
             style: const TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 20,
@@ -382,11 +420,15 @@ class _StatsScreenState extends State<StatsScreen>
   // MONEY CHART
   // =========================================================
 
-  Widget _buildMoneyChart(AppLocalizations l10n) {
+  Widget _buildMoneyChart(
+      AppLocalizations l10n,
+      ) {
     final values = _moneyChart
         .map(
           (e) =>
-      (e['value'] as num?)?.toDouble() ?? 0,
+      (e['value'] as num?)
+          ?.toDouble() ??
+          0,
     )
         .toList();
 
@@ -429,9 +471,11 @@ class _StatsScreenState extends State<StatsScreen>
               crossAxisAlignment:
               CrossAxisAlignment.end,
               children: [
-                for (int i = 0;
+                for (
+                int i = 0;
                 i < _moneyChart.length;
-                i++) ...[
+                i++
+                ) ...[
                   if (i != 0)
                     const SizedBox(width: 6),
 
@@ -443,7 +487,8 @@ class _StatsScreenState extends State<StatsScreen>
                         Expanded(
                           child: Align(
                             alignment:
-                            Alignment.bottomCenter,
+                            Alignment
+                                .bottomCenter,
                             child:
                             AnimatedContainer(
                               duration:
@@ -490,7 +535,8 @@ class _StatsScreenState extends State<StatsScreen>
                         Text(
                           _moneyChart[i]['label']
                               .toString(),
-                          style: const TextStyle(
+                          style:
+                          const TextStyle(
                             fontSize: 11,
                             color: AppColors
                                 .textLightGrey,
@@ -516,8 +562,7 @@ class _StatsScreenState extends State<StatsScreen>
     return _gatedChart(
       isPremium: _isPremium,
       chart: _chartCard(
-        padding:
-        const EdgeInsets.fromLTRB(
+        padding: const EdgeInsets.fromLTRB(
           14,
           14,
           14,
@@ -528,7 +573,8 @@ class _StatsScreenState extends State<StatsScreen>
           CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.moodTrends,
+              AppLocalizations.of(context)!
+                  .moodTrends,
               style: const TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
@@ -555,8 +601,7 @@ class _StatsScreenState extends State<StatsScreen>
     return _gatedChart(
       isPremium: _isPremium,
       chart: _chartCard(
-        padding:
-        const EdgeInsets.fromLTRB(
+        padding: const EdgeInsets.fromLTRB(
           14,
           14,
           14,
@@ -595,19 +640,23 @@ class _StatsScreenState extends State<StatsScreen>
     required Widget chart,
     required bool isPremium,
   }) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n =
+    AppLocalizations.of(context)!;
 
     if (isPremium) {
       return ClipRRect(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius:
+        BorderRadius.circular(12),
         child: chart,
       );
     }
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius:
+      BorderRadius.circular(12),
       child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
+        behavior:
+        HitTestBehavior.opaque,
         onTap: _showPremiumPaywall,
         child: Stack(
           children: [
@@ -615,17 +664,16 @@ class _StatsScreenState extends State<StatsScreen>
 
             Positioned.fill(
               child: Container(
-                color:
-                AppColors.white.withOpacity(0.58),
+                color: AppColors.white
+                    .withOpacity(0.58),
                 child: BackdropFilter(
-                  filter:
-                  ImageFilter.blur(
+                  filter: ImageFilter.blur(
                     sigmaX: 1.5,
                     sigmaY: 1.5,
                   ),
                   child: Container(
-                    color:
-                    Colors.white.withOpacity(0.10),
+                    color: Colors.white
+                        .withOpacity(0.10),
                   ),
                 ),
               ),
@@ -641,16 +689,19 @@ class _StatsScreenState extends State<StatsScreen>
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.white,
+                  color:
+                  AppColors.white,
                   borderRadius:
                   BorderRadius.circular(4),
                 ),
                 child: Text(
                   l10n.premiumBadgeLabel,
                   style: const TextStyle(
-                    fontWeight: FontWeight.w600,
+                    fontWeight:
+                    FontWeight.w600,
                     fontSize: 12,
-                    color: AppColors.primary,
+                    color:
+                    AppColors.primary,
                   ),
                 ),
               ),
@@ -664,10 +715,14 @@ class _StatsScreenState extends State<StatsScreen>
                     horizontal: 18,
                     vertical: 10,
                   ),
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
+                  decoration:
+                  BoxDecoration(
+                    color:
+                    AppColors.white,
                     borderRadius:
-                    BorderRadius.circular(10),
+                    BorderRadius.circular(
+                      10,
+                    ),
                     boxShadow: const [
                       BoxShadow(
                         color:
@@ -687,11 +742,14 @@ class _StatsScreenState extends State<StatsScreen>
                         AppColors.primary,
                       ),
 
-                      const SizedBox(width: 7),
+                      const SizedBox(
+                        width: 7,
+                      ),
 
                       Text(
                         l10n.unlockLabel,
-                        style: const TextStyle(
+                        style:
+                        const TextStyle(
                           fontWeight:
                           FontWeight.w700,
                           fontSize: 13,
@@ -711,30 +769,36 @@ class _StatsScreenState extends State<StatsScreen>
   }
 
   void _showPremiumPaywall() {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n =
+    AppLocalizations.of(context)!;
 
     showDialog<void>(
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: AppColors.white,
+          backgroundColor:
+          AppColors.white,
           title: Text(
             l10n.unlockFullStats,
             style: const TextStyle(
-              color: AppColors.textBlack,
-              fontWeight: FontWeight.w700,
+              color:
+              AppColors.textBlack,
+              fontWeight:
+              FontWeight.w700,
             ),
           ),
           content: Text(
             l10n.premiumStatsMessage,
             style: const TextStyle(
-              color: AppColors.textGrey,
+              color:
+              AppColors.textGrey,
             ),
           ),
           actions: [
             TextButton(
               onPressed: () =>
-                  Navigator.of(context).pop(),
+                  Navigator.of(context)
+                      .pop(),
               child: Text(
                 l10n.maybeLater,
               ),
@@ -742,17 +806,22 @@ class _StatsScreenState extends State<StatsScreen>
 
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .pop();
 
                 // TODO: navigate to
-                // PremiumPlanScreen once its route
-                // is reachable from here.
+                // PremiumPlanScreen once
+                // its route is reachable
+                // from here.
               },
               child: Text(
                 l10n.upgrade,
-                style: const TextStyle(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
+                style:
+                const TextStyle(
+                  color:
+                  AppColors.primary,
+                  fontWeight:
+                  FontWeight.w600,
                 ),
               ),
             ),
@@ -779,19 +848,26 @@ class _StatsScreenState extends State<StatsScreen>
 
     sorted.sort(
           (a, b) =>
-          ((a['day'] as num?)?.toInt() ?? 0)
+          ((a['day'] as num?)
+              ?.toInt() ??
+              0)
               .compareTo(
-            (b['day'] as num?)?.toInt() ?? 0,
+            (b['day'] as num?)
+                ?.toInt() ??
+                0,
           ),
     );
 
     int nextIndex = -1;
 
-    for (int i = 0;
+    for (
+    int i = 0;
     i < sorted.length;
-    i++) {
+    i++
+    ) {
       final day =
-          (sorted[i]['day'] as num?)?.toInt() ??
+          (sorted[i]['day'] as num?)
+              ?.toInt() ??
               0;
 
       if (day > _daysSober) {
@@ -814,17 +890,21 @@ class _StatsScreenState extends State<StatsScreen>
           Text(
             l10n.healthMilestones,
             style: const TextStyle(
-              fontWeight: FontWeight.w700,
+              fontWeight:
+              FontWeight.w700,
               fontSize: 16,
-              color: AppColors.textBlack,
+              color:
+              AppColors.textBlack,
             ),
           ),
 
           const SizedBox(height: 12),
 
-          for (int i = 0;
+          for (
+          int i = 0;
           i < sorted.length;
-          i++)
+          i++
+          )
             _milestoneItem(
               milestone: sorted[i],
               isLast:
@@ -839,21 +919,28 @@ class _StatsScreenState extends State<StatsScreen>
   }
 
   Widget _milestoneItem({
-    required Map<String, dynamic> milestone,
+    required Map<String, dynamic>
+    milestone,
     required bool isLast,
     required bool isNext,
     required AppLocalizations l10n,
   }) {
     final day =
-        (milestone['day'] as num?)?.toInt() ?? 0;
+        (milestone['day'] as num?)
+            ?.toInt() ??
+            0;
 
     final title =
-        milestone['title']?.toString() ?? '';
+        milestone['title']?.toString() ??
+            '';
 
     final description =
-        milestone['description']?.toString() ?? '';
+        milestone['description']
+            ?.toString() ??
+            '';
 
-    final reached = day <= _daysSober;
+    final reached =
+        day <= _daysSober;
 
     final Color iconColor;
 
@@ -862,7 +949,8 @@ class _StatsScreenState extends State<StatsScreen>
     } else if (isNext) {
       iconColor = Colors.orange;
     } else {
-      iconColor = AppColors.textLightGrey;
+      iconColor =
+          AppColors.textLightGrey;
     }
 
     return IntrinsicHeight(
@@ -877,15 +965,18 @@ class _StatsScreenState extends State<StatsScreen>
                 Container(
                   width: 22,
                   height: 22,
-                  decoration: BoxDecoration(
-                    color:
-                    iconColor.withOpacity(0.10),
-                    shape: BoxShape.circle,
+                  decoration:
+                  BoxDecoration(
+                    color: iconColor
+                        .withOpacity(0.10),
+                    shape:
+                    BoxShape.circle,
                   ),
                   child: Icon(
                     reached
                         ? Icons.check
-                        : Icons.access_time_rounded,
+                        : Icons
+                        .access_time_rounded,
                     size: 14,
                     color: iconColor,
                   ),
@@ -896,12 +987,13 @@ class _StatsScreenState extends State<StatsScreen>
                     child: Container(
                       width: 1.5,
                       margin:
-                      const EdgeInsets.only(
+                      const EdgeInsets
+                          .only(
                         top: 4,
                         bottom: 4,
                       ),
-                      color:
-                      AppColors.outlineGrey,
+                      color: AppColors
+                          .outlineGrey,
                     ),
                   ),
               ],
@@ -918,7 +1010,8 @@ class _StatsScreenState extends State<StatsScreen>
               ),
               child: Column(
                 crossAxisAlignment:
-                CrossAxisAlignment.start,
+                CrossAxisAlignment
+                    .start,
                 children: [
                   Row(
                     children: [
@@ -928,24 +1021,28 @@ class _StatsScreenState extends State<StatsScreen>
                           style:
                           const TextStyle(
                             fontWeight:
-                            FontWeight.w700,
+                            FontWeight
+                                .w700,
                             fontSize: 14,
-                            color:
-                            AppColors
+                            color: AppColors
                                 .textBlack,
                           ),
                         ),
                       ),
 
-                      const SizedBox(width: 6),
+                      const SizedBox(
+                        width: 6,
+                      ),
 
                       Text(
                         l10n.dayNumber(day),
                         style: TextStyle(
                           fontWeight:
-                          FontWeight.w600,
+                          FontWeight
+                              .w600,
                           fontSize: 11,
-                          color: iconColor,
+                          color:
+                          iconColor,
                         ),
                       ),
                     ],
@@ -955,11 +1052,13 @@ class _StatsScreenState extends State<StatsScreen>
 
                   Text(
                     description,
-                    style: const TextStyle(
+                    style:
+                    const TextStyle(
                       fontSize: 12,
                       height: 1.35,
                       color:
-                      AppColors.textGrey,
+                      AppColors
+                          .textGrey,
                     ),
                   ),
                 ],
@@ -985,26 +1084,25 @@ class _StatsScreenState extends State<StatsScreen>
       today.month,
       today.day,
     ).subtract(
-      Duration(days: today.weekday - 1),
+      Duration(
+        days: today.weekday - 1,
+      ),
     );
 
     final dates = List.generate(
       42,
-          (index) =>
-          firstDay.add(
-            Duration(days: index),
-          ),
+          (index) => firstDay.add(
+        Duration(days: index),
+      ),
     );
 
     final materialLocalizations =
     MaterialLocalizations.of(context);
 
     final narrowWeekdays =
-        materialLocalizations.narrowWeekdays;
+        materialLocalizations
+            .narrowWeekdays;
 
-    // MaterialLocalizations weekday order is
-    // Sunday -> Saturday. Calendar here starts
-    // Monday, so reorder them.
     final mondayFirstWeekdays = [
       narrowWeekdays[1],
       narrowWeekdays[2],
@@ -1027,13 +1125,14 @@ class _StatsScreenState extends State<StatsScreen>
         CrossAxisAlignment.start,
         children: [
           Text(
-            materialLocalizations.formatMonthYear(
-              today,
-            ),
+            materialLocalizations
+                .formatMonthYear(today),
             style: const TextStyle(
-              fontWeight: FontWeight.w700,
+              fontWeight:
+              FontWeight.w700,
               fontSize: 16,
-              color: AppColors.textBlack,
+              color:
+              AppColors.textBlack,
             ),
           ),
 
@@ -1041,11 +1140,11 @@ class _StatsScreenState extends State<StatsScreen>
 
           Row(
             children: [
-              for (final weekday
-              in mondayFirstWeekdays)
-                _WeekLabel(
-                  weekday,
-                ),
+              for (
+              final weekday
+              in mondayFirstWeekdays
+              )
+                _WeekLabel(weekday),
             ],
           ),
 
@@ -1074,8 +1173,10 @@ class _StatsScreenState extends State<StatsScreen>
 
               final isToday =
                   date.year == today.year &&
-                      date.month == today.month &&
-                      date.day == today.day;
+                      date.month ==
+                          today.month &&
+                      date.day ==
+                          today.day;
 
               return _calendarDay(
                 date: date,
@@ -1156,15 +1257,20 @@ class _StatsScreenState extends State<StatsScreen>
     if (status == 1) {
       background =
           Colors.green.withOpacity(0.18);
-      textColor = Colors.green.shade700;
+      textColor =
+          Colors.green.shade700;
     } else if (status == 2) {
       background =
-          Colors.redAccent.withOpacity(0.16);
-      textColor = Colors.redAccent;
+          Colors.redAccent.withOpacity(
+            0.16,
+          );
+      textColor =
+          Colors.redAccent;
     } else {
       background =
           AppColors.journalChipBackground;
-      textColor = AppColors.textLightGrey;
+      textColor =
+          AppColors.textLightGrey;
     }
 
     return Container(
@@ -1174,7 +1280,8 @@ class _StatsScreenState extends State<StatsScreen>
         BorderRadius.circular(6),
         border: isToday
             ? Border.all(
-          color: AppColors.primary,
+          color:
+          AppColors.primary,
           width: 1.5,
         )
             : null,
@@ -1210,7 +1317,8 @@ class _StatsScreenState extends State<StatsScreen>
         borderRadius:
         BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.outlineGrey,
+          color:
+          AppColors.outlineGrey,
           width: 0.7,
         ),
         boxShadow: const [
@@ -1235,7 +1343,8 @@ class _StatsScreenState extends State<StatsScreen>
           ),
           child: Text(
             text,
-            textAlign: TextAlign.center,
+            textAlign:
+            TextAlign.center,
             style: const TextStyle(
               fontSize: 13,
               color:
@@ -1282,7 +1391,8 @@ class _WeekLabel extends StatelessWidget {
         child: Text(
           text,
           style: const TextStyle(
-            fontWeight: FontWeight.w600,
+            fontWeight:
+            FontWeight.w600,
             fontSize: 11,
             color:
             AppColors.textLightGrey,
@@ -1306,7 +1416,8 @@ class _InteractiveMoodBarChart
   });
 
   @override
-  State<_InteractiveMoodBarChart> createState() =>
+  State<_InteractiveMoodBarChart>
+  createState() =>
       _InteractiveMoodBarChartState();
 }
 
@@ -1381,18 +1492,22 @@ class _InteractiveMoodBarChartState
     _selectedIndex != null &&
         _selectedIndex! <
             widget.data.length
-        ? widget.data[_selectedIndex!]
+        ? widget
+        .data[_selectedIndex!]
         : null;
 
     final selectedMood =
-    (selected?['moodIndex'] as num?)
+    (selected?['moodIndex']
+    as num?)
         ?.toInt();
 
     final selectedDate =
     selected?['date'] as DateTime?;
 
     final dateFormatter =
-    MaterialLocalizations.of(context);
+    MaterialLocalizations.of(
+      context,
+    );
 
     return Column(
       children: [
@@ -1401,7 +1516,8 @@ class _InteractiveMoodBarChartState
           child: selectedMood != null
               ? Row(
             mainAxisAlignment:
-            MainAxisAlignment.center,
+            MainAxisAlignment
+                .center,
             children: [
               Text(
                 _moodEmoji(
@@ -1425,10 +1541,10 @@ class _InteractiveMoodBarChartState
                 style:
                 const TextStyle(
                   fontWeight:
-                  FontWeight.w700,
+                  FontWeight
+                      .w700,
                   fontSize: 13,
-                  color:
-                  AppColors
+                  color: AppColors
                       .textBlack,
                 ),
               ),
@@ -1461,7 +1577,8 @@ class _InteractiveMoodBarChartState
           height: 125,
           child: Row(
             crossAxisAlignment:
-            CrossAxisAlignment.end,
+            CrossAxisAlignment
+                .end,
             children: List.generate(
               widget.data.length,
                   (index) {
@@ -1474,20 +1591,24 @@ class _InteractiveMoodBarChartState
                     ?.toInt();
 
                 final hasData =
-                    item['hasData'] == true &&
+                    item['hasData'] ==
+                        true &&
                         mood != null;
 
                 final value = hasData
-                    ? mood!.toDouble() + 1
+                    ? mood!.toDouble() +
+                    1
                     : 0.08;
 
                 final isSelected =
-                    _selectedIndex == index;
+                    _selectedIndex ==
+                        index;
 
                 return Expanded(
                   child: GestureDetector(
                     behavior:
-                    HitTestBehavior.opaque,
+                    HitTestBehavior
+                        .opaque,
                     onTap: hasData
                         ? () {
                       setState(() {
@@ -1501,8 +1622,7 @@ class _InteractiveMoodBarChartState
                     child: Padding(
                       padding:
                       EdgeInsets.only(
-                        left:
-                        index == 0
+                        left: index == 0
                             ? 0
                             : 3,
                         right: index ==
@@ -1514,7 +1634,8 @@ class _InteractiveMoodBarChartState
                       ),
                       child: Column(
                         mainAxisAlignment:
-                        MainAxisAlignment.end,
+                        MainAxisAlignment
+                            .end,
                         children: [
                           Expanded(
                             child: Align(
@@ -1549,8 +1670,7 @@ class _InteractiveMoodBarChartState
                                   const BorderRadius
                                       .vertical(
                                     top:
-                                    Radius
-                                        .circular(
+                                    Radius.circular(
                                       5,
                                     ),
                                   ),
@@ -1558,8 +1678,7 @@ class _InteractiveMoodBarChartState
                                   isSelected
                                       ? Border.all(
                                     color:
-                                    AppColors
-                                        .primary,
+                                    AppColors.primary,
                                     width:
                                     2,
                                   )
@@ -1610,7 +1729,8 @@ class _InteractiveCravingBarChart
   });
 
   @override
-  State<_InteractiveCravingBarChart> createState() =>
+  State<_InteractiveCravingBarChart>
+  createState() =>
       _InteractiveCravingBarChartState();
 }
 
@@ -1631,7 +1751,8 @@ class _InteractiveCravingBarChartState
 
       case 0:
       default:
-        return AppColors.textLightGrey;
+        return AppColors
+            .textLightGrey;
     }
   }
 
@@ -1664,7 +1785,8 @@ class _InteractiveCravingBarChartState
     _selectedIndex != null &&
         _selectedIndex! <
             widget.data.length
-        ? widget.data[_selectedIndex!]
+        ? widget
+        .data[_selectedIndex!]
         : null;
 
     final selectedLevel =
@@ -1676,7 +1798,9 @@ class _InteractiveCravingBarChartState
     selected?['date'] as DateTime?;
 
     final dateFormatter =
-    MaterialLocalizations.of(context);
+    MaterialLocalizations.of(
+      context,
+    );
 
     return Column(
       children: [
@@ -1685,7 +1809,8 @@ class _InteractiveCravingBarChartState
           child: selectedLevel != null
               ? Row(
             mainAxisAlignment:
-            MainAxisAlignment.center,
+            MainAxisAlignment
+                .center,
             children: [
               Text(
                 _cravingLabel(
@@ -1695,10 +1820,10 @@ class _InteractiveCravingBarChartState
                 style:
                 const TextStyle(
                   fontWeight:
-                  FontWeight.w700,
+                  FontWeight
+                      .w700,
                   fontSize: 13,
-                  color:
-                  AppColors
+                  color: AppColors
                       .textBlack,
                 ),
               ),
@@ -1731,7 +1856,8 @@ class _InteractiveCravingBarChartState
           height: 125,
           child: Row(
             crossAxisAlignment:
-            CrossAxisAlignment.end,
+            CrossAxisAlignment
+                .end,
             children: List.generate(
               widget.data.length,
                   (index) {
@@ -1744,7 +1870,8 @@ class _InteractiveCravingBarChartState
                     ?.toInt();
 
                 final hasData =
-                    item['hasData'] == true &&
+                    item['hasData'] ==
+                        true &&
                         level != null;
 
                 final value = hasData
@@ -1753,12 +1880,14 @@ class _InteractiveCravingBarChartState
                     : 0.08;
 
                 final isSelected =
-                    _selectedIndex == index;
+                    _selectedIndex ==
+                        index;
 
                 return Expanded(
                   child: GestureDetector(
                     behavior:
-                    HitTestBehavior.opaque,
+                    HitTestBehavior
+                        .opaque,
                     onTap: hasData
                         ? () {
                       setState(() {
@@ -1772,8 +1901,7 @@ class _InteractiveCravingBarChartState
                     child: Padding(
                       padding:
                       EdgeInsets.only(
-                        left:
-                        index == 0
+                        left: index == 0
                             ? 0
                             : 3,
                         right: index ==
@@ -1785,7 +1913,8 @@ class _InteractiveCravingBarChartState
                       ),
                       child: Column(
                         mainAxisAlignment:
-                        MainAxisAlignment.end,
+                        MainAxisAlignment
+                            .end,
                         children: [
                           Expanded(
                             child: Align(
@@ -1820,8 +1949,7 @@ class _InteractiveCravingBarChartState
                                   const BorderRadius
                                       .vertical(
                                     top:
-                                    Radius
-                                        .circular(
+                                    Radius.circular(
                                       5,
                                     ),
                                   ),
@@ -1829,8 +1957,7 @@ class _InteractiveCravingBarChartState
                                   isSelected
                                       ? Border.all(
                                     color:
-                                    AppColors
-                                        .primary,
+                                    AppColors.primary,
                                     width:
                                     2,
                                   )

@@ -5,6 +5,15 @@
   "continueButton": "متابعة",
   "getStarted": "ابدأ الآن",
 
+  "maybeLaterLabel": "ربما لاحقًا",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "إلغاء",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
   "onboardingTitle1": "تحكم في حياتك",
   "onboardingSubtitle1": "تتبع رحلتك، احتفل بكل إنجاز، وكن أكثر صحة يومًا بعد يوم.",
   "onboardingTitle2": "رفيقك الذكي في رحلة التعافي",
@@ -67,8 +76,8 @@
   "featureComingSoon": "{feature} ستكون متاحة قريبًا.",
   "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
 
-  "appWordmark": "WELLNESS",
-  "appTitle": "Sober Flow",
+  "appWordmark": "العافية",
+  "appTitle": "الإقلاع عن الشرب",
   "splashSubtitle": "اتخذ الخطوة الأولى نحو\nحياة خالية من الكحول",
   "preparingJourney": "نُجهّز\nرحلتك",
 

@@ -1,0 +1,678 @@
+{
+  "@@locale": "fa",
+
+  "skip": "رد کردن",
+  "continueButton": "ادامه",
+  "getStarted": "شروع کنید",
+
+  "maybeLaterLabel": "شاید بعداً",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "لغو",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "کنترل زندگی خود را در دست بگیرید",
+  "onboardingSubtitle1": "مسیر خود را دنبال کنید، هر موفقیت را جشن بگیرید و هر روز سالم‌تر شوید.",
+  "onboardingTitle2": "همراه هوش مصنوعی شما در مسیر بهبودی",
+  "onboardingSubtitle2": "راهنمایی شخصی‌سازی‌شده، عادت‌های سالم، یادآوری‌های انگیزشی و گزارش‌های پیشرفت متناسب با مسیر شما دریافت کنید.",
+
+  "goodMorning": "صبح بخیر",
+  "goodAfternoon": "بعدازظهر بخیر",
+  "goodEvening": "عصر بخیر",
+  "goodNight": "شب بخیر",
+
+  "embracingClarity": "هر روز، یک قدم به سوی شفافیت بیشتر.",
+  "streakLabel": "تداوم",
+  "goalLabel": "هدف",
+  "daysStreak": "{count, plural, one{{count} روز} other{{count} روز}}",
+  "@daysStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "premiumPlan": "طرح پریمیوم",
+  "premiumPlanSubtitle": "تمام تجربه بهبودی خود را فعال کنید",
+
+  "accountAndSupport": "حساب کاربری و پشتیبانی",
+  "privacyPolicy": "سیاست حفظ حریم خصوصی",
+  "privacyPolicySubtitle": "مدیریت اشتراک‌گذاری داده‌ها و امنیت حساب",
+  "termsOfService": "شرایط استفاده از خدمات",
+  "termsOfServiceSubtitle": "سؤالات متداول، تماس با ما و منابع",
+  "shareApp": "اشتراک‌گذاری برنامه",
+  "shareAppSubtitle": "برنامه را با دوستان خود به اشتراک بگذارید",
+  "resetData": "بازنشانی داده‌ها",
+  "resetDataSubtitle": "تمام اطلاعات ذخیره‌شده در این دستگاه را پاک کنید",
+
+  "resetAllDataTitle": "همه داده‌ها بازنشانی شوند؟",
+  "resetAllDataMessage": "این کار همه اطلاعات ذخیره‌شده در این دستگاه، از جمله پروفایل، نوشته‌های ژورنال و پیشرفت شما را پاک می‌کند و قابل بازگشت نیست.",
+  "cancel": "لغو",
+  "reset": "بازنشانی",
+
+  "chooseFromGallery": "انتخاب از گالری",
+  "takePhoto": "گرفتن عکس",
+  "removePhoto": "حذف عکس",
+  "couldNotUpdatePhoto": "امکان به‌روزرسانی عکس وجود نداشت: {error}",
+  "@couldNotUpdatePhoto": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotRemovePhoto": "امکان حذف عکس وجود نداشت: {error}",
+  "@couldNotRemovePhoto": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "photoTooLarge": "این عکس حتی پس از فشرده‌سازی نیز بسیار بزرگ است — لطفاً عکس دیگری انتخاب کنید.",
+
+  "unableToLoadProfile": "امکان بارگذاری پروفایل شما وجود ندارد",
+  "pleaseTryAgain": "لطفاً دوباره تلاش کنید.",
+  "tryAgain": "دوباره تلاش کنید",
+  "profileNotFound": "پروفایل پیدا نشد",
+  "refresh": "تازه‌سازی",
+  "noProfileDataFound": "هنوز اطلاعات پروفایلی روی این دستگاه پیدا نشد.",
+
+  "couldNotResetData": "امکان بازنشانی داده‌ها وجود نداشت: {error}",
+  "@couldNotResetData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "navHome": "خانه",
+  "navStats": "آمار",
+  "navJournal": "ژورنال",
+  "navBadges": "نشان‌ها",
+  "navProfile": "پروفایل",
+
+  "featureComingSoon": "{feature} به‌زودی در دسترس خواهد بود.",
+  "@featureComingSoon": {
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+
+  "appWordmark": "سلامت",
+  "appTitle": "ترک الکل",
+  "splashSubtitle": "اولین قدم را به سوی یک\nزندگی بدون الکل بردارید",
+  "preparingJourney": "در حال آماده‌سازی\nمسیر شما",
+
+  "taskMorningMeditation": "مدیتیشن صبحگاهی (۱۰ دقیقه)",
+  "taskReadChapter": "فصل چهارم «خاطرات هوشیاری» را بخوانید",
+  "taskEveningJournal": "ژورنال قدردانی شبانه",
+
+  "close": "بستن",
+  "youAreDoingGreat": "عالی پیش می‌روید!",
+  "shareMilestone": "اشتراک‌گذاری نقطه عطف",
+  "shareMilestoneMessage": "امروز روز {days} مسیر بهبودی من است! 💪",
+  "@shareMilestoneMessage": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMilestoneSubject": "نقطه عطف من در مسیر بهبودی",
+
+  "weeklyReportReadyTitle": "گزارش هفتگی شما آماده است",
+  "weeklyReportReadySubtitle": "برای مشاهده عملکرد این هفته ضربه بزنید",
+
+  "howAreYouFeeling": "چه احساسی دارید؟",
+  "moodTough": "سخت",
+  "moodOkay": "خوبم",
+  "moodGood": "خوب",
+
+  "moneySaved": "پول پس‌اندازشده",
+  "caloriesSaved": "کالری ذخیره‌شده",
+  "healthScore": "امتیاز سلامتی",
+  "drinksAvoided": "نوشیدنی‌های اجتناب‌شده",
+  "estimated": "تخمینی",
+  "aiGenerated": "تولیدشده توسط هوش مصنوعی",
+  "daysCapsLabel": "روز",
+
+  "todaysMotivation": "انگیزه امروز",
+  "defaultMotivationQuote": "شما با موفقیت به تعهد خود پایبند مانده‌اید. به مسیر تغییر مثبت ادامه دهید.",
+
+  "talkToCoach": "گفت‌وگو با مربی",
+  "havingACraving": "هوس نوشیدن دارم",
+
+  "unlockWeeklyReportsTitle": "گزارش‌های هفتگی را فعال کنید",
+  "unlockWeeklyReportsMessage": "هر هفته روزهای بدون الکل، روند خلق‌وخو و بازخورد شخصی‌سازی‌شده هوش مصنوعی خود را ببینید. برای فعال‌سازی به پریمیوم ارتقا دهید.",
+  "maybeLater": "شاید بعداً",
+  "upgrade": "ارتقا",
+
+  "weeklyReportTitle": "گزارش هفتگی",
+  "weeklyReportsPremiumTitle": "گزارش‌های هفتگی ویژگی پریمیوم هستند",
+  "weeklyReportsPremiumMessage": "هر هفته روزهای بدون الکل، روند خلق‌وخو، هوس‌ها و بازخورد شخصی‌سازی‌شده هوش مصنوعی را ببینید.",
+  "upgradeToPremium": "ارتقا به پریمیوم",
+  "couldNotGenerateReport": "در حال حاضر امکان تولید گزارش شما وجود ندارد.",
+  "tryAgainLower": "دوباره تلاش کنید",
+
+  "statSoberDays": "روزهای بدون الکل",
+  "statAvgMood": "میانگین خلق‌وخو",
+  "statCravings": "هوس‌ها",
+  "statMoneySaved": "پول پس‌اندازشده",
+  "coachFeedback": "بازخورد مربی",
+  "journalInsights": "بینش‌های ژورنال",
+
+  "next": "بعدی",
+
+  "question1Title": "هدف شما چیست؟",
+  "question1Subtitle": "هدفی را انتخاب کنید که\nبیشترین اهمیت را برای شما دارد",
+  "goalQuitCompletely": "ترک کامل",
+  "goalReduceDrinking": "کاهش مصرف الکل",
+  "goalTakeABreak": "یک وقفه",
+  "goalBuildHealthierHabits": "ایجاد عادت‌های سالم‌تر",
+
+  "question3Title": "درباره\nروتین خود بگویید",
+  "drinksPerWeek": "نوشیدنی در هفته",
+  "moneySpentPerWeek": "هزینه هفتگی",
+  "drinkingLevel": "سطح مصرف الکل",
+  "triggersLabel": "محرک‌ها",
+  "levelSocial": "اجتماعی",
+  "levelRegular": "منظم",
+  "levelHeavy": "زیاد",
+  "levelDependent": "وابسته",
+  "triggerStress": "استرس",
+  "triggerLoneliness": "تنهایی",
+  "triggerHabit": "عادت",
+  "triggerSadness": "غم",
+  "triggerAnger": "خشم",
+  "triggerBoredom": "بی‌حوصلگی",
+  "triggerSocialPressure": "فشار اجتماعی",
+  "triggerCelebration": "جشن",
+  "triggerSleepProblems": "مشکلات خواب",
+  "triggerWorkPressure": "فشار کاری",
+
+  "question4Title": "چرا می‌خواهید تغییر کنید؟",
+  "question4Subtitle": "دلیل شما به ایجاد انگیزه کمک خواهد کرد.",
+  "reasonImproveHealth": "بهبود سلامتی",
+  "reasonSaveMoney": "صرفه‌جویی در پول",
+  "reasonFamily": "خانواده",
+  "reasonBetterSleep": "خواب بهتر",
+  "reasonMentalClarity": "شفافیت ذهنی",
+  "reasonFitness": "تناسب اندام",
+  "reasonSelfRespect": "احترام به خود",
+  "reasonCareer": "شغل",
+
+  "milestoneUnlockedLabel": "نقطه عطف فعال شد",
+  "incredibleNamePrefix": "فوق‌العاده‌ای، {name}!",
+  "@incredibleNamePrefix": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "amountSavedLabel": "{amount} پس‌انداز شد",
+  "@amountSavedLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "drinksAvoidedLabel": "{count} مورد اجتانب شد",
+  "@drinksAvoidedLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "shareMyMilestone": "اشتراک‌گذاری نقطه عطف من",
+  "milestoneImageShareError": "ایجاد تصویر نقطه عطف ممکن نبود. لطفاً دوباره تلاش کنید.",
+
+  "dailyCheckInTitle": "ثبت روزانه",
+  "howAreYouFeelingToday": "امروز چه احساسی دارید؟",
+  "honestAnswerHelp": "پاسخ صادقانه شما به ما کمک می‌کند بهتر از شما حمایت کنیم",
+  "didYouDrinkToday": "امروز نوشیدنی الکلی مصرف کردید؟",
+  "noLabel": "خیر",
+  "yesLabel": "بله",
+  "cravingLevelNow": "سطح هوس در حال حاضر چقدر است؟",
+  "anythingOnMind": "چیزی در ذهن دارید؟",
+  "optionalLabel": "(اختیاری)",
+  "dailyNoteHint": "درباره روزتان، محرک‌ها، موفقیت‌ها بنویسید...",
+  "alreadyCheckedInToday": "امروز قبلاً ثبت روزانه انجام داده‌اید",
+  "saveCheckIn": "ذخیره ثبت روزانه",
+  "checkInsHelpTrack": "ثبت‌های روزانه به پیگیری پیشرفت شما در طول زمان کمک می‌کنند",
+  "alreadyCompletedTodayCheckIn": "شما قبلاً ثبت روزانه امروز را انجام داده‌اید.",
+  "pleaseAnswerBothQuestions": "لطفاً ابتدا به هر دو سؤال بالا پاسخ دهید",
+  "checkInSaved": "ثبت روزانه ذخیره شد",
+  "cravingNone": "هیچ",
+  "cravingLow": "کم",
+  "cravingMedium": "متوسط",
+  "cravingStrong": "شدید",
+  "moodBad": "بد",
+  "moodLow": "پایین",
+  "moodOkay": "خوب",
+  "moodGood": "خوب",
+  "moodGreat": "عالی",
+
+  "sosSupportTitle": "پشتیبانی SOS",
+  "notAloneMessage": "تنها نیستید، {name}",
+  "@notAloneMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cravingsPassMessage": "هوس‌ها می‌گذرند. یکی از گزینه‌های زیر را انتخاب کنید تا از این لحظه عبور کنید.",
+  "breathingExercise": "تمرین تنفس",
+  "breathingExerciseSubtitle": "تکنیک هدایت‌شده ۴-۷-۸، به مدت ۲ دقیقه",
+  "rideTheWave": "با موج همراه شوید",
+  "rideTheWaveSubtitle": "تایمر ۱۵ دقیقه‌ای — هوس‌ها همیشه می‌گذرند",
+  "copingTips": "نکات مقابله‌ای",
+  "copingTipsSubtitle": "راهبردهای شخصی‌سازی‌شده برای محرک‌های شما",
+  "talkToAiCoach": "گفت‌وگو با مربی هوش مصنوعی",
+  "talkToAiCoachSubtitle": "با همراه بهبودی خود چت کنید",
+  "callSomeone": "تماس با یک نفر",
+  "callSomeoneSubtitle": "با فرد مورد اعتماد خود تماس بگیرید",
+  "contactsPermissionNeeded": "برای تماس با یک مخاطب، اجازه دسترسی به مخاطبین لازم است.",
+  "beatenCravingsPrefix": "تا کنون بر هوس‌ها ",
+  "beatenCravingsCount": "{count} بار",
+  "@beatenCravingsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "beatenCravingsSuffix": " غلبه کرده‌اید. دوباره هم می‌توانید.",
+
+  "tellUsAboutYourself": "درباره خودتان بگویید",
+  "detailsSubtitle": "این اطلاعات به ما کمک می‌کند مسیر بهبودی شما را شخصی‌سازی کنیم و بینش‌های دقیقی ارائه دهیم.",
+  "nameLabel": "نام",
+  "nameHint": "مثلاً الکس ریورز",
+  "ageLabel": "سن",
+  "ageHint": "مثلاً ۳۲",
+  "sexAssignedAtBirth": "جنسیت تعیین‌شده هنگام تولد",
+  "sexFemale": "زن",
+  "sexMale": "مرد",
+  "heightLabel": "قد",
+  "weightLabel": "وزن",
+  "heightHint": "۱۷۰",
+  "weightHint": "۷۰",
+
+  "dailyLimitReachedTitle": "محدودیت روزانه به پایان رسید",
+  "dailyLimitReachedMessage": "شما تمام {limit} پیام رایگان امروز را استفاده کرده‌اید. برای چت نامحدود با مربی به پریمیوم ارتقا دهید.",
+  "@dailyLimitReachedMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "coachConnectError": "در حال حاضر نتوانستم متصل شوم. لطفاً لحظه‌ای دیگر دوباره تلاش کنید.",
+  "clearConversationTitle": "گفت‌وگو پاک شود؟",
+  "clearConversationMessage": "تاریخچه چت شما با مربی برای همیشه حذف خواهد شد.",
+  "clearLabel": "پاک کردن",
+  "recoveryCoachTitle": "مربی بهبودی",
+  "onlineLabel": "آنلاین",
+  "clearConversationMenuItem": "پاک کردن گفت‌وگو",
+  "chatGreeting": "سلام {name} 👋",
+  "@chatGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatDaysIntro": "شما در روز {days} مسیر خود هستید. هر زمان بخواهید درباره مسائل صحبت کنید، من اینجا هستم.",
+  "@chatDaysIntro": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "quickPromptsLabel": "پیشنهادهای سریع",
+  "promptCravingLabel": "هوس نوشیدن دارم",
+  "promptCravingSubtitle": "سریع آرام و متمرکز شوید",
+  "promptMotivationLabel": "به انگیزه نیاز دارم",
+  "promptMotivationSubtitle": "وقتی سخت است، یک تقویت انگیزشی",
+  "promptSocialLabel": "موقعیت اجتماعی",
+  "promptSocialSubtitle": "یک دورهمی را مدیریت کنید",
+  "promptSlippedLabel": "لغزش کردم",
+  "promptSlippedSubtitle": "بدون قضاوت، فقط حمایت",
+  "typeMessageHint": "پیامی بنویسید...",
+
+  "editProfileTitle": "ویرایش پروفایل",
+  "couldNotSaveProfile": "امکان ذخیره پروفایل وجود نداشت: {error}",
+  "@couldNotSaveProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "heightCmLabel": "قد (سانتی‌متر)",
+  "weightKgLabel": "وزن (کیلوگرم)",
+  "saveChangesLabel": "ذخیره تغییرات",
+
+  "premiumBadgeLabel": "پریمیوم",
+  "featureAdvancedInsights": "بینش‌ها و تحلیل‌های پیشرفته",
+  "featureUnlimitedJournal": "نوشته‌های نامحدود ژورنال",
+  "featureUnlimitedChat": "چت نامحدود با مربی هوش مصنوعی",
+  "featureCommunityGroups": "گروه‌های اختصاصی جامعه",
+  "featurePrioritySupport": "پشتیبانی تخصصی اولویت‌دار",
+  "featureThemePacks": "بسته‌های تم سفارشی",
+  "featureDataExport": "خروجی داده‌ها",
+  "featureAdFree": "تجربه بدون تبلیغات",
+  "premiumMemberTitle": "شما عضو پریمیوم هستید",
+  "unlockFullRecoveryTitle": "تمام تجربه بهبودی خود را\nفعال کنید",
+  "premiumMemberSubtitle": "از حمایت شما در مسیر بهبودی متشکریم — تمام قابلیت‌های پریمیوم زیر فعال هستند.",
+  "premiumJoinSubtitle": "به جامعه‌ای متشکل از هزاران نفر بپیوندید که با ابزارهای پریمیوم و پشتیبانی شخصی‌سازی‌شده،\nمسیر بهبودی خود را سریع‌تر می‌کنند.",
+  "monthlyPlanLabel": "ماهانه",
+  "perMonthSuffix": "/ماه",
+  "cancelAnytimeLabel": "هر زمان لغو کنید",
+  "yearlyPlanLabel": "سالانه",
+  "billedAnnuallyLabel": "سالانه به مبلغ {amount} صورتحساب می‌شود",
+  "@billedAnnuallyLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "bestValueLabel": "بهترین ارزش",
+  "alreadyPremiumLabel": "شما پریمیوم هستید ✓",
+  "startPremiumLabel": "شروع پریمیوم",
+  "manageSubscriptionLabel": "مدیریت یا لغو اشتراک از تنظیمات اشتراک دستگاه شما.",
+  "noCommitmentLabel": "بدون تعهد. هر زمان خواستید لغو کنید.",
+  "continueFreePlanLabel": "ادامه با طرح رایگان",
+  "backToHomeLabel": "بازگشت به خانه",
+  "cancelPremiumLabel": "لغو پریمیوم",
+  "cancelPremiumTitle": "پریمیوم لغو شود؟",
+  "cancelPremiumMessage": "دسترسی به نوشته‌های نامحدود ژورنال، چت نامحدود با مربی، بینش‌های آماری و گزارش‌های هفتگی را از دست خواهید داد. هر زمان می‌توانید دوباره مشترک شوید.",
+  "keepPremiumLabel": "حفظ پریمیوم",
+  "nowPremiumMessage": "اکنون پریمیوم هستید! از تمام تجربه بهبودی خود لذت ببرید.",
+  "premiumCancelledMessage": "پریمیوم لغو شد. به طرح رایگان بازگشتید.",
+  "termsOfUseLabel": "شرایط استفاده",
+
+  "navHomeLabel": "خانه",
+  "navStatsLabel": "آمار",
+  "navJournalLabel": "ژورنال",
+  "navBadgesLabel": "نشان‌ها",
+  "navProfileLabel": "پروفایل",
+
+  "recoveryGoalsTitle": "اهداف بهبودی",
+  "drinksPerWeekLabel": "نوشیدنی در هفته",
+  "quitReasonsLabel": "دلایل ترک",
+  "quitReasonsHelperText": "چند دلیل را با کاما از هم جدا کنید.",
+  "couldNotSaveRecoveryGoals": "امکان ذخیره اهداف بهبودی وجود نداشت: {error}",
+  "@couldNotSaveRecoveryGoals": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+
+  "goalHint": "مثلاً ترک کامل",
+  "drinksPerWeekHint": "مثلاً ۱۲",
+  "quitReasonsHint": "مثلاً سلامتی، خانواده، پول",
+
+  "todaysPrompt": "پرسش امروز",
+  "defaultJournalPrompt": "امروز چه چیزی در ذهن شماست؟",
+  "aiJournalInsights": "بینش‌های هوش مصنوعی از ژورنال",
+  "unlockJournalInsightsMessage": "الگوهای هفتگی، روند خلق‌وخو و بینش‌های شخصی‌سازی‌شده از نوشته‌های ژورنال خود را فعال کنید.",
+  "notEnoughJournalData": "هنوز داده کافی وجود ندارد — این هفته چند نوشته بنویسید و دوباره بررسی کنید.",
+  "openEntry": "باز کردن",
+  "editEntry": "ویرایش",
+  "deleteEntry": "حذف",
+  "searchJournalEntries": "جست‌وجوی نوشته‌ها...",
+  "writeNewEntry": "نوشتن نوشته جدید",
+  "recentEntries": "نوشته‌های اخیر",
+  "noJournalEntriesYet": "هنوز نوشته‌ای در ژورنال وجود ندارد — اولین یادداشت خود را در بالا بنویسید.",
+  "noEntriesMatchFilters": "هیچ نوشته‌ای با فیلترهای شما مطابقت ندارد.",
+
+  "weeklyJournalLimitReached": "محدودیت هفتگی به پایان رسید",
+  "weeklyJournalLimitMessage": "شما تمام {limit} نوشته رایگان این هفته را استفاده کرده‌اید. برای نوشته‌های نامحدود به پریمیوم ارتقا دهید.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "نوشته جدید",
+  "writeYourThoughts": "افکار خود را بنویسید",
+  "saveEntry": "ذخیره نوشته",
+  "freeEntriesLeftThisWeek": "{remaining} از {limit} نوشته رایگان این هفته باقی مانده",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "نوشته حذف شود؟",
+  "deleteEntryConfirmation": "این نوشته برای همیشه حذف خواهد شد. این کار قابل بازگشت نیست.",
+
+  "journalEntryNotFound": "نوشته پیدا نشد",
+  "journalEntryMayHaveBeenDeleted": "ممکن است این نوشته ژورنال حذف شده باشد.",
+  "goBack": "بازگشت",
+  "journalEntryTitle": "نوشته ژورنال",
+
+  "moodStruggling": "درگیر",
+  "moodUnwell": "حال نامساعد",
+  "moodNeutral": "خنثی",
+
+  "whatHappenedToday": "امروز چه اتفاقی افتاد؟",
+  "trigger": "محرک",
+  "whatHelped": "چه چیزی کمک کرد",
+  "whatIllTryNextTime": "دفعه بعد چه چیزی را امتحان خواهم کرد",
+  "journalPrivacyMessage": "یادداشت شما خصوصی است و در ژورنال شما ذخیره می‌شود.",
+
+  "unlocked": "فعال‌شده",
+  "daysLeft": "{count} روز باقی مانده",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} روز",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "اولین\nتأمل",
+  "oneJournalEntry": "۱ نوشته ژورنال",
+  "openBook": "باز کردن کتاب",
+  "tenJournalEntries": "۱۰ نوشته ژورنال",
+  "dedicatedWriter": "نویسنده\nمتعهد",
+  "thirtyJournalEntries": "۳۰ نوشته ژورنال",
+  "firstConversation": "اولین\nگفت‌وگو",
+  "oneAiCoachChat": "۱ چت مربی هوش مصنوعی",
+  "keepTalking": "به گفت‌وگو ادامه دهید",
+  "fiveConversations": "۵ گفت‌وگو",
+  "coachCompanion": "همراه\nمربی",
+  "twentyConversations": "۲۰ گفت‌وگو",
+  "checkInHabit": "عادت ثبت\nروزانه",
+  "sevenCheckIns": "۷ ثبت روزانه",
+  "consistencyPro": "حرفه‌ای\nدر تداوم",
+  "thirtyCheckIns": "۳۰ ثبت روزانه",
+  "dedicatedJourney": "مسیر\nمتعهدانه",
+  "hundredCheckIns": "۱۰۰ ثبت روزانه",
+  "goalGetter": "هدف‌گرا",
+  "threeGoalsCompleted": "۳ هدف تکمیل‌شده",
+  "goalAchiever": "دستاورد\nاهداف",
+  "tenGoalsCompleted": "۱۰ هدف تکمیل‌شده",
+  "firstSavings": "اولین\nپس‌انداز",
+  "fiveHundredSaved": "$۵۰۰ پس‌انداز شد",
+  "smartSaver": "پس‌اندازکننده هوشمند",
+  "oneThousandSaved": "$۱٬۰۰۰ پس‌انداز شد",
+  "bigSaver": "پس‌اندازکننده بزرگ",
+  "fiveThousandSaved": "$۵٬۰۰۰ پس‌انداز شد",
+  "currencyProgress": "${current} از ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} از {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "ادامه دهید — اولین نقطه عطف شما منتظر شماست!",
+  "badgesAndMilestones": "نشان‌ها و نقاط عطف",
+  "yourMilestoneJourney": "مسیر نقاط عطف شما",
+  "milestonesAchieved": "{count} نقطه عطف به دست آمده است.\nبرای مشاهده ضربه بزنید",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "شما {unlocked} مورد از {total} نقطه عطف مسیر خود را فعال کرده‌اید.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "باقی‌مانده",
+  "complete": "تکمیل‌شده",
+  "nextMilestone": "نقطه عطف بعدی",
+  "percentThere": "{subtitle} · {percent}% پیشرفت",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "نقاط عطف هوشیاری",
+  "journeyBadges": "نشان‌های مسیر",
+  "bronze": "برنز",
+  "silver": "نقره‌ای",
+  "gold": "طلایی",
+  "platinum": "پلاتینیوم",
+  "diamond": "الماس",
+
+  "analyzingYourJourney": "در حال تحلیل مسیر شما...",
+  "aiCreatingSanctuary": "هوش مصنوعی ما در حال ایجاد فضای بهبودی شخصی شماست.",
+  "understandingHabits": "در حال شناخت عادت‌ها...",
+  "calculatingBaseline": "در حال محاسبه وضعیت پایه شما...",
+  "personalizingPlan": "در حال شخصی‌سازی برنامه شما...",
+  "finalizingSanctuary": "در حال نهایی‌سازی فضای بهبودی شما...",
+  "creatingYourPlan": "در حال ایجاد برنامه شما...",
+  "personalizedPlanError": "نتوانستیم برنامه شخصی‌سازی‌شده شما را ایجاد کنیم. لطفاً دوباره تلاش کنید.",
+  "retry": "تلاش مجدد",
+
+  "breathInhale": "دم",
+  "breathHold": "حبس",
+  "breathExhale": "بازدم",
+  "breathDone": "تمام",
+  "breathGreatJob": "عالی بود!",
+  "breathSessionsToday": "{count, plural, one{{count} جلسه امروز} other{{count} جلسه امروز}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "پایان تمرین",
+  "done": "انجام شد",
+
+  "noCopingTipsYet": "هنوز نکته مقابله‌ای وجود ندارد",
+  "copingStrategiesWillAppear": "پس از تکمیل تولید برنامه بهبودی شما، راهبردهای شخصی‌سازی‌شده مقابله‌ای اینجا نمایش داده خواهند شد.",
+  "strategiesTailoredToTriggers": "راهبردهای متناسب با محرک‌های شما",
+
+  "cravingsPeakAndPass": "هوس‌ها اوج می‌گیرند\nو می‌گذرند",
+  "rideTheWaveDescription": "بیشتر هوس‌ها ظرف ۱۵ دقیقه می‌گذرند. لازم نیست بر اساس آن عمل کنید — فقط همراه ما از آن عبور کنید.",
+  "stayWithIt": "ادامه دهید",
+  "youMadeIt": "موفق شدید",
+  "readyWhenYouAre": "هر وقت آماده بودید",
+  "rideItAgain": "دوباره همراه موج شوید",
+  "start15MinuteTimer": "شروع تایمر ۱۵ دقیقه‌ای",
+  "rideTheWaveCompletedMessage": "شما از این موج عبور کردید. این قدرت واقعی است. 💪",
+
+  "myProgress": "پیشرفت من",
+  "weekLabel": "هفته",
+  "monthLabel": "ماه",
+  "allLabel": "همه",
+  "daysSoberStatLabel": "روزهای\nبدون الکل",
+  "savedStatLabel": "پس‌انداز",
+  "avoidedStatLabel": "اجتانب‌شده",
+  "moodTrends": "روند خلق‌وخو",
+  "cravingsPattern": "الگوی هوس‌ها",
+  "unlockLabel": "فعال‌سازی",
+  "unlockFullStats": "فعال‌سازی آمار کامل",
+  "premiumStatsMessage": "روند خلق‌وخو و الگوهای هوس از ویژگی‌های پریمیوم هستند. برای مشاهده آمار کامل ارتقا دهید.",
+  "healthMilestonesWillAppear": "نقاط عطف سلامتی شما اینجا نمایش داده خواهند شد.",
+  "healthMilestones": "نقاط عطف سلامتی",
+  "dayNumber": "روز {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "بدون الکل",
+  "slipLabel": "لغزش",
+  "noDataLabel": "بدون داده",
+
+  "milestone24Hours": "۲۴ ساعت",
+  "milestoneOneWeek": "یک هفته",
+  "milestoneOneMonth": "یک ماه",
+  "milestoneThreeMonths": "سه ماه",
+  "milestoneSixMonths": "شش ماه",
+  "milestoneOneYear": "یک سال",
+  "milestoneDayCount": "نقطه عطف روز {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

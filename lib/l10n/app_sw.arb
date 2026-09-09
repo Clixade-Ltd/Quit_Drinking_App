@@ -1,0 +1,583 @@
+{
+  "@@locale": "sw",
+
+  "skip": "Ruka",
+  "continueButton": "Endelea",
+  "getStarted": "Anza",
+
+  "maybeLaterLabel": "Labda baadaye",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Ghairi",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+  "onboardingTitle1": "Dhibiti Maisha Yako",
+  "onboardingSubtitle1": "Fuatilia safari yako, sherehekea kila mafanikio, na kuwa na afya bora siku baada ya siku.",
+  "onboardingTitle2": "Mshirika Wako wa AI wa Kupona",
+  "onboardingSubtitle2": "Pata mwongozo uliobinafsishwa, tabia bora za afya, vikumbusho vya motisha, na ripoti za maendeleo zilizoundwa kulingana na safari yako.",
+
+  "goodMorning": "Habari za asubuhi",
+  "goodAfternoon": "Habari za mchana",
+  "goodEvening": "Habari za jioni",
+  "goodNight": "Usiku mwema",
+
+  "embracingClarity": "Tukumbatie uwazi, siku moja baada ya nyingine.",
+  "streakLabel": "MWENDELEZO",
+  "goalLabel": "LENGO",
+  "daysStreak": "{count, plural, one{Siku {count}} other{Siku {count}}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Mpango wa Premium",
+  "premiumPlanSubtitle": "Fungua uzoefu wako kamili wa kupona",
+
+  "accountAndSupport": "AKAUNTI NA MSAADA",
+  "privacyPolicy": "Sera ya Faragha",
+  "privacyPolicySubtitle": "Dhibiti kushiriki data na usalama wa akaunti",
+  "termsOfService": "Masharti ya Huduma",
+  "termsOfServiceSubtitle": "Maswali yanayoulizwa mara kwa mara, wasiliana nasi na rasilimali",
+  "shareApp": "Shiriki Programu",
+  "shareAppSubtitle": "Shiriki programu na marafiki zako",
+  "resetData": "Weka Upya Data",
+  "resetDataSubtitle": "Futa kila kitu kilichohifadhiwa kwenye kifaa hiki",
+
+  "resetAllDataTitle": "Uweke upya data yote?",
+  "resetAllDataMessage": "Hii itafuta kila kitu kilichohifadhiwa kwenye kifaa hiki — wasifu, maingizo ya jarida na maendeleo — na haiwezi kutenduliwa.",
+  "cancel": "Ghairi",
+  "reset": "Weka Upya",
+
+  "chooseFromGallery": "Chagua kutoka kwenye Galari",
+  "takePhoto": "Piga Picha",
+  "removePhoto": "Ondoa Picha",
+  "couldNotUpdatePhoto": "Picha haikuweza kusasishwa: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Picha haikuweza kuondolewa: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Picha hiyo ni kubwa sana hata baada ya kubanwa — tafadhali jaribu nyingine.",
+
+  "unableToLoadProfile": "Imeshindikana kupakia wasifu wako",
+  "pleaseTryAgain": "Tafadhali jaribu tena.",
+  "tryAgain": "Jaribu Tena",
+  "profileNotFound": "Wasifu haukupatikana",
+  "refresh": "Onyesha Upya",
+  "noProfileDataFound": "Hakuna data ya wasifu iliyopatikana kwenye kifaa hiki bado.",
+
+  "couldNotResetData": "Data haikuweza kuwekwa upya: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Nyumbani",
+  "navStats": "Takwimu",
+  "navJournal": "Jarida",
+  "navBadges": "Beji",
+  "navProfile": "Wasifu",
+
+  "featureComingSoon": "{feature} itapatikana hivi karibuni.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "USTAWI",
+  "appTitle": "Acha Kunywa",
+  "splashSubtitle": "Chukua hatua ya kwanza kuelekea\nmaisha yasiyo na pombe",
+  "preparingJourney": "Tunaandaa\nsafari yako",
+
+  "taskMorningMeditation": "Kutafakari Asubuhi (dakika 10)",
+  "taskReadChapter": "Soma Sura ya 4 ya \"The Sober Diaries\"",
+  "taskEveningJournal": "Jarida la Shukrani la Jioni",
+
+  "close": "Funga",
+  "youAreDoingGreat": "Unaendelea vizuri sana!",
+  "shareMilestone": "Shiriki Hatua Muhimu",
+  "shareMilestoneMessage": "Niko siku ya {days} ya safari yangu ya kupona! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Hatua yangu muhimu ya kupona",
+
+  "weeklyReportReadyTitle": "Ripoti yako ya wiki iko tayari",
+  "weeklyReportReadySubtitle": "Gusa kuona jinsi wiki yako ilivyokwenda",
+
+  "howAreYouFeeling": "Unajisikiaje?",
+  "moodTough": "Ngumu",
+  "moodOkay": "Sawa",
+  "moodGood": "Vizuri",
+
+  "moneySaved": "Pesa Zilizookolewa",
+  "caloriesSaved": "Kalori Zilizoepukwa",
+  "healthScore": "Alama ya Afya",
+  "drinksAvoided": "Vinywaji Vilivyoepukwa",
+  "estimated": "Makadirio",
+  "aiGenerated": "Imetengenezwa na AI",
+  "daysCapsLabel": "SIKU",
+
+  "todaysMotivation": "Motisha ya Leo",
+  "defaultMotivationQuote": "Umefanikiwa kudumisha ahadi yako. Endelea na wimbi la mabadiliko chanya.",
+
+  "talkToCoach": "Zungumza na kocha",
+  "havingACraving": "Nina Tamaa ya Kunywa",
+
+  "unlockWeeklyReportsTitle": "Fungua Ripoti za Wiki",
+  "unlockWeeklyReportsMessage": "Angalia siku zako bila pombe, mienendo ya hisia na maoni ya AI yaliyobinafsishwa kila wiki. Boresha hadi Premium ili kufungua.",
+  "maybeLater": "Labda baadaye",
+  "upgrade": "Boresha",
+
+  "weeklyReportTitle": "Ripoti ya Wiki",
+  "weeklyReportsPremiumTitle": "Ripoti za wiki ni kipengele cha Premium",
+  "weeklyReportsPremiumMessage": "Angalia siku zako bila pombe, mienendo ya hisia, tamaa za kunywa na maoni ya AI yaliyobinafsishwa kila wiki.",
+  "upgradeToPremium": "Boresha hadi Premium",
+  "couldNotGenerateReport": "Ripoti yako haikuweza kutengenezwa kwa sasa.",
+  "tryAgainLower": "Jaribu tena",
+
+  "statSoberDays": "Siku bila pombe",
+  "statAvgMood": "Wastani wa hisia",
+  "statCravings": "Tamaa",
+  "statMoneySaved": "Pesa zilizookolewa",
+  "coachFeedback": "Maoni ya kocha",
+  "journalInsights": "Maarifa ya jarida",
+
+  "next": "Ifuatayo",
+
+  "question1Title": "Lengo lako ni nini",
+  "question1Subtitle": "Chagua lengo ambalo ni muhimu\nzaidi kwako",
+  "goalQuitCompletely": "Acha kabisa",
+  "goalReduceDrinking": "Punguza unywaji",
+  "goalTakeABreak": "Pumzika",
+  "goalBuildHealthierHabits": "Jenga tabia bora za afya",
+
+  "question3Title": "Tuambie kuhusu\nratiba yako",
+  "drinksPerWeek": "Vinywaji kwa wiki",
+  "moneySpentPerWeek": "Pesa zinazotumika kwa wiki",
+  "drinkingLevel": "Kiwango cha unywaji",
+  "triggersLabel": "Vichochezi",
+  "levelSocial": "Kijamii",
+  "levelRegular": "Kawaida",
+  "levelHeavy": "Mwingi",
+  "levelDependent": "Mtegemezi",
+  "triggerStress": "Msongo wa mawazo",
+  "triggerLoneliness": "Upweke",
+  "triggerHabit": "Mazoea",
+  "triggerSadness": "Huzuni",
+  "triggerAnger": "Hasira",
+  "triggerBoredom": "Uchovu",
+  "triggerSocialPressure": "Shinikizo la kijamii",
+  "triggerCelebration": "Sherehe",
+  "triggerSleepProblems": "Matatizo ya usingizi",
+  "triggerWorkPressure": "Shinikizo la kazi",
+
+  "question4Title": "Kwa nini unataka kubadilika?",
+  "question4Subtitle": "Sababu yako itakusaidia kubaki na motisha.",
+  "reasonImproveHealth": "Boresha Afya Yangu",
+  "reasonSaveMoney": "Okoa Pesa",
+  "reasonFamily": "Familia",
+  "reasonBetterSleep": "Usingizi Bora",
+  "reasonMentalClarity": "Uwazi wa Akili",
+  "reasonFitness": "Usawa wa Mwili",
+  "reasonSelfRespect": "Kujiheshimu",
+  "reasonCareer": "Kazi",
+
+  "milestoneUnlockedLabel": "HATUA MUHIMU IMEFUNGULIWA",
+  "incredibleNamePrefix": "Ajabu, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} imeokolewa",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} vimeepukwa",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Shiriki Hatua Yangu",
+  "milestoneImageShareError": "Picha ya hatua muhimu haikuweza kutengenezwa. Tafadhali jaribu tena.",
+
+  "dailyCheckInTitle": "Kujichunguza Kila Siku",
+  "howAreYouFeelingToday": "Unajisikiaje leo?",
+  "honestAnswerHelp": "Jibu lako la kweli hutusaidia kukusaidia vizuri zaidi",
+  "didYouDrinkToday": "Ulikunywa leo?",
+  "noLabel": "Hapana",
+  "yesLabel": "Ndiyo",
+  "cravingLevelNow": "Tamaa ya kunywa iko kiwango gani sasa?",
+  "anythingOnMind": "Kuna jambo lolote akilini mwako?",
+  "optionalLabel": "(si lazima)",
+  "dailyNoteHint": "Andika kuhusu siku yako, vichochezi, mafanikio...",
+  "alreadyCheckedInToday": "Tayari umejichunguza leo",
+  "saveCheckIn": "Hifadhi ukaguzi",
+  "checkInsHelpTrack": "Ukaguzi husaidia kufuatilia maendeleo yako kwa muda",
+  "alreadyCompletedTodayCheckIn": "Tayari umekamilisha ukaguzi wa leo.",
+  "pleaseAnswerBothQuestions": "Tafadhali jibu maswali yote mawili hapo juu kwanza",
+  "checkInSaved": "Ukaguzi umehifadhiwa",
+  "cravingNone": "Hakuna",
+  "cravingLow": "Chini",
+  "cravingMedium": "Wastani",
+  "cravingStrong": "Kali",
+  "moodBad": "Mbaya",
+  "moodLow": "Chini",
+  "moodOkay": "Sawa",
+  "moodGood": "Vizuri",
+  "moodGreat": "Vizuri sana",
+
+  "sosSupportTitle": "Msaada wa SOS",
+  "notAloneMessage": "Huko peke yako, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Tamaa hupita. Chagua kitu hapa chini kitakachokusaidia kupitia wakati huu.",
+  "breathingExercise": "Mazoezi ya Kupumua",
+  "breathingExerciseSubtitle": "Mbinu ya 4-7-8 iliyoongozwa, dakika 2",
+  "rideTheWave": "Vuka Wimbi",
+  "rideTheWaveSubtitle": "Kipima muda cha dakika 15 — tamaa hupita kila wakati",
+  "copingTips": "Vidokezo vya Kukabiliana",
+  "copingTipsSubtitle": "Mikakati iliyobinafsishwa kwa vichochezi vyako",
+  "talkToAiCoach": "Zungumza na kocha wa AI",
+  "talkToAiCoachSubtitle": "Zungumza na mshirika wako wa kupona",
+  "callSomeone": "Mpigie mtu simu",
+  "callSomeoneSubtitle": "Wasiliana na mtu unayemwamini",
+  "contactsPermissionNeeded": "Ruhusa ya mawasiliano inahitajika ili kumpigia simu mtu.",
+  "beatenCravingsPrefix": "Umeshinda tamaa ",
+  "beatenCravingsCount": "mara {count}",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " hapo awali. Unaweza kufanya hivyo tena.",
+
+  "tellUsAboutYourself": "Tuambie Kuhusu Wewe",
+  "detailsSubtitle": "Taarifa hizi hutusaidia kubinafsisha safari yako ya kupona na kutoa maarifa sahihi.",
+  "nameLabel": "Jina",
+  "nameHint": "mf., Alex Rivers",
+  "ageLabel": "Umri",
+  "ageHint": "mf., 32",
+  "sexAssignedAtBirth": "Jinsia uliyopewa wakati wa kuzaliwa",
+  "sexFemale": "Mwanamke",
+  "sexMale": "Mwanaume",
+  "heightLabel": "Urefu",
+  "weightLabel": "Uzito",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Umefikia kikomo cha kila siku",
+  "dailyLimitReachedMessage": "Umetumia ujumbe wote {limit} wa bure wa leo. Boresha hadi Premium kwa mazungumzo yasiyo na kikomo na kocha.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Sikuweza kuunganishwa kwa sasa. Tafadhali jaribu tena baada ya muda mfupi.",
+  "clearConversationTitle": "Ufute mazungumzo?",
+  "clearConversationMessage": "Hii itaondoa kabisa historia yako ya mazungumzo na kocha.",
+  "clearLabel": "Futa",
+  "recoveryCoachTitle": "Kocha wa Kupona",
+  "onlineLabel": "Yuko mtandaoni",
+  "clearConversationMenuItem": "Futa mazungumzo",
+  "chatGreeting": "Habari {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Uko siku ya {days} ya safari yako. Niko hapa wakati wowote unapotaka kuzungumza.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "MAPENDEKEZO YA HARAKA",
+  "promptCravingLabel": "Nina tamaa ya kunywa",
+  "promptCravingSubtitle": "Tulia haraka",
+  "promptMotivationLabel": "Nahitaji motisha",
+  "promptMotivationSubtitle": "Msukumo wakati mambo ni magumu",
+  "promptSocialLabel": "Hali ya kijamii",
+  "promptSocialSubtitle": "Jinsi ya kukabiliana na mkusanyiko",
+  "promptSlippedLabel": "Nimeporomoka",
+  "promptSlippedSubtitle": "Hakuna hukumu, msaada tu",
+  "typeMessageHint": "Andika ujumbe...",
+
+  "editProfileTitle": "Hariri Wasifu",
+  "couldNotSaveProfile": "Wasifu haukuweza kuhifadhiwa: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Urefu (cm)",
+  "weightKgLabel": "Uzito (kg)",
+  "saveChangesLabel": "Hifadhi Mabadiliko",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Maarifa na Uchambuzi wa Juu",
+  "featureUnlimitedJournal": "Maingizo ya Jarida Yasiyo na Kikomo",
+  "featureUnlimitedChat": "Mazungumzo Yasiyo na Kikomo na Kocha wa AI",
+  "featureCommunityGroups": "Vikundi Maalum vya Jamii",
+  "featurePrioritySupport": "Msaada wa Kipaumbele wa Wataalamu",
+  "featureThemePacks": "Vifurushi Maalum vya Mandhari",
+  "featureDataExport": "Hamisha Data",
+  "featureAdFree": "Uzoefu Usio na Matangazo",
+  "premiumMemberTitle": "Wewe ni Mwanachama wa Premium",
+  "unlockFullRecoveryTitle": "Fungua Uzoefu Wako Kamili\nwa Kupona",
+  "premiumMemberSubtitle": "Asante kwa kuunga mkono safari yako ya kupona — vipengele vyote vya Premium vilivyo hapa chini vimefunguliwa.",
+  "premiumJoinSubtitle": "Jiunge na jamii ya maelfu wanaoharakisha\nsafari yao ya uponyaji kwa kutumia zana zetu za\nPremium na msaada uliobinafsishwa.",
+  "monthlyPlanLabel": "Kila Mwezi",
+  "perMonthSuffix": "/mwezi",
+  "cancelAnytimeLabel": "Ghairi wakati wowote",
+  "yearlyPlanLabel": "Kila Mwaka",
+  "billedAnnuallyLabel": "Inatozwa kila mwaka kwa {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Thamani Bora",
+  "alreadyPremiumLabel": "Wewe ni Premium ✓",
+  "startPremiumLabel": "Anza Premium",
+  "manageSubscriptionLabel": "Dhibiti au ghairi usajili kutoka kwenye mipangilio ya usajili ya kifaa chako.",
+  "noCommitmentLabel": "Hakuna kujifunga. Ghairi wakati wowote.",
+  "continueFreePlanLabel": "Endelea na Mpango wa Bure",
+  "backToHomeLabel": "Rudi Nyumbani",
+  "cancelPremiumLabel": "Ghairi Premium",
+  "cancelPremiumTitle": "Ghairi Premium?",
+  "cancelPremiumMessage": "Utapoteza ufikiaji wa maingizo ya jarida yasiyo na kikomo, mazungumzo yasiyo na kikomo na kocha, maarifa ya takwimu na ripoti za wiki. Unaweza kujiandikisha tena wakati wowote.",
+  "keepPremiumLabel": "Weka Premium",
+  "nowPremiumMessage": "Sasa wewe ni Premium! Furahia uzoefu wako kamili wa kupona.",
+  "premiumCancelledMessage": "Premium imeghairiwa. Umerudi kwenye mpango wa bure.",
+  "termsOfUseLabel": "Masharti ya Matumizi",
+
+  "navHomeLabel": "Nyumbani",
+  "navStatsLabel": "Takwimu",
+  "navJournalLabel": "Jarida",
+  "navBadgesLabel": "Beji",
+  "navProfileLabel": "Wasifu",
+
+  "recoveryGoalsTitle": "Malengo ya Kupona",
+  "goalLabel": "Lengo",
+  "drinksPerWeekLabel": "Vinywaji kwa wiki",
+  "quitReasonsLabel": "Sababu za Kuacha",
+  "quitReasonsHelperText": "Tenganisha sababu nyingi kwa koma.",
+  "couldNotSaveRecoveryGoals": "Malengo ya kupona hayakuweza kuhifadhiwa: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "mf., Kuacha kabisa",
+  "drinksPerWeekHint": "mf., 12",
+  "quitReasonsHint": "mf., Afya, Familia, Pesa",
+
+  "todaysPrompt": "Swali la Leo",
+  "defaultJournalPrompt": "Unafikiria nini leo?",
+  "aiJournalInsights": "Maarifa ya Jarida ya AI",
+  "unlockJournalInsightsMessage": "Fungua mifumo ya kila wiki, mienendo ya hisia na maarifa yaliyobinafsishwa kutoka kwenye maingizo yako ya jarida.",
+  "notEnoughJournalData": "Bado hakuna data ya kutosha — andika maingizo machache wiki hii kisha urudi tena.",
+  "openEntry": "Fungua",
+  "editEntry": "Hariri",
+  "deleteEntry": "Futa",
+  "searchJournalEntries": "Tafuta maingizo...",
+  "writeNewEntry": "Andika ingizo jipya",
+  "recentEntries": "Maingizo ya Hivi Karibuni",
+  "noJournalEntriesYet": "Bado hakuna maingizo ya jarida — andika tafakari yako ya kwanza hapo juu.",
+  "noEntriesMatchFilters": "Hakuna maingizo yanayolingana na vichujio vyako.",
+
+  "weeklyJournalLimitReached": "Umefikia kikomo cha kila wiki",
+  "weeklyJournalLimitMessage": "Umetumia maingizo yote {limit} ya bure ya jarida wiki hii. Boresha hadi Premium kwa maingizo yasiyo na kikomo.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Ingizo Jipya",
+  "writeYourThoughts": "Andika mawazo yako",
+  "saveEntry": "Hifadhi Ingizo",
+  "freeEntriesLeftThisWeek": "Umebakiza {remaining} kati ya {limit} maingizo ya bure wiki hii",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Ufute ingizo?",
+  "deleteEntryConfirmation": "Ingizo hili litafutwa kabisa. Hili haliwezi kutenduliwa.",
+
+  "journalEntryNotFound": "Ingizo halikupatikana",
+  "journalEntryMayHaveBeenDeleted": "Ingizo hili la jarida huenda limefutwa.",
+  "goBack": "Rudi Nyuma",
+  "journalEntryTitle": "Ingizo la Jarida",
+
+  "moodStruggling": "Ninapata Ugumu",
+  "moodUnwell": "Sijisikii Vizuri",
+  "moodNeutral": "Kawaida",
+
+  "whatHappenedToday": "Nini kilitokea leo?",
+  "trigger": "Kichochezi",
+  "whatHelped": "Nini kilisaidia",
+  "whatIllTryNextTime": "Nitakachojaribu wakati mwingine",
+  "journalPrivacyMessage": "Tafakari yako ni ya faragha na imehifadhiwa kwenye jarida lako.",
+
+  "unlocked": "Imefunguliwa",
+  "daysLeft": "Zimesalia siku {count}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "Siku {count}",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Tafakari\nya Kwanza",
+  "oneJournalEntry": "Ingizo 1 la Jarida",
+  "openBook": "Fungua Kitabu",
+  "tenJournalEntries": "Maingizo 10 ya Jarida",
+  "dedicatedWriter": "Mwandishi\nAliyejitolea",
+  "thirtyJournalEntries": "Maingizo 30 ya Jarida",
+  "firstConversation": "Mazungumzo\nya Kwanza",
+  "oneAiCoachChat": "Mazungumzo 1 na Kocha wa AI",
+  "keepTalking": "Endelea Kuzungumza",
+  "fiveConversations": "Mazungumzo 5",
+  "coachCompanion": "Mshirika wa\nKocha",
+  "twentyConversations": "Mazungumzo 20",
+  "checkInHabit": "Mazoea ya\nKujichunguza",
+  "sevenCheckIns": "Ukaguzi 7",
+  "consistencyPro": "Mtaalamu wa\nUendelevu",
+  "thirtyCheckIns": "Ukaguzi 30",
+  "dedicatedJourney": "Safari\nIliyowekwa Wakfu",
+  "hundredCheckIns": "Ukaguzi 100",
+  "goalGetter": "Mfanikishaji wa Malengo",
+  "threeGoalsCompleted": "Malengo 3 Yamekamilika",
+  "goalAchiever": "Mfanikishaji\nwa Malengo",
+  "tenGoalsCompleted": "Malengo 10 Yamekamilika",
+  "firstSavings": "Akiba\nya Kwanza",
+  "fiveHundredSaved": "$500 Zimeokolewa",
+  "smartSaver": "Mwokoaji Mahiri",
+  "oneThousandSaved": "$1,000 Zimeokolewa",
+  "bigSaver": "Mwokoaji Mkuu",
+  "fiveThousandSaved": "$5,000 Zimeokolewa",
+  "currencyProgress": "${current} kati ya ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} kati ya {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Endelea — hatua yako ya kwanza muhimu inakusubiri!",
+  "badgesAndMilestones": "Beji na Hatua Muhimu",
+  "yourMilestoneJourney": "Safari Yako ya Hatua Muhimu",
+  "milestonesAchieved": "Hatua {count} muhimu zimefikiwa.\nGusa kutazama",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Umefungua {unlocked} kati ya {total} hatua muhimu kwenye safari yako.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Zimesalia",
+  "complete": "Kamilisha",
+  "nextMilestone": "Hatua Inayofuata Muhimu",
+  "percentThere": "{subtitle} · {percent}% imekamilika",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Hatua Muhimu za Kutokuwa na Pombe",
+  "journeyBadges": "Beji za Safari",
+  "bronze": "SHABA",
+  "silver": "FEDHA",
+  "gold": "DHABU",
+  "platinum": "PLATINUM",
+  "diamond": "ALMASI",
+
+  "analyzingYourJourney": "Tunachambua Safari Yako...",
+  "aiCreatingSanctuary": "AI yetu inaunda mazingira yako ya kibinafsi ya kupona.",
+  "understandingHabits": "Tunaelewa tabia zako...",
+  "calculatingBaseline": "Tunahesabu kiwango chako cha msingi...",
+  "personalizingPlan": "Tunabinafsisha mpango wako...",
+  "finalizingSanctuary": "Tunakamilisha mazingira yako...",
+  "creatingYourPlan": "Tunaunda mpango wako...",
+  "personalizedPlanError": "Hatukuweza kuunda mpango wako uliobinafsishwa. Tafadhali jaribu tena.",
+  "retry": "Jaribu Tena",
+
+  "breathingExercise": "Mazoezi ya Kupumua",
+  "breathInhale": "VUTA HEWA",
+  "breathHold": "SHIKILIA",
+  "breathExhale": "TOA HEWA",
+  "breathDone": "IMEMALIZIKA",
+  "breathGreatJob": "Umefanya vizuri!",
+  "remaining": "Zimesalia",
+  "breathSessionsToday": "{count, plural, one{Kipindi {count} leo} other{Vipindi {count} leo}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Maliza Zoezi",
+  "done": "Imemalizika",
+
+  "noCopingTipsYet": "Bado hakuna vidokezo vya kukabiliana",
+  "copingStrategiesWillAppear": "Mikakati yako ya kibinafsi ya kukabiliana itaonekana hapa mpango wako wa kupona utakapomaliza kutengenezwa.",
+  "strategiesTailoredToTriggers": "Mikakati iliyoundwa kulingana na vichochezi vyako",
+
+  "rideTheWave": "Vuka Wimbi",
+  "cravingsPeakAndPass": "Tamaa hufikia kilele\nna kisha hupita",
+  "rideTheWaveDescription": "Tamaa nyingi hupita ndani ya dakika 15. Si lazima uitende — vuka tu pamoja nasi.",
+  "stayWithIt": "endelea nayo",
+  "youMadeIt": "umeweza",
+  "readyWhenYouAre": "ukiwa tayari",
+  "rideItAgain": "Vuka tena",
+  "start15MinuteTimer": "Anza Kipima Muda cha Dakika 15",
+  "rideTheWaveCompletedMessage": "Umevuka wimbi. Huo ni nguvu halisi. 💪",
+
+  "myProgress": "Maendeleo Yangu",
+  "weekLabel": "Wiki",
+  "monthLabel": "Mwezi",
+  "allLabel": "Yote",
+  "daysSoberStatLabel": "Siku bila\npombe",
+  "savedStatLabel": "Imeokolewa",
+  "avoidedStatLabel": "Imeepukwa",
+  "moodTrends": "Mienendo ya Hisia",
+  "cravingsPattern": "Muundo wa Tamaa",
+  "unlockLabel": "Fungua",
+  "unlockFullStats": "Fungua Takwimu Zote",
+  "premiumStatsMessage": "Mienendo ya hisia na miundo ya tamaa ni vipengele vya Premium. Boresha ili kuona takwimu zako zote.",
+  "healthMilestonesWillAppear": "Hatua zako muhimu za afya zitaonekana hapa.",
+  "healthMilestones": "Hatua Muhimu za Afya",
+  "dayNumber": "Siku {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Bila pombe",
+  "slipLabel": "Kuteleza",
+  "noDataLabel": "Hakuna data",
+
+  "milestone24Hours": "Masaa 24",
+  "milestoneOneWeek": "Wiki Moja",
+  "milestoneOneMonth": "Mwezi Mmoja",
+  "milestoneThreeMonths": "Miezi Mitatu",
+  "milestoneSixMonths": "Miezi Sita",
+  "milestoneOneYear": "Mwaka Mmoja",
+  "milestoneDayCount": "Hatua Muhimu ya Siku {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Sera ya Faragha"
+}

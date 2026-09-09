@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../constants/app_colors.dart';
 import '../../../models/user_details_draft.dart';
+import '../../../services/analytics_service.dart';
 import '../../../widgets/outlined_select_row.dart';
 import '../../../models/onboarding_answers.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
@@ -43,6 +44,9 @@ class _Question1ContentState extends State<Question1Content>
 
     UserDetailsDraft.instance.setGoal(goal);
     OnboardingAnswers.instance.setGoal(goal);
+
+    // NEW — onboarding goal selected
+    AnalyticsService.instance.onboardingGoalSelected(goal);
 
     widget.onCanContinueChanged(true);
   }

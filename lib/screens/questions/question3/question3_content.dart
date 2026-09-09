@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../constants/app_colors.dart';
 import '../../../models/user_details_draft.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
@@ -22,9 +23,17 @@ class _Question3ContentState
   late TextEditingController _drinksController;
   late TextEditingController _moneyController;
 
+  // FIX 3: FocusNodes so tapping anywhere in the field's container focuses it
+  final FocusNode _drinksFocus = FocusNode();
+  final FocusNode _moneyFocus = FocusNode();
+
   String? _selectedDrinkingLevel;
 
   final Set<String> _selectedTriggers = {};
+
+  // FIX 1: raise the max limit (was 999)
+  static const int _maxDrinks = 9999;
+  static const int _maxMoney = 99999;
 
   @override
   bool get wantKeepAlive => true;
@@ -49,9 +58,10 @@ class _Question3ContentState
     _drinksController.addListener(_saveDrinks);
     _moneyController.addListener(_saveMoney);
 
+    // FIX 4: report REAL validity instead of hardcoded true
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      widget.onCanContinueChanged(true);
+      _updateValidation();
     });
   }
 
@@ -64,7 +74,7 @@ class _Question3ContentState
   }
 
   void _saveDrinks() {
-    final value = _drinks.clamp(0, 999);
+    final value = _drinks.clamp(0, _maxDrinks);
 
     if (value != _drinks) {
       _drinksController.text = value.toString();
@@ -74,10 +84,11 @@ class _Question3ContentState
     }
 
     UserDetailsDraft.instance.setDrinksPerWeek(value);
+    _updateValidation();
   }
 
   void _saveMoney() {
-    final value = _money.clamp(0, 999);
+    final value = _money.clamp(0, _maxMoney);
 
     if (value != _money) {
       _moneyController.text = value.toString();
@@ -87,10 +98,11 @@ class _Question3ContentState
     }
 
     UserDetailsDraft.instance.setMoneySpentPerWeek(value);
+    _updateValidation();
   }
 
   void _changeDrinks(int delta) {
-    final value = (_drinks + delta).clamp(0, 999);
+    final value = (_drinks + delta).clamp(0, _maxDrinks);
 
     _drinksController.text = value.toString();
     _drinksController.selection = TextSelection.collapsed(
@@ -100,10 +112,11 @@ class _Question3ContentState
     UserDetailsDraft.instance.setDrinksPerWeek(value);
 
     setState(() {});
+    _updateValidation();
   }
 
   void _changeMoney(int delta) {
-    final value = (_money + delta).clamp(0, 999);
+    final value = (_money + delta).clamp(0, _maxMoney);
 
     _moneyController.text = value.toString();
     _moneyController.selection = TextSelection.collapsed(
@@ -113,6 +126,7 @@ class _Question3ContentState
     UserDetailsDraft.instance.setMoneySpentPerWeek(value);
 
     setState(() {});
+    _updateValidation();
   }
 
   void _selectDrinkingLevel(String level) {
@@ -121,6 +135,7 @@ class _Question3ContentState
     });
 
     UserDetailsDraft.instance.setDrinkingLevel(level);
+    _updateValidation();
   }
 
   void _toggleTrigger(String trigger) {
@@ -133,12 +148,25 @@ class _Question3ContentState
     });
 
     UserDetailsDraft.instance.toggleTrigger(trigger);
+    _updateValidation();
+  }
+
+  // FIX 4: user can continue only once a drinking level AND at least
+  // one trigger are selected (drinks/money always have a default value
+  // from the stepper, so they don't need a separate "empty" check).
+  void _updateValidation() {
+    final bool canContinue =
+        _selectedDrinkingLevel != null && _selectedTriggers.isNotEmpty;
+
+    widget.onCanContinueChanged(canContinue);
   }
 
   @override
   void dispose() {
     _drinksController.dispose();
     _moneyController.dispose();
+    _drinksFocus.dispose();
+    _moneyFocus.dispose();
     super.dispose();
   }
 
@@ -204,6 +232,7 @@ class _Question3ContentState
 
             _StepperRow(
               controller: _drinksController,
+              focusNode: _drinksFocus,
               onDecrement: () => _changeDrinks(-1),
               onIncrement: () => _changeDrinks(1),
             ),
@@ -223,6 +252,7 @@ class _Question3ContentState
 
             _StepperRow(
               controller: _moneyController,
+              focusNode: _moneyFocus,
               prefix: '\$',
               onDecrement: () => _changeMoney(-1),
               onIncrement: () => _changeMoney(1),
@@ -292,12 +322,14 @@ class _Question3ContentState
 
 class _StepperRow extends StatelessWidget {
   final TextEditingController controller;
+  final FocusNode focusNode;
   final String prefix;
   final VoidCallback onDecrement;
   final VoidCallback onIncrement;
 
   const _StepperRow({
     required this.controller,
+    required this.focusNode,
     required this.onDecrement,
     required this.onIncrement,
     this.prefix = '',
@@ -316,43 +348,82 @@ class _StepperRow extends StatelessWidget {
       child: Row(
         children: [
           _StepperButton(icon: Icons.remove, onTap: onDecrement),
+
+          // FIX 3: Expanded + GestureDetector so tapping ANYWHERE in the
+// middle area (left, right, or on the number) focuses the field,
+// instead of only the tiny IntrinsicWidth area around the digits.
           Expanded(
-            child: Center(
-              child: IntrinsicWidth(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (prefix.isNotEmpty)
-                      Text(
-                        prefix,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 22,
-                          color: AppColors.textBlack,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                focusNode.requestFocus();
+                controller.selection = TextSelection(
+                  baseOffset: 0,
+                  extentOffset: controller.text.length,
+                );
+              },
+              child: Center(
+                child: IntrinsicWidth(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (prefix.isNotEmpty)
+                        Text(
+                          prefix,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 22,
+                            color: AppColors.textBlack,
+                          ),
+                        ),
+                      IntrinsicWidth(
+                        child: TextField(
+                          controller: controller,
+                          focusNode: focusNode,
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
+                          // FIX 5: strip the leading zero as soon as the user
+                          // types a digit, so "0" + "9" becomes "9", not "09".
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                            TextInputFormatter.withFunction((oldValue, newValue) {
+                              if (newValue.text.length > 1 &&
+                                  newValue.text.startsWith('0')) {
+                                final stripped = newValue.text.replaceFirst(
+                                  RegExp(r'^0+'),
+                                  '',
+                                );
+                                final result = stripped.isEmpty ? '0' : stripped;
+
+                                return TextEditingValue(
+                                  text: result,
+                                  selection: TextSelection.collapsed(
+                                    offset: result.length,
+                                  ),
+                                );
+                              }
+                              return newValue;
+                            }),
+                          ],
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 22,
+                            color: AppColors.textBlack,
+                          ),
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
+                          ),
                         ),
                       ),
-                    IntrinsicWidth(
-                      child: TextField(
-                        controller: controller,
-                        textAlign: TextAlign.center,
-                        keyboardType: TextInputType.number,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 22,
-                          color: AppColors.textBlack,
-                        ),
-                        decoration: const InputDecoration(
-                          border: InputBorder.none,
-                          isDense: true,
-                          contentPadding: EdgeInsets.zero,
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
+
           _StepperButton(icon: Icons.add, onTap: onIncrement),
         ],
       ),

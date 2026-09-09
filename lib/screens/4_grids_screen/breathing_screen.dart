@@ -6,6 +6,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../constants/app_colors.dart';
 import '../../models/breathing_session_store.dart';
+import '../../services/analytics_service.dart';
 
 enum _BreathPhase { inhale, hold, exhale }
 
@@ -26,6 +27,8 @@ class _BreathingScreenState extends State<BreathingScreen> {
 
   // Single cycle per session.
   static const int kSessionTotalSeconds = kCycleTotalSeconds;
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   Timer? _timer;
   int _elapsedSeconds = 0;
@@ -75,6 +78,7 @@ class _BreathingScreenState extends State<BreathingScreen> {
   void initState() {
     super.initState();
     _startTimer();
+    _analytics.breathingExerciseStarted();
   }
 
   void _startTimer() {
@@ -104,6 +108,7 @@ class _BreathingScreenState extends State<BreathingScreen> {
     if (completedNaturally ||
         _elapsedSeconds >= kCycleTotalSeconds) {
       BreathingSessionStore.instance.recordSessionCompleted();
+      _analytics.breathingExerciseCompleted();
     }
 
     if (!mounted) return;

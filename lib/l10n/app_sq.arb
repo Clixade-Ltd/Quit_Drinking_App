@@ -1,0 +1,579 @@
+{
+  "@@locale": "sq",
+
+  "skip": "Kalo",
+  "continueButton": "Vazhdo",
+  "getStarted": "Fillo",
+
+  "onboardingTitle1": "Merr Kontrollin e Jetes Tënde",
+  "onboardingSubtitle1": "Gjurmo udhëtimin tënd, festo çdo arritje dhe bëhu më i shëndetshëm, një ditë nga një.",
+  "onboardingTitle2": "Shoqëruesi Yt i Rimëkëmbjes me AI",
+  "onboardingSubtitle2": "Merr udhëzime të personalizuara, zakone të shëndetshme, rikujtues motivues dhe raporte ecurie të projektuara rreth udhëtimit tënd.",
+
+  "goodMorning": "Mirëmëngjes",
+  "goodAfternoon": "Mirëdita",
+  "goodEvening": "Mirëmbrëma",
+  "goodNight": "Natën e Mirë",
+
+  "embracingClarity": "Duke përqafuar qartësinë, një ditë nga një.",
+  "streakLabel": "EÇURIA",
+  "goalLabel": "SYNYMI",
+  "daysStreak": "{count, plural, one{{count} Ditë} other{{count} Ditë}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Plani Premium",
+  "premiumPlanSubtitle": "Zbulo përvojën tënde të plotë të rimëkëmbjes",
+
+  "accountAndSupport": "LLOGARIA DHE MBETESHJA",
+  "privacyPolicy": "Politika e Privatësisë",
+  "privacyPolicySubtitle": "Menaxho ndarjen e të dhënave dhe sigurinë e llogarisë",
+  "termsOfService": "Kushtet e Shërbimit",
+  "termsOfServiceSubtitle": "Pyetjet e shpeshta, na kontaktoni dhe burimet",
+  "shareApp": "Shpërndaj aplikacionin",
+  "shareAppSubtitle": "Nda aplikacionin me miqtë e tu",
+  "resetData": "Rilind të dhënat",
+  "resetDataSubtitle": "Fshi gjithçka të ruajtur në këtë pajisje",
+
+  "resetAllDataTitle": "Të fshihen të gjitha të dhënat?",
+  "resetAllDataMessage": "Kjo do të fshijë çdo gjë të ruajtur në këtë pajisje — profilin, hyrjet në ditar dhe ecurinë — dhe nuk mund të zhbëhet.",
+  "cancel": "Anulo",
+  "reset": "Rilind",
+
+  "chooseFromGallery": "Zgjidh nga Galeria",
+  "takePhoto": "Bëj Foto",
+  "removePhoto": "Hiq Foton",
+  "couldNotUpdatePhoto": "Nuk u mundësua përditësimi i fotos: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Nuk u mundësua heqja e fotos: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Kjo foto është shumë e madhe madje edhe pas ngjeshjes — ju lutemi provoni një tjetër.",
+
+  "unableToLoadProfile": "Nuk mund të ngarkohet profili yt",
+  "pleaseTryAgain": "Ju lutemi provoni përsëri.",
+  "tryAgain": "Provo Përsëri",
+  "profileNotFound": "Profili nuk u gjet",
+  "refresh": "Rifresko",
+  "noProfileDataFound": "Ende nuk u gjetën të dhëna profili në këtë pajisje.",
+
+  "couldNotResetData": "Nuk u mundësua rivendosja e të dhënave: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Kreu",
+  "navStats": "Statistikat",
+  "navJournal": "Ditari",
+  "navBadges": "Medyat",
+  "navProfile": "Profili",
+
+  "featureComingSoon": "{feature} do të jetë e disponueshme së shpejti.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "SHËNDETI",
+  "appTitle": "Lëreni alkoolin",
+  "splashSubtitle": "Bëj hapin e parë drejt një\njete pa alkool",
+  "preparingJourney": "Duke përgatitur\nudhëtimin tënd",
+
+  "taskMorningMeditation": "Meditimi i Mëngjesit (10 m)",
+  "taskReadChapter": "Llexo Kapitullin 4 të \"The Sober Diaries\"",
+  "taskEveningJournal": "Ditari i Mirënjohjes së Mbrëmjes",
+
+  "close": "Mbyll",
+  "youAreDoingGreat": "Po bën një punë të shkëlqyer!",
+  "shareMilestone": "Shpërndaj Arritjen",
+  "shareMilestoneMessage": "Jam në ditën {days} të udhëtimit tim të rimëkëmbjes! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Arritja ime e rimëkëmbjes",
+
+  "weeklyReportReadyTitle": "Raporti yt javor është gati",
+  "weeklyReportReadySubtitle": "Kliko për të parë se si kaloi java jote",
+
+  "howAreYouFeeling": "Si po ndihesh?",
+  "moodTough": "E vështirë",
+  "moodOkay": "Mjaft mirë",
+  "moodGood": "Mirë",
+
+  "moneySaved": "Para të Ruajtura",
+  "caloriesSaved": "Kalori të Ruajtura",
+  "healthScore": "Pikët e Shëndetit",
+  "drinksAvoided": "Pije të Shmangura",
+  "estimated": "E vlerësuar",
+  "aiGenerated": "Gjeneruar nga AI",
+  "daysCapsLabel": "DITË",
+
+  "todaysMotivation": "Motivimi i Sotëm",
+  "defaultMotivationQuote": "Ke ruajtur me sukses përkushtimin tënd. Vazhdo të lundrosh mbi valën e ndryshimit pozitiv.",
+
+  "talkToCoach": "Fol me trajnerin",
+  "havingACraving": "Kam një Deshirë të Fortë",
+
+  "unlockWeeklyReportsTitle": "Zblo raportet javore",
+  "unlockWeeklyReportsMessage": "Shih ditët e tua pa alkool, prirjet e humorit dhe reagimet e personalizuara nga AI çdo javë. Kaloni në Premium për t'i zbritur.",
+  "maybeLater": "Mbase më vonë",
+  "upgrade": "Përmirëso",
+
+  "weeklyReportTitle": "Raporti Javor",
+  "weeklyReportsPremiumTitle": "Raportet javore janë një veçori Premium",
+  "weeklyReportsPremiumMessage": "Shih ditët e tua pa alkool, prirjet e humorit, dëshirat e forta dhe reagimet e personalizuara nga AI çdo javë.",
+  "upgradeToPremium": "Përmirëso në Premium",
+  "couldNotGenerateReport": "Nuk u mundësua gjenerimi i raportit tënd tani.",
+  "tryAgainLower": "Provo përsëri",
+
+  "statSoberDays": "Ditët pa alkool",
+  "statAvgMood": "Humori mesatar",
+  "statCravings": "Dëshirat e forta",
+  "statMoneySaved": "Para të ruajtura",
+  "coachFeedback": "Këshillat e trajnerit",
+  "journalInsights": "Të dhënat e ditarit",
+
+  "next": "Tjetra",
+
+  "question1Title": "Cili është synimi yt",
+  "question1Subtitle": "Zgjidh synimin që ka më shumë\nrëndësi për ty",
+  "goalQuitCompletely": "Lëre Plotësisht",
+  "goalReduceDrinking": "Pëpakëso Pirjen",
+  "goalTakeABreak": "Bëj një Pushim",
+  "goalBuildHealthierHabits": "Krijo Zakone më të Shëndetshme",
+
+  "question3Title": "Na trego për rutinen\ntënde",
+  "drinksPerWeek": "Pije në javë",
+  "moneySpentPerWeek": "Para të shpenzuara në javë",
+  "drinkingLevel": "Niveli i pirjes",
+  "triggersLabel": "Ngacmuesit (Triggers)",
+  "levelSocial": "Shoqëror",
+  "levelRegular": "I rregullt",
+  "levelHeavy": "I rëndë",
+  "levelDependent": "I varur",
+  "triggerStress": "Stresi",
+  "triggerLoneliness": "Vetmia",
+  "triggerHabit": "Zakoni",
+  "triggerSadness": "Mërzitja",
+  "triggerAnger": "Inati",
+  "triggerBoredom": "Lodhja nga kotësia",
+  "triggerSocialPressure": "Presioni shoqëror",
+  "triggerCelebration": "Festimi",
+  "triggerSleepProblems": "Problemet me gjumin",
+  "triggerWorkPressure": "Presioni i punës",
+
+  "question4Title": "Pse dëshiron të ndryshosh?",
+  "question4Subtitle": "Arsyeja jote do të ndihmojë të të motivojë.",
+  "reasonImproveHealth": "Përmirësimi i Shëndetit Im",
+  "reasonSaveMoney": "Kursimi i Parave",
+  "reasonFamily": "Familja",
+  "reasonBetterSleep": "Gjumë më i Mirë",
+  "reasonMentalClarity": "Qartësi Mendore",
+  "reasonFitness": "Forma Fizike",
+  "reasonSelfRespect": "Vetërespekti",
+  "reasonCareer": "Karriera",
+
+  "milestoneUnlockedLabel": "ARRITJA U ZBLLOKUA",
+  "incredibleNamePrefix": "E pabesueshme, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} të ruajtura",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} të shmangura",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Shpërndaj arritjen time",
+  "milestoneImageShareError": "Nuk u mundësua krijimi i imazhit të arritjes. Ju lutemi provoni përsëri.",
+
+  "dailyCheckInTitle": "Regjistrimi Ditor",
+  "howAreYouFeelingToday": "Si po ndihesh sot?",
+  "honestAnswerHelp": "Përgjigja jote e sinqertë na ndihmon të të mbështesim më mirë",
+  "didYouDrinkToday": "A pine sot?",
+  "noLabel": "Jo",
+  "yesLabel": "Po",
+  "cravingLevelNow": "Niveli i dëshirës për pijes tani?",
+  "anythingOnMind": "Keni diçka në mendje?",
+  "optionalLabel": "(opsionale)",
+  "dailyNoteHint": "Shkruaj për ditën tënde, ngacmuesit, fitoret...",
+  "alreadyCheckedInToday": "U regjistruat tashmë sot",
+  "saveCheckIn": "Ruaj regjistrimin",
+  "checkInsHelpTrack": "Regjistrimet ndihmojnë në gjurmimin e ecurisë me kalimin e kohës",
+  "alreadyCompletedTodayCheckIn": "E ke kompletuar tashmë regjistrimin e sotëm.",
+  "pleaseAnswerBothQuestions": "Ju lutemi përgjigjuni të dyja pyetjeve më sipër së pari",
+  "checkInSaved": "Regjistrimi u ruajt",
+  "cravingNone": "Asnjë",
+  "cravingLow": "I ulët",
+  "cravingMedium": "Mesatar",
+  "cravingStrong": "I fortë",
+  "moodBad": "I keq",
+  "moodLow": "I ulët",
+  "moodOkay": "Mjaft mirë",
+  "moodGood": "I mirë",
+  "moodGreat": "Shkëlqyeshëm",
+
+  "sosSupportTitle": "Mbështetje SOS",
+  "notAloneMessage": "Nuk je vetëm, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Dëshirat e forta kalojnë. Zgjidh diçka më poshtë për të kaluar këtë moment.",
+  "breathingExercise": "Ushtrime frymëmarrjeje",
+  "breathingExerciseSubtitle": "Teknika e udhëhequr 4-7-8, 2 minuta",
+  "rideTheWave": "Lundro mbi valë",
+  "rideTheWaveSubtitle": "Koha prej 15 min — dëshirat kalojnë gjithmonë",
+  "copingTips": "Këshilla për përballim",
+  "copingTipsSubtitle": "Strategji të personalizuara për ngacmuesit e tu",
+  "talkToAiCoach": "Bisedo me trajnerin AI",
+  "talkToAiCoachSubtitle": "Bisedo me shoqëruesin tënd të rimëkëmbjes",
+  "callSomeone": "Thirr dikë",
+  "callSomeoneSubtitle": "Lidhu me kontaktin tënd të besuar",
+  "contactsPermissionNeeded": "Nevojitet leja e kontakteve për të thirrur një kontakt.",
+  "beatenCravingsPrefix": "Ti ke mposhtur dëshirën e fortë ",
+  "beatenCravingsCount": "{count} herë",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " më parë. Mund ta bësh përsëri.",
+
+  "tellUsAboutYourself": "Na trego për veten",
+  "detailsSubtitle": "Kjo informatë na ndihmon të personalizojmë udhëtimin tënd të rimëkëmbjes dhe të ofrojmë të dhëna të sakta.",
+  "nameLabel": "Emri",
+  "nameHint": "p.sh., Alex Rivers",
+  "ageLabel": "Moshë",
+  "ageHint": "p.sh., 32",
+  "sexAssignedAtBirth": "Gjinia e caktuar në lindje",
+  "sexFemale": "Femër",
+  "sexMale": "Mashkull",
+  "heightLabel": "Gjatësia",
+  "weightLabel": "Peshë",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "U arrit kufiri ditor",
+  "dailyLimitReachedMessage": "Keni përdorur të gjitha {limit} mesazhet pa pagesë sot. Kaloni në Premium për bisedë të pakufizuar me trajnerin.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Nuk munda të lidhem tani. Ju lutemi provoni përsëri pas pak.",
+  "clearConversationTitle": "Të fshihet biseda?",
+  "clearConversationMessage": "Kjo do të fshijë përgjithmonë historikun e bisedave me trajnerin.",
+  "clearLabel": "Fshi",
+  "recoveryCoachTitle": "Trajneri i rimëkëmbjes",
+  "onlineLabel": "Në linjë",
+  "clearConversationMenuItem": "Fshi bisedën",
+  "chatGreeting": "Përshëndetje {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Je në ditën {days} të udhëtimit tënd. Jam këtu sa herë që dëshiron të flasësh.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "PYETJE TË SHPEJTA",
+  "promptCravingLabel": "Kam dëshirë të fortë",
+  "promptCravingSubtitle": "Qetësohu shpejt",
+  "promptMotivationLabel": "Më nevojitet motivim",
+  "promptMotivationSubtitle": "Një shtysë kur është e vështirë",
+  "promptSocialLabel": "Situatë shoqërore",
+  "promptSocialSubtitle": "Menaxho një grumbullim",
+  "promptSlippedLabel": "Rrëshqita/piva",
+  "promptSlippedSubtitle": "Pa gjykime, vetëm mbështetje",
+  "typeMessageHint": "Shkruaj një mesazh...",
+
+  "editProfileTitle": "Ndrysho Profilin",
+  "couldNotSaveProfile": "Nuk u mundësua ruajtja e profilit: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Gjatësia (cm)",
+  "weightKgLabel": "Peshë (kg)",
+  "saveChangesLabel": "Ruaj Ndryshimet",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Statistika dhe Analiza të Avancuara",
+  "featureUnlimitedJournal": "Hyrje të Pakufizuara në Ditar",
+  "featureUnlimitedChat": "Bisedë e Pakufizuar me Trajnerin AI",
+  "featureCommunityGroups": "Grupe Ekskluzive të Komunitetit",
+  "featurePrioritySupport": "Mbështetje Prioritare nga Ekspertët",
+  "featureThemePacks": "Paketa me Tematika të Personalizuara",
+  "featureDataExport": "Eksportimi i të Dhënave",
+  "featureAdFree": "Përvojë Pa Reklama",
+  "premiumMemberTitle": "Jeni anëtar Premium",
+  "unlockFullRecoveryTitle": "Zblloko Përvojën Tënde të\nPlotë të Rimëkëmbjes",
+  "premiumMemberSubtitle": "Faleminderit që mbështetni udhëtimin tuaj të rimëkëmbjes — çdo veçori premium më poshtë është e zbllokuar.",
+  "premiumJoinSubtitle": "Bashkohuni me një komunitet mijëra njerëzish që po\npërshpejtojnë udhëtimin e tyre të shërimit me\nmjetet tona premium dhe mbështetjen e personalizuar.",
+  "monthlyPlanLabel": "Mujore",
+  "perMonthSuffix": "/muaj",
+  "cancelAnytimeLabel": "Anulo në çdo kohë",
+  "yearlyPlanLabel": "Vjetore",
+  "billedAnnuallyLabel": "Faturuar çdo vit me {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Vlera më e mirë",
+  "alreadyPremiumLabel": "Jeni Premium ✓",
+  "startPremiumLabel": "Fillo Premium",
+  "manageSubscriptionLabel": "Menaxho ose anulo nga cilësimet e abonimit të pajisjes suaj.",
+  "noCommitmentLabel": "Pa asnjë detyrim. Anulo në çdo kohë.",
+  "continueFreePlanLabel": "Vazhdo me Planin Pa Pagesë",
+  "backToHomeLabel": "Kthehu në Kreu",
+  "cancelPremiumLabel": "Anulo Premium",
+  "cancelPremiumTitle": "Të analohet Premium?",
+  "cancelPremiumMessage": "Do të humbisni qasjen në hyrjet e pakufizuara në ditar, bisedën me trajnerin, analizat dhe raporte javore. Mund të riabonoheni në çdo kohë.",
+  "keepPremiumLabel": "Mba Premium",
+  "nowPremiumMessage": "Tani jeni Premium! Shijoni përvojën tuaj të plotë të rimëkëmbjes.",
+  "premiumCancelledMessage": "Premium u anulua. Jeni kthyer në planin pa pagesë.",
+  "termsOfUseLabel": "Kushtet e Përdorimit",
+
+  "navHomeLabel": "Kreu",
+  "navStatsLabel": "Statistikat",
+  "navJournalLabel": "Ditari",
+  "navBadgesLabel": "Medaljet",
+  "navProfileLabel": "Profili",
+
+  "recoveryGoalsTitle": "Synimet e Rimëkëmbjes",
+  "goalLabel": "Synimi",
+  "drinksPerWeekLabel": "Pije në javë",
+  "quitReasonsLabel": "Arsyet e lënies",
+  "quitReasonsHelperText": "Nani arsyet e shumta me një presje.",
+  "couldNotSaveRecoveryGoals": "Nuk u mundësua ruajtja e synimeve të rimëkëmbjes: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "p.sh., Abstinencë e Plotë",
+  "drinksPerWeekHint": "p.sh., 12",
+  "quitReasonsHint": "p.sh., Shëndeti, Familja, Paratë",
+
+  "todaysPrompt": "Pyetja e sotme",
+  "defaultJournalPrompt": "Çfarë ke në mendje sot?",
+  "aiJournalInsights": "Të dhënat e ditarit nga AI",
+  "unlockJournalInsightsMessage": "Zblloko modelin javor, prirjet e humorit dhe njohuritë e personalizuara nga hyrjet e ditarit tënd.",
+  "notEnoughJournalData": "Ende nuk ka mjaftueshëm të dhëna — shkruaj disa hyrje këtë javë dhe kontrollo sërish.",
+  "openEntry": "Hap",
+  "editEntry": "Ndrysho",
+  "deleteEntry": "Fshi",
+  "searchJournalEntries": "Kërko hyrjet...",
+  "writeNewEntry": "Shkruaj një hyrje të re",
+  "recentEntries": "Hyrjet e Fundit",
+  "noJournalEntriesYet": "Ende nuk ka hyrje në ditar — shkruaj reflektimin tënd të parë më sipër.",
+  "noEntriesMatchFilters": "Asnjë hyrje nuk përputhet me filtrat tuaj.",
+
+  "weeklyJournalLimitReached": "U arrit kufiri javor",
+  "weeklyJournalLimitMessage": "Keni përdorur të gjitha {limit} hyrjet pa pagesë në ditar këtë javë. Përmirësoni në Premium për hyrje të pakufizuara.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Hyrje e re",
+  "writeYourThoughts": "Shkruaj mendimet e tua",
+  "saveEntry": "Ruaj Hyrjen",
+  "freeEntriesLeftThisWeek": "{remaining} nga {limit} hyrjet e mbetura pa pagesë këtë javë",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Të fshihet hyrja?",
+  "deleteEntryConfirmation": "Kjo hyrje do të fshihet përgjithmonë. Kjo nuk mund të zhbëhet.",
+
+  "journalEntryNotFound": "Hyrja nuk u gjet",
+  "journalEntryMayHaveBeenDeleted": "Kjo hyrje në ditar mund të jetë fshirë.",
+  "goBack": "Kthehu prapa",
+  "journalEntryTitle": "Hyrja në Ditar",
+
+  "moodStruggling": "Duke u munduar",
+  "moodUnwell": "Sëmurë",
+  "moodNeutral": "Neutral",
+
+  "whatHappenedToday": "Çfarë ndodhi sot?",
+  "trigger": "Ngacmuesi",
+  "whatHelped": "Çfarë ndihmoi",
+  "whatIllTryNextTime": "Çfarë do të provoj herën tjetër",
+  "journalPrivacyMessage": "Reflektimi yt është privat dhe i ruajtur në ditarin tënd.",
+
+  "unlocked": "E zbllokuar",
+  "daysLeft": "Mbeten {count} ditë",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Ditë",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Reflektimi i\nParë",
+  "oneJournalEntry": "1 Hyrje në Ditar",
+  "openBook": "Libër i Hapur",
+  "tenJournalEntries": "10 Hyrje në Ditar",
+  "dedicatedWriter": "Shkrimtar i\nPërkushtuar",
+  "thirtyJournalEntries": "30 Hyrje në Ditar",
+  "firstConversation": "Biseda e\nParë",
+  "oneAiCoachChat": "1 Bisedë me Trajnerin AI",
+  "keepTalking": "Vazhdo të Flasësh",
+  "fiveConversations": "5 Biseda",
+  "coachCompanion": "Shoqërues\nTrajneri",
+  "twentyConversations": "20 Biseda",
+  "checkInHabit": "Zakoni i\nRegjistrimit",
+  "sevenCheckIns": "7 Regjistrime",
+  "consistencyPro": "Profesionist i\nQëndrueshmërisë",
+  "thirtyCheckIns": "30 Regjistrime",
+  "dedicatedJourney": "Udhëtim i\nPërkushtuar",
+  "hundredCheckIns": "100 Regjistrime",
+  "goalGetter": "Arritës i Synimeve",
+  "threeGoalsCompleted": "3 Synime të Plotësuara",
+  "goalAchiever": "Arritës i\nSynimeve",
+  "tenGoalsCompleted": "10 Synime të Plotësuara",
+  "firstSavings": "Kursimi i\nParë",
+  "fiveHundredSaved": "$500 të Ruajtura",
+  "smartSaver": "Kursimtar i Mençur",
+  "oneThousandSaved": "$1,000 të Ruajtura",
+  "bigSaver": "Kursimtar i Madh",
+  "fiveThousandSaved": "$5,000 të Ruajtura",
+  "currencyProgress": "${current} nga ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} nga {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Vazhdo përpara — arritja jote e parë po të pret!",
+  "badgesAndMilestones": "Medaljet & Arritjet",
+  "yourMilestoneJourney": "Udhëtimi Yt i Arritjeve",
+  "milestonesAchieved": "{count, plural, one{{count} arritje e realizuar.\nKliko për ta parë} other{{count} arritje të realizuara.\nKliko për t'i parë}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Ke zbllokuar {unlocked} nga {total} arritje në udhëtimin tënd.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Të mbetura",
+  "complete": "Përfunduar",
+  "nextMilestone": "Arritja Tjetër",
+  "percentThere": "{subtitle} · {percent}% atje",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Arritjet e Mospirjes",
+  "journeyBadges": "Medaljet e Udhëtimit",
+  "bronze": "BRONZ",
+  "silver": "ARGJEND",
+  "gold": "AR",
+  "platinum": "PLATINË",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Duke analizuar udhëtimin tënd...",
+  "aiCreatingSanctuary": "AI ynë po kthen vendin tënd të sigurt të personalizuar.",
+  "understandingHabits": "Duke kuptuar zakonet...",
+  "calculatingBaseline": "Duke llogaritur pikën tënde të nisjes...",
+  "personalizingPlan": "Duke personalizuar planin tënd...",
+  "finalizingSanctuary": "Duke përfunduar vendin tënd të sigurt...",
+  "creatingYourPlan": "Duke krijuar planin tënd...",
+  "personalizedPlanError": "Nuk mundëm të krijojmë planin tënd të personalizuar. Ju lutemi provoni përsëri.",
+  "retry": "Riprovo",
+
+  "breathInhale": "THITH",
+  "breathHold": "MBAJE",
+  "breathExhale": "NXIRRE",
+  "breathDone": "U KRYE",
+  "breathGreatJob": "Punë e shkëlqyer!",
+  "breathSessionsToday": "{count, plural, one{{count} seancë sot} other{{count} seanca sot}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Përfundo Ushtrimin",
+  "done": "U krye",
+
+  "noCopingTipsYet": "Ende pa këshilla përballej",
+  "copingStrategiesWillAppear": "Strategjitë e tua të personalizuara të përballjes do të shfaqen këtu pasi të përfundojë gjenerimi i planit të rimëkëmbjes.",
+  "strategiesTailoredToTriggers": "Strategji të përshtatura për ngacmuesit e tu",
+
+  "cravingsPeakAndPass": "Dëshirat e forta arrijnë kulmin\ndhe kalojnë",
+  "rideTheWaveDescription": "Shumica e dëshirave të forta kalojnë brenda 15 minutave. Nuk ke pse të veprosh sipas tyre — thjesht kaloji ato me ne.",
+  "stayWithIt": "qëndro me të",
+  "youMadeIt": "ia dole",
+  "readyWhenYouAre": "gati kur të jesh ti",
+  "rideItAgain": "Lundro sërish",
+  "start15MinuteTimer": "Fillo Kohëmatësin 15-Minutësh",
+  "rideTheWaveCompletedMessage": "U luhatet me valën. Kjo është forca e vërtetë. 💪",
+
+  "myProgress": "Ecuria Ime",
+  "weekLabel": "Java",
+  "monthLabel": "Muaji",
+  "allLabel": "Të gjitha",
+  "daysSoberStatLabel": "Ditë pa\nalkool",
+  "savedStatLabel": "Të ruajtura",
+  "avoidedStatLabel": "Të shmangura",
+  "moodTrends": "Prirjet e humorit",
+  "cravingsPattern": "Modeli i dëshirave të forta",
+  "unlockLabel": "Zblloko",
+  "unlockFullStats": "Zblloko statistikat e plota",
+  "premiumStatsMessage": "Prirjet e humorit dhe modelet e dëshirave janë veçori Premium. Përmirëso për të parë statistikat e plota.",
+  "healthMilestonesWillAppear": "Arritjet e tua shëndetësore do të shfaqen këtu.",
+  "healthMilestones": "Arritjet e shëndetit",
+  "dayNumber": "Dita {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Pa alkool",
+  "slipLabel": "Rreshqitje",
+  "noDataLabel": "Pa të dhëna",
+
+  "maybeLaterLabel": "Ndoshta më vonë",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Anulo",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "milestone24Hours": "24 Orë",
+  "milestoneOneWeek": "Një Javë",
+  "milestoneOneMonth": "Një Muaj",
+  "milestoneThreeMonths": "Tre Muaj",
+  "milestoneSixMonths": "Gjashtë Muaj",
+  "milestoneOneYear": "Një Vit",
+  "milestoneDayCount": "Arritja e Ditës {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "@@locale": "sr",
+
+  "skip": "Прескочи",
+  "continueButton": "Настави",
+  "getStarted": "Започни",
+
+  "onboardingTitle1": "Преузмите контролу над својим животом",
+  "onboardingSubtitle1": "Пратите свој пут, прославите свако достигнуће и постаните здравији из дана у дан.",
+  "onboardingTitle2": "Ваш AI пратилац у опоравку",
+  "onboardingSubtitle2": "Добијајте персонализоване смернице, здраве навике, мотивационе подсетнике и извештаје о напретку прилагођене вашем путу.",
+
+  "goodMorning": "Добро јутро",
+  "goodAfternoon": "Добар дан",
+  "goodEvening": "Добро вече",
+  "goodNight": "Лаку ноћ",
+
+  "maybeLaterLabel": "Можда касније",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Откажи",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "embracingClarity": "Прихватите јасноћу, један дан по један.",
+  "streakLabel": "НИЗ",
+  "goalLabel": "ЦИЉ",
+  "daysStreak": "{count, plural, one{{count} дан} few{{count} дана} other{{count} дана}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium план",
+  "premiumPlanSubtitle": "Откључајте потпуно искуство опоравка",
+
+  "accountAndSupport": "НАЛОГ И ПОДРШКА",
+  "privacyPolicy": "Политика приватности",
+  "privacyPolicySubtitle": "Управљајте дељењем података и безбедношћу налога",
+  "termsOfService": "Услови коришћења",
+  "termsOfServiceSubtitle": "Честа питања, контактирајте нас и корисни ресурси",
+  "shareApp": "Подели апликацију",
+  "shareAppSubtitle": "Поделите апликацију са пријатељима",
+  "resetData": "Ресетуј податке",
+  "resetDataSubtitle": "Обришите све сачувано на овом уређају",
+
+  "resetAllDataTitle": "Ресетовати све податке?",
+  "resetAllDataMessage": "Ово ће обрисати све сачувано на овом уређају — профил, записе у дневнику и напредак — и ова радња се не може опозвати.",
+  "cancel": "Откажи",
+  "reset": "Ресетуј",
+
+  "chooseFromGallery": "Изабери из галерије",
+  "takePhoto": "Сними фотографију",
+  "removePhoto": "Уклони фотографију",
+  "couldNotUpdatePhoto": "Фотографија није могла да се ажурира: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Фотографија није могла да се уклони: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Фотографија је превелика чак и након компресије — покушајте са другом фотографијом.",
+
+  "unableToLoadProfile": "Није могуће учитати ваш профил",
+  "pleaseTryAgain": "Покушајте поново.",
+  "tryAgain": "Покушај поново",
+  "profileNotFound": "Профил није пронађен",
+  "refresh": "Освежи",
+  "noProfileDataFound": "На овом уређају још нема података о профилу.",
+
+  "couldNotResetData": "Подаци нису могли да се ресетују: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Почетна",
+  "navStats": "Статистика",
+  "navJournal": "Дневник",
+  "navBadges": "Значке",
+  "navProfile": "Профил",
+
+  "featureComingSoon": "{feature} ће ускоро бити доступна.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Престани да пијеш",
+  "splashSubtitle": "Направите први корак ка\nживоту без алкохола",
+  "preparingJourney": "Припремамо ваш\nпут",
+
+  "taskMorningMeditation": "Јутарња медитација (10 мин)",
+  "taskReadChapter": "Прочитајте 4. поглавље књиге „The Sober Diaries“",
+  "taskEveningJournal": "Вечерњи дневник захвалности",
+
+  "close": "Затвори",
+  "youAreDoingGreat": "Одлично вам иде!",
+  "shareMilestone": "Подели достигнуће",
+  "shareMilestoneMessage": "Данас сам на {days}. дану свог пута опоравка! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Моје достигнуће на путу опоравка",
+
+  "weeklyReportReadyTitle": "Ваш недељни извештај је спреман",
+  "weeklyReportReadySubtitle": "Додирните да видите како је протекла ваша недеља",
+
+  "howAreYouFeeling": "Како се осећате?",
+  "moodTough": "Тешко",
+  "moodOkay": "У реду",
+  "moodGood": "Добро",
+
+  "moneySaved": "Уштеђени новац",
+  "caloriesSaved": "Сачуване калорије",
+  "healthScore": "Оцена здравља",
+  "drinksAvoided": "Избегнута пића",
+  "estimated": "Процењено",
+  "aiGenerated": "Генерисано помоћу AI",
+  "daysCapsLabel": "ДАНА",
+
+  "todaysMotivation": "Данашња мотивација",
+  "defaultMotivationQuote": "Успешно сте остали верни својој одлуци. Наставите да пратите талас позитивних промена.",
+
+  "talkToCoach": "Разговарај са коучем",
+  "havingACraving": "Имам жељу за пићем",
+
+  "unlockWeeklyReportsTitle": "Откључајте недељне извештаје",
+  "unlockWeeklyReportsMessage": "Сваке недеље погледајте дане без алкохола, трендове расположења и персонализоване AI повратне информације. Надоградите на Premium да бисте откључали ову функцију.",
+  "maybeLater": "Можда касније",
+  "upgrade": "Надогради",
+
+  "weeklyReportTitle": "Недељни извештај",
+  "weeklyReportsPremiumTitle": "Недељни извештаји су Premium функција",
+  "weeklyReportsPremiumMessage": "Сваке недеље погледајте дане без алкохола, трендове расположења, жеље за пићем и персонализоване AI повратне информације.",
+  "upgradeToPremium": "Надогради на Premium",
+  "couldNotGenerateReport": "Тренутно није могуће генерисати ваш извештај.",
+  "tryAgainLower": "Покушај поново",
+
+  "statSoberDays": "Дани без алкохола",
+  "statAvgMood": "Просечно расположење",
+  "statCravings": "Жеље",
+  "statMoneySaved": "Уштеђено",
+  "coachFeedback": "Повратне информације коуча",
+  "journalInsights": "Увиди из дневника",
+
+  "next": "Даље",
+
+  "question1Title": "Који је ваш циљ",
+  "question1Subtitle": "Изаберите циљ који вам је\nнајважнији",
+  "goalQuitCompletely": "Потпуно престати",
+  "goalReduceDrinking": "Смањити пијење",
+  "goalTakeABreak": "Направити паузу",
+  "goalBuildHealthierHabits": "Изградити здравије навике",
+
+  "question3Title": "Реците нам нешто о својој\nрутини",
+  "drinksPerWeek": "Пића недељно",
+  "moneySpentPerWeek": "Потрошен новац недељно",
+  "drinkingLevel": "Ниво конзумирања",
+  "triggersLabel": "Окидачи",
+  "levelSocial": "Друштвено",
+  "levelRegular": "Редовно",
+  "levelHeavy": "Високо",
+  "levelDependent": "Зависност",
+  "triggerStress": "Стрес",
+  "triggerLoneliness": "Усамљеност",
+  "triggerHabit": "Навика",
+  "triggerSadness": "Туга",
+  "triggerAnger": "Бес",
+  "triggerBoredom": "Досада",
+  "triggerSocialPressure": "Притисак друштва",
+  "triggerCelebration": "Прослава",
+  "triggerSleepProblems": "Проблеми са спавањем",
+  "triggerWorkPressure": "Притисак на послу",
+
+  "question4Title": "Зашто желите да се промените?",
+  "question4Subtitle": "Ваш разлог ће вам помоћи да останете мотивисани.",
+  "reasonImproveHealth": "Побољшати здравље",
+  "reasonSaveMoney": "Уштедети новац",
+  "reasonFamily": "Породица",
+  "reasonBetterSleep": "Бољи сан",
+  "reasonMentalClarity": "Ментална јасноћа",
+  "reasonFitness": "Фитнес",
+  "reasonSelfRespect": "Самопоштовање",
+  "reasonCareer": "Каријера",
+
+  "milestoneUnlockedLabel": "ДОСТИГНУЋЕ ОТКЉУЧАНО",
+  "incredibleNamePrefix": "Невероватно, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} уштеђено",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} избегнуто",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Подели моје достигнуће",
+  "milestoneImageShareError": "Није могуће направити слику достигнућа. Покушајте поново.",
+
+  "dailyCheckInTitle": "Дневна пријава",
+  "howAreYouFeelingToday": "Како се данас осећате?",
+  "honestAnswerHelp": "Ваш искрен одговор нам помаже да вас боље подржимо",
+  "didYouDrinkToday": "Да ли сте данас пили?",
+  "noLabel": "Не",
+  "yesLabel": "Да",
+  "cravingLevelNow": "Колико је јака жеља за пићем сада?",
+  "anythingOnMind": "Да ли вам је нешто на уму?",
+  "optionalLabel": "(опционо)",
+  "dailyNoteHint": "Пишите о свом дану, окидачима, победама...",
+  "alreadyCheckedInToday": "Данас сте се већ пријавили",
+  "saveCheckIn": "Сачувај пријаву",
+  "checkInsHelpTrack": "Дневне пријаве помажу у праћењу вашег напретка",
+  "alreadyCompletedTodayCheckIn": "Већ сте завршили данашњу пријаву.",
+  "pleaseAnswerBothQuestions": "Прво одговорите на оба питања изнад",
+  "checkInSaved": "Пријава је сачувана",
+  "cravingNone": "Нема",
+  "cravingLow": "Слаба",
+  "cravingMedium": "Средња",
+  "cravingStrong": "Јака",
+  "moodBad": "Лоше",
+  "moodLow": "Ниско",
+  "moodOkay": "У реду",
+  "moodGood": "Добро",
+  "moodGreat": "Одлично",
+
+  "sosSupportTitle": "SOS подршка",
+  "notAloneMessage": "Нисте сами, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Жеље за пићем пролазе. Изаберите нешто испод што ће вам помоћи у овом тренутку.",
+  "breathingExercise": "Вежба дисања",
+  "breathingExerciseSubtitle": "Вођена техника 4-7-8, 2 минута",
+  "rideTheWave": "Прејашите талас",
+  "rideTheWaveSubtitle": "Тајмер од 15 минута — жеље увек прођу",
+  "copingTips": "Савети за суочавање",
+  "copingTipsSubtitle": "Персонализоване стратегије за ваше окидаче",
+  "talkToAiCoach": "Разговарајте са AI коучем",
+  "talkToAiCoachSubtitle": "Разговарајте са својим пратиоцем у опоравку",
+  "callSomeone": "Позовите некога",
+  "callSomeoneSubtitle": "Позовите особу од поверења",
+  "contactsPermissionNeeded": "За позивање контакта потребна је дозвола за приступ контактима.",
+  "beatenCravingsPrefix": "Савладали сте жељу за пићем ",
+  "beatenCravingsCount": "{count} пута",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " раније. Можете то поново.",
+
+  "tellUsAboutYourself": "Реците нам нешто о себи",
+  "detailsSubtitle": "Ове информације нам помажу да персонализујемо ваш пут опоравка и пружимо тачне увиде.",
+  "nameLabel": "Име",
+  "nameHint": "нпр. Алекс Риверс",
+  "ageLabel": "Године",
+  "ageHint": "нпр. 32",
+  "sexAssignedAtBirth": "Пол при рођењу",
+  "sexFemale": "Женски",
+  "sexMale": "Мушки",
+  "heightLabel": "Висина",
+  "weightLabel": "Тежина",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Достигнут је дневни лимит",
+  "dailyLimitReachedMessage": "Искористили сте свих {limit} бесплатних порука за данас. Надоградите на Premium за неограничени разговор са коучем.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Тренутно није могуће повезивање. Покушајте поново за тренутак.",
+  "clearConversationTitle": "Обриши разговор?",
+  "clearConversationMessage": "Историја разговора са коучем биће трајно уклоњена.",
+  "clearLabel": "Обриши",
+  "recoveryCoachTitle": "Коуч за опоравак",
+  "onlineLabel": "На мрежи",
+  "clearConversationMenuItem": "Обриши разговор",
+  "chatGreeting": "Здраво, {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Данас сте на {days}. дану свог пута. Ту сам кад год пожелите да разговарамо.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "БРЗИ УПИТИ",
+  "promptCravingLabel": "Имам жељу за пићем",
+  "promptCravingSubtitle": "Брзо се смирите и усредсредите",
+  "promptMotivationLabel": "Треба ми мотивација",
+  "promptMotivationSubtitle": "Подршка када је тешко",
+  "promptSocialLabel": "Друштвена ситуација",
+  "promptSocialSubtitle": "Како се снаћи на окупљању",
+  "promptSlippedLabel": "Посустао/ла сам",
+  "promptSlippedSubtitle": "Без осуђивања, само подршка",
+  "typeMessageHint": "Унесите поруку...",
+
+  "editProfileTitle": "Измени профил",
+  "couldNotSaveProfile": "Профил није могао да се сачува: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Висина (cm)",
+  "weightKgLabel": "Тежина (kg)",
+  "saveChangesLabel": "Сачувај измене",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Напредни увиди и аналитика",
+  "featureUnlimitedJournal": "Неограничени уноси у дневник",
+  "featureUnlimitedChat": "Неограничени разговори са AI коучем",
+  "featureCommunityGroups": "Ексклузивне групе заједнице",
+  "featurePrioritySupport": "Приоритетна стручна подршка",
+  "featureThemePacks": "Прилагођени пакети тема",
+  "featureDataExport": "Извоз података",
+  "featureAdFree": "Искуство без огласа",
+  "premiumMemberTitle": "Ви сте Premium члан",
+  "unlockFullRecoveryTitle": "Откључајте потпуно искуство\nопоравка",
+  "premiumMemberSubtitle": "Хвала вам што подржавате свој пут опоравка — све Premium функције испод су откључане.",
+  "premiumJoinSubtitle": "Придружите се заједници хиљада људи који\nубрзавају свој пут опоравка помоћу наших\nPremium алата и персонализоване подршке.",
+  "monthlyPlanLabel": "Месечно",
+  "perMonthSuffix": "/мес.",
+  "cancelAnytimeLabel": "Откажите у било ком тренутку",
+  "yearlyPlanLabel": "Годишње",
+  "billedAnnuallyLabel": "Наплаћује се годишње: {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Најбоља вредност",
+  "alreadyPremiumLabel": "Већ сте Premium ✓",
+  "startPremiumLabel": "Започни Premium",
+  "manageSubscriptionLabel": "Управљајте претплатом или је откажите у подешавањима претплата на свом уређају.",
+  "noCommitmentLabel": "Без обавезе. Откажите у било ком тренутку.",
+  "continueFreePlanLabel": "Настави са бесплатним планом",
+  "backToHomeLabel": "Назад на почетну",
+  "cancelPremiumLabel": "Откажи Premium",
+  "cancelPremiumTitle": "Отказати Premium?",
+  "cancelPremiumMessage": "Изгубићете приступ неограниченим уносима у дневник, неограниченом разговору са коучем, увидима у статистику и недељним извештајима. Можете се поново претплатити у било ком тренутку.",
+  "keepPremiumLabel": "Задржи Premium",
+  "nowPremiumMessage": "Сада сте Premium! Уживајте у потпуном искуству опоравка.",
+  "premiumCancelledMessage": "Premium је отказан. Вратили сте се на бесплатни план.",
+  "termsOfUseLabel": "Услови коришћења",
+
+  "navHomeLabel": "Почетна",
+  "navStatsLabel": "Статистика",
+  "navJournalLabel": "Дневник",
+  "navBadgesLabel": "Значке",
+  "navProfileLabel": "Профил",
+
+  "recoveryGoalsTitle": "Циљеви опоравка",
+  "goalLabel": "Циљ",
+  "drinksPerWeekLabel": "Пића недељно",
+  "quitReasonsLabel": "Разлози за престанак",
+  "quitReasonsHelperText": "Одвојите више разлога зарезом.",
+  "couldNotSaveRecoveryGoals": "Циљеви опоравка нису могли да се сачувају: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "нпр. Потпуна апстиненција",
+  "drinksPerWeekHint": "нпр. 12",
+  "quitReasonsHint": "нпр. Здравље, Породица, Новац",
+
+  "todaysPrompt": "Данашњи упит",
+  "defaultJournalPrompt": "Шта вам је данас на уму?",
+  "aiJournalInsights": "AI увиди из дневника",
+  "unlockJournalInsightsMessage": "Откључајте недељне обрасце, трендове расположења и персонализоване увиде из својих записа.",
+  "notEnoughJournalData": "Још нема довољно података — напишите неколико записа ове недеље и проверите поново.",
+  "openEntry": "Отвори",
+  "editEntry": "Измени",
+  "deleteEntry": "Обриши",
+  "searchJournalEntries": "Претражите записе...",
+  "writeNewEntry": "Напишите нови запис",
+  "recentEntries": "Недавни записи",
+  "noJournalEntriesYet": "Још нема записа у дневнику — напишите свој први осврт изнад.",
+  "noEntriesMatchFilters": "Нема записа који одговарају вашим филтерима.",
+
+  "weeklyJournalLimitReached": "Достигнут недељни лимит",
+  "weeklyJournalLimitMessage": "Искористили сте свих {limit} бесплатних записа у дневнику ове недеље. Надоградите на Premium за неограничене записе.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Нови запис",
+  "writeYourThoughts": "Запишите своје мисли",
+  "saveEntry": "Сачувај запис",
+  "freeEntriesLeftThisWeek": "Преостало је {remaining} од {limit} бесплатних записа ове недеље",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Обришите запис?",
+  "deleteEntryConfirmation": "Овај запис ће бити трајно обрисан. Ово се не може опозвати.",
+
+  "journalEntryNotFound": "Запис није пронађен",
+  "journalEntryMayHaveBeenDeleted": "Овај запис из дневника је можда обрисан.",
+  "goBack": "Назад",
+  "journalEntryTitle": "Запис у дневнику",
+
+  "moodStruggling": "Мучно",
+  "moodUnwell": "Лоше",
+  "moodNeutral": "Неутрално",
+
+  "whatHappenedToday": "Шта се данас догодило?",
+  "trigger": "Окидач",
+  "whatHelped": "Шта је помогло",
+  "whatIllTryNextTime": "Шта ћу следећи пут покушати",
+  "journalPrivacyMessage": "Ваш осврт је приватан и сачуван у вашем дневнику.",
+
+  "unlocked": "Откључано",
+  "daysLeft": "Преостаје {count} дан{count, plural, =1{} few{а} other{а}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} дана",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Први\nосврт",
+  "oneJournalEntry": "1 запис у дневнику",
+  "openBook": "Отвори књигу",
+  "tenJournalEntries": "10 записа у дневнику",
+  "dedicatedWriter": "Посвећени\nписац",
+  "thirtyJournalEntries": "30 записа у дневнику",
+  "firstConversation": "Први\nразговор",
+  "oneAiCoachChat": "1 разговор са AI коучем",
+  "keepTalking": "Наставите да разговарате",
+  "fiveConversations": "5 разговора",
+  "coachCompanion": "Коуч\nпратилац",
+  "twentyConversations": "20 разговора",
+  "checkInHabit": "Навика\nпријављивања",
+  "sevenCheckIns": "7 пријава",
+  "consistencyPro": "Мајстор\nдоследности",
+  "thirtyCheckIns": "30 пријава",
+  "dedicatedJourney": "Посвећени\nпут",
+  "hundredCheckIns": "100 пријава",
+  "goalGetter": "Остваритељ циљева",
+  "threeGoalsCompleted": "3 циља завршена",
+  "goalAchiever": "Остваритељ\nциљева",
+  "tenGoalsCompleted": "10 циљева завршено",
+  "firstSavings": "Прва\nуштеда",
+  "fiveHundredSaved": "$500 уштеђено",
+  "smartSaver": "Паметни штедиша",
+  "oneThousandSaved": "$1,000 уштеђено",
+  "bigSaver": "Велики штедиша",
+  "fiveThousandSaved": "$5,000 уштеђено",
+  "currencyProgress": "${current} од ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} од {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Наставите — ваше прво достигнуће вас чека!",
+  "badgesAndMilestones": "Значке и достигнућа",
+  "yourMilestoneJourney": "Ваш пут достигнућа",
+  "milestonesAchieved": "{count} достигнућ{count, plural, =1{е} few{а} other{а}} остварено.\nДодирните да погледате",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Откључали сте {unlocked} од {total} достигнућа на свом путу.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Преостало",
+  "complete": "Завршено",
+  "nextMilestone": "Следеће достигнуће",
+  "percentThere": "{subtitle} · {percent}% завршено",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Достигнућа трезвености",
+  "journeyBadges": "Значке пута",
+  "bronze": "БРОНЗА",
+  "silver": "СРЕБРО",
+  "gold": "ЗЛАТО",
+  "platinum": "ПЛАТИНА",
+  "diamond": "ДИЈАМАНТ",
+
+  "analyzingYourJourney": "Анализирамо ваш пут...",
+  "aiCreatingSanctuary": "Наш AI креира ваш персонализовани простор за опоравак.",
+  "understandingHabits": "Разумевање навика...",
+  "calculatingBaseline": "Израчунавамо вашу почетну вредност...",
+  "personalizingPlan": "Персонализујемо ваш план...",
+  "finalizingSanctuary": "Завршавамо ваш простор за опоравак...",
+  "creatingYourPlan": "Креирамо ваш план...",
+  "personalizedPlanError": "Нисмо могли да креирамо ваш персонализовани план. Покушајте поново.",
+  "retry": "Покушај поново",
+
+  "breathingExercise": "Вежба дисања",
+  "breathInhale": "УДИШИТЕ",
+  "breathHold": "ЗАДРЖИТЕ",
+  "breathExhale": "ИЗДИШИТЕ",
+  "breathDone": "ГОТОВО",
+  "breathGreatJob": "Одличан посао!",
+  "remaining": "Преостало",
+  "breathSessionsToday": "{count, plural, one{{count} сесија данас} few{{count} сесије данас} other{{count} сесија данас}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Заврши вежбу",
+  "done": "Готово",
+
+  "noCopingTipsYet": "Још нема савета за суочавање",
+  "copingStrategiesWillAppear": "Ваше персонализоване стратегије за суочавање појавиће се овде када се заврши креирање вашег плана опоравка.",
+  "strategiesTailoredToTriggers": "Стратегије прилагођене вашим окидачима",
+
+  "rideTheWave": "Прејашите талас",
+  "cravingsPeakAndPass": "Жеље достижу врхунац\nи пролазе",
+  "rideTheWaveDescription": "Већина жеља за пићем прође у року од 15 минута. Не морате да им се препустите — само издржите тај талас са нама.",
+  "stayWithIt": "останите уз то",
+  "youMadeIt": "успели сте",
+  "readyWhenYouAre": "када будете спремни",
+  "rideItAgain": "Поново прејашите талас",
+  "start15MinuteTimer": "Покрени тајмер од 15 минута",
+  "rideTheWaveCompletedMessage": "Прејахали сте талас. То је права снага. 💪",
+
+  "myProgress": "Мој напредак",
+  "weekLabel": "Недеља",
+  "monthLabel": "Месец",
+  "allLabel": "Све",
+  "daysSoberStatLabel": "Дана\nбез алкохола",
+  "savedStatLabel": "Уштеђено",
+  "avoidedStatLabel": "Избегнуто",
+  "moodTrends": "Трендови расположења",
+  "cravingsPattern": "Образац жеља",
+  "unlockLabel": "Откључај",
+  "unlockFullStats": "Откључај пуну статистику",
+  "premiumStatsMessage": "Трендови расположења и обрасци жеља су Premium функције. Надоградите да бисте видели пуну статистику.",
+  "healthMilestonesWillAppear": "Ваша здравствена достигнућа ће се појавити овде.",
+  "healthMilestones": "Здравствена достигнућа",
+  "dayNumber": "Дан {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Без алкохола",
+  "slipLabel": "Посустајање",
+  "noDataLabel": "Нема података",
+
+  "milestone24Hours": "24 сата",
+  "milestoneOneWeek": "Једна недеља",
+  "milestoneOneMonth": "Један месец",
+  "milestoneThreeMonths": "Три месеца",
+  "milestoneSixMonths": "Шест месеци",
+  "milestoneOneYear": "Једна година",
+  "milestoneDayCount": "Достигнуће за дан {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Политика приватности"
+}

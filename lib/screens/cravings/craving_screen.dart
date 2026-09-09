@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../constants/app_colors.dart';
+import '../../services/analytics_service.dart';
 import '../../services/home_dashboard_service.dart';
 import '../../services/local_storage_service.dart';
 import '../4_grids_screen/breathing_screen.dart';
@@ -53,6 +54,9 @@ class _CravingScreenState extends State<CravingScreen> {
       _cravingsBeaten = count;
       _isLoading = false;
     });
+
+    // NEW — SOS/cravings screen opened
+    AnalyticsService.instance.sosOpened();
   }
 
   // ============================================================
@@ -89,6 +93,9 @@ class _CravingScreenState extends State<CravingScreen> {
   Future<void> _openPhoneToCallFriend() async {
     final l10n =
     AppLocalizations.of(context)!;
+
+    // NEW — call someone tapped
+    AnalyticsService.instance.callSomeoneTapped();
 
     try {
       debugPrint(
@@ -186,6 +193,9 @@ class _CravingScreenState extends State<CravingScreen> {
   // ============================================================
 
   Future<void> _openRideTheWave() async {
+    // NEW — ride the wave started
+    AnalyticsService.instance.rideTheWaveStarted();
+
     await Navigator.of(context).push(
       MaterialPageRoute(
         builder: (_) =>
@@ -406,6 +416,10 @@ class _CravingScreenState extends State<CravingScreen> {
                       subtitle:
                       l10n.breathingExerciseSubtitle,
                       onTap: () {
+                        // NEW — breathing exercise started
+                        AnalyticsService.instance
+                            .breathingExerciseStarted();
+
                         Navigator.of(
                           context,
                         ).push(
@@ -446,6 +460,10 @@ class _CravingScreenState extends State<CravingScreen> {
                       subtitle:
                       l10n.copingTipsSubtitle,
                       onTap: () {
+                        // NEW — coping tips viewed
+                        AnalyticsService.instance
+                            .copingTipsViewed();
+
                         Navigator.of(
                           context,
                         ).push(
@@ -469,6 +487,10 @@ class _CravingScreenState extends State<CravingScreen> {
                       subtitle:
                       l10n.talkToAiCoachSubtitle,
                       onTap: () {
+                        // NEW — chat opened
+                        AnalyticsService.instance
+                            .chatOpened();
+
                         Navigator.of(
                           context,
                         ).push(

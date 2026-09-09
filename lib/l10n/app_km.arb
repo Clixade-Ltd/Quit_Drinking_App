@@ -1,0 +1,584 @@
+{
+  "@@locale": "km",
+
+  "skip": "រំលង",
+  "maybeLaterLabel": "ប្រហែលជានៅពេលក្រោយ",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "បោះបង់",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "continueButton": "បន្ត",
+  "getStarted": "ចាប់ផ្តើម",
+
+  "onboardingTitle1": "គ្រប់គ្រងជីវិតរបស់អ្នក",
+  "onboardingSubtitle1": "តាមដានដំណើររបស់អ្នក អបអរសាទររាល់សមិទ្ធផល និងកាន់តែមានសុខភាពល្អមួយថ្ងៃម្តងៗ។",
+  "onboardingTitle2": "ដៃគូស្តារនីតិសម្បទា AI របស់អ្នក",
+  "onboardingSubtitle2": "ទទួលបានការណែនាំផ្ទាល់ខ្លួន ទម្លាប់ដែលមានសុខភាពល្អ ការរំលឹកលើកទឹកចិត្ត និងរបាយការណ៍វឌ្ឍនភាពដែលរៀបចំតាមដំណើររបស់អ្នក។",
+
+  "goodMorning": "អរុណសួស្តី",
+  "goodAfternoon": "សួស្តីពេលរសៀល",
+  "goodEvening": "សួស្តីពេលល្ងាច",
+  "goodNight": "រាត្រីសួស្តី",
+
+  "embracingClarity": "ស្វែងរកភាពច្បាស់លាស់ មួយថ្ងៃម្តងៗ។",
+  "streakLabel": "ថ្ងៃជាប់គ្នា",
+  "goalLabel": "គោលដៅ",
+  "daysStreak": "{count, plural, one{{count} ថ្ងៃ} other{{count} ថ្ងៃ}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "គម្រោង Premium",
+  "premiumPlanSubtitle": "ដោះសោបទពិសោធន៍ស្តារនីតិសម្បទាពេញលេញរបស់អ្នក",
+
+  "accountAndSupport": "គណនី និងការគាំទ្រ",
+  "privacyPolicy": "គោលការណ៍ឯកជនភាព",
+  "privacyPolicySubtitle": "គ្រប់គ្រងការចែករំលែកទិន្នន័យ និងសុវត្ថិភាពគណនី",
+  "termsOfService": "លក្ខខណ្ឌសេវាកម្ម",
+  "termsOfServiceSubtitle": "សំណួរដែលសួរញឹកញាប់ ទាក់ទងមកយើង និងធនធាន",
+  "shareApp": "ចែករំលែកកម្មវិធី",
+  "shareAppSubtitle": "ចែករំលែកកម្មវិធីជាមួយមិត្តភក្តិរបស់អ្នក",
+  "resetData": "កំណត់ទិន្នន័យឡើងវិញ",
+  "resetDataSubtitle": "លុបអ្វីៗទាំងអស់ដែលបានរក្សាទុកនៅលើឧបករណ៍នេះ",
+
+  "resetAllDataTitle": "កំណត់ទិន្នន័យទាំងអស់ឡើងវិញ?",
+  "resetAllDataMessage": "វានឹងលុបអ្វីៗទាំងអស់ដែលបានរក្សាទុកនៅលើឧបករណ៍នេះ — ប្រវត្តិរូប កំណត់ហេតុ និងវឌ្ឍនភាព — ហើយមិនអាចត្រឡប់វិញបានទេ។",
+  "cancel": "បោះបង់",
+  "reset": "កំណត់ឡើងវិញ",
+
+  "chooseFromGallery": "ជ្រើសពីវិចិត្រសាល",
+  "takePhoto": "ថតរូប",
+  "removePhoto": "លុបរូបថត",
+  "couldNotUpdatePhoto": "មិនអាចធ្វើបច្ចុប្បន្នភាពរូបថតបានទេ៖ {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "មិនអាចលុបរូបថតបានទេ៖ {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "រូបថតនេះធំពេក ទោះបីបានបង្រួមក៏ដោយ — សូមសាកល្បងរូបថតផ្សេង។",
+
+  "unableToLoadProfile": "មិនអាចផ្ទុកប្រវត្តិរូបរបស់អ្នកបានទេ",
+  "pleaseTryAgain": "សូមព្យាយាមម្តងទៀត។",
+  "tryAgain": "ព្យាយាមម្តងទៀត",
+  "profileNotFound": "រកមិនឃើញប្រវត្តិរូប",
+  "refresh": "ធ្វើឱ្យស្រស់",
+  "noProfileDataFound": "មិនទាន់រកឃើញទិន្នន័យប្រវត្តិរូបនៅលើឧបករណ៍នេះទេ។",
+
+  "couldNotResetData": "មិនអាចកំណត់ទិន្នន័យឡើងវិញបានទេ៖ {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "ទំព័រដើម",
+  "navStats": "ស្ថិតិ",
+  "navJournal": "កំណត់ហេតុ",
+  "navBadges": "ផ្លាកសញ្ញា",
+  "navProfile": "ប្រវត្តិរូប",
+
+  "featureComingSoon": "{feature} នឹងមានក្នុងពេលឆាប់ៗនេះ។",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "សុខភាពល្អ",
+  "appTitle": "បញ្ឈប់ការផឹកស្រា",
+  "splashSubtitle": "ចាប់ផ្តើមជំហានដំបូងឆ្ពោះទៅរក\nជីវិតគ្មានជាតិអាល់កុល",
+  "preparingJourney": "កំពុងរៀបចំ\nដំណើររបស់អ្នក",
+
+  "taskMorningMeditation": "សមាធិពេលព្រឹក (10 នាទី)",
+  "taskReadChapter": "អានជំពូកទី 4 នៃ \"The Sober Diaries\"",
+  "taskEveningJournal": "កំណត់ហេតុអំណរគុណពេលល្ងាច",
+
+  "close": "បិទ",
+  "youAreDoingGreat": "អ្នកកំពុងធ្វើបានល្អណាស់!",
+  "shareMilestone": "ចែករំលែកសមិទ្ធផល",
+  "shareMilestoneMessage": "ខ្ញុំស្ថិតនៅថ្ងៃទី {days} នៃដំណើរស្តារនីតិសម្បទារបស់ខ្ញុំ! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "សមិទ្ធផលស្តារនីតិសម្បទារបស់ខ្ញុំ",
+
+  "weeklyReportReadyTitle": "របាយការណ៍ប្រចាំសប្តាហ៍របស់អ្នករួចរាល់ហើយ",
+  "weeklyReportReadySubtitle": "ចុចដើម្បីមើលថាសប្តាហ៍របស់អ្នកបានទៅយ៉ាងដូចម្តេច",
+
+  "howAreYouFeeling": "តើអ្នកមានអារម្មណ៍យ៉ាងដូចម្តេច?",
+  "moodTough": "ពិបាក",
+  "moodOkay": "មធ្យម",
+  "moodGood": "ល្អ",
+
+  "moneySaved": "ប្រាក់ដែលបានសន្សំ",
+  "caloriesSaved": "កាឡូរីដែលបានសន្សំ",
+  "healthScore": "ពិន្ទុសុខភាព",
+  "drinksAvoided": "ភេសជ្ជៈដែលបានជៀសវាង",
+  "estimated": "ប៉ាន់ស្មាន",
+  "aiGenerated": "បង្កើតដោយ AI",
+  "daysCapsLabel": "ថ្ងៃ",
+
+  "todaysMotivation": "ការលើកទឹកចិត្តថ្ងៃនេះ",
+  "defaultMotivationQuote": "អ្នកបានរក្សាការប្តេជ្ញាចិត្តរបស់អ្នកដោយជោគជ័យ។ បន្តជិះលើរលកនៃការផ្លាស់ប្តូរវិជ្ជមាន។",
+
+  "talkToCoach": "និយាយជាមួយគ្រូណែនាំ",
+  "havingACraving": "ខ្ញុំកំពុងមានចំណង់ចង់ផឹក",
+
+  "unlockWeeklyReportsTitle": "ដោះសោរបាយការណ៍ប្រចាំសប្តាហ៍",
+  "unlockWeeklyReportsMessage": "មើលថ្ងៃដែលអ្នកមិនផឹកស្រា និន្នាការអារម្មណ៍ និងមតិកែលម្អ AI ផ្ទាល់ខ្លួនរៀងរាល់សប្តាហ៍។ ដំឡើងទៅ Premium ដើម្បីដោះសោ។",
+  "maybeLater": "ប្រហែលជាពេលក្រោយ",
+  "upgrade": "ដំឡើង",
+
+  "weeklyReportTitle": "របាយការណ៍ប្រចាំសប្តាហ៍",
+  "weeklyReportsPremiumTitle": "របាយការណ៍ប្រចាំសប្តាហ៍គឺជាមុខងារ Premium",
+  "weeklyReportsPremiumMessage": "មើលថ្ងៃដែលអ្នកមិនផឹកស្រា និន្នាការអារម្មណ៍ ចំណង់ចង់ផឹក និងមតិកែលម្អ AI ផ្ទាល់ខ្លួនរៀងរាល់សប្តាហ៍។",
+  "upgradeToPremium": "ដំឡើងទៅ Premium",
+  "couldNotGenerateReport": "មិនអាចបង្កើតរបាយការណ៍របស់អ្នកនៅពេលនេះបានទេ។",
+  "tryAgainLower": "ព្យាយាមម្តងទៀត",
+
+  "statSoberDays": "ថ្ងៃមិនផឹកស្រា",
+  "statAvgMood": "អារម្មណ៍ជាមធ្យម",
+  "statCravings": "ចំណង់ចង់ផឹក",
+  "statMoneySaved": "ប្រាក់ដែលបានសន្សំ",
+  "coachFeedback": "មតិកែលម្អពីគ្រូណែនាំ",
+  "journalInsights": "ការយល់ដឹងពីកំណត់ហេតុ",
+
+  "next": "បន្ទាប់",
+
+  "question1Title": "តើគោលដៅរបស់អ្នកជាអ្វី?",
+  "question1Subtitle": "ជ្រើសរើសគោលដៅដែលសំខាន់\nបំផុតសម្រាប់អ្នក",
+  "goalQuitCompletely": "ឈប់ទាំងស្រុង",
+  "goalReduceDrinking": "កាត់បន្ថយការផឹក",
+  "goalTakeABreak": "សម្រាកពីការផឹក",
+  "goalBuildHealthierHabits": "បង្កើតទម្លាប់ដែលមានសុខភាពល្អ",
+
+  "question3Title": "ប្រាប់យើងអំពី\nទម្លាប់ប្រចាំថ្ងៃរបស់អ្នក",
+  "drinksPerWeek": "ភេសជ្ជៈក្នុងមួយសប្តាហ៍",
+  "moneySpentPerWeek": "ប្រាក់ចំណាយក្នុងមួយសប្តាហ៍",
+  "drinkingLevel": "កម្រិតនៃការផឹក",
+  "triggersLabel": "កត្តាជំរុញ",
+  "levelSocial": "សង្គម",
+  "levelRegular": "ទៀងទាត់",
+  "levelHeavy": "ច្រើន",
+  "levelDependent": "ពឹងផ្អែក",
+  "triggerStress": "ភាពតានតឹង",
+  "triggerLoneliness": "ភាពឯកា",
+  "triggerHabit": "ទម្លាប់",
+  "triggerSadness": "ភាពសោកសៅ",
+  "triggerAnger": "កំហឹង",
+  "triggerBoredom": "ភាពធុញទ្រាន់",
+  "triggerSocialPressure": "សម្ពាធសង្គម",
+  "triggerCelebration": "ការអបអរសាទរ",
+  "triggerSleepProblems": "បញ្ហាដំណេក",
+  "triggerWorkPressure": "សម្ពាធការងារ",
+
+  "question4Title": "ហេតុអ្វីអ្នកចង់ផ្លាស់ប្តូរ?",
+  "question4Subtitle": "ហេតុផលរបស់អ្នកនឹងជួយជំរុញទឹកចិត្តអ្នក។",
+  "reasonImproveHealth": "កែលម្អសុខភាពរបស់ខ្ញុំ",
+  "reasonSaveMoney": "សន្សំប្រាក់",
+  "reasonFamily": "គ្រួសារ",
+  "reasonBetterSleep": "ដំណេកកាន់តែល្អ",
+  "reasonMentalClarity": "ភាពច្បាស់លាស់ផ្លូវចិត្ត",
+  "reasonFitness": "កាយសម្បទា",
+  "reasonSelfRespect": "ការគោរពខ្លួនឯង",
+  "reasonCareer": "អាជីព",
+
+  "milestoneUnlockedLabel": "សមិទ្ធផលត្រូវបានដោះសោ",
+  "incredibleNamePrefix": "អស្ចារ្យណាស់, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "បានសន្សំ {amount}",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "បានជៀសវាង {count}",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "ចែករំលែកសមិទ្ធផលរបស់ខ្ញុំ",
+  "milestoneImageShareError": "មិនអាចបង្កើតរូបភាពសមិទ្ធផលបានទេ។ សូមព្យាយាមម្តងទៀត។",
+
+  "dailyCheckInTitle": "ការឆែកប្រចាំថ្ងៃ",
+  "howAreYouFeelingToday": "ថ្ងៃនេះអ្នកមានអារម្មណ៍យ៉ាងដូចម្តេច?",
+  "honestAnswerHelp": "ចម្លើយស្មោះត្រង់របស់អ្នកជួយឱ្យយើងគាំទ្រអ្នកបានកាន់តែប្រសើរ",
+  "didYouDrinkToday": "តើថ្ងៃនេះអ្នកបានផឹកស្រាទេ?",
+  "noLabel": "ទេ",
+  "yesLabel": "បាទ/ចាស",
+  "cravingLevelNow": "តើចំណង់ចង់ផឹករបស់អ្នកឥឡូវនេះខ្លាំងកម្រិតណា?",
+  "anythingOnMind": "តើមានអ្វីនៅក្នុងចិត្តរបស់អ្នកទេ?",
+  "optionalLabel": "(ជាជម្រើស)",
+  "dailyNoteHint": "សរសេរអំពីថ្ងៃរបស់អ្នក កត្តាជំរុញ ជ័យជម្នះ...",
+  "alreadyCheckedInToday": "បានឆែកថ្ងៃនេះរួចហើយ",
+  "saveCheckIn": "រក្សាទុកការឆែក",
+  "checkInsHelpTrack": "ការឆែកជួយតាមដានវឌ្ឍនភាពរបស់អ្នកតាមពេលវេលា",
+  "alreadyCompletedTodayCheckIn": "អ្នកបានបញ្ចប់ការឆែកថ្ងៃនេះរួចហើយ។",
+  "pleaseAnswerBothQuestions": "សូមឆ្លើយសំណួរទាំងពីរខាងលើជាមុនសិន",
+  "checkInSaved": "បានរក្សាទុកការឆែក",
+  "cravingNone": "គ្មាន",
+  "cravingLow": "ទាប",
+  "cravingMedium": "មធ្យម",
+  "cravingStrong": "ខ្លាំង",
+  "moodBad": "មិនល្អ",
+  "moodLow": "ទាប",
+  "moodOkay": "មធ្យម",
+  "moodGood": "ល្អ",
+  "moodGreat": "ល្អណាស់",
+
+  "sosSupportTitle": "ជំនួយ SOS",
+  "notAloneMessage": "អ្នកមិននៅម្នាក់ឯងទេ, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "ចំណង់ចង់ផឹកនឹងកន្លងផុតទៅ។ ជ្រើសរើសអ្វីមួយខាងក្រោមដើម្បីជួយអ្នកឆ្លងកាត់ពេលនេះ។",
+  "breathingExercise": "លំហាត់ដកដង្ហើម",
+  "breathingExerciseSubtitle": "បច្ចេកទេស 4-7-8 ដែលមានការណែនាំ 2 នាទី",
+  "rideTheWave": "ឆ្លងកាត់រលក",
+  "rideTheWaveSubtitle": "កម្មវិធីកំណត់ពេល 15 នាទី — ចំណង់ចង់ផឹកតែងតែកន្លងផុតទៅ",
+  "copingTips": "គន្លឹះដោះស្រាយ",
+  "copingTipsSubtitle": "យុទ្ធសាស្ត្រផ្ទាល់ខ្លួនសម្រាប់កត្តាជំរុញរបស់អ្នក",
+  "talkToAiCoach": "និយាយជាមួយគ្រូណែនាំ AI",
+  "talkToAiCoachSubtitle": "ជជែកជាមួយដៃគូស្តារនីតិសម្បទារបស់អ្នក",
+  "callSomeone": "ហៅទៅនរណាម្នាក់",
+  "callSomeoneSubtitle": "ទាក់ទងអ្នកដែលអ្នកទុកចិត្ត",
+  "contactsPermissionNeeded": "ត្រូវការការអនុញ្ញាតចូលប្រើទំនាក់ទំនងដើម្បីហៅទៅអ្នកណាម្នាក់។",
+  "beatenCravingsPrefix": "អ្នកបានយកឈ្នះចំណង់ចង់ផឹក ",
+  "beatenCravingsCount": "{count} ដង",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " ពីមុន។ អ្នកអាចធ្វើវាម្តងទៀតបាន។",
+
+  "tellUsAboutYourself": "ប្រាប់យើងអំពីខ្លួនអ្នក",
+  "detailsSubtitle": "ព័ត៌មាននេះជួយយើងកំណត់ដំណើរស្តារនីតិសម្បទារបស់អ្នកឱ្យសមស្រប និងផ្តល់ការយល់ដឹងត្រឹមត្រូវ។",
+  "nameLabel": "ឈ្មោះ",
+  "nameHint": "ឧ., Alex Rivers",
+  "ageLabel": "អាយុ",
+  "ageHint": "ឧ., 32",
+  "sexAssignedAtBirth": "ភេទដែលបានកំណត់នៅពេលកើត",
+  "sexFemale": "ស្រី",
+  "sexMale": "ប្រុស",
+  "heightLabel": "កម្ពស់",
+  "weightLabel": "ទម្ងន់",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "ដល់កម្រិតប្រចាំថ្ងៃ",
+  "dailyLimitReachedMessage": "អ្នកបានប្រើសារឥតគិតថ្លៃទាំង {limit} សម្រាប់ថ្ងៃនេះហើយ។ ដំឡើងទៅ Premium ដើម្បីជជែកជាមួយគ្រូណែនាំដោយគ្មានដែនកំណត់។",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "ខ្ញុំមិនអាចភ្ជាប់បាននៅពេលនេះទេ។ សូមព្យាយាមម្តងទៀតបន្តិចក្រោយ។",
+  "clearConversationTitle": "លុបការសន្ទនា?",
+  "clearConversationMessage": "វានឹងលុបប្រវត្តិជជែកជាមួយគ្រូណែនាំរបស់អ្នកជាអចិន្ត្រៃយ៍។",
+  "clearLabel": "លុប",
+  "recoveryCoachTitle": "គ្រូណែនាំការស្តារនីតិសម្បទា",
+  "onlineLabel": "អនឡាញ",
+  "clearConversationMenuItem": "លុបការសន្ទនា",
+  "chatGreeting": "សួស្តី {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "អ្នកស្ថិតនៅថ្ងៃទី {days} នៃដំណើររបស់អ្នក។ ខ្ញុំនៅទីនេះគ្រប់ពេលដែលអ្នកចង់និយាយ។",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "សំណួររហ័ស",
+  "promptCravingLabel": "កំពុងមានចំណង់ចង់ផឹក",
+  "promptCravingSubtitle": "ធ្វើឱ្យចិត្តស្ងប់យ៉ាងឆាប់រហ័ស",
+  "promptMotivationLabel": "ត្រូវការការលើកទឹកចិត្ត",
+  "promptMotivationSubtitle": "ការជំរុញនៅពេលពិបាក",
+  "promptSocialLabel": "ស្ថានភាពសង្គម",
+  "promptSocialSubtitle": "ដោះស្រាយការជួបជុំ",
+  "promptSlippedLabel": "ខ្ញុំបានភ្លាត់",
+  "promptSlippedSubtitle": "គ្មានការវិនិច្ឆ័យ មានតែការគាំទ្រ",
+  "typeMessageHint": "វាយសារ...",
+
+  "editProfileTitle": "កែសម្រួលប្រវត្តិរូប",
+  "couldNotSaveProfile": "មិនអាចរក្សាទុកប្រវត្តិរូបបានទេ៖ {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "កម្ពស់ (សម.)",
+  "weightKgLabel": "ទម្ងន់ (គីឡូក្រាម)",
+  "saveChangesLabel": "រក្សាទុកការផ្លាស់ប្តូរ",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "ការយល់ដឹង និងការវិភាគកម្រិតខ្ពស់",
+  "featureUnlimitedJournal": "កំណត់ហេតុគ្មានដែនកំណត់",
+  "featureUnlimitedChat": "ជជែកជាមួយគ្រូណែនាំ AI គ្មានដែនកំណត់",
+  "featureCommunityGroups": "ក្រុមសហគមន៍ផ្តាច់មុខ",
+  "featurePrioritySupport": "ជំនួយពីអ្នកជំនាញអាទិភាព",
+  "featureThemePacks": "កញ្ចប់រូបរាងផ្ទាល់ខ្លួន",
+  "featureDataExport": "នាំចេញទិន្នន័យ",
+  "featureAdFree": "បទពិសោធន៍គ្មានការផ្សាយពាណិជ្ជកម្ម",
+  "premiumMemberTitle": "អ្នកគឺជាសមាជិក Premium",
+  "unlockFullRecoveryTitle": "ដោះសោបទពិសោធន៍\nស្តារនីតិសម្បទាពេញលេញ",
+  "premiumMemberSubtitle": "អរគុណសម្រាប់ការគាំទ្រដំណើរស្តារនីតិសម្បទារបស់អ្នក — មុខងារ Premium ខាងក្រោមទាំងអស់ត្រូវបានដោះសោ។",
+  "premiumJoinSubtitle": "ចូលរួមជាមួយមនុស្សរាប់ពាន់នាក់ដែលកំពុង\nពន្លឿនដំណើរស្តារនីតិសម្បទារបស់ពួកគេជាមួយ\nឧបករណ៍ Premium និងការគាំទ្រផ្ទាល់ខ្លួន។",
+  "monthlyPlanLabel": "ប្រចាំខែ",
+  "perMonthSuffix": "/ខែ",
+  "cancelAnytimeLabel": "បោះបង់បានគ្រប់ពេល",
+  "yearlyPlanLabel": "ប្រចាំឆ្នាំ",
+  "billedAnnuallyLabel": "គិតថ្លៃប្រចាំឆ្នាំ {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "តម្លៃល្អបំផុត",
+  "alreadyPremiumLabel": "អ្នកជា Premium ✓",
+  "startPremiumLabel": "ចាប់ផ្តើម Premium",
+  "manageSubscriptionLabel": "គ្រប់គ្រង ឬបោះបង់ពីការកំណត់ការជាវរបស់ឧបករណ៍អ្នក។",
+  "noCommitmentLabel": "គ្មានការប្តេជ្ញាចិត្ត។ បោះបង់បានគ្រប់ពេល។",
+  "continueFreePlanLabel": "បន្តជាមួយគម្រោងឥតគិតថ្លៃ",
+  "backToHomeLabel": "ត្រឡប់ទៅទំព័រដើម",
+  "cancelPremiumLabel": "បោះបង់ Premium",
+  "cancelPremiumTitle": "បោះបង់ Premium?",
+  "cancelPremiumMessage": "អ្នកនឹងបាត់បង់សិទ្ធិប្រើកំណត់ហេតុគ្មានដែនកំណត់ ការជជែកជាមួយគ្រូណែនាំគ្មានដែនកំណត់ ការយល់ដឹងពីស្ថិតិ និងរបាយការណ៍ប្រចាំសប្តាហ៍។ អ្នកអាចជាវម្តងទៀតបានគ្រប់ពេល។",
+  "keepPremiumLabel": "រក្សា Premium",
+  "nowPremiumMessage": "ឥឡូវនេះអ្នកជា Premium ហើយ! រីករាយជាមួយបទពិសោធន៍ស្តារនីតិសម្បទាពេញលេញរបស់អ្នក។",
+  "premiumCancelledMessage": "Premium ត្រូវបានបោះបង់។ អ្នកត្រឡប់ទៅគម្រោងឥតគិតថ្លៃវិញ។",
+  "termsOfUseLabel": "លក្ខខណ្ឌប្រើប្រាស់",
+
+  "navHomeLabel": "ទំព័រដើម",
+  "navStatsLabel": "ស្ថិតិ",
+  "navJournalLabel": "កំណត់ហេតុ",
+  "navBadgesLabel": "ផ្លាកសញ្ញា",
+  "navProfileLabel": "ប្រវត្តិរូប",
+
+  "recoveryGoalsTitle": "គោលដៅស្តារនីតិសម្បទា",
+  "goalLabel": "គោលដៅ",
+  "drinksPerWeekLabel": "ភេសជ្ជៈក្នុងមួយសប្តាហ៍",
+  "quitReasonsLabel": "មូលហេតុចង់ឈប់",
+  "quitReasonsHelperText": "បំបែកមូលហេតុជាច្រើនដោយសញ្ញាក្បៀស។",
+  "couldNotSaveRecoveryGoals": "មិនអាចរក្សាទុកគោលដៅស្តារនីតិសម្បទាបានទេ៖ {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ឧ., ឈប់ទាំងស្រុង",
+  "drinksPerWeekHint": "ឧ., 12",
+  "quitReasonsHint": "ឧ., សុខភាព គ្រួសារ ប្រាក់",
+
+  "todaysPrompt": "សំណួរថ្ងៃនេះ",
+  "defaultJournalPrompt": "តើមានអ្វីនៅក្នុងគំនិតរបស់អ្នកថ្ងៃនេះ?",
+  "aiJournalInsights": "ការយល់ដឹងពីកំណត់ហេតុ AI",
+  "unlockJournalInsightsMessage": "ដោះសោលំនាំប្រចាំសប្តាហ៍ និន្នាការអារម្មណ៍ និងការយល់ដឹងផ្ទាល់ខ្លួនពីកំណត់ហេតុរបស់អ្នក។",
+  "notEnoughJournalData": "មិនទាន់មានទិន្នន័យគ្រប់គ្រាន់ទេ — សរសេរកំណត់ហេតុមួយចំនួនក្នុងសប្តាហ៍នេះ ហើយពិនិត្យម្តងទៀត។",
+  "openEntry": "បើក",
+  "editEntry": "កែសម្រួល",
+  "deleteEntry": "លុប",
+  "searchJournalEntries": "ស្វែងរកកំណត់ហេតុ...",
+  "writeNewEntry": "សរសេរកំណត់ហេតុថ្មី",
+  "recentEntries": "កំណត់ហេតុថ្មីៗ",
+  "noJournalEntriesYet": "មិនទាន់មានកំណត់ហេតុទេ — សរសេរការឆ្លុះបញ្ចាំងដំបូងរបស់អ្នកខាងលើ។",
+  "noEntriesMatchFilters": "គ្មានកំណត់ហេតុដែលត្រូវនឹងតម្រងរបស់អ្នកទេ។",
+
+  "weeklyJournalLimitReached": "ដល់កម្រិតប្រចាំសប្តាហ៍",
+  "weeklyJournalLimitMessage": "អ្នកបានប្រើកំណត់ហេតុឥតគិតថ្លៃទាំង {limit} សម្រាប់សប្តាហ៍នេះហើយ។ ដំឡើងទៅ Premium ដើម្បីប្រើកំណត់ហេតុគ្មានដែនកំណត់។",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "កំណត់ហេតុថ្មី",
+  "writeYourThoughts": "សរសេរគំនិតរបស់អ្នក",
+  "saveEntry": "រក្សាទុកកំណត់ហេតុ",
+  "freeEntriesLeftThisWeek": "នៅសល់ {remaining} ក្នុងចំណោម {limit} កំណត់ហេតុឥតគិតថ្លៃសម្រាប់សប្តាហ៍នេះ",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "លុបកំណត់ហេតុ?",
+  "deleteEntryConfirmation": "កំណត់ហេតុនេះនឹងត្រូវបានលុបជាអចិន្ត្រៃយ៍។ វាមិនអាចត្រឡប់វិញបានទេ។",
+
+  "journalEntryNotFound": "រកមិនឃើញកំណត់ហេតុ",
+  "journalEntryMayHaveBeenDeleted": "កំណត់ហេតុនេះប្រហែលជាត្រូវបានលុបហើយ។",
+  "goBack": "ត្រឡប់ក្រោយ",
+  "journalEntryTitle": "កំណត់ហេតុ",
+
+  "moodStruggling": "កំពុងជួបការលំបាក",
+  "moodUnwell": "មិនស្រួល",
+  "moodNeutral": "អព្យាក្រឹត",
+
+  "whatHappenedToday": "តើថ្ងៃនេះមានអ្វីកើតឡើង?",
+  "trigger": "កត្តាជំរុញ",
+  "whatHelped": "អ្វីដែលបានជួយ",
+  "whatIllTryNextTime": "អ្វីដែលខ្ញុំនឹងសាកល្បងលើកក្រោយ",
+  "journalPrivacyMessage": "ការឆ្លុះបញ្ចាំងរបស់អ្នកជាឯកជន ហើយត្រូវបានរក្សាទុកក្នុងកំណត់ហេតុរបស់អ្នក។",
+
+  "unlocked": "បានដោះសោ",
+  "daysLeft": "នៅសល់ {count} ថ្ងៃ",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} ថ្ងៃ",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "ការឆ្លុះបញ្ចាំង\nដំបូង",
+  "oneJournalEntry": "កំណត់ហេតុ 1",
+  "openBook": "បើកសៀវភៅ",
+  "tenJournalEntries": "កំណត់ហេតុ 10",
+  "dedicatedWriter": "អ្នកសរសេរ\nឧស្សាហ៍ព្យាយាម",
+  "thirtyJournalEntries": "កំណត់ហេតុ 30",
+  "firstConversation": "ការសន្ទនា\nដំបូង",
+  "oneAiCoachChat": "ជជែកជាមួយគ្រូ AI 1 ដង",
+  "keepTalking": "បន្តនិយាយ",
+  "fiveConversations": "ការសន្ទនា 5",
+  "coachCompanion": "ដៃគូ\nគ្រូណែនាំ",
+  "twentyConversations": "ការសន្ទនា 20",
+  "checkInHabit": "ទម្លាប់\nឆែក",
+  "sevenCheckIns": "ការឆែក 7",
+  "consistencyPro": "អ្នកជំនាញ\nភាពទៀងទាត់",
+  "thirtyCheckIns": "ការឆែក 30",
+  "dedicatedJourney": "ដំណើរ\nឧស្សាហ៍ព្យាយាម",
+  "hundredCheckIns": "ការឆែក 100",
+  "goalGetter": "អ្នកសម្រេចគោលដៅ",
+  "threeGoalsCompleted": "បានបញ្ចប់គោលដៅ 3",
+  "goalAchiever": "អ្នកសម្រេច\nគោលដៅ",
+  "tenGoalsCompleted": "បានបញ្ចប់គោលដៅ 10",
+  "firstSavings": "ការសន្សំ\nដំបូង",
+  "fiveHundredSaved": "បានសន្សំ $500",
+  "smartSaver": "អ្នកសន្សំឆ្លាតវៃ",
+  "oneThousandSaved": "បានសន្សំ $1,000",
+  "bigSaver": "អ្នកសន្សំធំ",
+  "fiveThousandSaved": "បានសន្សំ $5,000",
+  "currencyProgress": "${current} ក្នុងចំណោម ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} ក្នុងចំណោម {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "បន្តទៅមុខ — សមិទ្ធផលដំបូងរបស់អ្នកកំពុងរង់ចាំ!",
+  "badgesAndMilestones": "ផ្លាកសញ្ញា និងសមិទ្ធផល",
+  "yourMilestoneJourney": "ដំណើរសមិទ្ធផលរបស់អ្នក",
+  "milestonesAchieved": "សម្រេចបាន {count} សមិទ្ធផល។\nចុចដើម្បីមើល",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "អ្នកបានដោះសោ {unlocked} ក្នុងចំណោម {total} សមិទ្ធផលក្នុងដំណើររបស់អ្នក។",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "នៅសល់",
+  "complete": "បានបញ្ចប់",
+  "nextMilestone": "សមិទ្ធផលបន្ទាប់",
+  "percentThere": "{subtitle} · {percent}% បានសម្រេច",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "សមិទ្ធផលមិនផឹកស្រា",
+  "journeyBadges": "ផ្លាកសញ្ញាដំណើរ",
+  "bronze": "សំរឹទ្ធ",
+  "silver": "ប្រាក់",
+  "gold": "មាស",
+  "platinum": "ផ្លាទីន",
+  "diamond": "ពេជ្រ",
+
+  "analyzingYourJourney": "កំពុងវិភាគដំណើររបស់អ្នក...",
+  "aiCreatingSanctuary": "AI របស់យើងកំពុងបង្កើតកន្លែងស្តារនីតិសម្បទាផ្ទាល់ខ្លួនរបស់អ្នក។",
+  "understandingHabits": "កំពុងយល់ដឹងអំពីទម្លាប់...",
+  "calculatingBaseline": "កំពុងគណនាកម្រិតមូលដ្ឋានរបស់អ្នក...",
+  "personalizingPlan": "កំពុងកំណត់ផែនការរបស់អ្នកតាមបុគ្គល...",
+  "finalizingSanctuary": "កំពុងបញ្ចប់កន្លែងស្តារនីតិសម្បទារបស់អ្នក...",
+  "creatingYourPlan": "កំពុងបង្កើតផែនការរបស់អ្នក...",
+  "personalizedPlanError": "យើងមិនអាចបង្កើតផែនការផ្ទាល់ខ្លួនរបស់អ្នកបានទេ។ សូមព្យាយាមម្តងទៀត។",
+  "retry": "ព្យាយាមម្តងទៀត",
+
+  "breathingExercise": "លំហាត់ដកដង្ហើម",
+  "breathInhale": "ដកដង្ហើមចូល",
+  "breathHold": "ទប់",
+  "breathExhale": "ដកដង្ហើមចេញ",
+  "breathDone": "រួចរាល់",
+  "breathGreatJob": "ធ្វើបានល្អណាស់!",
+  "remaining": "នៅសល់",
+  "breathSessionsToday": "{count, plural, one{{count} វគ្គថ្ងៃនេះ} other{{count} វគ្គថ្ងៃនេះ}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "បញ្ចប់លំហាត់",
+  "done": "រួចរាល់",
+
+  "noCopingTipsYet": "មិនទាន់មានគន្លឹះដោះស្រាយទេ",
+  "copingStrategiesWillAppear": "យុទ្ធសាស្ត្រដោះស្រាយផ្ទាល់ខ្លួនរបស់អ្នកនឹងបង្ហាញនៅទីនេះ នៅពេលផែនការស្តារនីតិសម្បទារបស់អ្នកបញ្ចប់ការបង្កើត។",
+  "strategiesTailoredToTriggers": "យុទ្ធសាស្ត្រដែលសម្របតាមកត្តាជំរុញរបស់អ្នក",
+
+  "rideTheWave": "ឆ្លងកាត់រលក",
+  "cravingsPeakAndPass": "ចំណង់ចង់ផឹកកើនដល់កំពូល\nហើយកន្លងផុតទៅ",
+  "rideTheWaveDescription": "ចំណង់ចង់ផឹកភាគច្រើនកន្លងផុតទៅក្នុងរយៈពេល 15 នាទី។ អ្នកមិនចាំបាច់ធ្វើតាមវាទេ — គ្រាន់តែឆ្លងកាត់វាជាមួយយើង។",
+  "stayWithIt": "បន្តនៅជាមួយវា",
+  "youMadeIt": "អ្នកបានធ្វើបាន",
+  "readyWhenYouAre": "នៅពេលអ្នករួចរាល់",
+  "rideItAgain": "ឆ្លងកាត់ម្តងទៀត",
+  "start15MinuteTimer": "ចាប់ផ្តើមកម្មវិធីកំណត់ពេល 15 នាទី",
+  "rideTheWaveCompletedMessage": "អ្នកបានឆ្លងកាត់រលកហើយ។ នោះគឺជាកម្លាំងពិតប្រាកដ។ 💪",
+
+  "myProgress": "វឌ្ឍនភាពរបស់ខ្ញុំ",
+  "weekLabel": "សប្តាហ៍",
+  "monthLabel": "ខែ",
+  "allLabel": "ទាំងអស់",
+  "daysSoberStatLabel": "ថ្ងៃ\nមិនផឹកស្រា",
+  "savedStatLabel": "បានសន្សំ",
+  "avoidedStatLabel": "បានជៀសវាង",
+  "moodTrends": "និន្នាការអារម្មណ៍",
+  "cravingsPattern": "លំនាំចំណង់ចង់ផឹក",
+  "unlockLabel": "ដោះសោ",
+  "unlockFullStats": "ដោះសោស្ថិតិពេញលេញ",
+  "premiumStatsMessage": "និន្នាការអារម្មណ៍ និងលំនាំចំណង់ចង់ផឹកគឺជាមុខងារ Premium។ ដំឡើងដើម្បីមើលស្ថិតិពេញលេញរបស់អ្នក។",
+  "healthMilestonesWillAppear": "សមិទ្ធផលសុខភាពរបស់អ្នកនឹងបង្ហាញនៅទីនេះ។",
+  "healthMilestones": "សមិទ្ធផលសុខភាព",
+  "dayNumber": "ថ្ងៃទី {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "មិនផឹកស្រា",
+  "slipLabel": "ភ្លាត់ផឹក",
+  "noDataLabel": "គ្មានទិន្នន័យ",
+
+  "milestone24Hours": "24 ម៉ោង",
+  "milestoneOneWeek": "មួយសប្តាហ៍",
+  "milestoneOneMonth": "មួយខែ",
+  "milestoneThreeMonths": "បីខែ",
+  "milestoneSixMonths": "ប្រាំមួយខែ",
+  "milestoneOneYear": "មួយឆ្នាំ",
+  "milestoneDayCount": "សមិទ្ធផលថ្ងៃទី {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "គោលការណ៍ឯកជនភាព"
+}

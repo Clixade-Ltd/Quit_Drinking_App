@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../constants/app_colors.dart';
 import '../../../models/user_details_draft.dart';
+import '../../../services/analytics_service.dart';
 import '../../analyzing_jorney/analyzing_journey_screen.dart';
 import '../question1/question1_content.dart';
 import '../question3/question3_content.dart';
@@ -96,6 +97,12 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
           '* Motivations: ${answers.quitReasons.join(', ')}',
     );
 
+    // NOTE: personalizedPlanGenerated()/personalizedPlanFailed() and the
+    // real onboardingComplete() event most likely belong inside
+    // AnalyzingJourneyScreen, once the plan generation actually
+    // succeeds/fails and the onboardingCompleted profile flag gets set —
+    // not here, since at this point the plan hasn't been generated yet.
+
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
         builder: (_) => const AnalyzingJourneyScreen(),
@@ -158,6 +165,14 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
                   setState(() {
                     _currentPage = index;
                   });
+
+                  // NEW — a step within the questions flow was reached.
+                  // Step index is local to this flow (0 = goal,
+                  // 1 = drinking level/triggers, 2 = quit reasons). If you'd
+                  // rather have this continue the numbering from the
+                  // intro OnboardingScreen's two steps, let me know and
+                  // I'll offset it (e.g. index + 2).
+                  AnalyticsService.instance.onboardingStepComplete(index);
                 },
                 children: [
                   Question1Content(

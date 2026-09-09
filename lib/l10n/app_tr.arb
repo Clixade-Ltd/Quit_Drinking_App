@@ -10,6 +10,15 @@
   "onboardingTitle2": "Yapay Zeka Destekli İyileşme Yoldaşın",
   "onboardingSubtitle2": "Yolculuğuna özel kişiselleştirilmiş rehberlik, sağlıklı alışkanlıklar, motivasyon hatırlatıcıları ve gelişim raporları al.",
 
+  "maybeLaterLabel": "Belki sonra",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "İptal",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
   "goodMorning": "Günaydın",
   "goodAfternoon": "Tünaydın",
   "goodEvening": "İyi Akşamlar",
@@ -70,7 +79,7 @@
   "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
 
   "appWordmark": "SAĞLIK & YAŞAM",
-  "appTitle": "Sober Flow",
+  "appTitle": "İçkiyi Bırak",
   "splashSubtitle": "Alkolsuz bir hayata doğru\nilk adımı atın",
   "preparingJourney": "Yolculuğunuz\nhazırlanıyor",
 

@@ -1,0 +1,577 @@
+{
+  "@@locale": "fi",
+
+  "skip": "Ohita",
+  "continueButton": "Jatka",
+  "getStarted": "Aloita",
+
+  "maybeLaterLabel": "Ehkä myöhemmin",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Peruuta",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "Ota elämäsi hallintaan",
+  "onboardingSubtitle1": "Seuraa matkaasi, juhlista jokaista saavutusta ja tule terveemmäksi päivä päivältä.",
+  "onboardingTitle2": "Tekoälypohjainen toipumiskumppanisi",
+  "onboardingSubtitle2": "Saa henkilökohtaista ohjausta, terveellisiä tavoiteltavia tapoja, motivaatiomuistutuksia ja edistymisraportteja.",
+
+  "goodMorning": "Hyvää huomenta",
+  "goodAfternoon": "Hyvää iltapäivää",
+  "goodEvening": "Hyvää iltaa",
+  "goodNight": "Hyvää yötä",
+
+  "embracingClarity": "Kohti selkeyttä, päivä kerrallaan.",
+  "streakLabel": "PUTKI",
+  "goalLabel": "TAVOITE",
+  "daysStreak": "{count, plural, one{{count} päivä} other{{count} päivää}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium-tilaus",
+  "premiumPlanSubtitle": "Avaa täysi toipumiskokemuksesi",
+
+  "accountAndSupport": "TILI JA TUKI",
+  "privacyPolicy": "Tietosuojaseloste",
+  "privacyPolicySubtitle": "Hallitse tietojen jakoa ja tilin turvallisuutta",
+  "termsOfService": "Käyttöehdot",
+  "termsOfServiceSubtitle": "UKK, ota yhteyttä ja resurssit",
+  "shareApp": "Jaa sovellus",
+  "shareAppSubtitle": "Jaa sovellus ystäviesi kanssa",
+  "resetData": "Nollaa tiedot",
+  "resetDataSubtitle": "Poista kaikki tälle laitteelle tallennetut tiedot",
+
+  "resetAllDataTitle": "Nollataanko kaikki tiedot?",
+  "resetAllDataMessage": "Tämä poistaa kaikki tälle laitteelle tallennetut tiedot — profiilin, päiväkirjamerkinnät ja edistymisen — eikä toimintoa voi peruuttaa.",
+  "cancel": "Peruuta",
+  "reset": "Nollaa",
+
+  "chooseFromGallery": "Valitse galleriasta",
+  "takePhoto": "Ota kuva",
+  "removePhoto": "Poista kuva",
+  "couldNotUpdatePhoto": "Kuvan päivitys epäonnistui: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Kuvan poisto epäonnistui: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Kuva on liian suuri jopa pakkaamisen jälkeen — kokeile toista kuvaa.",
+
+  "unableToLoadProfile": "Profiiliasi ei voitu ladata",
+  "pleaseTryAgain": "Yritä uudelleen.",
+  "tryAgain": "Yritä uudelleen",
+  "profileNotFound": "Profiilia ei löytynyt",
+  "refresh": "Päivitä",
+  "noProfileDataFound": "Tältä laitteelta ei löytynyt vielä profiilitietoja.",
+
+  "couldNotResetData": "Tietojen nollaus epäonnistui: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Koti",
+  "navStats": "Tilastot",
+  "navJournal": "Päiväkirja",
+  "navBadges": "Merkit",
+  "navProfile": "Profiili",
+
+  "featureComingSoon": "{feature} on pian saatavilla.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELLNESS",
+  "appTitle": "Lopeta juominen",
+  "splashSubtitle": "Ota ensimmäinen askel kohti\nalkoholitonta elämää",
+  "preparingJourney": "Valmistellaan\nmatkaasi",
+
+  "taskMorningMeditation": "Aamumeditaatio (10 min)",
+  "taskReadChapter": "Lue luku 4 kirjasta \"The Sober Diaries\"",
+  "taskEveningJournal": "Iltapäivän kiitollisuuspäiväkirja",
+
+  "close": "Sulje",
+  "youAreDoingGreat": "Teet upeaa työtä!",
+  "shareMilestone": "Jaa saavutus",
+  "shareMilestoneMessage": "Olen toipumismatkani päivässä {days}! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Minun toipumissaavutukseni",
+
+  "weeklyReportReadyTitle": "Viikkoraporttisi on valmis",
+  "weeklyReportReadySubtitle": "Napauta nähdäksesi, miten viikkosi sujui",
+
+  "howAreYouFeeling": "Miltä sinusta tuntuu?",
+  "moodTough": "Raskas",
+  "moodOkay": "Ihan ok",
+  "moodGood": "Hyvä",
+
+  "moneySaved": "Rahaa säästetty",
+  "caloriesSaved": "Kaloreita säästetty",
+  "healthScore": "Terveyspisteet",
+  "drinksAvoided": "Vältetyt annokset",
+  "estimated": "Arvioitu",
+  "aiGenerated": "Tekoälyn luoma",
+  "daysCapsLabel": "PÄIVÄÄ",
+
+  "todaysMotivation": "Päivän motivaatio",
+  "defaultMotivationQuote": "Olet pitänyt lupauksesi menestyksekkäästi. Jatka positiivisen muutoksen aallolla ratsastamista.",
+
+  "talkToCoach": "Puhu valmentajalle",
+  "havingACraving": "Minun tekee mieli",
+
+  "unlockWeeklyReportsTitle": "Avaa viikkoraportit",
+  "unlockWeeklyReportsMessage": "Näe raittiit päiväsi, mielialatrendisi ja henkilökohtainen tekoälypalaute joka viikko. Päivitä Premiumversioon avataksesi toiminnot.",
+  "maybeLater": "Ehkä myöhemmin",
+  "upgrade": "Päivitä",
+
+  "weeklyReportTitle": "Viikkoraportti",
+  "weeklyReportsPremiumTitle": "Viikkoraportit ovat Premium-ominaisuus",
+  "weeklyReportsPremiumMessage": "Näe raittiit päiväsi, mielialatrendisi, mieliteot ja henkilökohtainen tekoälypalaute joka viikko.",
+  "upgradeToPremium": "Päivitä Premium-versioon",
+  "couldNotGenerateReport": "Raporttia ei voitu luoda juuri nyt.",
+  "tryAgainLower": "Kokeile uudelleen",
+
+  "statSoberDays": "Raittiit päivät",
+  "statAvgMood": "Keskim. mieliala",
+  "statCravings": "Mieliteot",
+  "statMoneySaved": "Säästetty raha",
+  "coachFeedback": "Valmentajan palaute",
+  "journalInsights": "Päiväkirjaoivallukset",
+
+  "next": "Seuraava",
+
+  "question1Title": "Mikä on tavoitteesi",
+  "question1Subtitle": "Valitse tavoite, joka on sinulle\ntärkein",
+  "goalQuitCompletely": "Lopeta kokonaan",
+  "goalReduceDrinking": "Vähennä juomista",
+  "goalTakeABreak": "Pidä tauko",
+  "goalBuildHealthierHabits": "Rakenna terveellisempiä tapoja",
+
+  "question3Title": "Kerro meille\nrutiinistasi",
+  "drinksPerWeek": "Annoksia viikossa",
+  "moneySpentPerWeek": "Rahaa käytetty viikossa",
+  "drinkingLevel": "Juomisen taso",
+  "triggersLabel": "Laukaisimet",
+  "levelSocial": "Sosiaalinen",
+  "levelRegular": "Säännöllinen",
+  "levelHeavy": "Runsasaikaista",
+  "levelDependent": "Riippuvainen",
+  "triggerStress": "Stressi",
+  "triggerLoneliness": "Yksinäisyys",
+  "triggerHabit": "Tapa",
+  "triggerSadness": "Suru",
+  "triggerAnger": "Viha",
+  "triggerBoredom": "Tylsyys",
+  "triggerSocialPressure": "Sosiaalinen paine",
+  "triggerCelebration": "Juhliminen",
+  "triggerSleepProblems": "Univaikeudet",
+  "triggerWorkPressure": "Työpaineet",
+
+  "question4Title": "Miksi haluat muuttua?",
+  "question4Subtitle": "Syysi auttaa motivoimaan sinua.",
+  "reasonImproveHealth": "Parantaa terveyttäni",
+  "reasonSaveMoney": "Säästää rahaa",
+  "reasonFamily": "Perhe",
+  "reasonBetterSleep": "Parempi uni",
+  "reasonMentalClarity": "Mielen selkeys",
+  "reasonFitness": "Kuntoilu",
+  "reasonSelfRespect": "Iseunnustus",
+  "reasonCareer": "Ura",
+
+  "milestoneUnlockedLabel": "SAAVUTUS AVATTU",
+  "incredibleNamePrefix": "Upeaa, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} säästetty",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} vältetty",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Jaa saavutukseni",
+  "milestoneImageShareError": "Saavutuskunvan luominen epäonnistui. Yritä uudelleen.",
+
+  "dailyCheckInTitle": "Päivittäinen kirjautuminen",
+  "howAreYouFeelingToday": "Miltä sinusta tuntuu tänään?",
+  "honestAnswerHelp": "Rehellinen vastauksesi auttaa meitä tukemaan sinua paremmin",
+  "didYouDrinkToday": "Joitko tänään?",
+  "noLabel": "En",
+  "yesLabel": "Kyllä",
+  "cravingLevelNow": "Mieliteon taso juuri nyt?",
+  "anythingOnMind": "Onko jotain mielessäsi?",
+  "optionalLabel": "(valinnainen)",
+  "dailyNoteHint": "Kirjoita päivästäsi, laukaisimista, onnistumisista...",
+  "alreadyCheckedInToday": "Olet jo kirjautunut tänään",
+  "saveCheckIn": "Tallenna kirjautuminen",
+  "checkInsHelpTrack": "Kirjautumiset auttavat seuraamaan edistymistäsi ajan myötä",
+  "alreadyCompletedTodayCheckIn": "Olet jo suorittanut tämän päivän kirjautumisen.",
+  "pleaseAnswerBothQuestions": "Vastaa ensin molempiin yllä oleviin kysymyksiin",
+  "checkInSaved": "Kirjautuminen tallennettu",
+  "cravingNone": "Ei yhtään",
+  "cravingLow": "Matala",
+  "cravingMedium": "Kohtalainen",
+  "cravingStrong": "Voimakas",
+  "moodBad": "Huono",
+  "moodLow": "Alhainen",
+  "moodOkay": "Ihan ok",
+  "moodGood": "Hyvä",
+  "moodGreat": "Maanmainio",
+
+  "sosSupportTitle": "SOS-tuki",
+  "notAloneMessage": "Et ole yksin, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Mieliteot menevät ohi. Valitse alta jotain, joka auttaa sinua tämän hetken yli.",
+  "breathingExercise": "Hengitysharjoitus",
+  "breathingExerciseSubtitle": "Ohjattu 4-7-8 tekniikka, 2 minuuttia",
+  "rideTheWave": "Ratsasta aallolla",
+  "rideTheWaveSubtitle": "15 minuutin ajastin — mieliteot menevät aina ohi",
+  "copingTips": "Selviytymisvinkit",
+  "copingTipsSubtitle": "Henkilökohtaiset strategiat laukaisimillesi",
+  "talkToAiCoach": "Puhu tekoälyvalmentajalle",
+  "talkToAiCoachSubtitle": "Keskustele toipumiskumppanisi kanssa",
+  "callSomeone": "Soita jollekulle",
+  "callSomeoneSubtitle": "Tavoita luotettu yhteyshenkilösi",
+  "contactsPermissionNeeded": "Yhteystietolupa tarvitaan soiton tekemiseen.",
+  "beatenCravingsPrefix": "Olet voittanut mieliteot jo ",
+  "beatenCravingsCount": "{count} kertaa",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " aiemmin. Pystyt siihen uudelleen.",
+
+  "tellUsAboutYourself": "Kerro meille itsestäsi",
+  "detailsSubtitle": "Nämä tiedot auttavat meitä mukauttamaan toipumismatkaasi ja tarjoamaan tarkkoja oivalluksia.",
+  "nameLabel": "Nimi",
+  "nameHint": "esim. Alex Rivers",
+  "ageLabel": "Ikä",
+  "ageHint": "esim. 32",
+  "sexAssignedAtBirth": "Syntymässä määritetty sukupuoli",
+  "sexFemale": "Nainen",
+  "sexMale": "Mies",
+  "heightLabel": "Pituus",
+  "weightLabel": "Paino",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Päivittäinen raja saavutettu",
+  "dailyLimitReachedMessage": "Olet käyttänyt kaikki {limit} ilmaista viestiä tänään. Päivitä Premium-versioon saadaksesi rajoittamattoman keskustelun valmentajan kanssa.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Yhteyttä ei saatu muodostettua juuri nyt. Yritä hetken kuluttua uudelleen.",
+  "clearConversationTitle": "Tyhjennetäänkö keskustelu?",
+  "clearConversationMessage": "Tämä poistaa valmentajan keskusteluhistorian pysyvästi.",
+  "clearLabel": "Tyhjennä",
+  "recoveryCoachTitle": "Toipumisvalmentaja",
+  "onlineLabel": "Paikalla",
+  "clearConversationMenuItem": "Tyhjennä keskustelu",
+  "chatGreeting": "Hei {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Olet matkasi päivässä {days}. Olen täällä aina, kun haluat jutella asioista.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "PIKAVINKIT",
+  "promptCravingLabel": "Tekee mieli juoda",
+  "promptCravingSubtitle": "Palaa todellisuuteen, nopeasti",
+  "promptMotivationLabel": "Tarvitsen motivaatiota",
+  "promptMotivationSubtitle": "Piristystä vaikeaan hetkeen",
+  "promptSocialLabel": "Sosiaalinen tilanne",
+  "promptSocialSubtitle": "Selviydy juhlissa",
+  "promptSlippedLabel": "Sorruin juomaan",
+  "promptSlippedSubtitle": "Ei tuomitsemista, vain tukea",
+  "typeMessageHint": "Kirjoita viesti...",
+
+  "editProfileTitle": "Muokkaa profiilia",
+  "couldNotSaveProfile": "Profiilia ei voitu tallentaa: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Pituus (cm)",
+  "weightKgLabel": "Paino (kg)",
+  "saveChangesLabel": "Tallenna muutokset",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Edistyneet oivallukset ja analitikka",
+  "featureUnlimitedJournal": "Rajoittamattomat päiväkirjamerkinnät",
+  "featureUnlimitedChat": "Rajoittamaton chatti tekoälyvalmentajan kanssa",
+  "featureCommunityGroups": "Yksinoikeudelliset yhteisöryhmät",
+  "featurePrioritySupport": "Priorisoitu asiantuntijatuki",
+  "featureThemePacks": "Mukautetut teemapaketit",
+  "featureDataExport": "Tietojen vienti",
+  "featureAdFree": "Mainokseton kokemus",
+  "premiumMemberTitle": "Olet Premium-jäsen",
+  "unlockFullRecoveryTitle": "Avaa täysi toipumis-\nkokemuksesi",
+  "premiumMemberSubtitle": "Kiitos toipumismatkasi tukemisesta — kaikki alla olevat Premium-ominaisuudet ovat käytössäsi.",
+  "premiumJoinSubtitle": "Liity tuhansien joukkoon, jotka nopeuttavat toipumistaan Premium-työkaluillamme ja henkilökohtaisella tuellamme.",
+  "monthlyPlanLabel": "Kuukausittain",
+  "perMonthSuffix": "/kk",
+  "cancelAnytimeLabel": "Peruuta milloin vain",
+  "yearlyPlanLabel": "Vuosittain",
+  "billedAnnuallyLabel": "Laskutetaan vuosittain hinnalla {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Paras arvo",
+  "alreadyPremiumLabel": "Olet Premium-käyttäjä ✓",
+  "startPremiumLabel": "Aloita Premium",
+  "manageSubscriptionLabel": "Hallitse tai peruuta laitteesi tilausasetuksista.",
+  "noCommitmentLabel": "Ei sitoutumista. Peruuta milloin vain.",
+  "continueFreePlanLabel": "Jatka ilmaisversiolla",
+  "backToHomeLabel": "Takaisin kotiin",
+  "cancelPremiumLabel": "Peruuta Premium",
+  "cancelPremiumTitle": "Peruutetaanko Premium?",
+  "cancelPremiumMessage": "Menetät pääsyn rajoittamattomiin päiväkirjamerkintöihin, valmentajachattiin, tilasto-oivalluksiin ja viikkoraportteihin. Voit tilata uudelleen milloin vain.",
+  "keepPremiumLabel": "Pidä Premium",
+  "nowPremiumMessage": "Olet nyt Premium-käyttäjä! Nauti täydestä toipumiskokemuksestasi.",
+  "premiumCancelledMessage": "Premium peruutettu. Olet palannut ilmaisversioon.",
+  "termsOfUseLabel": "Käyttöehdot",
+
+  "navHomeLabel": "Koti",
+  "navStatsLabel": "Tilastot",
+  "navJournalLabel": "Päiväkirja",
+  "navBadgesLabel": "Merkit",
+  "navProfileLabel": "Profiili",
+
+  "recoveryGoalsTitle": "Toipumistavoitteet",
+  "quitReasonsLabel": "Lopettamisen syyt",
+  "quitReasonsHelperText": "Erota useat syyt pilkulla.",
+  "couldNotSaveRecoveryGoals": "Toipumistavoitteita ei voitu tallentaa: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "esim. Täysi raittius",
+  "drinksPerWeekHint": "esim. 12",
+  "quitReasonsHint": "esim. Terveys, Perhe, Raha",
+
+  "todaysPrompt": "Päivän aihe",
+  "defaultJournalPrompt": "Mitä mielessäsi on tänään?",
+  "aiJournalInsights": "Tekoälyn päiväkirjaoivallukset",
+  "unlockJournalInsightsMessage": "Avaa viikoittaiset kaavat, mielialatrendit ja henkilökohtaiset oivallukset päiväkirjamerkinnöistäsi.",
+  "notEnoughJournalData": "Ei vielä riittävästi tietoja — kirjoita muutama merkintä tällä viikolla ja palaa asiaan.",
+  "openEntry": "Avaa",
+  "editEntry": "Muokkaa",
+  "deleteEntry": "Poista",
+  "searchJournalEntries": "Etsi merkintöjä...",
+  "writeNewEntry": "Kirjoita uusi merkintä",
+  "recentEntries": "Viimeisimmät merkinnät",
+  "noJournalEntriesYet": "Ei vielä päiväkirjamerkintöjä — kirjoita ensimmäinen pohdintasi yllä.",
+  "noEntriesMatchFilters": "Mikään merkintä ei vastaa suodattimiasi.",
+
+  "weeklyJournalLimitReached": "Viikkoraja saavutettu",
+  "weeklyJournalLimitMessage": "Olet käyttänyt kaikki {limit} ilmaista päiväkirjamerkintää tällä viikolla. Päivitä Premium-versioon saadaksesi rajoittamattomasti merkintöjä.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Uusi merkintä",
+  "writeYourThoughts": "Kirjoita ajatuksesi",
+  "saveEntry": "Tallenna merkintä",
+  "freeEntriesLeftThisWeek": "{remaining} / {limit} ilmaista merkintää jäljellä tällä viikolla",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Poistetaanko merkintä?",
+  "deleteEntryConfirmation": "Tämä merkintä poistetaan pysyvästi. Tätä ei voi peruuttaa.",
+
+  "journalEntryNotFound": "Merkintää ei löytynyt",
+  "journalEntryMayHaveBeenDeleted": "Tämä päiväkirjamerkintä on saattanut tulla poistetuksi.",
+  "goBack": "Mene takaisin",
+  "journalEntryTitle": "Päiväkirjamerkintä",
+
+  "moodStruggling": "Kamppailee",
+  "moodUnwell": "Huonovointinen",
+  "moodNeutral": "Neutraali",
+
+  "whatHappenedToday": "Mitä tapahtui tänään?",
+  "trigger": "Laukaisin",
+  "whatHelped": "Mikä auttoi",
+  "whatIllTryNextTime": "Mitä kokeilen ensi kerralla",
+  "journalPrivacyMessage": "Pohdintasi on yksityinen ja se tallennetaan päiväkirjaasi.",
+
+  "unlocked": "Avattu",
+  "daysLeft": "{count, plural, one{{count} päivä jäljellä} other{{count} päivää jäljellä}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Päivää",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Ensimmäinen\npohdinta",
+  "oneJournalEntry": "1 päiväkirjamerkintä",
+  "openBook": "Avoin kirja",
+  "tenJournalEntries": "10 päiväkirjamerkintää",
+  "dedicatedWriter": "Omistautunut\nkirjoittaja",
+  "thirtyJournalEntries": "30 päiväkirjamerkintää",
+  "firstConversation": "Ensimmäinen\nkeskustelu",
+  "oneAiCoachChat": "1 tekoälyvalmentajan chatti",
+  "keepTalking": "Jatka puhumista",
+  "fiveConversations": "5 keskustelua",
+  "coachCompanion": "Valmentajan\nkumppani",
+  "twentyConversations": "20 keskustelua",
+  "checkInHabit": "Kirjautumis-\ntapa",
+  "sevenCheckIns": "7 kirjautumista",
+  "consistencyPro": "Säännöllisyys-\nmestari",
+  "thirtyCheckIns": "30 kirjautumista",
+  "dedicatedJourney": "Omistautunut\nmatka",
+  "hundredCheckIns": "100 kirjautumista",
+  "goalGetter": "Tavoitteen saavuttaja",
+  "threeGoalsCompleted": "3 tavoitetta suoritettu",
+  "goalAchiever": "Tavoitteiden\ntoteuttaja",
+  "tenGoalsCompleted": "10 tavoitetta suoritettu",
+  "firstSavings": "Ensimmäiset\nsäästöt",
+  "fiveHundredSaved": "$500 säästetty",
+  "smartSaver": "Viisas säästäjä",
+  "oneThousandSaved": "$1 000 säästetty",
+  "bigSaver": "Suursäästäjä",
+  "fiveThousandSaved": "$5 000 säästetty",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Jatka samaan malliin — ensimmäinen saavutuksesi odottaa sinua!",
+  "badgesAndMilestones": "Merkit ja saavutukset",
+  "yourMilestoneJourney": "Saavutusmatkasi",
+  "milestonesAchieved": "{count, plural, one{{count} saavutus saavutettu.\nNapauta katsoaksesi} other{{count} saavutusta saavutettu.\nNapauta katsoaksesi}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Olet avannut {unlocked} / {total} saavutuksesta matkallasi.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Jäljellä",
+  "complete": "Valmis",
+  "nextMilestone": "Seuraava saavutus",
+  "percentThere": "{subtitle} · {percent}% valmiina",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Raittius saavutukset",
+  "journeyBadges": "Matkamerkit",
+  "bronze": "PRONSSI",
+  "silver": "HOPEA",
+  "gold": "KULTA",
+  "platinum": "PLATINA",
+  "diamond": "TIMANTTI",
+
+  "analyzingYourJourney": "Analysoidaan matkaasi...",
+  "aiCreatingSanctuary": "Tekoälymme luo henkilökohtaista turvapaikkaasi.",
+  "understandingHabits": "Ymmärretään tapojasi...",
+  "calculatingBaseline": "Lasketaan lähtötasoasi...",
+  "personalizingPlan": "Mukautetaan suunnitelmaasi...",
+  "finalizingSanctuary": "Viimeistellään turvapaikkaasi...",
+  "creatingYourPlan": "Luodaan suunnitelmaasi...",
+  "personalizedPlanError": "Henkilökohtaista suunnitelmaasi ei voitu luoda. Yritä uudelleen.",
+  "retry": "Yritä uudelleen",
+
+  "breathInhale": "HENGITÄ SISÄÄN",
+  "breathHold": "PIDÄTÄ",
+  "breathExhale": "HENGITÄ ULOS",
+  "breathDone": "VALMIS",
+  "breathGreatJob": "Hienoa työtä!",
+  "breathSessionsToday": "{count, plural, one{{count} sessio tänään} other{{count} sessiota tänään}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Lopeta harjoitus",
+  "done": "Valmis",
+
+  "noCopingTipsYet": "Ei vielä selviytymisvinkkejä",
+  "copingStrategiesWillAppear": "Henkilökohtaiset selviytymisstrategiasi näkyvät täällä, kun toipumissuunnitelmasi on luotu.",
+  "strategiesTailoredToTriggers": "Laukaisimillesi räätälöidyt strategiat",
+
+  "cravingsPeakAndPass": "Mieliteot saavuttavat huipun\nja menevät ohi",
+  "rideTheWaveDescription": "Useimmat mieliteot menevät ohi 15 minuutissa. Sinun ei tarvitse toimia sen mukaan — ratsasta vain aallolla kanssamme.",
+  "stayWithIt": "pysy siinä",
+  "youMadeIt": "selvisit siitä",
+  "readyWhenYouAre": "valmiina kun sinäkin",
+  "rideItAgain": "Ratsasta uudelleen",
+  "start15MinuteTimer": "Käynnistä 15 minuutin ajastin",
+  "rideTheWaveCompletedMessage": "Ratsastit aallolla. Se on todellista voimaa. 💪",
+
+  "myProgress": "Edistymiseni",
+  "weekLabel": "Viikko",
+  "monthLabel": "Kuukausi",
+  "allLabel": "Kaikki",
+  "daysSoberStatLabel": "Päivää\nraittiina",
+  "savedStatLabel": "Säästetty",
+  "avoidedStatLabel": "Vältetty",
+  "moodTrends": "Mielialatrendit",
+  "cravingsPattern": "Mielitekojen kaavat",
+  "unlockLabel": "Avaa",
+  "unlockFullStats": "Avaa täydet tilastot",
+  "premiumStatsMessage": "Mielialatrendit ja mielitekomallit ovat Premium-ominaisuuksia. Päivitä nähdäksesi täydet tilastosi.",
+  "healthMilestonesWillAppear": "Terveyssaavutuksesi näkyvät täällä.",
+  "healthMilestones": "Terveyssaavutukset",
+  "dayNumber": "Päivä {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Raitis",
+  "slipLabel": "Retkahdus",
+  "noDataLabel": "Ei tietoja",
+
+  "milestone24Hours": "24 tuntia",
+  "milestoneOneWeek": "Yksi viikko",
+  "milestoneOneMonth": "Yksi kuukausi",
+  "milestoneThreeMonths": "Kolme kuukautta",
+  "milestoneSixMonths": "Kuusi kuukautta",
+  "milestoneOneYear": "Yksi vuosi",
+  "milestoneDayCount": "Päivän {day} saavutus",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,579 @@
+{
+  "@@locale": "am",
+
+  "skip": "እለፍ",
+  "continueButton": "ቀጥል",
+  "getStarted": "ጀምር",
+
+  "maybeLaterLabel": "ምናልባት ቆይቶ",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "ይቅር",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "ሕይወትዎን በቁጥጥር ስር ያድርጉ",
+  "onboardingSubtitle1": "ጉዞዎን ይከታተሉ፣ እያንዳንዱን ስኬት ያከብሩ እና በቀን በአንድ ጊዜ ጤናማ ይሁኑ።",
+  "onboardingTitle2": "የእርስዎ AI የማገገሚያ ጓደኛ",
+  "onboardingSubtitle2": "በጉዞዎ ዙሪያ የተነደፉ ግላዊ መመሪያዎችን፣ ጤናማ ልማዶችን፣ የማበረታቻ ማስታወሻዎችን እና የእድገት ሪፖርቶችን ይቀበሉ።",
+
+  "goodMorning": "እንደምን አደሩ",
+  "goodAfternoon": "እንደምን ዋሉ",
+  "goodEvening": "እንደምን አመሹ",
+  "goodNight": "መልካም ሌሊት",
+
+  "embracingClarity": "ጥራት ያለው ሕይወትን መከተል፣ በቀን በአንድ ጊዜ።",
+  "streakLabel": "ቀጣይነት",
+  "goalLabel": "ግብ",
+  "daysStreak": "{count, plural, one{{count} ቀን} other{{count} ቀናት}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "የፕሪሚየም ዕቅድ",
+  "premiumPlanSubtitle": "ሙሉ የማገገሚያ அனுபዎን ይክፈቱ",
+
+  "accountAndSupport": "መለያ እና ድጋፍ",
+  "privacyPolicy": "የግላዊነት ፖሊሲ",
+  "privacyPolicySubtitle": "የውሂብ ማጋራትን እና የመለያ ደህንነትን ያስደስቱ",
+  "termsOfService": "የአገልግሎት ውሎች",
+  "termsOfServiceSubtitle": "ተደጋግመው የሚጠየቁ ጥያቄዎች፣ ያግኙን እና መረጃዎች",
+  "shareApp": "መተግበሪያውን ያጋሩ",
+  "shareAppSubtitle": "መተግበሪያውን ለጓደኞችዎ ያጋሩ",
+  "resetData": "ውሂብን ዳግም አስጀምር",
+  "resetDataSubtitle": "በዚህ መሣሪያ ላይ የተቀመጡትን ሁሉንም ይደመሰሱ",
+
+  "resetAllDataTitle": "ሁሉንም ውሂብ ዳግም ማስጀመር ይፈልጋሉ?",
+  "resetAllDataMessage": "ይህ በዚህ መሣሪያ ላይ የተቀመጡትን ሁሉንም — መገለጫ፣ የጆርናል ግቤቶች እና እድገት — ያጸዳል እና ሊመለስ አይችልም።",
+  "cancel": "ሰርዝ",
+  "reset": "ዳግም አስጀምር",
+
+  "chooseFromGallery": "ከጋለሪ ይምረጡ",
+  "takePhoto": "ፎቶ አንሳ",
+  "removePhoto": "ፎቶ ያስወግዱ",
+  "couldNotUpdatePhoto": "ፎቶውን ማዘመን አልተቻለም፦ {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "ፎቶውን ማስወገድ አልተቻለም፦ {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "ያ ፎቶ ከተጨመቀ በኋላም ቢሆን በጣም ትልቅ ነው — እባክዎን ሌላ ይሞክሩ።",
+
+  "unableToLoadProfile": "መገለጫዎን መጫን አልተቻለም",
+  "pleaseTryAgain": "እባክዎን እንደገና ይሞክሩ።",
+  "tryAgain": "እንደገና ይሞክሩ",
+  "profileNotFound": "መገለጫ አልተገኘም",
+  "refresh": "ያድሱ",
+  "noProfileDataFound": "በዚህ መሣሪያ ላይ ገና ምንም የመገለጫ ውሂብ አልተገኘም።",
+
+  "couldNotResetData": "ውሂብን ዳግም ማስጀመር አልተቻለም፦ {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "መነሻ",
+  "navStats": "ስታቲስቲክስ",
+  "navJournal": "ጆርናል",
+  "navBadges": "ባጆች",
+  "navProfile": "መገለጫ",
+
+  "featureComingSoon": "{feature} በቅርቡ ይገኛል።",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ጤናማነት",
+  "appTitle": "መጠጣትን ያቁሙ",
+  "splashSubtitle": "ከአልኮል ነፃ ወደሆነ ሕይወት\nየመጀመሪያውን እርምጃ ይውሰዱ",
+  "preparingJourney": "ጉዞዎን\nበማዘጋጀት ላይ",
+
+  "taskMorningMeditation": "የጠዋት ማሰላሰል (10 ደቂቃ)",
+  "taskReadChapter": "የ \"The Sober Diaries\" ምዕራፍ 4ን ያንብቡ",
+  "taskEveningJournal": "የምሽት የምስጋና ጆርናል",
+
+  "close": "ዝጋ",
+  "youAreDoingGreat": "በጣም ጥሩ እያደረጉ ነው!",
+  "shareMilestone": "ታላቅ ስኬትን ያጋሩ",
+  "shareMilestoneMessage": "በማገገሚያ ጉዞዬ ቀን {days} ላይ ነኝ! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "የማገገሚያ ስኬቴ",
+
+  "weeklyReportReadyTitle": "የሳምንት ሪፖርትዎ ዝግጁ ነው",
+  "weeklyReportReadySubtitle": "ሳምንትዎ እንዴት እንደሄደ ለማየት ይጫኑ",
+
+  "howAreYouFeeling": "ምን ይሰማዎታል?",
+  "moodTough": "ከባድ",
+  "moodOkay": "ደህና",
+  "moodGood": "ጥሩ",
+
+  "moneySaved": "የተቆጠበ ገንዘብ",
+  "caloriesSaved": "የተቆጠበ ካሎሪ",
+  "healthScore": "የጤና ነጥብ",
+  "drinksAvoided": "የተከለከሉ መጠጦች",
+  "estimated": "የተገመተ",
+  "aiGenerated": "በ AI የተፈጠረ",
+  "daysCapsLabel": "ቀናት",
+
+  "todaysMotivation": "የዛሬ ማበረታቻ",
+  "defaultMotivationQuote": "ቁርጠኝነትዎን በተሳካ ሁኔታ ጠብቀዋል። የአዎንታዊ ለውጥ ማዕበልን መጋለብዎን ይቀጥሉ።",
+
+  "talkToCoach": "አሰልጣኙን ያናግሩ",
+  "havingACraving": "ፅኑ ፍላጎት አለኝ",
+
+  "unlockWeeklyReportsTitle": "ሳምንታዊ ሪፖርቶችን ይክፈቱ",
+  "unlockWeeklyReportsMessage": "በየሳምንቱ ከአልኮል ነፃ የሆኑ ቀናቶችዎን፣ የሜዳ አዝማሚያዎችን እና ግላዊ የ AI ግብረመልሶችን ይመልከቱ። ለመክፈት ወደ ፕሪሚየም ያሻሽሉ።",
+  "maybeLater": "ምናልባት በኋላ",
+  "upgrade": "ያሻሽሉ",
+
+  "weeklyReportTitle": "ሳምንታዊ ሪፖርት",
+  "weeklyReportsPremiumTitle": "ሳምንታዊ ሪፖርቶች የፕሪሚየም ባህሪ ናቸው",
+  "weeklyReportsPremiumMessage": "በየሳምንቱ ከአልኮል ነፃ ቀናትዎን፣ የሜዳ አዝማሚያዎችን፣ ፅኑ ፍላጎቶችን እና ግላዊ የ AI ግብረመልሶችን ይመልከቱ።",
+  "upgradeToPremium": "ወደ ፕሪሚየም ያሻሽሉ",
+  "couldNotGenerateReport": "አሁን ሪፖርትዎን ማመንጨት አልተቻለም።",
+  "tryAgainLower": "እንደገና ይሞክሩ",
+
+  "statSoberDays": "ከአልኮል ነፃ ቀናት",
+  "statAvgMood": "አማካይ ስሜት",
+  "statCravings": "ፅኑ ፍላጎቶች",
+  "statMoneySaved": "የተቆጠበ ገንዘብ",
+  "coachFeedback": "የአሰልጣኝ ግብረመልስ",
+  "journalInsights": "የጆርናል ግንዛቤዎች",
+
+  "next": "ቀጣይ",
+
+  "question1Title": "ግብዎ ምንድን ነው",
+  "question1Subtitle": "ለእርስዎ በጣም አስፈላጊ የሆነውን\nግብ ይምረጡ",
+  "goalQuitCompletely": "ሙሉ በሙሉ ማቆም",
+  "goalReduceDrinking": "መጠጣትን መቀነስ",
+  "goalTakeABreak": "እረፍት መውሰድ",
+  "goalBuildHealthierHabits": "ጤናማ ልማዶችን መገንባት",
+
+  "question3Title": "ስለ ልማድዎ\nይነግሩን",
+  "drinksPerWeek": "መጠጦች በሳምንት",
+  "moneySpentPerWeek": "በሳምንት የወጣ ገንዘብ",
+  "drinkingLevel": "የመጠጣት ደረጃ",
+  "triggersLabel": "መንስኤዎች (Triggers)",
+  "levelSocial": "ማህበራዊ",
+  "levelRegular": "መደበኛ",
+  "levelHeavy": "ከባድ",
+  "levelDependent": "ጥገኛ",
+  "triggerStress": "ጭንቀት",
+  "triggerLoneliness": "ብቸኝነት",
+  "triggerHabit": "ልማድ",
+  "triggerSadness": "ሀዘን",
+  "triggerAnger": "ቁጣ",
+  "triggerBoredom": "ድብርት",
+  "triggerSocialPressure": "ማህበራዊ ጫና",
+  "triggerCelebration": "በዓል ማከበር",
+  "triggerSleepProblems": "የእንቅልፍ ችግሮች",
+  "triggerWorkPressure": "የስራ ጫና",
+
+  "question4Title": "ለምን መለወጥ ይፈልጋሉ?",
+  "question4Subtitle": "ምክንያትዎ እርስዎን ለማበረታታት ይረዳል።",
+  "reasonImproveHealth": "ጤናዬን ማሻሻል",
+  "reasonSaveMoney": "ገንዘብ መቆጠብ",
+  "reasonFamily": "ቤተሰብ",
+  "reasonBetterSleep": "የተሻለ እንቅልፍ",
+  "reasonMentalClarity": "የአእምሮ ጥራት",
+  "reasonFitness": "አካላዊ ብቃት",
+  "reasonSelfRespect": "ራስን ማክበር",
+  "reasonCareer": "የስራ መስክ",
+
+  "milestoneUnlockedLabel": "ስኬት ተከፍቷል",
+  "incredibleNamePrefix": "ድንቅ ነው፣ {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} ተቆጥቧል",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} ተከለክሏል",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "ስኬቴን ያጋሩ",
+  "milestoneImageShareError": "የስኬት ምስሉን መፍጠር አልተቻለም። እባክዎን እንደገና ይሞክሩ።",
+
+  "dailyCheckInTitle": "ዕለታዊ ምርመራ",
+  "howAreYouFeelingToday": "ዛሬ ምን ይሰማዎታል?",
+  "honestAnswerHelp": "እውነተኛ መልስዎ እርስዎን በተሻለ ሁኔታ እንድንደግፍ ይረዳናል",
+  "didYouDrinkToday": "ዛሬ ጠጥተዋል?",
+  "noLabel": "አይ",
+  "yesLabel": "አዎ",
+  "cravingLevelNow": "አሁን የፅኑ ፍላጎት ደረጃ?",
+  "anythingOnMind": "በአእምሮዎ ውስጥ ያለ ነገር አለ?",
+  "optionalLabel": "(አማራጭ)",
+  "dailyNoteHint": "ስለ ቀንዎ፣ መንስኤዎችዎ፣ ድሎችዎ ይፃፉ...",
+  "alreadyCheckedInToday": "ዛሬ አስመዝግበዋል",
+  "saveCheckIn": "ምርመራውን አስቀምጥ",
+  "checkInsHelpTrack": "ምርመራዎች በጊዜ ሂደት እድገትዎን ለመከታተል ይረዳሉ",
+  "alreadyCompletedTodayCheckIn": "የዛሬውን ምርመራ አስቀድመው አጠናቀዋል።",
+  "pleaseAnswerBothQuestions": "እባክዎን በመጀመሪያ ከላይ ያሉትን ሁለቱንም ጥያቄዎች ይመልሱ",
+  "checkInSaved": "ምርመራ ተቀምጧል",
+  "cravingNone": "ምንም",
+  "cravingLow": "ዝቅተኛ",
+  "cravingMedium": "መካከለኛ",
+  "cravingStrong": "ጠንካራ",
+  "moodBad": "መጥፎ",
+  "moodLow": "ዝቅተኛ",
+  "moodOkay": "ደህና",
+  "moodGood": "ጥሩ",
+  "moodGreat": "በጣም ጥሩ",
+
+  "sosSupportTitle": "የ SOS ድጋፍ",
+  "notAloneMessage": "ብቸኛ አይደሉም፣ {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "ፅኑ ፍላጎቶች ያልፋሉ። በዚህ ቅጽበት ውስጥ እንዲያልፉ የሚረዳዎትን ከታች ይምረጡ።",
+  "breathingExercise": "የአተነፋፈስ ልምምድ",
+  "breathingExerciseSubtitle": "የሚመራ 4-7-8 ቴክኒክ፣ 2 ደቂቃ",
+  "rideTheWave": "ማዕበሉን ይጋልቡ",
+  "rideTheWaveSubtitle": "የ 15 ደቂቃ ቆጣሪ — ፅኑ ፍላጎቶች ሁልጊዜ ያልፋሉ",
+  "copingTips": "የመቋቋሚያ ምክሮች",
+  "copingTipsSubtitle": "ለመንስኤዎችዎ የተዘጋጁ ግላዊ ስልቶች",
+  "talkToAiCoach": "የ AI አሰልጣኙን ያናግሩ",
+  "talkToAiCoachSubtitle": "ከማገገሚያ ጓደኛዎ ጋር ይወያዩ",
+  "callSomeone": "አንድ ሰውን ይደውሉ",
+  "callSomeoneSubtitle": "የታመነ እውቂያዎን ያግኙ",
+  "contactsPermissionNeeded": "ለእውቂያ ለመደወል የእውቂያዎች ፈቃድ ያስፈልጋል።",
+  "beatenCravingsPrefix": "ከዚህ ቀደም የፅኑ ፍላጎትን ",
+  "beatenCravingsCount": "{count} ጊዜ",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " አሸንፈዋል። እንደገና ማድረግ ይችላሉ።",
+
+  "tellUsAboutYourself": "ስለ እርስዎ ይነግሩን",
+  "detailsSubtitle": "ይህ መረጃ የማገገሚያ ጉዞዎን ግላዊ ለማድረግ እና ትክክለኛ ግንዛቤዎችን ለመስጠት ይረዳናል።",
+  "nameLabel": "ስም",
+  "nameHint": "ምሳሌ፡ አሌክስ ሪቨርስ",
+  "ageLabel": "ዕድሜ",
+  "ageHint": "ምሳሌ፡ 32",
+  "sexAssignedAtBirth": "በትውልድ የተሰጠ ጾታ",
+  "sexFemale": "ሴት",
+  "sexMale": "ወንድ",
+  "heightLabel": "ቁመት",
+  "weightLabel": "ክብደት",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "የዕለት ገደብ ተደርሷል",
+  "dailyLimitReachedMessage": "ዛሬ ያሉትን ሁሉንም {limit} ነፃ መልዕክቶች ተጠቅመዋል። ለአንጻራዊ ገደብ ለሌለው ውይይት ወደ ፕሪሚየም ያሻሽሉ።",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "አሁን መገናኘት አልተቻለም። እባክዎን ከጥቂት ጊዜ በኋላ እንደገና ይሞክሩ።",
+  "clearConversationTitle": "ውይይቱን ያፅዱ?",
+  "clearConversationMessage": "ይህ የአሰልጣኝ ውይይት ታሪክዎን በቋሚነት ያስወግዳል።",
+  "clearLabel": "አጽዳ",
+  "recoveryCoachTitle": "የማገገሚያ አሰልጣኝ",
+  "onlineLabel": "በመስመር ላይ",
+  "clearConversationMenuItem": "ውይይት አጽዳ",
+  "chatGreeting": "ሰላም {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "በጉዞዎ ቀን {days} ላይ ነዎት። ነገሮችን ለመነጋገር በሚፈልጉበት ጊዜ ሁሉ እዚህ ነኝ።",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "ፈጣን ጥያቄዎች",
+  "promptCravingLabel": "ፅኑ ፍላጎት አለኝ",
+  "promptCravingSubtitle": "በፍጥነት ይረጋጉ",
+  "promptMotivationLabel": "ማበረታቻ ያስፈልገኛል",
+  "promptMotivationSubtitle": "በከባድ ጊዜ ድጋፍ",
+  "promptSocialLabel": "ማህበራዊ ሁኔታ",
+  "promptSocialSubtitle": "ስብሰባን ይምሩ",
+  "promptSlippedLabel": "ተሳስቼ ጠጣሁ",
+  "promptSlippedSubtitle": "ያለ ፍርድ፣ ድጋፍ ብቻ",
+  "typeMessageHint": "መልዕክት ይፃፉ...",
+
+  "editProfileTitle": "መገለጫ ያርትዑ",
+  "couldNotSaveProfile": "መገለጫ ማስቀመጥ አልተቻለም፦ {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "ቁመት (ሴ.ሜ)",
+  "weightKgLabel": "ክብደት (ኪ.ግ)",
+  "saveChangesLabel": "ለወጡትን አስቀምጥ",
+
+  "premiumBadgeLabel": "ፕሪሚየም",
+  "featureAdvancedInsights": "የላቁ ግንዛቤዎች እና ትንታኔዎች",
+  "featureUnlimitedJournal": "ገደብ የለሽ የጆርናል ግቤቶች",
+  "featureUnlimitedChat": "ከ AI አሰልጣኝ ጋር ገደብ የለሽ ውይይት",
+  "featureCommunityGroups": "ልዩ የማህበረሰብ ቡድኖች",
+  "featurePrioritySupport": "ቅድሚያ የሚሰጠው የባለሙያ ድጋፍ",
+  "featureThemePacks": "ብጁ የጭብጥ ጥቅሎች",
+  "featureDataExport": "ውሂብ ወደ ውጭ ላክ",
+  "featureAdFree": "ከማስታወቂያ ነፃ अनुभव",
+  "premiumMemberTitle": "እርስዎ የፕሪሚየም አባል ነዎት",
+  "unlockFullRecoveryTitle": "ሙሉ የማገገሚያ अनुभवዎን\nይክፈቱ",
+  "premiumMemberSubtitle": "የማገገሚያ ጉዞዎን ስለደገፉ እናመሰግናለን — ከታች ያሉትን ሁሉንም የፕሪሚየም ባህሪያት ተከፍተዋል።",
+  "premiumJoinSubtitle": "በእኛ ፕሪሚየም መሣሪያዎች እና ግላዊ ድጋፍ የፈውስ ጉዟቸውን የሚያፋጥኑ የሺዎች ማህበረሰብን ይቀላቀሉ።",
+  "monthlyPlanLabel": "ወርሃዊ",
+  "perMonthSuffix": "/ወር",
+  "cancelAnytimeLabel": "በማንኛውም ጊዜ ይሰርዙ",
+  "yearlyPlanLabel": "ዓመታዊ",
+  "billedAnnuallyLabel": "በዓመት በ {amount} ይከፈላል",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "ምርጥ ዋጋ",
+  "alreadyPremiumLabel": "እርስዎ ፕሪሚየም ነዎት ✓",
+  "startPremiumLabel": "ፕሪሚየም ጀምር",
+  "manageSubscriptionLabel": "ከመሳሪያዎ የእንቅስቃሴ ቅንብሮች ያስደስቱ ወይም ይሰርዙ።",
+  "noCommitmentLabel": "ምንም ግዴታ የለም። በማንኛውም ጊዜ ይሰርዙ።",
+  "continueFreePlanLabel": "በነፃ ዕቅድ ይቀጥሉ",
+  "backToHomeLabel": "ወደ መነሻ ገፅ ተመለስ",
+  "cancelPremiumLabel": "ፕሪሚየም ሰርዝ",
+  "cancelPremiumTitle": "ፕሪሚየም ይሰረዝ?",
+  "cancelPremiumMessage": "ገደብ የለሽ የጆርናል ግቤቶች፣ የኮች ውይይት፣ የስታቲስቲክስ ግንዛቤዎች እና ሳምንታዊ ሪፖርቶችን የማግኘት መብት ያጣሉ። በማንኛውም ጊዜ እንደገና መመዝገብ ይችላሉ።",
+  "keepPremiumLabel": "ፕሪሚየም ይኑር",
+  "nowPremiumMessage": "አሁን የፕሪሚየም አባል ነዎት! በሙሉ የማገገሚያ अनुभवዎ ይደሰቱ።",
+  "premiumCancelledMessage": "ፕሪሚየም ተሰርዟል። ወደ ነፃው ዕቅድ ተመልሰዋል።",
+  "termsOfUseLabel": "የአጠቃቀም ውሎች",
+
+  "navHomeLabel": "መነሻ",
+  "navStatsLabel": "ስታቲስቲክስ",
+  "navJournalLabel": "ጆርናል",
+  "navBadgesLabel": "ባጆች",
+  "navProfileLabel": "መገለጫ",
+
+  "recoveryGoalsTitle": "የማገገሚያ ግቦች",
+  "goalLabel": "ግብ",
+  "drinksPerWeekLabel": "መጠጦች በሳምንት",
+  "quitReasonsLabel": "የማቆሚያ ምክንያቶች",
+  "quitReasonsHelperText": "ብዙ ምክንያቶችን በኮማ ይለዩ።",
+  "couldNotSaveRecoveryGoals": "የማገገሚያ ግቦችን ማስቀመጥ አልተቻለም፦ {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ምሳሌ፡ ሙሉ በሙሉ መታቀብ",
+  "drinksPerWeekHint": "ምሳሌ፡ 12",
+  "quitReasonsHint": "ምሳሌ፡ ጤና፣ ቤተሰብ፣ ገንዘብ",
+
+  "todaysPrompt": "የዛሬው መጠየቂያ",
+  "defaultJournalPrompt": "ዛሬ በአእምሮዎ ውስጥ ያለው ምንድን ነው?",
+  "aiJournalInsights": "የ AI ጆርናል ግንዛቤዎች",
+  "unlockJournalInsightsMessage": "ከጆርናል ግቤቶችዎ የሳምንት ቅጦችን፣ የሜዳ አዝማሚያዎችን እና ግላዊ ግንዛቤዎችን ይክፈቱ።",
+  "notEnoughJournalData": "ገና በቂ ውሂብ የለም — በዚህ ሳምንት ጥቂት ግቤቶችን ይፃፉ እና እንደገና ያረጋግጡ።",
+  "openEntry": "ክፈት",
+  "editEntry": "አርትዕ",
+  "deleteEntry": "ሰርዝ",
+  "searchJournalEntries": "ግቤቶችን ፈልግ...",
+  "writeNewEntry": "አዲስ ግቤት ፃፍ",
+  "recentEntries": "የቅርብ ጊዜ ግቤቶች",
+  "noJournalEntriesYet": "ገና ምንም የጆርናል ግቤቶች የሉም — የመጀመሪያዎን ሀሳብ ከላይ ይፃፉ።",
+  "noEntriesMatchFilters": "ከማጣሪያዎችዎ ጋር የሚዛመዱ ግቤቶች የሉም።",
+
+  "weeklyJournalLimitReached": "የሳምንት ገደብ ተደርሷል",
+  "weeklyJournalLimitMessage": "በዚህ ሳምንት ያሉትን ሁሉንም {limit} ነፃ የጆርናል ግቤቶች ተጠቅመዋል። ለገደብ የለሽ ግቤቶች ወደ ፕሪሚየም ያሻሽሉ።",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "አዲስ ግቤት",
+  "writeYourThoughts": "ሀሳብዎን ይፃፉ",
+  "saveEntry": "ግቤትን አስቀምጥ",
+  "freeEntriesLeftThisWeek": "በዚህ ሳምንት ከ {limit} ውስጥ {remaining} ነፃ ግቤቶች ቀርተዋል።",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "ግቤት ይሰረዝ?",
+  "deleteEntryConfirmation": "ይህ ግቤት በቋሚነት ይሰረዛል። ይህ ሊመለስ አይችልም።",
+
+  "journalEntryNotFound": "ግቤት አልተገኘም",
+  "journalEntryMayHaveBeenDeleted": "ይህ የጆርናል ግቤት ተሰርዞ ሊሆን ይችላል።",
+  "goBack": "ወደ ኋላ ተመለስ",
+  "journalEntryTitle": "የጆርናል ግቤት",
+
+  "moodStruggling": "እየታገሉ ነው",
+  "moodUnwell": "ህመም ላይ",
+  "moodNeutral": "መካከለኛ",
+
+  "whatHappenedToday": "ዛሬ ምን ሆነ?",
+  "trigger": "መንስኤ",
+  "whatHelped": "ምን ረዳዎት",
+  "whatIllTryNextTime": "በሚቀጥለው ጊዜ ምን እሞክራለሁ",
+  "journalPrivacyMessage": "የእርስዎ ሀሳብ ግላዊ ነው እና በጆርናልዎ ውስጥ ተቀምጧል።",
+
+  "unlocked": "ተከፍቷል",
+  "daysLeft": "{count} ቀን ቀርቷል",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} ቀናት",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "የመጀመሪያ\nሀሳብ",
+  "oneJournalEntry": "1 የጆርናል ግቤት",
+  "openBook": "የተከፈተ መጽሐፍ",
+  "tenJournalEntries": "10 የጆርናል ግቤቶች",
+  "dedicatedWriter": "ቁርጠኛ\nፀሐፊ",
+  "thirtyJournalEntries": "30 የጆርናል ግቤቶች",
+  "firstConversation": "የመጀመሪያ\nውይይት",
+  "oneAiCoachChat": "1 የ AI አሰልጣኝ ውይይት",
+  "keepTalking": "መነጋገርን ይቀጥሉ",
+  "fiveConversations": "5 ውይይቶች",
+  "coachCompanion": "የአሰልጣኝ\nጓደኛ",
+  "twentyConversations": "20 ውይይቶች",
+  "checkInHabit": "የምርመራ\nልማድ",
+  "sevenCheckIns": "7 ምርመራዎች",
+  "consistencyPro": "የቋሚነት\nባለሙያ",
+  "thirtyCheckIns": "30 ምርመራዎች",
+  "dedicatedJourney": "ቁርጠኛ\nጉዞ",
+  "hundredCheckIns": "100 ምርመራዎች",
+  "goalGetter": "ግብ አሳኪ",
+  "threeGoalsCompleted": "3 ግቦች ተጠናቀዋል",
+  "goalAchiever": "ግብ\nአሳኪ",
+  "tenGoalsCompleted": "10 ግቦች ተጠናቀዋል",
+  "firstSavings": "የመጀመሪያ\nቁጠባ",
+  "fiveHundredSaved": "$500 ተቆጥቧል",
+  "smartSaver": "ብልህ ቆጣቢ",
+  "oneThousandSaved": "$1,000 ተቆጥቧል",
+  "bigSaver": "ትልቅ ቆጣቢ",
+  "fiveThousandSaved": "$5,000 ተቆጥቧል",
+  "currencyProgress": "ከ ${target} ውስጥ ${current}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "ከ {target} ውስጥ {current}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "ይቀጥሉ — የመጀመሪያው ትልቅ ስኬትዎ እየጠበቀዎት ነው!",
+  "badgesAndMilestones": "ባጆች እና ታላላቅ ስኬቶች",
+  "yourMilestoneJourney": "የስኬቶችዎ ጉዞ",
+  "milestonesAchieved": "{count} ስኬት ተሳክቷል።\nለማየት ይጫኑ",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "በጉዞዎ ውስጥ ከ {total} ስኬቶች {unlocked} ተከፍተዋል።",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "የቀረ",
+  "complete": "ተጠናቋል",
+  "nextMilestone": "ቀጣይ ስኬት",
+  "percentThere": "{subtitle} · {percent}% ደርሷል",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "ከአልኮል ነፃነት ስኬቶች",
+  "journeyBadges": "የጉዞ ባጆች",
+  "bronze": "ብሮንዝ",
+  "silver": "ብር",
+  "gold": "ወርቅ",
+  "platinum": "ፕላቲነም",
+  "diamond": "ዳይመንድ",
+
+  "analyzingYourJourney": "ጉዞዎን በመተንተን ላይ...",
+  "aiCreatingSanctuary": "የእኛ AI የእርስዎን ግላዊ ደህንነቱ የተጠበቀ ቦታ እየፈጠረ ነው።",
+  "understandingHabits": "ልማዶችን በመረዳት ላይ...",
+  "calculatingBaseline": "የመነሻ መስመርዎን በማስላት ላይ...",
+  "personalizingPlan": "እቅድዎን ግላዊ በማድረግ ላይ...",
+  "finalizingSanctuary": "ቦታዎን በማጠናቀቅ ላይ...",
+  "creatingYourPlan": "እቅድዎን በመፍጠር ላይ...",
+  "personalizedPlanError": "የእርስዎን ግላዊ እቅድ መፍጠር አልቻልንም። እባክዎን እንደገና ይሞክሩ።",
+  "retry": "ድጋሚ ይሞክሩ",
+
+  "breathInhale": "እስትንፋስ ወደ ውስጥ",
+  "breathHold": "ያዙት",
+  "breathExhale": "እስትንፋስ ወደ ውጭ",
+  "breathDone": "ተጠናቋል",
+  "breathGreatJob": "በጣም ጥሩ ስራ!",
+  "breathSessionsToday": "{count, plural, one{ዛሬ {count} ክፍለ ጊዜ} other{ዛሬ {count} ክፍለ ጊዜዎች}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "ልምምዱን ጨርስ",
+  "done": "ተጠናቋል",
+
+  "noCopingTipsYet": "ገና ምንም የመቋቋሚያ ምክሮች የሉም",
+  "copingStrategiesWillAppear": "የማገገሚያ እቅድዎ ተፈጥሮ ሲያልቅ የእርስዎ ግላዊ የመቋቋሚያ ስልቶች እዚህ ይታያሉ።",
+  "strategiesTailoredToTriggers": "ለመንስኤዎችዎ የተዘጋጁ ስልቶች",
+
+  "cravingsPeakAndPass": "ፅኑ ፍላጎቶች ከፍተኛ ደረጃ ላይ ይደርሳሉ\nእና ያልፋሉ",
+  "rideTheWaveDescription": "አብዛኛዎቹ ፅኑ ፍላጎቶች በ 15 ደቂቃዎች ውስጥ ያልፋሉ። በእሱ ላይ እርምጃ መውሰድ የለብዎትም — ከእኛ ጋር ዝም ብለው ያሳልፉት።",
+  "stayWithIt": "ከእሱ ጋር ይቆዩ",
+  "youMadeIt": "አድርገውታል",
+  "readyWhenYouAre": "ዝግጁ ሲሆኑ",
+  "rideItAgain": "እንደገና ያሳልፉት",
+  "start15MinuteTimer": "የ 15-ደቂቃ ቆጣሪ ይጀምሩ",
+  "rideTheWaveCompletedMessage": "ማዕበሉን አልፈውታል። ይህ እውነተኛ ጥንካሬ ነው። 💪",
+
+  "myProgress": "የእኔ እድገት",
+  "weekLabel": "ሳምንት",
+  "monthLabel": "ወር",
+  "allLabel": "ሁሉንም",
+  "daysSoberStatLabel": "ከአልኮል ነፃ\nቀናት",
+  "savedStatLabel": "ተቆጥቧል",
+  "avoidedStatLabel": "ተከልክሏል",
+  "moodTrends": "የስሜት አዝማሚያዎች",
+  "cravingsPattern": "የፅኑ ፍላጎት ቅጥ",
+  "unlockLabel": "ክፈት",
+  "unlockFullStats": "ሙሉ ስታቲስቲክስን ይክፈቱ",
+  "premiumStatsMessage": "የስሜት አዝማሚያዎች እና የፅኑ ፍላጎት ቅጦች የፕሪሚየም ባህሪያት ናቸው። ሙሉ ስታቲስቲክስዎን ለማየት ያሻሽሉ።",
+  "healthMilestonesWillAppear": "የጤና ስኬቶችዎ እዚህ ይታያሉ።",
+  "healthMilestones": "የጤና ስኬቶች",
+  "dayNumber": "ቀን {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "ከአልኮል ነፃ",
+  "slipLabel": "ስህተት",
+  "noDataLabel": "ምንም ውሂብ የለም",
+
+  "milestone24Hours": "24 ሰዓታት",
+  "milestoneOneWeek": "አንድ ሳምንት",
+  "milestoneOneMonth": "አንድ ወር",
+  "milestoneThreeMonths": "ሦስት ወራት",
+  "milestoneSixMonths": "ስድስት ወራት",
+  "milestoneOneYear": "አንድ ዓመት",
+  "milestoneDayCount": "የቀን {day} ስኬት",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

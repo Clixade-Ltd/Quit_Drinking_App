@@ -1,0 +1,625 @@
+{
+  "@@locale": "rm",
+  "skip": "Sautar",
+  "continueButton": "Cuntinuar",
+  "getStarted": "Cumenzar",
+  "onboardingTitle1": "Prenda il controll da tia vita",
+  "onboardingSubtitle1": "Suonda tia via, festegia mintga success e daventa pli saun di di en di.",
+  "onboardingTitle2": "Tes cumpogn AI per la recuperaziun",
+  "onboardingSubtitle2": "Retschaiv cussegls persunalisads, isanzas saunas, promemoria motivants e rapports da progress concepids per tia via.",
+  "goodMorning": "Bun di",
+  "maybeLaterLabel": "Forsa pli tard",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Interrumper",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodAfternoon": "Buna di",
+  "goodEvening": "Buna saira",
+  "goodNight": "Buna notg",
+  "embracingClarity": "Abitescha la clerezza, in di suenter l'auter.",
+  "streakLabel": "SERIA",
+  "goalLabel": "Finamira",
+  "daysStreak": "{count, plural, one{{count} di} other{{count} dis}}",
+  "@daysStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumPlan": "Plan Premium",
+  "premiumPlanSubtitle": "Sblatga tia experientscha cumpletta da recuperaziun",
+  "accountAndSupport": "CONTO E SUSTEGN",
+  "privacyPolicy": "Politica da protecziun da datas",
+  "privacyPolicySubtitle": "Administres la repartiziun da datas e la segirezza dal conto",
+  "termsOfService": "Cundiziuns d'utilisaziun",
+  "termsOfServiceSubtitle": "FAQ, contact e resursas",
+  "shareApp": "Cundivider l'app",
+  "shareAppSubtitle": "Cundivida l'app cun tes amis",
+  "resetData": "Reinizialisar datas",
+  "resetDataSubtitle": "Stizza tut quai ch'è memorisà sin quest apparat",
+  "resetAllDataTitle": "Reinizialisar tut las datas?",
+  "resetAllDataMessage": "Quai stizza tut quai ch'è memorisà sin quest apparat — profil, endataziuns dal diari e progress — e na po betg vegnir annullà.",
+  "cancel": "Annullar",
+  "reset": "Reinizialisar",
+  "chooseFromGallery": "Tscherner da la gallaria",
+  "takePhoto": "Far ina fotografia",
+  "removePhoto": "Allontanar la fotografia",
+  "couldNotUpdatePhoto": "La fotografia na po betg vegnir actualisada: {error}",
+  "@couldNotUpdatePhoto": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotRemovePhoto": "La fotografia na po betg vegnir allontanada: {error}",
+  "@couldNotRemovePhoto": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "photoTooLarge": "Quella fotografia è memia gronda er suenter la compressiun — emprova per plaschair ina autra.",
+  "unableToLoadProfile": "Tes profil na po betg vegnir chargià",
+  "pleaseTryAgain": "Emprova per plaschair anc ina giada.",
+  "tryAgain": "Emprovar anc ina giada",
+  "profileNotFound": "Profil betg chattà",
+  "refresh": "Actualisar",
+  "noProfileDataFound": "Anc naginas datas dal profil chattadas sin quest apparat.",
+  "couldNotResetData": "Las datas na pon betg vegnir reinizialisadas: {error}",
+  "@couldNotResetData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navHome": "Home",
+  "navStats": "Statisticas",
+  "navJournal": "Diari",
+  "navBadges": "Insignas",
+  "navProfile": "Profil",
+  "featureComingSoon": "{feature} vegn a vegnir disponibel bainbaud.",
+  "@featureComingSoon": {
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "appWordmark": "WELLNESS",
+  "appTitle": "Laschar da baiver",
+  "splashSubtitle": "Fa il prim pass vers ina vita\nsenza alcohol",
+  "preparingJourney": "Preparar tia\nvia",
+  "taskMorningMeditation": "Meditaziun dal bunmatsch (10 min)",
+  "taskReadChapter": "Legia il chapitel 4 da «The Sober Diaries»",
+  "taskEveningJournal": "Diari da gratitud da la saira",
+  "close": "Serrar",
+  "youAreDoingGreat": "Ti fas quai excellent!",
+  "shareMilestone": "Cundivider la marca",
+  "shareMilestoneMessage": "Jau sun al di {days} da mia via da recuperaziun! 💪",
+  "@shareMilestoneMessage": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMilestoneSubject": "Mia marca da recuperaziun",
+  "weeklyReportReadyTitle": "Tes rapport emnil è pront",
+  "weeklyReportReadySubtitle": "Tocca per vesair co che tia emna è stada",
+  "howAreYouFeeling": "Co ta sentas?",
+  "moodTough": "Difficil",
+  "moodOkay": "En urden",
+  "moodGood": "Bun",
+  "moneySaved": "Daners spargnads",
+  "caloriesSaved": "Calorias spargnadas",
+  "healthScore": "Punct da sanadad",
+  "drinksAvoided": "Bavrondas evitadas",
+  "estimated": "Stimà",
+  "aiGenerated": "Generà da AI",
+  "daysCapsLabel": "DIS",
+  "todaysMotivation": "Motivaziun dad oz",
+  "defaultMotivationQuote": "Ti has mantegnì cun success tes engaschi. Cuntinuescha sin l'unda dal midament positiv.",
+  "talkToCoach": "Discurrer cun il coach",
+  "havingACraving": "Jau hai in desideri",
+  "unlockWeeklyReportsTitle": "Sblatgar rapports emnils",
+  "unlockWeeklyReportsMessage": "Vesa mintga emna tes dis senza alcohol, las tendenzas dal stadi d'animi e il feedback AI persunalisà. Fa upgrade a Premium per sblatgar.",
+  "maybeLater": "Forsa pli tard",
+  "upgrade": "Far upgrade",
+  "weeklyReportTitle": "Rapport emnil",
+  "weeklyReportsPremiumTitle": "Rapports emnils èn ina funcziun Premium",
+  "weeklyReportsPremiumMessage": "Vesa mintga emna tes dis senza alcohol, las tendenzas dal stadi d'animi, ils desideris e il feedback AI persunalisà.",
+  "upgradeToPremium": "Far upgrade a Premium",
+  "couldNotGenerateReport": "Tes rapport na po betg vegnir generà ussa.",
+  "tryAgainLower": "Emprovar anc ina giada",
+  "statSoberDays": "Dis senza alcohol",
+  "statAvgMood": "Stadi d'animi med.",
+  "statCravings": "Desideris",
+  "statMoneySaved": "Daners spargnads",
+  "coachFeedback": "Feedback dal coach",
+  "journalInsights": "Insights dal diari",
+  "next": "Proxim",
+  "question1Title": "Tge è tia finamira",
+  "question1Subtitle": "Tscherna la finamira che vala\nil pli bler per tai",
+  "goalQuitCompletely": "Laschar dal tuttafatg",
+  "goalReduceDrinking": "Reducir il baiver",
+  "goalTakeABreak": "Far ina pausa",
+  "goalBuildHealthierHabits": "Construir isanzas pli saunas",
+  "question3Title": "Discurra cun nus davart tia\nrutina",
+  "drinksPerWeek": "Bavrondas per emna",
+  "moneySpentPerWeek": "Daners spendids per emna",
+  "drinkingLevel": "Nivel da baiver",
+  "triggersLabel": "Triggers",
+  "levelSocial": "Social",
+  "levelRegular": "Regular",
+  "levelHeavy": "Greiv",
+  "levelDependent": "Dependent",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Soledat",
+  "triggerHabit": "Isanza",
+  "triggerSadness": "Tristezza",
+  "triggerAnger": "Furia",
+  "triggerBoredom": "Malencletgna",
+  "triggerSocialPressure": "Pressiun sociala",
+  "triggerCelebration": "Festivitad",
+  "triggerSleepProblems": "Problems da durmir",
+  "triggerWorkPressure": "Pressiun da lavur",
+  "question4Title": "Pertge vuls ti midar?",
+  "question4Subtitle": "Tes motiv ta gida a restar motivà.",
+  "reasonImproveHealth": "Meglierar mia sanadad",
+  "reasonSaveMoney": "Spargnar daners",
+  "reasonFamily": "Famiglia",
+  "reasonBetterSleep": "Durmir meglier",
+  "reasonMentalClarity": "Clerezza mentala",
+  "reasonFitness": "Fitness",
+  "reasonSelfRespect": "Respect da sai sez",
+  "reasonCareer": "Carriera",
+  "milestoneUnlockedLabel": "MARCA SBLATGADA",
+  "incredibleNamePrefix": "Incredibel, {name}!",
+  "@incredibleNamePrefix": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "amountSavedLabel": "{amount} spargnads",
+  "@amountSavedLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "drinksAvoidedLabel": "{count} evitads",
+  "@drinksAvoidedLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "shareMyMilestone": "Cundivider mia marca",
+  "milestoneImageShareError": "L'immagine da la marca na po betg vegnir creada. Emprova per plaschair anc ina giada.",
+  "dailyCheckInTitle": "Check-in dal di",
+  "howAreYouFeelingToday": "Co ta sentas oz?",
+  "honestAnswerHelp": "Tia resposta onesta ans gida a sustegnair tai meglier",
+  "didYouDrinkToday": "Has ti baivì oz?",
+  "noLabel": "Na",
+  "yesLabel": "Gea",
+  "cravingLevelNow": "Tge nivel ha tes desideri ussa?",
+  "anythingOnMind": "Has ti insatge en il chau?",
+  "optionalLabel": "(facultativ)",
+  "dailyNoteHint": "Scriva davart tes di, triggers, victorias...",
+  "alreadyCheckedInToday": "Check-in dad oz gia fatg",
+  "saveCheckIn": "Memorisar il check-in",
+  "checkInsHelpTrack": "Ils check-ins gidan a suandar tes progress sur dal temp",
+  "alreadyCompletedTodayCheckIn": "Ti has gia terminà il check-in dad oz.",
+  "pleaseAnswerBothQuestions": "Respunda per plaschair l'emprim a las duas dumondas sura",
+  "checkInSaved": "Check-in memorisà",
+  "cravingNone": "Nagin",
+  "cravingLow": "Bass",
+  "cravingMedium": "Medi",
+  "cravingStrong": "Furment",
+  "moodBad": "Na bun",
+  "moodLow": "Bass",
+  "moodGreat": "Excellent",
+  "sosSupportTitle": "Sustegn SOS",
+  "notAloneMessage": "Ti n'es betg sulet, {name}",
+  "@notAloneMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cravingsPassMessage": "Ils desideris passan. Tscherna insatge sutvart che ta gida en quest mument.",
+  "breathingExercise": "Exercizi da respiraziun",
+  "breathingExerciseSubtitle": "Tecnica guidada 4-7-8, 2 minutas",
+  "rideTheWave": "Laschar passar l'unda",
+  "rideTheWaveSubtitle": "Timer da 15 min — ils desideris passan adina",
+  "copingTips": "Cussegls per far frunt",
+  "copingTipsSubtitle": "Strategias persunalisadas per tes triggers",
+  "talkToAiCoach": "Discurrer cun il coach AI",
+  "talkToAiCoachSubtitle": "Chatta cun tes cumpogn da recuperaziun",
+  "callSomeone": "Telefonar a qualqun",
+  "callSomeoneSubtitle": "Contactes ina persuna da confidenza",
+  "contactsPermissionNeeded": "La permissiun per ils contacts è necessaria per telefonar ad in contact.",
+  "beatenCravingsPrefix": "Ti has battì ils desideris ",
+  "beatenCravingsCount": "{count} giadas",
+  "@beatenCravingsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "beatenCravingsSuffix": " avant. Ti pos far quai anc ina giada.",
+  "tellUsAboutYourself": "Discurra cun nus davart tai",
+  "detailsSubtitle": "Questas infurmaziuns ans gidan a persunalisar tia via da recuperaziun e a dar insights precis.",
+  "nameLabel": "Num",
+  "nameHint": "p.ex., Alex Rivers",
+  "ageLabel": "Vegliadetgna",
+  "ageHint": "p.ex., 32",
+  "sexAssignedAtBirth": "Sex attribuì a la naschientscha",
+  "sexFemale": "Feminin",
+  "sexMale": "Masculin",
+  "heightLabel": "Autezza",
+  "weightLabel": "Pais",
+  "heightHint": "170",
+  "weightHint": "70",
+  "dailyLimitReachedTitle": "Limit quotidian cuntanschì",
+  "dailyLimitReachedMessage": "Ti has utilisà tut ils {limit} messadis gratuits dad oz. Fa upgrade a Premium per chat illimità cun il coach.",
+  "@dailyLimitReachedMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "coachConnectError": "Jau na poss betg connectar ussa. Emprova per plaschair anc ina giada en in mument.",
+  "clearConversationTitle": "Stizzar la conversaziun?",
+  "clearConversationMessage": "Quai vegn a stizzar definitivamain l'istorgia dal chat cun il coach.",
+  "clearLabel": "Stizzar",
+  "recoveryCoachTitle": "Coach da recuperaziun",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "Stizzar la conversaziun",
+  "chatGreeting": "Allegra {name} 👋",
+  "@chatGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatDaysIntro": "Ti es al di {days} da tia via. Jau sun qua mintga giada che ti vuls discurrer.",
+  "@chatDaysIntro": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "quickPromptsLabel": "PROPOSTAS RAPIDAS",
+  "promptCravingLabel": "Hai in desideri",
+  "promptCravingSubtitle": "Revegna svelt al terren",
+  "promptMotivationLabel": "Dovra motivaziun",
+  "promptMotivationSubtitle": "In impuls cura ch'i è greiv",
+  "promptSocialLabel": "Situaziun sociala",
+  "promptSocialSubtitle": "Navigar ina reuniun",
+  "promptSlippedLabel": "Jau hai fatg in pass enavos",
+  "promptSlippedSubtitle": "Nagina critica, mo sustegn",
+  "typeMessageHint": "Scriva in messadi...",
+  "editProfileTitle": "Modifitgar il profil",
+  "couldNotSaveProfile": "Il profil na po betg vegnir memorisà: {error}",
+  "@couldNotSaveProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "heightCmLabel": "Autezza (cm)",
+  "weightKgLabel": "Pais (kg)",
+  "saveChangesLabel": "Memorisar las midadas",
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Insights e analisas avanzadas",
+  "featureUnlimitedJournal": "Endataziuns illimitadas en il diari",
+  "featureUnlimitedChat": "Chat illimità cun il coach AI",
+  "featureCommunityGroups": "Gruppas exclusivs da la communitad",
+  "featurePrioritySupport": "Sustegn prioritari d'experts",
+  "featureThemePacks": "Pachets da temas persunalisads",
+  "featureDataExport": "Export da datas",
+  "featureAdFree": "Experientscha senza reclamas",
+  "premiumMemberTitle": "Ti es in commember Premium",
+  "unlockFullRecoveryTitle": "Sblatga tia experientscha\ncumpletta da recuperaziun",
+  "premiumMemberSubtitle": "Grazia per sustegnair tia via da recuperaziun — mintga funcziun Premium sutvart è sblatgada.",
+  "premiumJoinSubtitle": "Entra en ina communitad da millis persunas che accelereschan\nlur via da guariziun cun noss utensils Premium\ne cun sustegn persunalisà.",
+  "monthlyPlanLabel": "Mensil",
+  "perMonthSuffix": "/mais",
+  "cancelAnytimeLabel": "Annullar mintga mument",
+  "yearlyPlanLabel": "Annual",
+  "billedAnnuallyLabel": "Facturà annualmain a {amount}",
+  "@billedAnnuallyLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "bestValueLabel": "Meglier valur",
+  "alreadyPremiumLabel": "Ti es Premium ✓",
+  "startPremiumLabel": "Cumenzar Premium",
+  "manageSubscriptionLabel": "Administres u annulles en las configuraziuns da l'abunament da tes apparat.",
+  "noCommitmentLabel": "Nagina obligaziun. Annulla mintga mument.",
+  "continueFreePlanLabel": "Cuntinuar cun il plan gratuit",
+  "backToHomeLabel": "Enavos a Home",
+  "cancelPremiumLabel": "Annullar Premium",
+  "cancelPremiumTitle": "Annullar Premium?",
+  "cancelPremiumMessage": "Ti perdas l'access a las endataziuns illimitadas dal diari, il chat illimità cun il coach, ils insights da statisticas e ils rapports emnils. Ti pos abonnar danovamain mintga mument.",
+  "keepPremiumLabel": "Mantegna Premium",
+  "nowPremiumMessage": "Ti es ussa Premium! Gida tia experientscha cumpletta da recuperaziun.",
+  "premiumCancelledMessage": "Premium è vegnì annullà. Ti es turnà al plan gratuit.",
+  "termsOfUseLabel": "Cundiziuns d'utilisaziun",
+  "navHomeLabel": "Home",
+  "navStatsLabel": "Statisticas",
+  "navJournalLabel": "Diari",
+  "navBadgesLabel": "Insignas",
+  "navProfileLabel": "Profil",
+  "recoveryGoalsTitle": "Finamiras da recuperaziun",
+  "drinksPerWeekLabel": "Bavrondas per emna",
+  "quitReasonsLabel": "Motivs per laschar",
+  "quitReasonsHelperText": "Separa plirs motivs cun ina comma.",
+  "couldNotSaveRecoveryGoals": "Las finamiras da recuperaziun na pon betg vegnir memorisadas: {error}",
+  "@couldNotSaveRecoveryGoals": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "goalHint": "p.ex., Abstinenza cumpletta",
+  "drinksPerWeekHint": "p.ex., 12",
+  "quitReasonsHint": "p.ex., Sanadad, Famiglia, Daners",
+  "todaysPrompt": "Proposta dad oz",
+  "defaultJournalPrompt": "Tge occupa tes patratg oz?",
+  "aiJournalInsights": "Insights AI dal diari",
+  "unlockJournalInsightsMessage": "Sblatga patterns emnils, tendenzas dal stadi d'animi e insights persunalisads da tes endataziuns dal diari.",
+  "notEnoughJournalData": "Anc betg avunda datas — scriva intginas endataziuns questa emna e turna.",
+  "openEntry": "Avrir",
+  "editEntry": "Modifitgar",
+  "deleteEntry": "Stizzar",
+  "searchJournalEntries": "Tschertgar endataziuns...",
+  "writeNewEntry": "Scriver ina nova endataziun",
+  "recentEntries": "Endataziuns recentas",
+  "noJournalEntriesYet": "Anc naginas endataziuns dal diari — scriva tia emprima reflexiun sura.",
+  "noEntriesMatchFilters": "Naginas endataziuns na correspundan a tes filters.",
+  "weeklyJournalLimitReached": "Limit emnil cuntanschì",
+  "weeklyJournalLimitMessage": "Ti has utilisà tut las {limit} endataziuns gratuitas dal diari per questa emna. Fa upgrade a Premium per endataziuns illimitadas.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "newEntry": "Nova endataziun",
+  "writeYourThoughts": "Scriva tes patratgs",
+  "saveEntry": "Memorisar l'endataziun",
+  "freeEntriesLeftThisWeek": "{remaining} da {limit} endataziuns gratuitas restan questa emna",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteEntryQuestion": "Stizzar l'endataziun?",
+  "deleteEntryConfirmation": "Questa endataziun vegn stizzada definitivamain. Quai na po betg vegnir annullà.",
+  "journalEntryNotFound": "Endataziun betg chattada",
+  "journalEntryMayHaveBeenDeleted": "Questa endataziun dal diari po esser vegnida stizzada.",
+  "goBack": "Turnar enavos",
+  "journalEntryTitle": "Endataziun dal diari",
+  "moodStruggling": "Fadia",
+  "moodUnwell": "Na bain",
+  "moodNeutral": "Neutral",
+  "whatHappenedToday": "Tge è capità oz?",
+  "trigger": "Trigger",
+  "whatHelped": "Tge ha gidà",
+  "whatIllTryNextTime": "Tge ch'jau emprovel la proxima giada",
+  "journalPrivacyMessage": "Tia reflexiun è privata e memorisada en tes diari.",
+  "unlocked": "Sblatgà",
+  "daysLeft": "Anc {count} di",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} dis",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Emprima\nreflexiun",
+  "oneJournalEntry": "1 endataziun dal diari",
+  "openBook": "Avrir il cudesch",
+  "tenJournalEntries": "10 endataziuns dal diari",
+  "dedicatedWriter": "Scrivent\nengaschà",
+  "thirtyJournalEntries": "30 endataziuns dal diari",
+  "firstConversation": "Emprima\nconversaziun",
+  "oneAiCoachChat": "1 chat cun il coach AI",
+  "keepTalking": "Cuntinuescha a discurrer",
+  "fiveConversations": "5 conversaziuns",
+  "coachCompanion": "Cumpogn dal\ncoach",
+  "twentyConversations": "20 conversaziuns",
+  "checkInHabit": "Abit da\ncheck-in",
+  "sevenCheckIns": "7 check-ins",
+  "consistencyPro": "Pro da la\nconstanza",
+  "thirtyCheckIns": "30 check-ins",
+  "dedicatedJourney": "Via\nengaschada",
+  "hundredCheckIns": "100 check-ins",
+  "goalGetter": "Cuntanschader da finamiras",
+  "threeGoalsCompleted": "3 finamiras terminadas",
+  "goalAchiever": "Cuntanschader da\nfinamiras",
+  "tenGoalsCompleted": "10 finamiras terminadas",
+  "firstSavings": "Emprim\nspargn",
+  "fiveHundredSaved": "$500 spargnads",
+  "smartSaver": "Spargnader intelligent",
+  "oneThousandSaved": "$1,000 spargnads",
+  "bigSaver": "Grond spargnader",
+  "fiveThousandSaved": "$5,000 Saved",
+  "currencyProgress": "${current} da ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} da {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Cuntinuescha — tia emprima marca ta spetga!",
+  "badgesAndMilestones": "Insignas e marcas",
+  "yourMilestoneJourney": "Tia via da marcas",
+  "milestonesAchieved": "{count} marcas cuntanschidas.\nTocca per vesair",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Ti has sblatgà {unlocked} da {total} marcas sin tia via.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Restant",
+  "complete": "Cumpletà",
+  "nextMilestone": "Proxima marca",
+  "percentThere": "{subtitle} · {percent}% cuntanschì",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Marcas senza alcohol",
+  "journeyBadges": "Insignas da la via",
+  "bronze": "BRONZ",
+  "silver": "ARGIENT",
+  "gold": "Aur",
+  "platinum": "PLATIN",
+  "diamond": "DIAMANT",
+  "analyzingYourJourney": "Analisa da tia via...",
+  "aiCreatingSanctuary": "Noss AI creescha in spazi persunalisà per tia recuperaziun.",
+  "understandingHabits": "Emprender a chapir las isanzas...",
+  "calculatingBaseline": "Calculaziun da tia basa...",
+  "personalizingPlan": "Persunalisar tes plan...",
+  "finalizingSanctuary": "Finalisar tes spazi da recuperaziun...",
+  "creatingYourPlan": "Crear tes plan...",
+  "personalizedPlanError": "Nus n'avain betg pudì crear tes plan persunalisà. Emprova per plaschair anc ina giada.",
+  "retry": "Emprovar danovamain",
+  "breathInhale": "INSPIRA",
+  "breathHold": "TGNIR",
+  "breathExhale": "EXPIRA",
+  "breathDone": "FATG",
+  "breathGreatJob": "Excellent!",
+  "breathSessionsToday": "{count} sessiuns oz",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Finir l'exercizi",
+  "done": "Fatg",
+  "noCopingTipsYet": "Anc nagins cussegls",
+  "copingStrategiesWillAppear": "Tes strategies persunalisadas per far frunt cumparan qua cura che tes plan da recuperaziun è generà.",
+  "strategiesTailoredToTriggers": "Strategias adattadas a tes triggers",
+  "cravingsPeakAndPass": "Ils desideris culminan\ne passan",
+  "rideTheWaveDescription": "La gronda part dals desideris passan entaifer 15 minutas. Ti n'has betg da reagir — lascha simplamain l'unda passar cun nus.",
+  "stayWithIt": "resta cun quai",
+  "youMadeIt": "ti has fatg quai",
+  "readyWhenYouAre": "cura che ti es pront",
+  "rideItAgain": "Lascha l'unda passar danovamain",
+  "start15MinuteTimer": "Cumenzar timer da 15 minutas",
+  "rideTheWaveCompletedMessage": "Ti has laschà passar l'unda. Quai è vera forza. 💪",
+  "myProgress": "Mes progress",
+  "weekLabel": "Emna",
+  "monthLabel": "Mais",
+  "allLabel": "Tuts",
+  "daysSoberStatLabel": "Dis\nsenza alcohol",
+  "savedStatLabel": "Spargnà",
+  "avoidedStatLabel": "Evitads",
+  "moodTrends": "Tendenzas dal stadi d'animi",
+  "cravingsPattern": "Pattern dals desideris",
+  "unlockLabel": "Sblatgar",
+  "unlockFullStats": "Sblatgar tut las statisticas",
+  "premiumStatsMessage": "Las tendenzas dal stadi d'animi e ils patterns dals desideris èn funcziuns Premium. Fa upgrade per vesair tut las statisticas.",
+  "healthMilestonesWillAppear": "Tias marcas da sanadad cumparan qua.",
+  "healthMilestones": "Marcas da sanadad",
+  "dayNumber": "Di {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Senza alcohol",
+  "slipLabel": "Pass enavos",
+  "noDataLabel": "Naginas datas",
+  "milestone24Hours": "24 uras",
+  "milestoneOneWeek": "Ina emna",
+  "milestoneOneMonth": "In mais",
+  "milestoneThreeMonths": "Trais mais",
+  "milestoneSixMonths": "Sis mais",
+  "milestoneOneYear": "In onn",
+  "milestoneDayCount": "Marca dal di {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

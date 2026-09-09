@@ -1,0 +1,584 @@
+{
+  "@@locale": "ne",
+
+  "skip": "छोड्नुहोस्",
+  "continueButton": "जारी राख्नुहोस्",
+  "getStarted": "सुरु गर्नुहोस्",
+
+  "onboardingTitle1": "आफ्नो जीवनको नियन्त्रण लिनुहोस्",
+  "onboardingSubtitle1": "आफ्नो यात्रालाई ट्र्याक गर्नुहोस्, हरेक उपलब्धिको उत्सव मनाउनुहोस् र हरेक दिन आफूलाई स्वस्थ बनाउँदै जानुहोस्।",
+  "onboardingTitle2": "तपाईंको AI रिकभरी साथी",
+  "onboardingSubtitle2": "तपाईंको यात्राअनुसार तयार गरिएका व्यक्तिगत मार्गदर्शन, स्वस्थ बानी, प्रेरणादायी रिमाइन्डर र प्रगति रिपोर्टहरू प्राप्त गर्नुहोस्।",
+
+  "goodMorning": "शुभ प्रभात",
+  "goodAfternoon": "शुभ दिउँसो",
+  "goodEvening": "शुभ साँझ",
+  "goodNight": "शुभ रात्री",
+
+  "maybeLaterLabel": "सायद पछि",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "रद्द गर्नुहोस्",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "embracingClarity": "हरेक दिन एक कदम अघि बढ्दै स्पष्टता अपनाउनुहोस्।",
+  "streakLabel": "लगातार दिन",
+  "goalLabel": "लक्ष्य",
+  "daysStreak": "{count, plural, one{{count} दिन} other{{count} दिन}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "प्रिमियम योजना",
+  "premiumPlanSubtitle": "आफ्नो पूर्ण रिकभरी अनुभव अनलक गर्नुहोस्",
+
+  "accountAndSupport": "खाता र सहायता",
+  "privacyPolicy": "गोपनीयता नीति",
+  "privacyPolicySubtitle": "डाटा साझेदारी र खाता सुरक्षा व्यवस्थापन गर्नुहोस्",
+  "termsOfService": "सेवाका सर्तहरू",
+  "termsOfServiceSubtitle": "प्रायः सोधिने प्रश्नहरू, सम्पर्क र स्रोतहरू",
+  "shareApp": "एप साझा गर्नुहोस्",
+  "shareAppSubtitle": "एप आफ्ना साथीहरूसँग साझा गर्नुहोस्",
+  "resetData": "डाटा रिसेट गर्नुहोस्",
+  "resetDataSubtitle": "यस उपकरणमा सुरक्षित गरिएका सबै कुरा मेटाउनुहोस्",
+
+  "resetAllDataTitle": "सबै डाटा रिसेट गर्ने?",
+  "resetAllDataMessage": "यसले यस उपकरणमा सुरक्षित गरिएको प्रोफाइल, जर्नल प्रविष्टि र प्रगति लगायत सबै कुरा मेटाउनेछ र यसलाई फिर्ता गर्न सकिँदैन।",
+  "cancel": "रद्द गर्नुहोस्",
+  "reset": "रिसेट गर्नुहोस्",
+
+  "chooseFromGallery": "ग्यालरीबाट छान्नुहोस्",
+  "takePhoto": "फोटो खिच्नुहोस्",
+  "removePhoto": "फोटो हटाउनुहोस्",
+  "couldNotUpdatePhoto": "फोटो अपडेट गर्न सकिएन: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "फोटो हटाउन सकिएन: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "कम्प्रेस गरेपछि पनि यो फोटो धेरै ठूलो छ — कृपया अर्को फोटो छान्नुहोस्।",
+
+  "unableToLoadProfile": "तपाईंको प्रोफाइल लोड गर्न सकिएन",
+  "pleaseTryAgain": "कृपया फेरि प्रयास गर्नुहोस्।",
+  "tryAgain": "फेरि प्रयास गर्नुहोस्",
+  "profileNotFound": "प्रोफाइल फेला परेन",
+  "refresh": "रिफ्रेस गर्नुहोस्",
+  "noProfileDataFound": "यस उपकरणमा अहिलेसम्म कुनै प्रोफाइल डाटा फेला परेन।",
+
+  "couldNotResetData": "डाटा रिसेट गर्न सकिएन: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "होम",
+  "navStats": "तथ्याङ्क",
+  "navJournal": "जर्नल",
+  "navBadges": "ब्याजहरू",
+  "navProfile": "प्रोफाइल",
+
+  "featureComingSoon": "{feature} चाँडै उपलब्ध हुनेछ।",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "स्वास्थ्य",
+  "appTitle": "मदिरा सेवन छोड्नुहोस्",
+  "splashSubtitle": "मदिरामुक्त जीवनतर्फ\nपहिलो कदम चाल्नुहोस्",
+  "preparingJourney": "तपाईंको\nयात्रा तयार हुँदैछ",
+
+  "taskMorningMeditation": "बिहानको ध्यान (१० मिनेट)",
+  "taskReadChapter": "\"द सोबर डायरीज\" को अध्याय ४ पढ्नुहोस्",
+  "taskEveningJournal": "साँझको कृतज्ञता जर्नल",
+
+  "close": "बन्द गर्नुहोस्",
+  "youAreDoingGreat": "तपाईंले निकै राम्रो गरिरहनुभएको छ!",
+  "shareMilestone": "उपलब्धि साझा गर्नुहोस्",
+  "shareMilestoneMessage": "म मेरो रिकभरी यात्राको {days}औँ दिनमा छु! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "मेरो रिकभरी उपलब्धि",
+
+  "weeklyReportReadyTitle": "तपाईंको साप्ताहिक रिपोर्ट तयार छ",
+  "weeklyReportReadySubtitle": "तपाईंको हप्ता कस्तो रह्यो हेर्न ट्याप गर्नुहोस्",
+
+  "howAreYouFeeling": "तपाईंलाई कस्तो महसुस भइरहेको छ?",
+  "moodTough": "गाह्रो",
+  "moodOkay": "ठीकै",
+  "moodGood": "राम्रो",
+
+  "moneySaved": "बचत गरिएको पैसा",
+  "caloriesSaved": "बचत गरिएका क्यालोरी",
+  "healthScore": "स्वास्थ्य स्कोर",
+  "drinksAvoided": "छोडिएका पेय",
+  "estimated": "अनुमानित",
+  "aiGenerated": "AI द्वारा तयार गरिएको",
+  "daysCapsLabel": "दिन",
+
+  "todaysMotivation": "आजको प्रेरणा",
+  "defaultMotivationQuote": "तपाईंले आफ्नो प्रतिबद्धता सफलतापूर्वक कायम राख्नुभएको छ। सकारात्मक परिवर्तनको यो यात्रालाई निरन्तरता दिनुहोस्।",
+
+  "talkToCoach": "कोचसँग कुरा गर्नुहोस्",
+  "havingACraving": "मलाई मदिरा पिउने इच्छा भइरहेको छ",
+
+  "unlockWeeklyReportsTitle": "साप्ताहिक रिपोर्ट अनलक गर्नुहोस्",
+  "unlockWeeklyReportsMessage": "हरेक हप्ता आफ्ना मदिरामुक्त दिन, मुडका प्रवृत्ति र व्यक्तिगत AI प्रतिक्रिया हेर्नुहोस्। अनलक गर्न प्रिमियममा अपग्रेड गर्नुहोस्।",
+  "maybeLater": "पछि गरौँला",
+  "upgrade": "अपग्रेड गर्नुहोस्",
+
+  "weeklyReportTitle": "साप्ताहिक रिपोर्ट",
+  "weeklyReportsPremiumTitle": "साप्ताहिक रिपोर्ट प्रिमियम सुविधा हो",
+  "weeklyReportsPremiumMessage": "हरेक हप्ता आफ्ना मदिरामुक्त दिन, मुडका प्रवृत्ति, मदिरा पिउने इच्छा र व्यक्तिगत AI प्रतिक्रिया हेर्नुहोस्।",
+  "upgradeToPremium": "प्रिमियममा अपग्रेड गर्नुहोस्",
+  "couldNotGenerateReport": "अहिले तपाईंको रिपोर्ट तयार गर्न सकिएन।",
+  "tryAgainLower": "फेरि प्रयास गर्नुहोस्",
+
+  "statSoberDays": "मदिरामुक्त दिन",
+  "statAvgMood": "औसत मुड",
+  "statCravings": "मदिरा पिउने इच्छा",
+  "statMoneySaved": "बचत गरिएको पैसा",
+  "coachFeedback": "कोचको प्रतिक्रिया",
+  "journalInsights": "जर्नलका जानकारी",
+
+  "next": "अर्को",
+
+  "question1Title": "तपाईंको लक्ष्य के हो?",
+  "question1Subtitle": "तपाईंका लागि सबैभन्दा महत्त्वपूर्ण\nलक्ष्य छान्नुहोस्",
+  "goalQuitCompletely": "पूर्ण रूपमा छोड्ने",
+  "goalReduceDrinking": "मदिरा सेवन घटाउने",
+  "goalTakeABreak": "विश्राम लिने",
+  "goalBuildHealthierHabits": "स्वस्थ बानीहरू बनाउने",
+
+  "question3Title": "आफ्नो\nदिनचर्याबारे बताउनुहोस्",
+  "drinksPerWeek": "प्रति हप्ता पेय",
+  "moneySpentPerWeek": "प्रति हप्ता खर्च हुने पैसा",
+  "drinkingLevel": "मदिरा सेवनको स्तर",
+  "triggersLabel": "ट्रिगरहरू",
+  "levelSocial": "सामाजिक",
+  "levelRegular": "नियमित",
+  "levelHeavy": "धेरै",
+  "levelDependent": "निर्भर",
+  "triggerStress": "तनाव",
+  "triggerLoneliness": "एक्लोपन",
+  "triggerHabit": "बानी",
+  "triggerSadness": "दुःख",
+  "triggerAnger": "रिस",
+  "triggerBoredom": "दिक्क लाग्नु",
+  "triggerSocialPressure": "सामाजिक दबाब",
+  "triggerCelebration": "उत्सव",
+  "triggerSleepProblems": "निद्राका समस्या",
+  "triggerWorkPressure": "कामको दबाब",
+
+  "question4Title": "तपाईं किन परिवर्तन गर्न चाहनुहुन्छ?",
+  "question4Subtitle": "तपाईंको कारणले तपाईंलाई प्रेरित गर्न मद्दत गर्नेछ।",
+  "reasonImproveHealth": "मेरो स्वास्थ्य सुधार्नु",
+  "reasonSaveMoney": "पैसा बचत गर्नु",
+  "reasonFamily": "परिवार",
+  "reasonBetterSleep": "राम्रो निद्रा",
+  "reasonMentalClarity": "मानसिक स्पष्टता",
+  "reasonFitness": "फिटनेस",
+  "reasonSelfRespect": "आत्मसम्मान",
+  "reasonCareer": "करियर",
+
+  "milestoneUnlockedLabel": "उपलब्धि अनलक भयो",
+  "incredibleNamePrefix": "अविश्वसनीय, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} बचत भयो",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} वटा छोडियो",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "मेरो उपलब्धि साझा गर्नुहोस्",
+  "milestoneImageShareError": "उपलब्धिको फोटो तयार गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।",
+
+  "dailyCheckInTitle": "दैनिक चेक-इन",
+  "howAreYouFeelingToday": "आज तपाईंलाई कस्तो महसुस भइरहेको छ?",
+  "honestAnswerHelp": "तपाईंको इमानदार उत्तरले हामीलाई तपाईंलाई अझ राम्रो सहयोग गर्न मद्दत गर्छ",
+  "didYouDrinkToday": "के तपाईंले आज मदिरा पिउनुभयो?",
+  "noLabel": "होइन",
+  "yesLabel": "हो",
+  "cravingLevelNow": "अहिले मदिरा पिउने इच्छा कति छ?",
+  "anythingOnMind": "तपाईंको मनमा केही छ?",
+  "optionalLabel": "(वैकल्पिक)",
+  "dailyNoteHint": "आफ्नो दिन, ट्रिगरहरू, उपलब्धिहरूका बारेमा लेख्नुहोस्...",
+  "alreadyCheckedInToday": "आजको चेक-इन पहिले नै गरिसक्नुभएको छ",
+  "saveCheckIn": "चेक-इन सुरक्षित गर्नुहोस्",
+  "checkInsHelpTrack": "चेक-इनहरूले समयसँगै तपाईंको प्रगति ट्र्याक गर्न मद्दत गर्छन्",
+  "alreadyCompletedTodayCheckIn": "तपाईंले आजको चेक-इन पहिले नै पूरा गरिसक्नुभएको छ।",
+  "pleaseAnswerBothQuestions": "कृपया पहिले माथिका दुवै प्रश्नको उत्तर दिनुहोस्",
+  "checkInSaved": "चेक-इन सुरक्षित भयो",
+  "cravingNone": "कुनै छैन",
+  "cravingLow": "कम",
+  "cravingMedium": "मध्यम",
+  "cravingStrong": "बलियो",
+  "moodBad": "खराब",
+  "moodLow": "कम",
+  "moodOkay": "ठीकै",
+  "moodGood": "राम्रो",
+  "moodGreat": "धेरै राम्रो",
+
+  "sosSupportTitle": "SOS सहायता",
+  "notAloneMessage": "तपाईं एक्लै हुनुहुन्न, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "मदिरा पिउने इच्छा बितेर जान्छ। यो क्षण पार गर्न तलको कुनै विकल्प छान्नुहोस्।",
+  "breathingExercise": "श्वासप्रश्वास अभ्यास",
+  "breathingExerciseSubtitle": "निर्देशित ४-७-८ प्रविधि, २ मिनेट",
+  "rideTheWave": "लहरसँग बग्नुहोस्",
+  "rideTheWaveSubtitle": "१५ मिनेटको टाइमर — इच्छा सधैं बितेर जान्छ",
+  "copingTips": "सामना गर्ने सुझावहरू",
+  "copingTipsSubtitle": "तपाईंका ट्रिगरहरूका लागि व्यक्तिगत रणनीतिहरू",
+  "talkToAiCoach": "AI कोचसँग कुरा गर्नुहोस्",
+  "talkToAiCoachSubtitle": "आफ्नो रिकभरी साथीसँग च्याट गर्नुहोस्",
+  "callSomeone": "कसैलाई फोन गर्नुहोस्",
+  "callSomeoneSubtitle": "आफूले विश्वास गर्ने व्यक्तिसँग सम्पर्क गर्नुहोस्",
+  "contactsPermissionNeeded": "सम्पर्कमा रहेका व्यक्तिलाई फोन गर्न Contacts अनुमति आवश्यक छ।",
+  "beatenCravingsPrefix": "तपाईंले मदिरा पिउने इच्छालाई ",
+  "beatenCravingsCount": "{count} पटक जित्नुभएको छ",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " पहिले। तपाईं फेरि पनि गर्न सक्नुहुन्छ।",
+
+  "tellUsAboutYourself": "आफ्नो बारेमा बताउनुहोस्",
+  "detailsSubtitle": "यो जानकारीले तपाईंको रिकभरी यात्रा व्यक्तिगत बनाउन र सही जानकारी प्रदान गर्न मद्दत गर्छ।",
+  "nameLabel": "नाम",
+  "nameHint": "जस्तै, Alex Rivers",
+  "ageLabel": "उमेर",
+  "ageHint": "जस्तै, ३२",
+  "sexAssignedAtBirth": "जन्मँदा तोकिएको लिङ्ग",
+  "sexFemale": "महिला",
+  "sexMale": "पुरुष",
+  "heightLabel": "उचाइ",
+  "weightLabel": "तौल",
+  "heightHint": "१७०",
+  "weightHint": "७०",
+
+  "dailyLimitReachedTitle": "दैनिक सीमा पुग्यो",
+  "dailyLimitReachedMessage": "तपाईंले आजका सबै {limit} निःशुल्क सन्देश प्रयोग गरिसक्नुभएको छ। असीमित कोच च्याटका लागि प्रिमियममा अपग्रेड गर्नुहोस्।",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "अहिले जडान हुन सकेन। कृपया केही बेरपछि फेरि प्रयास गर्नुहोस्।",
+  "clearConversationTitle": "वार्तालाप हटाउने?",
+  "clearConversationMessage": "यसले तपाईंको कोच च्याट इतिहास स्थायी रूपमा हटाउनेछ।",
+  "clearLabel": "हटाउनुहोस्",
+  "recoveryCoachTitle": "रिकभरी कोच",
+  "onlineLabel": "अनलाइन",
+  "clearConversationMenuItem": "वार्तालाप हटाउनुहोस्",
+  "chatGreeting": "नमस्ते {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "तपाईं आफ्नो यात्राको {days}औँ दिनमा हुनुहुन्छ। कुरा गर्न चाहनुहुँदा म यहाँ छु।",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "छिटो सुझावहरू",
+  "promptCravingLabel": "मदिरा पिउने इच्छा भइरहेको छ",
+  "promptCravingSubtitle": "छिट्टै आफूलाई स्थिर बनाउनुहोस्",
+  "promptMotivationLabel": "प्रेरणा चाहिन्छ",
+  "promptMotivationSubtitle": "गाह्रो हुँदा थोरै हौसला",
+  "promptSocialLabel": "सामाजिक अवस्था",
+  "promptSocialSubtitle": "भेलालाई सहज रूपमा सामना गर्नुहोस्",
+  "promptSlippedLabel": "मबाट गल्ती भयो",
+  "promptSlippedSubtitle": "कुनै दोषारोपण छैन, केवल सहयोग",
+  "typeMessageHint": "सन्देश लेख्नुहोस्...",
+
+  "editProfileTitle": "प्रोफाइल सम्पादन गर्नुहोस्",
+  "couldNotSaveProfile": "प्रोफाइल सुरक्षित गर्न सकिएन: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "उचाइ (सेमी)",
+  "weightKgLabel": "तौल (किग्रा)",
+  "saveChangesLabel": "परिवर्तनहरू सुरक्षित गर्नुहोस्",
+
+  "premiumBadgeLabel": "प्रिमियम",
+  "featureAdvancedInsights": "उन्नत जानकारी र विश्लेषण",
+  "featureUnlimitedJournal": "असीमित जर्नल प्रविष्टिहरू",
+  "featureUnlimitedChat": "AI कोचसँग असीमित च्याट",
+  "featureCommunityGroups": "विशेष समुदाय समूहहरू",
+  "featurePrioritySupport": "प्राथमिकता प्राप्त विशेषज्ञ सहायता",
+  "featureThemePacks": "अनुकूलित थिम प्याकहरू",
+  "featureDataExport": "डाटा निर्यात",
+  "featureAdFree": "विज्ञापनरहित अनुभव",
+  "premiumMemberTitle": "तपाईं प्रिमियम सदस्य हुनुहुन्छ",
+  "unlockFullRecoveryTitle": "आफ्नो पूर्ण रिकभरी\nअनुभव अनलक गर्नुहोस्",
+  "premiumMemberSubtitle": "आफ्नो रिकभरी यात्रालाई समर्थन गर्नुभएकोमा धन्यवाद — तलका सबै प्रिमियम सुविधाहरू अनलक छन्।",
+  "premiumJoinSubtitle": "हाम्रो प्रिमियम उपकरण र व्यक्तिगत सहयोगमार्फत\nआफ्नो रिकभरी यात्रा तीव्र बनाइरहेका\nहजारौँ मानिसहरूको समुदायमा सामेल हुनुहोस्।",
+  "monthlyPlanLabel": "मासिक",
+  "perMonthSuffix": "/महिना",
+  "cancelAnytimeLabel": "जुनसुकै बेला रद्द गर्नुहोस्",
+  "yearlyPlanLabel": "वार्षिक",
+  "billedAnnuallyLabel": "वार्षिक रूपमा {amount} मा बिल गरिनेछ",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "उत्तम मूल्य",
+  "alreadyPremiumLabel": "तपाईं प्रिमियम हुनुहुन्छ ✓",
+  "startPremiumLabel": "प्रिमियम सुरु गर्नुहोस्",
+  "manageSubscriptionLabel": "आफ्नो उपकरणको सदस्यता सेटिङबाट व्यवस्थापन वा रद्द गर्नुहोस्।",
+  "noCommitmentLabel": "कुनै बाध्यता छैन। जुनसुकै बेला रद्द गर्न सक्नुहुन्छ।",
+  "continueFreePlanLabel": "निःशुल्क योजनामा जारी राख्नुहोस्",
+  "backToHomeLabel": "होममा फर्कनुहोस्",
+  "cancelPremiumLabel": "प्रिमियम रद्द गर्नुहोस्",
+  "cancelPremiumTitle": "प्रिमियम रद्द गर्ने?",
+  "cancelPremiumMessage": "तपाईंले असीमित जर्नल प्रविष्टि, असीमित कोच च्याट, तथ्याङ्कका जानकारी र साप्ताहिक रिपोर्टहरूको पहुँच गुमाउनुहुनेछ। तपाईं जुनसुकै बेला पुनः सदस्यता लिन सक्नुहुन्छ।",
+  "keepPremiumLabel": "प्रिमियम कायम राख्नुहोस्",
+  "nowPremiumMessage": "अब तपाईं प्रिमियम सदस्य हुनुहुन्छ! आफ्नो पूर्ण रिकभरी अनुभवको आनन्द लिनुहोस्।",
+  "premiumCancelledMessage": "प्रिमियम रद्द भयो। तपाईं निःशुल्क योजनामा फर्कनुभएको छ।",
+  "termsOfUseLabel": "प्रयोगका सर्तहरू",
+
+  "navHomeLabel": "होम",
+  "navStatsLabel": "तथ्याङ्क",
+  "navJournalLabel": "जर्नल",
+  "navBadgesLabel": "ब्याजहरू",
+  "navProfileLabel": "प्रोफाइल",
+
+  "recoveryGoalsTitle": "रिकभरी लक्ष्यहरू",
+  "goalLabel": "लक्ष्य",
+  "drinksPerWeekLabel": "प्रति हप्ता पेय",
+  "quitReasonsLabel": "छोड्ने कारणहरू",
+  "quitReasonsHelperText": "धेरै कारणहरूलाई अल्पविरामले छुट्याउनुहोस्।",
+  "couldNotSaveRecoveryGoals": "रिकभरी लक्ष्यहरू सुरक्षित गर्न सकिएन: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "जस्तै, पूर्ण रूपमा त्याग्ने",
+  "drinksPerWeekHint": "जस्तै, १२",
+  "quitReasonsHint": "जस्तै, स्वास्थ्य, परिवार, पैसा",
+
+  "todaysPrompt": "आजको प्रश्न",
+  "defaultJournalPrompt": "आज तपाईंको मनमा के छ?",
+  "aiJournalInsights": "AI जर्नल जानकारी",
+  "unlockJournalInsightsMessage": "आफ्नो जर्नल प्रविष्टिबाट साप्ताहिक ढाँचा, मुडका प्रवृत्ति र व्यक्तिगत जानकारी अनलक गर्नुहोस्।",
+  "notEnoughJournalData": "अहिलेसम्म पर्याप्त डाटा छैन — यस हप्ता केही प्रविष्टिहरू लेख्नुहोस् र फेरि हेर्नुहोस्।",
+  "openEntry": "खोल्नुहोस्",
+  "editEntry": "सम्पादन गर्नुहोस्",
+  "deleteEntry": "मेटाउनुहोस्",
+  "searchJournalEntries": "प्रविष्टिहरू खोज्नुहोस्...",
+  "writeNewEntry": "नयाँ प्रविष्टि लेख्नुहोस्",
+  "recentEntries": "हालका प्रविष्टिहरू",
+  "noJournalEntriesYet": "अहिलेसम्म कुनै जर्नल प्रविष्टि छैन — माथि आफ्नो पहिलो अनुभव लेख्नुहोस्।",
+  "noEntriesMatchFilters": "तपाईंका फिल्टरसँग मिल्ने कुनै प्रविष्टि छैन।",
+
+  "weeklyJournalLimitReached": "साप्ताहिक सीमा पुग्यो",
+  "weeklyJournalLimitMessage": "तपाईंले यस हप्ताका सबै {limit} निःशुल्क जर्नल प्रविष्टि प्रयोग गरिसक्नुभएको छ। असीमित प्रविष्टिका लागि प्रिमियममा अपग्रेड गर्नुहोस्।",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "नयाँ प्रविष्टि",
+  "writeYourThoughts": "आफ्ना विचारहरू लेख्नुहोस्",
+  "saveEntry": "प्रविष्टि सुरक्षित गर्नुहोस्",
+  "freeEntriesLeftThisWeek": "यस हप्ता {remaining} / {limit} निःशुल्क प्रविष्टि बाँकी",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "प्रविष्टि मेटाउने?",
+  "deleteEntryConfirmation": "यो प्रविष्टि स्थायी रूपमा मेटिनेछ। यसलाई फिर्ता गर्न सकिँदैन।",
+
+  "journalEntryNotFound": "प्रविष्टि फेला परेन",
+  "journalEntryMayHaveBeenDeleted": "यो जर्नल प्रविष्टि मेटिएको हुन सक्छ।",
+  "goBack": "पछाडि जानुहोस्",
+  "journalEntryTitle": "जर्नल प्रविष्टि",
+
+  "moodStruggling": "संघर्ष गर्दै",
+  "moodUnwell": "अस्वस्थ",
+  "moodNeutral": "तटस्थ",
+
+  "whatHappenedToday": "आज के भयो?",
+  "trigger": "ट्रिगर",
+  "whatHelped": "के कुराले मद्दत गर्‍यो",
+  "whatIllTryNextTime": "अर्कोपटक म के प्रयास गर्नेछु",
+  "journalPrivacyMessage": "तपाईंको अनुभव निजी छ र तपाईंको जर्नलमा सुरक्षित गरिएको छ।",
+
+  "unlocked": "अनलक भयो",
+  "daysLeft": "{count} दिन बाँकी",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} दिन",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "पहिलो\nआत्मचिन्तन",
+  "oneJournalEntry": "१ जर्नल प्रविष्टि",
+  "openBook": "किताब खोल्नुहोस्",
+  "tenJournalEntries": "१० जर्नल प्रविष्टिहरू",
+  "dedicatedWriter": "समर्पित\nलेखक",
+  "thirtyJournalEntries": "३० जर्नल प्रविष्टिहरू",
+  "firstConversation": "पहिलो\nवार्तालाप",
+  "oneAiCoachChat": "१ AI कोच च्याट",
+  "keepTalking": "कुरा गरिरहनुहोस्",
+  "fiveConversations": "५ वार्तालाप",
+  "coachCompanion": "कोच\nसाथी",
+  "twentyConversations": "२० वार्तालाप",
+  "checkInHabit": "चेक-इन\nबानी",
+  "sevenCheckIns": "७ चेक-इन",
+  "consistencyPro": "निरन्तरताको\nविशेषज्ञ",
+  "thirtyCheckIns": "३० चेक-इन",
+  "dedicatedJourney": "समर्पित\nयात्रा",
+  "hundredCheckIns": "१०० चेक-इन",
+  "goalGetter": "लक्ष्य प्राप्तकर्ता",
+  "threeGoalsCompleted": "३ लक्ष्य पूरा",
+  "goalAchiever": "लक्ष्य\nप्राप्तकर्ता",
+  "tenGoalsCompleted": "१० लक्ष्य पूरा",
+  "firstSavings": "पहिलो\nबचत",
+  "fiveHundredSaved": "$500 बचत",
+  "smartSaver": "स्मार्ट बचतकर्ता",
+  "oneThousandSaved": "$1,000 बचत",
+  "bigSaver": "ठूलो बचतकर्ता",
+  "fiveThousandSaved": "$5,000 बचत",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "अगाडि बढिरहनुहोस् — तपाईंको पहिलो उपलब्धि तपाईंलाई पर्खिरहेको छ!",
+  "badgesAndMilestones": "ब्याज र उपलब्धिहरू",
+  "yourMilestoneJourney": "तपाईंको उपलब्धिको यात्रा",
+  "milestonesAchieved": "{count} उपलब्धि पूरा भयो।\nहेर्न ट्याप गर्नुहोस्",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "तपाईंले आफ्नो यात्राका {total} उपलब्धिमध्ये {unlocked} अनलक गर्नुभएको छ।",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "बाँकी",
+  "complete": "पूरा",
+  "nextMilestone": "अर्को उपलब्धि",
+  "percentThere": "{subtitle} · {percent}% पूरा",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "मदिरामुक्त उपलब्धिहरू",
+  "journeyBadges": "यात्राका ब्याजहरू",
+  "bronze": "काँस्य",
+  "silver": "रजत",
+  "gold": "सुन",
+  "platinum": "प्लाटिनम",
+  "diamond": "हीरा",
+
+  "analyzingYourJourney": "तपाईंको यात्राको विश्लेषण हुँदैछ...",
+  "aiCreatingSanctuary": "हाम्रो AI ले तपाईंका लागि व्यक्तिगत सुरक्षित स्थान तयार गर्दैछ।",
+  "understandingHabits": "बानीहरू बुझ्दैछ...",
+  "calculatingBaseline": "तपाईंको आधाररेखा गणना गर्दैछ...",
+  "personalizingPlan": "तपाईंको योजना व्यक्तिगत बनाउँदैछ...",
+  "finalizingSanctuary": "तपाईंको सुरक्षित स्थान अन्तिम रूप दिँदैछ...",
+  "creatingYourPlan": "तपाईंको योजना तयार गर्दैछ...",
+  "personalizedPlanError": "तपाईंको व्यक्तिगत योजना तयार गर्न सकेनौँ। कृपया फेरि प्रयास गर्नुहोस्।",
+  "retry": "फेरि प्रयास गर्नुहोस्",
+
+  "breathingExercise": "श्वासप्रश्वास अभ्यास",
+  "breathInhale": "सास लिनुहोस्",
+  "breathHold": "रोक्नुहोस्",
+  "breathExhale": "सास छोड्नुहोस्",
+  "breathDone": "सम्पन्न",
+  "breathGreatJob": "धेरै राम्रो!",
+  "remaining": "बाँकी",
+  "breathSessionsToday": "{count, plural, one{{count} सत्र आज} other{{count} सत्र आज}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "अभ्यास समाप्त गर्नुहोस्",
+  "done": "सम्पन्न",
+
+  "noCopingTipsYet": "अहिलेसम्म सामना गर्ने कुनै सुझाव छैन",
+  "copingStrategiesWillAppear": "तपाईंको रिकभरी योजना तयार भएपछि तपाईंका लागि व्यक्तिगत सामना गर्ने रणनीतिहरू यहाँ देखिनेछन्।",
+  "strategiesTailoredToTriggers": "तपाईंका ट्रिगरअनुसार तयार गरिएका रणनीतिहरू",
+
+  "rideTheWave": "लहरसँग बग्नुहोस्",
+  "cravingsPeakAndPass": "इच्छा उत्कर्षमा पुग्छ\nर बितेर जान्छ",
+  "rideTheWaveDescription": "धेरैजसो मदिरा पिउने इच्छा १५ मिनेटभित्र बितेर जान्छ। तपाईंले त्यसअनुसार काम गर्नुपर्दैन — हामीसँगै त्यसलाई पार गर्नुहोस्।",
+  "stayWithIt": "यससँगै रहनुहोस्",
+  "youMadeIt": "तपाईंले गर्नुभयो",
+  "readyWhenYouAre": "तपाईं तयार हुँदा",
+  "rideItAgain": "फेरि पार गर्नुहोस्",
+  "start15MinuteTimer": "१५ मिनेटको टाइमर सुरु गर्नुहोस्",
+  "rideTheWaveCompletedMessage": "तपाईंले यो लहर पार गर्नुभयो। यही वास्तविक शक्ति हो। 💪",
+
+  "myProgress": "मेरो प्रगति",
+  "weekLabel": "हप्ता",
+  "monthLabel": "महिना",
+  "allLabel": "सबै",
+  "daysSoberStatLabel": "मदिरामुक्त\nदिन",
+  "savedStatLabel": "बचत",
+  "avoidedStatLabel": "छोडिएको",
+  "moodTrends": "मुडका प्रवृत्तिहरू",
+  "cravingsPattern": "मदिरा पिउने इच्छाको ढाँचा",
+  "unlockLabel": "अनलक",
+  "unlockFullStats": "पूर्ण तथ्याङ्क अनलक गर्नुहोस्",
+  "premiumStatsMessage": "मुडका प्रवृत्ति र मदिरा पिउने इच्छाका ढाँचाहरू प्रिमियम सुविधाहरू हुन्। आफ्नो पूर्ण तथ्याङ्क हेर्न अपग्रेड गर्नुहोस्।",
+  "healthMilestonesWillAppear": "तपाईंका स्वास्थ्य उपलब्धिहरू यहाँ देखिनेछन्।",
+  "healthMilestones": "स्वास्थ्य उपलब्धिहरू",
+  "dayNumber": "{day}औँ दिन",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "मदिरामुक्त",
+  "slipLabel": "चिप्लिनु",
+  "noDataLabel": "डाटा छैन",
+
+  "milestone24Hours": "२४ घण्टा",
+  "milestoneOneWeek": "एक हप्ता",
+  "milestoneOneMonth": "एक महिना",
+  "milestoneThreeMonths": "तीन महिना",
+  "milestoneSixMonths": "छ महिना",
+  "milestoneOneYear": "एक वर्ष",
+  "milestoneDayCount": "{day}औँ दिनको उपलब्धि",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "गोपनीयता नीति"
+}

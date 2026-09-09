@@ -4,6 +4,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 import '../../../constants/app_colors.dart';
 import '../../../models/milestone_definition.dart';
 import '../../../services/achievement_service.dart';
+import '../../../services/analytics_service.dart';
 import '../../../services/home_dashboard_service.dart';
 
 // Used to open the already-existing milestone achieved screen.
@@ -47,6 +48,11 @@ class _BadgesScreenState extends State<BadgesScreen> {
     // Load only once when the screen is first initialized.
     if (!_hasLoadedOnce) {
       _hasLoadedOnce = true;
+
+      // NEW — badges/milestones screen opened (fires once per screen
+      // instance, not on every RefreshIndicator pull-to-refresh).
+      AnalyticsService.instance.badgesScreenViewed();
+
       _load();
     }
   }

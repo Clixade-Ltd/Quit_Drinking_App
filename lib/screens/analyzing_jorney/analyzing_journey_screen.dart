@@ -5,6 +5,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/main_nav_screen.dart';
 
 import '../../constants/app_colors.dart';
+import '../../services/analytics_service.dart';
 import '../../services/home_dashboard_service.dart';
 import '../../services/gemini_service.dart';
 
@@ -142,6 +143,11 @@ class _AnalyzingJourneyScreenState
       debugPrint('AI PERSONALIZED PLAN SAVED');
       debugPrint('----------------------------------------');
 
+      // NEW — AI plan generated successfully, and this is the true end
+      // of onboarding (profile + questions + AI plan all saved).
+      AnalyticsService.instance.personalizedPlanGenerated();
+      AnalyticsService.instance.onboardingComplete();
+
       await Future.delayed(
         const Duration(milliseconds: 400),
       );
@@ -166,6 +172,9 @@ class _AnalyzingJourneyScreenState
       debugPrint('Stack trace:');
       debugPrint('$stackTrace');
       debugPrint('========================================');
+
+      // NEW — plan generation/save failed
+      AnalyticsService.instance.personalizedPlanFailed();
 
       if (!mounted) return;
 

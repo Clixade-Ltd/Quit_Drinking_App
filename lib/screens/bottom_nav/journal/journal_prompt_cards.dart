@@ -67,7 +67,7 @@ class _TodayPromptCardState extends State<TodayPromptCard> {
                 l10n.todaysPrompt,
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: 14,
+                  fontSize: 13,
                   color: AppColors.primary,
                 ),
               ),
@@ -85,7 +85,7 @@ class _TodayPromptCardState extends State<TodayPromptCard> {
                   l10n.aiGenerated,
                   style: const TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 11,
+                    fontSize: 9.5,
                     color: AppColors.primary,
                   ),
                 ),

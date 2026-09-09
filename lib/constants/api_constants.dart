@@ -1,7 +1,7 @@
 class ApiConstants {
   ApiConstants._();
 
-  static const String geminiApiKey = '';
+  static const String geminiApiKey = 'API-KEY';
 
   static const String geminiModel = 'gemini-flash-lite-latest';
 

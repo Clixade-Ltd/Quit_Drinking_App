@@ -1,0 +1,579 @@
+{
+  "@@locale": "hy",
+
+  "skip": "Բաց թողնել",
+  "continueButton": "Շարունակել",
+  "getStarted": "Սկսել",
+
+  "maybeLaterLabel": "Գուցե ավելի ուշ",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Չեղարկել",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "Վերահսկեք Ձեր Կյանքը",
+  "onboardingSubtitle1": "Հետևեք ձեր ճանապարհին, նշեք յուրաքանչյուր ձեռքբերում և դարձեք ավելի առողջ՝ օրեցօր:",
+  "onboardingTitle2": "Ձեր AI Ապաքինման Ուղեկիցը",
+  "onboardingSubtitle2": "Ստացեք անհատականացված ուղեցույցներ, առողջ սովորություններ, մոտիվացնող հիշեցումներ և առաջընթացի հաշվետվություններ:",
+
+  "goodMorning": "Բարի լույս",
+  "goodAfternoon": "Բարի կեսօր",
+  "goodEvening": "Բարի երեկո",
+  "goodNight": "Բարի գիշեր",
+
+  "embracingClarity": "Ընդունելով հստակությունը, օրեցօր:",
+  "streakLabel": "ՇԱՐՈՒՆԱԿԱԿԱՆՈՒԹՅՈՒՆ",
+  "goalLabel": "ՆՊԱՏԱԿ",
+  "daysStreak": "{count, plural, one{{count} Օր} other{{count} Օր}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Պրեմիում Ծրագիր",
+  "premiumPlanSubtitle": "Բացահայտեք ձեր ամբողջական ապաքինման փորձը",
+
+  "accountAndSupport": "ՀԱՇԻՎ ԵՎ ԱՋԱԿՑՈՒԹՅՈՒՆ",
+  "privacyPolicy": "Գաղտնիության Քաղաքականություն",
+  "privacyPolicySubtitle": "Կառավարեք տվյալների փոխանակումը և հաշվի անվտանգությունը",
+  "termsOfService": "Ծառայության Պայմաններ",
+  "termsOfServiceSubtitle": "Հաճախ տրվող հարցեր, կապ մեզ հետ և ռեսուրսներ",
+  "shareApp": "Կիսվել Հավելվածով",
+  "shareAppSubtitle": "Կիսվեք հավելվածով ձեր ընկերների հետ",
+  "resetData": "Վերականգնել Տվյալները",
+  "resetDataSubtitle": "Ջնջել այս սարքում պահպանված ամեն ինչ",
+
+  "resetAllDataTitle": "Ջնջե՞լ բոլոր տվյալները:",
+  "resetAllDataMessage": "Սա կջնջի այս սարքում պահպանված ամեն ինչ՝ պրոֆիլը, օրագրի գրառումները և առաջընթացը, և այն հնարավոր չէ չեղարկել:",
+  "cancel": "Չեղարկել",
+  "reset": "Ջնջել",
+
+  "chooseFromGallery": "Ընտրել Պատկերասրահից",
+  "takePhoto": "Լուսանկարել",
+  "removePhoto": "Հեռացնել Լուսանկարը",
+  "couldNotUpdatePhoto": "Չհաջողվեց թարմացնել լուսանկարը. {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Չհաջողվեց հեռացնել լուսանկարը. {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Այս լուսանկարը չափազանց մեծ է նույնիսկ սեղմումից հետո. փորձեք մեկ ուրիշը:",
+
+  "unableToLoadProfile": "Չհաջողվեց բեռնել ձեր պրոֆիլը",
+  "pleaseTryAgain": "Խնդրում ենք կրկին փորձել:",
+  "tryAgain": "Կրկին Փորձել",
+  "profileNotFound": "Պրոֆիլը չի գտնվել",
+  "refresh": "Թարմացնել",
+  "noProfileDataFound": "Այս սարքում դեռևս պրոֆիլի տվյալներ չեն գտնվել:",
+
+  "couldNotResetData": "Չհաջողվեց վերականգնել տվյալները. {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Գլխավոր",
+  "navStats": "Վիճակագրություն",
+  "navJournal": "Օրագիր",
+  "navBadges": "Կրծքանշաններ",
+  "navProfile": "Պրոֆիլ",
+
+  "featureComingSoon": "{feature} ֆունկցիան շուտով հասանելի կլինի:",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "ԱՌՈՂՋՈՒԹՅՈՒՆ",
+  "appTitle": "Դադարեցրեք խմելը",
+  "splashSubtitle": "Արեք առաջին քայլը դեպի\nառանց ալկոհոլի կյանք",
+  "preparingJourney": "Պատրաստվում է\nձեր ճանապարհորդությունը",
+
+  "taskMorningMeditation": "Առավոտյան Մեդիտացիա (10ր)",
+  "taskReadChapter": "Կարդալ \"The Sober Diaries\"-ի 4-րդ գլուխը",
+  "taskEveningJournal": "Երեկոյան Երախտագիտության Օրագիր",
+
+  "close": "Փակել",
+  "youAreDoingGreat": "Դուք հիանալի եք գործում:",
+  "shareMilestone": "Կիսվել Ձեռքբերումով",
+  "shareMilestoneMessage": "Ես իմ ապաքինման ճանապարհի {days}-րդ օրն եմ: 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Իմ ապաքինման ձեռքբերումը",
+
+  "weeklyReportReadyTitle": "Ձեր շաբաթական հաշվետվությունը պատրաստ է",
+  "weeklyReportReadySubtitle": "Սեղմեք՝ տեսնելու համար, թե ինչպես անցավ ձեր շաբաթը",
+
+  "howAreYouFeeling": "Ինչպե՞ս եք ձեզ զգում:",
+  "moodTough": "Ծանր",
+  "moodOkay": "Նորմալ",
+  "moodGood": "Լավ",
+
+  "moneySaved": "Խնայված Գումար",
+  "caloriesSaved": "Խնայված Կալորիաներ",
+  "healthScore": "Առողջության Միավոր",
+  "drinksAvoided": "Խուսափած Խմիչքներ",
+  "estimated": "Մոտավոր",
+  "aiGenerated": "Ստեղծված է AI-ի կողմից",
+  "daysCapsLabel": "ՕՐ",
+
+  "todaysMotivation": "Այսօրվա Մոտիվացիան",
+  "defaultMotivationQuote": "Դուք հաջողությամբ պահպանել եք ձեր նվիրվածությունը: Շարունակեք ընթանալ դրական փոփոխությունների ալիքով:",
+
+  "talkToCoach": "Խոսել մարզիչի հետ",
+  "havingACraving": "Ես ուժեղ ցանկություն ունեմ",
+
+  "unlockWeeklyReportsTitle": "Բացել շաբաթական հաշվետվությունները",
+  "unlockWeeklyReportsMessage": "Տեսեք ձեր սթափ օրերը, տրամադրության միտումները և անհատականացված AI կարծիքները ամեն շաբաթ: Բացելու համար թարմացրեք Պրեմիումի:",
+  "maybeLater": "Գուցե ավելի ուշ",
+  "upgrade": "Թարմացնել",
+
+  "weeklyReportTitle": "Շաբաթական Հաշվետվություն",
+  "weeklyReportsPremiumTitle": "Շաբաթական հաշվետվությունները Պրեմիում ֆունկցիա են",
+  "weeklyReportsPremiumMessage": "Տեսեք ձեր սթափ օրերը, տրամադրության միտումները, ցանկությունները և անհատականացված AI կարծիքները ամեն շաբաթ:",
+  "upgradeToPremium": "Թարմացնել Պրեմիումի",
+  "couldNotGenerateReport": "Այս պահին չհաջողվեց ստեղծել ձեր հաշվետվությունը:",
+  "tryAgainLower": "Կրկին փորձել",
+
+  "statSoberDays": "Սթափ օրեր",
+  "statAvgMood": "Միջին տրամադրություն",
+  "statCravings": "Ցանկություններ",
+  "statMoneySaved": "Խնայված գումար",
+  "coachFeedback": "Մարզիչի կարծիքը",
+  "journalInsights": "Օրագրի վերլուծություն",
+
+  "next": "Հաջորդը",
+
+  "question1Title": "Ո՞րն է ձեր նպատակը",
+  "question1Subtitle": "Ընտրեք այն նպատակը, որն ամենաշատն է\nկարևոր ձեզ համար",
+  "goalQuitCompletely": "Լրիվ թողնել",
+  "goalReduceDrinking": "Կրճատել խմելը",
+  "goalTakeABreak": "Դադար վերցնել",
+  "goalBuildHealthierHabits": "Ձևավորել ավելի առողջ սովորություններ",
+
+  "question3Title": "Պատմեք ձեր\nառօրյայի մասին",
+  "drinksPerWeek": "Խմիչքներ շաբաթական",
+  "moneySpentPerWeek": "Ծախսված գումարը շաբաթական",
+  "drinkingLevel": "Խմելու մակարդակը",
+  "triggersLabel": "Ազդակներ (Triggers)",
+  "levelSocial": "Սոցիալական",
+  "levelRegular": "Կանոնավոր",
+  "levelHeavy": "Շատ",
+  "levelDependent": "Կախված",
+  "triggerStress": "Սթրես",
+  "triggerLoneliness": "Միայնություն",
+  "triggerHabit": "Սովորություն",
+  "triggerSadness": "Տխրություն",
+  "triggerAnger": "Բարկություն",
+  "triggerBoredom": "Ձանձրույթ",
+  "triggerSocialPressure": "Սոցիալական ճնշում",
+  "triggerCelebration": "Տոնակատարություն",
+  "triggerSleepProblems": "Քնի խնդիրներ",
+  "triggerWorkPressure": "Աշխատանքային ճնշում",
+
+  "question4Title": "Ինչո՞ւ եք ուզում փոխվել:",
+  "question4Subtitle": "Ձեր պատճառը կօգնի մոտիվացնել ձեզ:",
+  "reasonImproveHealth": "Բարելավել Առողջությունը",
+  "reasonSaveMoney": "Խնայել Գումար",
+  "reasonFamily": "Ընտանիք",
+  "reasonBetterSleep": "Ավելի Լավ Քուն",
+  "reasonMentalClarity": "Մտքի Հստակություն",
+  "reasonFitness": "Ֆիզիկական Պատրաստվածություն",
+  "reasonSelfRespect": "Ինքնահարգանք",
+  "reasonCareer": "Կարիերա",
+
+  "milestoneUnlockedLabel": "ՁԵՌՔԲԵՐՈՒՄԸ ԲԱՑՎԱԾ Է",
+  "incredibleNamePrefix": "Անհավանական է, {name}:",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} խնայված է",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} խուսափած է",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Կիսվել իմ ձեռքբերումով",
+  "milestoneImageShareError": "Չհաջողվեց ստեղծել ձեռքբերման պատկերը: Խնդրում ենք կրկին փորձել:",
+
+  "dailyCheckInTitle": "Ամենօրյա Գրանցում",
+  "howAreYouFeelingToday": "Ինչպե՞ս եք ձեզ զգում այսօր:",
+  "honestAnswerHelp": "Ձեր ազնիվ պատասխանն օգնում է մեզ ավելի լավ աջակցել ձեզ",
+  "didYouDrinkToday": "Այսօր խմե՞լ եք:",
+  "noLabel": "Ոչ",
+  "yesLabel": "Այո",
+  "cravingLevelNow": "Ցանկության մակարդակն այս պահի՞ն:",
+  "anythingOnMind": "Մտքներումդ որևէ բան կա՞:",
+  "optionalLabel": "(ոչ պարտադիր)",
+  "dailyNoteHint": "Գրեք ձեր օրվա, ազդակների, հաղթանակների մասին...",
+  "alreadyCheckedInToday": "Այսօր արդեն գրանցվել եք",
+  "saveCheckIn": "Պահպանել գրանցումը",
+  "checkInsHelpTrack": "Գրանցումներն օգնում են հետևել առաջընթացին ժամանակի ընթացքում",
+  "alreadyCompletedTodayCheckIn": "Դուք արդեն ավարտել եք այսօրվա գրանցումը:",
+  "pleaseAnswerBothQuestions": "Խնդրում ենք նախ պատասխանել վերը նշված երկու հարցերին",
+  "checkInSaved": "Գրանցումը պահպանվեց",
+  "cravingNone": "Չկա",
+  "cravingLow": "Ցածր",
+  "cravingMedium": "Միջին",
+  "cravingStrong": "Ուժեղ",
+  "moodBad": "Վատ",
+  "moodLow": "Ցածր",
+  "moodOkay": "Նորմալ",
+  "moodGood": "Լավ",
+  "moodGreat": "Հիանալի",
+
+  "sosSupportTitle": "SOS աջակցություն",
+  "notAloneMessage": "Դուք մենակ չեք, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Ցանկությունն անցնում է: Ընտրեք որևէ բան ստորև՝ այս պահն հաղթահարելու համար:",
+  "breathingExercise": "Շնչառական վարժություն",
+  "breathingExerciseSubtitle": "Ուղղորդված 4-7-8 տեխնիկա, 2 րոպե",
+  "rideTheWave": "Հաղթահարել ալիքը",
+  "rideTheWaveSubtitle": "15 րոպեանոց ժամաչափ — ցանկությունները միշտ անցնում են",
+  "copingTips": "Խորհուրդներ հաղթահարման համար",
+  "copingTipsSubtitle": "Անհատականացված ռազմավարություններ ձեր ազդակների համար",
+  "talkToAiCoach": "Խոսել AI մարզիչի հետ",
+  "talkToAiCoachSubtitle": "Զրուցեք ձեր ապաքինման ուղեկցի հետ",
+  "callSomeone": "Զանգահարել որևէ մեկին",
+  "callSomeoneSubtitle": "Կապ հաստատեք ձեր վստահելի անձի հետ",
+  "contactsPermissionNeeded": "Կոնտակտին զանգահարելու համար անհրաժեշտ է կոնտակտների թույլտվություն:",
+  "beatenCravingsPrefix": "Դուք հաղթահարել եք ցանկությունները ",
+  "beatenCravingsCount": "{count} անգամ",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " նախկինում: Դուք կարող եք դա անել կրկին:",
+
+  "tellUsAboutYourself": "Պատմեք ձեր մասին",
+  "detailsSubtitle": "Այս տեղեկատվությունն օգնում է մեզ անհատականացնել ձեր ապաքինման ճանապարհը և տրամադրել ճշգրիտ վերլուծություններ:",
+  "nameLabel": "Անուն",
+  "nameHint": "օրինակ՝ Արամ Սարգսյան",
+  "ageLabel": "Տարիք",
+  "ageHint": "օրինակ՝ 32",
+  "sexAssignedAtBirth": "Սեռը ծննդյան պահին",
+  "sexFemale": "Իգական",
+  "sexMale": "Արական",
+  "heightLabel": "Հասակ",
+  "weightLabel": "Քաշ",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Օրական սահմանաչափը սպառված է",
+  "dailyLimitReachedMessage": "Դուք օգտագործել եք այսօրվա բոլոր {limit} անվճար հաղորդագրությունները: Անսահմանափակ չաթի համար թարմացրեք Պրեմիումի:",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Այս պահին չհաջողվեց կապ հաստատել: Խնդրում ենք փորձել մի փոքր ուշ:",
+  "clearConversationTitle": "Մաքրե՞լ զրույցը:",
+  "clearConversationMessage": "Սա ընդմիշտ կհեռացնի մարզիչի հետ չաթի պատմությունը:",
+  "clearLabel": "Մաքրել",
+  "recoveryCoachTitle": "Ապաքինման մարզիչ",
+  "onlineLabel": "Առցանց",
+  "clearConversationMenuItem": "Մաքրել զրույցը",
+  "chatGreeting": "Ողջույն {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Դուք ձեր ճանապարհի {days}-րդ օրն եք: Ես այստեղ եմ, երբ ցանկանաք խոսել:",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "ԱՐԱԳ ՀԱՐՑԵՐ",
+  "promptCravingLabel": "Ուժեղ ցանկություն ունեմ",
+  "promptCravingSubtitle": "Հանգստացեք արագ",
+  "promptMotivationLabel": "Մոտիվացիայի կարիք ունեմ",
+  "promptMotivationSubtitle": "Աջակցություն դժվար պահին",
+  "promptSocialLabel": "Սոցիալական իրավիճակ",
+  "promptSocialSubtitle": "Կառավարել հավաքույթը",
+  "promptSlippedLabel": "Ես սայթաքեցի",
+  "promptSlippedSubtitle": "Առանց քննադատության, միայն աջակցություն",
+  "typeMessageHint": "Գրեք հաղորդագրություն...",
+
+  "editProfileTitle": "Խմբագրել Պրոֆիլը",
+  "couldNotSaveProfile": "Չհաջողվեց պահպանել պրոֆիլը. {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Հասակ (սմ)",
+  "weightKgLabel": "Քաշ (կգ)",
+  "saveChangesLabel": "Պահպանել Փոփոխությունները",
+
+  "premiumBadgeLabel": "ՊՐԵՄԻՈՒՄ",
+  "featureAdvancedInsights": "Ընդլայնված Վերլուծություններ",
+  "featureUnlimitedJournal": "Անսահմանափակ Օրագրի Գրառումներ",
+  "featureUnlimitedChat": "Անսահմանափակ Չաթ AI Մարզիչի հետ",
+  "featureCommunityGroups": "Բացառիկ Համայնքային Խմբեր",
+  "featurePrioritySupport": "Առաջնահերթ Փորձագիտական Աջակցություն",
+  "featureThemePacks": "Անհատական Թեմաներ",
+  "featureDataExport": "Տվյալների Արտահանում",
+  "featureAdFree": "Առանց Գովազդի Փորձառություն",
+  "premiumMemberTitle": "Դուք Պրեմիում Անդամ եք",
+  "unlockFullRecoveryTitle": "Բացահայտեք Ձեր Ամբողջական\nԱպաքինման Փորձը",
+  "premiumMemberSubtitle": "Շնորհակալություն ձեր ապաքինման ճանապարհին աջակցելու համար — ստորև բոլոր պրեմիում ֆունկցիաները բացված են:",
+  "premiumJoinSubtitle": "Միացեք հազարավոր մարդկանց համայնքին, ովքեր\nարագացնում են իրենց ապաքինման ճանապարհը մեր\nպրեմիում գործիքներով և աջակցությամբ:",
+  "monthlyPlanLabel": "Ամսական",
+  "perMonthSuffix": "/ամիս",
+  "cancelAnytimeLabel": "Չեղարկել ցանկացած ժամանակ",
+  "yearlyPlanLabel": "Տարեկան",
+  "billedAnnuallyLabel": "Վճարվում է տարեկան {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Լավագույն Առաջարկ",
+  "alreadyPremiumLabel": "Դուք Պրեմիում եք ✓",
+  "startPremiumLabel": "Սկսել Պրեմիումը",
+  "manageSubscriptionLabel": "Կառավարեք կամ չեղարկեք ձեր սարքի բաժանորդագրության կարգավորումներից:",
+  "noCommitmentLabel": "Առանց պարտավորությունների: Չեղարկեք ցանկացած ժամանակ:",
+  "continueFreePlanLabel": "Շարունակել Անվճար Ծրագրով",
+  "backToHomeLabel": "Վերադառնալ Գլխավոր",
+  "cancelPremiumLabel": "Չեղարկել Պրեմիումը",
+  "cancelPremiumTitle": "Չեղարկե՞լ Պրեմիումը:",
+  "cancelPremiumMessage": "Դուք կկորցնեք մուտքը դեպի անսահմանափակ օրագրի գրառումներ, մարզիչի չաթ, վիճակագրություն և շաբաթական հաշվետվություններ:",
+  "keepPremiumLabel": "Պահպանել Պրեմիումը",
+  "nowPremiumMessage": "Դուք այժմ Պրեմիում անդամ եք: Վայելեք ձեր ապաքինման փորձը:",
+  "premiumCancelledMessage": "Պրեմիումը չեղարկվել է: Դուք վերադարձել եք անվճար ծրագրին:",
+  "termsOfUseLabel": "Օգտագործման Պայմաններ",
+
+  "navHomeLabel": "Գլխավոր",
+  "navStatsLabel": "Վիճակագրություն",
+  "navJournalLabel": "Օրագիր",
+  "navBadgesLabel": "Կրծքանշաններ",
+  "navProfileLabel": "Պրոֆիլ",
+
+  "recoveryGoalsTitle": "Ապաքինման Նպատակներ",
+  "goalLabel": "Նպատակ",
+  "drinksPerWeekLabel": "Խմիչքներ շաբաթական",
+  "quitReasonsLabel": "Թողնելու պատճառները",
+  "quitReasonsHelperText": "Անջատեք մի քանի պատճառները ստորակետով:",
+  "couldNotSaveRecoveryGoals": "Չհաջողվեց պահպանել ապաքինման նպատակները. {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "օրինակ՝ Լիարժեք Ժուժկալություն",
+  "drinksPerWeekHint": "օրինակ՝ 12",
+  "quitReasonsHint": "օրինակ՝ Առողջություն, Ընտանիք, Գումար",
+
+  "todaysPrompt": "Այսօրվա հարցը",
+  "defaultJournalPrompt": "Ի՞նչ կա ձեր մտքում այսօր:",
+  "aiJournalInsights": "AI օրագրի վերլուծություն",
+  "unlockJournalInsightsMessage": "Բացահայտեք շաբաթական մոդելները, տրամադրության միտումները և անհատականացված վերլուծությունները ձեր գրառումներից:",
+  "notEnoughJournalData": "Դեռ բավարար տվյալներ չկան — գրեք մի քանի գրառում այս շաբաթ և կրկին ստուգեք:",
+  "openEntry": "Բացել",
+  "editEntry": "Խմբագրել",
+  "deleteEntry": "Ջնջել",
+  "searchJournalEntries": "Փնտրել գրառումները...",
+  "writeNewEntry": "Գրել նոր գրառում",
+  "recentEntries": "Վերջին Գրառումները",
+  "noJournalEntriesYet": "Դեռ օրագրի գրառումներ չկան — գրեք ձեր առաջին մտորումը վերևում:",
+  "noEntriesMatchFilters": "Ոչ մի գրառում չի համապատասխանում ձեր ֆիլտրերին:",
+
+  "weeklyJournalLimitReached": "Շաբաթական սահմանաչափը սպառված է",
+  "weeklyJournalLimitMessage": "Դուք օգտագործել եք այս շաբաթվա բոլոր {limit} անվճար գրառումները: Թարմացրեք Պրեմիումի անսահմանափակ գրառումների համար:",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Նոր գրառում",
+  "writeYourThoughts": "Գրեք ձեր մտքերը",
+  "saveEntry": "Պահպանել Գրառումը",
+  "freeEntriesLeftThisWeek": "Այս շաբաթ մնացել է {remaining} {limit}-ից անվճար գրառում",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Ջնջե՞լ գրառումը:",
+  "deleteEntryConfirmation": "Այս գրառումը ընդմիշտ կջնջվի: Այս գործողությունը հնարավոր չէ չեղարկել:",
+
+  "journalEntryNotFound": "Գրառումը չի գտնվել",
+  "journalEntryMayHaveBeenDeleted": "Այս օրագրի գրառումը հնարավոր է ջնջվել է:",
+  "goBack": "Վերադառնալ",
+  "journalEntryTitle": "Օրագրի Գրառում",
+
+  "moodStruggling": "Դժվարացող",
+  "moodUnwell": "Վատառողջ",
+  "moodNeutral": "Չեզոք",
+
+  "whatHappenedToday": "Ի՞նչ պատահեց այսօր:",
+  "trigger": "Ազդակ",
+  "whatHelped": "Ինչն օգնեց",
+  "whatIllTryNextTime": "Ինչ կփորձեմ հաջորդ անգամ",
+  "journalPrivacyMessage": "Ձեր մտորումները գաղտնի են և պահպանված են ձեր օրագրում:",
+
+  "unlocked": "Բացված է",
+  "daysLeft": "Մնացել է {count} օր",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Օր",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Առաջին\nՄտորումը",
+  "oneJournalEntry": "1 Օրագրի Գրառում",
+  "openBook": "Բաց Գիրք",
+  "tenJournalEntries": "10 Օրագրի Գրառում",
+  "dedicatedWriter": "Նվիրված\nԳրող",
+  "thirtyJournalEntries": "30 Օրագրի Գրառում",
+  "firstConversation": "Առաջին\nԶրույցը",
+  "oneAiCoachChat": "1 AI Մարզիչի Չաթ",
+  "keepTalking": "Շարունակեք Խոսել",
+  "fiveConversations": "5 Զրույց",
+  "coachCompanion": "Մարզիչի\nՈւղեկից",
+  "twentyConversations": "20 Զրույց",
+  "checkInHabit": "Գրանցման\nՍովորություն",
+  "sevenCheckIns": "7 Գրանցում",
+  "consistencyPro": "Հետևողականության\nՎարպետ",
+  "thirtyCheckIns": "30 Գրանցում",
+  "dedicatedJourney": "Նվիրված\nՃանապարհ",
+  "hundredCheckIns": "100 Գրանցում",
+  "goalGetter": "Նպատակասլաց",
+  "threeGoalsCompleted": "3 Ավարտված Նպատակ",
+  "goalAchiever": "Նպատակներ\nԻրականացնող",
+  "tenGoalsCompleted": "10 Ավարտված Նպատակ",
+  "firstSavings": "Առաջին\nԽնայողությունը",
+  "fiveHundredSaved": "$500 Խնայված է",
+  "smartSaver": "Խելացի Խնայող",
+  "oneThousandSaved": "$1,000 Խնայված է",
+  "bigSaver": "Մեծ Խնայող",
+  "fiveThousandSaved": "$5,000 Խնայված է",
+  "currencyProgress": "${current} ${target}-ից",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} {target}-ից",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Շարունակեք առաջ գնալ. ձեր առաջին ձեռքբերումը սպասում է ձեզ:",
+  "badgesAndMilestones": "Կրծքանշաններ և Ձեռքբերումներ",
+  "yourMilestoneJourney": "Ձեր Ձեռքբերումների Ճանապարհը",
+  "milestonesAchieved": "{count, plural, one{{count} ձեռքբերում է իրականացվել:\nՍեղմեք՝ տեսնելու համար} other{{count} ձեռքբերումներ են իրականացվել:\nՍեղմեք՝ տեսնելու համար}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Դուք բացել եք {unlocked}-ը {total} ձեռքբերումներից ձեր ճանապարհին:",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Մնացած",
+  "complete": "Ավարտված",
+  "nextMilestone": "Հաջորդ Ձեռքբերումը",
+  "percentThere": "{subtitle} · {percent}% արված է",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Սթափության Ձեռքբերումներ",
+  "journeyBadges": "Ճանապարհի Կրծքանշաններ",
+  "bronze": "ԲՐՈՆԶ",
+  "silver": "ԱՐԾԱԹ",
+  "gold": "ՈՍԿԻ",
+  "platinum": "ՊԼԱՏԻՆ",
+  "diamond": "ԱԴԱՄԱՆԴ",
+
+  "analyzingYourJourney": "Վերլուծվում է ձեր ճանապարհը...",
+  "aiCreatingSanctuary": "Մեր AI-ն ստեղծում է ձեր անհատական անվտանգ տարածքը:",
+  "understandingHabits": "Սովորությունների ընկալում...",
+  "calculatingBaseline": "Ձեր ելակետի հաշվարկում...",
+  "personalizingPlan": "Ձեր ծրագրի անհատականացում...",
+  "finalizingSanctuary": "Տարածքի վերջնական ձևավորում...",
+  "creatingYourPlan": "Ձեր ծրագրի ստեղծում...",
+  "personalizedPlanError": "Մենք չկարողացանք ստեղծել ձեր անհատական ծրագիրը: Խնդրում ենք կրկին փորձել:",
+  "retry": "Կրկին Փորձել",
+
+  "breathInhale": "ՆԵՐՇՆՉԵԼ",
+  "breathHold": "ՊԱՀԵԼ",
+  "breathExhale": "ԱՐՏԱՇՆՉԵԼ",
+  "breathDone": "ԱՎԱՐՏՎԵՑ",
+  "breathGreatJob": "Ապրեք, հիանալի է:",
+  "breathSessionsToday": "{count, plural, one{Այսօր {count} սեանս} other{Այսօր {count} սեանս}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Ավարտել Վարժությունը",
+  "done": "Ավարտված է",
+
+  "noCopingTipsYet": "Դեռևս չկան հաղթահարման խորհուրդներ",
+  "copingStrategiesWillAppear": "Ձեր անհատականացված հաղթահարման ռազմավարությունները կհայտնվեն այստեղ ձեր ապաքինման ծրագրի ստեղծումից հետո:",
+  "strategiesTailoredToTriggers": "Ռազմավարություններ՝ հարմարեցված ձեր ազդակներին",
+
+  "cravingsPeakAndPass": "Ցանկությունները հասնում են գագաթնակետին\nև անցնում",
+  "rideTheWaveDescription": "Ցանկությունների մեծ մասն անցնում է 15 րոպեի ընթացքում: Պետք չէ ենթարկվել դրանց — ուղղակի հաղթահարեք մեզ հետ:",
+  "stayWithIt": "մնացեք դրանում",
+  "youMadeIt": "դուք հաղթահարեցիք",
+  "readyWhenYouAre": "պատրաստ է, երբ դուք պատրաստ լինեք",
+  "rideItAgain": "Կրկին հաղթահարել",
+  "start15MinuteTimer": "Սկսել 15-Րոպեանոց Ժամաչափը",
+  "rideTheWaveCompletedMessage": "Դուք հաղթահարեցիք ալիքը: Սա իսկական ուժ է: 💪",
+
+  "myProgress": "Իմ Առաջընթացը",
+  "weekLabel": "Շաբաթ",
+  "monthLabel": "Ամիս",
+  "allLabel": "Բոլորը",
+  "daysSoberStatLabel": "Սթափ\nօրեր",
+  "savedStatLabel": "Խնայված",
+  "avoidedStatLabel": "Խուսափած",
+  "moodTrends": "Տրամադրության միտումներ",
+  "cravingsPattern": "Ցանկությունների օրինաչափություն",
+  "unlockLabel": "Բացել",
+  "unlockFullStats": "Բացել ամբողջական վիճակագրությունը",
+  "premiumStatsMessage": "Տրամադրության միտումները և ցանկությունների օրինաչափությունները Պրեմիում ֆունկցիաներ են: Թարմացրեք՝ տեսնելու համար:",
+  "healthMilestonesWillAppear": "Ձեր առողջության ձեռքբերումները կհայտնվեն այստեղ:",
+  "healthMilestones": "Առողջության ձեռքբերումներ",
+  "dayNumber": "Օր {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Սթափ",
+  "slipLabel": "Սայթաքում",
+  "noDataLabel": "Տվյալներ չկան",
+
+  "milestone24Hours": "24 Ժամ",
+  "milestoneOneWeek": "Մեկ Շաբաթ",
+  "milestoneOneMonth": "Մեկ Ամիս",
+  "milestoneThreeMonths": "Երեք Ամիս",
+  "milestoneSixMonths": "Վեց Ամիս",
+  "milestoneOneYear": "Մեկ Տարի",
+  "milestoneDayCount": "Օր {day}-ի Ձեռքբերում",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

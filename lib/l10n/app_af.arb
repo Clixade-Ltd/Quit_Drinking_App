@@ -1,0 +1,579 @@
+{
+  "@@locale": "af",
+
+  "skip": "Slaan oor",
+  "continueButton": "Gaan voort",
+  "getStarted": "Begin",
+
+  "onboardingTitle1": "Neem Beheer van Jou Lewe",
+  "onboardingSubtitle1": "Joon jou reis, vier elke prestasie en word gesonder, een dag op 'n slag.",
+  "onboardingTitle2": "Jou KI-Herstelmetgesel",
+  "onboardingSubtitle2": "Ontvang gepersonaliseerde leiding, gesonde gewoontes, motiveringsherinneringe en vorderingsverslae wat om jou reis ontwerp is.",
+
+  "goodMorning": "Goeiemôre",
+  "goodAfternoon": "Goeiemiddag",
+  "goodEvening": "Goeienaand",
+  "goodNight": "Goeienag",
+
+  "embracingClarity": "Omhels helderheid, een dag op 'n slag.",
+  "streakLabel": "REEKS",
+  "goalLabel": "DOEL",
+  "daysStreak": "{count, plural, one{{count} Dag} other{{count} Dae}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium-plan",
+  "premiumPlanSubtitle": "Ontsluit jou volle herstelervaring",
+
+  "accountAndSupport": "REKENING EN ONDERSTEUNING",
+  "privacyPolicy": "Privaatheidsbeleid",
+  "privacyPolicySubtitle": "Bestuur datadeling en rekeningsekuriteit",
+  "termsOfService": "Diensvoorwaardes",
+  "termsOfServiceSubtitle": "Gereelde vrae, kontak ons en hulpbronne",
+  "shareApp": "Deel toep",
+  "shareAppSubtitle": "Deel toep met jou vriende",
+  "resetData": "Herstel data",
+  "resetDataSubtitle": "Vee alles uit wat op hierdie toestel gestoor is",
+
+  "resetAllDataTitle": "Herstel alle data?",
+  "resetAllDataMessage": "Dit vee alles uit wat op hierdie toestel gestoor is — profiel, joernaalinskrywings en vordering — en kan nie ongedoen gemaak word nie.",
+  "cancel": "Kanselleer",
+  "reset": "Herstel",
+
+  "chooseFromGallery": "Kies uit gallery",
+  "takePhoto": "Neem foto",
+  "removePhoto": "Verwyder foto",
+  "couldNotUpdatePhoto": "Kon nie foto opdateer nie: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Kon nie foto verwyder nie: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Daardie foto is selfs ná kompressie te groot — probeer asseblief 'n ander een.",
+
+  "unableToLoadProfile": "Kan nie jou profiel laai nie",
+  "pleaseTryAgain": "Probeer asseblief weer.",
+  "tryAgain": "Probeer weer",
+  "profileNotFound": "Profiel nie gevind nie",
+  "refresh": "Verfris",
+  "noProfileDataFound": "Nog geen profieldata op hierdie toestel gevind nie.",
+
+  "couldNotResetData": "Kon nie data herstel nie: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Tuis",
+  "navStats": "Statistiek",
+  "navJournal": "Joernaal",
+  "navBadges": "Kentekens",
+  "navProfile": "Profiel",
+
+  "featureComingSoon": "{feature} sal binnekort beskikbaar wees.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "WELSYN",
+  "appTitle": "Hou op drink",
+  "splashSubtitle": "Neem die eerste stap na 'n\nalkoholvrye lewe",
+  "preparingJourney": "Berei jou\nreis voor",
+
+  "taskMorningMeditation": "Oggendmeditasie (10m)",
+  "taskReadChapter": "Lees Hoofstuk 4 van \"The Sober Diaries\"",
+  "taskEveningJournal": "Aanddankbaarheidsjoernaal",
+
+  "close": "Sluit",
+  "youAreDoingGreat": "Jy vaar uitstekend!",
+  "shareMilestone": "Deel mylpaal",
+  "shareMilestoneMessage": "Ek is op dag {days} van my herstelreis! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "My herstelmylpaal",
+
+  "weeklyReportReadyTitle": "Jou weeklikse verslag is gereed",
+  "weeklyReportReadySubtitle": "Tik om te sien hoe jou week verloop het",
+
+  "howAreYouFeeling": "Hoe voel jy?",
+  "moodTough": "Moeilik",
+  "moodOkay": "Oraait",
+  "moodGood": "Goed",
+
+  "moneySaved": "Geld gespaar",
+  "caloriesSaved": "Kalorieë gespaar",
+  "healthScore": "Gesondheidstelling",
+  "drinksAvoided": "Drankies vermy",
+  "estimated": "Beraamd",
+  "aiGenerated": "KI-gegenereer",
+  "daysCapsLabel": "DAE",
+
+  "todaysMotivation": "Vandag se motivering",
+  "defaultMotivationQuote": "Jy het jou verbintenis suksesvol gehandhaaf. Hou aan om die golwe van positiewe verandering te ry.",
+
+  "talkToCoach": "Praat met afrigter",
+  "havingACraving": "Ek het 'n drang",
+
+  "unlockWeeklyReportsTitle": "Ontsluit weeklikse verslae",
+  "unlockWeeklyReportsMessage": "Sien jou sober dae, neigings in bui en gepersonaliseerde KI-terugvoer elke week. Gradeer op na Premium om te ontsluit.",
+  "maybeLater": "Miskien later",
+  "upgrade": "Gradeer op",
+
+  "weeklyReportTitle": "Weeklikse verslag",
+  "weeklyReportsPremiumTitle": "Weeklikse verslae is 'n Premium-funksie",
+  "weeklyReportsPremiumMessage": "Sien jou sober dae, neigings in bui, drange en gepersonaliseerde KI-terugvoer elke week.",
+  "upgradeToPremium": "Gradeer op na Premium",
+  "couldNotGenerateReport": "Kon nie jou verslag nou genereer nie.",
+  "tryAgainLower": "Probeer weer",
+
+  "statSoberDays": "Sober dae",
+  "statAvgMood": "Gem. bui",
+  "statCravings": "Drange",
+  "statMoneySaved": "Geld gespaar",
+  "coachFeedback": "Afrigterterugvoer",
+  "journalInsights": "Joernaalinsigte",
+
+  "next": "Volgende",
+
+  "question1Title": "Wat is jou doel",
+  "question1Subtitle": "Kies die doel wat vir jou\ndie belangrikste is",
+  "goalQuitCompletely": "Hou heeltemal op",
+  "goalReduceDrinking": "Verminder drinkgewoontes",
+  "goalTakeABreak": "Neem 'n breek",
+  "goalBuildHealthierHabits": "Bou gesonder gewoontes",
+
+  "question3Title": "Vertel ons van jou\nrutine",
+  "drinksPerWeek": "Drankies per week",
+  "moneySpentPerWeek": "Geld bestee per week",
+  "drinkingLevel": "Drinkvlak",
+  "triggersLabel": "Snellers",
+  "levelSocial": "Sosiaal",
+  "levelRegular": "Gereeld",
+  "levelHeavy": "Swaar",
+  "levelDependent": "Afhanklik",
+  "triggerStress": "Stres",
+  "triggerLoneliness": "Eensaamheid",
+  "triggerHabit": "Gewoonte",
+  "triggerSadness": "Hartseer",
+  "triggerAnger": "Woede",
+  "triggerBoredom": "Sinteloosheid",
+  "triggerSocialPressure": "Sosiale druk",
+  "triggerCelebration": "Viering",
+  "triggerSleepProblems": "Slaapprobleme",
+  "triggerWorkPressure": "Werkdruk",
+
+  "question4Title": "Hoekom wil jy verander?",
+  "question4Subtitle": "Jou rede sal help om jou te motiveer.",
+  "reasonImproveHealth": "Verbeter my gesondheid",
+  "reasonSaveMoney": "Spaar geld",
+  "reasonFamily": "Familie",
+  "reasonBetterSleep": "Beter slaap",
+  "reasonMentalClarity": "Geestelike helderheid",
+  "reasonFitness": "Fiksheid",
+  "reasonSelfRespect": "Selfrespek",
+  "reasonCareer": "Loopbaan",
+
+  "milestoneUnlockedLabel": "MYLPAAL ONTSLUIT",
+  "incredibleNamePrefix": "Ongelooflik, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} gespaar",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} vermy",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Deel my mylpaal",
+  "milestoneImageShareError": "Kon nie die mylpaalbeeld skep nie. Probeer asseblief weer.",
+
+  "dailyCheckInTitle": "Daaglikse Inklok",
+  "howAreYouFeelingToday": "Hoe voel jy vandag?",
+  "honestAnswerHelp": "Jou eerlike antwoord help ons om jou beter te ondersteun",
+  "didYouDrinkToday": "Het jy vandag gedrink?",
+  "noLabel": "Nee",
+  "yesLabel": "Ja",
+  "cravingLevelNow": "Drangvlak op die oomblik?",
+  "anythingOnMind": "Enigiets op jou hart?",
+  "optionalLabel": "(opsioneel)",
+  "dailyNoteHint": "Skryf oor jou dag, snellers, oorwinnings...",
+  "alreadyCheckedInToday": "Reeds vandag ingeklok",
+  "saveCheckIn": "Stoor inklok",
+  "checkInsHelpTrack": "Inklokkings help om jou vordering oor tyd te volg",
+  "alreadyCompletedTodayCheckIn": "Jy het reeds vandag se inklok voltooi.",
+  "pleaseAnswerBothQuestions": "Beantwoord asseblief eers albei bostaande vrae",
+  "checkInSaved": "Inklok gestoor",
+  "cravingNone": "Geen",
+  "cravingLow": "Laag",
+  "cravingMedium": "Gemiddeld",
+  "cravingStrong": "Sterk",
+  "moodBad": "Sleg",
+  "moodLow": "Laag",
+  "moodOkay": "Oraait",
+  "moodGood": "Goed",
+  "moodGreat": "Uitstekend",
+
+  "sosSupportTitle": "SOS-ondersteuning",
+  "notAloneMessage": "Jy is nie alleen nie, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Drange gaan verby. Kies iets hieronder om jou deur hierdie oomblik te help.",
+  "breathingExercise": "Aemhalingsoefening",
+  "breathingExerciseSubtitle": "Begeleide 4-7-8 tegniek, 2 minute",
+  "rideTheWave": "Ry die golf",
+  "rideTheWaveSubtitle": "15 min teller — drange gaan altyd verby",
+  "copingTips": "Hanteerwenke",
+  "copingTipsSubtitle": "Gepersonaliseerde strategieë vir jou snellers",
+  "talkToAiCoach": "Praat met KI-afrigter",
+  "talkToAiCoachSubtitle": "Gesels met jou herstelmetgesel",
+  "callSomeone": "Bel iemand",
+  "callSomeoneSubtitle": "Reik na jou vertroude kontak",
+  "contactsPermissionNeeded": "Kontaktekstetoestemming is nodig om 'n kontak te bel.",
+  "beatenCravingsPrefix": "Jy het drange al ",
+  "beatenCravingsCount": "{count} keer",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " vantevore oorwin. Jy kan dit weer doen.",
+
+  "tellUsAboutYourself": "Vertel ons van jouself",
+  "detailsSubtitle": "Hierdie inligting help ons om jou herstelreis te verpersoonlik en akkurate insigte te verskaf.",
+  "nameLabel": "Naam",
+  "nameHint": "bv. Alex Rivers",
+  "ageLabel": "Ouderdom",
+  "ageHint": "bv. 32",
+  "sexAssignedAtBirth": "Geslag toegewys met geboorte",
+  "sexFemale": "Vroulik",
+  "sexMale": "Marlik",
+  "heightLabel": "Hoogte",
+  "weightLabel": "Gewig",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Daaglikse limiet bereik",
+  "dailyLimitReachedMessage": "Jy het al jou {limit} gratis boodskappe vandag gebruik. Gradeer op na Premium vir onbeperkte klets.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Ek kon nie nou konnekteer nie. Probeer asseblief oor 'n oomblik weer.",
+  "clearConversationTitle": "Vee gesprek uit?",
+  "clearConversationMessage": "Dit sal jou afrigter-kletshistorie permanent verwyder.",
+  "clearLabel": "Vee uit",
+  "recoveryCoachTitle": "Herstelafrigter",
+  "onlineLabel": "Aanlyn",
+  "clearConversationMenuItem": "Vee gesprek uit",
+  "chatGreeting": "Hallo {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Jy is op dag {days} van jou reis. Ek is hier wanneer jy ook al wil gesels.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "VINNIGE AANWYSINGS",
+  "promptCravingLabel": "Het 'n drang",
+  "promptCravingSubtitle": "Kry vinnig fokus",
+  "promptMotivationLabel": "Het motivering nodig",
+  "promptMotivationSubtitle": "'n Hupstoot wanneer dit moeilik is",
+  "promptSocialLabel": "Sosiale situasie",
+  "promptSocialSubtitle": "Stuur 'n bijeenoms",
+  "promptSlippedLabel": "Ek het gegly",
+  "promptSlippedSubtitle": "Geen oordeel nie, net ondersteuning",
+  "typeMessageHint": "Tik 'n boodskap...",
+
+  "editProfileTitle": "Wysig profiel",
+  "couldNotSaveProfile": "Kon nie profiel stoor nie: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Hoogte (cm)",
+  "weightKgLabel": "Gewig (kg)",
+  "saveChangesLabel": "Stoor veranderinge",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Gevorderde insigte en analise",
+  "featureUnlimitedJournal": "Onbeperkte joernaalinskrywings",
+  "featureUnlimitedChat": "Onbeperkte klets met KI-afrigter",
+  "featureCommunityGroups": "Eksklusiewe gemeenskapsgroepe",
+  "featurePrioritySupport": "Prioriteitskundige ondersteuning",
+  "featureThemePacks": "Pasgemaakte temapakke",
+  "featureDataExport": "Data-uitvoer",
+  "featureAdFree": "Advertensievrye ervaring",
+  "premiumMemberTitle": "Jy is 'n Premium-lid",
+  "unlockFullRecoveryTitle": "Ontsluit jou volle herstel-\nervaring",
+  "premiumMemberSubtitle": "Dankie dat jy jou herstelreis ondersteun — elke premium-funksie hieronder is ontsluit.",
+  "premiumJoinSubtitle": "Sluit aan by 'n gemeenskap van duisende wat hul\ngenesingsreis versnel met ons\npremium-gereedskap en gepersonaliseerde ondersteuning.",
+  "monthlyPlanLabel": "Mandeliks",
+  "perMonthSuffix": "/mnd",
+  "cancelAnytimeLabel": "Kanselleer enige tyd",
+  "yearlyPlanLabel": "Jaarliks",
+  "billedAnnuallyLabel": "Jaarliks gefaktureer teen {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Beste waarde",
+  "alreadyPremiumLabel": "Jy is Premium ✓",
+  "startPremiumLabel": "Begin Premium",
+  "manageSubscriptionLabel": "Bestuur of kanselleer vanuit jou toestel se intekeninstellings.",
+  "noCommitmentLabel": "Geen verbintenis nie. Kanselleer enige tyd.",
+  "continueFreePlanLabel": "Gaan voort met gratis plan",
+  "backToHomeLabel": "Terug na Tuis",
+  "cancelPremiumLabel": "Kanselleer Premium",
+  "cancelPremiumTitle": "Kanselleer Premium?",
+  "cancelPremiumMessage": "Jy sal toegang verloor tot onbeperkte joernaalinskrywings, onbeperkte afrigterklets, statistiek-insigte en weeklikse verslae. Jy kan enige tyd weer inteken.",
+  "keepPremiumLabel": "Hou Premium",
+  "nowPremiumMessage": "Jy is nou Premium! Geniet jou volle herstelervaring.",
+  "premiumCancelledMessage": "Premium gekanselleer. Jy is terug op die gratis plan.",
+  "termsOfUseLabel": "Gebruiksvoorwaardes",
+
+  "navHomeLabel": "Tuis",
+  "navStatsLabel": "Statistiek",
+  "navJournalLabel": "Joernaal",
+  "navBadgesLabel": "Kentekens",
+  "navProfileLabel": "Profiel",
+
+  "recoveryGoalsTitle": "Hersteldoelwitte",
+  "goalLabel": "Doel",
+  "drinksPerWeekLabel": "Drankies per week",
+  "quitReasonsLabel": "Oorsake om op te hou",
+  "quitReasonsHelperText": "Skei verskeie redes met 'n komma.",
+  "couldNotSaveRecoveryGoals": "Kon nie hersteldoelwitte stoor nie: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "bv., Volledige onthouding",
+  "drinksPerWeekHint": "bv., 12",
+  "quitReasonsHint": "bv., Gesondheid, Familie, Geld",
+
+  "todaysPrompt": "Vandag se tema",
+  "defaultJournalPrompt": "Wat is vandag op jou hart?",
+  "aiJournalInsights": "KI-joernaalinsigte",
+  "unlockJournalInsightsMessage": "Ontsluit weeklikse patrone, neigings in bui en gepersonaliseerde insigte uit jou joernaalinskrywings.",
+  "notEnoughJournalData": "Nog nie genoeg data nie — skryf hierdie week 'n paar inskrywings en kyk weer.",
+  "openEntry": "Oopmaak",
+  "editEntry": "Wysig",
+  "deleteEntry": "Schrap",
+  "searchJournalEntries": "Soek inskrywings...",
+  "writeNewEntry": "Skryf nuwe inskrywing",
+  "recentEntries": "Onlangse inskrywings",
+  "noJournalEntriesYet": "Nog geen joernaalinskrywings nie — skryf jou eerste refleksie hierbo.",
+  "noEntriesMatchFilters": "Geen inskrywings stem ooreen met jou filters nie.",
+
+  "weeklyJournalLimitReached": "Weeklikse limiet bereik",
+  "weeklyJournalLimitMessage": "Jy het al jou {limit} gratis joernaalinskrywings hierdie week gebruik. Gradeer op na Premium vir onbeperkte inskrywings.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Nuwe inskrywing",
+  "writeYourThoughts": "Skryf jou gedagtes",
+  "saveEntry": "Stoor inskrywing",
+  "freeEntriesLeftThisWeek": "{remaining} van {limit} gratis inskrywings oor hierdie week",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Vee inskrywing uit?",
+  "deleteEntryConfirmation": "Hierdie inskrywing sal permanent verwyder word. Dit kan nie ongedoen gemaak word nie.",
+
+  "journalEntryNotFound": "Inskrywing nie gevind nie",
+  "journalEntryMayHaveBeenDeleted": "Hierdie joernaalinskrywing is moontlik verwyder.",
+  "goBack": "Gaan terug",
+  "journalEntryTitle": "Joernaalinskrywing",
+
+  "moodStruggling": "Moeite ondervind",
+  "moodUnwell": "Ongesteld",
+  "moodNeutral": "Neutraal",
+
+  "whatHappenedToday": "Wat het vandag gebeur?",
+  "trigger": "Sneller",
+  "whatHelped": "Wat het gehelp",
+  "whatIllTryNextTime": "Wat ek volgende keer sal probeer",
+  "journalPrivacyMessage": "Jou refleksie is privaat en in jou joernaal gestoor.",
+
+  "unlocked": "Ontsluit",
+  "daysLeft": "{count} dag{count, plural, =1{} other{e}} oor",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Dae",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Eerste\nRefleksie",
+  "oneJournalEntry": "1 Joernaalinskrywing",
+  "openBook": "Oop Boek",
+  "tenJournalEntries": "10 Joernaalinskrywings",
+  "dedicatedWriter": "Toegewyde\nSkrywer",
+  "thirtyJournalEntries": "30 Joernaalinskrywings",
+  "firstConversation": "Eerste\nGesprek",
+  "oneAiCoachChat": "1 KI-afrigterklets",
+  "keepTalking": "Hou Aan Praat",
+  "fiveConversations": "5 Gesprekke",
+  "coachCompanion": "Afrigter-\nmetgesel",
+  "twentyConversations": "20 Gesprekke",
+  "checkInHabit": "Inklok-\ngewoonte",
+  "sevenCheckIns": "7 Inklokkings",
+  "consistencyPro": "Konstantheids-\nkenner",
+  "thirtyCheckIns": "30 Inklokkings",
+  "dedicatedJourney": "Toegewyde\nReis",
+  "hundredCheckIns": "100 Inklokkings",
+  "goalGetter": "Doelwitbereiker",
+  "threeGoalsCompleted": "3 Doelwitte voltooi",
+  "goalAchiever": "Doelwit-\nbehaaler",
+  "tenGoalsCompleted": "10 Doelwitte voltooi",
+  "firstSavings": "Eerste\nSpaarbedrag",
+  "fiveHundredSaved": "$500 gespaar",
+  "smartSaver": "Slim Spaarder",
+  "oneThousandSaved": "$1,000 gespaar",
+  "bigSaver": "Groot Spaarder",
+  "fiveThousandSaved": "$5,000 gespaar",
+  "currencyProgress": "${current} van ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} van {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Hou aan — jou eerste mylpaal wag vir jou!",
+  "badgesAndMilestones": "Kentekens en mylpale",
+  "yourMilestoneJourney": "Jou Mylpaalreis",
+  "milestonesAchieved": "{count} mylpaal{count, plural, =1{} other{e}} behaal.\nTik om te sien",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Jy het {unlocked} van {total} mylpale op jou reis ontsluit.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Oorblywend",
+  "complete": "Voltooi",
+  "nextMilestone": "Volgende Mylpaal",
+  "percentThere": "{subtitle} · {percent}% daar",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Soberheid-mylpale",
+  "journeyBadges": "Reiskentekens",
+  "bronze": "BRONS",
+  "silver": "SILWER",
+  "gold": "GOUD",
+  "platinum": "PLATINUM",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Ontleed jou reis...",
+  "aiCreatingSanctuary": "Ons KI skep jou gepersonaliseerde heiligdom.",
+  "understandingHabits": "Verstaan gewoontes...",
+  "calculatingBaseline": "Bereken jou basislyn...",
+  "personalizingPlan": "Verpersoonlik jou plan...",
+  "finalizingSanctuary": "Finaliseer jou heiligdom...",
+  "creatingYourPlan": "Skep jou plan...",
+  "personalizedPlanError": "Ons kon nie jou gepersonaliseerde plan skep nie. Probeer asseblief weer.",
+  "retry": "Probeer weer",
+
+  "breathInhale": "ASEM IN",
+  "breathHold": "HOUP VASTE",
+  "breathExhale": "ASEM UIT",
+  "breathDone": "KLAAR",
+  "breathGreatJob": "Uitstekende werk!",
+  "breathSessionsToday": "{count, plural, one{{count} sessie vandag} other{{count} sessies vandag}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Eindig Oefening",
+  "done": "Klaar",
+
+  "noCopingTipsYet": "Nog geen hanteerwenke nie",
+  "copingStrategiesWillAppear": "Jou gepersonaliseerde hanteerstrategieë sal hier verskyn sodat jou herstelplan klaar gegenerate is.",
+  "strategiesTailoredToTriggers": "Strategieë aangepas vir jou snellers",
+
+  "cravingsPeakAndPass": "Drange bereik 'n hoogtepunt\nen gaan verby",
+  "rideTheWaveDescription": "Die meeste drange gaan binne 15 minute verby. Jy hoef nie daarvolgens te handel nie — ry dit net saam met ons uit.",
+  "stayWithIt": "bly daarby",
+  "youMadeIt": "jy het dit gemaak",
+  "readyWhenYouAre": "gereed wanneer jy is",
+  "rideItAgain": "Ry dit weer",
+  "start15MinuteTimer": "Begin 15-Minute Teller",
+  "rideTheWaveCompletedMessage": "Jy het die golf gery. Dit is werklike krag. 💪",
+
+  "maybeLaterLabel": "Miskien later",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Kanselleer",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "myProgress": "My Vordering",
+  "weekLabel": "Week",
+  "monthLabel": "Maand",
+  "allLabel": "Alles",
+  "daysSoberStatLabel": "Dae\nsober",
+  "savedStatLabel": "Gespaar",
+  "avoidedStatLabel": "Vermy",
+  "moodTrends": "Buineigings",
+  "cravingsPattern": "Drangpatroon",
+  "unlockLabel": "Ontsluit",
+  "unlockFullStats": "Ontsluit volle statistiek",
+  "premiumStatsMessage": "Buineigings en drangpatrone is Premium-funksies. Gradeer op om jou volle statistieke te sien.",
+  "healthMilestonesWillAppear": "Jou gesondheidsmylpale sal hier verskyn.",
+  "healthMilestones": "Gesondheidsmylpale",
+  "dayNumber": "Dag {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Sober",
+  "slipLabel": "Glibbering",
+  "noDataLabel": "Geen data",
+
+  "milestone24Hours": "24 Uur",
+  "milestoneOneWeek": "Een Week",
+  "milestoneOneMonth": "Een Maand",
+  "milestoneThreeMonths": "Drie Maande",
+  "milestoneSixMonths": "Ses Maande",
+  "milestoneOneYear": "Een Jaar",
+  "milestoneDayCount": "Dag {day} Mylpaal",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

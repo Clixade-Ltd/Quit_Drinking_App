@@ -4,6 +4,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 import '../../../constants/app_colors.dart';
 import '../../../models/journal_draft_store.dart';
 import '../../../services/premium_service.dart';
+import '../../../services/analytics_service.dart';
 import 'journal_prompt_cards.dart';
 import '../../../services/achievement_service.dart';
 
@@ -40,6 +41,8 @@ class _TodayReflectionScreenState
 
   static const int _freeWeeklyLimit = 3;
 
+  final AnalyticsService _analytics = AnalyticsService.instance;
+
   int? _selectedMood;
 
   final _mainController = TextEditingController();
@@ -69,6 +72,10 @@ class _TodayReflectionScreenState
     }
 
     _loadPremiumStatus();
+
+    if (!_isEditing) {
+      _analytics.journalEntryStarted();
+    }
   }
 
   Future<void> _loadPremiumStatus() async {
@@ -120,6 +127,8 @@ class _TodayReflectionScreenState
               _freeWeeklyLimit) {
         if (!mounted) return;
 
+        _analytics.journalLimitReached();
+
         await _showPaywallDialog(
           title: l10n.weeklyJournalLimitReached,
           message: l10n.weeklyJournalLimitMessage(
@@ -137,12 +146,22 @@ class _TodayReflectionScreenState
         entryText: _mainController.text,
         moodIndex: _selectedMood,
       );
+
+      _analytics.journalEntryEdited();
     } else {
       JournalDraftStore.instance.addEntry({
         'savedAt': DateTime.now().toIso8601String(),
         'entryText': _mainController.text,
         'moodIndex': _selectedMood,
       });
+
+      final wordCount = _mainController.text
+          .trim()
+          .split(RegExp(r'\s+'))
+          .where((w) => w.isNotEmpty)
+          .length;
+
+      _analytics.journalEntrySaved(wordCount: wordCount);
     }
 
     if (!mounted) return;

@@ -70,7 +70,7 @@
   "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
 
   "appWordmark": "WELLNESS",
-  "appTitle": "Sober Flow",
+  "appTitle": "Quit Drinking",
   "splashSubtitle": "Take the first step towards an\nAlcohol free life",
   "preparingJourney": "Preparing your\njourney",
 
@@ -128,14 +128,14 @@
 
     "next": "Next",
 
-    "question1Title": "What is your goal",
+    "question1Title": "What is your goal?",
     "question1Subtitle": "Choose the goal that matter\nmost to you",
     "goalQuitCompletely": "Quit Completely",
     "goalReduceDrinking": "Reduce drinking",
     "goalTakeABreak": "Take a break",
     "goalBuildHealthierHabits": "Build healthier habits",
 
-    "question3Title": "Tell us about your\nroutine",
+    "question3Title": "Tell us about your\nroutine.",
     "drinksPerWeek": "Drinks per week",
     "moneySpentPerWeek": "Money spent per week",
     "drinkingLevel": "Drinking level",
@@ -572,7 +572,17 @@
         }
       },
 
-      "privacyPolicy": "Privacy Policy"
+      "privacyPolicy": "Privacy Policy",
+
+      "maybeLaterLabel": "Maybe later",
+      "@maybeLaterLabel": {
+        "description": "Button to dismiss the paywall dialog without upgrading"
+      },
+
+      "cancelLabel": "Cancel",
+      "@cancelLabel": {
+        "description": "Generic cancel button label"
+      }
 
 
 }

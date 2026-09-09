@@ -7,6 +7,7 @@ import '../../services/local_storage_service.dart';
 import '../../services/recovery_coach_chat_service.dart';
 import '../../services/premium_service.dart';
 import '../../services/chat_usage_service.dart';
+import '../../services/analytics_service.dart';
 
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
@@ -36,15 +37,18 @@ class _RecoveryCoachChatScreenState
   // CONTROLLERS
   // ============================================================
 
-  final TextEditingController _messageController = TextEditingController();
+  final TextEditingController _messageController =
+  TextEditingController();
 
-  final ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController =
+  ScrollController();
 
   // ============================================================
   // SERVICES
   // ============================================================
 
-  final LocalStorageService _storage = LocalStorageService.instance;
+  final LocalStorageService _storage =
+      LocalStorageService.instance;
 
   final HomeDashboardService _dashboardService =
       HomeDashboardService.instance;
@@ -52,11 +56,15 @@ class _RecoveryCoachChatScreenState
   final RecoveryCoachChatService _coachService =
       RecoveryCoachChatService.instance;
 
+  final AnalyticsService _analytics =
+      AnalyticsService.instance;
+
   // ============================================================
   // CHAT MESSAGES
   // ============================================================
 
-  final List<Map<String, String>> _messages = <Map<String, String>>[];
+  final List<Map<String, String>> _messages =
+  <Map<String, String>>[];
 
   // ============================================================
   // STATE
@@ -80,6 +88,7 @@ class _RecoveryCoachChatScreenState
   void initState() {
     super.initState();
     _loadChat();
+    _analytics.chatOpened();
   }
 
   // ============================================================
@@ -91,6 +100,14 @@ class _RecoveryCoachChatScreenState
     _messageController.dispose();
     _scrollController.dispose();
     super.dispose();
+  }
+
+  // ============================================================
+  // DISMISS KEYBOARD
+  // ============================================================
+
+  void _dismissKeyboard() {
+    FocusManager.instance.primaryFocus?.unfocus();
   }
 
   // ============================================================
@@ -110,18 +127,22 @@ class _RecoveryCoachChatScreenState
       // LOAD USER DATA
       // ----------------------------------------------------------
 
-      final days = await _dashboardService.getDaysSober();
+      final days =
+      await _dashboardService.getDaysSober();
 
-      final name = await _dashboardService.getUserName();
+      final name =
+      await _dashboardService.getUserName();
 
       // ----------------------------------------------------------
       // LOAD PREMIUM + USAGE STATE
       // ----------------------------------------------------------
 
-      final isPremium = await PremiumService.instance.isPremium();
+      final isPremium =
+      await PremiumService.instance.isPremium();
 
       final messagesUsedToday =
-      await ChatUsageService.instance.getTodayCount();
+      await ChatUsageService.instance
+          .getTodayCount();
 
       // ----------------------------------------------------------
       // CLEAR CURRENT MEMORY
@@ -139,11 +160,14 @@ class _RecoveryCoachChatScreenState
         if (rawMessages is List) {
           for (final item in rawMessages) {
             if (item is Map) {
-              final role = item['role']?.toString().trim();
+              final role =
+              item['role']?.toString().trim();
 
-              final text = item['text']?.toString().trim();
+              final text =
+              item['text']?.toString().trim();
 
-              if ((role == 'user' || role == 'model') &&
+              if ((role == 'user' ||
+                  role == 'model') &&
                   text != null &&
                   text.isNotEmpty) {
                 _messages.add({
@@ -165,21 +189,28 @@ class _RecoveryCoachChatScreenState
       setState(() {
         _daysSober = days;
 
-        if (name != null && name.trim().isNotEmpty) {
-          _userName = name.trim().split(RegExp(r'\s+')).first;
+        if (name != null &&
+            name.trim().isNotEmpty) {
+          _userName =
+              name.trim().split(
+                RegExp(r'\s+'),
+              ).first;
         } else {
           _userName = 'there';
         }
 
         _isPremium = isPremium;
-        _messagesUsedToday = messagesUsedToday;
+        _messagesUsedToday =
+            messagesUsedToday;
 
         _isLoading = false;
       });
 
       _scrollToBottom();
     } catch (e) {
-      debugPrint('Recovery Coach load error: $e');
+      debugPrint(
+        'Recovery Coach load error: $e',
+      );
 
       if (!mounted) return;
 
@@ -209,7 +240,9 @@ class _RecoveryCoachChatScreenState
         },
       );
     } catch (e) {
-      debugPrint('Recovery Coach save error: $e');
+      debugPrint(
+        'Recovery Coach save error: $e',
+      );
     }
   }
 
@@ -217,8 +250,12 @@ class _RecoveryCoachChatScreenState
   // SEND MESSAGE
   // ============================================================
 
-  Future<void> _sendMessage([String? quickPrompt]) async {
-    final text = (quickPrompt ?? _messageController.text).trim();
+  Future<void> _sendMessage([
+    String? quickPrompt,
+  ]) async {
+    final text =
+    (quickPrompt ?? _messageController.text)
+        .trim();
 
     // ----------------------------------------------------------
     // VALIDATE
@@ -228,16 +265,24 @@ class _RecoveryCoachChatScreenState
       return;
     }
 
-    final loc = AppLocalizations.of(context)!;
+    final loc =
+    AppLocalizations.of(context)!;
 
     // ----------------------------------------------------------
     // FREE-TIER DAILY LIMIT
     // ----------------------------------------------------------
 
-    if (!_isPremium && _messagesUsedToday >= _freeDailyLimit) {
+    if (!_isPremium &&
+        _messagesUsedToday >=
+            _freeDailyLimit) {
+      _analytics.chatDailyLimitReached();
+
       _showPaywallDialog(
         title: loc.dailyLimitReachedTitle,
-        message: loc.dailyLimitReachedMessage(_freeDailyLimit),
+        message:
+        loc.dailyLimitReachedMessage(
+          _freeDailyLimit,
+        ),
       );
       return;
     }
@@ -274,42 +319,60 @@ class _RecoveryCoachChatScreenState
       // GET PROFILE
       // ========================================================
 
-      final profile = await _dashboardService.getProfile() ??
-          <String, dynamic>{};
+      final profile =
+          await _dashboardService.getProfile() ??
+              <String, dynamic>{};
 
       // ========================================================
       // GET STATS
       // ========================================================
 
-      final stats = await _dashboardService.getStats();
+      final stats =
+      await _dashboardService.getStats();
 
       // ========================================================
       // BUILD USER DATA
       // ========================================================
 
-      final userData = <String, dynamic>{
-        'name': profile['name'] ?? _userName,
-        'goal': profile['goal'] ?? 'Reduce drinking',
-        'drinkingLevel': profile['drinkingLevel'] ?? '',
-        'drinksPerWeek': profile['drinksPerWeek'] ?? 0,
-        'triggers': profile['triggers'] ?? <dynamic>[],
-        'quitReasons': profile['quitReasons'] ?? <dynamic>[],
-        'daysSober': _daysSober,
-        'currentStreak': _daysSober,
-        'moneySaved': stats['moneySaved'] ?? 0,
-        'drinksAvoided': stats['drinksAvoided'] ?? 0,
+      final userData =
+      <String, dynamic>{
+        'name':
+        profile['name'] ?? _userName,
+        'goal':
+        profile['goal'] ??
+            'Reduce drinking',
+        'drinkingLevel':
+        profile['drinkingLevel'] ?? '',
+        'drinksPerWeek':
+        profile['drinksPerWeek'] ?? 0,
+        'triggers':
+        profile['triggers'] ??
+            <dynamic>[],
+        'quitReasons':
+        profile['quitReasons'] ??
+            <dynamic>[],
+        'daysSober':
+        _daysSober,
+        'currentStreak':
+        _daysSober,
+        'moneySaved':
+        stats['moneySaved'] ?? 0,
+        'drinksAvoided':
+        stats['drinksAvoided'] ?? 0,
       };
 
       // ========================================================
       // CREATE GEMINI HISTORY
       // ========================================================
 
-      final conversationHistory = <Map<String, dynamic>>[];
+      final conversationHistory =
+      <Map<String, dynamic>>[];
 
       for (final message in _messages) {
         final role = message['role'];
 
-        final messageText = message['text'];
+        final messageText =
+        message['text'];
 
         if (role == null ||
             messageText == null ||
@@ -317,7 +380,8 @@ class _RecoveryCoachChatScreenState
           continue;
         }
 
-        if (role != 'user' && role != 'model') {
+        if (role != 'user' &&
+            role != 'model') {
           continue;
         }
 
@@ -331,9 +395,13 @@ class _RecoveryCoachChatScreenState
       // DEBUG
       // ========================================================
 
-      debugPrint('================================================');
+      debugPrint(
+        '================================================',
+      );
       debugPrint('RECOVERY COACH');
-      debugPrint('Messages: ${conversationHistory.length}');
+      debugPrint(
+        'Messages: ${conversationHistory.length}',
+      );
       debugPrint(
         'Latest role: '
             '${conversationHistory.isNotEmpty ? conversationHistory.last['role'] : 'NONE'}',
@@ -342,15 +410,19 @@ class _RecoveryCoachChatScreenState
         'Latest text: '
             '${conversationHistory.isNotEmpty ? conversationHistory.last['text'] : 'NONE'}',
       );
-      debugPrint('================================================');
+      debugPrint(
+        '================================================',
+      );
 
       // ========================================================
       // SEND TO GEMINI
       // ========================================================
 
-      final response = await _coachService.sendMessage(
+      final response =
+      await _coachService.sendMessage(
         userData: userData,
-        conversationHistory: conversationHistory,
+        conversationHistory:
+        conversationHistory,
       );
 
       // ========================================================
@@ -369,16 +441,28 @@ class _RecoveryCoachChatScreenState
       });
 
       // ========================================================
+      // LOG SUCCESSFUL MESSAGE SEND
+      // ========================================================
+
+      _analytics.chatMessageSent(
+        isQuickPrompt:
+        quickPrompt != null,
+        promptLabel: quickPrompt,
+      );
+
+      // ========================================================
       // RECORD USAGE (only on success — a failed send shouldn't
       // cost the user a free message)
       // ========================================================
 
       final updatedCount =
-      await ChatUsageService.instance.incrementTodayCount();
+      await ChatUsageService.instance
+          .incrementTodayCount();
 
       if (mounted) {
         setState(() {
-          _messagesUsedToday = updatedCount;
+          _messagesUsedToday =
+              updatedCount;
         });
       }
 
@@ -394,10 +478,20 @@ class _RecoveryCoachChatScreenState
       // ERROR
       // ========================================================
 
-      debugPrint('================================================');
-      debugPrint('RECOVERY COACH ERROR');
+      debugPrint(
+        '================================================',
+      );
+      debugPrint(
+        'RECOVERY COACH ERROR',
+      );
       debugPrint(e.toString());
-      debugPrint('================================================');
+      debugPrint(
+        '================================================',
+      );
+
+      _analytics.chatError(
+        e.toString(),
+      );
 
       if (!mounted) return;
 
@@ -406,8 +500,10 @@ class _RecoveryCoachChatScreenState
       // --------------------------------------------------------
 
       if (_messages.isNotEmpty &&
-          _messages.last['role'] == 'user' &&
-          _messages.last['text'] == text) {
+          _messages.last['role'] ==
+              'user' &&
+          _messages.last['text'] ==
+              text) {
         _messages.removeLast();
       }
 
@@ -423,9 +519,13 @@ class _RecoveryCoachChatScreenState
 
       if (!mounted) return;
 
-      ScaffoldMessenger.of(context).showSnackBar(
+      ScaffoldMessenger.of(context)
+          .showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.coachConnectError),
+          content: Text(
+            AppLocalizations.of(context)!
+                .coachConnectError,
+          ),
         ),
       );
 
@@ -441,38 +541,66 @@ class _RecoveryCoachChatScreenState
     required String title,
     required String message,
   }) {
+    _analytics.paywallViewed(
+      'recovery_coach_chat',
+    );
+
     return showDialog<void>(
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: AppColors.white,
+          backgroundColor:
+          AppColors.white,
           title: Text(
             title,
             style: const TextStyle(
-              color: AppColors.textBlack,
-              fontWeight: FontWeight.w700,
+              color:
+              AppColors.textBlack,
+              fontWeight:
+              FontWeight.w700,
             ),
           ),
           content: Text(
             message,
-            style: const TextStyle(color: AppColors.textGrey),
+            style: const TextStyle(
+              color:
+              AppColors.textGrey,
+            ),
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Maybe later'),
+              onPressed: () {
+                _analytics
+                    .paywallDismissed(
+                  'recovery_coach_chat',
+                );
+                Navigator.of(context)
+                    .pop();
+              },
+              child: Text(
+                AppLocalizations.of(
+                  context,
+                )!.maybeLaterLabel,
+              ),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                _analytics
+                    .premiumPurchaseStarted(
+                  'unknown',
+                );
+                Navigator.of(context)
+                    .pop();
                 // TODO: navigate to PremiumPlanScreen once its route
                 // is reachable from here.
               },
               child: const Text(
                 'Upgrade',
                 style: TextStyle(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
+                  color:
+                  AppColors.primary,
+                  fontWeight:
+                  FontWeight.w600,
                 ),
               ),
             ),
@@ -486,7 +614,9 @@ class _RecoveryCoachChatScreenState
   // QUICK PROMPT
   // ============================================================
 
-  void _sendQuickPrompt(String prompt) {
+  void _sendQuickPrompt(
+      String prompt,
+      ) {
     _sendMessage(prompt);
   }
 
@@ -495,14 +625,21 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   void _scrollToBottom() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!_scrollController.hasClients) {
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) {
+      if (!_scrollController
+          .hasClients) {
         return;
       }
 
       _scrollController.animateTo(
-        _scrollController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 250),
+        _scrollController
+            .position
+            .maxScrollExtent,
+        duration:
+        const Duration(
+          milliseconds: 250,
+        ),
         curve: Curves.easeOut,
       );
     });
@@ -513,40 +650,56 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   Future<void> _clearChat() async {
-    final loc = AppLocalizations.of(context)!;
+    final loc =
+    AppLocalizations.of(context)!;
 
-    final shouldClear = await showDialog<bool>(
+    final shouldClear =
+    await showDialog<bool>(
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: AppColors.white,
+          backgroundColor:
+          AppColors.white,
           title: Text(
             loc.clearConversationTitle,
             style: const TextStyle(
-              color: AppColors.textBlack,
-              fontWeight: FontWeight.w700,
+              color:
+              AppColors.textBlack,
+              fontWeight:
+              FontWeight.w700,
             ),
           ),
           content: Text(
             loc.clearConversationMessage,
-            style: const TextStyle(color: AppColors.textGrey),
+            style: const TextStyle(
+              color:
+              AppColors.textGrey,
+            ),
           ),
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(false);
+                Navigator.of(context)
+                    .pop(false);
               },
-              child: const Text('Cancel'),
+              child: Text(
+                AppLocalizations.of(
+                  context,
+                )!.cancelLabel,
+              ),
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(true);
+                Navigator.of(context)
+                    .pop(true);
               },
               child: Text(
                 loc.clearLabel,
                 style: const TextStyle(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
+                  color:
+                  AppColors.primary,
+                  fontWeight:
+                  FontWeight.w600,
                 ),
               ),
             ),
@@ -572,9 +725,12 @@ class _RecoveryCoachChatScreenState
     await _storage.setJson(
       _chatStorageKey,
       {
-        'messages': <Map<String, String>>[],
+        'messages':
+        <Map<String, String>>[],
       },
     );
+
+    _analytics.chatCleared();
 
     if (!mounted) return;
 
@@ -591,35 +747,49 @@ class _RecoveryCoachChatScreenState
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
-        backgroundColor: AppColors.dashboardBackground,
+        backgroundColor:
+        AppColors.dashboardBackground,
         body: Center(
-          child: CircularProgressIndicator(),
+          child:
+          CircularProgressIndicator(),
         ),
       );
     }
 
-    final hasMessages = _messages.isNotEmpty;
+    final hasMessages =
+        _messages.isNotEmpty;
 
-    return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
-      resizeToAvoidBottomInset: true,
-      body: SafeArea(
-        child: Column(
-          children: [
-            _buildHeader(),
+    return PopScope(
+      canPop: true,
+      onPopInvokedWithResult:
+          (didPop, result) {
+        _dismissKeyboard();
+      },
+      child: Scaffold(
+        backgroundColor:
+        AppColors.dashboardBackground,
+        resizeToAvoidBottomInset: true,
+        body: SafeArea(
+          child: Column(
+            children: [
+              _buildHeader(),
 
-            const Divider(
-              height: 1,
-              thickness: 1,
-              color: AppColors.outlineGrey,
-            ),
+              const Divider(
+                height: 1,
+                thickness: 1,
+                color:
+                AppColors.outlineGrey,
+              ),
 
-            Expanded(
-              child: hasMessages ? _buildChatMessages() : _buildEmptyChat(),
-            ),
+              Expanded(
+                child: hasMessages
+                    ? _buildChatMessages()
+                    : _buildEmptyChat(),
+              ),
 
-            _buildMessageInput(),
-          ],
+              _buildMessageInput(),
+            ],
+          ),
         ),
       ),
     );
@@ -630,24 +800,38 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   Widget _buildHeader() {
-    final loc = AppLocalizations.of(context)!;
-    final hasMessages = _messages.isNotEmpty;
+    final loc =
+    AppLocalizations.of(context)!;
+    final hasMessages =
+        _messages.isNotEmpty;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+      padding:
+      const EdgeInsets.fromLTRB(
+        12,
+        10,
+        12,
+        10,
+      ),
       child: Row(
         children: [
           InkWell(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius:
+            BorderRadius.circular(
+              24,
+            ),
             onTap: () {
-              Navigator.of(context).pop();
+              _dismissKeyboard();
+              Navigator.of(context)
+                  .pop();
             },
             child: const SizedBox(
               width: 44,
               height: 44,
               child: Icon(
                 Icons.chevron_left,
-                color: AppColors.textBlack,
+                color:
+                AppColors.textBlack,
                 size: 32,
               ),
             ),
@@ -658,13 +842,17 @@ class _RecoveryCoachChatScreenState
           Container(
             width: 44,
             height: 44,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xFFE0F3EF),
+            decoration:
+            const BoxDecoration(
+              shape:
+              BoxShape.circle,
+              color:
+              Color(0xFFE0F3EF),
             ),
             child: const Icon(
               Icons.favorite_border,
-              color: AppColors.primary,
+              color:
+              AppColors.primary,
               size: 25,
             ),
           ),
@@ -673,23 +861,33 @@ class _RecoveryCoachChatScreenState
 
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+              CrossAxisAlignment
+                  .start,
               children: [
                 Text(
                   loc.recoveryCoachTitle,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w700,
+                  style:
+                  const TextStyle(
+                    fontWeight:
+                    FontWeight.w700,
                     fontSize: 18,
-                    color: AppColors.textBlack,
+                    color: AppColors
+                        .textBlack,
                   ),
                 ),
-                const SizedBox(height: 2),
+                const SizedBox(
+                  height: 2,
+                ),
                 Text(
                   loc.onlineLabel,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w500,
+                  style:
+                  const TextStyle(
+                    fontWeight:
+                    FontWeight.w500,
                     fontSize: 14,
-                    color: AppColors.primary,
+                    color: AppColors
+                        .primary,
                   ),
                 ),
               ],
@@ -700,17 +898,23 @@ class _RecoveryCoachChatScreenState
             PopupMenuButton<String>(
               icon: const Icon(
                 Icons.more_vert,
-                color: AppColors.textGrey,
+                color: AppColors
+                    .textGrey,
               ),
-              onSelected: (value) {
-                if (value == 'clear') {
+              onSelected:
+                  (value) {
+                if (value ==
+                    'clear') {
                   _clearChat();
                 }
               },
               itemBuilder: (_) => [
                 PopupMenuItem(
                   value: 'clear',
-                  child: Text(loc.clearConversationMenuItem),
+                  child: Text(
+                    loc
+                        .clearConversationMenuItem,
+                  ),
                 ),
               ],
             ),
@@ -724,10 +928,17 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   Widget _buildEmptyChat() {
-    final loc = AppLocalizations.of(context)!;
+    final loc =
+    AppLocalizations.of(context)!;
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(24, 40, 24, 24),
+      padding:
+      const EdgeInsets.fromLTRB(
+        24,
+        40,
+        24,
+        24,
+      ),
       child: Column(
         children: [
           // --------------------------------------------------------
@@ -737,60 +948,94 @@ class _RecoveryCoachChatScreenState
           Container(
             width: 92,
             height: 92,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+            decoration:
+            BoxDecoration(
+              shape:
+              BoxShape.circle,
+              gradient:
+              LinearGradient(
+                begin:
+                Alignment.topLeft,
+                end:
+                Alignment.bottomRight,
                 colors: [
                   AppColors.primary,
-                  AppColors.primary.withOpacity(0.7),
+                  AppColors.primary
+                      .withOpacity(
+                    0.7,
+                  ),
                 ],
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primary.withOpacity(0.28),
+                  color: AppColors
+                      .primary
+                      .withOpacity(
+                    0.28,
+                  ),
                   blurRadius: 26,
-                  offset: const Offset(0, 12),
+                  offset:
+                  const Offset(
+                    0,
+                    12,
+                  ),
                 ),
               ],
             ),
             child: const Icon(
               Icons.favorite,
-              color: AppColors.white,
+              color:
+              AppColors.white,
               size: 38,
             ),
           ),
 
-          const SizedBox(height: 22),
+          const SizedBox(
+            height: 22,
+          ),
 
           // --------------------------------------------------------
           // GREETING
           // --------------------------------------------------------
 
           Text(
-            loc.chatGreeting(_userName),
-            style: const TextStyle(
-              fontWeight: FontWeight.w700,
+            loc.chatGreeting(
+              _userName,
+            ),
+            style:
+            const TextStyle(
+              fontWeight:
+              FontWeight.w700,
               fontSize: 24,
-              color: AppColors.textBlack,
+              color:
+              AppColors.textBlack,
             ),
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(
+            height: 10,
+          ),
 
           Text(
-            loc.chatDaysIntro(_daysSober),
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
+            loc.chatDaysIntro(
+              _daysSober,
+            ),
+            textAlign:
+            TextAlign.center,
+            style:
+            const TextStyle(
+              fontWeight:
+              FontWeight.w400,
               fontSize: 15,
               height: 1.5,
-              color: AppColors.textGrey,
+              color:
+              AppColors.textGrey,
             ),
           ),
 
-          const SizedBox(height: 34),
+          const SizedBox(
+            height: 34,
+          ),
 
           // --------------------------------------------------------
           // SECTION DIVIDER
@@ -800,32 +1045,45 @@ class _RecoveryCoachChatScreenState
             children: [
               const Expanded(
                 child: Divider(
-                  color: AppColors.outlineGrey,
+                  color: AppColors
+                      .outlineGrey,
                   thickness: 1,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding:
+                const EdgeInsets
+                    .symmetric(
+                  horizontal: 12,
+                ),
                 child: Text(
-                  loc.quickPromptsLabel,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
+                  loc
+                      .quickPromptsLabel,
+                  style:
+                  const TextStyle(
+                    fontWeight:
+                    FontWeight.w600,
                     fontSize: 12,
-                    letterSpacing: 0.8,
-                    color: AppColors.textLightGrey,
+                    letterSpacing:
+                    0.8,
+                    color: AppColors
+                        .textLightGrey,
                   ),
                 ),
               ),
               const Expanded(
                 child: Divider(
-                  color: AppColors.outlineGrey,
+                  color: AppColors
+                      .outlineGrey,
                   thickness: 1,
                 ),
               ),
             ],
           ),
 
-          const SizedBox(height: 18),
+          const SizedBox(
+            height: 18,
+          ),
 
           // --------------------------------------------------------
           // QUICK PROMPT CARDS
@@ -834,34 +1092,59 @@ class _RecoveryCoachChatScreenState
           GridView.count(
             crossAxisCount: 2,
             shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
+            physics:
+            const NeverScrollableScrollPhysics(),
             mainAxisSpacing: 12,
             crossAxisSpacing: 12,
             childAspectRatio: 1.35,
             children: [
               _buildQuickPrompt(
-                icon: Icons.local_fire_department_outlined,
-                label: loc.promptCravingLabel,
-                subtitle: loc.promptCravingSubtitle,
-                iconColor: const Color(0xFFE96B45),
+                icon: Icons
+                    .local_fire_department_outlined,
+                label:
+                loc.promptCravingLabel,
+                subtitle:
+                loc.promptCravingSubtitle,
+                iconColor:
+                const Color(
+                  0xFFE96B45,
+                ),
               ),
               _buildQuickPrompt(
-                icon: Icons.auto_awesome,
-                label: loc.promptMotivationLabel,
-                subtitle: loc.promptMotivationSubtitle,
-                iconColor: const Color(0xFFE8A51C),
+                icon:
+                Icons.auto_awesome,
+                label:
+                loc.promptMotivationLabel,
+                subtitle:
+                loc.promptMotivationSubtitle,
+                iconColor:
+                const Color(
+                  0xFFE8A51C,
+                ),
               ),
               _buildQuickPrompt(
-                icon: Icons.people_outline,
-                label: loc.promptSocialLabel,
-                subtitle: loc.promptSocialSubtitle,
-                iconColor: const Color(0xFF3985C6),
+                icon:
+                Icons.people_outline,
+                label:
+                loc.promptSocialLabel,
+                subtitle:
+                loc.promptSocialSubtitle,
+                iconColor:
+                const Color(
+                  0xFF3985C6,
+                ),
               ),
               _buildQuickPrompt(
-                icon: Icons.sentiment_dissatisfied_outlined,
-                label: loc.promptSlippedLabel,
-                subtitle: loc.promptSlippedSubtitle,
-                iconColor: const Color(0xFFD95353),
+                icon: Icons
+                    .sentiment_dissatisfied_outlined,
+                label:
+                loc.promptSlippedLabel,
+                subtitle:
+                loc.promptSlippedSubtitle,
+                iconColor:
+                const Color(
+                  0xFFD95353,
+                ),
               ),
             ],
           ),
@@ -876,30 +1159,57 @@ class _RecoveryCoachChatScreenState
 
   Widget _buildChatMessages() {
     return ListView.builder(
-      controller: _scrollController,
-      padding: const EdgeInsets.fromLTRB(16, 24, 16, 20),
-      itemCount: _messages.length + (_isSending ? 1 : 0),
-      itemBuilder: (context, index) {
-        if (_isSending && index == _messages.length) {
+      controller:
+      _scrollController,
+      padding:
+      const EdgeInsets.fromLTRB(
+        16,
+        24,
+        16,
+        20,
+      ),
+      itemCount:
+      _messages.length +
+          (_isSending ? 1 : 0),
+      itemBuilder:
+          (context, index) {
+        if (_isSending &&
+            index ==
+                _messages.length) {
           return _buildTypingIndicator();
         }
 
-        final message = _messages[index];
+        final message =
+        _messages[index];
 
-        final role = message['role'];
+        final role =
+        message['role'];
 
-        final text = message['text'] ?? '';
+        final text =
+            message['text'] ?? '';
 
         if (role == 'user') {
           return Padding(
-            padding: const EdgeInsets.only(bottom: 18),
-            child: _buildUserMessage(text),
+            padding:
+            const EdgeInsets.only(
+              bottom: 18,
+            ),
+            child:
+            _buildUserMessage(
+              text,
+            ),
           );
         }
 
         return Padding(
-          padding: const EdgeInsets.only(bottom: 18),
-          child: _buildCoachMessage(text),
+          padding:
+          const EdgeInsets.only(
+            bottom: 18,
+          ),
+          child:
+          _buildCoachMessage(
+            text,
+          ),
         );
       },
     );
@@ -909,20 +1219,28 @@ class _RecoveryCoachChatScreenState
   // COACH MESSAGE
   // ============================================================
 
-  Widget _buildCoachMessage(String text) {
+  Widget _buildCoachMessage(
+      String text,
+      ) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+      CrossAxisAlignment
+          .start,
       children: [
         Container(
           width: 44,
           height: 44,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color(0xFFE0F3EF),
+          decoration:
+          const BoxDecoration(
+            shape:
+            BoxShape.circle,
+            color:
+            Color(0xFFE0F3EF),
           ),
           child: const Icon(
             Icons.favorite_border,
-            color: AppColors.primary,
+            color:
+            AppColors.primary,
             size: 23,
           ),
         ),
@@ -931,66 +1249,124 @@ class _RecoveryCoachChatScreenState
 
         Flexible(
           child: Container(
-            padding: const EdgeInsets.symmetric(
+            padding:
+            const EdgeInsets
+                .symmetric(
               horizontal: 16,
               vertical: 14,
             ),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(4),
-                topRight: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
+            decoration:
+            BoxDecoration(
+              color:
+              AppColors.white,
+              borderRadius:
+              const BorderRadius
+                  .only(
+                topLeft:
+                Radius.circular(
+                  4,
+                ),
+                topRight:
+                Radius.circular(
+                  20,
+                ),
+                bottomLeft:
+                Radius.circular(
+                  20,
+                ),
+                bottomRight:
+                Radius.circular(
+                  20,
+                ),
               ),
-              border: Border.all(color: AppColors.outlineGrey),
+              border: Border.all(
+                color:
+                AppColors
+                    .outlineGrey,
+              ),
             ),
-            child: MarkdownBody(
+            child:
+            MarkdownBody(
               data: text,
               selectable: true,
-              styleSheet: MarkdownStyleSheet(
-                p: const TextStyle(
-                  fontWeight: FontWeight.w400,
+              styleSheet:
+              MarkdownStyleSheet(
+                p:
+                const TextStyle(
+                  fontWeight:
+                  FontWeight.w400,
                   fontSize: 15,
                   height: 1.45,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                strong: const TextStyle(
-                  fontWeight: FontWeight.w700,
+                strong:
+                const TextStyle(
+                  fontWeight:
+                  FontWeight.w700,
                   fontSize: 15,
                   height: 1.45,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                em: const TextStyle(
-                  fontStyle: FontStyle.italic,
+                em:
+                const TextStyle(
+                  fontStyle:
+                  FontStyle.italic,
                   fontSize: 15,
                   height: 1.45,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                listBullet: const TextStyle(
-                  fontWeight: FontWeight.w400,
+                listBullet:
+                const TextStyle(
+                  fontWeight:
+                  FontWeight.w400,
                   fontSize: 15,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                h1: const TextStyle(
-                  fontWeight: FontWeight.w700,
+                h1:
+                const TextStyle(
+                  fontWeight:
+                  FontWeight.w700,
                   fontSize: 18,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                h2: const TextStyle(
-                  fontWeight: FontWeight.w700,
+                h2:
+                const TextStyle(
+                  fontWeight:
+                  FontWeight.w700,
                   fontSize: 17,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                h3: const TextStyle(
-                  fontWeight: FontWeight.w700,
+                h3:
+                const TextStyle(
+                  fontWeight:
+                  FontWeight.w700,
                   fontSize: 16,
-                  color: AppColors.textBlack,
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
-                code: const TextStyle(
+                code:
+                const TextStyle(
                   fontSize: 13,
-                  backgroundColor: Color(0xFFF0F0F0),
-                  color: AppColors.textBlack,
+                  backgroundColor:
+                  Color(
+                    0xFFF0F0F0,
+                  ),
+                  color:
+                  AppColors
+                      .textBlack,
                 ),
                 blockSpacing: 8,
                 listIndent: 20,
@@ -1006,31 +1382,57 @@ class _RecoveryCoachChatScreenState
   // USER MESSAGE
   // ============================================================
 
-  Widget _buildUserMessage(String text) {
+  Widget _buildUserMessage(
+      String text,
+      ) {
     return Align(
-      alignment: Alignment.centerRight,
+      alignment:
+      Alignment.centerRight,
       child: Container(
-        constraints: const BoxConstraints(maxWidth: 310),
-        padding: const EdgeInsets.symmetric(
+        constraints:
+        const BoxConstraints(
+          maxWidth: 310,
+        ),
+        padding:
+        const EdgeInsets
+            .symmetric(
           horizontal: 18,
           vertical: 14,
         ),
-        decoration: BoxDecoration(
-          color: AppColors.primary,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(4),
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+        decoration:
+        const BoxDecoration(
+          color:
+          AppColors.primary,
+          borderRadius:
+          BorderRadius.only(
+            topLeft:
+            Radius.circular(
+              20,
+            ),
+            topRight:
+            Radius.circular(
+              4,
+            ),
+            bottomLeft:
+            Radius.circular(
+              20,
+            ),
+            bottomRight:
+            Radius.circular(
+              20,
+            ),
           ),
         ),
         child: Text(
           text,
-          style: const TextStyle(
-            fontWeight: FontWeight.w500,
+          style:
+          const TextStyle(
+            fontWeight:
+            FontWeight.w500,
             fontSize: 15,
             height: 1.45,
-            color: AppColors.white,
+            color:
+            AppColors.white,
           ),
         ),
       ),
@@ -1043,18 +1445,24 @@ class _RecoveryCoachChatScreenState
 
   Widget _buildTypingIndicator() {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+      CrossAxisAlignment
+          .start,
       children: [
         Container(
           width: 44,
           height: 44,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color(0xFFE0F3EF),
+          decoration:
+          const BoxDecoration(
+            shape:
+            BoxShape.circle,
+            color:
+            Color(0xFFE0F3EF),
           ),
           child: const Icon(
             Icons.favorite_border,
-            color: AppColors.primary,
+            color:
+            AppColors.primary,
             size: 23,
           ),
         ),
@@ -1062,16 +1470,28 @@ class _RecoveryCoachChatScreenState
         const SizedBox(width: 10),
 
         Container(
-          padding: const EdgeInsets.symmetric(
+          padding:
+          const EdgeInsets
+              .symmetric(
             horizontal: 18,
             vertical: 15,
           ),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.outlineGrey),
+          decoration:
+          BoxDecoration(
+            color:
+            AppColors.white,
+            borderRadius:
+            BorderRadius.circular(
+              20,
+            ),
+            border: Border.all(
+              color:
+              AppColors
+                  .outlineGrey,
+            ),
           ),
-          child: const SizedBox(
+          child:
+          const SizedBox(
             width: 30,
             height: 16,
             child: Center(
@@ -1080,7 +1500,8 @@ class _RecoveryCoachChatScreenState
                 style: TextStyle(
                   fontSize: 18,
                   letterSpacing: 3,
-                  color: AppColors.textGrey,
+                  color: AppColors
+                      .textGrey,
                 ),
               ),
             ),
@@ -1101,57 +1522,109 @@ class _RecoveryCoachChatScreenState
     required Color iconColor,
   }) {
     return InkWell(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius:
+      BorderRadius.circular(
+        20,
+      ),
       onTap: () {
-        _sendQuickPrompt(label);
+        _sendQuickPrompt(
+          label,
+        );
       },
       child: Container(
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.outlineGrey),
+        padding:
+        const EdgeInsets.all(
+          14,
+        ),
+        decoration:
+        BoxDecoration(
+          color:
+          AppColors.white,
+          borderRadius:
+          BorderRadius.circular(
+            20,
+          ),
+          border: Border.all(
+            color:
+            AppColors
+                .outlineGrey,
+          ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.03),
+              color: Colors.black
+                  .withOpacity(
+                0.03,
+              ),
               blurRadius: 12,
-              offset: const Offset(0, 4),
+              offset:
+              const Offset(
+                0,
+                4,
+              ),
             ),
           ],
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment:
+          CrossAxisAlignment
+              .start,
+          mainAxisAlignment:
+          MainAxisAlignment
+              .spaceBetween,
           children: [
             Container(
               width: 36,
               height: 36,
-              decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.12),
-                shape: BoxShape.circle,
+              decoration:
+              BoxDecoration(
+                color: iconColor
+                    .withOpacity(
+                  0.12,
+                ),
+                shape:
+                BoxShape.circle,
               ),
-              child: Icon(icon, size: 18, color: iconColor),
+              child: Icon(
+                icon,
+                size: 18,
+                color:
+                iconColor,
+              ),
             ),
             const Spacer(),
             Text(
               label,
               maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
+              overflow:
+              TextOverflow
+                  .ellipsis,
+              style:
+              const TextStyle(
+                fontWeight:
+                FontWeight.w600,
                 fontSize: 14,
-                color: AppColors.textBlack,
+                color:
+                AppColors
+                    .textBlack,
               ),
             ),
-            const SizedBox(height: 3),
+            const SizedBox(
+              height: 3,
+            ),
             Text(
               subtitle,
               maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontWeight: FontWeight.w400,
+              overflow:
+              TextOverflow
+                  .ellipsis,
+              style:
+              const TextStyle(
+                fontWeight:
+                FontWeight.w400,
                 fontSize: 11,
-                color: AppColors.textGrey,
+                color:
+                AppColors
+                    .textGrey,
               ),
             ),
           ],
@@ -1165,57 +1638,100 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   Widget _buildMessageInput() {
-    final loc = AppLocalizations.of(context)!;
+    final loc =
+    AppLocalizations.of(context)!;
 
     return Container(
-      padding: const EdgeInsets.fromLTRB(16, 10, 16, 16),
-      decoration: BoxDecoration(
-        color: AppColors.dashboardBackground,
+      padding:
+      const EdgeInsets.fromLTRB(
+        16,
+        10,
+        16,
+        16,
+      ),
+      decoration:
+      BoxDecoration(
+        color:
+        AppColors
+            .dashboardBackground,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black
+                .withOpacity(
+              0.04,
+            ),
             blurRadius: 12,
-            offset: const Offset(0, -3),
+            offset:
+            const Offset(
+              0,
+              -3,
+            ),
           ),
         ],
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment:
+        CrossAxisAlignment.end,
         children: [
           Expanded(
             child: Container(
-              constraints: const BoxConstraints(
+              constraints:
+              const BoxConstraints(
                 minHeight: 52,
                 maxHeight: 120,
               ),
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(28),
-                border: Border.all(color: AppColors.outlineGrey),
+              decoration:
+              BoxDecoration(
+                color:
+                AppColors.white,
+                borderRadius:
+                BorderRadius
+                    .circular(
+                  28,
+                ),
+                border: Border.all(
+                  color: AppColors
+                      .outlineGrey,
+                ),
               ),
               child: TextField(
-                controller: _messageController,
-                enabled: !_isSending,
+                controller:
+                _messageController,
+                enabled:
+                !_isSending,
                 minLines: 1,
                 maxLines: 4,
-                textInputAction: TextInputAction.newline,
-                style: const TextStyle(
+                textInputAction:
+                TextInputAction
+                    .newline,
+                style:
+                const TextStyle(
                   fontSize: 15,
-                  color: AppColors.textBlack,
+                  color: AppColors
+                      .textBlack,
                 ),
-                decoration: InputDecoration(
-                  hintText: loc.typeMessageHint,
-                  hintStyle: const TextStyle(
-                    color: AppColors.textLightGrey,
+                decoration:
+                InputDecoration(
+                  hintText:
+                  loc.typeMessageHint,
+                  hintStyle:
+                  const TextStyle(
+                    color: AppColors
+                        .textLightGrey,
                     fontSize: 15,
                   ),
-                  contentPadding: const EdgeInsets.symmetric(
+                  contentPadding:
+                  const EdgeInsets
+                      .symmetric(
                     horizontal: 20,
                     vertical: 14,
                   ),
-                  border: InputBorder.none,
+                  border:
+                  InputBorder
+                      .none,
                 ),
-                onSubmitted: (_) {
+                onSubmitted:
+                    (_) {
                   if (!_isSending) {
                     _sendMessage();
                   }
@@ -1224,10 +1740,15 @@ class _RecoveryCoachChatScreenState
             ),
           ),
 
-          const SizedBox(width: 10),
+          const SizedBox(
+            width: 10,
+          ),
 
           InkWell(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius:
+            BorderRadius.circular(
+              30,
+            ),
             onTap: _isSending
                 ? null
                 : () {
@@ -1236,15 +1757,23 @@ class _RecoveryCoachChatScreenState
             child: Container(
               width: 54,
               height: 54,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
+              decoration:
+              BoxDecoration(
+                shape:
+                BoxShape.circle,
                 color: _isSending
-                    ? AppColors.primary.withOpacity(0.5)
-                    : AppColors.primary,
+                    ? AppColors
+                    .primary
+                    .withOpacity(
+                  0.5,
+                )
+                    : AppColors
+                    .primary,
               ),
               child: const Icon(
                 Icons.send_outlined,
-                color: AppColors.white,
+                color:
+                AppColors.white,
                 size: 25,
               ),
             ),

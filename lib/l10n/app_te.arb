@@ -1,0 +1,584 @@
+{
+  "@@locale": "te",
+
+  "skip": "దాటవేయి",
+  "continueButton": "కొనసాగించు",
+  "getStarted": "ప్రారంభించండి",
+
+  "maybeLaterLabel": "బహుశా తర్వాత",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "రద్దు చేయి",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "మీ జీవితంపై నియంత్రణ తీసుకోండి",
+  "onboardingSubtitle1": "మీ ప్రయాణాన్ని ట్రాక్ చేయండి, ప్రతి విజయాన్ని జరుపుకోండి, రోజురోజుకూ ఆరోగ్యంగా మారండి.",
+  "onboardingTitle2": "మీ AI రికవరీ సహచరుడు",
+  "onboardingSubtitle2": "మీ ప్రయాణానికి అనుగుణంగా రూపొందించిన వ్యక్తిగత మార్గదర్శకత్వం, ఆరోగ్యకరమైన అలవాట్లు, ప్రేరణ రిమైండర్లు మరియు పురోగతి నివేదికలను పొందండి.",
+
+  "goodMorning": "శుభోదయం",
+  "goodAfternoon": "శుభ మధ్యాహ్నం",
+  "goodEvening": "శుభ సాయంత్రం",
+  "goodNight": "శుభరాత్రి",
+
+  "embracingClarity": "రోజురోజుకూ స్పష్టతను స్వీకరించండి.",
+  "streakLabel": "కొనసాగింపు",
+  "goalLabel": "లక్ష్యం",
+  "daysStreak": "{count, plural, one{{count} రోజు} other{{count} రోజులు}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium ప్లాన్",
+  "premiumPlanSubtitle": "మీ పూర్తి రికవరీ అనుభవాన్ని అన్‌లాక్ చేయండి",
+
+  "accountAndSupport": "ఖాతా & సహాయం",
+  "privacyPolicy": "గోప్యతా విధానం",
+  "privacyPolicySubtitle": "డేటా షేరింగ్ మరియు ఖాతా భద్రతను నిర్వహించండి",
+  "termsOfService": "సేవా నిబంధనలు",
+  "termsOfServiceSubtitle": "తరచుగా అడిగే ప్రశ్నలు, మమ్మల్ని సంప్రదించండి మరియు వనరులు",
+  "shareApp": "యాప్‌ను షేర్ చేయండి",
+  "shareAppSubtitle": "యాప్‌ను మీ స్నేహితులతో షేర్ చేయండి",
+  "resetData": "డేటాను రీసెట్ చేయండి",
+  "resetDataSubtitle": "ఈ పరికరంలో సేవ్ చేసిన ప్రతిదాన్ని తొలగించండి",
+
+  "resetAllDataTitle": "మొత్తం డేటాను రీసెట్ చేయాలా?",
+  "resetAllDataMessage": "ఇది ఈ పరికరంలో సేవ్ చేసిన ప్రొఫైల్, జర్నల్ ఎంట్రీలు మరియు పురోగతిని మొత్తం తొలగిస్తుంది — దీన్ని తిరిగి మార్చలేరు.",
+  "cancel": "రద్దు",
+  "reset": "రీసెట్",
+
+  "chooseFromGallery": "గ్యాలరీ నుండి ఎంచుకోండి",
+  "takePhoto": "ఫోటో తీయండి",
+  "removePhoto": "ఫోటోను తొలగించండి",
+  "couldNotUpdatePhoto": "ఫోటోను అప్‌డేట్ చేయలేకపోయాం: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "ఫోటోను తొలగించలేకపోయాం: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "కంప్రెస్ చేసిన తర్వాత కూడా ఈ ఫోటో చాలా పెద్దగా ఉంది — వేరే ఫోటోను ప్రయత్నించండి.",
+
+  "unableToLoadProfile": "మీ ప్రొఫైల్‌ను లోడ్ చేయలేకపోయాం",
+  "pleaseTryAgain": "దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "tryAgain": "మళ్లీ ప్రయత్నించండి",
+  "profileNotFound": "ప్రొఫైల్ కనుగొనబడలేదు",
+  "refresh": "రిఫ్రెష్ చేయండి",
+  "noProfileDataFound": "ఈ పరికరంలో ఇంకా ప్రొఫైల్ డేటా ఏదీ కనుగొనబడలేదు.",
+
+  "couldNotResetData": "డేటాను రీసెట్ చేయలేకపోయాం: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "హోమ్",
+  "navStats": "గణాంకాలు",
+  "navJournal": "జర్నల్",
+  "navBadges": "బ్యాడ్జ్‌లు",
+  "navProfile": "ప్రొఫైల్",
+
+  "featureComingSoon": "{feature} త్వరలో అందుబాటులోకి వస్తుంది.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "వెల్‌నెస్",
+  "appTitle": "మద్యం తాగడం మానేయండి",
+  "splashSubtitle": "మద్యం లేని జీవితానికి\nమొదటి అడుగు వేయండి",
+  "preparingJourney": "మీ ప్రయాణాన్ని\nసిద్ధం చేస్తోంది",
+
+  "taskMorningMeditation": "ఉదయం ధ్యానం (10 నిమి)",
+  "taskReadChapter": "\"The Sober Diaries\" 4వ అధ్యాయం చదవండి",
+  "taskEveningJournal": "సాయంత్రం కృతజ్ఞతా జర్నల్",
+
+  "close": "మూసివేయండి",
+  "youAreDoingGreat": "మీరు చాలా బాగా చేస్తున్నారు!",
+  "shareMilestone": "మైలురాయిని షేర్ చేయండి",
+  "shareMilestoneMessage": "నా రికవరీ ప్రయాణంలో ఇది {days}వ రోజు! \ud83d\udcaa",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "నా రికవరీ మైలురాయి",
+
+  "weeklyReportReadyTitle": "మీ వారపు నివేదిక సిద్ధంగా ఉంది",
+  "weeklyReportReadySubtitle": "మీ వారం ఎలా గడిచిందో చూడటానికి ట్యాప్ చేయండి",
+
+  "howAreYouFeeling": "మీకు ఎలా అనిపిస్తోంది?",
+  "moodTough": "కష్టంగా ఉంది",
+  "moodOkay": "పర్వాలేదు",
+  "moodGood": "బాగుంది",
+
+  "moneySaved": "ఆదా చేసిన డబ్బు",
+  "caloriesSaved": "ఆదా చేసిన కేలరీలు",
+  "healthScore": "ఆరోగ్య స్కోర్",
+  "drinksAvoided": "తప్పించుకున్న పానీయాలు",
+  "estimated": "అంచనా",
+  "aiGenerated": "AI రూపొందించింది",
+  "daysCapsLabel": "రోజులు",
+
+  "todaysMotivation": "ఈరోజు ప్రేరణ",
+  "defaultMotivationQuote": "మీ నిబద్ధతను విజయవంతంగా కొనసాగించారు. సానుకూల మార్పు అలపై ముందుకు సాగుతూ ఉండండి.",
+
+  "talkToCoach": "కోచ్‌తో మాట్లాడండి",
+  "havingACraving": "నాకు మద్యం తాగాలనే కోరిక కలుగుతోంది",
+
+  "unlockWeeklyReportsTitle": "వారపు నివేదికలను అన్‌లాక్ చేయండి",
+  "unlockWeeklyReportsMessage": "ప్రతి వారం మీ మద్యం లేని రోజులు, మూడ్ ట్రెండ్‌లు మరియు వ్యక్తిగత AI ఫీడ్‌బ్యాక్‌ను చూడండి. అన్‌లాక్ చేయడానికి Premiumకి అప్‌గ్రేడ్ చేయండి.",
+  "maybeLater": "తర్వాత కావచ్చు",
+  "upgrade": "అప్‌గ్రేడ్ చేయండి",
+
+  "weeklyReportTitle": "వారపు నివేదిక",
+  "weeklyReportsPremiumTitle": "వారపు నివేదికలు Premium ఫీచర్",
+  "weeklyReportsPremiumMessage": "ప్రతి వారం మీ మద్యం లేని రోజులు, మూడ్ ట్రెండ్‌లు, మద్యం తాగాలనే కోరికలు మరియు వ్యక్తిగత AI ఫీడ్‌బ్యాక్‌ను చూడండి.",
+  "upgradeToPremium": "Premiumకి అప్‌గ్రేడ్ చేయండి",
+  "couldNotGenerateReport": "ప్రస్తుతం మీ నివేదికను రూపొందించలేకపోయాం.",
+  "tryAgainLower": "మళ్లీ ప్రయత్నించండి",
+
+  "statSoberDays": "మద్యం లేని రోజులు",
+  "statAvgMood": "సగటు మూడ్",
+  "statCravings": "కోరికలు",
+  "statMoneySaved": "ఆదా చేసిన డబ్బు",
+  "coachFeedback": "కోచ్ ఫీడ్‌బ్యాక్",
+  "journalInsights": "జర్నల్ అంతర్దృష్టులు",
+
+  "next": "తదుపరి",
+
+  "question1Title": "మీ లక్ష్యం ఏమిటి",
+  "question1Subtitle": "మీకు అత్యంత ముఖ్యమైన\nలక్ష్యాన్ని ఎంచుకోండి",
+  "goalQuitCompletely": "పూర్తిగా మానేయడం",
+  "goalReduceDrinking": "మద్యం తాగడాన్ని తగ్గించడం",
+  "goalTakeABreak": "విరామం తీసుకోవడం",
+  "goalBuildHealthierHabits": "ఆరోగ్యకరమైన అలవాట్లను నిర్మించడం",
+
+  "question3Title": "మీ\nదినచర్య గురించి చెప్పండి",
+  "drinksPerWeek": "వారానికి పానీయాలు",
+  "moneySpentPerWeek": "వారానికి ఖర్చు చేసే డబ్బు",
+  "drinkingLevel": "మద్యం తాగే స్థాయి",
+  "triggersLabel": "ట్రిగ్గర్లు",
+  "levelSocial": "సామాజిక",
+  "levelRegular": "సాధారణ",
+  "levelHeavy": "అధిక",
+  "levelDependent": "ఆధారపడిన",
+  "triggerStress": "ఒత్తిడి",
+  "triggerLoneliness": "ఒంటరితనం",
+  "triggerHabit": "అలవాటు",
+  "triggerSadness": "విచారం",
+  "triggerAnger": "కోపం",
+  "triggerBoredom": "విసుగు",
+  "triggerSocialPressure": "సామాజిక ఒత్తిడి",
+  "triggerCelebration": "వేడుక",
+  "triggerSleepProblems": "నిద్ర సమస్యలు",
+  "triggerWorkPressure": "పని ఒత్తిడి",
+
+  "question4Title": "మీరు ఎందుకు మారాలనుకుంటున్నారు?",
+  "question4Subtitle": "మీ కారణం మిమ్మల్ని ప్రేరణతో ఉంచడంలో సహాయపడుతుంది.",
+  "reasonImproveHealth": "నా ఆరోగ్యాన్ని మెరుగుపరచడం",
+  "reasonSaveMoney": "డబ్బు ఆదా చేయడం",
+  "reasonFamily": "కుటుంబం",
+  "reasonBetterSleep": "మెరుగైన నిద్ర",
+  "reasonMentalClarity": "మానసిక స్పష్టత",
+  "reasonFitness": "ఫిట్‌నెస్",
+  "reasonSelfRespect": "ఆత్మగౌరవం",
+  "reasonCareer": "కెరీర్",
+
+  "milestoneUnlockedLabel": "మైలురాయి అన్‌లాక్ అయింది",
+  "incredibleNamePrefix": "అద్భుతం, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} ఆదా చేశారు",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} తప్పించుకున్నారు",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "నా మైలురాయిని షేర్ చేయండి",
+  "milestoneImageShareError": "మైలురాయి చిత్రాన్ని రూపొందించలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి.",
+
+  "dailyCheckInTitle": "రోజువారీ Check-in",
+  "howAreYouFeelingToday": "ఈరోజు మీకు ఎలా అనిపిస్తోంది?",
+  "honestAnswerHelp": "మీ నిజాయితీ సమాధానం మీకు మరింత మెరుగ్గా సహాయం చేయడానికి మాకు ఉపయోగపడుతుంది",
+  "didYouDrinkToday": "ఈరోజు మీరు మద్యం తాగారా?",
+  "noLabel": "లేదు",
+  "yesLabel": "అవును",
+  "cravingLevelNow": "ప్రస్తుతం మద్యం తాగాలనే కోరిక ఎంతగా ఉంది?",
+  "anythingOnMind": "మీ మనసులో ఏదైనా ఉందా?",
+  "optionalLabel": "(ఐచ్ఛికం)",
+  "dailyNoteHint": "మీ రోజు, ట్రిగ్గర్లు, విజయాల గురించి రాయండి...",
+  "alreadyCheckedInToday": "ఈరోజు ఇప్పటికే Check-in చేశారు",
+  "saveCheckIn": "Check-in సేవ్ చేయండి",
+  "checkInsHelpTrack": "Check-in‌లు కాలక్రమేణా మీ పురోగతిని ట్రాక్ చేయడంలో సహాయపడతాయి",
+  "alreadyCompletedTodayCheckIn": "మీరు ఈరోజు Check-in‌ను ఇప్పటికే పూర్తి చేశారు.",
+  "pleaseAnswerBothQuestions": "ముందుగా పై రెండు ప్రశ్నలకు సమాధానం ఇవ్వండి",
+  "checkInSaved": "Check-in సేవ్ చేయబడింది",
+  "cravingNone": "ఏదీ లేదు",
+  "cravingLow": "తక్కువ",
+  "cravingMedium": "మధ్యస్థం",
+  "cravingStrong": "బలంగా",
+  "moodBad": "చెడ్డగా",
+  "moodLow": "తక్కువగా",
+  "moodOkay": "పర్వాలేదు",
+  "moodGood": "బాగుంది",
+  "moodGreat": "చాలా బాగుంది",
+
+  "sosSupportTitle": "SOS సహాయం",
+  "notAloneMessage": "మీరు ఒంటరిగా లేరు, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "మద్యం తాగాలనే కోరికలు తగ్గిపోతాయి. ఈ క్షణాన్ని అధిగమించడానికి క్రింద ఉన్నదాంట్లో ఒకదాన్ని ఎంచుకోండి.",
+  "breathingExercise": "శ్వాస వ్యాయామం",
+  "breathingExerciseSubtitle": "గైడెడ్ 4-7-8 టెక్నిక్, 2 నిమిషాలు",
+  "rideTheWave": "అలపై ప్రయాణించండి",
+  "rideTheWaveSubtitle": "15 నిమిషాల టైమర్ — కోరికలు ఎల్లప్పుడూ తగ్గిపోతాయి",
+  "copingTips": "సమర్థంగా ఎదుర్కొనే చిట్కాలు",
+  "copingTipsSubtitle": "మీ ట్రిగ్గర్లకు అనుగుణంగా వ్యక్తిగతీకరించిన వ్యూహాలు",
+  "talkToAiCoach": "AI Coach‌తో మాట్లాడండి",
+  "talkToAiCoachSubtitle": "మీ రికవరీ సహచరుడితో Chat చేయండి",
+  "callSomeone": "ఎవరినైనా కాల్ చేయండి",
+  "callSomeoneSubtitle": "మీ నమ్మకమైన పరిచయాన్ని సంప్రదించండి",
+  "contactsPermissionNeeded": "కాంటాక్ట్‌కు కాల్ చేయడానికి Contacts అనుమతి అవసరం.",
+  "beatenCravingsPrefix": "మీరు మద్యం తాగాలనే కోరికలను ",
+  "beatenCravingsCount": "{count} సార్లు అధిగమించారు",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " ఇంతకుముందు కూడా. మీరు మళ్లీ చేయగలరు.",
+
+  "tellUsAboutYourself": "మీ గురించి చెప్పండి",
+  "detailsSubtitle": "ఈ సమాచారం మీ రికవరీ ప్రయాణాన్ని వ్యక్తిగతీకరించడానికి మరియు ఖచ్చితమైన అంతర్దృష్టులను అందించడానికి మాకు సహాయపడుతుంది.",
+  "nameLabel": "పేరు",
+  "nameHint": "ఉదా., Alex Rivers",
+  "ageLabel": "వయస్సు",
+  "ageHint": "ఉదా., 32",
+  "sexAssignedAtBirth": "పుట్టినప్పుడు నమోదు చేసిన లింగం",
+  "sexFemale": "స్త్రీ",
+  "sexMale": "పురుషుడు",
+  "heightLabel": "ఎత్తు",
+  "weightLabel": "బరువు",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "రోజువారీ పరిమితి చేరుకుంది",
+  "dailyLimitReachedMessage": "ఈరోజు అందుబాటులో ఉన్న {limit} ఉచిత సందేశాలన్నింటినీ ఉపయోగించారు. అపరిమిత Coach Chat కోసం Premiumకి అప్‌గ్రేడ్ చేయండి.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "ప్రస్తుతం కనెక్ట్ కాలేకపోయాను. కొద్దిసేపటి తర్వాత మళ్లీ ప్రయత్నించండి.",
+  "clearConversationTitle": "సంభాషణను క్లియర్ చేయాలా?",
+  "clearConversationMessage": "ఇది మీ Coach Chat చరిత్రను శాశ్వతంగా తొలగిస్తుంది.",
+  "clearLabel": "క్లియర్ చేయండి",
+  "recoveryCoachTitle": "రికవరీ కోచ్",
+  "onlineLabel": "ఆన్‌లైన్",
+  "clearConversationMenuItem": "సంభాషణను క్లియర్ చేయండి",
+  "chatGreeting": "హాయ్ {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "మీ ప్రయాణంలో ఇది {days}వ రోజు. విషయాలను మాట్లాడుకోవాలనుకున్నప్పుడు నేను ఇక్కడే ఉంటాను.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "త్వరిత ఎంపికలు",
+  "promptCravingLabel": "మద్యం తాగాలనే కోరిక ఉంది",
+  "promptCravingSubtitle": "త్వరగా స్థిరపడండి",
+  "promptMotivationLabel": "ప్రేరణ కావాలి",
+  "promptMotivationSubtitle": "కష్టంగా ఉన్నప్పుడు ఒక ప్రోత్సాహం",
+  "promptSocialLabel": "సామాజిక పరిస్థితి",
+  "promptSocialSubtitle": "ఒక సమావేశాన్ని నిర్వహించండి",
+  "promptSlippedLabel": "నేను తప్పిపోయాను",
+  "promptSlippedSubtitle": "తీర్పు లేదు, కేవలం సహాయం",
+  "typeMessageHint": "సందేశాన్ని టైప్ చేయండి...",
+
+  "editProfileTitle": "ప్రొఫైల్‌ను సవరించండి",
+  "couldNotSaveProfile": "ప్రొఫైల్‌ను సేవ్ చేయలేకపోయాం: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "ఎత్తు (cm)",
+  "weightKgLabel": "బరువు (kg)",
+  "saveChangesLabel": "మార్పులను సేవ్ చేయండి",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "అధునాతన అంతర్దృష్టులు & విశ్లేషణలు",
+  "featureUnlimitedJournal": "అపరిమిత జర్నల్ ఎంట్రీలు",
+  "featureUnlimitedChat": "AI Coach‌తో అపరిమిత Chat",
+  "featureCommunityGroups": "ప్రత్యేక Community Groups",
+  "featurePrioritySupport": "ప్రాధాన్యత నిపుణుల సహాయం",
+  "featureThemePacks": "కస్టమ్ Theme Packs",
+  "featureDataExport": "డేటా ఎగుమతి",
+  "featureAdFree": "ప్రకటనలు లేని అనుభవం",
+  "premiumMemberTitle": "మీరు Premium సభ్యులు",
+  "unlockFullRecoveryTitle": "మీ పూర్తి రికవరీ\nఅనుభవాన్ని అన్‌లాక్ చేయండి",
+  "premiumMemberSubtitle": "మీ రికవరీ ప్రయాణానికి మద్దతు ఇచ్చినందుకు ధన్యవాదాలు — క్రింద ఉన్న అన్ని Premium ఫీచర్లు అన్‌లాక్ చేయబడ్డాయి.",
+  "premiumJoinSubtitle": "మా Premium సాధనాలు మరియు వ్యక్తిగత సహాయంతో\nతమ స్వస్థత ప్రయాణాన్ని వేగవంతం చేస్తున్న\nవేలాది మంది కమ్యూనిటీలో చేరండి.",
+  "monthlyPlanLabel": "నెలవారీ",
+  "perMonthSuffix": "/నెల",
+  "cancelAnytimeLabel": "ఎప్పుడైనా రద్దు చేయవచ్చు",
+  "yearlyPlanLabel": "వార్షిక",
+  "billedAnnuallyLabel": "ఏటా {amount} చొప్పున బిల్ చేయబడుతుంది",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "ఉత్తమ విలువ",
+  "alreadyPremiumLabel": "మీరు Premium ✓",
+  "startPremiumLabel": "Premium ప్రారంభించండి",
+  "manageSubscriptionLabel": "మీ పరికరంలోని subscription settings నుండి నిర్వహించండి లేదా రద్దు చేయండి.",
+  "noCommitmentLabel": "ఎటువంటి నిబద్ధత లేదు. ఎప్పుడైనా రద్దు చేయవచ్చు.",
+  "continueFreePlanLabel": "Free Plan‌తో కొనసాగించండి",
+  "backToHomeLabel": "హోమ్‌కు తిరిగి వెళ్లండి",
+  "cancelPremiumLabel": "Premium రద్దు చేయండి",
+  "cancelPremiumTitle": "Premium రద్దు చేయాలా?",
+  "cancelPremiumMessage": "మీరు అపరిమిత జర్నల్ ఎంట్రీలు, అపరిమిత Coach Chat, గణాంక అంతర్దృష్టులు మరియు వారపు నివేదికలకు యాక్సెస్‌ను కోల్పోతారు. ఎప్పుడైనా మళ్లీ subscription తీసుకోవచ్చు.",
+  "keepPremiumLabel": "Premium కొనసాగించండి",
+  "nowPremiumMessage": "ఇప్పుడు మీరు Premium! మీ పూర్తి రికవరీ అనుభవాన్ని ఆస్వాదించండి.",
+  "premiumCancelledMessage": "Premium రద్దు చేయబడింది. మీరు మళ్లీ Free Plan‌లో ఉన్నారు.",
+  "termsOfUseLabel": "ఉపయోగ నిబంధనలు",
+
+  "navHomeLabel": "హోమ్",
+  "navStatsLabel": "గణాంకాలు",
+  "navJournalLabel": "జర్నల్",
+  "navBadgesLabel": "బ్యాడ్జ్‌లు",
+  "navProfileLabel": "ప్రొఫైల్",
+
+  "recoveryGoalsTitle": "రికవరీ లక్ష్యాలు",
+  "goalLabel": "లక్ష్యం",
+  "drinksPerWeekLabel": "వారానికి పానీయాలు",
+  "quitReasonsLabel": "మానేయడానికి కారణాలు",
+  "quitReasonsHelperText": "అనేక కారణాలను కామాతో వేరు చేయండి.",
+  "couldNotSaveRecoveryGoals": "రికవరీ లక్ష్యాలను సేవ్ చేయలేకపోయాం: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "ఉదా., పూర్తిగా మానేయడం",
+  "drinksPerWeekHint": "ఉదా., 12",
+  "quitReasonsHint": "ఉదా., ఆరోగ్యం, కుటుంబం, డబ్బు",
+
+  "todaysPrompt": "ఈరోజు ప్రశ్న",
+  "defaultJournalPrompt": "ఈరోజు మీ మనసులో ఏముంది?",
+  "aiJournalInsights": "AI జర్నల్ అంతర్దృష్టులు",
+  "unlockJournalInsightsMessage": "మీ జర్నల్ ఎంట్రీల నుండి వారపు నమూనాలు, మూడ్ ట్రెండ్‌లు మరియు వ్యక్తిగత అంతర్దృష్టులను అన్‌లాక్ చేయండి.",
+  "notEnoughJournalData": "ఇంకా తగినంత డేటా లేదు — ఈ వారం కొన్ని ఎంట్రీలు రాసి మళ్లీ చూడండి.",
+  "openEntry": "తెరవండి",
+  "editEntry": "సవరించండి",
+  "deleteEntry": "తొలగించండి",
+  "searchJournalEntries": "ఎంట్రీలను వెతకండి...",
+  "writeNewEntry": "కొత్త ఎంట్రీ రాయండి",
+  "recentEntries": "ఇటీవలి ఎంట్రీలు",
+  "noJournalEntriesYet": "ఇంకా జర్నల్ ఎంట్రీలు లేవు — పైన మీ మొదటి ఆలోచనను రాయండి.",
+  "noEntriesMatchFilters": "మీ ఫిల్టర్‌లకు సరిపోయే ఎంట్రీలు ఏవీ లేవు.",
+
+  "weeklyJournalLimitReached": "వారపు పరిమితి చేరుకుంది",
+  "weeklyJournalLimitMessage": "ఈ వారం అందుబాటులో ఉన్న {limit} ఉచిత జర్నల్ ఎంట్రీలన్నింటినీ ఉపయోగించారు. అపరిమిత ఎంట్రీల కోసం Premiumకి అప్‌గ్రేడ్ చేయండి.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "కొత్త ఎంట్రీ",
+  "writeYourThoughts": "మీ ఆలోచనలను రాయండి",
+  "saveEntry": "ఎంట్రీని సేవ్ చేయండి",
+  "freeEntriesLeftThisWeek": "ఈ వారం {limit} ఉచిత ఎంట్రీలలో {remaining} మిగిలాయి",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "ఎంట్రీని తొలగించాలా?",
+  "deleteEntryConfirmation": "ఈ ఎంట్రీ శాశ్వతంగా తొలగించబడుతుంది. దీన్ని తిరిగి మార్చలేరు.",
+
+  "journalEntryNotFound": "ఎంట్రీ కనుగొనబడలేదు",
+  "journalEntryMayHaveBeenDeleted": "ఈ జర్నల్ ఎంట్రీ తొలగించబడి ఉండవచ్చు.",
+  "goBack": "వెనక్కి వెళ్లండి",
+  "journalEntryTitle": "జర్నల్ ఎంట్రీ",
+
+  "moodStruggling": "ఇబ్బంది పడుతున్నాను",
+  "moodUnwell": "అనారోగ్యంగా ఉంది",
+  "moodNeutral": "తటస్థం",
+
+  "whatHappenedToday": "ఈరోజు ఏమి జరిగింది?",
+  "trigger": "ట్రిగ్గర్",
+  "whatHelped": "ఏది సహాయపడింది",
+  "whatIllTryNextTime": "తదుపరి సారి నేను ప్రయత్నించేది",
+  "journalPrivacyMessage": "మీ ఆలోచన ప్రైవేట్‌గా ఉంటుంది మరియు మీ జర్నల్‌లో సేవ్ చేయబడుతుంది.",
+
+  "unlocked": "అన్‌లాక్ అయింది",
+  "daysLeft": "{count} రోజులు మిగిలాయి",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} రోజులు",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "మొదటి\nఆలోచన",
+  "oneJournalEntry": "1 జర్నల్ ఎంట్రీ",
+  "openBook": "పుస్తకాన్ని తెరవండి",
+  "tenJournalEntries": "10 జర్నల్ ఎంట్రీలు",
+  "dedicatedWriter": "అంకితభావం ఉన్న\nరచయిత",
+  "thirtyJournalEntries": "30 జర్నల్ ఎంట్రీలు",
+  "firstConversation": "మొదటి\nసంభాషణ",
+  "oneAiCoachChat": "1 AI Coach Chat",
+  "keepTalking": "మాట్లాడుతూ ఉండండి",
+  "fiveConversations": "5 సంభాషణలు",
+  "coachCompanion": "Coach\nసహచరుడు",
+  "twentyConversations": "20 సంభాషణలు",
+  "checkInHabit": "Check-in\nఅలవాటు",
+  "sevenCheckIns": "7 Check-in‌లు",
+  "consistencyPro": "స్థిరత్వంలో\nనిపుణుడు",
+  "thirtyCheckIns": "30 Check-in‌లు",
+  "dedicatedJourney": "అంకితమైన\nప్రయాణం",
+  "hundredCheckIns": "100 Check-in‌లు",
+  "goalGetter": "లక్ష్య సాధకుడు",
+  "threeGoalsCompleted": "3 లక్ష్యాలు పూర్తయ్యాయి",
+  "goalAchiever": "లక్ష్యాన్ని\nసాధించినవారు",
+  "tenGoalsCompleted": "10 లక్ష్యాలు పూర్తయ్యాయి",
+  "firstSavings": "మొదటి\nపొదుపు",
+  "fiveHundredSaved": "$500 ఆదా చేశారు",
+  "smartSaver": "తెలివైన పొదుపుదారు",
+  "oneThousandSaved": "$1,000 ఆదా చేశారు",
+  "bigSaver": "పెద్ద పొదుపుదారు",
+  "fiveThousandSaved": "$5,000 ఆదా చేశారు",
+  "currencyProgress": "${current} / ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} / {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "కొనసాగించండి — మీ మొదటి మైలురాయి మీ కోసం ఎదురుచూస్తోంది!",
+  "badgesAndMilestones": "బ్యాడ్జ్‌లు & మైలురాళ్లు",
+  "yourMilestoneJourney": "మీ మైలురాయి ప్రయాణం",
+  "milestonesAchieved": "{count} మైలురాయి{count, plural, =1{} other{లు}} సాధించారు.\nచూడటానికి ట్యాప్ చేయండి",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "మీ ప్రయాణంలోని {total} మైలురాళ్లలో {unlocked} అన్‌లాక్ చేశారు.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "మిగిలినవి",
+  "complete": "పూర్తి",
+  "nextMilestone": "తదుపరి మైలురాయి",
+  "percentThere": "{subtitle} · {percent}% పూర్తయింది",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "మద్యం లేని మైలురాళ్లు",
+  "journeyBadges": "ప్రయాణ బ్యాడ్జ్‌లు",
+  "bronze": "కాంస్యం",
+  "silver": "వెండి",
+  "gold": "బంగారం",
+  "platinum": "ప్లాటినం",
+  "diamond": "వజ్రం",
+
+  "analyzingYourJourney": "మీ ప్రయాణాన్ని విశ్లేషిస్తోంది...",
+  "aiCreatingSanctuary": "మా AI మీ కోసం వ్యక్తిగతీకరించిన ప్రశాంత స్థలాన్ని రూపొందిస్తోంది.",
+  "understandingHabits": "అలవాట్లను అర్థం చేసుకుంటోంది...",
+  "calculatingBaseline": "మీ ప్రాథమిక స్థాయిని లెక్కిస్తోంది...",
+  "personalizingPlan": "మీ ప్లాన్‌ను వ్యక్తిగతీకరిస్తోంది...",
+  "finalizingSanctuary": "మీ ప్రశాంత స్థలాన్ని పూర్తి చేస్తోంది...",
+  "creatingYourPlan": "మీ ప్లాన్‌ను రూపొందిస్తోంది...",
+  "personalizedPlanError": "మీ వ్యక్తిగతీకరించిన ప్లాన్‌ను రూపొందించలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి.",
+  "retry": "మళ్లీ ప్రయత్నించండి",
+
+  "breathingExercise": "శ్వాస వ్యాయామం",
+  "breathInhale": "లోపలికి శ్వాస తీసుకోండి",
+  "breathHold": "ఆపండి",
+  "breathExhale": "బయటకు శ్వాస వదలండి",
+  "breathDone": "పూర్తయింది",
+  "breathGreatJob": "చాలా బాగా చేశారు!",
+  "remaining": "మిగిలినవి",
+  "breathSessionsToday": "{count, plural, one{{count} సెషన్ ఈరోజు} other{{count} సెషన్‌లు ఈరోజు}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "వ్యాయామాన్ని ముగించండి",
+  "done": "పూర్తయింది",
+
+  "noCopingTipsYet": "ఇంకా సమర్థంగా ఎదుర్కొనే చిట్కాలు లేవు",
+  "copingStrategiesWillAppear": "మీ రికవరీ ప్లాన్ రూపొందించడం పూర్తయిన తర్వాత మీ వ్యక్తిగత సమర్థన వ్యూహాలు ఇక్కడ కనిపిస్తాయి.",
+  "strategiesTailoredToTriggers": "మీ ట్రిగ్గర్లకు అనుగుణంగా రూపొందించిన వ్యూహాలు",
+
+  "rideTheWave": "అలపై ప్రయాణించండి",
+  "cravingsPeakAndPass": "కోరికలు గరిష్ఠ స్థాయికి చేరుకుని\nతగ్గిపోతాయి",
+  "rideTheWaveDescription": "చాలా వరకు మద్యం తాగాలనే కోరికలు 15 నిమిషాల్లో తగ్గిపోతాయి. మీరు దాని ప్రకారం చర్య తీసుకోవాల్సిన అవసరం లేదు — మాతో కలిసి ఆ క్షణాన్ని అధిగమించండి.",
+  "stayWithIt": "దానితోనే ఉండండి",
+  "youMadeIt": "మీరు సాధించారు",
+  "readyWhenYouAre": "మీరు సిద్ధమైనప్పుడు",
+  "rideItAgain": "మళ్లీ ఎదుర్కోండి",
+  "start15MinuteTimer": "15 నిమిషాల టైమర్ ప్రారంభించండి",
+  "rideTheWaveCompletedMessage": "మీరు ఆ అలను అధిగమించారు. అదే నిజమైన బలం. 💪",
+
+  "myProgress": "నా పురోగతి",
+  "weekLabel": "వారం",
+  "monthLabel": "నెల",
+  "allLabel": "అన్నీ",
+  "daysSoberStatLabel": "మద్యం లేని\nరోజులు",
+  "savedStatLabel": "ఆదా",
+  "avoidedStatLabel": "తప్పించుకున్నవి",
+  "moodTrends": "మూడ్ ట్రెండ్‌లు",
+  "cravingsPattern": "కోరికల నమూనా",
+  "unlockLabel": "అన్‌లాక్",
+  "unlockFullStats": "పూర్తి గణాంకాలను అన్‌లాక్ చేయండి",
+  "premiumStatsMessage": "మూడ్ ట్రెండ్‌లు మరియు కోరికల నమూనాలు Premium ఫీచర్లు. మీ పూర్తి గణాంకాలను చూడటానికి అప్‌గ్రేడ్ చేయండి.",
+  "healthMilestonesWillAppear": "మీ ఆరోగ్య మైలురాళ్లు ఇక్కడ కనిపిస్తాయి.",
+  "healthMilestones": "ఆరోగ్య మైలురాళ్లు",
+  "dayNumber": "రోజు {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "మద్యం లేకుండా",
+  "slipLabel": "జారిపోయారు",
+  "noDataLabel": "డేటా లేదు",
+
+  "milestone24Hours": "24 గంటలు",
+  "milestoneOneWeek": "ఒక వారం",
+  "milestoneOneMonth": "ఒక నెల",
+  "milestoneThreeMonths": "మూడు నెలలు",
+  "milestoneSixMonths": "ఆరు నెలలు",
+  "milestoneOneYear": "ఒక సంవత్సరం",
+  "milestoneDayCount": "రోజు {day} మైలురాయి",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "గోప్యతా విధానం"
+}

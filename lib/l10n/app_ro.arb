@@ -1,0 +1,624 @@
+{
+  "@@locale": "ro",
+  "skip": "Omite",
+  "continueButton": "Continuă",
+  "getStarted": "Începe",
+  "maybeLaterLabel": "Poate mai târziu",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Anulează",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+  "onboardingTitle1": "Preia controlul asupra vieții tale",
+  "onboardingSubtitle1": "Urmărește-ți parcursul, sărbătorește fiecare reușită și devino mai sănătos în fiecare zi.",
+  "onboardingTitle2": "Companionul tău AI pentru recuperare",
+  "onboardingSubtitle2": "Primește îndrumare personalizată, obiceiuri sănătoase, mementouri motivaționale și rapoarte de progres create pentru parcursul tău.",
+  "goodMorning": "Bună dimineața",
+  "goodAfternoon": "Bună ziua",
+  "goodEvening": "Bună seara",
+  "goodNight": "Noapte bună",
+  "embracingClarity": "Îmbrățișează claritatea, câte o zi pe rând.",
+  "streakLabel": "SERIE",
+  "goalLabel": "Obiectiv",
+  "daysStreak": "{count, plural, one{{count} zi} other{{count} zile}}",
+  "@daysStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumPlan": "Plan Premium",
+  "premiumPlanSubtitle": "Deblochează experiența completă de recuperare",
+  "accountAndSupport": "CONT ȘI ASISTENȚĂ",
+  "privacyPolicy": "Politica de confidențialitate",
+  "privacyPolicySubtitle": "Gestionează partajarea datelor și securitatea contului",
+  "termsOfService": "Termeni și condiții",
+  "termsOfServiceSubtitle": "Întrebări frecvente, contact și resurse",
+  "shareApp": "Distribuie aplicația",
+  "shareAppSubtitle": "Distribuie aplicația prietenilor",
+  "resetData": "Resetează datele",
+  "resetDataSubtitle": "Șterge tot ce este salvat pe acest dispozitiv",
+  "resetAllDataTitle": "Resetezi toate datele?",
+  "resetAllDataMessage": "Aceasta șterge tot ce este salvat pe acest dispozitiv — profilul, înregistrările din jurnal și progresul — și nu poate fi anulată.",
+  "cancel": "Anulează",
+  "reset": "Resetează",
+  "chooseFromGallery": "Alege din galerie",
+  "takePhoto": "Fă o fotografie",
+  "removePhoto": "Elimină fotografia",
+  "couldNotUpdatePhoto": "Fotografia nu a putut fi actualizată: {error}",
+  "@couldNotUpdatePhoto": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "couldNotRemovePhoto": "Fotografia nu a putut fi eliminată: {error}",
+  "@couldNotRemovePhoto": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "photoTooLarge": "Fotografia este prea mare chiar și după comprimare — încearcă una diferită.",
+  "unableToLoadProfile": "Profilul tău nu poate fi încărcat",
+  "pleaseTryAgain": "Te rugăm să încerci din nou.",
+  "tryAgain": "Încearcă din nou",
+  "profileNotFound": "Profilul nu a fost găsit",
+  "refresh": "Reîmprospătează",
+  "noProfileDataFound": "Nu există încă date de profil pe acest dispozitiv.",
+  "couldNotResetData": "Datele nu au putut fi resetate: {error}",
+  "@couldNotResetData": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navHome": "Acasă",
+  "navStats": "Statistici",
+  "navJournal": "Jurnal",
+  "navBadges": "Insigne",
+  "navProfile": "Profil",
+  "featureComingSoon": "{feature} va fi disponibil în curând.",
+  "@featureComingSoon": {
+    "placeholders": {
+      "feature": {
+        "type": "String"
+      }
+    }
+  },
+  "appWordmark": "WELLNESS",
+  "appTitle": "Renunță la alcool",
+  "splashSubtitle": "Fă primul pas către o viață\nfără alcool",
+  "preparingJourney": "Îți pregătim\nparcursul",
+  "taskMorningMeditation": "Meditație de dimineață (10 min)",
+  "taskReadChapter": "Citește capitolul 4 din „The Sober Diaries”",
+  "taskEveningJournal": "Jurnal de recunoștință de seară",
+  "close": "Închide",
+  "youAreDoingGreat": "Te descurci minunat!",
+  "shareMilestone": "Distribuie etapa",
+  "shareMilestoneMessage": "Sunt în ziua {days} a parcursului meu de recuperare! 💪",
+  "@shareMilestoneMessage": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "shareMilestoneSubject": "Etapa mea de recuperare",
+  "weeklyReportReadyTitle": "Raportul tău săptămânal este gata",
+  "weeklyReportReadySubtitle": "Atinge pentru a vedea cum a fost săptămâna ta",
+  "howAreYouFeeling": "Cum te simți?",
+  "moodTough": "Greu",
+  "moodOkay": "În regulă",
+  "moodGood": "Bine",
+  "moneySaved": "Bani economisiți",
+  "caloriesSaved": "Calorii economisite",
+  "healthScore": "Scor de sănătate",
+  "drinksAvoided": "Băuturi evitate",
+  "estimated": "Estimat",
+  "aiGenerated": "Generat de AI",
+  "daysCapsLabel": "ZILE",
+  "todaysMotivation": "Motivația de azi",
+  "defaultMotivationQuote": "Ți-ai respectat cu succes angajamentul. Continuă pe valul schimbării pozitive.",
+  "talkToCoach": "Vorbește cu antrenorul",
+  "havingACraving": "Am poftă",
+  "unlockWeeklyReportsTitle": "Deblochează rapoartele săptămânale",
+  "unlockWeeklyReportsMessage": "Vezi în fiecare săptămână zilele fără alcool, tendințele stării de spirit și feedbackul AI personalizat. Treci la Premium pentru a debloca.",
+  "maybeLater": "Poate mai târziu",
+  "upgrade": "Fă upgrade",
+  "weeklyReportTitle": "Raport săptămânal",
+  "weeklyReportsPremiumTitle": "Rapoartele săptămânale sunt o funcție Premium",
+  "weeklyReportsPremiumMessage": "Vezi în fiecare săptămână zilele fără alcool, tendințele stării de spirit, poftele și feedbackul AI personalizat.",
+  "upgradeToPremium": "Treci la Premium",
+  "couldNotGenerateReport": "Raportul nu a putut fi generat acum.",
+  "tryAgainLower": "Încearcă din nou",
+  "statSoberDays": "Zile fără alcool",
+  "statAvgMood": "Stare medie",
+  "statCravings": "Pofte",
+  "statMoneySaved": "Bani economisiți",
+  "coachFeedback": "Feedback de la antrenor",
+  "journalInsights": "Perspective din jurnal",
+  "next": "Următorul",
+  "question1Title": "Care este obiectivul tău",
+  "question1Subtitle": "Alege obiectivul care contează\ncel mai mult pentru tine",
+  "goalQuitCompletely": "Renunță complet",
+  "goalReduceDrinking": "Redu consumul de alcool",
+  "goalTakeABreak": "Ia o pauză",
+  "goalBuildHealthierHabits": "Construiește obiceiuri mai sănătoase",
+  "question3Title": "Spune-ne despre\nrutina ta",
+  "drinksPerWeek": "Băuturi pe săptămână",
+  "moneySpentPerWeek": "Bani cheltuiți pe săptămână",
+  "drinkingLevel": "Nivelul consumului",
+  "triggersLabel": "Factori declanșatori",
+  "levelSocial": "Social",
+  "levelRegular": "Regulat",
+  "levelHeavy": "Ridicat",
+  "levelDependent": "Dependent",
+  "triggerStress": "Stres",
+  "triggerLoneliness": "Singurătate",
+  "triggerHabit": "Obicei",
+  "triggerSadness": "Tristețe",
+  "triggerAnger": "Furie",
+  "triggerBoredom": "Plictiseală",
+  "triggerSocialPressure": "Presiune socială",
+  "triggerCelebration": "Sărbătoare",
+  "triggerSleepProblems": "Probleme de somn",
+  "triggerWorkPressure": "Presiune la serviciu",
+  "question4Title": "De ce vrei să faci o schimbare?",
+  "question4Subtitle": "Motivul tău te va ajuta să rămâi motivat.",
+  "reasonImproveHealth": "Îmbunătățește-ți sănătatea",
+  "reasonSaveMoney": "Economisește bani",
+  "reasonFamily": "Familie",
+  "reasonBetterSleep": "Somn mai bun",
+  "reasonMentalClarity": "Claritate mentală",
+  "reasonFitness": "Fitness",
+  "reasonSelfRespect": "Respect de sine",
+  "reasonCareer": "Carieră",
+  "milestoneUnlockedLabel": "ETAPĂ DEBLOCATĂ",
+  "incredibleNamePrefix": "Extraordinar, {name}!",
+  "@incredibleNamePrefix": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "amountSavedLabel": "{amount} economisiți",
+  "@amountSavedLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "drinksAvoidedLabel": "{count} evitate",
+  "@drinksAvoidedLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "shareMyMilestone": "Distribuie etapa mea",
+  "milestoneImageShareError": "Imaginea etapei nu a putut fi creată. Încearcă din nou.",
+  "dailyCheckInTitle": "Check-in zilnic",
+  "howAreYouFeelingToday": "Cum te simți astăzi?",
+  "honestAnswerHelp": "Răspunsul tău sincer ne ajută să te sprijinim mai bine",
+  "didYouDrinkToday": "Ai consumat alcool astăzi?",
+  "noLabel": "Nu",
+  "yesLabel": "Da",
+  "cravingLevelNow": "Cât de puternică este pofta acum?",
+  "anythingOnMind": "Ai ceva pe suflet?",
+  "optionalLabel": "(opțional)",
+  "dailyNoteHint": "Scrie despre ziua ta, factori declanșatori, reușite...",
+  "alreadyCheckedInToday": "Ai făcut deja check-in-ul de azi",
+  "saveCheckIn": "Salvează check-in-ul",
+  "checkInsHelpTrack": "Check-in-urile ajută la urmărirea progresului în timp",
+  "alreadyCompletedTodayCheckIn": "Ai finalizat deja check-in-ul de astăzi.",
+  "pleaseAnswerBothQuestions": "Te rugăm să răspunzi mai întâi la ambele întrebări de mai sus",
+  "checkInSaved": "Check-in salvat",
+  "cravingNone": "Niciuna",
+  "cravingLow": "Scăzută",
+  "cravingMedium": "Medie",
+  "cravingStrong": "Puternică",
+  "moodBad": "Rău",
+  "moodLow": "Scăzut",
+  "moodGreat": "Excelent",
+  "sosSupportTitle": "Asistență SOS",
+  "notAloneMessage": "Nu ești singur, {name}",
+  "@notAloneMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cravingsPassMessage": "Poftele trec. Alege ceva de mai jos care să te ajute în acest moment.",
+  "breathingExercise": "Exercițiu de respirație",
+  "breathingExerciseSubtitle": "Tehnica ghidată 4-7-8, 2 minute",
+  "rideTheWave": "Lasă valul să treacă",
+  "rideTheWaveSubtitle": "Cronometru de 15 min — poftele trec întotdeauna",
+  "copingTips": "Sfaturi pentru gestionare",
+  "copingTipsSubtitle": "Strategii personalizate pentru factorii tăi declanșatori",
+  "talkToAiCoach": "Vorbește cu antrenorul AI",
+  "talkToAiCoachSubtitle": "Discută cu companionul tău pentru recuperare",
+  "callSomeone": "Sună pe cineva",
+  "callSomeoneSubtitle": "Contactează persoana ta de încredere",
+  "contactsPermissionNeeded": "Este necesar accesul la contacte pentru a apela un contact.",
+  "beatenCravingsPrefix": "Ai învins poftele de ",
+  "beatenCravingsCount": "{count} ori",
+  "@beatenCravingsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "beatenCravingsSuffix": " înainte. Poți face asta din nou.",
+  "tellUsAboutYourself": "Spune-ne despre tine",
+  "detailsSubtitle": "Aceste informații ne ajută să-ți personalizăm parcursul de recuperare și să oferim perspective precise.",
+  "nameLabel": "Nume",
+  "nameHint": "ex., Alex Rivers",
+  "ageLabel": "Vârstă",
+  "ageHint": "ex., 32",
+  "sexAssignedAtBirth": "Sex atribuit la naștere",
+  "sexFemale": "Femeie",
+  "sexMale": "Bărbat",
+  "heightLabel": "Înălțime",
+  "weightLabel": "Greutate",
+  "heightHint": "170",
+  "weightHint": "70",
+  "dailyLimitReachedTitle": "Limita zilnică a fost atinsă",
+  "dailyLimitReachedMessage": "Ai folosit toate cele {limit} mesaje gratuite de astăzi. Treci la Premium pentru chat nelimitat cu antrenorul.",
+  "@dailyLimitReachedMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "coachConnectError": "Nu m-am putut conecta acum. Te rugăm să încerci din nou peste câteva momente.",
+  "clearConversationTitle": "Ștergi conversația?",
+  "clearConversationMessage": "Aceasta va elimina definitiv istoricul chatului cu antrenorul.",
+  "clearLabel": "Șterge",
+  "recoveryCoachTitle": "Antrenor de recuperare",
+  "onlineLabel": "Online",
+  "clearConversationMenuItem": "Șterge conversația",
+  "chatGreeting": "Bună, {name} 👋",
+  "@chatGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatDaysIntro": "Ești în ziua {days} a parcursului tău. Sunt aici ori de câte ori vrei să vorbim.",
+  "@chatDaysIntro": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "quickPromptsLabel": "SUGESTII RAPIDE",
+  "promptCravingLabel": "Am o poftă",
+  "promptCravingSubtitle": "Revino rapid cu picioarele pe pământ",
+  "promptMotivationLabel": "Am nevoie de motivație",
+  "promptMotivationSubtitle": "Un impuls când e greu",
+  "promptSocialLabel": "Situație socială",
+  "promptSocialSubtitle": "Gestionează o întâlnire",
+  "promptSlippedLabel": "Am avut o scăpare",
+  "promptSlippedSubtitle": "Fără judecată, doar sprijin",
+  "typeMessageHint": "Scrie un mesaj...",
+  "editProfileTitle": "Editează profilul",
+  "couldNotSaveProfile": "Profilul nu a putut fi salvat: {error}",
+  "@couldNotSaveProfile": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "heightCmLabel": "Înălțime (cm)",
+  "weightKgLabel": "Greutate (kg)",
+  "saveChangesLabel": "Salvează modificările",
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Perspective și analize avansate",
+  "featureUnlimitedJournal": "Înregistrări nelimitate în jurnal",
+  "featureUnlimitedChat": "Chat nelimitat cu antrenorul AI",
+  "featureCommunityGroups": "Grupuri exclusive ale comunității",
+  "featurePrioritySupport": "Asistență prioritară de la experți",
+  "featureThemePacks": "Pachete de teme personalizate",
+  "featureDataExport": "Export de date",
+  "featureAdFree": "Experiență fără reclame",
+  "premiumMemberTitle": "Ești membru Premium",
+  "unlockFullRecoveryTitle": "Deblochează experiența\ncompletă de recuperare",
+  "premiumMemberSubtitle": "Îți mulțumim că susții parcursul tău de recuperare — toate funcțiile Premium de mai jos sunt deblocate.",
+  "premiumJoinSubtitle": "Alătură-te unei comunități de mii de persoane care își accelerează\nparcursul spre vindecare cu instrumentele noastre Premium\nși sprijin personalizat.",
+  "monthlyPlanLabel": "Lunar",
+  "perMonthSuffix": "/lună",
+  "cancelAnytimeLabel": "Anulează oricând",
+  "yearlyPlanLabel": "Anual",
+  "billedAnnuallyLabel": "Facturat anual la {amount}",
+  "@billedAnnuallyLabel": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "bestValueLabel": "Cea mai bună valoare",
+  "alreadyPremiumLabel": "Ești Premium ✓",
+  "startPremiumLabel": "Începe Premium",
+  "manageSubscriptionLabel": "Gestionează sau anulează din setările de abonament ale dispozitivului.",
+  "noCommitmentLabel": "Fără obligații. Anulează oricând.",
+  "continueFreePlanLabel": "Continuă cu planul gratuit",
+  "backToHomeLabel": "Înapoi la Acasă",
+  "cancelPremiumLabel": "Anulează Premium",
+  "cancelPremiumTitle": "Anulezi Premium?",
+  "cancelPremiumMessage": "Vei pierde accesul la înregistrări nelimitate în jurnal, chat nelimitat cu antrenorul, statistici și rapoarte săptămânale. Te poți abona din nou oricând.",
+  "keepPremiumLabel": "Păstrează Premium",
+  "nowPremiumMessage": "Acum ești Premium! Bucură-te de experiența completă de recuperare.",
+  "premiumCancelledMessage": "Premium a fost anulat. Ai revenit la planul gratuit.",
+  "termsOfUseLabel": "Termeni de utilizare",
+  "navHomeLabel": "Acasă",
+  "navStatsLabel": "Statistici",
+  "navJournalLabel": "Jurnal",
+  "navBadgesLabel": "Insigne",
+  "navProfileLabel": "Profil",
+  "recoveryGoalsTitle": "Obiective de recuperare",
+  "drinksPerWeekLabel": "Băuturi pe săptămână",
+  "quitReasonsLabel": "Motive pentru renunțare",
+  "quitReasonsHelperText": "Separă mai multe motive prin virgulă.",
+  "couldNotSaveRecoveryGoals": "Obiectivele de recuperare nu au putut fi salvate: {error}",
+  "@couldNotSaveRecoveryGoals": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "goalHint": "ex., Abstinență completă",
+  "drinksPerWeekHint": "ex., 12",
+  "quitReasonsHint": "ex., Sănătate, Familie, Bani",
+  "todaysPrompt": "Întrebarea de azi",
+  "defaultJournalPrompt": "La ce te gândești astăzi?",
+  "aiJournalInsights": "Perspective AI din jurnal",
+  "unlockJournalInsightsMessage": "Deblochează tiparele săptămânale, tendințele stării de spirit și perspective personalizate din înregistrările tale.",
+  "notEnoughJournalData": "Nu există încă suficiente date — scrie câteva înregistrări săptămâna aceasta și revino.",
+  "openEntry": "Deschide",
+  "editEntry": "Editează",
+  "deleteEntry": "Șterge",
+  "searchJournalEntries": "Caută înregistrări...",
+  "writeNewEntry": "Scrie o înregistrare nouă",
+  "recentEntries": "Înregistrări recente",
+  "noJournalEntriesYet": "Nu există încă înregistrări în jurnal — scrie prima ta reflecție mai sus.",
+  "noEntriesMatchFilters": "Nicio înregistrare nu corespunde filtrelor tale.",
+  "weeklyJournalLimitReached": "Limita săptămânală a fost atinsă",
+  "weeklyJournalLimitMessage": "Ai folosit toate cele {limit} înregistrări gratuite din jurnal pentru această săptămână. Treci la Premium pentru înregistrări nelimitate.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "newEntry": "Înregistrare nouă",
+  "writeYourThoughts": "Scrie-ți gândurile",
+  "saveEntry": "Salvează înregistrarea",
+  "freeEntriesLeftThisWeek": "Mai ai {remaining} din {limit} înregistrări gratuite în această săptămână",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteEntryQuestion": "Ștergi înregistrarea?",
+  "deleteEntryConfirmation": "Această înregistrare va fi ștearsă definitiv. Acțiunea nu poate fi anulată.",
+  "journalEntryNotFound": "Înregistrarea nu a fost găsită",
+  "journalEntryMayHaveBeenDeleted": "Este posibil ca această înregistrare din jurnal să fi fost ștearsă.",
+  "goBack": "Înapoi",
+  "journalEntryTitle": "Înregistrare din jurnal",
+  "moodStruggling": "Mă lupt",
+  "moodUnwell": "Nu mă simt bine",
+  "moodNeutral": "Neutru",
+  "whatHappenedToday": "Ce s-a întâmplat astăzi?",
+  "trigger": "Declanșator",
+  "whatHelped": "Ce m-a ajutat",
+  "whatIllTryNextTime": "Ce voi încerca data viitoare",
+  "journalPrivacyMessage": "Reflecția ta este privată și salvată în jurnal.",
+  "unlocked": "Deblocat",
+  "daysLeft": "Mai este {count} zi{count, plural, =1{} other{le}}",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} zile",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Prima\nreflecție",
+  "oneJournalEntry": "1 înregistrare în jurnal",
+  "openBook": "Deschide cartea",
+  "tenJournalEntries": "10 înregistrări în jurnal",
+  "dedicatedWriter": "Scriitor\nDedicat",
+  "thirtyJournalEntries": "30 de înregistrări în jurnal",
+  "firstConversation": "Prima\nconversație",
+  "oneAiCoachChat": "1 chat cu antrenorul AI",
+  "keepTalking": "Continuă să vorbești",
+  "fiveConversations": "5 conversații",
+  "coachCompanion": "Companionul\nantrenorului",
+  "twentyConversations": "20 de conversații",
+  "checkInHabit": "Obiceiul de\ncheck-in",
+  "sevenCheckIns": "7 check-in-uri",
+  "consistencyPro": "Expert în\nconsecvență",
+  "thirtyCheckIns": "30 de check-in-uri",
+  "dedicatedJourney": "Parcurs\nDedicat",
+  "hundredCheckIns": "100 de check-in-uri",
+  "goalGetter": "Cuceritor de obiective",
+  "threeGoalsCompleted": "3 obiective finalizate",
+  "goalAchiever": "Realizator de\nobiective",
+  "tenGoalsCompleted": "10 obiective finalizate",
+  "firstSavings": "Prima\neconomie",
+  "fiveHundredSaved": "500 $ economisiți",
+  "smartSaver": "Economisitor inteligent",
+  "oneThousandSaved": "1.000 $ economisiți",
+  "bigSaver": "Mare economisitor",
+  "fiveThousandSaved": "$5,000 Saved",
+  "currencyProgress": "${current} din ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} din {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Continuă — prima ta etapă te așteaptă!",
+  "badgesAndMilestones": "Insigne și etape",
+  "yourMilestoneJourney": "Parcursul tău prin etape",
+  "milestonesAchieved": "{count} etap{count, plural, =1{ă} other{e}} atins{count, plural, =1{ă} other{e}}.\nAtinge pentru a vedea",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Ai deblocat {unlocked} din {total} etape în parcursul tău.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Rămase",
+  "complete": "Finalizat",
+  "nextMilestone": "Următoarea etapă",
+  "percentThere": "{subtitle} · {percent}% parcurs",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Etape fără alcool",
+  "journeyBadges": "Insigne de parcurs",
+  "bronze": "BRONZ",
+  "silver": "ARGINT",
+  "gold": "AUR",
+  "platinum": "PLATINĂ",
+  "diamond": "DIAMANT",
+  "analyzingYourJourney": "Îți analizăm parcursul...",
+  "aiCreatingSanctuary": "AI-ul nostru îți creează un spațiu personalizat de recuperare.",
+  "understandingHabits": "Înțelegem obiceiurile...",
+  "calculatingBaseline": "Calculăm nivelul tău de bază...",
+  "personalizingPlan": "Îți personalizăm planul...",
+  "finalizingSanctuary": "Finalizăm spațiul tău de recuperare...",
+  "creatingYourPlan": "Îți creăm planul...",
+  "personalizedPlanError": "Nu am putut crea planul tău personalizat. Te rugăm să încerci din nou.",
+  "retry": "Reîncearcă",
+  "breathInhale": "INSPIRĂ",
+  "breathHold": "ȚINE",
+  "breathExhale": "EXPIRĂ",
+  "breathDone": "GATA",
+  "breathGreatJob": "Foarte bine!",
+  "breathSessionsToday": "{count} sesiuni astăzi",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Încheie exercițiul",
+  "done": "Gata",
+  "noCopingTipsYet": "Nu există încă sfaturi de gestionare",
+  "copingStrategiesWillAppear": "Strategiile tale personalizate de gestionare vor apărea aici după ce planul tău de recuperare este generat.",
+  "strategiesTailoredToTriggers": "Strategii adaptate factorilor tăi declanșatori",
+  "cravingsPeakAndPass": "Poftele ating apogeul\nși trec",
+  "rideTheWaveDescription": "Majoritatea poftelor trec în 15 minute. Nu trebuie să acționezi — lasă valul să treacă împreună cu noi.",
+  "stayWithIt": "rămâi cu ea",
+  "youMadeIt": "ai reușit",
+  "readyWhenYouAre": "când ești pregătit",
+  "rideItAgain": "Lasă-l să treacă din nou",
+  "start15MinuteTimer": "Pornește cronometrul de 15 minute",
+  "rideTheWaveCompletedMessage": "Ai lăsat valul să treacă. Asta înseamnă putere reală. 💪",
+  "myProgress": "Progresul meu",
+  "weekLabel": "Săptămână",
+  "monthLabel": "Lună",
+  "allLabel": "Toate",
+  "daysSoberStatLabel": "Zile\nfără alcool",
+  "savedStatLabel": "Economisit",
+  "avoidedStatLabel": "Evităt",
+  "moodTrends": "Tendințele stării de spirit",
+  "cravingsPattern": "Tiparul poftelor",
+  "unlockLabel": "Deblochează",
+  "unlockFullStats": "Deblochează toate statisticile",
+  "premiumStatsMessage": "Tendințele stării de spirit și tiparele poftelor sunt funcții Premium. Fă upgrade pentru a vedea toate statisticile.",
+  "healthMilestonesWillAppear": "Etapele tale de sănătate vor apărea aici.",
+  "healthMilestones": "Etape de sănătate",
+  "dayNumber": "Ziua {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Fără alcool",
+  "slipLabel": "Abatere",
+  "noDataLabel": "Nu există date",
+  "milestone24Hours": "24 de ore",
+  "milestoneOneWeek": "O săptămână",
+  "milestoneOneMonth": "O lună",
+  "milestoneThreeMonths": "Trei luni",
+  "milestoneSixMonths": "Șase luni",
+  "milestoneOneYear": "Un an",
+  "milestoneDayCount": "Etapa zilei {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

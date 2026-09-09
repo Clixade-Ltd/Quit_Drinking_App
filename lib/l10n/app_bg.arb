@@ -1,0 +1,579 @@
+{
+  "@@locale": "bg",
+
+  "skip": "Пропусни",
+  "continueButton": "Продължи",
+  "getStarted": "Започни",
+
+  "onboardingTitle1": "Вземете контрол над живота си",
+  "onboardingSubtitle1": "Проследявайте пътя си, празнувайте всяко постижение и ставайте по-здрави ден след ден.",
+  "onboardingTitle2": "Вашият AI спътник във възстановяването",
+  "onboardingSubtitle2": "Получавайте персонализирани съвети, здравословни навици, напомняния за мотивация и доклади за напредъка.",
+
+  "maybeLaterLabel": "Може би по-късно",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Отказ",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "Добро утро",
+  "goodAfternoon": "Добър ден",
+  "goodEvening": "Добър вечер",
+  "goodNight": "Лека нощ",
+
+  "embracingClarity": "Постигане на яснота, ден по ден.",
+  "streakLabel": "ПОЛЕДОВАТЕЛНОСТ",
+  "goalLabel": "ЦЕЛ",
+  "daysStreak": "{count, plural, one{{count} ден} other{{count} дни}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Премиум план",
+  "premiumPlanSubtitle": "Отключете пълното изживяване на възстановяването",
+
+  "accountAndSupport": "ПРОФИЛ И ПОДДРЪЖКА",
+  "privacyPolicy": "Политика за поверителност",
+  "privacyPolicySubtitle": "Управление на споделянето на данни и сигурността",
+  "termsOfService": "Условия за ползване",
+  "termsOfServiceSubtitle": "Често задавани въпроси, контакти и ресурси",
+  "shareApp": "Сподели приложението",
+  "shareAppSubtitle": "Споделете приложението с приятели",
+  "resetData": "Нулиране на данните",
+  "resetDataSubtitle": "Изтриване на всичко, запазено на това устройство",
+
+  "resetAllDataTitle": "Нулиране на всички данни?",
+  "resetAllDataMessage": "Това изтрива всичко, запазено на това устройство — профил, записи в дневника и напредък — и не може да бъде отменено.",
+  "cancel": "Отказ",
+  "reset": "Нулиране",
+
+  "chooseFromGallery": "Избери от галерията",
+  "takePhoto": "Заснеми снимка",
+  "removePhoto": "Премахни снимката",
+  "couldNotUpdatePhoto": "Снимката не можа да се актуализира: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Снимката не можа да се премахне: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Тази снимка е твърде голяма дори след компресия — моля, опитайте с друга.",
+
+  "unableToLoadProfile": "Профилът не можа да се зареди",
+  "pleaseTryAgain": "Моля, опитайте отново.",
+  "tryAgain": "Опитай отново",
+  "profileNotFound": "Профилът не е намерен",
+  "refresh": "Опресни",
+  "noProfileDataFound": "Все още няма намерени данни за профила на това устройство.",
+
+  "couldNotResetData": "Данните не можаха да се нулират: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Начало",
+  "navStats": "Статистика",
+  "navJournal": "Дневник",
+  "navBadges": "Значки",
+  "navProfile": "Профил",
+
+  "featureComingSoon": "Функцията {feature} ще бъде налична скоро.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "УЕЛНЕС",
+  "appTitle": "Спрете да пиете",
+  "splashSubtitle": "Направете първата стъпка към\nживот без алкохол",
+  "preparingJourney": "Подготовка на вашето\nпътуване",
+
+  "taskMorningMeditation": "Сутрешна медитация (10 мин)",
+  "taskReadChapter": "Прочетете Глава 4 от \"The Sober Diaries\"",
+  "taskEveningJournal": "Вечерен дневник на благодарността",
+
+  "close": "Затвори",
+  "youAreDoingGreat": "Справяте се страхотно!",
+  "shareMilestone": "Сподели постижение",
+  "shareMilestoneMessage": "Аз съм на ден {days} от моето възстановяване! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Моето постижение във възстановяването",
+
+  "weeklyReportReadyTitle": "Седмичният ви доклад е готов",
+  "weeklyReportReadySubtitle": "Докоснете, за да видите как мина седмицата ви",
+
+  "howAreYouFeeling": "Как се чувствате?",
+  "moodTough": "Трудно",
+  "moodOkay": "Добре съм",
+  "moodGood": "Добре",
+
+  "moneySaved": "Спестени пари",
+  "caloriesSaved": "Спестени калории",
+  "healthScore": "Здравен индекс",
+  "drinksAvoided": "Избегнати напитки",
+  "estimated": "Приблизително",
+  "aiGenerated": "Генерирано от AI",
+  "daysCapsLabel": "ДНИ",
+
+  "todaysMotivation": "Днешната мотивация",
+  "defaultMotivationQuote": "Успешно спазвате обещанието си. Продължавайте да се движите по вълната на позитивната промяна.",
+
+  "talkToCoach": "Говори с треньор",
+  "havingACraving": "Имам силно желание",
+
+  "unlockWeeklyReportsTitle": "Отключи седмични доклади",
+  "unlockWeeklyReportsMessage": "Вижте трезвостта си, тенденциите в настроението и AI обратната връзка всяка седмица. Преминете към Премиум.",
+  "maybeLater": "Може би по-късно",
+  "upgrade": "Надгради",
+
+  "weeklyReportTitle": "Седмичен доклад",
+  "weeklyReportsPremiumTitle": "Седмичните доклади са Премиум функция",
+  "weeklyReportsPremiumMessage": "Проследявайте дни без алкохол, тенденции в настроението, апетита и персонализирани AI съвети.",
+  "upgradeToPremium": "Премини към Премиум",
+  "couldNotGenerateReport": "Докладът не можа да се генерира в момента.",
+  "tryAgainLower": "Опитай отново",
+
+  "statSoberDays": "Трезви дни",
+  "statAvgMood": "Ср. настроение",
+  "statCravings": "Силни желания",
+  "statMoneySaved": "Спестени пари",
+  "coachFeedback": "Съвети от треньора",
+  "journalInsights": "Анализ на дневника",
+
+  "next": "Напред",
+
+  "question1Title": "Каква е вашата цел",
+  "question1Subtitle": "Изберете целта, която е най-важна\nза вас",
+  "goalQuitCompletely": "Пълно спиране",
+  "goalReduceDrinking": "Намаляване на пиенето",
+  "goalTakeABreak": "Вземане на почивка",
+  "goalBuildHealthierHabits": "Изграждане на по-здравословни навици",
+
+  "question3Title": "Разкажете ни за вашия\nрежим",
+  "drinksPerWeek": "Питиета на седмица",
+  "moneySpentPerWeek": "Похарчени пари на седмица",
+  "drinkingLevel": "Ниво на консумация",
+  "triggersLabel": "Тригери",
+  "levelSocial": "Социално",
+  "levelRegular": "Редовно",
+  "levelHeavy": "Тежко",
+  "levelDependent": "Зависимо",
+  "triggerStress": "Стрес",
+  "triggerLoneliness": "Самота",
+  "triggerHabit": "Навик",
+  "triggerSadness": "Тъга",
+  "triggerAnger": "Гняв",
+  "triggerBoredom": "Скука",
+  "triggerSocialPressure": "Социален натиск",
+  "triggerCelebration": "Празнуване",
+  "triggerSleepProblems": "Проблеми със съня",
+  "triggerWorkPressure": "Стрес на работа",
+
+  "question4Title": "Защо искате да се промените?",
+  "question4Subtitle": "Вашата причина ще ви помага да се мотивирате.",
+  "reasonImproveHealth": "Подобряване на здравето",
+  "reasonSaveMoney": "Спестяване на пари",
+  "reasonFamily": "Семейство",
+  "reasonBetterSleep": "По-добър сън",
+  "reasonMentalClarity": "Яснота на ума",
+  "reasonFitness": "Физическа форма",
+  "reasonSelfRespect": "Самоуважение",
+  "reasonCareer": "Кариера",
+
+  "milestoneUnlockedLabel": "ПОСТИЖЕНИЕТО Е ОТКЛЮЧЕНО",
+  "incredibleNamePrefix": "Невероятно, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} спестени",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} избегнати",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Сподели моето постижение",
+  "milestoneImageShareError": "Изображението на постижението не можа да се създаде. Опитайте отново.",
+
+  "dailyCheckInTitle": "Ежедневен отчет",
+  "howAreYouFeelingToday": "Как се чувствате днес?",
+  "honestAnswerHelp": "Вашият честен отговор ни помага да ви подкрепим по-добре",
+  "didYouDrinkToday": "Пихте ли днес?",
+  "noLabel": "Не",
+  "yesLabel": "Да",
+  "cravingLevelNow": "Ниво на желание в момента?",
+  "anythingOnMind": "Имате ли нещо в ума си?",
+  "optionalLabel": "(по избор)",
+  "dailyNoteHint": "Пишете за деня си, тригерите, победите...",
+  "alreadyCheckedInToday": "Вече сте се отчели днес",
+  "saveCheckIn": "Запази отчета",
+  "checkInsHelpTrack": "Отчетите помагат за проследяване на напредъка във времето",
+  "alreadyCompletedTodayCheckIn": "Вече сте завършили днешния си отчет.",
+  "pleaseAnswerBothQuestions": "Моля, първо отговорете и на двата въпроса по-горе",
+  "checkInSaved": "Отчетът е запазен",
+  "cravingNone": "Нямам",
+  "cravingLow": "Ниско",
+  "cravingMedium": "Средно",
+  "cravingStrong": "Силно",
+  "moodBad": "Зле",
+  "moodLow": "Ниско",
+  "moodOkay": "Добре",
+  "moodGood": "Много добре",
+  "moodGreat": "Страхотно",
+
+  "sosSupportTitle": "SOS Подкрепа",
+  "notAloneMessage": "Не сте сами, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Желанията преминават. Изберете нещо отдолу, което да ви помогне в този момент.",
+  "breathingExercise": "Дихателно упражнение",
+  "breathingExerciseSubtitle": "Направлявана техника 4-7-8, 2 минути",
+  "rideTheWave": "Преминаване през вълната",
+  "rideTheWaveSubtitle": "15-минутен таймер — силното желание винаги отминава",
+  "copingTips": "Съвети за справяне",
+  "copingTipsSubtitle": "Персонализирани стратегии за вашите тригери",
+  "talkToAiCoach": "Говори с AI треньор",
+  "talkToAiCoachSubtitle": "Чат с вашия спътник във възстановяването",
+  "callSomeone": "Обади се на някого",
+  "callSomeoneSubtitle": "Свържете се с доверен контакт",
+  "contactsPermissionNeeded": "Разрешението за контакти е необходимо за обаждане.",
+  "beatenCravingsPrefix": "Преодолели сте силното желание ",
+  "beatenCravingsCount": "{count} пъти",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " преди. Можете да го направите отново.",
+
+  "tellUsAboutYourself": "Разкажете ни за себе си",
+  "detailsSubtitle": "Тази информация ни помага да персонализираме вашето пътуване и да ви предоставим точни данни.",
+  "nameLabel": "Име",
+  "nameHint": "напр. Алекс Ривърс",
+  "ageLabel": "Възраст",
+  "ageHint": "напр. 32",
+  "sexAssignedAtBirth": "Пол, определен при раждането",
+  "sexFemale": "Женски",
+  "sexMale": "Мъжки",
+  "heightLabel": "Височина",
+  "weightLabel": "Тегло",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Дневният лимит е достигнат",
+  "dailyLimitReachedMessage": "Използвахте всички {limit} безплатни съобщения за днес. Преминете към Премиум за неограничен чат.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Невъзможно свързване в момента. Моля, опитайте след малко.",
+  "clearConversationTitle": "Изчистване на разговора?",
+  "clearConversationMessage": "Това за постоянно ще премахне историята на чата с треньора.",
+  "clearLabel": "Изчисти",
+  "recoveryCoachTitle": "Треньор за възстановяване",
+  "onlineLabel": "На линия",
+  "clearConversationMenuItem": "Изчисти разговора",
+  "chatGreeting": "Здравей, {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Вие сте на ден {days} от вашето пътуване. Тук съм, когато искате да разговаряме.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "БЪРЗИ ВЪПРОСИ",
+  "promptCravingLabel": "Имам силно желание",
+  "promptCravingSubtitle": "Успокой се бързо",
+  "promptMotivationLabel": "Трябва ми мотивация",
+  "promptMotivationSubtitle": "Подкрепа, когато е трудно",
+  "promptSocialLabel": "Социална ситуация",
+  "promptSocialSubtitle": "Справяне по време на събирания",
+  "promptSlippedLabel": "Подхлъзнах се",
+  "promptSlippedSubtitle": "Без осъждане, само подкрепа",
+  "typeMessageHint": "Напишете съобщение...",
+
+  "editProfileTitle": "Редактиране на профила",
+  "couldNotSaveProfile": "Профилът не можа да се запази: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Височина (см)",
+  "weightKgLabel": "Тегло (кг)",
+  "saveChangesLabel": "Запази промените",
+
+  "premiumBadgeLabel": "ПРЕМИУМ",
+  "featureAdvancedInsights": "Задълбочени анализи и статистики",
+  "featureUnlimitedJournal": "Неограничени записи в дневника",
+  "featureUnlimitedChat": "Неограничен чат с AI треньор",
+  "featureCommunityGroups": "Ексклузивни общностни групи",
+  "featurePrioritySupport": "Приоритетна поддръжка от експерти",
+  "featureThemePacks": "Персонализирани теми",
+  "featureDataExport": "Експорт на данни",
+  "featureAdFree": "Изживяване без реклами",
+  "premiumMemberTitle": "Вие сте Премиум член",
+  "unlockFullRecoveryTitle": "Отключете пълното си\nвъзстановяване",
+  "premiumMemberSubtitle": "Благодарим ви, че подкрепяте пътя си — всяка премиум функция по-долу е отключена.",
+  "premiumJoinSubtitle": "Присъединете се към хиляди хора, които\nускоряват оздравителния си процес с нашите\nпремиум инструменти и подкрепа.",
+  "monthlyPlanLabel": "Месечно",
+  "perMonthSuffix": "/месец",
+  "cancelAnytimeLabel": "Отказ по всяко време",
+  "yearlyPlanLabel": "Годишно",
+  "billedAnnuallyLabel": "Таксува се годишно по {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Най-добра стойност",
+  "alreadyPremiumLabel": "Вие сте Премиум ✓",
+  "startPremiumLabel": "Започни Премиум",
+  "manageSubscriptionLabel": "Управлявайте или откажете от настройките за абонамент на устройството си.",
+  "noCommitmentLabel": "Без обвързване. Отказ по всяко време.",
+  "continueFreePlanLabel": "Продължи с безплатния план",
+  "backToHomeLabel": "Обратно към Начало",
+  "cancelPremiumLabel": "Откажи Премиум",
+  "cancelPremiumTitle": "Отказване на Премиум?",
+  "cancelPremiumMessage": "Ще загубите достъп до неограничени записи, неограничен чат, подробни статистики и седмични доклади. Можете да се абонирате отново по всяко време.",
+  "keepPremiumLabel": "Запази Премиум",
+  "nowPremiumMessage": "Вече сте Премиум! Насладете се на пълното изживяване.",
+  "premiumCancelledMessage": "Премиум абонаментът е отменен. Отново сте на безплатен план.",
+  "termsOfUseLabel": "Условия за ползване",
+
+  "navHomeLabel": "Начало",
+  "navStatsLabel": "Статистика",
+  "navJournalLabel": "Дневник",
+  "navBadgesLabel": "Значки",
+  "navProfileLabel": "Профил",
+
+  "recoveryGoalsTitle": "Цели на възстановяването",
+  "goalLabel": "Цел",
+  "drinksPerWeekLabel": "Питиета на седмица",
+  "quitReasonsLabel": "Причини за спиране",
+  "quitReasonsHelperText": "Разделете няколко причини със запетая.",
+  "couldNotSaveRecoveryGoals": "Целите не можаха да се запазят: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "напр. Пълно въздържание",
+  "drinksPerWeekHint": "напр. 12",
+  "quitReasonsHint": "напр. Здраве, Семейство, Пари",
+
+  "todaysPrompt": "Днешната тема",
+  "defaultJournalPrompt": "Какво ви минава през ума днес?",
+  "aiJournalInsights": "AI анализ на дневника",
+  "unlockJournalInsightsMessage": "Отключете седмични модели, тенденции в настроението и персонализирани изводи от вашите записи.",
+  "notEnoughJournalData": "Все още няма достатъчно данни — напишете няколко записа тази седмица и проверете отново.",
+  "openEntry": "Отвори",
+  "editEntry": "Редактирай",
+  "deleteEntry": "Изтрий",
+  "searchJournalEntries": "Търсене в записите...",
+  "writeNewEntry": "Напиши нов запись",
+  "recentEntries": "Скорошни записи",
+  "noJournalEntriesYet": "Все още няма записи в дневника — напишете първите си мисли по-горе.",
+  "noEntriesMatchFilters": "Няма записи, съответстващи на вашите филтри.",
+
+  "weeklyJournalLimitReached": "Седмичният лимит е достигнат",
+  "weeklyJournalLimitMessage": "Използвахте всички {limit} безплатни записа в дневника за тази седмица. Преминете към Премиум за неограничен брой записи.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Нов запис",
+  "writeYourThoughts": "Запишете вашите мисли",
+  "saveEntry": "Запази записа",
+  "freeEntriesLeftThisWeek": "Остават {remaining} от {limit} безплатни записа тази седмица",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Изтриване на записа?",
+  "deleteEntryConfirmation": "Този запис ще бъде постоянно изтрит. Това не може да бъде отменено.",
+
+  "journalEntryNotFound": "Записът не е намерен",
+  "journalEntryMayHaveBeenDeleted": "Този запис в дневника може да е бил изтрит.",
+  "goBack": "Върни се",
+  "journalEntryTitle": "Запис в дневника",
+
+  "moodStruggling": "Затруднен",
+  "moodUnwell": "Неразположен",
+  "moodNeutral": "Неутрален",
+
+  "whatHappenedToday": "Какво се случи днес?",
+  "trigger": "Тригер",
+  "whatHelped": "Какво помогна",
+  "whatIllTryNextTime": "Какво ще опитам следващия път",
+  "journalPrivacyMessage": "Вашите размисли са лични и се запазват във вашия дневник.",
+
+  "unlocked": "Отключено",
+  "daysLeft": "Остават {count} дни",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} дни",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Първи\nразмисли",
+  "oneJournalEntry": "1 запис в дневника",
+  "openBook": "Отворена книга",
+  "tenJournalEntries": "10 записа в дневника",
+  "dedicatedWriter": "Отделен\nписател",
+  "thirtyJournalEntries": "30 записа в дневника",
+  "firstConversation": "Първи\nразговор",
+  "oneAiCoachChat": "1 чат с AI треньор",
+  "keepTalking": "Продължавай да говориш",
+  "fiveConversations": "5 разговора",
+  "coachCompanion": "Треньор и\nспътник",
+  "twentyConversations": "20 разговора",
+  "checkInHabit": "Навик за\nотчитане",
+  "sevenCheckIns": "7 отчета",
+  "consistencyPro": "Профи по\nпоследователност",
+  "thirtyCheckIns": "30 отчета",
+  "dedicatedJourney": "Отдадено\nпътуване",
+  "hundredCheckIns": "100 отчета",
+  "goalGetter": "Постигащ цели",
+  "threeGoalsCompleted": "3 изпълнени цели",
+  "goalAchiever": "Изпълнител\nна цели",
+  "tenGoalsCompleted": "10 изпълнени цели",
+  "firstSavings": "Първи\nспестявания",
+  "fiveHundredSaved": "$500 спестени",
+  "smartSaver": "Умен спестовник",
+  "oneThousandSaved": "$1,000 спестени",
+  "bigSaver": "Голям спестовник",
+  "fiveThousandSaved": "$5,000 спестени",
+  "currencyProgress": "${current} от ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} от {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Продължавайте — вашето първо постижение ви очаква!",
+  "badgesAndMilestones": "Значки и постижения",
+  "yourMilestoneJourney": "Вашето пътуване по постижения",
+  "milestonesAchieved": "{count} постижения намерени.\nНатиснете, за да видите",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Отключили сте {unlocked} от {total} постижения по вашия път.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Оставащи",
+  "complete": "Завършено",
+  "nextMilestone": "Следващо постижение",
+  "percentThere": "{subtitle} · {percent}% постигнати",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Постижения в трезвостта",
+  "journeyBadges": "Значки от пътуването",
+  "bronze": "БРОНЗ",
+  "silver": "СРЕБРО",
+  "gold": "ЗЛАТО",
+  "platinum": "ПЛАТИНА",
+  "diamond": "ДИАМАНТ",
+
+  "analyzingYourJourney": "Анализиране на вашето пътуване...",
+  "aiCreatingSanctuary": "Нашият AI създава вашето лично пространство.",
+  "understandingHabits": "Разбиране на навиците...",
+  "calculatingBaseline": "Изчисляване на началната точка...",
+  "personalizingPlan": "Персонализиране на вашия план...",
+  "finalizingSanctuary": "Финализиране на личното пространство...",
+  "creatingYourPlan": "Създаване на вашия план...",
+  "personalizedPlanError": "Не можахме да създадем вашия персонализиран план. Моля, опитайте отново.",
+  "retry": "Опитай отново",
+
+  "breathInhale": "ВДИШАЙТЕ",
+  "breathHold": "ЗАДРЪЖТЕ",
+  "breathExhale": "ИЗДИШАЙТЕ",
+  "breathDone": "ГОТОВО",
+  "breathGreatJob": "Страхотна работа!",
+  "breathSessionsToday": "{count, plural, one{{count} сесия днес} other{{count} сесии днес}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Край на упражнението",
+  "done": "Готово",
+
+  "noCopingTipsYet": "Все още няма съвети за справяне",
+  "copingStrategiesWillAppear": "Вашите персонализирани стратегии за справяне ще се появят тук, след като планът ви приключи да се генерира.",
+  "strategiesTailoredToTriggers": "Стратегии, адаптирани спрямо вашите тригери",
+
+  "cravingsPeakAndPass": "Силните желания достигат пик\nи отминават",
+  "rideTheWaveDescription": "Повечето силни желания преминават в рамките на 15 минути. Не е нужно да действате според тях — просто преминете през това с нас.",
+  "stayWithIt": "Останете с това",
+  "youMadeIt": "Успяхте",
+  "readyWhenYouAre": "Готови сме, когато и вие",
+  "rideItAgain": "Премини отново",
+  "start15MinuteTimer": "Стартирай 15-минутен таймер",
+  "rideTheWaveCompletedMessage": "Преминахте през вълната. Това е истинска сила. 💪",
+
+  "myProgress": "Моят напредък",
+  "weekLabel": "Седмица",
+  "monthLabel": "Месец",
+  "allLabel": "Всички",
+  "daysSoberStatLabel": "Дни\nтрезв",
+  "savedStatLabel": "Спестени",
+  "avoidedStatLabel": "Избегнати",
+  "moodTrends": "Тенденции в настроението",
+  "cravingsPattern": "Модели на желанията",
+  "unlockLabel": "Отключи",
+  "unlockFullStats": "Отключи пълните статистики",
+  "premiumStatsMessage": "Тенденциите в настроението и моделите на силното желание са Премиум функции. Надградете, за да видите всички статистики.",
+  "healthMilestonesWillAppear": "Вашите здравни постижения ще се появят тук.",
+  "healthMilestones": "Здравни постижения",
+  "dayNumber": "Ден {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Трезв",
+  "slipLabel": "Подхлъзване",
+  "noDataLabel": "Няма данни",
+
+  "milestone24Hours": "24 часа",
+  "milestoneOneWeek": "Една седмица",
+  "milestoneOneMonth": "Един месец",
+  "milestoneThreeMonths": "Три месеца",
+  "milestoneSixMonths": "Шест месеца",
+  "milestoneOneYear": "Една година",
+  "milestoneDayCount": "Постижение за Ден {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -9,612 +9,616 @@ class AppLocalizationsUr extends AppLocalizations {
   AppLocalizationsUr([String locale = 'ur']) : super(locale);
 
   @override
-  String get skip => 'Skip';
+  String get skip => 'چھوڑیں';
 
   @override
-  String get continueButton => 'Continue';
+  String get continueButton => 'جاری رکھیں';
 
   @override
-  String get getStarted => 'Get Started';
+  String get getStarted => 'شروع کریں';
 
   @override
-  String get onboardingTitle1 => 'Take Control of Your Life';
+  String get onboardingTitle1 => 'اپنی زندگی کا کنٹرول سنبھالیں';
 
   @override
   String get onboardingSubtitle1 =>
-      'Track your journey, celebrate every achievement, and become healthier one day at a time.';
+      'اپنے سفر کا حساب رکھیں، ہر کامیابی کا جشن منائیں اور دن بہ دن صحت مند بنیں۔';
 
   @override
-  String get onboardingTitle2 => 'Your AI Recovery Companion';
+  String get onboardingTitle2 => 'آپ کا AI ریکوری ساتھی';
 
   @override
   String get onboardingSubtitle2 =>
-      'Receive personalized guidance, healthy habits, motivation reminders, and progress reports designed around your journey.';
+      'اپنے سفر کے مطابق ذاتی رہنمائی، صحت مند عادتیں، تحریکی یاد دہانیاں اور پیشرفت رپورٹس حاصل کریں۔';
 
   @override
-  String get goodMorning => 'Good Morning';
+  String get goodMorning => 'صبح بخیر';
 
   @override
-  String get goodAfternoon => 'Good Afternoon';
+  String get goodAfternoon => 'سہ پہر بخیر';
 
   @override
-  String get goodEvening => 'Good Evening';
+  String get goodEvening => 'شام بخیر';
 
   @override
-  String get goodNight => 'Good Night';
+  String get goodNight => 'شب بخیر';
 
   @override
-  String get embracingClarity => 'Embracing clarity, one day at a time.';
+  String get embracingClarity => 'ہر دن ایک قدم، ذہنی شفافیت کی طرف۔';
 
   @override
-  String get streakLabel => 'STREAK';
+  String get streakLabel => 'تسلسل';
 
   @override
-  String get goalLabel => 'Goal';
+  String get goalLabel => 'ہدف';
 
   @override
   String daysStreak(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count Days',
-      one: '$count Day',
+      other: '$count دن',
+      one: '$count دن',
     );
     return '$_temp0';
   }
 
   @override
-  String get premiumPlan => 'Premium Plan';
+  String get premiumPlan => 'پریمیئم پلان';
 
   @override
-  String get premiumPlanSubtitle => 'Unlock your full recovery experience';
+  String get premiumPlanSubtitle => 'مکمل ریکوری کے تجربے کو انلاک کریں';
 
   @override
-  String get accountAndSupport => 'ACCOUNT & SUPPORT';
+  String get accountAndSupport => 'اکاؤنٹ اور سپورٹ';
 
   @override
   String get privacyPolicy => 'رازداری کی پالیسی';
 
   @override
   String get privacyPolicySubtitle =>
-      'Manage data sharing and account security';
+      'ڈیٹا شیئرنگ اور اکاؤنٹ کی سیکیورٹی کو منظم کریں';
 
   @override
   String get termsOfService => 'سروس کی شرائط';
 
   @override
-  String get termsOfServiceSubtitle => 'FAQs, contact us, and resources';
+  String get termsOfServiceSubtitle =>
+      'اکثر پوچھے گئے سوالات، ہم سے رابطہ کریں اور وسائل';
 
   @override
   String get shareApp => 'ایپ شیئر کریں';
 
   @override
-  String get shareAppSubtitle => 'Share app with your friends';
+  String get shareAppSubtitle => 'اپنے دوستوں کے ساتھ ایپ شیئر کریں';
 
   @override
-  String get resetData => 'Reset Data';
+  String get resetData => 'ڈیٹا ری سیٹ کریں';
 
   @override
-  String get resetDataSubtitle => 'Erase everything saved on this device';
+  String get resetDataSubtitle => 'اس ڈیوائس پر محفوظ شدہ تمام ڈیٹا مٹائیں';
 
   @override
-  String get resetAllDataTitle => 'Reset all data?';
+  String get resetAllDataTitle => 'تمام ڈیٹا ری سیٹ کریں؟';
 
   @override
   String get resetAllDataMessage =>
-      'This clears everything saved on this device — profile, journal entries, and progress — and cannot be undone.';
+      'یہ اس ڈیوائس پر محفوظ تمام معلومات — پروفائل، جریدے کے اندراجات، اور پیشرفت — کو پاک کر دے گا اور اسے واپس نہیں لایا جا سکتا۔';
 
   @override
-  String get cancel => 'Cancel';
+  String get cancel => 'منسوخ کریں';
 
   @override
-  String get reset => 'Reset';
+  String get reset => 'ری سیٹ کریں';
 
   @override
-  String get chooseFromGallery => 'Choose from Gallery';
+  String get chooseFromGallery => 'گیلری سے منتخب کریں';
 
   @override
-  String get takePhoto => 'Take Photo';
+  String get takePhoto => 'تصویر لیں';
 
   @override
-  String get removePhoto => 'Remove Photo';
+  String get removePhoto => 'تصویر ہٹائیں';
 
   @override
   String couldNotUpdatePhoto(String error) {
-    return 'Could not update photo: $error';
+    return 'تصویر اپ ڈیٹ نہیں ہو سکی: $error';
   }
 
   @override
   String couldNotRemovePhoto(String error) {
-    return 'Could not remove photo: $error';
+    return 'تصویر نہیں ہٹائی جا سکی: $error';
   }
 
   @override
   String get photoTooLarge =>
-      'That photo is too large even after compression — please try a different one.';
+      'یہ تصویر سائز میں بہت بڑی ہے — براہ کرم کوئی دوسری تصویر منتخب کریں۔';
 
   @override
-  String get unableToLoadProfile => 'Unable to load your profile';
+  String get unableToLoadProfile => 'آپ کی پروفائل لوڈ کرنے میں ناکامی';
 
   @override
-  String get pleaseTryAgain => 'Please try again.';
+  String get pleaseTryAgain => 'براہ کرم دوبارہ کوشش کریں۔';
 
   @override
-  String get tryAgain => 'Try Again';
+  String get tryAgain => 'دوبارہ کوشش کریں';
 
   @override
-  String get profileNotFound => 'Profile not found';
+  String get profileNotFound => 'پروفائل نہیں ملی';
 
   @override
-  String get refresh => 'Refresh';
+  String get refresh => 'ریفریش کریں';
 
   @override
-  String get noProfileDataFound => 'No profile data found on this device yet.';
+  String get noProfileDataFound =>
+      'اس ڈیوائس پر ابھی تک کوئی پروفائل ڈیٹا نہیں ملا۔';
 
   @override
   String couldNotResetData(String error) {
-    return 'Could not reset data: $error';
+    return 'ڈیٹا ری سیٹ نہیں ہو سکا: $error';
   }
 
   @override
-  String get navHome => 'Home';
+  String get navHome => 'ہوم';
 
   @override
-  String get navStats => 'Stats';
+  String get navStats => 'اعداد و شمار';
 
   @override
-  String get navJournal => 'Journal';
+  String get navJournal => 'جریدہ';
 
   @override
-  String get navBadges => 'Badges';
+  String get navBadges => 'بیجز';
 
   @override
-  String get navProfile => 'Profile';
+  String get navProfile => 'پروفائل';
 
   @override
   String featureComingSoon(String feature) {
-    return '$feature will be available soon.';
+    return '$feature جلد دستیاب ہو گا۔';
   }
 
   @override
-  String get appWordmark => 'WELLNESS';
+  String get appWordmark => 'ویلنیس';
 
   @override
-  String get appTitle => 'Sober Flow';
+  String get appTitle => 'شراب نوشی ترک کریں';
 
   @override
-  String get splashSubtitle =>
-      'Take the first step towards an\nAlcohol free life';
+  String get splashSubtitle => 'شراب سے پاک زندگی کی طرف\nپہلا قدم اٹھائیں';
 
   @override
-  String get preparingJourney => 'Preparing your\njourney';
+  String get preparingJourney => 'آپ کا سفر\nتیار کیا جا رہا ہے';
 
   @override
-  String get taskMorningMeditation => 'Morning Meditation (10m)';
+  String get taskMorningMeditation => 'صبح کی مراقبہ (10 منٹ)';
 
   @override
-  String get taskReadChapter => 'Read Chapter 4 of \"The Sober Diaries\"';
+  String get taskReadChapter => '\"The Sober Diaries\" کا باب 4 پڑھیں';
 
   @override
-  String get taskEveningJournal => 'Evening Gratitude Journal';
+  String get taskEveningJournal => 'شام کا شکرگزاری کا جریدہ';
 
   @override
-  String get close => 'Close';
+  String get close => 'بند کریں';
 
   @override
-  String get youAreDoingGreat => 'You\'re doing great!';
+  String get youAreDoingGreat => 'آپ بہت اچھا کر رہے ہیں!';
 
   @override
-  String get shareMilestone => 'Share Milestone';
+  String get shareMilestone => 'سنگ میل شیئر کریں';
 
   @override
   String shareMilestoneMessage(int days) {
-    return 'I\'m on day $days of my recovery journey! 💪';
+    return 'میں اپنے ریکوری کے سفر کے $days ویں دن پر ہوں! 💪';
   }
 
   @override
-  String get shareMilestoneSubject => 'My recovery milestone';
+  String get shareMilestoneSubject => 'میرا ریکوری کا سنگ میل';
 
   @override
-  String get weeklyReportReadyTitle => 'Your weekly report is ready';
+  String get weeklyReportReadyTitle => 'آپ کی ہفتہ وار رپورٹ تیار ہے';
 
   @override
-  String get weeklyReportReadySubtitle => 'Tap to see how your week went';
+  String get weeklyReportReadySubtitle =>
+      'یہ دیکھنے کے لیے ٹیپ کریں کہ آپ کا ہفتہ کیسا گزرا';
 
   @override
-  String get howAreYouFeeling => 'How are you feeling?';
+  String get howAreYouFeeling => 'آپ کیسا محسوس کر رہے ہیں؟';
 
   @override
-  String get moodTough => 'Tough';
+  String get moodTough => 'مشکل';
 
   @override
-  String get moodOkay => 'Okay';
+  String get moodOkay => 'مناسب';
 
   @override
-  String get moodGood => 'Good';
+  String get moodGood => 'اچھا';
 
   @override
-  String get moneySaved => 'Money Saved';
+  String get moneySaved => 'بچائے گئے پیسے';
 
   @override
-  String get caloriesSaved => 'Calories Saved';
+  String get caloriesSaved => 'بچائی گئی کیلوریز';
 
   @override
-  String get healthScore => 'Health Score';
+  String get healthScore => 'صحت کا اسکور';
 
   @override
-  String get drinksAvoided => 'Drinks Avoided';
+  String get drinksAvoided => 'پرہیز کی گئی ڈرنکس';
 
   @override
-  String get estimated => 'Estimated';
+  String get estimated => 'تخمینہ شدہ';
 
   @override
-  String get aiGenerated => 'AI generated';
+  String get aiGenerated => 'AI کی تیار کردہ';
 
   @override
-  String get daysCapsLabel => 'DAYS';
+  String get daysCapsLabel => 'دن';
 
   @override
-  String get todaysMotivation => 'Today\'s Motivation';
+  String get todaysMotivation => 'آج کی تحریک';
 
   @override
   String get defaultMotivationQuote =>
-      'You\'ve successfully maintained your commitment. Keep riding the wave of positive change.';
+      'آپ نے اپنے عزم کو کامیابی سے برقرار رکھا ہے۔ مثبت تبدیلی کے اس سفر کو جاری رکھیں۔';
 
   @override
-  String get talkToCoach => 'Talk to coach';
+  String get talkToCoach => 'کوچ سے بات کریں';
 
   @override
-  String get havingACraving => 'I\'m Having a Craving';
+  String get havingACraving => 'شدید طلب ہو رہی ہے';
 
   @override
-  String get unlockWeeklyReportsTitle => 'Unlock weekly reports';
+  String get unlockWeeklyReportsTitle => 'ہفتہ وار رپورٹس انلاک کریں';
 
   @override
   String get unlockWeeklyReportsMessage =>
-      'See your sober days, mood trends, and personalized AI feedback every week. Upgrade to Premium to unlock.';
+      'ہر ہفتے اپنے پاک دن، موڈ کے رجحانات، اور AI کی ذاتی رائے دیکھیں۔ انلاک کرنے کے لیے پریمیئم پر اپ گریڈ کریں۔';
 
   @override
-  String get maybeLater => 'Maybe later';
+  String get maybeLater => 'شاید بعد میں';
 
   @override
-  String get upgrade => 'Upgrade';
+  String get upgrade => 'اپ گریڈ کریں';
 
   @override
-  String get weeklyReportTitle => 'Weekly Report';
+  String get weeklyReportTitle => 'ہفتہ وار رپورٹ';
 
   @override
-  String get weeklyReportsPremiumTitle =>
-      'Weekly reports are a Premium feature';
+  String get weeklyReportsPremiumTitle => 'ہفتہ وار رپورٹس پریمیئم خصوصیت ہیں';
 
   @override
   String get weeklyReportsPremiumMessage =>
-      'See your sober days, mood trends, cravings, and personalized AI feedback every week.';
+      'ہر ہفتے اپنے پاک دن، موڈ کے رجحانات، طلب کا پیٹرن، اور AI کی ذاتی رائے دیکھیں۔';
 
   @override
-  String get upgradeToPremium => 'Upgrade to Premium';
+  String get upgradeToPremium => 'پریمیئم پر اپ گریڈ کریں';
 
   @override
-  String get couldNotGenerateReport =>
-      'Couldn\'t generate your report right now.';
+  String get couldNotGenerateReport => 'اس وقت آپ کی رپورٹ تیار نہیں ہو سکی۔';
 
   @override
-  String get tryAgainLower => 'Try again';
+  String get tryAgainLower => 'دوبارہ کوشش کریں';
 
   @override
-  String get statSoberDays => 'Sober days';
+  String get statSoberDays => 'پاک دن';
 
   @override
-  String get statAvgMood => 'Avg mood';
+  String get statAvgMood => 'اوسط موڈ';
 
   @override
-  String get statCravings => 'Cravings';
+  String get statCravings => 'طلب کا احساس';
 
   @override
-  String get statMoneySaved => 'Money saved';
+  String get statMoneySaved => 'بچائے گئے پیسے';
 
   @override
-  String get coachFeedback => 'Coach feedback';
+  String get coachFeedback => 'کوچ کی رائے';
 
   @override
-  String get journalInsights => 'Journal insights';
+  String get journalInsights => 'جریدے کی بصیرت';
 
   @override
-  String get next => 'Next';
+  String get next => 'آگے';
 
   @override
-  String get question1Title => 'What is your goal';
+  String get question1Title => 'آپ کا ہدف کیا ہے؟';
 
   @override
-  String get question1Subtitle => 'Choose the goal that matter\nmost to you';
+  String get question1Subtitle =>
+      'وہ ہدف منتخب کریں جو آپ کے لیے\nسب سے زیادہ اہم ہے';
 
   @override
-  String get goalQuitCompletely => 'Quit Completely';
+  String get goalQuitCompletely => 'مکمل طور پر چھوڑنا';
 
   @override
-  String get goalReduceDrinking => 'Reduce drinking';
+  String get goalReduceDrinking => 'پینا کم کرنا';
 
   @override
-  String get goalTakeABreak => 'Take a break';
+  String get goalTakeABreak => 'کچھ عرصے کا وقفہ لینا';
 
   @override
-  String get goalBuildHealthierHabits => 'Build healthier habits';
+  String get goalBuildHealthierHabits => 'صحت مند عادتیں اپنا نا';
 
   @override
-  String get question3Title => 'Tell us about your\nroutine';
+  String get question3Title => 'ہمیں اپنے معمولات کے\nبارے میں بتائیں';
 
   @override
-  String get drinksPerWeek => 'Drinks per week';
+  String get drinksPerWeek => 'فی ہفتہ ڈرنکس';
 
   @override
-  String get moneySpentPerWeek => 'Money spent per week';
+  String get moneySpentPerWeek => 'فی ہفتہ خرچ کی رقم';
 
   @override
-  String get drinkingLevel => 'Drinking level';
+  String get drinkingLevel => 'پینے کی سطح';
 
   @override
-  String get triggersLabel => 'Triggers';
+  String get triggersLabel => 'محرکات (Triggers)';
 
   @override
-  String get levelSocial => 'Social';
+  String get levelSocial => 'سماجی';
 
   @override
-  String get levelRegular => 'Regular';
+  String get levelRegular => 'باقاعدہ';
 
   @override
-  String get levelHeavy => 'Heavy';
+  String get levelHeavy => 'زیادہ';
 
   @override
-  String get levelDependent => 'Dependent';
+  String get levelDependent => 'منحصر/عادی';
 
   @override
-  String get triggerStress => 'Stress';
+  String get triggerStress => 'تناؤ';
 
   @override
-  String get triggerLoneliness => 'Loneliness';
+  String get triggerLoneliness => 'تنہائی';
 
   @override
-  String get triggerHabit => 'Habit';
+  String get triggerHabit => 'عادت';
 
   @override
-  String get triggerSadness => 'Sadness';
+  String get triggerSadness => 'وداسی';
 
   @override
-  String get triggerAnger => 'Anger';
+  String get triggerAnger => 'غصہ';
 
   @override
-  String get triggerBoredom => 'Boredom';
+  String get triggerBoredom => 'بوریت';
 
   @override
-  String get triggerSocialPressure => 'Social pressure';
+  String get triggerSocialPressure => 'سماجی دباؤ';
 
   @override
-  String get triggerCelebration => 'Celebration';
+  String get triggerCelebration => 'جشن';
 
   @override
-  String get triggerSleepProblems => 'Sleep problems';
+  String get triggerSleepProblems => 'نیند کے مسائل';
 
   @override
-  String get triggerWorkPressure => 'Work pressure';
+  String get triggerWorkPressure => 'کام کا دباؤ';
 
   @override
-  String get question4Title => 'Why do you want to change?';
+  String get question4Title => 'آپ تبدیلی کیوں چاہتے ہیں؟';
 
   @override
-  String get question4Subtitle => 'Your reason will help to motivate you.';
+  String get question4Subtitle => 'آپ کی وجہ آپ کو متحرک رکھنے میں مدد کرے گی۔';
 
   @override
-  String get reasonImproveHealth => 'Improve My Health';
+  String get reasonImproveHealth => 'صحت کو بہتر بنانا';
 
   @override
-  String get reasonSaveMoney => 'Save Money';
+  String get reasonSaveMoney => 'پیسے بچانا';
 
   @override
-  String get reasonFamily => 'Family';
+  String get reasonFamily => 'خاندان کے لیے';
 
   @override
-  String get reasonBetterSleep => 'Better Sleep';
+  String get reasonBetterSleep => 'بہتر نیند';
 
   @override
-  String get reasonMentalClarity => 'Mental Clarity';
+  String get reasonMentalClarity => 'ذہنی شفافیت';
 
   @override
-  String get reasonFitness => 'Fitness';
+  String get reasonFitness => 'فٹنس';
 
   @override
-  String get reasonSelfRespect => 'Self Respect';
+  String get reasonSelfRespect => 'خود داری';
 
   @override
-  String get reasonCareer => 'Career';
+  String get reasonCareer => 'کیریئر';
 
   @override
-  String get milestoneUnlockedLabel => 'MILESTONE UNLOCKED';
+  String get milestoneUnlockedLabel => 'سنگ میل حاصل ہو گیا';
 
   @override
   String incredibleNamePrefix(String name) {
-    return 'Incredible, $name!';
+    return 'زبردست، $name!';
   }
 
   @override
   String amountSavedLabel(String amount) {
-    return '$amount saved';
+    return '$amount کی بچت';
   }
 
   @override
   String drinksAvoidedLabel(String count) {
-    return '$count avoided';
+    return '$count ڈرنکس سے پرہیز';
   }
 
   @override
-  String get shareMyMilestone => 'Share my milestone';
+  String get shareMyMilestone => 'میرا سنگ میل شیئر کریں';
 
   @override
   String get milestoneImageShareError =>
-      'Couldn\'t create the milestone image. Please try again.';
+      'سنگ میل کی تصویر نہیں بن سکی۔ براہ کرم دوبارہ کوشش کریں۔';
 
   @override
-  String get dailyCheckInTitle => 'Daily Check-in';
+  String get dailyCheckInTitle => 'روزانہ کا جائزہ';
 
   @override
-  String get howAreYouFeelingToday => 'How are you feeling today?';
+  String get howAreYouFeelingToday => 'آج آپ کیسا محسوس کر رہے ہیں؟';
 
   @override
   String get honestAnswerHelp =>
-      'Your honest answer helps us support you better';
+      'آپ کا سچا جواب ہمیں آپ کی بہتر مدد کرنے میں مدد دیتا ہے';
 
   @override
-  String get didYouDrinkToday => 'Did you drink today?';
+  String get didYouDrinkToday => 'کیا آپ نے آج شراب پی؟';
 
   @override
-  String get noLabel => 'No';
+  String get noLabel => 'نہیں';
 
   @override
-  String get yesLabel => 'Yes';
+  String get yesLabel => 'ہاں';
 
   @override
-  String get cravingLevelNow => 'Craving level right now?';
+  String get cravingLevelNow => 'اس وقت طلب کی سطح کیا ہے؟';
 
   @override
-  String get anythingOnMind => 'Anything on your mind?';
+  String get anythingOnMind => 'کیا ذہن میں کوئی بات ہے؟';
 
   @override
-  String get optionalLabel => '(optional)';
+  String get optionalLabel => '(اختیاری)';
 
   @override
-  String get dailyNoteHint => 'Write about your day, triggers, wins...';
+  String get dailyNoteHint =>
+      'اپنے دن، محرکات یا کامیابیوں کے بارے میں لکھیں...';
 
   @override
-  String get alreadyCheckedInToday => 'Already checked in today';
+  String get alreadyCheckedInToday => 'آج کا جائزہ مکمل ہو چکا ہے';
 
   @override
-  String get saveCheckIn => 'Save check-in';
+  String get saveCheckIn => 'جائزہ محفوظ کریں';
 
   @override
   String get checkInsHelpTrack =>
-      'Check-ins help track your progress over time';
+      'روزانہ کا جائزہ وقت کے ساتھ آپ کی پیشرفت کو ٹریک کرنے میں مدد کرتا ہے';
 
   @override
   String get alreadyCompletedTodayCheckIn =>
-      'You have already completed today\'s check-in.';
+      'آپ آج کا جائزہ پہلے ہی مکمل کر چکے ہیں۔';
 
   @override
   String get pleaseAnswerBothQuestions =>
-      'Please answer both questions above first';
+      'براہ کرم پہلے اوپر دیے گئے دونوں سوالات کے جواب دیں';
 
   @override
-  String get checkInSaved => 'Check-in saved';
+  String get checkInSaved => 'جائزہ محفوظ ہو گیا';
 
   @override
-  String get cravingNone => 'None';
+  String get cravingNone => 'بالکل نہیں';
 
   @override
-  String get cravingLow => 'Low';
+  String get cravingLow => 'کم';
 
   @override
-  String get cravingMedium => 'Medium';
+  String get cravingMedium => 'درمیانی';
 
   @override
-  String get cravingStrong => 'Strong';
+  String get cravingStrong => 'شدید';
 
   @override
-  String get moodBad => 'Bad';
+  String get moodBad => 'خراب';
 
   @override
-  String get moodLow => 'Low';
+  String get moodLow => 'کمزور';
 
   @override
-  String get moodGreat => 'Great';
+  String get moodGreat => 'بہت اچھا';
 
   @override
-  String get sosSupportTitle => 'SOS support';
+  String get sosSupportTitle => 'SOS مدد';
 
   @override
   String notAloneMessage(String name) {
-    return 'You\'re not alone, $name';
+    return 'آپ اکیلے نہیں ہیں، $name';
   }
 
   @override
   String get cravingsPassMessage =>
-      'Cravings pass. Pick something below to help you through this moment.';
+      'طلب کے لمحے گزر جاتے ہیں۔ اس وقت پر قابو پانے کے لیے نیچے سے کچھ منتخب کریں۔';
 
   @override
-  String get breathingExercise => 'Breathing Exercise';
+  String get breathingExercise => 'سانس کی مشق';
 
   @override
-  String get breathingExerciseSubtitle => 'Guided 4-7-8 technique, 2 minutes';
+  String get breathingExerciseSubtitle => 'رہنمائی کے ساتھ 4-7-8 تکنیک، 2 منٹ';
 
   @override
-  String get rideTheWave => 'Ride the Wave';
+  String get rideTheWave => 'طلب کی لہر پر قابو پائیں';
 
   @override
-  String get rideTheWaveSubtitle => '15 min timer — cravings always pass';
+  String get rideTheWaveSubtitle =>
+      '15 منٹ کا ٹائمر — طلب ہمیشہ ختم ہو جاتی ہے';
 
   @override
-  String get copingTips => 'Coping tips';
+  String get copingTips => 'قابو پانے کی تجاویز';
 
   @override
-  String get copingTipsSubtitle => 'Personalized strategies for your triggers';
+  String get copingTipsSubtitle => 'آپ کے محرکات کے مطابق ذاتی حکمت عملی';
 
   @override
-  String get talkToAiCoach => 'Talk to AI coach';
+  String get talkToAiCoach => 'AI کوچ سے بات کریں';
 
   @override
-  String get talkToAiCoachSubtitle => 'Chat with your recovery companion';
+  String get talkToAiCoachSubtitle => 'اپنے ریکوری کے ساتھی سے چیٹ کریں';
 
   @override
-  String get callSomeone => 'Call someone';
+  String get callSomeone => 'کسی کو کال کریں';
 
   @override
-  String get callSomeoneSubtitle => 'Reach your trusted contact';
+  String get callSomeoneSubtitle => 'اپنے قابل اعتماد فرد سے رابطہ کریں';
 
   @override
   String get contactsPermissionNeeded =>
-      'Contacts permission is needed to call a contact.';
+      'رابطے کو کال کرنے کے لیے کانٹیکٹس کی اجازت ضروری ہے۔';
 
   @override
-  String get beatenCravingsPrefix => 'You\'ve beaten cravings ';
+  String get beatenCravingsPrefix => 'آپ پہلے بھی ';
 
   @override
   String beatenCravingsCount(int count) {
-    return '$count times';
+    return '$count بار';
   }
 
   @override
-  String get beatenCravingsSuffix => ' before. You can do it again.';
+  String get beatenCravingsSuffix =>
+      ' طلب کو شکست دے چکے ہیں۔ آپ یہ دوبارہ کر سکتے ہیں۔';
 
   @override
-  String get tellUsAboutYourself => 'Tell Us About Yourself';
+  String get tellUsAboutYourself => 'ہمیں اپنے بارے میں بتائیں';
 
   @override
   String get detailsSubtitle =>
-      'This information helps us personalize your recovery journey and provide accurate insights.';
+      'یہ معلومات آپ کے ریکوری کے سفر کو ذاتی بنانے اور درست بصیرت فراہم کرنے میں ہماری مدد کرتی ہے۔';
 
   @override
-  String get nameLabel => 'Name';
+  String get nameLabel => 'نام';
 
   @override
-  String get nameHint => 'e.g., Alex Rivers';
+  String get nameHint => 'مثلاً، علی خان';
 
   @override
-  String get ageLabel => 'Age';
+  String get ageLabel => 'عمر';
 
   @override
-  String get ageHint => 'e.g., 32';
+  String get ageHint => 'مثلاً، 32';
 
   @override
-  String get sexAssignedAtBirth => 'Sex assigned at birth';
+  String get sexAssignedAtBirth => 'پیدائشی جنس';
 
   @override
-  String get sexFemale => 'Female';
+  String get sexFemale => 'خاتون';
 
   @override
-  String get sexMale => 'Male';
+  String get sexMale => 'مرد';
 
   @override
-  String get heightLabel => 'Height';
+  String get heightLabel => 'قد';
 
   @override
-  String get weightLabel => 'Weight';
+  String get weightLabel => 'وزن';
 
   @override
   String get heightHint => '170';
@@ -623,697 +627,705 @@ class AppLocalizationsUr extends AppLocalizations {
   String get weightHint => '70';
 
   @override
-  String get dailyLimitReachedTitle => 'Daily limit reached';
+  String get dailyLimitReachedTitle => 'روزانہ کی حد ختم ہو گئی';
 
   @override
   String dailyLimitReachedMessage(int limit) {
-    return 'You\'ve used all $limit free messages today. Upgrade to Premium for unlimited coach chat.';
+    return 'آپ نے آج کے تمام $limit مفت پیغامات استعمال کر لیے ہیں۔ نامحدود کوچ چیٹ کے لیے پریمیئم پر اپ گریڈ کریں۔';
   }
 
   @override
   String get coachConnectError =>
-      'I couldn\'t connect right now. Please try again in a moment.';
+      'میں اس وقت رابطہ قائم نہیں کر سکا۔ براہ کرم کچھ دیر بعد دوبارہ کوشش کریں۔';
 
   @override
-  String get clearConversationTitle => 'Clear conversation?';
+  String get clearConversationTitle => 'گفتگو صاف کریں؟';
 
   @override
   String get clearConversationMessage =>
-      'This will permanently remove your coach chat history.';
+      'یہ آپ کی کوچ چیٹ کی ہسٹری کو مستقل طور پر ہٹا دے گا۔';
 
   @override
-  String get clearLabel => 'Clear';
+  String get clearLabel => 'صاف کریں';
 
   @override
-  String get recoveryCoachTitle => 'Recovery coach';
+  String get recoveryCoachTitle => 'ریکوری کوچ';
 
   @override
-  String get onlineLabel => 'Online';
+  String get onlineLabel => 'آن لائن';
 
   @override
-  String get clearConversationMenuItem => 'Clear conversation';
+  String get clearConversationMenuItem => 'گفتگو صاف کریں';
 
   @override
   String chatGreeting(String name) {
-    return 'Hi $name 👋';
+    return 'سلام $name 👋';
   }
 
   @override
   String chatDaysIntro(int days) {
-    return 'You\'re on day $days of your journey. I\'m here whenever you want to talk things through.';
+    return 'آپ اپنے سفر کے $days ویں دن پر ہیں۔ جب بھی آپ بات کرنا چاہیں میں موجود ہوں۔';
   }
 
   @override
-  String get quickPromptsLabel => 'QUICK PROMPTS';
+  String get quickPromptsLabel => 'فوری سوالات';
 
   @override
-  String get promptCravingLabel => 'Having a craving';
+  String get promptCravingLabel => 'شدید طلب ہو رہی ہے';
 
   @override
-  String get promptCravingSubtitle => 'Get grounded, fast';
+  String get promptCravingSubtitle => 'فوری طور پر حواس بحال کریں';
 
   @override
-  String get promptMotivationLabel => 'Need motivation';
+  String get promptMotivationLabel => 'حوصلہ افزائی کی ضرورت ہے';
 
   @override
-  String get promptMotivationSubtitle => 'A boost when it\'s tough';
+  String get promptMotivationSubtitle => 'مشکل وقت میں ہمت';
 
   @override
-  String get promptSocialLabel => 'Social situation';
+  String get promptSocialLabel => 'سماجی صورتحال';
 
   @override
-  String get promptSocialSubtitle => 'Navigate a gathering';
+  String get promptSocialSubtitle => 'کسی تقریب کا سامنا کریں';
 
   @override
-  String get promptSlippedLabel => 'I slipped';
+  String get promptSlippedLabel => 'مجھ سے غلطی ہو گئی';
 
   @override
-  String get promptSlippedSubtitle => 'No judgment, just support';
+  String get promptSlippedSubtitle => 'کوئی تنقید نہیں، صرف سپورٹ';
 
   @override
-  String get typeMessageHint => 'Type a message...';
+  String get typeMessageHint => 'پیغام تحریر کریں...';
 
   @override
-  String get editProfileTitle => 'Edit Profile';
+  String get editProfileTitle => 'پروفائل ایڈٹ کریں';
 
   @override
   String couldNotSaveProfile(String error) {
-    return 'Could not save profile: $error';
+    return 'پروفائل محفوظ نہیں ہو سکی: $error';
   }
 
   @override
-  String get heightCmLabel => 'Height (cm)';
+  String get heightCmLabel => 'قد (سینٹی میٹر)';
 
   @override
-  String get weightKgLabel => 'Weight (kg)';
+  String get weightKgLabel => 'وزن (کلوگرام)';
 
   @override
-  String get saveChangesLabel => 'Save Changes';
+  String get saveChangesLabel => 'تبدیلیاں محفوظ کریں';
 
   @override
-  String get premiumBadgeLabel => 'PREMIUM';
+  String get premiumBadgeLabel => 'پریمیئم';
 
   @override
-  String get featureAdvancedInsights => 'Advanced Insights & Analytics';
+  String get featureAdvancedInsights => 'تفصیلی بصیرت اور اعداد و شمار';
 
   @override
-  String get featureUnlimitedJournal => 'Unlimited Journal Entries';
+  String get featureUnlimitedJournal => 'نامحدود جریدے کے اندراجات';
 
   @override
-  String get featureUnlimitedChat => 'Unlimited Chat with AI Coach';
+  String get featureUnlimitedChat => 'AI کوچ کے ساتھ نامحدود چیٹ';
 
   @override
-  String get featureCommunityGroups => 'Exclusive Community Groups';
+  String get featureCommunityGroups => 'خصوصی کمیونٹی گروپس';
 
   @override
-  String get featurePrioritySupport => 'Priority Expert Support';
+  String get featurePrioritySupport => 'ترجیحی ماہرین کی سپورٹ';
 
   @override
-  String get featureThemePacks => 'Custom Theme Packs';
+  String get featureThemePacks => 'کسٹم تھیم بکس';
 
   @override
-  String get featureDataExport => 'Data Export';
+  String get featureDataExport => 'ڈیٹا ایکسپورٹ';
 
   @override
-  String get featureAdFree => 'Ad-Free Experience';
+  String get featureAdFree => 'اشتہارات سے پاک تجربہ';
 
   @override
-  String get premiumMemberTitle => 'You\'re a Premium Member';
+  String get premiumMemberTitle => 'آپ پریمیئم ممبر ہیں';
 
   @override
-  String get unlockFullRecoveryTitle => 'Unlock Your Full Recovery\nExperience';
+  String get unlockFullRecoveryTitle =>
+      'اپنے مکمل ریکوری کے تجربے کو\nانلاک کریں';
 
   @override
   String get premiumMemberSubtitle =>
-      'Thanks for supporting your recovery journey — every premium feature below is unlocked.';
+      'اپنے ریکوری کے سفر کو سپورٹ کرنے کا شکریہ — نیچے دی گئی تمام پریمیئم خصوصیات انلاک ہیں۔';
 
   @override
   String get premiumJoinSubtitle =>
-      'Join a community of thousands who are\naccelerating their healing journey with our\npremium tools and personalized support.';
+      'ہزاروں افراد کی کمیونٹی میں شامل ہوں جو ہمارے پریمیئم ٹولز اور ذاتی سپورٹ کے ساتھ اپنی بحالی کو تیز کر رہے ہیں۔';
 
   @override
-  String get monthlyPlanLabel => 'Monthly';
+  String get monthlyPlanLabel => 'ماہانہ';
 
   @override
-  String get perMonthSuffix => '/mo';
+  String get perMonthSuffix => '/ماہ';
 
   @override
-  String get cancelAnytimeLabel => 'Cancel anytime';
+  String get cancelAnytimeLabel => 'کسی بھی وقت منسوخ کریں';
 
   @override
-  String get yearlyPlanLabel => 'Yearly';
+  String get yearlyPlanLabel => 'سالانہ';
 
   @override
   String billedAnnuallyLabel(String amount) {
-    return 'Billed annually at $amount';
+    return 'سالانہ بل $amount';
   }
 
   @override
-  String get bestValueLabel => 'Best Value';
+  String get bestValueLabel => 'بہترین قیمت';
 
   @override
-  String get alreadyPremiumLabel => 'You\'re Premium ✓';
+  String get alreadyPremiumLabel => 'آپ پریمیئم پر ہیں ✓';
 
   @override
-  String get startPremiumLabel => 'Start Premium';
+  String get startPremiumLabel => 'پریمیئم شروع کریں';
 
   @override
   String get manageSubscriptionLabel =>
-      'Manage or cancel from your device\'s subscription settings.';
+      'اپنی ڈیوائس کی سبسکرپشن سیٹنگز سے انتظام یا منسوخ کریں۔';
 
   @override
-  String get noCommitmentLabel => 'No commitment. Cancel anytime.';
+  String get noCommitmentLabel => 'کوئی پابندی نہیں۔ کسی بھی وقت منسوخ کریں۔';
 
   @override
-  String get continueFreePlanLabel => 'Continue with Free Plan';
+  String get continueFreePlanLabel => 'مفت پلان کے ساتھ جاری رکھیں';
 
   @override
-  String get backToHomeLabel => 'Back to Home';
+  String get backToHomeLabel => 'ہوم پر واپس جائیں';
 
   @override
-  String get cancelPremiumLabel => 'Cancel Premium';
+  String get cancelPremiumLabel => 'پریمیئم منسوخ کریں';
 
   @override
-  String get cancelPremiumTitle => 'Cancel Premium?';
+  String get cancelPremiumTitle => 'پریمیئم منسوخ کریں؟';
 
   @override
   String get cancelPremiumMessage =>
-      'You\'ll lose access to unlimited journal entries, unlimited coach chat, stats insights, and weekly reports. You can re-subscribe anytime.';
+      'آپ نامحدود جریدے کے اندراجات، کوچ چیٹ، اعداد و شمار اور ہفتہ وار رپورٹس تک رسائی کھو دیں گے۔ آپ کسی بھی وقت دوبارہ سبسکرائب کر سکتے ہیں۔';
 
   @override
-  String get keepPremiumLabel => 'Keep Premium';
+  String get keepPremiumLabel => 'پریمیئم رکھیں';
 
   @override
   String get nowPremiumMessage =>
-      'You\'re now Premium! Enjoy your full recovery experience.';
+      'آپ اب پریمیئم ممبر ہیں! اپنے مکمل ریکوری کے تجربے کا لطف اٹھائیں۔';
 
   @override
   String get premiumCancelledMessage =>
-      'Premium cancelled. You\'re back on the free plan.';
+      'پریمیئم منسوخ کر دیا گیا ہے۔ آپ واپس مفت پلان پر ہیں۔';
 
   @override
-  String get termsOfUseLabel => 'Terms of Use';
+  String get termsOfUseLabel => 'استعمال کی شرائط';
 
   @override
-  String get navHomeLabel => 'Home';
+  String get navHomeLabel => 'ہوم';
 
   @override
-  String get navStatsLabel => 'Stats';
+  String get navStatsLabel => 'اعداد و شمار';
 
   @override
-  String get navJournalLabel => 'Journal';
+  String get navJournalLabel => 'جریدہ';
 
   @override
-  String get navBadgesLabel => 'Badges';
+  String get navBadgesLabel => 'بیجز';
 
   @override
-  String get navProfileLabel => 'Profile';
+  String get navProfileLabel => 'پروفائل';
 
   @override
-  String get recoveryGoalsTitle => 'Recovery Goals';
+  String get recoveryGoalsTitle => 'ریکوری کے اہداف';
 
   @override
-  String get drinksPerWeekLabel => 'Drinks per week';
+  String get drinksPerWeekLabel => 'فی ہفتہ ڈرنکس';
 
   @override
-  String get quitReasonsLabel => 'Quit reasons';
+  String get quitReasonsLabel => 'چھوڑنے کی وجوہات';
 
   @override
-  String get quitReasonsHelperText => 'Separate multiple reasons with a comma.';
+  String get quitReasonsHelperText => 'متعدد وجوہات کو کاما (،) سے الگ کریں۔';
 
   @override
   String couldNotSaveRecoveryGoals(String error) {
-    return 'Could not save recovery goals: $error';
+    return 'ریکوری کے اہداف محفوظ نہیں ہو سکے: $error';
   }
 
   @override
-  String get goalHint => 'e.g., Complete Abstinence';
+  String get goalHint => 'مثلاً، مکمل پرہیز';
 
   @override
-  String get drinksPerWeekHint => 'e.g., 12';
+  String get drinksPerWeekHint => 'مثلاً، 12';
 
   @override
-  String get quitReasonsHint => 'e.g., Health, Family, Money';
+  String get quitReasonsHint => 'مثلاً، صحت، خاندان، پیسہ';
 
   @override
-  String get todaysPrompt => 'Today\'s prompt';
+  String get todaysPrompt => 'آج کا سوال';
 
   @override
-  String get defaultJournalPrompt => 'What\'s on your mind today?';
+  String get defaultJournalPrompt => 'آج آپ کے ذہن میں کیا ہے؟';
 
   @override
-  String get aiJournalInsights => 'AI journal insights';
+  String get aiJournalInsights => 'AI جریدے کی بصیرت';
 
   @override
   String get unlockJournalInsightsMessage =>
-      'Unlock weekly patterns, mood trends, and personalized insights from your journal entries.';
+      'اپنے جریدے کے اندراجات سے ہفتہ وار پیٹرنز، موڈ کے رجحانات اور ذاتی بصیرت انلاک کریں۔';
 
   @override
   String get notEnoughJournalData =>
-      'Not enough data yet — write a few entries this week and check back.';
+      'ابھی کافی ڈیٹا موجود نہیں ہے — اس ہفتے چند تحریریں لکھیں اور دوبارہ چیک کریں۔';
 
   @override
-  String get openEntry => 'Open';
+  String get openEntry => 'کھولیں';
 
   @override
-  String get editEntry => 'Edit';
+  String get editEntry => 'ایڈٹ کریں';
 
   @override
-  String get deleteEntry => 'Delete';
+  String get deleteEntry => 'مٹائیں';
 
   @override
-  String get searchJournalEntries => 'Search entries...';
+  String get searchJournalEntries => 'تحریریں تلاش کریں...';
 
   @override
-  String get writeNewEntry => 'Write new entry';
+  String get writeNewEntry => 'نئی تحریر لکھیں';
 
   @override
-  String get recentEntries => 'Recent Entries';
+  String get recentEntries => 'حالیہ تحریریں';
 
   @override
   String get noJournalEntriesYet =>
-      'No journal entries yet — write your first reflection above.';
+      'ابھی تک جریدے میں کوئی تحریر نہیں ہے — اوپر اپنا پہلا خیال لکھیں۔';
 
   @override
-  String get noEntriesMatchFilters => 'No entries match your filters.';
+  String get noEntriesMatchFilters =>
+      'آپ کے فلٹرز سے کوئی تحریر مطابقت نہیں رکھتی۔';
 
   @override
-  String get weeklyJournalLimitReached => 'Weekly limit reached';
+  String get weeklyJournalLimitReached => 'ہفتہ وار حد ختم ہو گئی';
 
   @override
   String weeklyJournalLimitMessage(int limit) {
-    return 'You\'ve used all $limit free journal entries this week. Upgrade to Premium for unlimited entries.';
+    return 'آپ نے اس ہفتے کے تمام $limit مفت اندراجات استعمال کر لیے ہیں۔ نامحدود اندراجات کے لیے پریمیئم پر اپ گریڈ کریں۔';
   }
 
   @override
-  String get newEntry => 'New entry';
+  String get newEntry => 'نئی تحریر';
 
   @override
-  String get writeYourThoughts => 'Write your thoughts';
+  String get writeYourThoughts => 'اپنے خیالات لکھیں';
 
   @override
-  String get saveEntry => 'Save Entry';
+  String get saveEntry => 'تحریر محفوظ کریں';
 
   @override
   String freeEntriesLeftThisWeek(String remaining, String limit) {
-    return '$remaining of $limit free entries left this week';
+    return 'اس ہفتے $limit میں سے $remaining مفت تحریریں باقی ہیں';
   }
 
   @override
-  String get deleteEntryQuestion => 'Delete entry?';
+  String get deleteEntryQuestion => 'تحریر مٹائیں؟';
 
   @override
   String get deleteEntryConfirmation =>
-      'This entry will be permanently deleted. This can\'t be undone.';
+      'یہ تحریر مستقل طور پر مٹا دی جائے گی۔ اس عمل کو واپس نہیں لایا جا سکتا۔';
 
   @override
-  String get journalEntryNotFound => 'Entry not found';
+  String get journalEntryNotFound => 'تحریر نہیں ملی';
 
   @override
-  String get journalEntryMayHaveBeenDeleted =>
-      'This journal entry may have been deleted.';
+  String get journalEntryMayHaveBeenDeleted => 'یہ تحریر شاید مٹا دی گئی ہے۔';
 
   @override
-  String get goBack => 'Go back';
+  String get goBack => 'واپس جائیں';
 
   @override
-  String get journalEntryTitle => 'Journal Entry';
+  String get journalEntryTitle => 'جریدے کی تحریر';
 
   @override
-  String get moodStruggling => 'Struggling';
+  String get moodStruggling => 'مشکل میں';
 
   @override
-  String get moodUnwell => 'Unwell';
+  String get moodUnwell => 'طبیعت خراب';
 
   @override
-  String get moodNeutral => 'Neutral';
+  String get moodNeutral => 'درمیانہ';
 
   @override
-  String get whatHappenedToday => 'What happened today?';
+  String get whatHappenedToday => 'آج کیا ہوا؟';
 
   @override
-  String get trigger => 'Trigger';
+  String get trigger => 'محرک (Trigger)';
 
   @override
-  String get whatHelped => 'What helped';
+  String get whatHelped => 'کس چیز سے مدد ملی';
 
   @override
-  String get whatIllTryNextTime => 'What I\'ll try next time';
+  String get whatIllTryNextTime => 'اگلی بار میں کیا کوشش کروں گا/گی';
 
   @override
   String get journalPrivacyMessage =>
-      'Your reflection is private and saved in your journal.';
+      'آپ کا خیال نجی ہے اور آپ کے جریدے میں محفوظ ہے۔';
 
   @override
-  String get unlocked => 'Unlocked';
+  String get unlocked => 'انلاک ہو گیا';
 
   @override
   String daysLeft(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 's',
-      one: '',
+      other: '$count دن باقی',
+      one: '$count دن باقی',
     );
-    return '$count day$_temp0 left';
+    return '$_temp0';
   }
 
   @override
   String daysCount(int count) {
-    return '$count Days';
+    return '$count دن';
   }
 
   @override
-  String get firstReflection => 'First\nReflection';
+  String get firstReflection => 'پہلا\nخود جائزہ';
 
   @override
-  String get oneJournalEntry => '1 Journal Entry';
+  String get oneJournalEntry => '1 جریدے کا اندراج';
 
   @override
-  String get openBook => 'Open Book';
+  String get openBook => 'کھلی کتاب';
 
   @override
-  String get tenJournalEntries => '10 Journal Entries';
+  String get tenJournalEntries => '10 جریدے کے اندراجات';
 
   @override
-  String get dedicatedWriter => 'Dedicated\nWriter';
+  String get dedicatedWriter => 'پختہ\nمصنف';
 
   @override
-  String get thirtyJournalEntries => '30 Journal Entries';
+  String get thirtyJournalEntries => '30 جریدے کے اندراجات';
 
   @override
-  String get firstConversation => 'First\nConversation';
+  String get firstConversation => 'پہلی\nگفتگو';
 
   @override
-  String get oneAiCoachChat => '1 AI Coach Chat';
+  String get oneAiCoachChat => '1 AI کوچ چیٹ';
 
   @override
-  String get keepTalking => 'Keep Talking';
+  String get keepTalking => 'بات جاری رکھیں';
 
   @override
-  String get fiveConversations => '5 Conversations';
+  String get fiveConversations => '5 گفتگوئیں';
 
   @override
-  String get coachCompanion => 'Coach\nCompanion';
+  String get coachCompanion => 'کوچ کا\nساتھی';
 
   @override
-  String get twentyConversations => '20 Conversations';
+  String get twentyConversations => '20 گفتگوئیں';
 
   @override
-  String get checkInHabit => 'Check-In\nHabit';
+  String get checkInHabit => 'جائزے کی\nعادت';
 
   @override
-  String get sevenCheckIns => '7 Check-Ins';
+  String get sevenCheckIns => '7 روزانہ جائزے';
 
   @override
-  String get consistencyPro => 'Consistency\nPro';
+  String get consistencyPro => 'تسلسل کے\nماہر';
 
   @override
-  String get thirtyCheckIns => '30 Check-Ins';
+  String get thirtyCheckIns => '30 روزانہ جائزے';
 
   @override
-  String get dedicatedJourney => 'Dedicated\nJourney';
+  String get dedicatedJourney => 'مخلصانہ\nسفر';
 
   @override
-  String get hundredCheckIns => '100 Check-Ins';
+  String get hundredCheckIns => '100 روزانہ جائزے';
 
   @override
-  String get goalGetter => 'Goal Getter';
+  String get goalGetter => 'ہدف حاصل کنندہ';
 
   @override
-  String get threeGoalsCompleted => '3 Goals Completed';
+  String get threeGoalsCompleted => '3 اہداف مکمل';
 
   @override
-  String get goalAchiever => 'Goal\nAchiever';
+  String get goalAchiever => 'اہداف کے\nفاتح';
 
   @override
-  String get tenGoalsCompleted => '10 Goals Completed';
+  String get tenGoalsCompleted => '10 اہداف مکمل';
 
   @override
-  String get firstSavings => 'First\nSavings';
+  String get firstSavings => 'پہلی\nبچت';
 
   @override
-  String get fiveHundredSaved => '\$500 Saved';
+  String get fiveHundredSaved => '\$500 بچائے';
 
   @override
-  String get smartSaver => 'Smart Saver';
+  String get smartSaver => 'سمارٹ سیور';
 
   @override
-  String get oneThousandSaved => '\$1,000 Saved';
+  String get oneThousandSaved => '\$1,000 بچائے';
 
   @override
-  String get bigSaver => 'Big Saver';
+  String get bigSaver => 'بڑے بچت کنندہ';
 
   @override
-  String get fiveThousandSaved => '\$5,000 Saved';
+  String get fiveThousandSaved => '\$5,000 بچائے';
 
   @override
   String currencyProgress(String current, String target) {
-    return '\$$current of \$$target';
+    return '\$$target میں سے \$$current';
   }
 
   @override
   String countProgress(int current, int target) {
-    return '$current of $target';
+    return '$target میں سے $current';
   }
 
   @override
   String get firstMilestoneWaiting =>
-      'Keep going — your first milestone is waiting for you!';
+      'جاری رکھیں — آپ کا پہلا سنگ میل آپ کا منتظر ہے!';
 
   @override
-  String get badgesAndMilestones => 'Badges & Milestones';
+  String get badgesAndMilestones => 'بیجز اور سنگ میل';
 
   @override
-  String get yourMilestoneJourney => 'Your Milestone Journey';
+  String get yourMilestoneJourney => 'آپ کا سنگ میل کا سفر';
 
   @override
   String milestonesAchieved(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 's',
-      one: '',
+      other: '$count سنگ میل حاصل ہوئے۔\ndیکھنے کے لیے ٹیپ کریں',
+      one: '$count سنگ میل حاصل ہوا۔\ndیکھنے کے لیے ٹیپ کریں',
     );
-    return '$count milestone$_temp0 achieved.\nTap to view';
+    return '$_temp0';
   }
 
   @override
   String unlockedMilestonesMessage(int unlocked, int total) {
-    return 'You\'ve unlocked $unlocked of $total milestones on your journey.';
+    return 'آپ نے اپنے سفر میں $total میں سے $unlocked سنگ میل انلاک کر لیے ہیں۔';
   }
 
   @override
-  String get remaining => 'Remaining';
+  String get remaining => 'باقی';
 
   @override
-  String get complete => 'Complete';
+  String get complete => 'مکمل';
 
   @override
-  String get nextMilestone => 'Next Milestone';
+  String get nextMilestone => 'اگلا سنگ میل';
 
   @override
   String percentThere(String subtitle, int percent) {
-    return '$subtitle · $percent% there';
+    return '$subtitle · $percent% مکمل';
   }
 
   @override
-  String get sobrietyMilestones => 'Sobriety Milestones';
+  String get sobrietyMilestones => 'پاکیزگی کے سنگ میل';
 
   @override
-  String get journeyBadges => 'Journey Badges';
+  String get journeyBadges => 'سفر کے بیجز';
 
   @override
-  String get bronze => 'BRONZE';
+  String get bronze => 'کانسی (BRONZE)';
 
   @override
-  String get silver => 'SILVER';
+  String get silver => 'چاندی (SILVER)';
 
   @override
-  String get gold => 'GOLD';
+  String get gold => 'سونا (GOLD)';
 
   @override
-  String get platinum => 'PLATINUM';
+  String get platinum => 'پلیٹینم (PLATINUM)';
 
   @override
-  String get diamond => 'DIAMOND';
+  String get diamond => 'ہیرا (DIAMOND)';
 
   @override
-  String get analyzingYourJourney => 'Analyzing Your Journey...';
+  String get analyzingYourJourney => 'آپ کے سفر کا تجزیہ کیا جا رہا ہے...';
 
   @override
   String get aiCreatingSanctuary =>
-      'Our AI is creating your personalized sanctuary.';
+      'ہمارا AI آپ کا ذاتی پرسکون گوشہ تیار کر رہا ہے۔';
 
   @override
-  String get understandingHabits => 'Understanding habits...';
+  String get understandingHabits => 'عادتوں کو سمجھا جا رہا ہے...';
 
   @override
-  String get calculatingBaseline => 'Calculating your baseline...';
+  String get calculatingBaseline =>
+      'آپ کی شروعاتی سطح کا حساب لگایا جا رہا ہے...';
 
   @override
-  String get personalizingPlan => 'Personalizing your plan...';
+  String get personalizingPlan => 'آپ کا پلان ذاتی نوعیت کا بنایا جا رہا ہے...';
 
   @override
-  String get finalizingSanctuary => 'Finalizing your sanctuary...';
+  String get finalizingSanctuary => 'آپ کا گوشہ حتمی شکل پا رہا ہے...';
 
   @override
-  String get creatingYourPlan => 'Creating your plan...';
+  String get creatingYourPlan => 'آپ کا پلان تیار کیا جا رہا ہے...';
 
   @override
   String get personalizedPlanError =>
-      'We could not create your personalized plan. Please try again.';
+      'ہم آپ کا ذاتی پلان تیار نہیں کر سکے۔ براہ کرم دوبارہ کوشش کریں۔';
 
   @override
-  String get retry => 'Retry';
+  String get retry => 'دوبارہ کوشش کریں';
 
   @override
-  String get breathInhale => 'INHALE';
+  String get breathInhale => 'سانس اندر کھینچیں';
 
   @override
-  String get breathHold => 'HOLD';
+  String get breathHold => 'سانس روکیں';
 
   @override
-  String get breathExhale => 'EXHALE';
+  String get breathExhale => 'سانس باہر نکالیں';
 
   @override
-  String get breathDone => 'DONE';
+  String get breathDone => 'مکمل';
 
   @override
-  String get breathGreatJob => 'Great job!';
+  String get breathGreatJob => 'بہت عمدہ!';
 
   @override
   String breathSessionsToday(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count sessions today',
-      one: '$count session today',
+      other: 'آج $count سیشنز',
+      one: 'آج $count سیشن',
     );
     return '$_temp0';
   }
 
   @override
-  String get endExercise => 'End Exercise';
+  String get endExercise => 'مشق ختم کریں';
 
   @override
-  String get done => 'Done';
+  String get done => 'مکمل';
 
   @override
-  String get noCopingTipsYet => 'No coping tips yet';
+  String get noCopingTipsYet => 'ابھی کوئی تجاویز نہیں ہیں';
 
   @override
   String get copingStrategiesWillAppear =>
-      'Your personalized coping strategies will show up here once your recovery plan finishes generating.';
+      'آپ کا ریکوری پلان مکمل ہونے کے بعد قابو پانے کی ذاتی حکمت عملی یہاں ظاہر ہوگی۔';
 
   @override
-  String get strategiesTailoredToTriggers =>
-      'Strategies tailored to your triggers';
+  String get strategiesTailoredToTriggers => 'آپ کے محرکات کے مطابق حکمت عملی';
 
   @override
-  String get cravingsPeakAndPass => 'Cravings peak\nand pass';
+  String get cravingsPeakAndPass =>
+      'طلب کا عروج ہوتا ہے\nاور پھر ختم ہو جاتی ہے';
 
   @override
   String get rideTheWaveDescription =>
-      'Most cravings pass within 15 minutes. You don\'t have to act on it — just ride it out with us.';
+      'زیادہ تر طلب کے لمحے 15 منٹ میں گزر جاتے ہیں۔ آپ کو اس پر عمل کرنے کی ضرورت نہیں — بس ہمارے ساتھ صبر رکھیں۔';
 
   @override
-  String get stayWithIt => 'stay with it';
+  String get stayWithIt => 'صبر سے کام لیں';
 
   @override
-  String get youMadeIt => 'you made it';
+  String get youMadeIt => 'آپ نے کر دکھایا';
 
   @override
-  String get readyWhenYouAre => 'ready when you are';
+  String get readyWhenYouAre => 'جب آپ تیار ہوں';
 
   @override
-  String get rideItAgain => 'Ride it again';
+  String get rideItAgain => 'دوبارہ کوشش کریں';
 
   @override
-  String get start15MinuteTimer => 'Start 15-Minute Timer';
+  String get start15MinuteTimer => '15 منٹ کا ٹائمر شروع کریں';
 
   @override
   String get rideTheWaveCompletedMessage =>
-      'You rode the wave. That\'s real strength. 💪';
+      'آپ نے اس مشکل لمحے پر قابو پا لیا۔ یہ حقیقی طاقت ہے۔ 💪';
 
   @override
-  String get myProgress => 'My Progress';
+  String get myProgress => 'میری پیشرفت';
 
   @override
-  String get weekLabel => 'Week';
+  String get weekLabel => 'ہفتہ';
 
   @override
-  String get monthLabel => 'Month';
+  String get monthLabel => 'مہینہ';
 
   @override
-  String get allLabel => 'All';
+  String get allLabel => 'تمام';
 
   @override
-  String get daysSoberStatLabel => 'Days\nsober';
+  String get daysSoberStatLabel => 'پاک\nدن';
 
   @override
-  String get savedStatLabel => 'Saved';
+  String get savedStatLabel => 'بچت';
 
   @override
-  String get avoidedStatLabel => 'Avoided';
+  String get avoidedStatLabel => 'پرہیز';
 
   @override
-  String get moodTrends => 'Mood trends';
+  String get moodTrends => 'موڈ کے رجحانات';
 
   @override
-  String get cravingsPattern => 'Cravings pattern';
+  String get cravingsPattern => 'طلب کے پیٹرنز';
 
   @override
-  String get unlockLabel => 'Unlock';
+  String get unlockLabel => 'انلاک کریں';
 
   @override
-  String get unlockFullStats => 'Unlock full stats';
+  String get unlockFullStats => 'مکمل اعداد و شمار انلاک کریں';
 
   @override
   String get premiumStatsMessage =>
-      'Mood trends and craving patterns are Premium features. Upgrade to see your full stats.';
+      'موڈ کے رجحانات اور طلب کے پیٹرنز پریمیئم خصوصیات ہیں۔ تمام اعداد و شمار دیکھنے کے لیے اپ گریڈ کریں۔';
 
   @override
   String get healthMilestonesWillAppear =>
-      'Your health milestones will appear here.';
+      'آپ کی صحت کے سنگ میل یہاں ظاہر ہوں گے۔';
 
   @override
-  String get healthMilestones => 'Health milestones';
+  String get healthMilestones => 'صحت کے سنگ میل';
 
   @override
   String dayNumber(int day) {
-    return 'Day $day';
+    return 'دن $day';
   }
 
   @override
-  String get soberLabel => 'Sober';
+  String get soberLabel => 'پاک';
 
   @override
-  String get slipLabel => 'Slip';
+  String get slipLabel => 'غلطی';
 
   @override
-  String get noDataLabel => 'No data';
+  String get noDataLabel => 'کوئی ڈیٹا نہیں';
 
   @override
-  String get milestone24Hours => '24 Hours';
+  String get milestone24Hours => '24 گھنٹے';
 
   @override
-  String get milestoneOneWeek => 'One Week';
+  String get milestoneOneWeek => 'ایک ہفتہ';
 
   @override
-  String get milestoneOneMonth => 'One Month';
+  String get milestoneOneMonth => 'ایک مہینہ';
 
   @override
-  String get milestoneThreeMonths => 'Three Months';
+  String get milestoneThreeMonths => 'تین مہینے';
 
   @override
-  String get milestoneSixMonths => 'Six Months';
+  String get milestoneSixMonths => 'چھ مہینے';
 
   @override
-  String get milestoneOneYear => 'One Year';
+  String get milestoneOneYear => 'ایک سال';
 
   @override
   String milestoneDayCount(int day) {
-    return 'Day $day Milestone';
+    return 'دن $day کا سنگ میل';
   }
+
+  @override
+  String get maybeLaterLabel => 'شاید بعد میں';
+
+  @override
+  String get cancelLabel => 'منسوخ کریں';
 }

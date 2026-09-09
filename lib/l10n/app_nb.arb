@@ -1,0 +1,584 @@
+{
+  "@@locale": "nb",
+
+  "skip": "Hopp over",
+  "continueButton": "Fortsett",
+  "getStarted": "Kom i gang",
+
+  "onboardingTitle1": "Ta kontroll over livet ditt",
+  "onboardingSubtitle1": "Følg reisen din, feir hver prestasjon og bli sunnere én dag av gangen.",
+  "onboardingTitle2": "Din AI-følgesvenn på veien mot bedring",
+  "onboardingSubtitle2": "Få personlig veiledning, sunne vaner, motivasjonspåminnelser og fremdriftsrapporter tilpasset reisen din.",
+
+  "maybeLaterLabel": "Kanskje senere",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Avbryt",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "goodMorning": "God morgen",
+  "goodAfternoon": "God ettermiddag",
+  "goodEvening": "God kveld",
+  "goodNight": "God natt",
+
+  "embracingClarity": "Omfavn klarheten, én dag av gangen.",
+  "streakLabel": "REKKE",
+  "goalLabel": "MÅL",
+  "daysStreak": "{count, plural, one{{count} dag} other{{count} dager}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium-abonnement",
+  "premiumPlanSubtitle": "Lås opp hele bedringsopplevelsen din",
+
+  "accountAndSupport": "KONTO OG STØTTE",
+  "privacyPolicy": "Personvernerklæring",
+  "privacyPolicySubtitle": "Administrer datadeling og kontosikkerhet",
+  "termsOfService": "Vilkår for bruk",
+  "termsOfServiceSubtitle": "Vanlige spørsmål, kontakt oss og ressurser",
+  "shareApp": "Del appen",
+  "shareAppSubtitle": "Del appen med vennene dine",
+  "resetData": "Tilbakestill data",
+  "resetDataSubtitle": "Slett alt som er lagret på denne enheten",
+
+  "resetAllDataTitle": "Tilbakestille alle data?",
+  "resetAllDataMessage": "Dette sletter alt som er lagret på denne enheten — profil, journalinnlegg og fremdrift — og kan ikke angres.",
+  "cancel": "Avbryt",
+  "reset": "Tilbakestill",
+
+  "chooseFromGallery": "Velg fra galleriet",
+  "takePhoto": "Ta bilde",
+  "removePhoto": "Fjern bilde",
+  "couldNotUpdatePhoto": "Kunne ikke oppdatere bildet: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Kunne ikke fjerne bildet: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Bildet er for stort selv etter komprimering — prøv et annet bilde.",
+
+  "unableToLoadProfile": "Kunne ikke laste inn profilen din",
+  "pleaseTryAgain": "Prøv igjen.",
+  "tryAgain": "Prøv igjen",
+  "profileNotFound": "Profilen ble ikke funnet",
+  "refresh": "Oppdater",
+  "noProfileDataFound": "Ingen profildata er funnet på denne enheten ennå.",
+
+  "couldNotResetData": "Kunne ikke tilbakestille data: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Hjem",
+  "navStats": "Statistikk",
+  "navJournal": "Journal",
+  "navBadges": "Merker",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} blir tilgjengelig snart.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "VELVÆRE",
+  "appTitle": "Slutt å drikke",
+  "splashSubtitle": "Ta det første steget mot et\nalkoholfritt liv",
+  "preparingJourney": "Forbereder\nreisen din",
+
+  "taskMorningMeditation": "Morgenmeditasjon (10 min)",
+  "taskReadChapter": "Les kapittel 4 av \"The Sober Diaries\"",
+  "taskEveningJournal": "Kveldsjournal med takknemlighet",
+
+  "close": "Lukk",
+  "youAreDoingGreat": "Du gjør en kjempebra jobb!",
+  "shareMilestone": "Del milepæl",
+  "shareMilestoneMessage": "Jeg er på dag {days} av bedringsreisen min! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Min milepæl på bedringsreisen",
+
+  "weeklyReportReadyTitle": "Den ukentlige rapporten din er klar",
+  "weeklyReportReadySubtitle": "Trykk for å se hvordan uken din gikk",
+
+  "howAreYouFeeling": "Hvordan føler du deg?",
+  "moodTough": "Tøft",
+  "moodOkay": "Greit",
+  "moodGood": "Bra",
+
+  "moneySaved": "Sparte penger",
+  "caloriesSaved": "Sparte kalorier",
+  "healthScore": "Helsescore",
+  "drinksAvoided": "Unngåtte drinker",
+  "estimated": "Estimert",
+  "aiGenerated": "AI-generert",
+  "daysCapsLabel": "DAGER",
+
+  "todaysMotivation": "Dagens motivasjon",
+  "defaultMotivationQuote": "Du har klart å holde fast ved forpliktelsen din. Fortsett på bølgen av positiv endring.",
+
+  "talkToCoach": "Snakk med coachen",
+  "havingACraving": "Jeg har lyst på alkohol",
+
+  "unlockWeeklyReportsTitle": "Lås opp ukentlige rapporter",
+  "unlockWeeklyReportsMessage": "Se alkoholfrie dager, humørtrender og personlig AI-tilbakemelding hver uke. Oppgrader til Premium for å låse opp.",
+  "maybeLater": "Kanskje senere",
+  "upgrade": "Oppgrader",
+
+  "weeklyReportTitle": "Ukentlig rapport",
+  "weeklyReportsPremiumTitle": "Ukentlige rapporter er en Premium-funksjon",
+  "weeklyReportsPremiumMessage": "Se alkoholfrie dager, humørtrender, sug etter alkohol og personlig AI-tilbakemelding hver uke.",
+  "upgradeToPremium": "Oppgrader til Premium",
+  "couldNotGenerateReport": "Kunne ikke generere rapporten din akkurat nå.",
+  "tryAgainLower": "Prøv igjen",
+
+  "statSoberDays": "Alkoholfrie dager",
+  "statAvgMood": "Gj.sn. humør",
+  "statCravings": "Sug",
+  "statMoneySaved": "Sparte penger",
+  "coachFeedback": "Tilbakemelding fra coach",
+  "journalInsights": "Innsikt fra journalen",
+
+  "next": "Neste",
+
+  "question1Title": "Hva er målet ditt?",
+  "question1Subtitle": "Velg målet som betyr\nmest for deg",
+  "goalQuitCompletely": "Slutte helt",
+  "goalReduceDrinking": "Drikke mindre",
+  "goalTakeABreak": "Ta en pause",
+  "goalBuildHealthierHabits": "Bygge sunnere vaner",
+
+  "question3Title": "Fortell oss om\nrutinen din",
+  "drinksPerWeek": "Drink per uke",
+  "moneySpentPerWeek": "Penger brukt per uke",
+  "drinkingLevel": "Drikkenivå",
+  "triggersLabel": "Utløsere",
+  "levelSocial": "Sosialt",
+  "levelRegular": "Regelmessig",
+  "levelHeavy": "Mye",
+  "levelDependent": "Avhengig",
+  "triggerStress": "Stress",
+  "triggerLoneliness": "Ensomhet",
+  "triggerHabit": "Vane",
+  "triggerSadness": "Tristhet",
+  "triggerAnger": "Sinne",
+  "triggerBoredom": "Kjedsomhet",
+  "triggerSocialPressure": "Sosialt press",
+  "triggerCelebration": "Feiring",
+  "triggerSleepProblems": "Søvnproblemer",
+  "triggerWorkPressure": "Arbeidspress",
+
+  "question4Title": "Hvorfor ønsker du å endre deg?",
+  "question4Subtitle": "Grunnen din vil bidra til å motivere deg.",
+  "reasonImproveHealth": "Forbedre helsen min",
+  "reasonSaveMoney": "Spare penger",
+  "reasonFamily": "Familie",
+  "reasonBetterSleep": "Bedre søvn",
+  "reasonMentalClarity": "Mental klarhet",
+  "reasonFitness": "Trening",
+  "reasonSelfRespect": "Selvrespekt",
+  "reasonCareer": "Karriere",
+
+  "milestoneUnlockedLabel": "MILEPÆL LÅST OPP",
+  "incredibleNamePrefix": "Utrolig, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} spart",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} unngått",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Del milepælen min",
+  "milestoneImageShareError": "Kunne ikke opprette milepælsbildet. Prøv igjen.",
+
+  "dailyCheckInTitle": "Daglig innsjekking",
+  "howAreYouFeelingToday": "Hvordan føler du deg i dag?",
+  "honestAnswerHelp": "Det ærlige svaret ditt hjelper oss med å støtte deg bedre",
+  "didYouDrinkToday": "Drakk du i dag?",
+  "noLabel": "Nei",
+  "yesLabel": "Ja",
+  "cravingLevelNow": "Hvor sterkt sug har du akkurat nå?",
+  "anythingOnMind": "Er det noe du tenker på?",
+  "optionalLabel": "(valgfritt)",
+  "dailyNoteHint": "Skriv om dagen din, utløsere, seire...",
+  "alreadyCheckedInToday": "Du har allerede sjekket inn i dag",
+  "saveCheckIn": "Lagre innsjekking",
+  "checkInsHelpTrack": "Innsjekkinger hjelper deg med å følge fremgangen over tid",
+  "alreadyCompletedTodayCheckIn": "Du har allerede fullført dagens innsjekking.",
+  "pleaseAnswerBothQuestions": "Svar på begge spørsmålene ovenfor først",
+  "checkInSaved": "Innsjekking lagret",
+  "cravingNone": "Ingen",
+  "cravingLow": "Lavt",
+  "cravingMedium": "Middels",
+  "cravingStrong": "Sterkt",
+  "moodBad": "Dårlig",
+  "moodLow": "Lavt",
+  "moodOkay": "Greit",
+  "moodGood": "Bra",
+  "moodGreat": "Flott",
+
+  "sosSupportTitle": "SOS-støtte",
+  "notAloneMessage": "Du er ikke alene, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Sug går over. Velg noe nedenfor som kan hjelpe deg gjennom dette øyeblikket.",
+  "breathingExercise": "Pusteøvelse",
+  "breathingExerciseSubtitle": "Veiledet 4-7-8-teknikk, 2 minutter",
+  "rideTheWave": "Ri av bølgen",
+  "rideTheWaveSubtitle": "15-minutters timer — sug går alltid over",
+  "copingTips": "Mestringstips",
+  "copingTipsSubtitle": "Personlige strategier for utløsere dine",
+  "talkToAiCoach": "Snakk med AI-coachen",
+  "talkToAiCoachSubtitle": "Chat med bedringsfølgesvennen din",
+  "callSomeone": "Ring noen",
+  "callSomeoneSubtitle": "Ta kontakt med en person du stoler på",
+  "contactsPermissionNeeded": "Kontakttillatelse er nødvendig for å ringe en kontakt.",
+  "beatenCravingsPrefix": "Du har overvunnet sug ",
+  "beatenCravingsCount": "{count} ganger",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " tidligere. Du kan gjøre det igjen.",
+
+  "tellUsAboutYourself": "Fortell oss om deg selv",
+  "detailsSubtitle": "Denne informasjonen hjelper oss med å tilpasse bedringsreisen din og gi deg nøyaktig innsikt.",
+  "nameLabel": "Navn",
+  "nameHint": "f.eks. Alex Rivers",
+  "ageLabel": "Alder",
+  "ageHint": "f.eks. 32",
+  "sexAssignedAtBirth": "Kjønn tildelt ved fødsel",
+  "sexFemale": "Kvinne",
+  "sexMale": "Mann",
+  "heightLabel": "Høyde",
+  "weightLabel": "Vekt",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Daglig grense nådd",
+  "dailyLimitReachedMessage": "Du har brukt alle {limit} gratis meldingene dine i dag. Oppgrader til Premium for ubegrenset coach-chat.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "Jeg kunne ikke koble til akkurat nå. Prøv igjen om et øyeblikk.",
+  "clearConversationTitle": "Tømme samtalen?",
+  "clearConversationMessage": "Dette vil permanent fjerne chatloggen din med coachen.",
+  "clearLabel": "Tøm",
+  "recoveryCoachTitle": "Recovery-coach",
+  "onlineLabel": "Pålogget",
+  "clearConversationMenuItem": "Tøm samtalen",
+  "chatGreeting": "Hei {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Du er på dag {days} av reisen din. Jeg er her når du vil snakke om ting.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "HURTIGVALG",
+  "promptCravingLabel": "Jeg har lyst på alkohol",
+  "promptCravingSubtitle": "Finn roen raskt",
+  "promptMotivationLabel": "Trenger motivasjon",
+  "promptMotivationSubtitle": "Et løft når det er tøft",
+  "promptSocialLabel": "Sosial situasjon",
+  "promptSocialSubtitle": "Håndter en sammenkomst",
+  "promptSlippedLabel": "Jeg sprakk",
+  "promptSlippedSubtitle": "Ingen fordømmelse, bare støtte",
+  "typeMessageHint": "Skriv en melding...",
+
+  "editProfileTitle": "Rediger profil",
+  "couldNotSaveProfile": "Kunne ikke lagre profilen: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Høyde (cm)",
+  "weightKgLabel": "Vekt (kg)",
+  "saveChangesLabel": "Lagre endringer",
+
+  "premiumBadgeLabel": "PREMIUM",
+  "featureAdvancedInsights": "Avansert innsikt og analyse",
+  "featureUnlimitedJournal": "Ubegrensede journalinnlegg",
+  "featureUnlimitedChat": "Ubegrenset chat med AI-coach",
+  "featureCommunityGroups": "Eksklusive fellesskapsgrupper",
+  "featurePrioritySupport": "Prioritert ekspertstøtte",
+  "featureThemePacks": "Tilpassede temapakker",
+  "featureDataExport": "Dataeksport",
+  "featureAdFree": "Annonsefri opplevelse",
+  "premiumMemberTitle": "Du er Premium-medlem",
+  "unlockFullRecoveryTitle": "Lås opp hele\nbedringsopplevelsen",
+  "premiumMemberSubtitle": "Takk for at du støtter bedringsreisen din — alle premiumfunksjonene nedenfor er låst opp.",
+  "premiumJoinSubtitle": "Bli med i et fellesskap med tusenvis av mennesker som\nfremskynder bedringsreisen sin med våre\npremiumverktøy og personlige støtte.",
+  "monthlyPlanLabel": "Månedlig",
+  "perMonthSuffix": "/md.",
+  "cancelAnytimeLabel": "Avslutt når som helst",
+  "yearlyPlanLabel": "Årlig",
+  "billedAnnuallyLabel": "Belastes årlig med {amount}",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Beste verdi",
+  "alreadyPremiumLabel": "Du er Premium ✓",
+  "startPremiumLabel": "Start Premium",
+  "manageSubscriptionLabel": "Administrer eller avslutt abonnementet fra abonnementinnstillingene på enheten din.",
+  "noCommitmentLabel": "Ingen bindingstid. Avslutt når som helst.",
+  "continueFreePlanLabel": "Fortsett med gratisabonnementet",
+  "backToHomeLabel": "Tilbake til hjem",
+  "cancelPremiumLabel": "Avslutt Premium",
+  "cancelPremiumTitle": "Avslutte Premium?",
+  "cancelPremiumMessage": "Du mister tilgangen til ubegrensede journalinnlegg, ubegrenset coach-chat, statistikkinnsikt og ukentlige rapporter. Du kan abonnere på nytt når som helst.",
+  "keepPremiumLabel": "Behold Premium",
+  "nowPremiumMessage": "Du er nå Premium! Nyt hele bedringsopplevelsen din.",
+  "premiumCancelledMessage": "Premium er avsluttet. Du er tilbake på gratisabonnementet.",
+  "termsOfUseLabel": "Bruksvilkår",
+
+  "navHomeLabel": "Hjem",
+  "navStatsLabel": "Statistikk",
+  "navJournalLabel": "Journal",
+  "navBadgesLabel": "Merker",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "Bedringsmål",
+  "goalLabel": "Mål",
+  "drinksPerWeekLabel": "Drink per uke",
+  "quitReasonsLabel": "Grunner til å slutte",
+  "quitReasonsHelperText": "Skill flere grunner med komma.",
+  "couldNotSaveRecoveryGoals": "Kunne ikke lagre bedringsmålene: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "f.eks. full avholdenhet",
+  "drinksPerWeekHint": "f.eks. 12",
+  "quitReasonsHint": "f.eks. helse, familie, penger",
+
+  "todaysPrompt": "Dagens spørsmål",
+  "defaultJournalPrompt": "Hva tenker du på i dag?",
+  "aiJournalInsights": "AI-innsikt fra journalen",
+  "unlockJournalInsightsMessage": "Lås opp ukentlige mønstre, humørtrender og personlig innsikt fra journalinnleggene dine.",
+  "notEnoughJournalData": "Ikke nok data ennå — skriv noen innlegg denne uken og kom tilbake senere.",
+  "openEntry": "Åpne",
+  "editEntry": "Rediger",
+  "deleteEntry": "Slett",
+  "searchJournalEntries": "Søk i innlegg...",
+  "writeNewEntry": "Skriv nytt innlegg",
+  "recentEntries": "Nylige innlegg",
+  "noJournalEntriesYet": "Ingen journalinnlegg ennå — skriv din første refleksjon ovenfor.",
+  "noEntriesMatchFilters": "Ingen innlegg samsvarer med filtrene dine.",
+
+  "weeklyJournalLimitReached": "Ukentlig grense nådd",
+  "weeklyJournalLimitMessage": "Du har brukt alle {limit} gratis journalinnleggene dine denne uken. Oppgrader til Premium for ubegrensede innlegg.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Nytt innlegg",
+  "writeYourThoughts": "Skriv tankene dine",
+  "saveEntry": "Lagre innlegg",
+  "freeEntriesLeftThisWeek": "{remaining} av {limit} gratis innlegg igjen denne uken",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Slette innlegg?",
+  "deleteEntryConfirmation": "Dette innlegget blir slettet permanent. Det kan ikke angres.",
+
+  "journalEntryNotFound": "Innlegget ble ikke funnet",
+  "journalEntryMayHaveBeenDeleted": "Dette journalinnlegget kan ha blitt slettet.",
+  "goBack": "Gå tilbake",
+  "journalEntryTitle": "Journalinnlegg",
+
+  "moodStruggling": "Sliter",
+  "moodUnwell": "Uvel",
+  "moodNeutral": "Nøytral",
+
+  "whatHappenedToday": "Hva skjedde i dag?",
+  "trigger": "Utløser",
+  "whatHelped": "Hva hjalp",
+  "whatIllTryNextTime": "Hva jeg skal prøve neste gang",
+  "journalPrivacyMessage": "Refleksjonen din er privat og lagres i journalen din.",
+
+  "unlocked": "Låst opp",
+  "daysLeft": "{count} dag{count, plural, =1{} other{er}} igjen",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} dager",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "Første\nrefleksjon",
+  "oneJournalEntry": "1 journalinnlegg",
+  "openBook": "Åpne bok",
+  "tenJournalEntries": "10 journalinnlegg",
+  "dedicatedWriter": "Dedikert\nskribent",
+  "thirtyJournalEntries": "30 journalinnlegg",
+  "firstConversation": "Første\nsamtale",
+  "oneAiCoachChat": "1 AI-coach-chat",
+  "keepTalking": "Fortsett å snakke",
+  "fiveConversations": "5 samtaler",
+  "coachCompanion": "Coach-\nfølgesvenn",
+  "twentyConversations": "20 samtaler",
+  "checkInHabit": "Innsjekkings-\nvane",
+  "sevenCheckIns": "7 innsjekkinger",
+  "consistencyPro": "Ekspert på\nkonsistens",
+  "thirtyCheckIns": "30 innsjekkinger",
+  "dedicatedJourney": "Dedikert\nreise",
+  "hundredCheckIns": "100 innsjekkinger",
+  "goalGetter": "Måloppnåer",
+  "threeGoalsCompleted": "3 mål fullført",
+  "goalAchiever": "Mål-\noppnåer",
+  "tenGoalsCompleted": "10 mål fullført",
+  "firstSavings": "Første\nsparing",
+  "fiveHundredSaved": "$500 spart",
+  "smartSaver": "Smart sparer",
+  "oneThousandSaved": "$1 000 spart",
+  "bigSaver": "Stor sparer",
+  "fiveThousandSaved": "$5 000 spart",
+  "currencyProgress": "${current} av ${target}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{current} av {target}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Fortsett — din første milepæl venter på deg!",
+  "badgesAndMilestones": "Merker og milepæler",
+  "yourMilestoneJourney": "Din milepælsreise",
+  "milestonesAchieved": "{count} milepæl{count, plural, =1{} other{er}} oppnådd.\nTrykk for å se",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Du har låst opp {unlocked} av {total} milepæler på reisen din.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Gjenstår",
+  "complete": "Fullført",
+  "nextMilestone": "Neste milepæl",
+  "percentThere": "{subtitle} · {percent}% på vei",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Milepæler for avholdenhet",
+  "journeyBadges": "Reisemerker",
+  "bronze": "BRONSE",
+  "silver": "SØLV",
+  "gold": "GULL",
+  "platinum": "PLATINA",
+  "diamond": "DIAMANT",
+
+  "analyzingYourJourney": "Analyserer reisen din...",
+  "aiCreatingSanctuary": "AI-en vår lager ditt personlige fristed.",
+  "understandingHabits": "Forstår vanene dine...",
+  "calculatingBaseline": "Beregner utgangspunktet ditt...",
+  "personalizingPlan": "Tilpasser planen din...",
+  "finalizingSanctuary": "Fullfører fristedet ditt...",
+  "creatingYourPlan": "Lager planen din...",
+  "personalizedPlanError": "Vi kunne ikke lage den personlige planen din. Prøv igjen.",
+  "retry": "Prøv igjen",
+
+  "breathingExercise": "Pusteøvelse",
+  "breathInhale": "PUST INN",
+  "breathHold": "HOLD",
+  "breathExhale": "PUST UT",
+  "breathDone": "FERDIG",
+  "breathGreatJob": "Bra jobbet!",
+  "remaining": "Gjenstår",
+  "breathSessionsToday": "{count, plural, one{{count} økt i dag} other{{count} økter i dag}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Avslutt øvelsen",
+  "done": "Ferdig",
+
+  "noCopingTipsYet": "Ingen mestringstips ennå",
+  "copingStrategiesWillAppear": "Dine personlige mestringsstrategier vises her når bedringsplanen din er ferdig generert.",
+  "strategiesTailoredToTriggers": "Strategier tilpasset utløsere dine",
+
+  "rideTheWave": "Ri av bølgen",
+  "cravingsPeakAndPass": "Sug topper seg\nog går over",
+  "rideTheWaveDescription": "De fleste sug går over innen 15 minutter. Du trenger ikke handle på det — bare ri det av sammen med oss.",
+  "stayWithIt": "hold ut",
+  "youMadeIt": "du klarte det",
+  "readyWhenYouAre": "når du er klar",
+  "rideItAgain": "Ri av bølgen igjen",
+  "start15MinuteTimer": "Start 15-minutters timer",
+  "rideTheWaveCompletedMessage": "Du red av bølgen. Det er ekte styrke. 💪",
+
+  "myProgress": "Min fremgang",
+  "weekLabel": "Uke",
+  "monthLabel": "Måned",
+  "allLabel": "Alle",
+  "daysSoberStatLabel": "Dager\nuten alkohol",
+  "savedStatLabel": "Spart",
+  "avoidedStatLabel": "Unngått",
+  "moodTrends": "Humørtrender",
+  "cravingsPattern": "Mønster for sug",
+  "unlockLabel": "Lås opp",
+  "unlockFullStats": "Lås opp full statistikk",
+  "premiumStatsMessage": "Humørtrender og sugmønstre er Premium-funksjoner. Oppgrader for å se hele statistikken din.",
+  "healthMilestonesWillAppear": "Helsemilepælene dine vises her.",
+  "healthMilestones": "Helsemilepæler",
+  "dayNumber": "Dag {day}",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Alkoholfri",
+  "slipLabel": "Tilbakefall",
+  "noDataLabel": "Ingen data",
+
+  "milestone24Hours": "24 timer",
+  "milestoneOneWeek": "Én uke",
+  "milestoneOneMonth": "Én måned",
+  "milestoneThreeMonths": "Tre måneder",
+  "milestoneSixMonths": "Seks måneder",
+  "milestoneOneYear": "Ett år",
+  "milestoneDayCount": "Milepæl for dag {day}",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+
+  "privacyPolicy": "Personvernerklæring"
+}

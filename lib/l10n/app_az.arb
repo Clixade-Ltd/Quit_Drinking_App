@@ -1,0 +1,579 @@
+{
+  "@@locale": "az",
+
+  "skip": "Keç",
+  "continueButton": "Davam et",
+  "getStarted": "Başla",
+
+  "maybeLaterLabel": "Bəlkə sonra",
+  "@maybeLaterLabel": {
+    "description": "Button to dismiss the paywall dialog without upgrading"
+  },
+  "cancelLabel": "Ləğv et",
+  "@cancelLabel": {
+    "description": "Generic cancel button label"
+  },
+
+  "onboardingTitle1": "Həyatınızın Nəzarətini Ələ Alın",
+  "onboardingSubtitle1": "Səyahətinizi izləyin, hər bir uğurunuzu qeyd edin və hər gün daha sağlam olun.",
+  "onboardingTitle2": "Sizin AI Bərpa Yoldaşınız",
+  "onboardingSubtitle2": "Səyahətinizə uyğun fərdiləşdirilmiş rəhbərlik, sağlam vərdişlər, motivasiya xatırlatmaları və tərəqqi hesabatları alın.",
+
+  "goodMorning": "Sabahınız xeyir",
+  "goodAfternoon": "Hər vaxtınız xeyir",
+  "goodEvening": "Axşamınız xeyir",
+  "goodNight": "Gecəniz xeyrə qalsın",
+
+  "embracingClarity": "Aydınlığı qəbul edirik, hər gün addım-addım.",
+  "streakLabel": "ARDICILLIQ",
+  "goalLabel": "HƏDƏF",
+  "daysStreak": "{count, plural, one{{count} Gün} other{{count} Gün}}",
+  "@daysStreak": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+
+  "premiumPlan": "Premium Plan",
+  "premiumPlanSubtitle": "Tam bərpa təcrübənizi aktivləşdirin",
+
+  "accountAndSupport": "HESAB VƏ DƏSTƏK",
+  "privacyPolicy": "Məfılik Siyasəti",
+  "privacyPolicySubtitle": "Məlumat paylaşımını və hesab təhlükəsizliyini idarə edin",
+  "termsOfService": "Xidmət Şərtləri",
+  "termsOfServiceSubtitle": "Tez-tez verilən suallar, bizimlə əlaqə və resurslar",
+  "shareApp": "Tətbiqi Paylaşın",
+  "shareAppSubtitle": "Tətbiqi dostlarınızla paylaşın",
+  "resetData": "Məlumatları Sıfırla",
+  "resetDataSubtitle": "Bu cihazda saxlanılan hər şeyi silin",
+
+  "resetAllDataTitle": "Bütün məlumatlar sıfırlansın?",
+  "resetAllDataMessage": "Bu əməliyyat bu cihazda saxlanılan hər şeyi — profili, gündəlik yazıları və tərəqqini siləcək və bunu geri qaytarmaq mümkün deyil.",
+  "cancel": "Ləğv et",
+  "reset": "Sıfırla",
+
+  "chooseFromGallery": "Qalereyadan seçin",
+  "takePhoto": "Şəkil çəkin",
+  "removePhoto": "Şəkli silin",
+  "couldNotUpdatePhoto": "Şəkil yenilənə bilmədi: {error}",
+  "@couldNotUpdatePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "couldNotRemovePhoto": "Şəkil silinə bilmədi: {error}",
+  "@couldNotRemovePhoto": { "placeholders": { "error": { "type": "String" } } },
+  "photoTooLarge": "Bu şəkil sıxıldıqdan sonra belə çox böyükdür — xahiş edirik başqasını sınayın.",
+
+  "unableToLoadProfile": "Profiliniz yüklənə bilmədi",
+  "pleaseTryAgain": "Xahiş edirik yenidən cəhd edin.",
+  "tryAgain": "Yenidən Cəhd Edin",
+  "profileNotFound": "Profil tapılmadı",
+  "refresh": "Yenilə",
+  "noProfileDataFound": "Bu cihazda hələ heç bir profil məlumatı tapılmadı.",
+
+  "couldNotResetData": "Məlumatlar sıfırlana bilmədi: {error}",
+  "@couldNotResetData": { "placeholders": { "error": { "type": "String" } } },
+
+  "navHome": "Ana Səhifə",
+  "navStats": "Statistika",
+  "navJournal": "Gündəlik",
+  "navBadges": "Nişanlar",
+  "navProfile": "Profil",
+
+  "featureComingSoon": "{feature} funksiyası tezliklə əlçatan olacaq.",
+  "@featureComingSoon": { "placeholders": { "feature": { "type": "String" } } },
+
+  "appWordmark": "SAĞLAMLIQ",
+  "appTitle": "İçkini tərgit",
+  "splashSubtitle": "Alkoqolsuz bir həyata doğru\nilk addımı atın",
+  "preparingJourney": "Səyahətiniz\nhazırlanır",
+
+  "taskMorningMeditation": "Səhər Meditasiyası (10 dəq)",
+  "taskReadChapter": "\"The Sober Diaries\" kitabının 4-cü fəslini oxuyun",
+  "taskEveningJournal": "Axşam Minnətdarlıq Gündəliyi",
+
+  "close": "Bağla",
+  "youAreDoingGreat": "Əla gedirsiniz!",
+  "shareMilestone": "Uğuru Paylaşın",
+  "shareMilestoneMessage": "Bərpa səyahətimin {days}-ci günündəyəm! 💪",
+  "@shareMilestoneMessage": { "placeholders": { "days": { "type": "int" } } },
+  "shareMilestoneSubject": "Bərpa uğurum",
+
+  "weeklyReportReadyTitle": "Həftəlik hesabatınız hazırdır",
+  "weeklyReportReadySubtitle": "Həftənizin necə keçdiyini görmək üçün toxunun",
+
+  "howAreYouFeeling": "Necə hiss edirsiniz?",
+  "moodTough": "Çətin",
+  "moodOkay": "Yaxşı",
+  "moodGood": "Əla",
+
+  "moneySaved": "Qənaət Olunmuş Pul",
+  "caloriesSaved": "Qənaət Olunmuş Kalori",
+  "healthScore": "Sağlamlıq Xalı",
+  "drinksAvoided": "İçilməmiş İki",
+  "estimated": "Təxmini",
+  "aiGenerated": "AI tərəfindən yaradılıb",
+  "daysCapsLabel": "GÜN",
+
+  "todaysMotivation": "Günün Motivasiyası",
+  "defaultMotivationQuote": "Öhdəliyinizi uğurla qoruyub saxladınız. Müsbət dəyişiklik dalğasında irəliləməyə davam edin.",
+
+  "talkToCoach": "Məşqçi ilə danışın",
+  "havingACraving": "Şiddətli İstəyim Var",
+
+  "unlockWeeklyReportsTitle": "Həftəlik hesabatları aktivləşdirin",
+  "unlockWeeklyReportsMessage": "Hər həftə alkoqolsuz günlərinizi, əhval-ruhiyyə trendlərinizi və fərdiləşdirilmiş AI rəylərini görün. Aktivləşdirmək üçün Premium-a yüksəldin.",
+  "maybeLater": "Bəlkə sonra",
+  "upgrade": "Yüksəlt",
+
+  "weeklyReportTitle": "Həftəlik Hesabat",
+  "weeklyReportsPremiumTitle": "Həftəlik hesabatlar Premium funksiyadır",
+  "weeklyReportsPremiumMessage": "Hər həftə ayıq günlərinizi, əhval-ruhiyyə trendlərinizi, şiddətli istəklərinizi və fərdiləşdirilmiş AI rəylərini görün.",
+  "upgradeToPremium": "Premium-a yüksəldin",
+  "couldNotGenerateReport": "İndiki vaxtda hesabatınızı yaratmaq mümkün olmadı.",
+  "tryAgainLower": "Yenidən cəhd edin",
+
+  "statSoberDays": "Ayıq günlər",
+  "statAvgMood": "Orta əhval-ruhiyyə",
+  "statCravings": "Şiddətli istəklər",
+  "statMoneySaved": "Qənaət olunmuş pul",
+  "coachFeedback": "Məşqçi rəyi",
+  "journalInsights": "Gündəlik təhlilləri",
+
+  "next": "Növbəti",
+
+  "question1Title": "Hədəfiniz nədir",
+  "question1Subtitle": "Sizin üçün ən vacib olan\nhədəfi seçin",
+  "goalQuitCompletely": "Tamamilə Tərk Etmək",
+  "goalReduceDrinking": "İçki İstifadəsini Azaltmaq",
+  "goalTakeABreak": "Fasilə Vermək",
+  "goalBuildHealthierHabits": "Daha Sağlam Vərdişlər Qazanmaq",
+
+  "question3Title": "Bizə rejiminiz haqqında\ndanışın",
+  "drinksPerWeek": "Həftəlik içki sayı",
+  "moneySpentPerWeek": "Həftəlik xərclənən pul",
+  "drinkingLevel": "İçki istifadə səviyyəsi",
+  "triggersLabel": "Tətikləyicilər (Triggers)",
+  "levelSocial": "Sosial",
+  "levelRegular": "Müntəzəm",
+  "levelHeavy": "Ağır",
+  "levelDependent": "Asılı",
+  "triggerStress": "Stres",
+  "triggerLoneliness": "Tənhalıq",
+  "triggerHabit": "Vərdiş",
+  "triggerSadness": "Kədər",
+  "triggerAnger": "Qəzəb",
+  "triggerBoredom": "Darıxdırıcılıq",
+  "triggerSocialPressure": "Sosial təzyiq",
+  "triggerCelebration": "Qeyd etmə",
+  "triggerSleepProblems": "Yuxu problemləri",
+  "triggerWorkPressure": "İş təzyiqi",
+
+  "question4Title": "Niyə dəyişmək istəyirsiniz?",
+  "question4Subtitle": "Səbəbiniz sizi motivasiya etməyə kömək edəcək.",
+  "reasonImproveHealth": "Sağlamlığımı Yaxşılaşdırmaq",
+  "reasonSaveMoney": "Pul Qənaət Etmək",
+  "reasonFamily": "Ailə",
+  "reasonBetterSleep": "Daha Yaxşı Yuxu",
+  "reasonMentalClarity": "Zehni Aydınlıq",
+  "reasonFitness": "Fiziki Formada Olmaq",
+  "reasonSelfRespect": "Özünə Hörmət",
+  "reasonCareer": "Karyera",
+
+  "milestoneUnlockedLabel": "UĞUR AKTİVLƏŞDİ",
+  "incredibleNamePrefix": "İnanılmazdır, {name}!",
+  "@incredibleNamePrefix": { "placeholders": { "name": { "type": "String" } } },
+  "amountSavedLabel": "{amount} qənaət edildi",
+  "@amountSavedLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "drinksAvoidedLabel": "{count} dənə içilmədi",
+  "@drinksAvoidedLabel": { "placeholders": { "count": { "type": "String" } } },
+  "shareMyMilestone": "Uğurumu paylaşın",
+  "milestoneImageShareError": "Uğur şəkli yaradıla bilmədi. Xahiş edirik yenidən cəhd edin.",
+
+  "dailyCheckInTitle": "Gündəlik Yoxlama",
+  "howAreYouFeelingToday": "Bu gün necə hiss edirsiniz?",
+  "honestAnswerHelp": "Dürüst cavabınız sizə daha yaxşı dəstək olmağımıza kömək edir",
+  "didYouDrinkToday": "Bu gün içki içdiniz?",
+  "noLabel": "Xeyr",
+  "yesLabel": "Bəli",
+  "cravingLevelNow": "İndi şiddətli istək səviyyəsi?",
+  "anythingOnMind": "Ağlınızda bir şey var?",
+  "optionalLabel": "(isteğe bağlı)",
+  "dailyNoteHint": "Gününüz, tətikləyicilər, qələbələriniz haqqında yazın...",
+  "alreadyCheckedInToday": "Bu gün artıq yoxlanılıb",
+  "saveCheckIn": "Yoxlamanı yadda saxlayın",
+  "checkInsHelpTrack": "Yoxlamalar zaman keçdikcə tərəqqinizi izləməyə kömək edir",
+  "alreadyCompletedTodayCheckIn": "Siz artıq bu günkü yoxlamanı tamamlamısınız.",
+  "pleaseAnswerBothQuestions": "Xahiş edirik əvvəlcə yuxarıdakı hər iki suala cavab verin",
+  "checkInSaved": "Yoxlama yadda saxlanıldı",
+  "cravingNone": "Xeyr",
+  "cravingLow": "Aşağı",
+  "cravingMedium": "Orta",
+  "cravingStrong": "Güclü",
+  "moodBad": "Pıs",
+  "moodLow": "Aşağı",
+  "moodOkay": "Yaxşı",
+  "moodGood": "Əla",
+  "moodGreat": "Möhtəşəm",
+
+  "sosSupportTitle": "SOS Dəstəyi",
+  "notAloneMessage": "Tək deyilsiniz, {name}",
+  "@notAloneMessage": { "placeholders": { "name": { "type": "String" } } },
+  "cravingsPassMessage": "Şiddətli istəklər keçir. Bu anı dəf etməyə kömək etmək üçün aşağıdan birini seçin.",
+  "breathingExercise": "Nəfəs məşqi",
+  "breathingExerciseSubtitle": "Yönləndirilmiş 4-7-8 texnikası, 2 dəqiqə",
+  "rideTheWave": "Dalğanı dəf edin",
+  "rideTheWaveSubtitle": "15 dəqiqəlik taymer — istəklər həmişə keçir",
+  "copingTips": "Öhdəsindən gəlmə məsləhətləri",
+  "copingTipsSubtitle": "Tətikləyiciləriniz üçün fərdiləşdirilmiş strategiyalar",
+  "talkToAiCoach": "AI məşqçisi ilə danışın",
+  "talkToAiCoachSubtitle": "Bərpa yoldaşınızla söhbət edin",
+  "callSomeone": "Kiməsə zəng edin",
+  "callSomeoneSubtitle": "Etibarlı əlaqə şəxsinizə müraciət edin",
+  "contactsPermissionNeeded": "Əlaqə şəxsini aramaq üçün kontakt icazəsi lazımdır.",
+  "beatenCravingsPrefix": "Siz şiddətli istəkləri daha əvvəl ",
+  "beatenCravingsCount": "{count} dəfə",
+  "@beatenCravingsCount": { "placeholders": { "count": { "type": "int" } } },
+  "beatenCravingsSuffix": " dəf etmisiniz. Yenidən edə bilərsiniz.",
+
+  "tellUsAboutYourself": "Özünüz haqqında danışın",
+  "detailsSubtitle": "Bu məlumat bərpa səyahətinizi fərdiləşdirməyə və dəqiq təhlillər təqdim etməyə kömək edir.",
+  "nameLabel": "Ad",
+  "nameHint": "məsələn, Əli Məmmədov",
+  "ageLabel": "Yaş",
+  "ageHint": "məsələn, 32",
+  "sexAssignedAtBirth": "Doğulanda təyin olunan cins",
+  "sexFemale": "Qadın",
+  "sexMale": "Kişi",
+  "heightLabel": "Boy",
+  "weightLabel": "Çəki",
+  "heightHint": "170",
+  "weightHint": "70",
+
+  "dailyLimitReachedTitle": "Gündəlik limitə çatıldı",
+  "dailyLimitReachedMessage": "Bu gün bütün {limit} pulsuz mesajınızı istifadə etdiniz. Limitiz söhbət üçün Premium-a yüksəldin.",
+  "@dailyLimitReachedMessage": { "placeholders": { "limit": { "type": "int" } } },
+  "coachConnectError": "İndi qoşulmaq mümkün olmadı. Xahiş edirik bir az sonra yenidən cəhd edin.",
+  "clearConversationTitle": "Söhbət təmizlənsin?",
+  "clearConversationMessage": "Bu əməliyyat məşqçi söhbət tarixçənizi həmişəlik siləcəkdir.",
+  "clearLabel": "Təmizlə",
+  "recoveryCoachTitle": "Bərpa məşqçisi",
+  "onlineLabel": "Onlayn",
+  "clearConversationMenuItem": "Söhbəti təmizlə",
+  "chatGreeting": "Salam {name} 👋",
+  "@chatGreeting": { "placeholders": { "name": { "type": "String" } } },
+  "chatDaysIntro": "Səyahətinizin {days}-ci günündəsiniz. Nə vaxt danışmaq istəsəniz, buradayam.",
+  "@chatDaysIntro": { "placeholders": { "days": { "type": "int" } } },
+  "quickPromptsLabel": "TEZ SUALLAR",
+  "promptCravingLabel": "Şiddətli istəyim var",
+  "promptCravingSubtitle": "Tez sakitləşin",
+  "promptMotivationLabel": "Motivasiyaya ehtiyacım var",
+  "promptMotivationSubtitle": "Çətin anlarda dəstək",
+  "promptSocialLabel": "Sosial vəziyyət",
+  "promptSocialSubtitle": "Məclisi idarə edin",
+  "promptSlippedLabel": "Sürüşdüm/içdim",
+  "promptSlippedSubtitle": "Qınama yoxdur, yalnız dəstək",
+  "typeMessageHint": "Mesaj yazın...",
+
+  "editProfileTitle": "Profili Redaktə Et",
+  "couldNotSaveProfile": "Profil yadda saxlanıla bilmədi: {error}",
+  "@couldNotSaveProfile": { "placeholders": { "error": { "type": "String" } } },
+  "heightCmLabel": "Boy (sm)",
+  "weightKgLabel": "Çəki (kq)",
+  "saveChangesLabel": "Dəyişiklikləri Yadda Saxla",
+
+  "premiumBadgeLabel": "PREMİUM",
+  "featureAdvancedInsights": "Qabaqcıl Təhlillər və Statistika",
+  "featureUnlimitedJournal": "Limmitsiz Gündəlik Yazıları",
+  "featureUnlimitedChat": "AI Məşqçisi ilə Limitiz Söhbət",
+  "featureCommunityGroups": "Eksklüziv İcma Qrupları",
+  "featurePrioritySupport": "Prioritet Mütəxəssis Dəstəyi",
+  "featureThemePacks": "Xüsusi Mövzu Paketləri",
+  "featureDataExport": "Məlumatların İxracı",
+  "featureAdFree": "Reklamsız Təcrübə",
+  "premiumMemberTitle": "Siz Premium Üzvüsünüz",
+  "unlockFullRecoveryTitle": "Tam Bərpa Təcrübənizi\nAktivləşdirin",
+  "premiumMemberSubtitle": "Bərpa səyahətinizi dəstəklədiyiniz üçün təşəkkür edirik — aşağıdakı bütün premium funksiyalar aktivləşdirilib.",
+  "premiumJoinSubtitle": "Premium alətlərimiz və fərdiləşdirilmiş dəstəyimizlə bərpa səyahətlərini sürətləndirən minlərlə insanın icmasına qoşulun.",
+  "monthlyPlanLabel": "Aylıq",
+  "perMonthSuffix": "/ay",
+  "cancelAnytimeLabel": "İstənilən vaxt ləğv edin",
+  "yearlyPlanLabel": "İllik",
+  "billedAnnuallyLabel": "İllik {amount} olaraq hesablanır",
+  "@billedAnnuallyLabel": { "placeholders": { "amount": { "type": "String" } } },
+  "bestValueLabel": "Ən Sərfəli",
+  "alreadyPremiumLabel": "Siz Premiumsiniz ✓",
+  "startPremiumLabel": "Premium-a Başlayın",
+  "manageSubscriptionLabel": "Cihazınızın abunəlik parametrlərindən idarə edin və ya ləğv edin.",
+  "noCommitmentLabel": "Öhdəlik yoxdur. İstənilən vaxt ləğv edin.",
+  "continueFreePlanLabel": "Pulsuz Plan ilə Davam Et",
+  "backToHomeLabel": "Ana Səhifəyə Qayıt",
+  "cancelPremiumLabel": "Premium-u Ləğv Et",
+  "cancelPremiumTitle": "Premium ləğv edilsin?",
+  "cancelPremiumMessage": "Limitsiz gündəlik yazılarına, məşqçi söhbətinə, statistika təhlillərinə və həftəlik hesabatlara girişinizi itirəcəksiniz. İstənilən vaxt yenidən abunə ola bilərsiniz.",
+  "keepPremiumLabel": "Premium-da Qal",
+  "nowPremiumMessage": "İndi Premium üzvsünüz! Tam bərpa təcrübənizdən həzz alın.",
+  "premiumCancelledMessage": "Premium ləğv edildi. Pulsuz plana qayıtdınız.",
+  "termsOfUseLabel": "İstifadə Şərtləri",
+
+  "navHomeLabel": "Ana Səhifə",
+  "navStatsLabel": "Statistika",
+  "navJournalLabel": "Gündəlik",
+  "navBadgesLabel": "Nişanlar",
+  "navProfileLabel": "Profil",
+
+  "recoveryGoalsTitle": "Bərpa Hədəfləri",
+  "goalLabel": "Hədəf",
+  "drinksPerWeekLabel": "Həftəlik içki sayı",
+  "quitReasonsLabel": "Tərk etmə səbəbləri",
+  "quitReasonsHelperText": "Çoxsaylı səbəbləri vergüllə ayırın.",
+  "couldNotSaveRecoveryGoals": "Bərpa hədəfləri yadda saxlanıla bilmədi: {error}",
+  "@couldNotSaveRecoveryGoals": { "placeholders": { "error": { "type": "String" } } },
+
+  "goalHint": "məsələn, Tam İmtina",
+  "drinksPerWeekHint": "məsələn, 12",
+  "quitReasonsHint": "məsələn, Sağlamlıq, Ailə, Pul",
+
+  "todaysPrompt": "Günün sualı",
+  "defaultJournalPrompt": "Bu gün ağlınızda nə var?",
+  "aiJournalInsights": "AI gündəlik təhlilləri",
+  "unlockJournalInsightsMessage": "Gündəlik yazılarınızdan həftəlik modelləri, əhval trendlərini və fərdiləşdirilmiş təhlilləri aktivləşdirin.",
+  "notEnoughJournalData": "Hələ kifayət qədər məlumat yoxdur — bu həftə bir neçə yazı yazın və yenidən yoxlayın.",
+  "openEntry": "Aç",
+  "editEntry": "Düzəliş et",
+  "deleteEntry": "Sil",
+  "searchJournalEntries": "Yazılarda axtarın...",
+  "writeNewEntry": "Yeni yazı yazın",
+  "recentEntries": "Son Yazılar",
+  "noJournalEntriesYet": "Hələ ki gündəlik yazısı yoxdur — ilk düşüncənizi yuxarıda yazın.",
+  "noEntriesMatchFilters": "Filtrlərinizə uyğun gələn yazı yoxdur.",
+
+  "weeklyJournalLimitReached": "Həftəlik limitə çatıldı",
+  "weeklyJournalLimitMessage": "Bu həftə bütün {limit} pulsuz gündəlik yazınızı istifadə etdiniz. Limitsiz yazılar üçün Premium-a yüksəldin.",
+  "@weeklyJournalLimitMessage": {
+    "placeholders": {
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+
+  "newEntry": "Yeni yazı",
+  "writeYourThoughts": "Düşüncələrinizi yazın",
+  "saveEntry": "Yazını Yadda Saxla",
+  "freeEntriesLeftThisWeek": "Bu həftə {limit} pulsuz yazıdan {remaining} dənəsi qaldı",
+  "@freeEntriesLeftThisWeek": {
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "limit": {
+        "type": "String"
+      }
+    }
+  },
+
+  "deleteEntryQuestion": "Yazı silinsin?",
+  "deleteEntryConfirmation": "Bu yazı həmişəlik silinəcəkdir. Bu əməliyyatı geri qaytarmaq mümkün deyil.",
+
+  "journalEntryNotFound": "Yazı tapılmadı",
+  "journalEntryMayHaveBeenDeleted": "Bu gündəlik yazısı silinmiş ola bilər.",
+  "goBack": "Geri qayıt",
+  "journalEntryTitle": "Gündəlik Yazısı",
+
+  "moodStruggling": "Çətinlik çəkir",
+  "moodUnwell": "Xəstə",
+  "moodNeutral": "Bitərəf",
+
+  "whatHappenedToday": "Bu gün nə baş verdi?",
+  "trigger": "Tətikləyici",
+  "whatHelped": "Nə kömək etdi",
+  "whatIllTryNextTime": "Gələn dəfə nəyi sınayacağam",
+  "journalPrivacyMessage": "Düşüncəniz məxfidir və gündəliyinizdə saxlanılır.",
+
+  "unlocked": "Aktivleşdi",
+  "daysLeft": "{count} gün qaldı",
+  "@daysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCount": "{count} Gün",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "firstReflection": "İlk\nDüşüncə",
+  "oneJournalEntry": "1 Gündəlik Yazısı",
+  "openBook": "Açıq Kitab",
+  "tenJournalEntries": "10 Gündəlik Yazısı",
+  "dedicatedWriter": "Sadiq\nYazıçı",
+  "thirtyJournalEntries": "30 Gündəlik Yazısı",
+  "firstConversation": "İlk\nSöhbət",
+  "oneAiCoachChat": "1 AI Məşqçi Söhbəti",
+  "keepTalking": "Danışmağa Davam Edin",
+  "fiveConversations": "5 Söhbət",
+  "coachCompanion": "Məşqçi\nYoldaşı",
+  "twentyConversations": "20 Söhbət",
+  "checkInHabit": "Yoxlama\nVərdişi",
+  "sevenCheckIns": "7 Yoxlama",
+  "consistencyPro": "Mütəmadi\nMütəxəssis",
+  "thirtyCheckIns": "30 Yoxlama",
+  "dedicatedJourney": "Sadiq\nSəyahət",
+  "hundredCheckIns": "100 Yoxlama",
+  "goalGetter": "Hədəfə Çatan",
+  "threeGoalsCompleted": "3 Hədəf Tamamlandı",
+  "goalAchiever": "Hədəf\nQazananı",
+  "tenGoalsCompleted": "10 Hədəf Tamamlandı",
+  "firstSavings": "İlk\nQənaət",
+  "fiveHundredSaved": "$500 Qənaət Edildi",
+  "smartSaver": "Ağıllı Qənaətcil",
+  "oneThousandSaved": "$1,000 Qənaət Edildi",
+  "bigSaver": "Böyük Qənaətcil",
+  "fiveThousandSaved": "$5,000 Qənaət Edildi",
+  "currencyProgress": "${target} məbləğindən ${current}",
+  "@currencyProgress": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "countProgress": "{target} sayından {current}",
+  "@countProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "firstMilestoneWaiting": "Davam edin — ilk uğurunuz sizi gözləyir!",
+  "badgesAndMilestones": "Nişanlar və Uğurlar",
+  "yourMilestoneJourney": "Uğur Səyahətiniz",
+  "milestonesAchieved": "{count, plural, one{{count} uğur qazanıldı.\nGörmək üçün toxunun} other{{count} uğur qazanıldı.\nGörmək üçün toxunun}}",
+  "@milestonesAchieved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockedMilestonesMessage": "Səyahətinizdə {total} uğurdan {unlocked} dənəsini aktivləşdirdiniz.",
+  "@unlockedMilestonesMessage": {
+    "placeholders": {
+      "unlocked": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "remaining": "Qalan",
+  "complete": "Tamamlandı",
+  "nextMilestone": "Növbəti Uğur",
+  "percentThere": "{subtitle} · {percent}% tamamlandı",
+  "@percentThere": {
+    "placeholders": {
+      "subtitle": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sobrietyMilestones": "Ayıqlıq Uğurları",
+  "journeyBadges": "Səyahət Nişanları",
+  "bronze": "TÜNC",
+  "silver": "GÜMÜŞ",
+  "gold": "QIZIL",
+  "platinum": "PLATİN",
+  "diamond": "ALMAZ",
+
+  "analyzingYourJourney": "Səyahətiniz Təhlil Edilir...",
+  "aiCreatingSanctuary": "AI sistemimiz sizin üçün fərdiləşdirilmiş təhlükəsiz məkan yaradır.",
+  "understandingHabits": "Vərdişlərin anlanması...",
+  "calculatingBaseline": "Başlanğıç səviyyənizin hesablanması...",
+  "personalizingPlan": "Planınızın fərdiləşdirilməsi...",
+  "finalizingSanctuary": "Məkanınızın yekunlaşdırılması...",
+  "creatingYourPlan": "Planınızın yaradılması...",
+  "personalizedPlanError": "Fərdiləşdirilmiş planınızı yarada bilmədik. Xahiş edirik yenidən cəhd edin.",
+  "retry": "Yenidən Cəhd Et",
+
+  "breathInhale": "NƏFƏS ALIN",
+  "breathHold": "SAXLAYIN",
+  "breathExhale": "NƏFƏS VERİN",
+  "breathDone": "BITDI",
+  "breathGreatJob": "Əla iş!",
+  "breathSessionsToday": "{count, plural, one{Bu gün {count} seans} other{Bu gün {count} seans}}",
+  "@breathSessionsToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "endExercise": "Məşqi Bitir",
+  "done": "Bitdi",
+
+  "noCopingTipsYet": "Hələ öhdəsindən gəlmə məsləhətləri yoxdur",
+  "copingStrategiesWillAppear": "Bərpa planınız yaradıldıqdan sonra fərdiləşdirilmiş öhdəsindən gəlmə strategiyalarınız burada görünəcək.",
+  "strategiesTailoredToTriggers": "Tətikləyicilərinizə uyğunlaşdırılmış strategiyalar",
+
+  "cravingsPeakAndPass": "Şiddətli istəklər zirvəyə çatır\nvə keçir",
+  "rideTheWaveDescription": "Əksər şiddətli istəklər 15 dəqiqə ərzində keçir. Buna əməl etmək məcburiyyətində deyilsiniz — sadəcə bizimlə dəf edin.",
+  "stayWithIt": "dözün",
+  "youMadeIt": "bacardınız",
+  "readyWhenYouAre": "hazır olduğunuzda",
+  "rideItAgain": "Yenidən dəf edin",
+  "start15MinuteTimer": "15 Dəqiqəlik Taymeri Başladın",
+  "rideTheWaveCompletedMessage": "Dalğanı dəf etdiniz. Bu əsl gücdür. 💪",
+
+  "myProgress": "Mənim Tərəqqim",
+  "weekLabel": "Həftə",
+  "monthLabel": "Ay",
+  "allLabel": "Hamısı",
+  "daysSoberStatLabel": "Ayıq\ngünlər",
+  "savedStatLabel": "Qənaət",
+  "avoidedStatLabel": "İçilməyən",
+  "moodTrends": "Əhval trendləri",
+  "cravingsPattern": "Şiddətli istək modeli",
+  "unlockLabel": "Aktivləşdir",
+  "unlockFullStats": "Tam statistikanı aktivləşdirin",
+  "premiumStatsMessage": "Əhval trendləri və istək modelləri Premium funksiyalardır. Tam statistikanızı görmək üçün yüksəldin.",
+  "healthMilestonesWillAppear": "Sağlamlıq uğurlarınız burada görünəcək.",
+  "healthMilestones": "Sağlamlıq uğurları",
+  "dayNumber": "{day}-ci Gün",
+  "@dayNumber": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "soberLabel": "Ayıq",
+  "slipLabel": "Sürüşmə",
+  "noDataLabel": "Məlumat yoxdur",
+
+  "milestone24Hours": "24 Saat",
+  "milestoneOneWeek": "Bir Həftə",
+  "milestoneOneMonth": "Bir Ay",
+  "milestoneThreeMonths": "Üç Ay",
+  "milestoneSixMonths": "Altı Ay",
+  "milestoneOneYear": "Bir İl",
+  "milestoneDayCount": "{day}-ci Gün Uğuru",
+  "@milestoneDayCount": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  }
+}

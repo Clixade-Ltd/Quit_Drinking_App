@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55000668201",
+    "project_id": "quit-drinking-48e1e",
+    "storage_bucket": "quit-drinking-48e1e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55000668201:android:49c994fed8a66cc39b2438",
+        "android_client_info": {
+          "package_name": "com.example.new_quit_drinking_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-20M26gl9GBNnQK4n4O3oNkGmHYVj2k8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

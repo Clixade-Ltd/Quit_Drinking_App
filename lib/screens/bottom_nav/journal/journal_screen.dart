@@ -4,6 +4,7 @@ import 'package:new_quit_drinking_app/screens/bottom_nav/journal/today_reflectio
 
 import '../../../constants/app_colors.dart';
 import '../../../models/journal_draft_store.dart';
+import '../../../services/analytics_service.dart';
 import '../profile/premium_plan_screen.dart';
 import 'journal_entry_view_screen.dart';
 import 'journal_prompt_cards.dart';
@@ -24,6 +25,8 @@ class _JournalScreenState extends State<JournalScreen> {
     Icons.sentiment_satisfied,
     Icons.sentiment_very_satisfied,
   ];
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   bool _searchVisible = false;
   final TextEditingController _searchController =
@@ -188,6 +191,7 @@ class _JournalScreenState extends State<JournalScreen> {
               onTap: () {
                 Navigator.pop(context);
                 JournalDraftStore.instance.deleteEntry(entry.id);
+                _analytics.journalEntryDeleted();
               },
             ),
           ],
