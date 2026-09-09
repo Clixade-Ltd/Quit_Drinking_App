@@ -192,7 +192,7 @@ Firebase Crashlytics is integrated to monitor application crashes and runtime is
 
 Crashlytics is configured to capture Flutter framework errors using:
 
-```dart
+```
 FlutterError.onError =
     FirebaseCrashlytics.instance.recordFlutterFatalError;
 ```
