@@ -568,11 +568,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: AppColors.primary,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(
-                            FontAwesomeIcons.crown,
-                            color: Colors.amber,
-                            size: 18,
-                          ),
+                         child: const FaIcon(
+  FontAwesomeIcons.crown,
+  color: Colors.amber,
+  size: 18,
+)
                         ),
                       ),
                     ),
