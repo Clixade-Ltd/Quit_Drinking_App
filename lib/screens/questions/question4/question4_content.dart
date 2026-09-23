@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+
 import '../../../constants/app_colors.dart';
 import '../../../models/user_details_draft.dart';
 import '../../../models/onboarding_answers.dart';
-import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 class Question4Content extends StatefulWidget {
   final ValueChanged<bool> onCanContinueChanged;
@@ -29,11 +31,16 @@ class _Question4ContentState
   void initState() {
     super.initState();
 
-    _selected.addAll(UserDetailsDraft.instance.quitReasons);
+    _selected.addAll(
+      UserDetailsDraft.instance.quitReasons,
+    );
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      widget.onCanContinueChanged(_selected.isNotEmpty);
+
+      widget.onCanContinueChanged(
+        _selected.isNotEmpty,
+      );
     });
   }
 
@@ -48,99 +55,142 @@ class _Question4ContentState
 
     UserDetailsDraft.instance.toggleReason(label);
 
-    widget.onCanContinueChanged(_selected.isNotEmpty);
+    widget.onCanContinueChanged(
+      _selected.isNotEmpty,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
     final l10n = AppLocalizations.of(context)!;
 
     final List<_ReasonOption> options = [
-      _ReasonOption(icon: Icons.favorite_border, label: l10n.reasonImproveHealth),
-      _ReasonOption(icon: Icons.savings_outlined, label: l10n.reasonSaveMoney),
-      _ReasonOption(icon: Icons.people_outline, label: l10n.reasonFamily),
-      _ReasonOption(icon: Icons.nightlight_outlined, label: l10n.reasonBetterSleep),
-      _ReasonOption(icon: Icons.psychology_outlined, label: l10n.reasonMentalClarity),
-      _ReasonOption(icon: Icons.fitness_center, label: l10n.reasonFitness),
-      _ReasonOption(icon: Icons.self_improvement, label: l10n.reasonSelfRespect),
-      _ReasonOption(icon: Icons.groups_outlined, label: l10n.reasonCareer),
+      _ReasonOption(
+        icon: Icons.favorite_border,
+        label: l10n.reasonImproveHealth,
+      ),
+      _ReasonOption(
+        icon: Icons.savings_outlined,
+        label: l10n.reasonSaveMoney,
+      ),
+      _ReasonOption(
+        icon: Icons.people_outline,
+        label: l10n.reasonFamily,
+      ),
+      _ReasonOption(
+        icon: Icons.nightlight_outlined,
+        label: l10n.reasonBetterSleep,
+      ),
+      _ReasonOption(
+        icon: Icons.psychology_outlined,
+        label: l10n.reasonMentalClarity,
+      ),
+      _ReasonOption(
+        icon: Icons.fitness_center,
+        label: l10n.reasonFitness,
+      ),
+      _ReasonOption(
+        icon: Icons.self_improvement,
+        label: l10n.reasonSelfRespect,
+      ),
+      _ReasonOption(
+        icon: Icons.groups_outlined,
+        label: l10n.reasonCareer,
+      ),
     ];
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(22, 10, 22, 0),
+      padding: EdgeInsets.fromLTRB(
+        22.w,
+        10.h,
+        22.w,
+        0,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             l10n.question4Title,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 24,
+              fontSize: 24.sp,
               height: 1.25,
               color: AppColors.primary,
             ),
           ),
 
-          const SizedBox(height: 6),
+          SizedBox(height: 6.h),
 
           Text(
             l10n.question4Subtitle,
-            style: const TextStyle(
-              fontSize: 14,
+            style: TextStyle(
+              fontSize: 14.sp,
               color: AppColors.textGrey,
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
-          GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            childAspectRatio: 163 / 106,
+          Column(
             children: options.map((option) {
-              final bool isSelected = _selected.contains(option.label);
+              final bool isSelected =
+                  _selected.contains(option.label);
 
-              return InkWell(
-                borderRadius: BorderRadius.circular(14),
-                onTap: () => _toggleReason(option.label),
-                child: Container(
-                  padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? AppColors.iconBackground
-                        : AppColors.outlineGrey2,
-                    borderRadius: BorderRadius.circular(14),
-                    border: Border.all(
-                      color: isSelected ? AppColors.primary : Colors.transparent,
-                      width: 1.5,
+              return Padding(
+                padding: EdgeInsets.only(bottom: 12.h),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(14.r),
+                  onTap: () => _toggleReason(option.label),
+                  child: Container(
+                    width: double.infinity,
+                    height: 64.h,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
                     ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(option.icon, color: AppColors.primary, size: 24),
-                      const SizedBox(height: 10),
-                      Text(
-                        option.label,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 13,
-                          color: AppColors.textBlack,
-                        ),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? AppColors.iconBackground
+                          : AppColors.outlineGrey2,
+                      borderRadius:
+                          BorderRadius.circular(14.r),
+                      border: Border.all(
+                        color: isSelected
+                            ? AppColors.primary
+                            : Colors.transparent,
+                        width: 1.5.w,
                       ),
-                    ],
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          option.icon,
+                          color: AppColors.primary,
+                          size: 24.sp,
+                        ),
+
+                        SizedBox(width: 14.w),
+
+                        Expanded(
+                          child: Text(
+                            option.label,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.sp,
+                              color: AppColors.textBlack,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );
             }).toList(),
           ),
 
-          const SizedBox(height: 30),
+          SizedBox(height: 18.h),
         ],
       ),
     );

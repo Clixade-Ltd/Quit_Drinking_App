@@ -1,15 +1,14 @@
 class UserDetailsDraft {
   UserDetailsDraft._();
 
-  static final UserDetailsDraft instance =
-  UserDetailsDraft._();
+  static final UserDetailsDraft instance = UserDetailsDraft._();
 
   // ---- Details Screen ----
   String? name;
   int? age;
   String? sex;
 
-  // Locally Stored  values.
+  // Locally Stored values.
   double? heightCm;
   double? weightKg;
 
@@ -20,9 +19,8 @@ class UserDetailsDraft {
   // ---- Question 1: Goal ----
   String? goal;
 
-  // ---- Question 2: Quit timing ----
-  // String? quitTiming;
-  // DateTime? customQuitDate;
+  // ---- Start Date ----
+  DateTime? startDate;
 
   // ---- Question 3: Routine ----
   int drinksPerWeek = 0;
@@ -55,12 +53,15 @@ class UserDetailsDraft {
     goal = value;
   }
 
-  // void setQuitTiming(String value, {DateTime? date}) {
-  //   quitTiming = value;
-  //   // Only keep a custom date when "Choose a date" is the
-  //   // active selection; other options clear it.
-  //   customQuitDate = value == 'Choose a date' ? date : null;
-  // }
+  // ---- Start Date ----
+
+  void setStartDate(DateTime value) {
+    startDate = DateTime(
+      value.year,
+      value.month,
+      value.day,
+    );
+  }
 
   void setDrinksPerWeek(int value) {
     drinksPerWeek = value;
@@ -100,8 +101,10 @@ class UserDetailsDraft {
       'heightUnit': heightUnit,
       'weightUnit': weightUnit,
       'goal': goal,
-      // 'quitTiming': quitTiming,
-      // 'customQuitDate': customQuitDate?.toIso8601String(),
+
+      // Start Date
+      'startDate': startDate?.toIso8601String(),
+
       'drinksPerWeek': drinksPerWeek,
       'moneySpentPerWeek': moneySpentPerWeek,
       'drinkingLevel': drinkingLevel,
@@ -117,7 +120,7 @@ class UserDetailsDraft {
         heightCm != null ||
         weightKg != null ||
         goal != null ||
-        // quitTiming != null ||
+        startDate != null ||
         drinkingLevel != null ||
         drinksPerWeek != 0 ||
         moneySpentPerWeek != 0 ||
@@ -129,21 +132,22 @@ class UserDetailsDraft {
     name = null;
     age = null;
     sex = null;
+
     heightCm = null;
     weightKg = null;
+
     heightUnit = 'cm';
     weightUnit = 'kg';
 
     goal = null;
 
-    // quitTiming = null;
-    // customQuitDate = null;
+    startDate = null;
 
     drinksPerWeek = 0;
     moneySpentPerWeek = 0;
     drinkingLevel = null;
-    triggers = [];
 
+    triggers = [];
     quitReasons = [];
   }
 }

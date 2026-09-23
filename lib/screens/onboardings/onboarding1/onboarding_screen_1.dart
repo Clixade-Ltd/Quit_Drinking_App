@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../constants/app_colors.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
@@ -10,17 +12,20 @@ class OnboardingScreen1 extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
         children: [
-          const SizedBox(height: 30),
+          SizedBox(height: 30.h),
 
-          // Illustration
+          // ============================================================
+          // ILLUSTRATION
+          // ============================================================
+
           ClipRRect(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
             child: Container(
-              width: 353,
-              height: 353,
+              width: 300.w,
+              height: 300.w,
               decoration: const BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -35,51 +40,60 @@ class OnboardingScreen1 extends StatelessWidget {
                 fit: BoxFit.cover,
                 errorBuilder: (_, __, ___) => Container(
                   color: AppColors.cardBackground,
-                  child: const Icon(
+                  child: Icon(
                     Icons.image_outlined,
                     color: AppColors.textLightGrey,
-                    size: 48,
+                    size: 48.sp,
                   ),
                 ),
               ),
             ),
           ),
 
-          const SizedBox(height: 28),
+          SizedBox(height: 28.h),
 
-          // Heading + subheading
+          // ============================================================
+          // HEADING
+          // ============================================================
+
           SizedBox(
-            width: 293,
+            width: 293.w,
             child: Text(
               l10n.onboardingTitle1,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'SF Pro',
                 fontWeight: FontWeight.w700,
-                fontSize: 28,
+                fontSize: 28.sp,
                 letterSpacing: -0.56,
                 height: 36 / 28,
                 color: AppColors.textBlack,
               ),
             ),
           ),
-          const SizedBox(height: 12),
+
+          SizedBox(height: 12.h),
+
+          // ============================================================
+          // SUBHEADING
+          // ============================================================
+
           SizedBox(
-            width: 269,
+            width: 269.w,
             child: Text(
               l10n.onboardingSubtitle1,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'SF Pro',
                 fontWeight: FontWeight.w400,
-                fontSize: 16,
+                fontSize: 16.sp,
                 height: 24 / 16,
                 color: AppColors.textGrey,
               ),
             ),
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../../constants/app_colors.dart';
@@ -20,9 +21,6 @@ class BadgesScreen extends StatefulWidget {
 class _BadgesScreenState extends State<BadgesScreen> {
   bool _isLoading = true;
   bool _hasError = false;
-
-  // Prevent _load() from being called repeatedly by
-  // didChangeDependencies().
   bool _hasLoadedOnce = false;
 
   List<_BadgeItem> _milestones = [];
@@ -31,26 +29,15 @@ class _BadgesScreenState extends State<BadgesScreen> {
   @override
   void initState() {
     super.initState();
-
-    // IMPORTANT:
-    // Do NOT call _load() here.
-    //
-    // _load() uses AppLocalizations.of(context), which depends
-    // on the Localizations inherited widget. That widget is not
-    // safe to access from initState().
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    // Localizations is available here.
-    // Load only once when the screen is first initialized.
     if (!_hasLoadedOnce) {
       _hasLoadedOnce = true;
 
-      // NEW — badges/milestones screen opened (fires once per screen
-      // instance, not on every RefreshIndicator pull-to-refresh).
       AnalyticsService.instance.badgesScreenViewed();
 
       _load();
@@ -80,19 +67,21 @@ class _BadgesScreenState extends State<BadgesScreen> {
       // LIVE SOBRIETY DATA
       // ============================================================
 
-      debugPrint('BADGES: Loading days sober from Local Storage...');
+      debugPrint(
+        'BADGES: Loading days sober from Local Storage...',
+      );
 
       final daysSober =
-      await HomeDashboardService.instance.getDaysSober();
+          await HomeDashboardService.instance.getDaysSober();
 
       debugPrint('BADGES: DAYS SOBER = $daysSober');
 
       final nextLocked =
-      MilestoneDefinitions.nextLocked(daysSober);
+          MilestoneDefinitions.nextLocked(daysSober);
 
       debugPrint(
         'BADGES: Next locked milestone = '
-            '${nextLocked?.days ?? 'none'} days',
+        '${nextLocked?.days ?? 'none'} days',
       );
 
       // ============================================================
@@ -100,7 +89,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
       // ============================================================
 
       final milestoneBadges =
-      MilestoneDefinitions.all.map((def) {
+          MilestoneDefinitions.all.map((def) {
         final unlocked = daysSober >= def.days;
 
         double? progress;
@@ -110,10 +99,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
           subtitle = l10n.unlocked;
         } else if (identical(def, nextLocked)) {
           final prevDays =
-          MilestoneDefinitions.previousThreshold(def);
+              MilestoneDefinitions.previousThreshold(def);
 
           final span =
-          (def.days - prevDays).clamp(1, def.days);
+              (def.days - prevDays).clamp(1, def.days);
 
           progress =
               ((daysSober - prevDays) / span)
@@ -147,7 +136,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
       debugPrint(
         'BADGES: Milestones loaded = '
-            '${milestoneBadges.length}',
+        '${milestoneBadges.length}',
       );
 
       // ============================================================
@@ -155,10 +144,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
       // ============================================================
 
       final achievementDefs = <_AchievementDef>[
-        // ----------------------------------------------------------
         // Journal
-        // ----------------------------------------------------------
-
         _AchievementDef(
           icon: Icons.edit_note,
           title: l10n.firstReflection,
@@ -166,7 +152,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.bronze,
           threshold: 1,
           getCount:
-          AchievementService.instance.getJournalEntries,
+              AchievementService.instance.getJournalEntries,
         ),
 
         _AchievementDef(
@@ -176,7 +162,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.silver,
           threshold: 10,
           getCount:
-          AchievementService.instance.getJournalEntries,
+              AchievementService.instance.getJournalEntries,
         ),
 
         _AchievementDef(
@@ -186,13 +172,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.gold,
           threshold: 30,
           getCount:
-          AchievementService.instance.getJournalEntries,
+              AchievementService.instance.getJournalEntries,
         ),
 
-        // ----------------------------------------------------------
         // AI Coach
-        // ----------------------------------------------------------
-
         _AchievementDef(
           icon: Icons.smart_toy,
           title: l10n.firstConversation,
@@ -200,7 +183,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.bronze,
           threshold: 1,
           getCount:
-          AchievementService.instance.getAiCoachConversations,
+              AchievementService.instance.getAiCoachConversations,
         ),
 
         _AchievementDef(
@@ -210,7 +193,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.silver,
           threshold: 5,
           getCount:
-          AchievementService.instance.getAiCoachConversations,
+              AchievementService.instance.getAiCoachConversations,
         ),
 
         _AchievementDef(
@@ -220,13 +203,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.gold,
           threshold: 20,
           getCount:
-          AchievementService.instance.getAiCoachConversations,
+              AchievementService.instance.getAiCoachConversations,
         ),
 
-        // ----------------------------------------------------------
         // Check-ins
-        // ----------------------------------------------------------
-
         _AchievementDef(
           icon: Icons.calendar_today,
           title: l10n.checkInHabit,
@@ -234,7 +214,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.bronze,
           threshold: 7,
           getCount:
-          AchievementService.instance.getCheckIns,
+              AchievementService.instance.getCheckIns,
         ),
 
         _AchievementDef(
@@ -244,7 +224,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.silver,
           threshold: 30,
           getCount:
-          AchievementService.instance.getCheckIns,
+              AchievementService.instance.getCheckIns,
         ),
 
         _AchievementDef(
@@ -254,13 +234,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.gold,
           threshold: 100,
           getCount:
-          AchievementService.instance.getCheckIns,
+              AchievementService.instance.getCheckIns,
         ),
 
-        // ----------------------------------------------------------
         // Goals
-        // ----------------------------------------------------------
-
         _AchievementDef(
           icon: Icons.flag_outlined,
           title: l10n.goalGetter,
@@ -268,7 +245,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.silver,
           threshold: 3,
           getCount:
-          AchievementService.instance.getPersonalGoalsCompleted,
+              AchievementService.instance.getPersonalGoalsCompleted,
         ),
 
         _AchievementDef(
@@ -278,13 +255,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
           tier: BadgeTier.gold,
           threshold: 10,
           getCount:
-          AchievementService.instance.getPersonalGoalsCompleted,
+              AchievementService.instance.getPersonalGoalsCompleted,
         ),
 
-        // ----------------------------------------------------------
         // Money Saved
-        // ----------------------------------------------------------
-
         _AchievementDef(
           icon: Icons.savings,
           title: l10n.firstSavings,
@@ -293,7 +267,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           threshold: 500,
           isCurrency: true,
           getCount:
-          AchievementService.instance.getMoneySaved,
+              AchievementService.instance.getMoneySaved,
         ),
 
         _AchievementDef(
@@ -304,7 +278,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
           threshold: 1000,
           isCurrency: true,
           getCount:
-          AchievementService.instance.getMoneySaved,
+              AchievementService.instance.getMoneySaved,
         ),
 
         _AchievementDef(
@@ -315,17 +289,16 @@ class _BadgesScreenState extends State<BadgesScreen> {
           threshold: 5000,
           isCurrency: true,
           getCount:
-          AchievementService.instance.getMoneySaved,
+              AchievementService.instance.getMoneySaved,
         ),
       ];
 
       debugPrint(
         'BADGES: Achievement definitions = '
-            '${achievementDefs.length}',
+        '${achievementDefs.length}',
       );
 
-      final achievementBadges =
-      <_BadgeItem>[];
+      final achievementBadges = <_BadgeItem>[];
 
       // ============================================================
       // LOAD EACH ACHIEVEMENT COUNTER
@@ -344,7 +317,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
             onTimeout: () {
               debugPrint(
                 'BADGES: AchievementService timed out for '
-                    '"${def.title}"',
+                '"${def.title}"',
               );
               return 0;
             },
@@ -356,8 +329,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
         } catch (e, stackTrace) {
           debugPrint(
             'BADGES: AchievementService error for '
-                '"${def.title}": $e',
+            '"${def.title}": $e',
           );
+
           debugPrint('$stackTrace');
 
           count = 0;
@@ -367,22 +341,21 @@ class _BadgesScreenState extends State<BadgesScreen> {
             count >= def.threshold;
 
         final progress =
-        def.threshold > 0
-            ? (count / def.threshold)
-            .clamp(0.0, 1.0)
-            : 0.0;
+            def.threshold > 0
+                ? (count / def.threshold)
+                    .clamp(0.0, 1.0)
+                : 0.0;
 
         final String lockedSubtitle =
-        def.isCurrency
-            ? l10n.currencyProgress(
-          count.toStringAsFixed(0),
-          def.threshold
-              .toStringAsFixed(0),
-        )
-            : l10n.countProgress(
-          count.toInt(),
-          def.threshold.toInt(),
-        );
+            def.isCurrency
+                ? l10n.currencyProgress(
+                    count.toStringAsFixed(0),
+                    def.threshold.toStringAsFixed(0),
+                  )
+                : l10n.countProgress(
+                    count.toInt(),
+                    def.threshold.toInt(),
+                  );
 
         achievementBadges.add(
           _BadgeItem(
@@ -394,18 +367,18 @@ class _BadgesScreenState extends State<BadgesScreen> {
                 ? def.unlockedSubtitle
                 : lockedSubtitle,
             tier: def.tier,
-            category:
-            BadgeCategory.achievement,
+            category: BadgeCategory.achievement,
             unlocked: unlocked,
-            progress:
-            unlocked ? null : progress,
+            progress: unlocked
+                ? null
+                : progress,
           ),
         );
       }
 
       debugPrint(
         'BADGES: Achievements loaded = '
-            '${achievementBadges.length}',
+        '${achievementBadges.length}',
       );
 
       if (!mounted) return;
@@ -419,13 +392,11 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
       debugPrint(
         'BADGES: LOAD COMPLETE ✓ '
-            '(${_milestones.length} milestones, '
-            '${_achievements.length} achievements)',
+        '(${_milestones.length} milestones, '
+        '${_achievements.length} achievements)',
       );
     } catch (e, stackTrace) {
-      debugPrint(
-        'BADGES: LOAD ERROR: $e',
-      );
+      debugPrint('BADGES: LOAD ERROR: $e');
 
       debugPrint(
         'BADGES: STACK TRACE:\n$stackTrace',
@@ -445,9 +416,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   String _localizedMilestoneTitle(
-      MilestoneDefinition def,
-      AppLocalizations l10n,
-      ) {
+    MilestoneDefinition def,
+    AppLocalizations l10n,
+  ) {
     switch (def.days) {
       case 1:
         return l10n.milestone24Hours;
@@ -482,13 +453,13 @@ class _BadgesScreenState extends State<BadgesScreen> {
       _milestones
           .where((b) => b.unlocked)
           .length +
-          _achievements
-              .where((b) => b.unlocked)
-              .length;
+      _achievements
+          .where((b) => b.unlocked)
+          .length;
 
   int get _totalCount =>
       _milestones.length +
-          _achievements.length;
+      _achievements.length;
 
   int get _remainingCount =>
       _totalCount - _unlockedCount;
@@ -510,23 +481,22 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
   void _viewAchievedMilestones() {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     final unlockedMilestoneDefinitions =
-    MilestoneDefinitions.all
-        .where(
-          (milestone) =>
-          _milestones.any(
+        MilestoneDefinitions.all
+            .where(
+              (milestone) => _milestones.any(
                 (badge) =>
-            badge.title ==
-                _localizedMilestoneTitle(
-                  milestone,
-                  l10n,
-                ) &&
-                badge.unlocked,
-          ),
-    )
-        .toList();
+                    badge.title ==
+                        _localizedMilestoneTitle(
+                          milestone,
+                          l10n,
+                        ) &&
+                    badge.unlocked,
+              ),
+            )
+            .toList();
 
     if (unlockedMilestoneDefinitions
         .isEmpty) {
@@ -537,7 +507,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
             l10n.firstMilestoneWaiting,
           ),
           behavior:
-          SnackBarBehavior.floating,
+              SnackBarBehavior.floating,
         ),
       );
 
@@ -551,8 +521,8 @@ class _BadgesScreenState extends State<BadgesScreen> {
       MaterialPageRoute(
         builder: (_) =>
             MilestoneAchievedScreen(
-              milestone: latestMilestone,
-            ),
+          milestone: latestMilestone,
+        ),
       ),
     );
   }
@@ -564,15 +534,14 @@ class _BadgesScreenState extends State<BadgesScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     if (_isLoading) {
-      return const Scaffold(
+      return Scaffold(
         backgroundColor:
-        AppColors.dashboardBackground,
-        body: Center(
-          child:
-          CircularProgressIndicator(),
+            AppColors.dashboardBackground,
+        body: const Center(
+          child: CircularProgressIndicator(),
         ),
       );
     }
@@ -580,52 +549,46 @@ class _BadgesScreenState extends State<BadgesScreen> {
     if (_hasError) {
       return Scaffold(
         backgroundColor:
-        AppColors.dashboardBackground,
+            AppColors.dashboardBackground,
         body: Center(
           child: Padding(
-            padding:
-            const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24.w),
             child: Column(
               mainAxisAlignment:
-              MainAxisAlignment.center,
+                  MainAxisAlignment.center,
               children: [
-                const Icon(
+                Icon(
                   Icons.error_outline,
-                  size: 52,
+                  size: 52.sp,
                   color:
-                  AppColors.textLightGrey,
+                      AppColors.textLightGrey,
                 ),
 
-                const SizedBox(
-                  height: 16,
-                ),
+                SizedBox(height: 16.h),
 
                 Text(
                   l10n.unableToLoadProfile,
                   textAlign:
-                  TextAlign.center,
-                  style:
-                  const TextStyle(
+                      TextAlign.center,
+                  style: TextStyle(
                     fontWeight:
-                    FontWeight.w700,
-                    fontSize: 18,
+                        FontWeight.w700,
+                    fontSize: 18.sp,
                     color:
-                    AppColors.textBlack,
+                        AppColors.textBlack,
                   ),
                 ),
 
-                const SizedBox(
-                  height: 20,
-                ),
+                SizedBox(height: 20.h),
 
                 ElevatedButton(
                   onPressed: _load,
                   style:
-                  ElevatedButton.styleFrom(
+                      ElevatedButton.styleFrom(
                     backgroundColor:
-                    AppColors.primary,
+                        AppColors.primary,
                     foregroundColor:
-                    AppColors.white,
+                        AppColors.white,
                   ),
                   child: Text(
                     l10n.tryAgain,
@@ -643,96 +606,77 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
     return Scaffold(
       backgroundColor:
-      AppColors.dashboardBackground,
+          AppColors.dashboardBackground,
       body: SafeArea(
+        top: true,
+        bottom: false,
         child: Column(
           children: [
             _buildAppBar(l10n),
 
             Expanded(
-              child:
-              RefreshIndicator(
+              child: RefreshIndicator(
                 onRefresh: _load,
-                child:
-                SingleChildScrollView(
+                child: SingleChildScrollView(
                   physics:
-                  const AlwaysScrollableScrollPhysics(),
-                  padding:
-                  const EdgeInsets.fromLTRB(
-                    16,
-                    4,
-                    16,
-                    24,
+                      const AlwaysScrollableScrollPhysics(),
+                  padding: EdgeInsets.fromLTRB(
+                    16.w,
+                    4.h,
+                    16.w,
+                    24.h,
                   ),
                   child: Column(
                     crossAxisAlignment:
-                    CrossAxisAlignment
-                        .stretch,
+                        CrossAxisAlignment.stretch,
                     children: [
-                      _buildSummaryCard(
-                        l10n,
-                      ),
+                      _buildSummaryCard(l10n),
 
-                      const SizedBox(
-                        height: 16,
-                      ),
+                      SizedBox(height: 16.h),
 
                       _buildAchievedMilestonesCard(
                         l10n,
                       ),
 
-                      if (nextMilestone !=
-                          null) ...[
-                        const SizedBox(
-                          height: 16,
-                        ),
+                      if (nextMilestone != null) ...[
+                        SizedBox(height: 16.h),
                         _buildNextMilestoneCard(
                           nextMilestone,
                           l10n,
                         ),
                       ],
 
-                      const SizedBox(
-                        height: 28,
-                      ),
+                      SizedBox(height: 28.h),
 
                       _buildSectionHeader(
                         l10n.sobrietyMilestones,
                         _milestones
                             .where(
-                              (b) =>
-                          b.unlocked,
-                        )
+                              (b) => b.unlocked,
+                            )
                             .length,
                         _milestones.length,
                       ),
 
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      SizedBox(height: 12.h),
 
                       _buildBadgeGrid(
                         _milestones,
                       ),
 
-                      const SizedBox(
-                        height: 28,
-                      ),
+                      SizedBox(height: 28.h),
 
                       _buildSectionHeader(
                         l10n.journeyBadges,
                         _achievements
                             .where(
-                              (b) =>
-                          b.unlocked,
-                        )
+                              (b) => b.unlocked,
+                            )
                             .length,
                         _achievements.length,
                       ),
 
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      SizedBox(height: 12.h),
 
                       _buildBadgeGrid(
                         _achievements,
@@ -753,14 +697,13 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildAchievedMilestonesCard(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     final unlockedCount =
         _milestones
             .where(
-              (badge) =>
-          badge.unlocked,
-        )
+              (badge) => badge.unlocked,
+            )
             .length;
 
     final hasMilestones =
@@ -773,19 +716,18 @@ class _BadgesScreenState extends State<BadgesScreen> {
             ? _viewAchievedMilestones
             : null,
         borderRadius:
-        BorderRadius.circular(28),
+            BorderRadius.circular(28.r),
         child: Container(
           width: double.infinity,
-          padding:
-          const EdgeInsets.all(20),
+          padding: EdgeInsets.all(20.r),
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius:
-            BorderRadius.circular(28),
+                BorderRadius.circular(28.r),
             border: Border.all(
               color: AppColors.primary
                   .withOpacity(0.12),
-              width: 1,
+              width: 1.w,
             ),
             boxShadow: const [
               BoxShadow(
@@ -798,17 +740,17 @@ class _BadgesScreenState extends State<BadgesScreen> {
           child: Row(
             children: [
               Container(
-                width: 54,
-                height: 54,
+                width: 54.w,
+                height: 54.w,
                 decoration:
-                BoxDecoration(
+                    BoxDecoration(
                   shape: BoxShape.circle,
                   gradient:
-                  LinearGradient(
+                      LinearGradient(
                     begin:
-                    Alignment.topLeft,
+                        Alignment.topLeft,
                     end:
-                    Alignment.bottomRight,
+                        Alignment.bottomRight,
                     colors: [
                       AppColors.primary,
                       AppColors.primary
@@ -819,102 +761,96 @@ class _BadgesScreenState extends State<BadgesScreen> {
                     BoxShadow(
                       color: AppColors
                           .primary
-                          .withOpacity(
-                        0.22,
-                      ),
-                      blurRadius: 12,
+                          .withOpacity(0.22),
+                      blurRadius: 12.r,
                       offset:
-                      const Offset(0, 5),
+                          Offset(0, 5.h),
                     ),
                   ],
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons
                       .emoji_events_rounded,
                   color:
-                  AppColors.white,
-                  size: 26,
+                      AppColors.white,
+                  size: 26.sp,
                 ),
               ),
 
-              const SizedBox(
-                width: 16,
-              ),
+              SizedBox(width: 16.w),
 
               Expanded(
                 child: Column(
                   crossAxisAlignment:
-                  CrossAxisAlignment
-                      .start,
+                      CrossAxisAlignment
+                          .start,
                   children: [
                     Text(
                       l10n
                           .yourMilestoneJourney,
-                      style:
-                      const TextStyle(
+                      maxLines: 2,
+                      overflow:
+                          TextOverflow.ellipsis,
+                      style: TextStyle(
                         fontWeight:
-                        FontWeight.w700,
-                        fontSize: 16,
+                            FontWeight.w700,
+                        fontSize: 16.sp,
                         color:
-                        AppColors
-                            .textBlack,
+                            AppColors
+                                .textBlack,
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 4,
-                    ),
+                    SizedBox(height: 4.h),
 
                     Text(
                       hasMilestones
                           ? l10n
-                          .milestonesAchieved(
-                        unlockedCount,
-                      )
+                              .milestonesAchieved(
+                              unlockedCount,
+                            )
                           : l10n
-                          .firstMilestoneWaiting,
-                      style:
-                      const TextStyle(
+                              .firstMilestoneWaiting,
+                      maxLines: 2,
+                      overflow:
+                          TextOverflow.ellipsis,
+                      style: TextStyle(
                         fontWeight:
-                        FontWeight.w400,
-                        fontSize: 12,
+                            FontWeight.w400,
+                        fontSize: 12.sp,
                         height: 1.35,
                         color:
-                        AppColors
-                            .textGrey,
+                            AppColors
+                                .textGrey,
                       ),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(
-                width: 10,
-              ),
+              SizedBox(width: 10.w),
 
               Container(
-                width: 36,
-                height: 36,
+                width: 36.w,
+                height: 36.w,
                 decoration:
-                BoxDecoration(
+                    BoxDecoration(
                   color: hasMilestones
                       ? AppColors.primary
-                      .withOpacity(
-                    0.10,
-                  )
+                          .withOpacity(0.10)
                       : AppColors
-                      .progressBarBackground,
+                          .progressBarBackground,
                   shape:
-                  BoxShape.circle,
+                      BoxShape.circle,
                 ),
                 child: Icon(
                   Icons
                       .arrow_forward_ios_rounded,
-                  size: 15,
+                  size: 15.sp,
                   color: hasMilestones
                       ? AppColors.primary
                       : AppColors
-                      .textLightGrey,
+                          .textLightGrey,
                 ),
               ),
             ],
@@ -929,50 +865,51 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildAppBar(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     return Padding(
-      padding:
-      const EdgeInsets.fromLTRB(
-        16,
-        12,
-        16,
-        12,
+      padding: EdgeInsets.fromLTRB(
+        16.w,
+        12.h,
+        16.w,
+        12.h,
       ),
       child: SizedBox(
-        height: 44,
+        height: 44.h,
         child: Row(
           children: [
             Expanded(
               child: Text(
                 l10n.badgesAndMilestones,
-                style:
-                const TextStyle(
+                maxLines: 1,
+                overflow:
+                    TextOverflow.ellipsis,
+                style: TextStyle(
                   fontWeight:
-                  FontWeight.w600,
-                  fontSize: 20,
+                      FontWeight.w600,
+                  fontSize: 20.sp,
                   color:
-                  AppColors.textBlack,
+                      AppColors.textBlack,
                 ),
               ),
             ),
 
             SizedBox(
-              width: 40,
-              height: 40,
+              width: 40.w,
+              height: 40.w,
               child: InkWell(
                 borderRadius:
-                BorderRadius.circular(
-                  20,
+                    BorderRadius.circular(
+                  20.r,
                 ),
                 onTap: () {},
-                child: const Center(
+                child: Center(
                   child: Icon(
                     Icons
                         .notifications_none_rounded,
                     color:
-                    AppColors.textBlack,
-                    size: 24,
+                        AppColors.textBlack,
+                    size: 24.sp,
                   ),
                 ),
               ),
@@ -988,22 +925,21 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildSummaryCard(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     final double overallProgress =
-    _totalCount == 0
-        ? 0
-        : _unlockedCount /
-        _totalCount;
+        _totalCount == 0
+            ? 0
+            : _unlockedCount /
+                _totalCount;
 
     return Container(
       width: double.infinity,
-      padding:
-      const EdgeInsets.all(24),
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius:
-        BorderRadius.circular(32),
+            BorderRadius.circular(32.r),
         boxShadow: const [
           BoxShadow(
             color: Color(0x0A000000),
@@ -1017,20 +953,20 @@ class _BadgesScreenState extends State<BadgesScreen> {
           Text(
             l10n.youAreDoingGreat,
             textAlign:
-            TextAlign.center,
-            style:
-            const TextStyle(
+                TextAlign.center,
+            maxLines: 2,
+            overflow:
+                TextOverflow.ellipsis,
+            style: TextStyle(
               fontWeight:
-              FontWeight.w600,
-              fontSize: 18,
+                  FontWeight.w600,
+              fontSize: 18.sp,
               color:
-              AppColors.primary,
+                  AppColors.primary,
             ),
           ),
 
-          const SizedBox(
-            height: 6,
-          ),
+          SizedBox(height: 6.h),
 
           Text(
             l10n
@@ -1039,46 +975,42 @@ class _BadgesScreenState extends State<BadgesScreen> {
               _totalCount,
             ),
             textAlign:
-            TextAlign.center,
-            style:
-            const TextStyle(
+                TextAlign.center,
+            maxLines: 3,
+            overflow:
+                TextOverflow.ellipsis,
+            style: TextStyle(
               fontWeight:
-              FontWeight.w400,
-              fontSize: 14,
+                  FontWeight.w400,
+              fontSize: 14.sp,
               height: 1.4,
               color:
-              AppColors.textGrey,
+                  AppColors.textGrey,
             ),
           ),
 
-          const SizedBox(
-            height: 18,
-          ),
+          SizedBox(height: 18.h),
 
           ClipRRect(
             borderRadius:
-            BorderRadius.circular(
-              10,
-            ),
+                BorderRadius.circular(10.r),
             child:
-            LinearProgressIndicator(
+                LinearProgressIndicator(
               value: overallProgress
                   .clamp(0.0, 1.0),
-              minHeight: 10,
+              minHeight: 10.h,
               backgroundColor:
-              AppColors
-                  .progressBarBackground,
+                  AppColors
+                      .progressBarBackground,
               valueColor:
-              const AlwaysStoppedAnimation<
-                  Color>(
+                  const AlwaysStoppedAnimation<
+                      Color>(
                 AppColors.primary,
               ),
             ),
           ),
 
-          const SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20.h),
 
           IntrinsicHeight(
             child: Row(
@@ -1088,38 +1020,37 @@ class _BadgesScreenState extends State<BadgesScreen> {
                     children: [
                       Text(
                         '$_unlockedCount',
-                        style:
-                        const TextStyle(
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w700,
-                          fontSize: 24,
+                              FontWeight.w700,
+                          fontSize: 24.sp,
                           color:
-                          AppColors
-                              .primary,
+                              AppColors
+                                  .primary,
                         ),
                       ),
-                      const SizedBox(
-                        height: 2,
-                      ),
+                      SizedBox(height: 2.h),
                       Text(
                         l10n.unlocked,
-                        style:
-                        const TextStyle(
+                        maxLines: 1,
+                        overflow:
+                            TextOverflow.ellipsis,
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w400,
-                          fontSize: 14,
+                              FontWeight.w400,
+                          fontSize: 14.sp,
                           color:
-                          AppColors
-                              .textGrey,
+                              AppColors
+                                  .textGrey,
                         ),
                       ),
                     ],
                   ),
                 ),
 
-                const VerticalDivider(
-                  width: 1,
-                  thickness: 1,
+                VerticalDivider(
+                  width: 1.w,
+                  thickness: 1.w,
                   color: AppColors
                       .progressBarBackground,
                 ),
@@ -1129,37 +1060,36 @@ class _BadgesScreenState extends State<BadgesScreen> {
                     children: [
                       Text(
                         '$_remainingCount',
-                        style:
-                        const TextStyle(
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w700,
-                          fontSize: 24,
+                              FontWeight.w700,
+                          fontSize: 24.sp,
                           color: AppColors
                               .textLightGrey,
                         ),
                       ),
-                      const SizedBox(
-                        height: 2,
-                      ),
+                      SizedBox(height: 2.h),
                       Text(
                         l10n.remaining,
-                        style:
-                        const TextStyle(
+                        maxLines: 1,
+                        overflow:
+                            TextOverflow.ellipsis,
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w400,
-                          fontSize: 14,
+                              FontWeight.w400,
+                          fontSize: 14.sp,
                           color:
-                          AppColors
-                              .textGrey,
+                              AppColors
+                                  .textGrey,
                         ),
                       ),
                     ],
                   ),
                 ),
 
-                const VerticalDivider(
-                  width: 1,
-                  thickness: 1,
+                VerticalDivider(
+                  width: 1.w,
+                  thickness: 1.w,
                   color: AppColors
                       .progressBarBackground,
                 ),
@@ -1169,29 +1099,28 @@ class _BadgesScreenState extends State<BadgesScreen> {
                     children: [
                       Text(
                         '${(overallProgress * 100).round()}%',
-                        style:
-                        const TextStyle(
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w700,
-                          fontSize: 24,
+                              FontWeight.w700,
+                          fontSize: 24.sp,
                           color:
-                          AppColors
-                              .primary,
+                              AppColors
+                                  .primary,
                         ),
                       ),
-                      const SizedBox(
-                        height: 2,
-                      ),
+                      SizedBox(height: 2.h),
                       Text(
                         l10n.complete,
-                        style:
-                        const TextStyle(
+                        maxLines: 1,
+                        overflow:
+                            TextOverflow.ellipsis,
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w400,
-                          fontSize: 14,
+                              FontWeight.w400,
+                          fontSize: 14.sp,
                           color:
-                          AppColors
-                              .textGrey,
+                              AppColors
+                                  .textGrey,
                         ),
                       ),
                     ],
@@ -1210,26 +1139,25 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildNextMilestoneCard(
-      _BadgeItem item,
-      AppLocalizations l10n,
-      ) {
+    _BadgeItem item,
+    AppLocalizations l10n,
+  ) {
     final percent =
-    ((item.progress ?? 0) * 100)
-        .round();
+        ((item.progress ?? 0) * 100)
+            .round();
 
     return Container(
       width: double.infinity,
-      padding:
-      const EdgeInsets.all(20),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
         borderRadius:
-        BorderRadius.circular(28),
+            BorderRadius.circular(28.r),
         gradient:
-        LinearGradient(
+            LinearGradient(
           begin:
-          Alignment.topLeft,
+              Alignment.topLeft,
           end:
-          Alignment.bottomRight,
+              Alignment.bottomRight,
           colors: [
             AppColors.primary,
             AppColors.primary
@@ -1240,58 +1168,56 @@ class _BadgesScreenState extends State<BadgesScreen> {
           BoxShadow(
             color: AppColors.primary
                 .withOpacity(0.25),
-            blurRadius: 20,
+            blurRadius: 20.r,
             offset:
-            const Offset(0, 8),
+                Offset(0, 8.h),
           ),
         ],
       ),
       child: Row(
         children: [
           SizedBox(
-            width: 56,
-            height: 56,
+            width: 56.w,
+            height: 56.w,
             child: Stack(
               alignment:
-              Alignment.center,
+                  Alignment.center,
               children: [
                 CircularProgressIndicator(
                   value: (item.progress ??
-                      0)
+                          0)
                       .clamp(0.02, 1.0),
-                  strokeWidth: 5,
+                  strokeWidth: 5.w,
                   strokeCap:
-                  StrokeCap.round,
+                      StrokeCap.round,
                   backgroundColor:
-                  AppColors.white
-                      .withOpacity(
+                      AppColors.white
+                          .withOpacity(
                     0.25,
                   ),
                   valueColor:
-                  const AlwaysStoppedAnimation<
-                      Color>(
+                      const AlwaysStoppedAnimation<
+                          Color>(
                     AppColors.white,
                   ),
                 ),
                 Icon(
                   item.icon,
                   color:
-                  AppColors.white,
-                  size: 22,
+                      AppColors.white,
+                  size: 22.sp,
                 ),
               ],
             ),
           ),
 
-          const SizedBox(
-            width: 16,
-          ),
+          SizedBox(width: 16.w),
 
           Expanded(
             child: Column(
               crossAxisAlignment:
-              CrossAxisAlignment
-                  .start,
+                  CrossAxisAlignment
+                      .start,
               children: [
                 Row(
                   children: [
@@ -1299,24 +1225,22 @@ class _BadgesScreenState extends State<BadgesScreen> {
                       child: Text(
                         l10n.nextMilestone,
                         overflow:
-                        TextOverflow
-                            .ellipsis,
-                        style:
-                        const TextStyle(
-                          fontSize: 12,
+                            TextOverflow
+                                .ellipsis,
+                        maxLines: 1,
+                        style: TextStyle(
+                          fontSize: 12.sp,
                           fontWeight:
-                          FontWeight.w600,
+                              FontWeight.w600,
                           color:
-                          Colors.white70,
+                              Colors.white70,
                           letterSpacing:
-                          0.4,
+                              0.4,
                         ),
                       ),
                     ),
 
-                    const SizedBox(
-                      width: 8,
-                    ),
+                    SizedBox(width: 8.w),
 
                     _tierPill(
                       item.tier,
@@ -1326,28 +1250,23 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   ],
                 ),
 
-                const SizedBox(
-                  height: 4,
-                ),
+                SizedBox(height: 4.h),
 
                 Text(
                   item.title,
                   maxLines: 2,
                   overflow:
-                  TextOverflow.ellipsis,
-                  style:
-                  const TextStyle(
-                    fontSize: 18,
+                      TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 18.sp,
                     fontWeight:
-                    FontWeight.w700,
+                        FontWeight.w700,
                     color:
-                    AppColors.white,
+                        AppColors.white,
                   ),
                 ),
 
-                const SizedBox(
-                  height: 2,
-                ),
+                SizedBox(height: 2.h),
 
                 Text(
                   l10n.percentThere(
@@ -1356,12 +1275,11 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   ),
                   maxLines: 2,
                   overflow:
-                  TextOverflow.ellipsis,
-                  style:
-                  const TextStyle(
-                    fontSize: 13,
+                      TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 13.sp,
                     color:
-                    Colors.white70,
+                        Colors.white70,
                   ),
                 ),
               ],
@@ -1377,50 +1295,53 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildSectionHeader(
-      String title,
-      int unlocked,
-      int total,
-      ) {
+    String title,
+    int unlocked,
+    int total,
+  ) {
     return Row(
       children: [
         Expanded(
           child: Text(
             title,
-            style:
-            const TextStyle(
+            maxLines: 1,
+            overflow:
+                TextOverflow.ellipsis,
+            style: TextStyle(
               fontWeight:
-              FontWeight.w700,
-              fontSize: 16,
+                  FontWeight.w700,
+              fontSize: 16.sp,
               color:
-              AppColors.textBlack,
+                  AppColors.textBlack,
             ),
           ),
         ),
 
+        SizedBox(width: 8.w),
+
         Container(
           padding:
-          const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 4,
+              EdgeInsets.symmetric(
+            horizontal: 10.w,
+            vertical: 4.h,
           ),
           decoration:
-          BoxDecoration(
+              BoxDecoration(
             color: AppColors
                 .progressBarBackground,
             borderRadius:
-            BorderRadius.circular(
-              20,
+                BorderRadius.circular(
+              20.r,
             ),
           ),
           child: Text(
             '$unlocked/$total',
-            style:
-            const TextStyle(
-              fontSize: 12,
+            style: TextStyle(
+              fontSize: 12.sp,
               fontWeight:
-              FontWeight.w600,
+                  FontWeight.w600,
               color:
-              AppColors.textGrey,
+                  AppColors.textGrey,
             ),
           ),
         ),
@@ -1433,14 +1354,14 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildBadgeGrid(
-      List<_BadgeItem> items,
-      ) {
+    List<_BadgeItem> items,
+  ) {
     final rows = <Widget>[];
 
     for (
-    int i = 0;
-    i < items.length;
-    i += 2
+      int i = 0;
+      i < items.length;
+      i += 2
     ) {
       final hasSecond =
           i + 1 < items.length;
@@ -1448,37 +1369,37 @@ class _BadgesScreenState extends State<BadgesScreen> {
       rows.add(
         Padding(
           padding:
-          EdgeInsets.only(
+              EdgeInsets.only(
             bottom:
-            i + 2 < items.length
-                ? 16
-                : 0,
+                i + 2 < items.length
+                    ? 16.h
+                    : 0,
           ),
-          child: Row(
-            crossAxisAlignment:
-            CrossAxisAlignment
-                .start,
-            children: [
-              Expanded(
-                child:
-                _buildBadgeCard(
-                  items[i],
+          child: IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment:
+                  CrossAxisAlignment
+                      .stretch,
+              children: [
+                Expanded(
+                  child:
+                      _buildBadgeCard(
+                    items[i],
+                  ),
                 ),
-              ),
 
-              const SizedBox(
-                width: 16,
-              ),
+                SizedBox(width: 16.w),
 
-              Expanded(
-                child: hasSecond
-                    ? _buildBadgeCard(
-                  items[i + 1],
-                )
-                    : const SizedBox
-                    .shrink(),
-              ),
-            ],
+                Expanded(
+                  child: hasSecond
+                      ? _buildBadgeCard(
+                          items[i + 1],
+                        )
+                      : const SizedBox
+                          .shrink(),
+                ),
+              ],
+            ),
           ),
         ),
       );
@@ -1494,38 +1415,47 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildBadgeCard(
-      _BadgeItem item,
-      ) {
+    _BadgeItem item,
+  ) {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     final bool isLocked =
         !item.unlocked &&
-            item.progress == null;
+        item.progress == null;
 
     final bool isInProgress =
         !item.unlocked &&
-            item.progress != null;
+        item.progress != null;
 
     return Container(
       width: double.infinity,
-      height: 190,
-      padding:
-      const EdgeInsets.symmetric(
-        vertical: 20,
-        horizontal: 16,
+
+      // IMPORTANT:
+      // Fixed height was causing RenderFlex overflow.
+      // We now use minimum height so the card can grow
+      // when localized text needs more space.
+      constraints: BoxConstraints(
+        minHeight: 190.h,
       ),
+
+      padding:
+          EdgeInsets.symmetric(
+        vertical: 18.h,
+        horizontal: 14.w,
+      ),
+
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius:
-        BorderRadius.circular(28),
+            BorderRadius.circular(28.r),
         border: item.unlocked
             ? Border.all(
-          color: _tierColor(
-            item.tier,
-          ).withOpacity(0.25),
-          width: 1.2,
-        )
+                color: _tierColor(
+                  item.tier,
+                ).withOpacity(0.25),
+                width: 1.2.w,
+              )
             : null,
         boxShadow: const [
           BoxShadow(
@@ -1535,27 +1465,34 @@ class _BadgesScreenState extends State<BadgesScreen> {
           ),
         ],
       ),
+
       child: Column(
-        mainAxisAlignment:
-        MainAxisAlignment.start,
+        mainAxisSize:
+            MainAxisSize.min,
         children: [
+          // ------------------------------------------------------
+          // TIER PILL
+          // ------------------------------------------------------
+
           Align(
             alignment:
-            Alignment.topRight,
+                Alignment.topRight,
             child: SizedBox(
-              height: 18,
+              height: 18.h,
               child: item.unlocked
                   ? _tierPill(
-                item.tier,
-                l10n: l10n,
-              )
+                      item.tier,
+                      l10n: l10n,
+                    )
                   : null,
             ),
           ),
 
-          const SizedBox(
-            height: 2,
-          ),
+          SizedBox(height: 4.h),
+
+          // ------------------------------------------------------
+          // BADGE ICON
+          // ------------------------------------------------------
 
           _buildBadgeIcon(
             item,
@@ -1563,58 +1500,54 @@ class _BadgesScreenState extends State<BadgesScreen> {
             isInProgress,
           ),
 
-          const SizedBox(
-            height: 12,
-          ),
+          SizedBox(height: 10.h),
 
-          SizedBox(
-            height: 34,
-            child: Center(
-              child: Text(
-                item.title,
-                textAlign:
-                TextAlign.center,
-                maxLines: 2,
-                overflow:
-                TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontWeight:
-                  FontWeight.w700,
-                  fontSize: 14,
-                  height: 1.2,
-                  color: isLocked
-                      ? AppColors
-                      .textLightGrey
-                      : AppColors
-                      .textBlack,
-                ),
+          // ------------------------------------------------------
+          // TITLE
+          // ------------------------------------------------------
+
+          Flexible(
+            child: Text(
+              item.title,
+              textAlign:
+                  TextAlign.center,
+              maxLines: 2,
+              overflow:
+                  TextOverflow.ellipsis,
+              style: TextStyle(
+                fontWeight:
+                    FontWeight.w700,
+                fontSize: 14.sp,
+                height: 1.2,
+                color: isLocked
+                    ? AppColors
+                        .textLightGrey
+                    : AppColors
+                        .textBlack,
               ),
             ),
           ),
 
-          const SizedBox(
-            height: 4,
-          ),
+          SizedBox(height: 4.h),
 
-          SizedBox(
-            height: 18,
-            child: Center(
-              child: Text(
-                item.subtitle,
-                textAlign:
+          // ------------------------------------------------------
+          // SUBTITLE
+          // ------------------------------------------------------
+
+          Text(
+            item.subtitle,
+            textAlign:
                 TextAlign.center,
-                maxLines: 1,
-                overflow:
+            maxLines: 2,
+            overflow:
                 TextOverflow.ellipsis,
-                style:
-                const TextStyle(
-                  fontWeight:
+            style: TextStyle(
+              fontWeight:
                   FontWeight.w400,
-                  fontSize: 12,
-                  color:
+              fontSize: 12.sp,
+              height: 1.2,
+              color:
                   AppColors.textGrey,
-                ),
-              ),
             ),
           ),
         ],
@@ -1627,30 +1560,30 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Widget _buildBadgeIcon(
-      _BadgeItem item,
-      bool isLocked,
-      bool isInProgress,
-      ) {
+    _BadgeItem item,
+    bool isLocked,
+    bool isInProgress,
+  ) {
     if (isInProgress) {
       return SizedBox(
-        width: 56,
-        height: 56,
+        width: 56.w,
+        height: 56.w,
         child: Stack(
           alignment:
-          Alignment.center,
+              Alignment.center,
           children: [
             CircularProgressIndicator(
               value: item.progress!
                   .clamp(0.02, 1.0),
-              strokeWidth: 5,
+              strokeWidth: 5.w,
               strokeCap:
-              StrokeCap.round,
+                  StrokeCap.round,
               backgroundColor:
-              AppColors
-                  .progressBarBackground,
+                  AppColors
+                      .progressBarBackground,
               valueColor:
-              AlwaysStoppedAnimation<
-                  Color>(
+                  AlwaysStoppedAnimation<
+                      Color>(
                 _tierColor(
                   item.tier,
                 ),
@@ -1659,7 +1592,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
             Icon(
               item.icon,
-              size: 20,
+              size: 20.sp,
               color: _tierColor(
                 item.tier,
               ),
@@ -1670,54 +1603,56 @@ class _BadgesScreenState extends State<BadgesScreen> {
     }
 
     final Color bgColor =
-    isLocked
-        ? AppColors
-        .progressBarBackground
-        : _tierColor(item.tier);
-
-    return Container(
-      width: 56,
-      height: 56,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        gradient: isLocked
-            ? null
-            : LinearGradient(
-          begin:
-          Alignment.topLeft,
-          end:
-          Alignment.bottomRight,
-          colors: [
-            bgColor,
-            bgColor.withOpacity(
-              0.75,
-            ),
-          ],
-        ),
-        color: isLocked
-            ? bgColor
-            : null,
-        boxShadow: isLocked
-            ? null
-            : [
-          BoxShadow(
-            color: bgColor
-                .withOpacity(
-              0.35,
-            ),
-            blurRadius: 10,
-            offset:
-            const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Icon(
-        item.icon,
-        size: 26,
-        color: isLocked
+        isLocked
             ? AppColors
-            .textLightGrey
-            : AppColors.white,
+                .progressBarBackground
+            : _tierColor(item.tier);
+
+    return SizedBox(
+      width: 56.w,
+      height: 56.w,
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: isLocked
+              ? null
+              : LinearGradient(
+                  begin:
+                      Alignment.topLeft,
+                  end:
+                      Alignment.bottomRight,
+                  colors: [
+                    bgColor,
+                    bgColor.withOpacity(
+                      0.75,
+                    ),
+                  ],
+                ),
+          color: isLocked
+              ? bgColor
+              : null,
+          boxShadow: isLocked
+              ? null
+              : [
+                  BoxShadow(
+                    color: bgColor
+                        .withOpacity(
+                      0.35,
+                    ),
+                    blurRadius: 10.r,
+                    offset:
+                        Offset(0, 4.h),
+                  ),
+                ],
+        ),
+        child: Icon(
+          item.icon,
+          size: 26.sp,
+          color: isLocked
+              ? AppColors
+                  .textLightGrey
+              : AppColors.white,
+        ),
       ),
     );
   }
@@ -1727,40 +1662,30 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Color _tierColor(
-      BadgeTier tier,
-      ) {
+    BadgeTier tier,
+  ) {
     switch (tier) {
       case BadgeTier.bronze:
-        return const Color(
-          0xFFB87A4B,
-        );
+        return const Color(0xFFB87A4B);
 
       case BadgeTier.silver:
-        return const Color(
-          0xFF9AA3AF,
-        );
+        return const Color(0xFF9AA3AF);
 
       case BadgeTier.gold:
-        return const Color(
-          0xFFD9A441,
-        );
+        return const Color(0xFFD9A441);
 
       case BadgeTier.platinum:
-        return const Color(
-          0xFF6C7BD1,
-        );
+        return const Color(0xFF6C7BD1);
 
       case BadgeTier.diamond:
-        return const Color(
-          0xFF3FB6C9,
-        );
+        return const Color(0xFF3FB6C9);
     }
   }
 
   String _tierLabel(
-      BadgeTier tier,
-      AppLocalizations l10n,
-      ) {
+    BadgeTier tier,
+    AppLocalizations l10n,
+  ) {
     switch (tier) {
       case BadgeTier.bronze:
         return l10n.bronze;
@@ -1780,35 +1705,38 @@ class _BadgesScreenState extends State<BadgesScreen> {
   }
 
   Widget _tierPill(
-      BadgeTier tier, {
-        bool onDark = false,
-        required AppLocalizations l10n,
-      }) {
+    BadgeTier tier, {
+    bool onDark = false,
+    required AppLocalizations l10n,
+  }) {
     final color = _tierColor(tier);
 
     return Container(
       padding:
-      const EdgeInsets.symmetric(
-        horizontal: 7,
-        vertical: 2,
+          EdgeInsets.symmetric(
+        horizontal: 7.w,
+        vertical: 2.h,
       ),
       decoration: BoxDecoration(
         color: onDark
             ? Colors.white
-            .withOpacity(0.2)
+                .withOpacity(0.2)
             : color.withOpacity(0.12),
         borderRadius:
-        BorderRadius.circular(20),
+            BorderRadius.circular(20.r),
       ),
       child: Text(
         _tierLabel(
           tier,
           l10n,
         ),
+        maxLines: 1,
+        overflow:
+            TextOverflow.ellipsis,
         style: TextStyle(
-          fontSize: 9,
+          fontSize: 9.sp,
           fontWeight:
-          FontWeight.w700,
+              FontWeight.w700,
           letterSpacing: 0.4,
           color: onDark
               ? AppColors.white

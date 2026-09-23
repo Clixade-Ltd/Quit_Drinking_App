@@ -1,8 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/profile_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/stats/stats_screen.dart';
+import 'package:new_quit_drinking_app/utils/responsive.dart';
 import '../../constants/app_colors.dart';
 import 'badges/badges_screen.dart';
 import 'home_screen.dart';
@@ -76,69 +78,86 @@ class _MainNavScreenState extends State<MainNavScreen> {
         await _handleBackPressed();
       },
       child: Scaffold(
-        extendBody: true,
         body: IndexedStack(
           index: _currentIndex,
           children: _tabs,
         ),
-        bottomNavigationBar: ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(28)),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
-            child: Container(
-              height: 80,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                border: const Border(
-                  top: BorderSide(color: AppColors.bottomNavBorder, width: 1),
-                ),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color(0x0D008080),
-                    blurRadius: 30,
-                    offset: Offset(0, -10),
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _NavItem(
-                    icon: Icons.home_outlined,
-                    label: loc.navHomeLabel,
-                    isSelected: _currentIndex == 0,
-                    onTap: () => setState(() => _currentIndex = 0),
-                  ),
-                  _NavItem(
-                    icon: Icons.bar_chart_outlined,
-                    label: loc.navStatsLabel,
-                    isSelected: _currentIndex == 1,
-                    onTap: () => setState(() => _currentIndex = 1),
-                  ),
-                  _NavItem(
-                    icon: Icons.edit_note_outlined,
-                    label: loc.navJournalLabel,
-                    isSelected: _currentIndex == 2,
-                    onTap: () => setState(() => _currentIndex = 2),
-                  ),
-                  _NavItem(
-                    icon: Icons.emoji_events_outlined,
-                    label: loc.navBadgesLabel,
-                    isSelected: _currentIndex == 3,
-                    onTap: () => setState(() => _currentIndex = 3),
-                  ),
-                  _NavItem(
-                    icon: Icons.person_outline,
-                    label: loc.navProfileLabel,
-                    isSelected: _currentIndex == 4,
-                    onTap: () => setState(() => _currentIndex = 4),
-                  ),
-                ],
+      bottomNavigationBar: SafeArea(
+  top: true,
+   bottom: true,
+  child: Padding(
+    padding: EdgeInsets.fromLTRB(
+      16.w,
+      0,
+      16.w,
+      Responsive.isTablet(context) ? 6.h : 6.h,
+    ),
+    child: ClipRRect(
+      borderRadius: const BorderRadius.all(Radius.circular(28)),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: 24,
+          sigmaY: 24,
+        ),
+        child: Container(
+          height: Responsive.navHeight(),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            border: const Border(
+              top: BorderSide(
+                color: AppColors.bottomNavBorder,
+                width: 1,
               ),
             ),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x0D008080),
+                blurRadius: 30,
+                offset: Offset(0, -10),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _NavItem(
+                icon: Icons.home_outlined,
+                label: loc.navHomeLabel,
+                isSelected: _currentIndex == 0,
+                onTap: () => setState(() => _currentIndex = 0),
+              ),
+              _NavItem(
+                icon: Icons.bar_chart_outlined,
+                label: loc.navStatsLabel,
+                isSelected: _currentIndex == 1,
+                onTap: () => setState(() => _currentIndex = 1),
+              ),
+              _NavItem(
+                icon: Icons.edit_note_outlined,
+                label: loc.navJournalLabel,
+                isSelected: _currentIndex == 2,
+                onTap: () => setState(() => _currentIndex = 2),
+              ),
+              _NavItem(
+                icon: Icons.emoji_events_outlined,
+                label: loc.navBadgesLabel,
+                isSelected: _currentIndex == 3,
+                onTap: () => setState(() => _currentIndex = 3),
+              ),
+              _NavItem(
+                icon: Icons.person_outline,
+                label: loc.navProfileLabel,
+                isSelected: _currentIndex == 4,
+                onTap: () => setState(() => _currentIndex = 4),
+              ),
+            ],
           ),
         ),
+      ),
+    ),
+  ),
+),
       ),
     );
   }
@@ -177,14 +196,14 @@ class _NavItem extends StatelessWidget {
             child: Icon(
               icon,
               color: isSelected ? AppColors.white : AppColors.textLightGrey,
-              size: 22,
+              size: Responsive.iconSize(),
             ),
           ),
-          const SizedBox(height: 4),
+          SizedBox(height: 4.h),
           Text(
             label,
             style: TextStyle(
-              fontSize: 11,
+              fontSize: Responsive.labelFontSize(),
               fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
               color: isSelected ? AppColors.primary : AppColors.textLightGrey,
             ),

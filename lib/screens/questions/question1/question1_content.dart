@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+
 import '../../../constants/app_colors.dart';
 import '../../../models/user_details_draft.dart';
 import '../../../services/analytics_service.dart';
 import '../../../widgets/outlined_select_row.dart';
 import '../../../models/onboarding_answers.dart';
-import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 class Question1Content extends StatefulWidget {
   final ValueChanged<bool> onCanContinueChanged;
@@ -33,6 +35,7 @@ class _Question1ContentState extends State<Question1Content>
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
+
       widget.onCanContinueChanged(_selectedGoal != null);
     });
   }
@@ -45,7 +48,6 @@ class _Question1ContentState extends State<Question1Content>
     UserDetailsDraft.instance.setGoal(goal);
     OnboardingAnswers.instance.setGoal(goal);
 
-    // NEW — onboarding goal selected
     AnalyticsService.instance.onboardingGoalSelected(goal);
 
     widget.onCanContinueChanged(true);
@@ -54,6 +56,7 @@ class _Question1ContentState extends State<Question1Content>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
     final l10n = AppLocalizations.of(context)!;
 
     final List<String> goals = [
@@ -64,34 +67,34 @@ class _Question1ContentState extends State<Question1Content>
     ];
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: [
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
 
           Text(
             l10n.question1Title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 26,
+              fontSize: 26.sp,
               color: AppColors.primary,
             ),
           ),
 
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
 
           Text(
             l10n.question1Subtitle,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(
+              fontSize: 16.sp,
               height: 1.3,
               color: AppColors.textBlack,
             ),
           ),
 
-          const SizedBox(height: 30),
+          SizedBox(height: 30.h),
 
           for (final goal in goals) ...[
             OutlinedSelectRow(
@@ -99,10 +102,11 @@ class _Question1ContentState extends State<Question1Content>
               isSelected: _selectedGoal == goal,
               onTap: () => _selectGoal(goal),
             ),
-            const SizedBox(height: 14),
+
+            SizedBox(height: 14.h),
           ],
 
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
         ],
       ),
     );

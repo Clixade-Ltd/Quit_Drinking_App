@@ -89,25 +89,19 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
 
     debugPrint(
       'Name: ${answers.name}\n'
-          '* Goal: ${answers.goal}\n'
-          '* Drinking Level: ${answers.drinkingLevel}\n'
-          '* Drinks per week: ${answers.drinksPerWeek}\n'
-          '* Money spent per week: ${answers.moneySpentPerWeek}\n'
-          '* Triggers: ${answers.triggers.join(', ')}\n'
-          '* Motivations: ${answers.quitReasons.join(', ')}',
+      '* Goal: ${answers.goal}\n'
+      '* Drinking Level: ${answers.drinkingLevel}\n'
+      '* Drinks per week: ${answers.drinksPerWeek}\n'
+      '* Money spent per week: ${answers.moneySpentPerWeek}\n'
+      '* Triggers: ${answers.triggers.join(', ')}\n'
+      '* Motivations: ${answers.quitReasons.join(', ')}',
     );
-
-    // NOTE: personalizedPlanGenerated()/personalizedPlanFailed() and the
-    // real onboardingComplete() event most likely belong inside
-    // AnalyzingJourneyScreen, once the plan generation actually
-    // succeeds/fails and the onboardingCompleted profile flag gets set —
-    // not here, since at this point the plan hasn't been generated yet.
 
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
         builder: (_) => const AnalyzingJourneyScreen(),
       ),
-          (route) => false,
+      (route) => false,
     );
   }
 
@@ -129,6 +123,9 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
       body: SafeArea(
         child: Column(
           children: [
+            // ----------------------------------------------------------
+            // TOP PROGRESS
+            // ----------------------------------------------------------
             Padding(
               padding: const EdgeInsets.fromLTRB(6, 7, 20, 0),
               child: Row(
@@ -155,6 +152,9 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
               ),
             ),
 
+            // ----------------------------------------------------------
+            // QUESTIONS
+            // ----------------------------------------------------------
             Expanded(
               child: PageView(
                 controller: _pageController,
@@ -166,13 +166,8 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
                     _currentPage = index;
                   });
 
-                  // NEW — a step within the questions flow was reached.
-                  // Step index is local to this flow (0 = goal,
-                  // 1 = drinking level/triggers, 2 = quit reasons). If you'd
-                  // rather have this continue the numbering from the
-                  // intro OnboardingScreen's two steps, let me know and
-                  // I'll offset it (e.g. index + 2).
-                  AnalyticsService.instance.onboardingStepComplete(index);
+                  AnalyticsService.instance
+                      .onboardingStepComplete(index);
                 },
                 children: [
                   Question1Content(
@@ -194,54 +189,123 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
               ),
             ),
 
+            // ----------------------------------------------------------
+            // BOTTOM BUTTONS
+            // NEXT LEFT / CONTINUE RIGHT
+            // ----------------------------------------------------------
             Padding(
-              padding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
-              child: SizedBox(
-                width: double.infinity,
-                height: 54,
-                child: ElevatedButton(
-                  onPressed: canContinue ? _goNext : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: canContinue
-                        ? AppColors.primary
-                        : AppColors.cardBackground,
-                    disabledBackgroundColor: AppColors.cardBackground,
-                    foregroundColor: canContinue
-                        ? AppColors.white
-                        : AppColors.textLightGrey,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        isLastPage ? 9999 : 16,
-                      ),
+  padding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
+  child: TweenAnimationBuilder<double>(
+    tween: Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ),
+    duration: const Duration(milliseconds: 450),
+    curve: Curves.easeOutCubic,
+    builder: (context, value, child) {
+      return Opacity(
+        opacity: value,
+        child: Transform.translate(
+          offset: Offset(
+            0,
+            35 * (1 - value),
+          ),
+          child: Transform.scale(
+            scale: 0.96 + (0.04 * value),
+            child: child,
+          ),
+        ),
+      );
+    },
+    child: SizedBox(
+      width: double.infinity,
+      height: 54,
+      child: Row(
+        children: [
+          // ------------------------------------------------
+          // BACK - LEFT / SMALLER
+          // ------------------------------------------------
+          Expanded(
+            flex: 2,
+            child: SizedBox(
+              height: 54,
+              child: ElevatedButton(
+                onPressed: _goBack,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.cardBackground,
+                  foregroundColor: AppColors.primary,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: const Text(
+  'Back',
+  style: TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 17,
+  ),
+),
+              ),
+            ),
+          ),
+
+          const SizedBox(width: 12),
+
+          // ------------------------------------------------
+          // CONTINUE - RIGHT / LARGER
+          // ------------------------------------------------
+          Expanded(
+            flex: 3,
+            child: SizedBox(
+              height: 54,
+              child: ElevatedButton(
+                onPressed: canContinue ? _goNext : null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: canContinue
+                      ? AppColors.primary
+                      : AppColors.cardBackground,
+                  disabledBackgroundColor:
+                      AppColors.cardBackground,
+                  foregroundColor: canContinue
+                      ? AppColors.white
+                      : AppColors.textLightGrey,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      isLastPage ? 9999 : 16,
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        isLastPage ? l10n.continueButton : l10n.next,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 17,
-                        ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      l10n.continueButton,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17,
                       ),
-                      if (isLastPage) ...[
-                        const SizedBox(width: 8),
-                        Icon(
-                          Icons.arrow_forward,
-                          size: 18,
-                          color: canContinue
-                              ? AppColors.white
-                              : AppColors.textLightGrey,
-                        ),
-                      ],
-                    ],
-                  ),
+                    ),
+                    const SizedBox(width: 8),
+                    Icon(
+                      Icons.arrow_forward,
+                      size: 18,
+                      color: canContinue
+                          ? AppColors.white
+                          : AppColors.textLightGrey,
+                    ),
+                  ],
                 ),
               ),
             ),
+          ),
+        ],
+      ),
+    ),
+  ),
+),
           ],
         ),
       ),
@@ -265,7 +329,7 @@ class _SegmentedProgressBar extends StatelessWidget {
       child: Row(
         children: List.generate(
           segmentCount,
-              (i) {
+          (i) {
             final bool isFilled = i <= currentIndex;
 
             return Expanded(
@@ -278,7 +342,9 @@ class _SegmentedProgressBar extends StatelessWidget {
                   curve: Curves.easeInOut,
                   height: 8,
                   decoration: BoxDecoration(
-                    color: isFilled ? AppColors.primary : AppColors.outlineGrey,
+                    color: isFilled
+                        ? AppColors.primary
+                        : AppColors.outlineGrey,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),

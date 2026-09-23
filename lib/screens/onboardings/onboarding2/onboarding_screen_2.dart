@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../constants/app_colors.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
@@ -10,22 +12,28 @@ class OnboardingScreen2 extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Column(
         children: [
-          const SizedBox(height: 30),
+          SizedBox(height: 30.h),
 
-          // Illustration — same total height (353) as Screen1, image centered inside
+          // ============================================================
+          // ILLUSTRATION
+          // Same total height as Screen1
+          // ============================================================
+
           SizedBox(
-            width: 353,
-            height: 353,
+            width: 300.w,
+            height: 300.w,
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
+                padding: EdgeInsets.symmetric(horizontal: 32.w),
                 child: AspectRatio(
                   aspectRatio: 4 / 3,
                   child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 280),
+                    constraints: BoxConstraints(
+                      maxWidth: 280.w,
+                    ),
                     child: Image.asset(
                       'assets/images/page2.png',
                       fit: BoxFit.cover,
@@ -34,7 +42,7 @@ class OnboardingScreen2 extends StatelessWidget {
                         child: Icon(
                           Icons.image_outlined,
                           color: AppColors.iconBackground,
-                          size: 40,
+                          size: 40.sp,
                         ),
                       ),
                     ),
@@ -44,18 +52,21 @@ class OnboardingScreen2 extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 28),
+          SizedBox(height: 28.h),
 
-          // Heading — ab exact same Y position pe start hoga jaise Screen1
+          // ============================================================
+          // HEADING
+          // ============================================================
+
           SizedBox(
-            width: 260,
+            width: 260.w,
             child: Text(
               l10n.onboardingTitle2,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'SF Pro',
                 fontWeight: FontWeight.w700,
-                fontSize: 28,
+                fontSize: 28.sp,
                 letterSpacing: -0.56,
                 height: 36 / 28,
                 color: AppColors.textBlack,
@@ -63,24 +74,28 @@ class OnboardingScreen2 extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
+
+          // ============================================================
+          // SUBHEADING
+          // ============================================================
 
           SizedBox(
-            width: 300,
+            width: 300.w,
             child: Text(
               l10n.onboardingSubtitle2,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'SF Pro',
                 fontWeight: FontWeight.w400,
-                fontSize: 16,
+                fontSize: 16.sp,
                 height: 24 / 16,
                 color: AppColors.textGrey,
               ),
             ),
           ),
 
-          const SizedBox(height: 24),
+          SizedBox(height: 24.h),
         ],
       ),
     );

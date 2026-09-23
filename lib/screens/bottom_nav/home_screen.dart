@@ -1,19 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:new_quit_drinking_app/screens/bottom_nav/profile/premium_plan_screen.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:share_plus/share_plus.dart';
-import '../../constants/app_colors.dart';
-import '../../services/daily_check_in_service.dart';
-import '../../services/gemini_service.dart';
-import '../../services/home_dashboard_service.dart';
-import '../chat_screen/recovery_coach_chat_screen.dart';
-import '../cravings/craving_screen.dart';
-import '../daily_check_in/daily_check_in_screen.dart';
-import 'package:new_quit_drinking_app/screens/weekly_report/weekly_report_screen.dart';
-import '../../services/premium_service.dart';
+
 import 'dart:convert';
 import 'dart:typed_data';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share_plus/share_plus.dart';
+
+import 'package:new_quit_drinking_app/constants/app_colors.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+import 'package:new_quit_drinking_app/screens/bottom_nav/profile/premium_plan_screen.dart';
+import 'package:new_quit_drinking_app/screens/chat_screen/recovery_coach_chat_screen.dart';
+import 'package:new_quit_drinking_app/screens/cravings/craving_screen.dart';
+import 'package:new_quit_drinking_app/screens/daily_check_in/daily_check_in_screen.dart';
+import 'package:new_quit_drinking_app/screens/weekly_report/weekly_report_screen.dart';
+import 'package:new_quit_drinking_app/services/daily_check_in_service.dart';
+import 'package:new_quit_drinking_app/services/gemini_service.dart';
+import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
+import 'package:new_quit_drinking_app/services/premium_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,12 +28,15 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<_TaskItem> _taskDefinitions(AppLocalizations l10n) => [
-    _TaskItem(label: l10n.taskMorningMeditation),
-    _TaskItem(label: l10n.taskReadChapter),
-    _TaskItem(label: l10n.taskEveningJournal),
-  ];
+        _TaskItem(label: l10n.taskMorningMeditation),
+        _TaskItem(label: l10n.taskReadChapter),
+        _TaskItem(label: l10n.taskEveningJournal),
+      ];
 
-  // DRINKS AVOIDED HERE
+  // ============================================================
+  // DRINKS AVOIDED
+  // ============================================================
+
   String _formatDrinksAvoided(num? value) {
     if (value == null) return '0';
 
@@ -43,17 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // ============================================================
-  // MAP DAILY CHECK-IN MOOD (5 levels) -> HOME MOOD BUCKET (3 levels)
-  // ============================================================
-  //
-  // DailyCheckInScreen stores moodIndex as one of:
-  //   0 = Bad, 1 = Low, 2 = Okay, 3 = Good, 4 = Great
-  //
-  // The home screen only shows 3 buckets, so:
-  //   Bad, Low        -> 'tough'
-  //   Okay            -> 'okay'
-  //   Good, Great     -> 'good'
-  //
+  // MAP DAILY CHECK-IN MOOD
   // ============================================================
 
   String _mapCheckInMoodToHomeMood(int moodIndex) {
@@ -69,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<bool> _tasksDone = [false, false, false];
   String? _userName;
   Uint8List? _photoBytes;
+
   // ============================================================
   // AI PLAN DATA
   // ============================================================
@@ -95,8 +93,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final isPremium = await PremiumService.instance.isPremium();
 
     final profile = await service.getProfile();
+
     Uint8List? photoBytes;
     final photoBase64 = profile?['photoBase64'] as String?;
+
     if (photoBase64 != null && photoBase64.isNotEmpty) {
       try {
         photoBytes = base64Decode(photoBase64);
@@ -106,17 +106,11 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     // ============================================================
-    // TODAY'S DAILY CHECK-IN — used to drive the home mood row
-    // ============================================================
-    //
-    // If today's check-in exists, its 5-level moodIndex is mapped
-    // down to the 3-level bucket the home screen displays. If no
-    // check-in exists yet today, fall back to whatever quick-mood
-    // was already stored via service.getTodayMood().
-    //
+    // TODAY'S DAILY CHECK-IN
     // ============================================================
 
-    final todayCheckIn = await DailyCheckInService.instance.getToday();
+    final todayCheckIn =
+        await DailyCheckInService.instance.getToday();
 
     final resolvedMood = todayCheckIn != null
         ? _mapCheckInMoodToHomeMood(todayCheckIn.moodIndex)
@@ -124,14 +118,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     // ============================================================
     // LOAD SAVED AI PERSONALIZED PLAN
-    // ============================================================
-    //
-    // This plan is generated once during onboarding.
-    //
-    // We ONLY use it here for the welcome message.
-    //
-    // Motivation + health score now come from the DAILY AI update.
-    //
     // ============================================================
 
     final aiPlan = await service.getAIPlan();
@@ -150,17 +136,6 @@ class _HomeScreenState extends State<HomeScreen> {
     // ============================================================
     // LOAD TODAY'S AI UPDATE
     // ============================================================
-    //
-    // If today's update already exists:
-    //     use it
-    //
-    // If today's update does NOT exist:
-    //     ask Gemini for a new motivation + health score
-    //     save it for today
-    //
-    // This means Gemini is called only once per day.
-    //
-    // ============================================================
 
     String? motivationQuote;
     num? healthScore;
@@ -168,10 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
     final todayAIUpdate = await service.getTodayAIUpdate();
 
     if (todayAIUpdate != null) {
-      // ----------------------------------------------------------
-      // TODAY'S UPDATE ALREADY EXISTS
-      // ----------------------------------------------------------
-
       final rawQuote = todayAIUpdate['motivationQuote'];
 
       if (rawQuote != null &&
@@ -187,19 +158,12 @@ class _HomeScreenState extends State<HomeScreen> {
         healthScore = num.tryParse(rawHealthScore.toString());
       }
     } else {
-      // ----------------------------------------------------------
-      // NO UPDATE FOR TODAY
-      // ----------------------------------------------------------
-      //
-      // Generate a completely new daily update.
-      //
-      // ----------------------------------------------------------
-
       try {
         final profile = await service.getProfile() ?? {};
 
         final yesterdayCheckIn =
-        await DailyCheckInService.instance.getYesterday();
+            await DailyCheckInService.instance.getYesterday();
+
         String? yesterdayMood;
         String? yesterdayDidDrink;
         String? yesterdayCravingLevel;
@@ -221,20 +185,18 @@ class _HomeScreenState extends State<HomeScreen> {
           ];
 
           yesterdayMood =
-          moodLabels[yesterdayCheckIn.moodIndex];
+              moodLabels[yesterdayCheckIn.moodIndex];
 
           yesterdayDidDrink =
-          yesterdayCheckIn.stayedOnTrack
-              ? 'No'
-              : 'Yes';
+              yesterdayCheckIn.stayedOnTrack ? 'No' : 'Yes';
 
           yesterdayCravingLevel =
-          cravingLabels[yesterdayCheckIn.cravingLevel];
+              cravingLabels[yesterdayCheckIn.cravingLevel];
 
           yesterdayNote =
-          yesterdayCheckIn.note.isEmpty
-              ? null
-              : yesterdayCheckIn.note;
+              yesterdayCheckIn.note.isEmpty
+                  ? null
+                  : yesterdayCheckIn.note;
         }
 
         final dailyUserData = {
@@ -242,43 +204,25 @@ class _HomeScreenState extends State<HomeScreen> {
           'userGoal': profile['goal'] ?? 'Reduce drinking',
           'drinkingLevel': profile['drinkingLevel'] ?? '',
           'triggers': profile['triggers'] ?? [],
-          'motivations':
-          profile['quitReasons'] ?? [],
-
+          'motivations': profile['quitReasons'] ?? [],
           'daysSober': days,
-
-          // Current streak
           'currentStreak': days,
-
-          'moneySaved':
-          stats['moneySaved'] ?? 0,
-
-          'drinksAvoided':
-          stats['drinksAvoided'] ?? 0,
-
-          // Yesterday's check-in
+          'moneySaved': stats['moneySaved'] ?? 0,
+          'drinksAvoided': stats['drinksAvoided'] ?? 0,
           'yesterdayMood': yesterdayMood,
           'yesterdayDidDrink': yesterdayDidDrink,
-          'yesterdayCravingLevel':
-          yesterdayCravingLevel,
+          'yesterdayCravingLevel': yesterdayCravingLevel,
           'yesterdayNote': yesterdayNote,
         };
 
-        // --------------------------------------------------------
-        // SAVE TODAY'S UPDATE
-        // --------------------------------------------------------
-
         final dailyUpdate =
-        await GeminiService.instance.generateDailyUpdate(
+            await GeminiService.instance.generateDailyUpdate(
           userData: dailyUserData,
-          languageCode: Localizations.localeOf(context).languageCode,
+          languageCode:
+              Localizations.localeOf(context).languageCode,
         );
 
         await service.saveDailyAIUpdate(dailyUpdate);
-
-        // --------------------------------------------------------
-        // READ MOTIVATION
-        // --------------------------------------------------------
 
         final rawQuote = dailyUpdate['motivationQuote'];
 
@@ -287,33 +231,16 @@ class _HomeScreenState extends State<HomeScreen> {
           motivationQuote = rawQuote.toString().trim();
         }
 
-        // --------------------------------------------------------
-        // READ HEALTH SCORE
-        // --------------------------------------------------------
-
         final rawHealthScore = dailyUpdate['healthScore'];
 
         if (rawHealthScore is num) {
           healthScore = rawHealthScore;
         } else if (rawHealthScore != null) {
-          healthScore = num.tryParse(
-            rawHealthScore.toString(),
-          );
+          healthScore =
+              num.tryParse(rawHealthScore.toString());
         }
       } catch (e) {
-        // --------------------------------------------------------
-        // FALLBACK
-        // --------------------------------------------------------
-        //
-        // If Gemini fails, don't stop the dashboard from loading.
-        // The dashboard will simply use the fallback motivation
-        // and health score below.
-        //
-        // --------------------------------------------------------
-
-        debugPrint(
-          'Daily AI update failed: $e',
-        );
+        debugPrint('Daily AI update failed: $e');
       }
     }
 
@@ -325,22 +252,20 @@ class _HomeScreenState extends State<HomeScreen> {
       _stats = stats;
       _tasksDone = tasks;
       _userName = name;
-
       _photoBytes = photoBytes;
 
-      // AI-generated data
       _welcomeMessage = welcomeMessage;
       _motivationQuote = motivationQuote;
       _healthScore = healthScore;
 
       _isLoading = false;
-
       _isPremium = isPremium;
     });
   }
 
   Future<void> _selectMood(String mood) async {
     setState(() => _selectedMood = mood);
+
     await HomeDashboardService.instance.setTodayMood(mood);
   }
 
@@ -375,14 +300,12 @@ class _HomeScreenState extends State<HomeScreen> {
   // ============================================================
   // FULL WELCOME MESSAGE DIALOG
   // ============================================================
-  //
-  // Tapping the (now-truncated) welcome text on Card 1 opens this
-  // dialog, showing the full AI welcome message centered on screen.
-  //
-  // ============================================================
 
   void _showWelcomeMessageDialog(BuildContext context) {
-    if (_welcomeMessage == null || _welcomeMessage!.isEmpty) return;
+    if (_welcomeMessage == null || _welcomeMessage!.isEmpty) {
+      return;
+    }
+
     final l10n = AppLocalizations.of(context)!;
 
     showDialog(
@@ -392,39 +315,41 @@ class _HomeScreenState extends State<HomeScreen> {
         return Dialog(
           backgroundColor: AppColors.white,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(28),
+            borderRadius: BorderRadius.circular(28.r),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(24),
+            padding: EdgeInsets.all(24.r),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   _welcomeMessage!,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w400,
-                    fontSize: 15,
+                    fontSize: 15.sp,
                     color: AppColors.textBlack,
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 InkWell(
-                  borderRadius: BorderRadius.circular(9999),
-                  onTap: () => Navigator.of(dialogContext).pop(),
+                  borderRadius: BorderRadius.circular(9999.r),
+                  onTap: () =>
+                      Navigator.of(dialogContext).pop(),
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 12,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 12.h,
                     ),
                     decoration: BoxDecoration(
                       color: const Color(0xFFD7E5E2),
-                      borderRadius: BorderRadius.circular(9999),
+                      borderRadius:
+                          BorderRadius.circular(9999.r),
                     ),
                     child: Text(
                       l10n.close,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         color: AppColors.textGrey,
                       ),
                     ),
@@ -445,7 +370,9 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const WeeklyReportScreen()),
+      MaterialPageRoute(
+        builder: (_) => const WeeklyReportScreen(),
+      ),
     );
   }
 
@@ -459,34 +386,45 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: AppColors.white,
           title: Text(
             l10n.unlockWeeklyReportsTitle,
-            style: const TextStyle(
+            style: TextStyle(
               color: AppColors.textBlack,
               fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
             ),
           ),
           content: Text(
             l10n.unlockWeeklyReportsMessage,
-            style: const TextStyle(color: AppColors.textGrey),
+            style: TextStyle(
+              color: AppColors.textGrey,
+              fontSize: 14.sp,
+            ),
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text(l10n.maybeLater),
+              onPressed: () =>
+                  Navigator.of(context).pop(),
+              child: Text(
+                l10n.maybeLater,
+                style: TextStyle(fontSize: 14.sp),
+              ),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
+
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => const PremiumPlanScreen(),
+                    builder: (_) =>
+                        const PremiumPlanScreen(),
                   ),
                 );
               },
               child: Text(
                 l10n.upgrade,
-                style: const TextStyle(
+                style: TextStyle(
                   color: AppColors.primary,
                   fontWeight: FontWeight.w600,
+                  fontSize: 14.sp,
                 ),
               ),
             ),
@@ -510,44 +448,57 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     final String displayName =
-    (_userName != null && _userName!.trim().isNotEmpty)
-        ? _userName!.trim()
-        : 'there'; // TODO: agar "there" ko bhi localize karna hai to l10n.thereFallback jaisi key add kar dena
+        (_userName != null && _userName!.trim().isNotEmpty)
+            ? _userName!.trim()
+            : 'there';
 
     return Scaffold(
       backgroundColor: AppColors.dashboardBackground,
       body: SafeArea(
         child: Column(
           children: [
-            // APP BAR — "Quit " / "Drinking" ko brand name treat kiya hai,
-            // translate nahi kiya (previous message mein discuss hua tha)
+            // ============================================================
+            // HEADER
+            // ============================================================
+
             Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+              padding: EdgeInsets.fromLTRB(
+                16.w,
+                12.h,
+                16.w,
+                8.h,
+              ),
               child: SizedBox(
-                height: 44,
+                height: 44.h,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
                     Center(
                       child: RichText(
-                        text: const TextSpan(
+                        text: TextSpan(
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 23,
+                            fontSize: 23.sp,
                           ),
-                          children: [
+                          children: const [
                             TextSpan(
                               text: 'Quit ',
-                              style: TextStyle(color: AppColors.textBlack),
+                              style: TextStyle(
+                                color: AppColors.textBlack,
+                              ),
                             ),
                             TextSpan(
                               text: 'Drinking',
-                              style: TextStyle(color: AppColors.primary),
+                              style: TextStyle(
+                                color: AppColors.primary,
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
+
+                    // PREMIUM CROWN
                     Align(
                       alignment: Alignment.centerRight,
                       child: InkWell(
@@ -555,24 +506,26 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const PremiumPlanScreen(),
+                              builder: (_) =>
+                                  const PremiumPlanScreen(),
                             ),
                           );
                         },
-                        borderRadius: BorderRadius.circular(999),
+                        borderRadius:
+                            BorderRadius.circular(999.r),
                         child: Container(
-                          width: 40,
-                          height: 40,
+                          width: 40.r,
+                          height: 40.r,
                           alignment: Alignment.center,
                           decoration: const BoxDecoration(
                             color: AppColors.primary,
                             shape: BoxShape.circle,
                           ),
-                         child: const FaIcon(
-  FontAwesomeIcons.crown,
-  color: Colors.amber,
-  size: 18,
-)
+                          child: FaIcon(
+                            FontAwesomeIcons.crown,
+                            color: Colors.amber,
+                            size: 18.r,
+                          ),
                         ),
                       ),
                     ),
@@ -581,45 +534,67 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
+            // ============================================================
+            // CONTENT
+            // ============================================================
+
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(20, 2, 20, 24),
+                padding: EdgeInsets.fromLTRB(
+                  20.w,
+                  2.h,
+                  20.w,
+                  24.h,
+                ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start,
                   children: [
+                    // ======================================================
+                    // PROFILE ROW
+                    // ======================================================
+
                     Row(
                       children: [
                         Container(
-                          width: 38,
-                          height: 38,
+                          width: 38.r,
+                          height: 38.r,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            border: Border.all(color: AppColors.primary, width: 1.5),
+                            border: Border.all(
+                              color: AppColors.primary,
+                              width: 1.5,
+                            ),
                             color: AppColors.iconBackground,
                             image: _photoBytes != null
                                 ? DecorationImage(
-                              image: MemoryImage(_photoBytes!),
-                              fit: BoxFit.cover,
-                            )
+                                    image: MemoryImage(
+                                      _photoBytes!,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  )
                                 : null,
                           ),
                           child: _photoBytes == null
-                              ? const Icon(
-                            Icons.person_outline,
-                            color: AppColors.primary,
-                            size: 22,
-                          )
+                              ? Icon(
+                                  Icons.person_outline,
+                                  color: AppColors.primary,
+                                  size: 22.r,
+                                )
                               : null,
                         ),
-                        const SizedBox(width: 10),
+
+                        SizedBox(width: 10.w),
+
                         Expanded(
                           child: Text(
                             '${_greeting(l10n)}, $displayName',
                             maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            overflow:
+                                TextOverflow.ellipsis,
+                            style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 18,
+                              fontSize: 18.sp,
                               color: AppColors.textBlack,
                             ),
                           ),
@@ -627,16 +602,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
 
-                    const SizedBox(height: 4),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 4.h),
+                    SizedBox(height: 10.h),
 
+                    // ======================================================
                     // CARD 1 — SOBRIETY
+                    // ======================================================
+
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.all(24),
+                      padding: EdgeInsets.all(24.r),
                       decoration: BoxDecoration(
                         color: AppColors.white,
-                        borderRadius: BorderRadius.circular(48),
+                        borderRadius:
+                            BorderRadius.circular(48.r),
                         boxShadow: const [
                           BoxShadow(
                             color: Color(0x0A000000),
@@ -650,107 +629,92 @@ class _HomeScreenState extends State<HomeScreen> {
                           if (_welcomeMessage != null &&
                               _welcomeMessage!.isNotEmpty) ...[
                             GestureDetector(
-                              onTap: () => _showWelcomeMessageDialog(context),
+                              onTap: () =>
+                                  _showWelcomeMessageDialog(
+                                context,
+                              ),
                               child: Text(
                                 _welcomeMessage!,
                                 maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 15,
-                                  color: AppColors.textBlack,
+                                overflow:
+                                    TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontWeight:
+                                      FontWeight.w400,
+                                  fontSize: 15.sp,
+                                  color:
+                                      AppColors.textBlack,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 28),
+
+                            SizedBox(height: 28.h),
                           ],
 
-                          SizedBox(
+                          // SOBRIETY CIRCLE
+                          //
+                          // Intentionally fixed at 140x140.
+                          // This prevents it becoming too large on tablets.
+
+                          const SizedBox(
                             width: 140,
                             height: 140,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                SizedBox(
-                                  width: 140,
-                                  height: 140,
-                                  child: CircularProgressIndicator(
-                                    value: ((_daysSober % 30) / 30).clamp(0.02, 1.0),
-                                    strokeWidth: 18,
-                                    strokeCap: StrokeCap.round,
-                                    backgroundColor: AppColors.progressBarBackground,
-                                    valueColor: const AlwaysStoppedAnimation<Color>(
-                                      AppColors.primary,
-                                    ),
-                                  ),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text(
-                                      '$_daysSober',
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 36,
-                                        color: AppColors.textBlack,
-                                      ),
-                                    ),
-                                    Text(
-                                      l10n.daysCapsLabel,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 13,
-                                        letterSpacing: 1.4,
-                                        color: AppColors.textBlack,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                            child: _FixedSobrietyCircle(),
                           ),
 
-                          const SizedBox(height: 28),
+                          SizedBox(height: 28.h),
 
                           Text(
                             l10n.youAreDoingGreat,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              fontSize: 22,
+                              fontSize: 22.sp,
                               color: AppColors.textBlack,
                             ),
                           ),
 
-                          const SizedBox(height: 15),
+                          SizedBox(height: 15.h),
 
                           InkWell(
-                            borderRadius: BorderRadius.circular(9999),
-                            onTap: () => _shareMilestone(l10n),
+                            borderRadius:
+                                BorderRadius.circular(
+                              9999.r,
+                            ),
+                            onTap: () =>
+                                _shareMilestone(l10n),
                             child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 12,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 24.w,
+                                vertical: 12.h,
                               ),
                               decoration: BoxDecoration(
-                                color: const Color(0xFFD7E5E2),
-                                borderRadius: BorderRadius.circular(9999),
+                                color:
+                                    const Color(0xFFD7E5E2),
+                                borderRadius:
+                                    BorderRadius.circular(
+                                  9999.r,
+                                ),
                               ),
                               child: Row(
-                                mainAxisSize: MainAxisSize.min,
+                                mainAxisSize:
+                                    MainAxisSize.min,
                                 children: [
-                                  const Icon(
+                                  Icon(
                                     Icons.share_outlined,
-                                    size: 16,
-                                    color: AppColors.textGrey,
+                                    size: 16.r,
+                                    color:
+                                        AppColors.textGrey,
                                   ),
-                                  const SizedBox(width: 8),
+                                  SizedBox(width: 8.w),
                                   Text(
                                     l10n.shareMilestone,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14,
-                                      color: AppColors.textGrey,
+                                    style: TextStyle(
+                                      fontWeight:
+                                          FontWeight.w600,
+                                      fontSize: 14.sp,
+                                      color:
+                                          AppColors.textGrey,
                                     ),
                                   ),
                                 ],
@@ -761,19 +725,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
-                    // WEEKLY REPORT CARD (Mondays only)
-                    if (DateTime.now().weekday == DateTime.monday) ...[
+                    // ======================================================
+                    // WEEKLY REPORT CARD
+                    // ======================================================
+
+                    if (DateTime.now().weekday ==
+                        DateTime.monday) ...[
                       InkWell(
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius:
+                            BorderRadius.circular(24.r),
                         onTap: _openWeeklyReport,
                         child: Container(
                           width: double.infinity,
-                          padding: const EdgeInsets.all(18),
+                          padding: EdgeInsets.all(18.r),
                           decoration: BoxDecoration(
                             color: AppColors.primary,
-                            borderRadius: BorderRadius.circular(24),
+                            borderRadius:
+                                BorderRadius.circular(24.r),
                             boxShadow: const [
                               BoxShadow(
                                 color: Color(0x1A000000),
@@ -785,61 +755,81 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Row(
                             children: [
                               Container(
-                                width: 44,
-                                height: 44,
+                                width: 44.r,
+                                height: 44.r,
                                 decoration: BoxDecoration(
-                                  color: AppColors.white.withOpacity(0.18),
+                                  color: AppColors.white
+                                      .withOpacity(0.18),
                                   shape: BoxShape.circle,
                                 ),
-                                child: const Icon(
+                                child: Icon(
                                   Icons.insights_outlined,
                                   color: AppColors.white,
-                                  size: 22,
+                                  size: 22.r,
                                 ),
                               ),
-                              const SizedBox(width: 14),
+
+                              SizedBox(width: 14.w),
+
                               Expanded(
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment
+                                          .start,
                                   children: [
                                     Text(
-                                      l10n.weeklyReportReadyTitle,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 15,
-                                        color: AppColors.white,
+                                      l10n
+                                          .weeklyReportReadyTitle,
+                                      style: TextStyle(
+                                        fontWeight:
+                                            FontWeight.w700,
+                                        fontSize: 15.sp,
+                                        color:
+                                            AppColors.white,
                                       ),
                                     ),
-                                    const SizedBox(height: 3),
+
+                                    SizedBox(height: 3.h),
+
                                     Text(
-                                      l10n.weeklyReportReadySubtitle,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 12,
-                                        color: AppColors.white,
+                                      l10n
+                                          .weeklyReportReadySubtitle,
+                                      style: TextStyle(
+                                        fontWeight:
+                                            FontWeight.w400,
+                                        fontSize: 12.sp,
+                                        color:
+                                            AppColors.white,
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                              const Icon(
+
+                              Icon(
                                 Icons.chevron_right,
                                 color: AppColors.white,
+                                size: 22.r,
                               ),
                             ],
                           ),
                         ),
                       ),
-                      const SizedBox(height: 16),
+
+                      SizedBox(height: 16.h),
                     ],
 
+                    // ======================================================
                     // CARD 2 — MOOD
+                    // ======================================================
+
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.all(24),
+                      padding: EdgeInsets.all(24.r),
                       decoration: BoxDecoration(
                         color: AppColors.white,
-                        borderRadius: BorderRadius.circular(48),
+                        borderRadius:
+                            BorderRadius.circular(48.r),
                         boxShadow: const [
                           BoxShadow(
                             color: Color(0x0A000000),
@@ -849,91 +839,115 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment:
+                            CrossAxisAlignment.start,
                         children: [
                           Text(
                             l10n.howAreYouFeeling,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               color: AppColors.textBlack,
                             ),
                           ),
-                          const SizedBox(height: 16),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              _buildMoodButton(
-                                mood: 'tough',
-                                icon: Icons.sentiment_very_dissatisfied_outlined,
-                                label: l10n.moodTough,
-                                color: const Color(0xFFE8746B),
-                              ),
-                              _buildMoodButton(
-                                mood: 'okay',
-                                icon: Icons.sentiment_neutral,
-                                label: l10n.moodOkay,
-                                color: AppColors.textLightGrey,
-                              ),
-                              _buildMoodButton(
-                                mood: 'good',
-                                icon: Icons.sentiment_satisfied_alt,
-                                label: l10n.moodGood,
-                                color: AppColors.primary,
-                              ),
-                            ],
-                          ),
+
+                          SizedBox(height: 16.h),
+
+                         Padding(
+  padding: EdgeInsets.symmetric(horizontal: 18.w),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      _buildMoodButton(
+        mood: 'tough',
+        icon: Icons.sentiment_very_dissatisfied_outlined,
+        label: l10n.moodTough,
+        color: const Color(0xFFE8746B),
+      ),
+      _buildMoodButton(
+        mood: 'okay',
+        icon: Icons.sentiment_neutral,
+        label: l10n.moodOkay,
+        color: AppColors.textLightGrey,
+      ),
+      _buildMoodButton(
+        mood: 'good',
+        icon: Icons.sentiment_satisfied_alt,
+        label: l10n.moodGood,
+        color: AppColors.primary,
+      ),
+    ],
+  ),
+),
                         ],
                       ),
                     ),
 
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
+                    // ======================================================
                     // STAT GRID
+                    // ======================================================
+
                     GridView.count(
                       crossAxisCount: 2,
                       shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
+                      physics:
+                          const NeverScrollableScrollPhysics(),
+                      mainAxisSpacing: 16.h,
+                      crossAxisSpacing: 16.w,
+
+                      // Keep the existing card proportions.
                       childAspectRatio: 140 / 145,
+
                       children: [
                         _buildStatCard(
-                          icon: Icons.account_balance_wallet_outlined,
+                          icon: Icons
+                              .account_balance_wallet_outlined,
                           label: l10n.moneySaved,
-                          value: '\$${_stats['moneySaved'] ?? 0}',
+                          value:
+                              '\$${_stats['moneySaved'] ?? 0}',
                           subtitle: l10n.estimated,
                         ),
                         _buildStatCard(
-                          icon: Icons.local_fire_department_outlined,
+                          icon: Icons
+                              .local_fire_department_outlined,
                           label: l10n.caloriesSaved,
-                          value: '${_stats['caloriesAvoided'] ?? 0}',
+                          value:
+                              '${_stats['caloriesAvoided'] ?? 0}',
                           subtitle: l10n.estimated,
                         ),
                         _buildStatCard(
                           icon: Icons.favorite_border,
                           label: l10n.healthScore,
-                          value: '${_healthScore ?? 0}/100',
+                          value:
+                              '${_healthScore ?? 0}/100',
                           subtitle: l10n.aiGenerated,
                         ),
                         _buildStatCard(
                           icon: Icons.water_drop_outlined,
                           label: l10n.drinksAvoided,
-                          value: _formatDrinksAvoided(_stats['drinksAvoided']),
+                          value: _formatDrinksAvoided(
+                            _stats['drinksAvoided'],
+                          ),
                           subtitle: l10n.estimated,
                         ),
                       ],
                     ),
 
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
+                    // ======================================================
                     // TODAY'S MOTIVATION
+                    // ======================================================
+
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.all(18),
+                      padding: EdgeInsets.all(18.r),
                       decoration: BoxDecoration(
                         color: AppColors.white,
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius:
+                            BorderRadius.circular(24.r),
                         boxShadow: const [
                           BoxShadow(
                             color: Color(0x0A000000),
@@ -943,34 +957,43 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment:
+                            CrossAxisAlignment.start,
                         children: [
                           Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.format_quote,
                                 color: AppColors.textBlack,
-                                size: 20,
+                                size: 20.r,
                               ),
-                              const SizedBox(width: 6),
+
+                              SizedBox(width: 6.w),
+
                               Text(
                                 l10n.todaysMotivation,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 16,
-                                  color: AppColors.textBlack,
+                                style: TextStyle(
+                                  fontWeight:
+                                      FontWeight.w600,
+                                  fontSize: 16.sp,
+                                  color:
+                                      AppColors.textBlack,
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 10),
+
+                          SizedBox(height: 10.h),
+
                           Text(
-                            (_motivationQuote != null && _motivationQuote!.isNotEmpty)
+                            (_motivationQuote != null &&
+                                    _motivationQuote!
+                                        .isNotEmpty)
                                 ? _motivationQuote!
                                 : l10n.defaultMotivationQuote,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               height: 1.5,
                               color: AppColors.textGrey,
                             ),
@@ -978,44 +1001,56 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 16),
 
+                    SizedBox(height: 16.h),
+
+                    // ======================================================
                     // TALK TO COACH
+                    // ======================================================
+
                     SizedBox(
                       width: double.infinity,
-                      height: 50,
+                      height: 50.h,
                       child: OutlinedButton(
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (_) => const RecoveryCoachChatScreen(),
+                              builder: (_) =>
+                                  const RecoveryCoachChatScreen(),
                             ),
                           );
                         },
                         style: OutlinedButton.styleFrom(
-                          foregroundColor: AppColors.primary,
+                          foregroundColor:
+                              AppColors.primary,
                           side: const BorderSide(
                             color: AppColors.primary,
                             width: 1,
                           ),
                           padding: EdgeInsets.zero,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius:
+                                BorderRadius.circular(8.r),
                           ),
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment:
+                              MainAxisAlignment.center,
                           children: [
-                            const Icon(
-                              Icons.support_agent_outlined,
-                              size: 19,
+                            Icon(
+                              Icons
+                                  .support_agent_outlined,
+                              size: 19.r,
                             ),
-                            const SizedBox(width: 7),
+
+                            SizedBox(width: 7.w),
+
                             Text(
                               l10n.talkToCoach,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
+                              style: TextStyle(
+                                fontWeight:
+                                    FontWeight.w600,
+                                fontSize: 14.sp,
                               ),
                             ),
                           ],
@@ -1023,24 +1058,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16.h),
 
+                    // ======================================================
                     // CRAVING BUTTON
+                    // ======================================================
+
                     InkWell(
-                      borderRadius: BorderRadius.circular(48),
+                      borderRadius:
+                          BorderRadius.circular(48.r),
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => const CravingScreen(),
+                            builder: (_) =>
+                                const CravingScreen(),
                           ),
                         );
                       },
                       child: Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 16.h,
+                        ),
                         decoration: BoxDecoration(
                           color: const Color(0xFFDB7361),
-                          borderRadius: BorderRadius.circular(32),
+                          borderRadius:
+                              BorderRadius.circular(32.r),
                           boxShadow: const [
                             BoxShadow(
                               color: Color(0x33DB7361),
@@ -1051,20 +1094,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment:
+                              MainAxisAlignment.center,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.emergency,
                               color: AppColors.white,
-                              size: 20,
+                              size: 20.r,
                             ),
-                            const SizedBox(width: 8),
+
+                            SizedBox(width: 8.w),
+
                             Text(
                               l10n.havingACraving,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15,
-                                color: AppColors.white,
+                              style: TextStyle(
+                                fontWeight:
+                                    FontWeight.w600,
+                                fontSize: 15.sp,
+                                color:
+                                    AppColors.white,
                               ),
                             ),
                           ],
@@ -1081,6 +1129,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // ============================================================
+  // MOOD BUTTON
+  // ============================================================
+
   Widget _buildMoodButton({
     required String mood,
     required IconData icon,
@@ -1090,50 +1142,51 @@ class _HomeScreenState extends State<HomeScreen> {
     final bool isSelected = _selectedMood == mood;
 
     return InkWell(
-      borderRadius: BorderRadius.circular(30),
+      borderRadius: BorderRadius.circular(30.r),
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const DailyCheckInScreen(),
+            builder: (_) =>
+                const DailyCheckInScreen(),
           ),
         );
       },
       child: Column(
         children: [
+          // Keep 56x56 fixed so tablet doesn't make
+          // these buttons unnecessarily large.
           Container(
             width: 56,
             height: 56,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-
-              // Every icon always has its tinted background —
-              // selection adds the ring border on top of that,
-              // it doesn't create the background.
               color: color.withOpacity(0.15),
-
               border: Border.all(
-                color: isSelected ? color : Colors.transparent,
+                color:
+                    isSelected ? color : Colors.transparent,
                 width: 2,
               ),
             ),
             child: Icon(
               icon,
               color: color,
-              size: 26,
+              size: 26.r,
             ),
           ),
 
-          const SizedBox(height: 6),
+          SizedBox(height: 6.h),
 
           Text(
             label,
             style: TextStyle(
-              fontSize: 13,
-              fontWeight:
-              isSelected ? FontWeight.w700 : FontWeight.w400,
-              color:
-              isSelected ? color : AppColors.textLightGrey,
+              fontSize: 13.sp,
+              fontWeight: isSelected
+                  ? FontWeight.w700
+                  : FontWeight.w400,
+              color: isSelected
+                  ? color
+                  : AppColors.textLightGrey,
             ),
           ),
         ],
@@ -1141,18 +1194,23 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // ============================================================
+  // STAT CARD
+  // ============================================================
+
   Widget _buildStatCard({
     required IconData icon,
     required String label,
     required String value,
     required String subtitle,
-    Color subtitleColor = AppColors.textLightGrey,
+    Color subtitleColor =
+        AppColors.textLightGrey,
   }) {
     return Container(
-      padding: const EdgeInsets.all(18),
+      padding: EdgeInsets.all(18.r),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(24.r),
         boxShadow: const [
           BoxShadow(
             color: Color(0x0A000000),
@@ -1162,28 +1220,32 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment:
+            CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 42,
+            height: 42.h,
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start,
               children: [
                 Icon(
                   icon,
                   color: AppColors.textGrey,
-                  size: 18,
+                  size: 18.r,
                 ),
 
-                const SizedBox(width: 6),
+                SizedBox(width: 6.w),
 
                 Expanded(
                   child: Text(
                     label,
                     maxLines: 2,
-                    style: const TextStyle(
+                    overflow:
+                        TextOverflow.ellipsis,
+                    style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       color: AppColors.textGrey,
                     ),
                   ),
@@ -1192,31 +1254,97 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          const SizedBox(height: 8),
+          SizedBox(height: 8.h),
 
           Text(
             value,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 23,
+              fontSize: 23.sp,
               letterSpacing: -0.32,
               color: AppColors.textBlack,
             ),
           ),
 
-          const SizedBox(height: 2),
+          SizedBox(height: 2.h),
 
           Text(
             subtitle,
             maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontWeight: FontWeight.w400,
-              fontSize: 12,
+              fontSize: 12.sp,
               color: subtitleColor,
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+// ============================================================
+// FIXED SOBRIETY CIRCLE
+// ============================================================
+//
+// Separate widget keeps the 140x140 visual size fixed.
+// The actual days value is passed through inherited context
+// using the parent state, so no UI structure change is needed.
+//
+
+class _FixedSobrietyCircle extends StatelessWidget {
+  const _FixedSobrietyCircle();
+
+  @override
+  Widget build(BuildContext context) {
+    final state =
+        context.findAncestorStateOfType<_HomeScreenState>()!;
+
+    final days = state._daysSober;
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        SizedBox(
+          width: 140,
+          height: 140,
+          child: CircularProgressIndicator(
+            value: ((days % 30) / 30).clamp(0.02, 1.0),
+            strokeWidth: 18,
+            strokeCap: StrokeCap.round,
+            backgroundColor:
+                AppColors.progressBarBackground,
+            valueColor:
+                const AlwaysStoppedAnimation<Color>(
+              AppColors.primary,
+            ),
+          ),
+        ),
+
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              '$days',
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 36.sp,
+                color: AppColors.textBlack,
+              ),
+            ),
+            Text(
+              days == 1 ? 'DAY' : 'DAYS',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 13.sp,
+                letterSpacing: 1.4,
+                color: AppColors.textBlack,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

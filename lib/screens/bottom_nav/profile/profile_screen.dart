@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -14,7 +15,7 @@ import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
 import 'package:new_quit_drinking_app/services/local_storage_service.dart';
 import 'package:new_quit_drinking_app/services/analytics_service.dart';
 
-import '../../details/details_screen.dart';
+//import '../../details/details_screen.dart';
 
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
@@ -61,7 +62,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       final profile = await _service.getProfile();
 
       if (profile == null) {
-        throw StateError('No profile data found on this device yet.');
+        throw StateError(
+          'No profile data found on this device yet.',
+        );
       }
 
       final days = await _service.getDaysSober();
@@ -74,8 +77,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _isLoading = false;
       });
     } catch (e, stackTrace) {
-      debugPrint('PROFILE LOAD ERROR: $e\n$stackTrace');
+      debugPrint(
+        'PROFILE LOAD ERROR: $e\n$stackTrace',
+      );
+
       if (!mounted) return;
+
       setState(() {
         _isLoading = false;
         _errorMessage = e.toString();
@@ -88,9 +95,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // =====================================================================
 
   String _stringValue(
-      String key, {
-        String fallback = 'Not provided',
-      }) {
+    String key, {
+    String fallback = 'Not provided',
+  }) {
     final value = _profileData?[key];
 
     if (value == null) return fallback;
@@ -114,19 +121,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   String _greeting(AppLocalizations l10n) {
     final hour = DateTime.now().hour;
-    if (hour < 12) return l10n.goodMorning;
-    if (hour < 17) return l10n.goodAfternoon;
-    if (hour < 21) return l10n.goodEvening;
+
+    if (hour < 12) {
+      return l10n.goodMorning;
+    }
+
+    if (hour < 17) {
+      return l10n.goodAfternoon;
+    }
+
+    if (hour < 21) {
+      return l10n.goodEvening;
+    }
+
     return l10n.goodNight;
   }
 
   String _goal(AppLocalizations l10n) {
-    return _stringValue('goal', fallback: 'Not set');
+    return _stringValue(
+      'goal',
+      fallback: 'Not set',
+    );
   }
 
   Uint8List? get _photoBytes {
     final b64 = _profileData?['photoBase64'] as String?;
-    if (b64 == null || b64.isEmpty) return null;
+
+    if (b64 == null || b64.isEmpty) {
+      return null;
+    }
+
     try {
       return base64Decode(b64);
     } catch (_) {
@@ -144,44 +168,66 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20.r),
+        ),
       ),
       builder: (context) => SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              leading: const Icon(
+              leading: Icon(
                 Icons.photo_library_outlined,
                 color: AppColors.primary,
+                size: 24.sp,
               ),
-              title: Text(l10n.chooseFromGallery),
+              title: Text(
+                l10n.chooseFromGallery,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                ),
+              ),
               onTap: () {
                 Navigator.pop(context);
-                _pickAndUploadPhoto(ImageSource.gallery);
+                _pickAndUploadPhoto(
+                  ImageSource.gallery,
+                );
               },
             ),
             ListTile(
-              leading: const Icon(
+              leading: Icon(
                 Icons.camera_alt_outlined,
                 color: AppColors.primary,
+                size: 24.sp,
               ),
-              title: Text(l10n.takePhoto),
+              title: Text(
+                l10n.takePhoto,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                ),
+              ),
               onTap: () {
                 Navigator.pop(context);
-                _pickAndUploadPhoto(ImageSource.camera);
+                _pickAndUploadPhoto(
+                  ImageSource.camera,
+                );
               },
             ),
             if (hasPhoto)
               ListTile(
-                leading: const Icon(
+                leading: Icon(
                   Icons.delete_outline,
                   color: Colors.redAccent,
+                  size: 24.sp,
                 ),
                 title: Text(
                   l10n.removePhoto,
-                  style: const TextStyle(color: Colors.redAccent),
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                    fontSize: 14.sp,
+                  ),
                 ),
                 onTap: () {
                   Navigator.pop(context);
@@ -195,18 +241,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   // =====================================================================
-  // FULLSCREEN PHOTO PREVIEW (long press on avatar)
+  // FULLSCREEN PHOTO PREVIEW
   // =====================================================================
 
   void _showFullScreenPhoto() {
     final photoBytes = _photoBytes;
+
     if (photoBytes == null) return;
 
     Navigator.of(context).push(
       PageRouteBuilder(
         opaque: false,
         barrierColor: Colors.black87,
-        pageBuilder: (context, animation, secondaryAnimation) {
+        pageBuilder: (
+          context,
+          animation,
+          secondaryAnimation,
+        ) {
           return FadeTransition(
             opacity: animation,
             child: GestureDetector(
@@ -219,8 +270,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: ClipOval(
                       child: Image.memory(
                         photoBytes,
-                        width: 280,
-                        height: 280,
+                        width: 280.w,
+                        height: 280.w,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -234,7 +285,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Future<void> _pickAndUploadPhoto(ImageSource source) async {
+  Future<void> _pickAndUploadPhoto(
+    ImageSource source,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
 
     try {
@@ -251,7 +304,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
       final cropped = await ImageCropper().cropImage(
         sourcePath: picked.path,
-        aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
+        aspectRatio: const CropAspectRatio(
+          ratioX: 1,
+          ratioY: 1,
+        ),
         compressQuality: 70,
         uiSettings: [
           AndroidUiSettings(
@@ -271,16 +327,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
       if (cropped == null) return;
 
-      setState(() => _isUploadingPhoto = true);
+      setState(() {
+        _isUploadingPhoto = true;
+      });
 
-      final bytes = await File(cropped.path).readAsBytes();
+      final bytes = await File(
+        cropped.path,
+      ).readAsBytes();
+
       final base64Str = base64Encode(bytes);
 
       if (base64Str.length > 900000) {
-        throw StateError(l10n.photoTooLarge);
+        throw StateError(
+          l10n.photoTooLarge,
+        );
       }
 
-      await _service.setProfilePhotoBase64(base64Str);
+      await _service.setProfilePhotoBase64(
+        base64Str,
+      );
 
       if (!mounted) return;
 
@@ -293,13 +358,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
       });
 
       _analytics.profilePhotoChanged(
-        source == ImageSource.gallery ? 'gallery' : 'camera',
+        source == ImageSource.gallery
+            ? 'gallery'
+            : 'camera',
       );
     } catch (e) {
       if (!mounted) return;
-      setState(() => _isUploadingPhoto = false);
+
+      setState(() {
+        _isUploadingPhoto = false;
+      });
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.couldNotUpdatePhoto(e.toString()))),
+        SnackBar(
+          content: Text(
+            l10n.couldNotUpdatePhoto(
+              e.toString(),
+            ),
+          ),
+        ),
       );
     }
   }
@@ -308,7 +385,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final l10n = AppLocalizations.of(context)!;
 
     try {
-      setState(() => _isUploadingPhoto = true);
+      setState(() {
+        _isUploadingPhoto = true;
+      });
 
       await _service.removeProfilePhoto();
 
@@ -319,12 +398,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
         _isUploadingPhoto = false;
       });
 
-      _analytics.profilePhotoChanged('removed');
+      _analytics.profilePhotoChanged(
+        'removed',
+      );
     } catch (e) {
       if (!mounted) return;
-      setState(() => _isUploadingPhoto = false);
+
+      setState(() {
+        _isUploadingPhoto = false;
+      });
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.couldNotRemovePhoto(e.toString()))),
+        SnackBar(
+          content: Text(
+            l10n.couldNotRemovePhoto(
+              e.toString(),
+            ),
+          ),
+        ),
       );
     }
   }
@@ -335,7 +426,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void _openPremiumPlan(BuildContext context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => const PremiumPlanScreen()),
+      MaterialPageRoute(
+        builder: (_) => const PremiumPlanScreen(),
+      ),
     );
   }
 
@@ -343,9 +436,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // EDIT PROFILE / RECOVERY GOALS
   // =====================================================================
 
-  Future<void> _openEditProfile(BuildContext context) async {
+  Future<void> _openEditProfile(
+    BuildContext context,
+  ) async {
     final updated = await Navigator.of(context).push<bool>(
-      MaterialPageRoute(builder: (_) => const EditProfileScreen()),
+      MaterialPageRoute(
+        builder: (_) => const EditProfileScreen(),
+      ),
     );
 
     if (updated == true) {
@@ -354,9 +451,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
-  Future<void> _openRecoveryGoals(BuildContext context) async {
+  Future<void> _openRecoveryGoals(
+    BuildContext context,
+  ) async {
     final updated = await Navigator.of(context).push<bool>(
-      MaterialPageRoute(builder: (_) => const RecoveryGoalsScreen()),
+      MaterialPageRoute(
+        builder: (_) => const RecoveryGoalsScreen(),
+      ),
     );
 
     if (updated == true) {
@@ -365,28 +466,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
-  Future<void> _resetData(BuildContext context) async {
+  Future<void> _resetData(
+    BuildContext context,
+  ) async {
     final l10n = AppLocalizations.of(context)!;
 
     final shouldReset = await showDialog<bool>(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(l10n.resetAllDataTitle),
-          content: Text(l10n.resetAllDataMessage),
+          title: Text(
+            l10n.resetAllDataTitle,
+            style: TextStyle(
+              fontSize: 18.sp,
+            ),
+          ),
+          content: Text(
+            l10n.resetAllDataMessage,
+            style: TextStyle(
+              fontSize: 14.sp,
+            ),
+          ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
               child: Text(
                 l10n.cancel,
-                style: const TextStyle(color: AppColors.textGrey),
+                style: TextStyle(
+                  color: AppColors.textGrey,
+                  fontSize: 14.sp,
+                ),
               ),
             ),
             TextButton(
-              onPressed: () => Navigator.of(context).pop(true),
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
               child: Text(
                 l10n.reset,
-                style: const TextStyle(color: AppColors.alertColor),
+                style: TextStyle(
+                  color: AppColors.alertColor,
+                  fontSize: 14.sp,
+                ),
               ),
             ),
           ],
@@ -403,14 +526,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
       if (!mounted) return;
 
-      Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (_) => const DetailsScreen()),
-            (route) => false,
-      );
+      // Navigator.of(context).pushAndRemoveUntil(
+      //   MaterialPageRoute(
+      //     builder: (_) => const DetailsScreen(),
+      //   ),
+      //   (route) => false,
+      // );
     } catch (e) {
       if (!mounted) return;
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.couldNotResetData(e.toString()))),
+        SnackBar(
+          content: Text(
+            l10n.couldNotResetData(
+              e.toString(),
+            ),
+          ),
+        ),
       );
     }
   }
@@ -426,17 +558,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: AppColors.dashboardBackground,
       body: SafeArea(
+        top: true,
+        bottom: false,
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(18, 12, 18, 0),
+              padding: EdgeInsets.fromLTRB(
+                18.w,
+                12.h,
+                18.w,
+                0,
+              ),
               child: _buildTopBar(l10n),
             ),
-            Expanded(child: _buildBody(l10n)),
+            Expanded(
+              child: _buildBody(l10n),
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: _buildBottomNavigationBar(l10n),
     );
   }
 
@@ -444,10 +584,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // BODY
   // =====================================================================
 
-  Widget _buildBody(AppLocalizations l10n) {
+  Widget _buildBody(
+    AppLocalizations l10n,
+  ) {
     if (_isLoading) {
       return const Center(
-        child: CircularProgressIndicator(color: AppColors.primary),
+        child: CircularProgressIndicator(
+          color: AppColors.primary,
+        ),
       );
     }
 
@@ -464,22 +608,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
       onRefresh: _loadProfile,
       child: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.fromLTRB(18, 16, 18, 100),
+        padding: EdgeInsets.fromLTRB(
+          18.w,
+          16.h,
+          18.w,
+          80.h,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildProfileHeaderCard(l10n),
-            const SizedBox(height: 18),
+
+            
+            // _buildProfileHeaderCard(l10n),
+
+            // SizedBox(height: 18.h),
+
             _buildPremiumPlan(l10n),
-            const SizedBox(height: 20),
+
+            SizedBox(height: 20.h),
+
             _buildAccountSupport(l10n),
-            const SizedBox(height: 25),
-            const Center(
+
+            SizedBox(height: 25.h),
+
+            Center(
               child: Text(
                 'Sober Flow v2.4.1',
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  fontSize: 10,
+                  fontSize: 10.sp,
                   color: AppColors.textLightGrey,
                 ),
               ),
@@ -494,43 +651,63 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // ERROR STATE
   // =====================================================================
 
-  Widget _buildErrorState(AppLocalizations l10n) {
+  Widget _buildErrorState(
+    AppLocalizations l10n,
+  ) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(24.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
+            Icon(
               Icons.error_outline,
-              size: 52,
+              size: 52.sp,
               color: AppColors.textLightGrey,
             ),
-            const SizedBox(height: 16),
+
+            SizedBox(height: 16.h),
+
             Text(
               l10n.unableToLoadProfile,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 18,
+                fontSize: 18.sp,
                 color: AppColors.textBlack,
               ),
             ),
-            const SizedBox(height: 8),
+
+            SizedBox(height: 8.h),
+
             Text(
               _errorMessage ?? l10n.pleaseTryAgain,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 13, color: AppColors.textGrey),
+              style: TextStyle(
+                fontSize: 13.sp,
+                color: AppColors.textGrey,
+              ),
             ),
-            const SizedBox(height: 20),
+
+            SizedBox(height: 20.h),
+
             ElevatedButton(
               onPressed: _loadProfile,
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: AppColors.white,
                 elevation: 0,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                  vertical: 12.h,
+                ),
               ),
-              child: Text(l10n.tryAgain),
+              child: Text(
+                l10n.tryAgain,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                ),
+              ),
             ),
           ],
         ),
@@ -542,35 +719,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // EMPTY STATE
   // =====================================================================
 
-  Widget _buildEmptyState(AppLocalizations l10n) {
+  Widget _buildEmptyState(
+    AppLocalizations l10n,
+  ) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(24.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
+            Icon(
               Icons.person_off_outlined,
-              size: 52,
+              size: 52.sp,
               color: AppColors.textLightGrey,
             ),
-            const SizedBox(height: 16),
+
+            SizedBox(height: 16.h),
+
             Text(
               l10n.profileNotFound,
-              style: const TextStyle(
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 18,
+                fontSize: 18.sp,
                 color: AppColors.textBlack,
               ),
             ),
-            const SizedBox(height: 20),
+
+            SizedBox(height: 20.h),
+
             ElevatedButton(
               onPressed: _loadProfile,
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: AppColors.white,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                  vertical: 12.h,
+                ),
               ),
-              child: Text(l10n.refresh),
+              child: Text(
+                l10n.refresh,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                ),
+              ),
             ),
           ],
         ),
@@ -582,80 +775,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // TOP BAR
   // =====================================================================
 
-  Widget _buildTopBar(AppLocalizations l10n) {
-    final photoBytes = _photoBytes;
+  Widget _buildTopBar(
+  AppLocalizations l10n,
+) {
+  return Row(
+    children: [
+      const Spacer(),
 
-    return Row(
-      children: [
-        Container(
-          width: 38,
-          height: 38,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: AppColors.primary, width: 1.5),
-            color: AppColors.iconBackground,
-            image: photoBytes != null
-                ? DecorationImage(
-              image: MemoryImage(photoBytes),
-              fit: BoxFit.cover,
-            )
-                : null,
-          ),
-          child: photoBytes == null
-              ? const Icon(
-            Icons.person_outline,
-            color: AppColors.primary,
-            size: 22,
-          )
-              : null,
+      SizedBox(
+        width: 42.w,
+        height: 42.w,
+        child: Icon(
+          Icons.notifications_none,
+          color: AppColors.primary,
+          size: 22.sp,
         ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Text(
-            '${_greeting(l10n)}, $_displayName',
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 16,
-              color: AppColors.primary,
-            ),
-          ),
-        ),
-        Container(
-          width: 42,
-          height: 42,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-          ),
-          child: const Icon(
-            Icons.notifications_none,
-            color: AppColors.primary,
-            size: 22,
-          ),
-        ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}
 
   // =====================================================================
   // PROFILE HEADER
   // =====================================================================
 
-  Widget _buildProfileHeaderCard(AppLocalizations l10n) {
+  Widget _buildProfileHeaderCard(
+    AppLocalizations l10n,
+  ) {
     final photoBytes = _photoBytes;
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(20, 28, 20, 24),
+      padding: EdgeInsets.fromLTRB(
+        20.w,
+        28.h,
+        20.w,
+        24.h,
+      ),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(40.r),
         boxShadow: [
           BoxShadow(
             color: AppColors.textBlack.withOpacity(0.03),
-            blurRadius: 25,
-            offset: const Offset(0, 5),
+            blurRadius: 25.r,
+            offset: Offset(0, 5.h),
           ),
         ],
       ),
@@ -663,42 +827,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           GestureDetector(
             onTap: _showPhotoOptions,
-            onLongPress: photoBytes != null ? _showFullScreenPhoto : null,
+            onLongPress:
+                photoBytes != null
+                    ? _showFullScreenPhoto
+                    : null,
             child: Stack(
               clipBehavior: Clip.none,
               children: [
                 Hero(
                   tag: 'profile-photo',
                   child: Container(
-                    width: 105,
-                    height: 105,
+                    width: 105.w,
+                    height: 105.w,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: AppColors.iconBackground,
-                      border: Border.all(color: AppColors.white, width: 4),
+                      border: Border.all(
+                        color: AppColors.white,
+                        width: 4.w,
+                      ),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.textBlack.withOpacity(0.09),
-                          blurRadius: 8,
-                          offset: const Offset(0, 3),
+                          color: AppColors.textBlack
+                              .withOpacity(0.09),
+                          blurRadius: 8.r,
+                          offset: Offset(0, 3.h),
                         ),
                       ],
                       image: photoBytes != null
                           ? DecorationImage(
-                        image: MemoryImage(photoBytes),
-                        fit: BoxFit.cover,
-                      )
+                              image: MemoryImage(
+                                photoBytes,
+                              ),
+                              fit: BoxFit.cover,
+                            )
                           : null,
                     ),
                     child: photoBytes == null
-                        ? const Icon(
-                      Icons.person,
-                      color: AppColors.primary,
-                      size: 48,
-                    )
+                        ? Icon(
+                            Icons.person,
+                            color: AppColors.primary,
+                            size: 48.sp,
+                          )
                         : null,
                   ),
                 ),
+
                 if (_isUploadingPhoto)
                   Positioned.fill(
                     child: Container(
@@ -706,13 +880,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         color: Colors.black38,
                         shape: BoxShape.circle,
                       ),
-                      child: const Center(
+                      child: Center(
                         child: SizedBox(
-                          width: 24,
-                          height: 24,
+                          width: 24.w,
+                          height: 24.w,
                           child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(
+                            strokeWidth: 2.w,
+                            valueColor:
+                                const AlwaysStoppedAnimation<Color>(
                               AppColors.white,
                             ),
                           ),
@@ -723,38 +898,53 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+
+          SizedBox(height: 20.h),
+
           Text(
             _displayName,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 28,
+              fontSize: 28.sp,
               color: AppColors.textBlack,
             ),
           ),
-          const SizedBox(height: 6),
+
+          SizedBox(height: 6.h),
+
           Text(
             l10n.embracingClarity,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w400,
-              fontSize: 14,
+              fontSize: 14.sp,
               height: 1.4,
               color: AppColors.textGrey,
             ),
           ),
-          const SizedBox(height: 18),
+
+          SizedBox(height: 18.h),
+
           IntrinsicHeight(
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment:
+                  CrossAxisAlignment.stretch,
               children: [
-                _buildProfileStat(
-                  label: l10n.streakLabel,
-                  value: l10n.daysStreak(_daysSober),
+                Expanded(
+                  child: _buildProfileStat(
+                    label: l10n.streakLabel,
+                    value: l10n.daysStreak(
+                      _daysSober,
+                    ),
+                  ),
                 ),
-                const SizedBox(width: 10),
-                Flexible(
+
+                SizedBox(width: 10.w),
+
+                Expanded(
                   child: _buildProfileStat(
                     label: l10n.goalLabel,
                     value: _goal(l10n),
@@ -773,65 +963,84 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // PREMIUM PLAN
   // =====================================================================
 
-  Widget _buildPremiumPlan(AppLocalizations l10n) {
+  Widget _buildPremiumPlan(
+    AppLocalizations l10n,
+  ) {
     return InkWell(
       onTap: () => _openPremiumPlan(context),
-      borderRadius: BorderRadius.circular(28),
+      borderRadius: BorderRadius.circular(28.r),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+        padding: EdgeInsets.symmetric(
+          horizontal: 18.w,
+          vertical: 16.h,
+        ),
         decoration: BoxDecoration(
           color: AppColors.primary,
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(28.r),
           boxShadow: [
             BoxShadow(
               color: AppColors.primary.withOpacity(0.12),
-              blurRadius: 16,
-              offset: const Offset(0, 5),
+              blurRadius: 16.r,
+              offset: Offset(0, 5.h),
             ),
           ],
         ),
         child: Row(
           children: [
             Container(
-              width: 42,
-              height: 42,
+              width: 42.w,
+              height: 42.w,
               decoration: BoxDecoration(
                 color: AppColors.white.withOpacity(0.16),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.workspace_premium_outlined,
                 color: AppColors.white,
-                size: 22,
+                size: 22.sp,
               ),
             ),
-            const SizedBox(width: 12),
+
+            SizedBox(width: 12.w),
+
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment:
+                    CrossAxisAlignment.start,
                 children: [
                   Text(
                     l10n.premiumPlan,
-                    style: const TextStyle(
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       color: AppColors.white,
                     ),
                   ),
-                  const SizedBox(height: 3),
+
+                  SizedBox(height: 3.h),
+
                   Text(
                     l10n.premiumPlanSubtitle,
-                    style: const TextStyle(
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 11,
+                      fontSize: 11.sp,
                       color: AppColors.white,
                     ),
                   ),
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right, color: AppColors.white, size: 22),
+
+            Icon(
+              Icons.chevron_right,
+              color: AppColors.white,
+              size: 22.sp,
+            ),
           ],
         ),
       ),
@@ -842,28 +1051,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // ACCOUNT & SUPPORT
   // =====================================================================
 
-  Widget _buildAccountSupport(AppLocalizations l10n) {
+  Widget _buildAccountSupport(
+    AppLocalizations l10n,
+  ) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment:
+          CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 6),
+          padding: EdgeInsets.only(left: 6.w),
           child: Text(
             l10n.accountAndSupport,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 12,
+              fontSize: 12.sp,
               letterSpacing: 0.5,
               color: AppColors.textGrey,
             ),
           ),
         ),
-        const SizedBox(height: 10),
+
+        SizedBox(height: 10.h),
+
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(34),
+            borderRadius: BorderRadius.circular(34.r),
           ),
           child: Column(
             children: [
@@ -873,30 +1087,45 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 title: l10n.privacyPolicy,
                 subtitle: l10n.privacyPolicySubtitle,
                 onTap: () {
-                  _showComingSoon(l10n.privacyPolicy, l10n);
+                  _showComingSoon(
+                    l10n.privacyPolicy,
+                    l10n,
+                  );
                 },
               ),
+
               _buildDivider(),
+
               _buildMenuItem(
                 icon: Icons.help_outline,
                 iconColor: AppColors.primary,
                 title: l10n.termsOfService,
                 subtitle: l10n.termsOfServiceSubtitle,
                 onTap: () {
-                  _showComingSoon(l10n.termsOfService, l10n);
+                  _showComingSoon(
+                    l10n.termsOfService,
+                    l10n,
+                  );
                 },
               ),
+
               _buildDivider(),
+
               _buildMenuItem(
                 icon: Icons.share,
                 iconColor: AppColors.primary,
                 title: l10n.shareApp,
                 subtitle: l10n.shareAppSubtitle,
                 onTap: () {
-                  _showComingSoon(l10n.shareApp, l10n);
+                  _showComingSoon(
+                    l10n.shareApp,
+                    l10n,
+                  );
                 },
               ),
+
               _buildDivider(),
+
               _buildMenuItem(
                 icon: Icons.restart_alt,
                 iconColor: AppColors.alertColor,
@@ -922,14 +1151,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
     bool allowGrow = false,
   }) {
     return Container(
-      constraints: allowGrow
-          ? const BoxConstraints(minWidth: 116)
-          : const BoxConstraints(minWidth: 116, maxWidth: 150),
-      width: allowGrow ? double.infinity : null,
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        horizontal: 14.w,
+        vertical: 8.h,
+      ),
       decoration: BoxDecoration(
         color: AppColors.cardBackground,
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(30.r),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -939,22 +1168,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 9,
+              fontSize: 9.sp,
               letterSpacing: 0.6,
               color: AppColors.textGrey,
             ),
           ),
-          const SizedBox(height: 3),
+
+          SizedBox(height: 3.h),
+
           Text(
             value,
             textAlign: TextAlign.center,
-            maxLines: allowGrow ? null : 1,
-            overflow: allowGrow ? TextOverflow.visible : TextOverflow.ellipsis,
-            style: const TextStyle(
+            maxLines: allowGrow ? 2 : 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 14,
+              fontSize: 14.sp,
               color: AppColors.primary,
             ),
           ),
@@ -978,38 +1209,54 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
+        padding: EdgeInsets.symmetric(
+          horizontal: 18.w,
+          vertical: 15.h,
+        ),
         child: Row(
           children: [
             Container(
-              width: 38,
-              height: 38,
+              width: 38.w,
+              height: 38.w,
               decoration: BoxDecoration(
                 color: iconColor.withOpacity(0.09),
                 shape: BoxShape.circle,
               ),
-              child: Icon(icon, color: iconColor, size: 19),
+              child: Icon(
+                icon,
+                color: iconColor,
+                size: 19.sp,
+              ),
             ),
-            const SizedBox(width: 12),
+
+            SizedBox(width: 12.w),
+
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment:
+                    CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       color: titleColor,
                     ),
                   ),
+
                   if (subtitle.isNotEmpty) ...[
-                    const SizedBox(height: 2),
+                    SizedBox(height: 2.h),
+
                     Text(
                       subtitle,
-                      style: const TextStyle(
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 10,
+                        fontSize: 10.sp,
                         height: 1.3,
                         color: AppColors.textGrey,
                       ),
@@ -1018,10 +1265,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-            const Icon(
+
+            Icon(
               Icons.chevron_right,
               color: AppColors.textLightGrey,
-              size: 20,
+              size: 20.sp,
             ),
           ],
         ),
@@ -1034,112 +1282,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // =====================================================================
 
   Widget _buildDivider() {
-    return const Divider(
-      height: 1,
-      thickness: 1,
-      indent: 68,
+    return Divider(
+      height: 1.h,
+      thickness: 1.h,
+      indent: 68.w,
       endIndent: 0,
       color: AppColors.outlineGrey,
-    );
-  }
-
-  // =====================================================================
-  // BOTTOM NAV
-  // =====================================================================
-
-  Widget _buildBottomNavigationBar(AppLocalizations l10n) {
-    return Container(
-      height: 72,
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.textBlack.withOpacity(0.06),
-            blurRadius: 12,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          _buildBottomItem(
-            icon: Icons.home_outlined,
-            label: l10n.navHome,
-            selected: false,
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          _buildBottomItem(
-            icon: Icons.bar_chart_outlined,
-            label: l10n.navStats,
-            selected: false,
-            onTap: () {},
-          ),
-          _buildBottomItem(
-            icon: Icons.edit_note_outlined,
-            label: l10n.navJournal,
-            selected: false,
-            onTap: () {},
-          ),
-          _buildBottomItem(
-            icon: Icons.emoji_events_outlined,
-            label: l10n.navBadges,
-            selected: false,
-            onTap: () {},
-          ),
-          _buildBottomItem(
-            icon: Icons.person_outline,
-            label: l10n.navProfile,
-            selected: true,
-            onTap: () {},
-          ),
-        ],
-      ),
-    );
-  }
-
-  // =====================================================================
-  // BOTTOM NAV ITEM
-  // =====================================================================
-
-  Widget _buildBottomItem({
-    required IconData icon,
-    required String label,
-    required bool selected,
-    required VoidCallback onTap,
-  }) {
-    return Expanded(
-      child: InkWell(
-        onTap: onTap,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 48,
-              height: 32,
-              decoration: BoxDecoration(
-                color: selected ? AppColors.primary : Colors.transparent,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Icon(
-                icon,
-                color: selected ? AppColors.white : AppColors.textLightGrey,
-                size: 20,
-              ),
-            ),
-            const SizedBox(height: 2),
-            Text(
-              label,
-              style: TextStyle(
-                fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-                fontSize: 10,
-                color: selected ? AppColors.primary : AppColors.textLightGrey,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 
@@ -1147,9 +1295,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // COMING SOON
   // =====================================================================
 
-  void _showComingSoon(String feature, AppLocalizations l10n) {
+  void _showComingSoon(
+    String feature,
+    AppLocalizations l10n,
+  ) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(l10n.featureComingSoon(feature))),
+      SnackBar(
+        content: Text(
+          l10n.featureComingSoon(feature),
+        ),
+      ),
     );
   }
 }

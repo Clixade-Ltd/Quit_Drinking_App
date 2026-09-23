@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+
 import '../../../constants/app_colors.dart';
 import '../../../models/user_details_draft.dart';
-import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 class Question3Content extends StatefulWidget {
   final ValueChanged<bool> onCanContinueChanged;
@@ -13,17 +15,14 @@ class Question3Content extends StatefulWidget {
   });
 
   @override
-  State<Question3Content> createState() =>
-      _Question3ContentState();
+  State<Question3Content> createState() => _Question3ContentState();
 }
 
-class _Question3ContentState
-    extends State<Question3Content>
+class _Question3ContentState extends State<Question3Content>
     with AutomaticKeepAliveClientMixin {
   late TextEditingController _drinksController;
   late TextEditingController _moneyController;
 
-  // FIX 3: FocusNodes so tapping anywhere in the field's container focuses it
   final FocusNode _drinksFocus = FocusNode();
   final FocusNode _moneyFocus = FocusNode();
 
@@ -31,7 +30,6 @@ class _Question3ContentState
 
   final Set<String> _selectedTriggers = {};
 
-  // FIX 1: raise the max limit (was 999)
   static const int _maxDrinks = 9999;
   static const int _maxMoney = 99999;
 
@@ -45,11 +43,11 @@ class _Question3ContentState
     final answers = UserDetailsDraft.instance;
 
     _drinksController = TextEditingController(
-      text: (answers.drinksPerWeek).toString(),
+      text: answers.drinksPerWeek.toString(),
     );
 
     _moneyController = TextEditingController(
-      text: (answers.moneySpentPerWeek).toString(),
+      text: answers.moneySpentPerWeek.toString(),
     );
 
     _selectedDrinkingLevel = answers.drinkingLevel;
@@ -58,7 +56,6 @@ class _Question3ContentState
     _drinksController.addListener(_saveDrinks);
     _moneyController.addListener(_saveMoney);
 
-    // FIX 4: report REAL validity instead of hardcoded true
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       _updateValidation();
@@ -139,27 +136,30 @@ class _Question3ContentState
   }
 
   void _toggleTrigger(String trigger) {
-    setState(() {
-      if (_selectedTriggers.contains(trigger)) {
-        _selectedTriggers.remove(trigger);
-      } else {
-        _selectedTriggers.add(trigger);
+  setState(() {
+    if (_selectedTriggers.contains(trigger)) {
+      // Selected trigger ko remove karna allow hai
+      _selectedTriggers.remove(trigger);
+    } else {
+      // Maximum 3 triggers allowed
+      if (_selectedTriggers.length >= 3) {
+        return;
       }
-    });
 
-    UserDetailsDraft.instance.toggleTrigger(trigger);
-    _updateValidation();
-  }
+      _selectedTriggers.add(trigger);
+    }
+  });
 
-  // FIX 4: user can continue only once a drinking level AND at least
-  // one trigger are selected (drinks/money always have a default value
-  // from the stepper, so they don't need a separate "empty" check).
-  void _updateValidation() {
-    final bool canContinue =
-        _selectedDrinkingLevel != null && _selectedTriggers.isNotEmpty;
+  UserDetailsDraft.instance.toggleTrigger(trigger);
+  _updateValidation();
+}
+ void _updateValidation() {
+  final bool canContinue =
+      _selectedDrinkingLevel != null &&
+      _selectedTriggers.length == 3;
 
-    widget.onCanContinueChanged(canContinue);
-  }
+  widget.onCanContinueChanged(canContinue);
+}
 
   @override
   void dispose() {
@@ -173,6 +173,7 @@ class _Question3ContentState
   @override
   Widget build(BuildContext context) {
     super.build(context);
+
     final l10n = AppLocalizations.of(context)!;
 
     final List<String> drinkingLevels = [
@@ -196,39 +197,39 @@ class _Question3ContentState
     ];
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             Center(
               child: Text(
                 l10n.question3Title,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 26,
+                  fontSize: 26.sp,
                   height: 1.2,
                   color: AppColors.divider,
                 ),
               ),
             ),
 
-            const SizedBox(height: 28),
+            SizedBox(height: 28.h),
 
             Text(
               l10n.drinksPerWeek,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: AppColors.textBlack,
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             _StepperRow(
               controller: _drinksController,
@@ -237,18 +238,18 @@ class _Question3ContentState
               onIncrement: () => _changeDrinks(1),
             ),
 
-            const SizedBox(height: 22),
+            SizedBox(height: 22.h),
 
             Text(
               l10n.moneySpentPerWeek,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: AppColors.textBlack,
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             _StepperRow(
               controller: _moneyController,
@@ -258,61 +259,75 @@ class _Question3ContentState
               onIncrement: () => _changeMoney(1),
             ),
 
-            const SizedBox(height: 22),
+            SizedBox(height: 22.h),
 
             Text(
               l10n.drinkingLevel,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: AppColors.textBlack,
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             Wrap(
-              spacing: 8,
-              runSpacing: 8,
+              spacing: 8.w,
+              runSpacing: 8.h,
               children: drinkingLevels
                   .map(
                     (level) => _SelectableChip(
-                  label: level,
-                  isSelected: level == _selectedDrinkingLevel,
-                  onTap: () => _selectDrinkingLevel(level),
-                ),
-              )
+                      label: level,
+                      isSelected: level == _selectedDrinkingLevel,
+                      onTap: () => _selectDrinkingLevel(level),
+                    ),
+                  )
                   .toList(),
             ),
 
-            const SizedBox(height: 22),
+            SizedBox(height: 22.h),
 
-            Text(
-              l10n.triggersLabel,
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 15,
-                color: AppColors.textBlack,
-              ),
-            ),
+       Row(
+  children: [
+    Text(
+      l10n.triggersLabel,
+      style: TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: 15.sp,
+        color: AppColors.textBlack,
+      ),
+    ),
+    SizedBox(width: 6.w),
+    Text(
+      '(Select any 3)',
+      style: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 13.sp,
+        color: AppColors.textLightGrey,
+      ),
+    ),
+  ],
+),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             Wrap(
-              spacing: 8,
-              runSpacing: 8,
+              spacing: 8.w,
+              runSpacing: 8.h,
               children: triggers
                   .map(
                     (trigger) => _SelectableChip(
-                  label: trigger,
-                  isSelected: _selectedTriggers.contains(trigger),
-                  onTap: () => _toggleTrigger(trigger),
-                ),
-              )
+                      label: trigger,
+                      isSelected:
+                          _selectedTriggers.contains(trigger),
+                      onTap: () => _toggleTrigger(trigger),
+                    ),
+                  )
                   .toList(),
             ),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
           ],
         ),
       ),
@@ -339,24 +354,30 @@ class _StepperRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      padding: EdgeInsets.symmetric(
+        horizontal: 10.w,
+        vertical: 8.h,
+      ),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.outlineGrey),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: AppColors.outlineGrey,
+        ),
       ),
       child: Row(
         children: [
-          _StepperButton(icon: Icons.remove, onTap: onDecrement),
+          _StepperButton(
+            icon: Icons.remove,
+            onTap: onDecrement,
+          ),
 
-          // FIX 3: Expanded + GestureDetector so tapping ANYWHERE in the
-// middle area (left, right, or on the number) focuses the field,
-// instead of only the tiny IntrinsicWidth area around the digits.
           Expanded(
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTap: () {
                 focusNode.requestFocus();
+
                 controller.selection = TextSelection(
                   baseOffset: 0,
                   extentOffset: controller.text.length,
@@ -370,44 +391,50 @@ class _StepperRow extends StatelessWidget {
                       if (prefix.isNotEmpty)
                         Text(
                           prefix,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            fontSize: 22,
+                            fontSize: 22.sp,
                             color: AppColors.textBlack,
                           ),
                         ),
+
                       IntrinsicWidth(
                         child: TextField(
                           controller: controller,
                           focusNode: focusNode,
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
-                          // FIX 5: strip the leading zero as soon as the user
-                          // types a digit, so "0" + "9" becomes "9", not "09".
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
-                            TextInputFormatter.withFunction((oldValue, newValue) {
-                              if (newValue.text.length > 1 &&
-                                  newValue.text.startsWith('0')) {
-                                final stripped = newValue.text.replaceFirst(
-                                  RegExp(r'^0+'),
-                                  '',
-                                );
-                                final result = stripped.isEmpty ? '0' : stripped;
+                            TextInputFormatter.withFunction(
+                              (oldValue, newValue) {
+                                if (newValue.text.length > 1 &&
+                                    newValue.text.startsWith('0')) {
+                                  final stripped =
+                                      newValue.text.replaceFirst(
+                                    RegExp(r'^0+'),
+                                    '',
+                                  );
 
-                                return TextEditingValue(
-                                  text: result,
-                                  selection: TextSelection.collapsed(
-                                    offset: result.length,
-                                  ),
-                                );
-                              }
-                              return newValue;
-                            }),
+                                  final result =
+                                      stripped.isEmpty ? '0' : stripped;
+
+                                  return TextEditingValue(
+                                    text: result,
+                                    selection:
+                                        TextSelection.collapsed(
+                                      offset: result.length,
+                                    ),
+                                  );
+                                }
+
+                                return newValue;
+                              },
+                            ),
                           ],
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            fontSize: 22,
+                            fontSize: 22.sp,
                             color: AppColors.textBlack,
                           ),
                           decoration: const InputDecoration(
@@ -424,7 +451,10 @@ class _StepperRow extends StatelessWidget {
             ),
           ),
 
-          _StepperButton(icon: Icons.add, onTap: onIncrement),
+          _StepperButton(
+            icon: Icons.add,
+            onTap: onIncrement,
+          ),
         ],
       ),
     );
@@ -446,14 +476,18 @@ class _StepperButton extends StatelessWidget {
       onTap: onTap,
       customBorder: const CircleBorder(),
       child: Container(
-        width: 40,
-        height: 40,
+        width: 40.w,
+        height: 40.w,
         alignment: Alignment.center,
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: AppColors.cardBackground,
         ),
-        child: Icon(icon, size: 18, color: AppColors.textBlack),
+        child: Icon(
+          icon,
+          size: 18.sp,
+          color: AppColors.textBlack,
+        ),
       ),
     );
   }
@@ -474,22 +508,31 @@ class _SelectableChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(9999),
+      borderRadius: BorderRadius.circular(9999.r),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: EdgeInsets.symmetric(
+          horizontal: 16.w,
+          vertical: 10.h,
+        ),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.divider : AppColors.white,
-          borderRadius: BorderRadius.circular(9999),
+          color: isSelected
+              ? AppColors.divider
+              : AppColors.white,
+          borderRadius: BorderRadius.circular(9999.r),
           border: Border.all(
-            color: isSelected ? AppColors.divider : AppColors.outlineGrey,
+            color: isSelected
+                ? AppColors.divider
+                : AppColors.outlineGrey,
           ),
         ),
         child: Text(
           label,
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            fontSize: 14,
-            color: isSelected ? AppColors.white : AppColors.textGrey,
+            fontSize: 14.sp,
+            color: isSelected
+                ? AppColors.white
+                : AppColors.textGrey,
           ),
         ),
       ),

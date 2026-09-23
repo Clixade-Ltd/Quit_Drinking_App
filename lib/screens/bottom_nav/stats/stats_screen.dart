@@ -1,7 +1,9 @@
+
 import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../../constants/app_colors.dart';
@@ -54,7 +56,7 @@ class _StatsScreenState extends State<StatsScreen>
 
     _refreshTimer = Timer.periodic(
       const Duration(seconds: 2),
-          (_) => _loadStats(silent: true),
+      (_) => _loadStats(silent: true),
     );
   }
 
@@ -67,8 +69,8 @@ class _StatsScreenState extends State<StatsScreen>
 
   @override
   void didChangeAppLifecycleState(
-      AppLifecycleState state,
-      ) {
+    AppLifecycleState state,
+  ) {
     if (state == AppLifecycleState.resumed) {
       _loadStats(silent: true);
     }
@@ -83,22 +85,22 @@ class _StatsScreenState extends State<StatsScreen>
       final days = await _service.getDaysSober();
 
       final moneyChart =
-      await _service.getWeeklyMoneySaved();
+          await _service.getWeeklyMoneySaved();
 
       final moodChart =
-      await _service.getWeeklyMoodData();
+          await _service.getWeeklyMoodData();
 
       final cravingChart =
-      await _service.getWeeklyCravingData();
+          await _service.getWeeklyCravingData();
 
       final calendar =
-      await _service.getSoberCalendarData();
+          await _service.getSoberCalendarData();
 
       final milestones =
-      await _service.getHealthMilestones();
+          await _service.getHealthMilestones();
 
       final isPremium =
-      await PremiumService.instance.isPremium();
+          await PremiumService.instance.isPremium();
 
       if (!mounted) return;
 
@@ -151,6 +153,8 @@ class _StatsScreenState extends State<StatsScreen>
     return Scaffold(
       backgroundColor: AppColors.dashboardBackground,
       body: SafeArea(
+        top: true,
+        bottom: false,
         child: Column(
           children: [
             _buildAppBar(l10n),
@@ -161,36 +165,36 @@ class _StatsScreenState extends State<StatsScreen>
                 onRefresh: () => _loadStats(),
                 child: SingleChildScrollView(
                   physics:
-                  const AlwaysScrollableScrollPhysics(),
-                  padding: const EdgeInsets.fromLTRB(
-                    16,
-                    8,
-                    16,
-                    32,
+                      const AlwaysScrollableScrollPhysics(),
+                  padding: EdgeInsets.fromLTRB(
+                    16.w,
+                    8.h,
+                    16.w,
+                    32.h,
                   ),
                   child: Column(
                     crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                        CrossAxisAlignment.start,
                     children: [
                       _buildTopStats(l10n),
 
-                      const SizedBox(height: 14),
+                      SizedBox(height: 14.h),
 
                       _buildMoneyChart(l10n),
 
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       _buildMoodChart(),
 
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       _buildCravingChart(),
 
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       _buildMilestones(l10n),
 
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       _buildCalendar(l10n),
                     ],
@@ -209,14 +213,14 @@ class _StatsScreenState extends State<StatsScreen>
   // =========================================================
 
   Widget _buildAppBar(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(
-        16,
-        10,
-        16,
-        12,
+      padding: EdgeInsets.fromLTRB(
+        16.w,
+        10.h,
+        16.w,
+        12.h,
       ),
       child: Column(
         children: [
@@ -225,22 +229,22 @@ class _StatsScreenState extends State<StatsScreen>
               Expanded(
                 child: Text(
                   l10n.myProgress,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     color: AppColors.textBlack,
                   ),
                 ),
               ),
 
               Container(
-                height: 36,
-                padding: const EdgeInsets.all(3),
+                height: 36.h,
+                padding: EdgeInsets.all(3.r),
                 decoration: BoxDecoration(
                   color:
-                  AppColors.white.withOpacity(0.35),
+                      AppColors.white.withOpacity(0.35),
                   borderRadius:
-                  BorderRadius.circular(9),
+                      BorderRadius.circular(9.r),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -249,12 +253,10 @@ class _StatsScreenState extends State<StatsScreen>
                       l10n.weekLabel,
                       period: 'week',
                     ),
-
                     _buildPeriodButton(
                       l10n.monthLabel,
                       period: 'month',
                     ),
-
                     _buildPeriodButton(
                       l10n.allLabel,
                       period: 'all',
@@ -265,10 +267,10 @@ class _StatsScreenState extends State<StatsScreen>
             ],
           ),
 
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
 
           Container(
-            height: 1,
+            height: 1.h,
             color: AppColors.outlineGrey,
           ),
         ],
@@ -277,9 +279,9 @@ class _StatsScreenState extends State<StatsScreen>
   }
 
   Widget _buildPeriodButton(
-      String text, {
-        required String period,
-      }) {
+    String text, {
+    required String period,
+  }) {
     final selected =
         _selectedPeriod == period;
 
@@ -298,9 +300,9 @@ class _StatsScreenState extends State<StatsScreen>
             .statsPeriodChanged(period);
       },
       child: Container(
-        height: 30,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 12,
+        height: 30.h,
+        padding: EdgeInsets.symmetric(
+          horizontal: 12.w,
         ),
         alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -308,13 +310,13 @@ class _StatsScreenState extends State<StatsScreen>
               ? AppColors.primary
               : Colors.transparent,
           borderRadius:
-          BorderRadius.circular(7),
+              BorderRadius.circular(7.r),
         ),
         child: Text(
           text,
           style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 13,
+            fontSize: 13.sp,
             color: selected
                 ? AppColors.white
                 : AppColors.textGrey,
@@ -329,8 +331,8 @@ class _StatsScreenState extends State<StatsScreen>
   // =========================================================
 
   Widget _buildTopStats(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     return Row(
       children: [
         Expanded(
@@ -340,189 +342,192 @@ class _StatsScreenState extends State<StatsScreen>
           ),
         ),
 
-        const SizedBox(width: 8),
+        SizedBox(width: 8.w),
 
         Expanded(
           child: _statCard(
             label: l10n.savedStatLabel,
             value:
-            '\$${_formatMoney(_moneySaved)}',
+                '\$${_formatMoney(_moneySaved)}',
           ),
         ),
 
-        const SizedBox(width: 8),
+        SizedBox(width: 8.w),
 
         Expanded(
           child: _statCard(
             label: l10n.avoidedStatLabel,
             value:
-            _formatDecimal(_drinksAvoided),
+                _formatDecimal(_drinksAvoided),
           ),
         ),
       ],
     );
   }
 
-  Widget _statCard({
-    required String label,
-    required String value,
-  }) {
-    return Container(
-      height: 102,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 13,
+ Widget _statCard({
+  required String label,
+  required String value,
+}) {
+  return Container(
+    height: 102.h,
+    padding: EdgeInsets.symmetric(
+      horizontal: 4.w,
+      vertical: 8.h,
+    ),
+    decoration: BoxDecoration(
+      color: AppColors.white,
+      borderRadius: BorderRadius.circular(12.r),
+      border: Border.all(
+        color: AppColors.outlineGrey,
+        width: 0.7,
       ),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius:
-        BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.outlineGrey,
-          width: 0.7,
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          value,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            fontSize: 20.sp,
+            color: AppColors.primary,
+          ),
         ),
-      ),
-      child: Column(
-        mainAxisAlignment:
-        MainAxisAlignment.center,
-        children: [
-          Text(
-            value,
-            maxLines: 1,
-            overflow:
-            TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 20,
-              color: AppColors.primary,
+
+        SizedBox(height: 2.h),
+
+        SizedBox(
+          width: double.infinity,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              label,
+              maxLines: 1,
+              softWrap: false,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 13.sp,
+                color: AppColors.textGrey,
+              ),
             ),
           ),
-
-          const SizedBox(height: 5),
-
-          Text(
-            label,
-            textAlign: TextAlign.center,
-            maxLines: 2,
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 13,
-              height: 1.2,
-              color: AppColors.textGrey,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
 
   // =========================================================
   // MONEY CHART
   // =========================================================
 
   Widget _buildMoneyChart(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     final values = _moneyChart
         .map(
           (e) =>
-      (e['value'] as num?)
-          ?.toDouble() ??
-          0,
-    )
+              (e['value'] as num?)
+                  ?.toDouble() ??
+              0,
+        )
         .toList();
 
     final maxValue = values.isEmpty
         ? 1.0
         : values.fold<double>(
-      0,
-          (max, value) =>
-      value > max ? value : max,
-    );
+            0,
+            (max, value) =>
+                value > max ? value : max,
+          );
 
     final chartMax =
-    maxValue <= 0 ? 1.0 : maxValue;
+        maxValue <= 0 ? 1.0 : maxValue;
 
     return _chartCard(
-      padding: const EdgeInsets.fromLTRB(
-        14,
-        14,
-        14,
-        12,
+      padding: EdgeInsets.fromLTRB(
+        14.w,
+        14.h,
+        14.w,
+        12.h,
       ),
       child: Column(
         crossAxisAlignment:
-        CrossAxisAlignment.start,
+            CrossAxisAlignment.start,
         children: [
           Text(
             l10n.moneySaved,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 16,
+              fontSize: 16.sp,
               color: AppColors.textBlack,
             ),
           ),
 
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
 
           SizedBox(
-            height: 82,
+            height: 82.h,
             child: Row(
               crossAxisAlignment:
-              CrossAxisAlignment.end,
+                  CrossAxisAlignment.end,
               children: [
                 for (
-                int i = 0;
-                i < _moneyChart.length;
-                i++
+                  int i = 0;
+                  i < _moneyChart.length;
+                  i++
                 ) ...[
                   if (i != 0)
-                    const SizedBox(width: 6),
+                    SizedBox(width: 6.w),
 
                   Expanded(
                     child: Column(
                       mainAxisAlignment:
-                      MainAxisAlignment.end,
+                          MainAxisAlignment.end,
                       children: [
                         Expanded(
                           child: Align(
                             alignment:
-                            Alignment
-                                .bottomCenter,
+                                Alignment.bottomCenter,
                             child:
-                            AnimatedContainer(
+                                AnimatedContainer(
                               duration:
-                              const Duration(
+                                  const Duration(
                                 milliseconds: 350,
                               ),
                               width:
-                              double.infinity,
-                              height: maxValue <= 0
-                                  ? 5
-                                  : 55 *
-                                  (((_moneyChart[i]
-                                  ['value']
-                                  as num?)
-                                      ?.toDouble() ??
-                                      0) /
-                                      chartMax),
+                                  double.infinity,
+                              height:
+                                  maxValue <= 0
+                                      ? 5.h
+                                      : 55.h *
+                                          (((_moneyChart[i]
+                                                      ['value']
+                                                  as num?)
+                                              ?.toDouble() ??
+                                          0) /
+                                              chartMax),
                               decoration:
-                              BoxDecoration(
+                                  BoxDecoration(
                                 color: AppColors
                                     .primary
                                     .withOpacity(
                                   _moneyChart[i]
-                                  ['hasData'] ==
-                                      true
+                                              ['hasData'] ==
+                                          true
                                       ? 1
                                       : 0.12,
                                 ),
                                 borderRadius:
-                                const BorderRadius
-                                    .vertical(
+                                    BorderRadius
+                                        .vertical(
                                   top:
-                                  Radius.circular(
-                                    5,
+                                      Radius.circular(
+                                    5.r,
                                   ),
                                 ),
                               ),
@@ -530,14 +535,13 @@ class _StatsScreenState extends State<StatsScreen>
                           ),
                         ),
 
-                        const SizedBox(height: 5),
+                        SizedBox(height: 5.h),
 
                         Text(
                           _moneyChart[i]['label']
                               .toString(),
-                          style:
-                          const TextStyle(
-                            fontSize: 11,
+                          style: TextStyle(
+                            fontSize: 11.sp,
                             color: AppColors
                                 .textLightGrey,
                           ),
@@ -562,27 +566,27 @@ class _StatsScreenState extends State<StatsScreen>
     return _gatedChart(
       isPremium: _isPremium,
       chart: _chartCard(
-        padding: const EdgeInsets.fromLTRB(
-          14,
-          14,
-          14,
-          12,
+        padding: EdgeInsets.fromLTRB(
+          14.w,
+          14.h,
+          14.w,
+          12.h,
         ),
         child: Column(
           crossAxisAlignment:
-          CrossAxisAlignment.start,
+              CrossAxisAlignment.start,
           children: [
             Text(
               AppLocalizations.of(context)!
                   .moodTrends,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: AppColors.textBlack,
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             _InteractiveMoodBarChart(
               data: _moodChart,
@@ -601,27 +605,27 @@ class _StatsScreenState extends State<StatsScreen>
     return _gatedChart(
       isPremium: _isPremium,
       chart: _chartCard(
-        padding: const EdgeInsets.fromLTRB(
-          14,
-          14,
-          14,
-          12,
+        padding: EdgeInsets.fromLTRB(
+          14.w,
+          14.h,
+          14.w,
+          12.h,
         ),
         child: Column(
           crossAxisAlignment:
-          CrossAxisAlignment.start,
+              CrossAxisAlignment.start,
           children: [
             Text(
               AppLocalizations.of(context)!
                   .cravingsPattern,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 16,
+                fontSize: 16.sp,
                 color: AppColors.textBlack,
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             _InteractiveCravingBarChart(
               data: _cravingChart,
@@ -641,22 +645,21 @@ class _StatsScreenState extends State<StatsScreen>
     required bool isPremium,
   }) {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     if (isPremium) {
       return ClipRRect(
         borderRadius:
-        BorderRadius.circular(12),
+            BorderRadius.circular(12.r),
         child: chart,
       );
     }
 
     return ClipRRect(
       borderRadius:
-      BorderRadius.circular(12),
+          BorderRadius.circular(12.r),
       child: GestureDetector(
-        behavior:
-        HitTestBehavior.opaque,
+        behavior: HitTestBehavior.opaque,
         onTap: _showPremiumPaywall,
         child: Stack(
           children: [
@@ -680,28 +683,26 @@ class _StatsScreenState extends State<StatsScreen>
             ),
 
             Positioned(
-              top: 14,
-              right: 14,
+              top: 14.h,
+              right: 14.w,
               child: Container(
-                padding:
-                const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 4,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 9.w,
+                  vertical: 4.h,
                 ),
                 decoration: BoxDecoration(
-                  color:
-                  AppColors.white,
+                  color: AppColors.white,
                   borderRadius:
-                  BorderRadius.circular(4),
+                      BorderRadius.circular(4.r),
                 ),
                 child: Text(
                   l10n.premiumBadgeLabel,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight:
-                    FontWeight.w600,
-                    fontSize: 12,
+                        FontWeight.w600,
+                    fontSize: 12.sp,
                     color:
-                    AppColors.primary,
+                        AppColors.primary,
                   ),
                 ),
               ),
@@ -710,51 +711,45 @@ class _StatsScreenState extends State<StatsScreen>
             Positioned.fill(
               child: Center(
                 child: Container(
-                  padding:
-                  const EdgeInsets.symmetric(
-                    horizontal: 18,
-                    vertical: 10,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 18.w,
+                    vertical: 10.h,
                   ),
-                  decoration:
-                  BoxDecoration(
-                    color:
-                    AppColors.white,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
                     borderRadius:
-                    BorderRadius.circular(
-                      10,
+                        BorderRadius.circular(
+                      10.r,
                     ),
                     boxShadow: const [
                       BoxShadow(
                         color:
-                        Color(0x12000000),
+                            Color(0x12000000),
                         blurRadius: 20,
                       ),
                     ],
                   ),
                   child: Row(
                     mainAxisSize:
-                    MainAxisSize.min,
+                        MainAxisSize.min,
                     children: [
-                      const Icon(
+                      Icon(
                         Icons.lock_outline,
-                        size: 17,
+                        size: 17.r,
                         color:
-                        AppColors.primary,
+                            AppColors.primary,
                       ),
 
-                      const SizedBox(
-                        width: 7,
-                      ),
+                      SizedBox(width: 7.w),
 
                       Text(
                         l10n.unlockLabel,
-                        style:
-                        const TextStyle(
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w700,
-                          fontSize: 13,
+                              FontWeight.w700,
+                          fontSize: 13.sp,
                           color:
-                          AppColors.primary,
+                              AppColors.primary,
                         ),
                       ),
                     ],
@@ -770,28 +765,27 @@ class _StatsScreenState extends State<StatsScreen>
 
   void _showPremiumPaywall() {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     showDialog<void>(
       context: context,
       builder: (context) {
         return AlertDialog(
           backgroundColor:
-          AppColors.white,
+              AppColors.white,
           title: Text(
             l10n.unlockFullStats,
-            style: const TextStyle(
-              color:
-              AppColors.textBlack,
-              fontWeight:
-              FontWeight.w700,
+            style: TextStyle(
+              color: AppColors.textBlack,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
             ),
           ),
           content: Text(
             l10n.premiumStatsMessage,
-            style: const TextStyle(
-              color:
-              AppColors.textGrey,
+            style: TextStyle(
+              color: AppColors.textGrey,
+              fontSize: 14.sp,
             ),
           ),
           actions: [
@@ -801,6 +795,9 @@ class _StatsScreenState extends State<StatsScreen>
                       .pop(),
               child: Text(
                 l10n.maybeLater,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                ),
               ),
             ),
 
@@ -816,12 +813,12 @@ class _StatsScreenState extends State<StatsScreen>
               },
               child: Text(
                 l10n.upgrade,
-                style:
-                const TextStyle(
+                style: TextStyle(
                   color:
-                  AppColors.primary,
+                      AppColors.primary,
                   fontWeight:
-                  FontWeight.w600,
+                      FontWeight.w600,
+                  fontSize: 14.sp,
                 ),
               ),
             ),
@@ -836,8 +833,8 @@ class _StatsScreenState extends State<StatsScreen>
   // =========================================================
 
   Widget _buildMilestones(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     if (_milestones.isEmpty) {
       return _emptyCard(
         l10n.healthMilestonesWillAppear,
@@ -847,13 +844,13 @@ class _StatsScreenState extends State<StatsScreen>
     final sorted = [..._milestones];
 
     sorted.sort(
-          (a, b) =>
+      (a, b) =>
           ((a['day'] as num?)
-              ?.toInt() ??
-              0)
+                      ?.toInt() ??
+                  0)
               .compareTo(
             (b['day'] as num?)
-                ?.toInt() ??
+                    ?.toInt() ??
                 0,
           ),
     );
@@ -861,13 +858,13 @@ class _StatsScreenState extends State<StatsScreen>
     int nextIndex = -1;
 
     for (
-    int i = 0;
-    i < sorted.length;
-    i++
+      int i = 0;
+      i < sorted.length;
+      i++
     ) {
       final day =
           (sorted[i]['day'] as num?)
-              ?.toInt() ??
+                  ?.toInt() ??
               0;
 
       if (day > _daysSober) {
@@ -877,40 +874,40 @@ class _StatsScreenState extends State<StatsScreen>
     }
 
     return _chartCard(
-      padding: const EdgeInsets.fromLTRB(
-        14,
-        14,
-        14,
-        2,
+      padding: EdgeInsets.fromLTRB(
+        14.w,
+        14.h,
+        14.w,
+        2.h,
       ),
       child: Column(
         crossAxisAlignment:
-        CrossAxisAlignment.start,
+            CrossAxisAlignment.start,
         children: [
           Text(
             l10n.healthMilestones,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight:
-              FontWeight.w700,
-              fontSize: 16,
+                  FontWeight.w700,
+              fontSize: 16.sp,
               color:
-              AppColors.textBlack,
+                  AppColors.textBlack,
             ),
           ),
 
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
 
           for (
-          int i = 0;
-          i < sorted.length;
-          i++
+            int i = 0;
+            i < sorted.length;
+            i++
           )
             _milestoneItem(
               milestone: sorted[i],
               isLast:
-              i == sorted.length - 1,
+                  i == sorted.length - 1,
               isNext:
-              i == nextIndex,
+                  i == nextIndex,
               l10n: l10n,
             ),
         ],
@@ -920,14 +917,14 @@ class _StatsScreenState extends State<StatsScreen>
 
   Widget _milestoneItem({
     required Map<String, dynamic>
-    milestone,
+        milestone,
     required bool isLast,
     required bool isNext,
     required AppLocalizations l10n,
   }) {
     final day =
         (milestone['day'] as num?)
-            ?.toInt() ??
+                ?.toInt() ??
             0;
 
     final title =
@@ -936,7 +933,7 @@ class _StatsScreenState extends State<StatsScreen>
 
     final description =
         milestone['description']
-            ?.toString() ??
+                ?.toString() ??
             '';
 
     final reached =
@@ -956,28 +953,30 @@ class _StatsScreenState extends State<StatsScreen>
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment:
-        CrossAxisAlignment.start,
+            CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: 30,
+            width: 30.w,
             child: Column(
               children: [
                 Container(
-                  width: 22,
-                  height: 22,
+                  width: 22.r,
+                  height: 22.r,
                   decoration:
-                  BoxDecoration(
+                      BoxDecoration(
                     color: iconColor
-                        .withOpacity(0.10),
+                        .withOpacity(
+                      0.10,
+                    ),
                     shape:
-                    BoxShape.circle,
+                        BoxShape.circle,
                   ),
                   child: Icon(
                     reached
                         ? Icons.check
                         : Icons
-                        .access_time_rounded,
-                    size: 14,
+                            .access_time_rounded,
+                    size: 14.r,
                     color: iconColor,
                   ),
                 ),
@@ -985,12 +984,11 @@ class _StatsScreenState extends State<StatsScreen>
                 if (!isLast)
                   Expanded(
                     child: Container(
-                      width: 1.5,
+                      width: 1.5.w,
                       margin:
-                      const EdgeInsets
-                          .only(
-                        top: 4,
-                        bottom: 4,
+                          EdgeInsets.only(
+                        top: 4.h,
+                        bottom: 4.h,
                       ),
                       color: AppColors
                           .outlineGrey,
@@ -1000,18 +998,17 @@ class _StatsScreenState extends State<StatsScreen>
             ),
           ),
 
-          const SizedBox(width: 10),
+          SizedBox(width: 10.w),
 
           Expanded(
             child: Padding(
               padding:
-              const EdgeInsets.only(
-                bottom: 14,
+                  EdgeInsets.only(
+                bottom: 14.h,
               ),
               child: Column(
                 crossAxisAlignment:
-                CrossAxisAlignment
-                    .start,
+                    CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
@@ -1019,46 +1016,45 @@ class _StatsScreenState extends State<StatsScreen>
                         child: Text(
                           title,
                           style:
-                          const TextStyle(
+                              TextStyle(
                             fontWeight:
-                            FontWeight
-                                .w700,
-                            fontSize: 14,
-                            color: AppColors
-                                .textBlack,
+                                FontWeight
+                                    .w700,
+                            fontSize:
+                                14.sp,
+                            color:
+                                AppColors
+                                    .textBlack,
                           ),
                         ),
                       ),
 
-                      const SizedBox(
-                        width: 6,
-                      ),
+                      SizedBox(width: 6.w),
 
                       Text(
                         l10n.dayNumber(day),
                         style: TextStyle(
                           fontWeight:
-                          FontWeight
-                              .w600,
-                          fontSize: 11,
+                              FontWeight
+                                  .w600,
+                          fontSize: 11.sp,
                           color:
-                          iconColor,
+                              iconColor,
                         ),
                       ),
                     ],
                   ),
 
-                  const SizedBox(height: 3),
+                  SizedBox(height: 3.h),
 
                   Text(
                     description,
-                    style:
-                    const TextStyle(
-                      fontSize: 12,
+                    style: TextStyle(
+                      fontSize: 12.sp,
                       height: 1.35,
                       color:
-                      AppColors
-                          .textGrey,
+                          AppColors
+                              .textGrey,
                     ),
                   ),
                 ],
@@ -1075,8 +1071,8 @@ class _StatsScreenState extends State<StatsScreen>
   // =========================================================
 
   Widget _buildCalendar(
-      AppLocalizations l10n,
-      ) {
+    AppLocalizations l10n,
+  ) {
     final today = DateTime.now();
 
     final firstDay = DateTime(
@@ -1091,13 +1087,13 @@ class _StatsScreenState extends State<StatsScreen>
 
     final dates = List.generate(
       42,
-          (index) => firstDay.add(
+      (index) => firstDay.add(
         Duration(days: index),
       ),
     );
 
     final materialLocalizations =
-    MaterialLocalizations.of(context);
+        MaterialLocalizations.of(context);
 
     final narrowWeekdays =
         materialLocalizations
@@ -1114,52 +1110,52 @@ class _StatsScreenState extends State<StatsScreen>
     ];
 
     return _chartCard(
-      padding: const EdgeInsets.fromLTRB(
-        14,
-        14,
-        14,
-        12,
+      padding: EdgeInsets.fromLTRB(
+        14.w,
+        14.h,
+        14.w,
+        12.h,
       ),
       child: Column(
         crossAxisAlignment:
-        CrossAxisAlignment.start,
+            CrossAxisAlignment.start,
         children: [
           Text(
             materialLocalizations
                 .formatMonthYear(today),
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight:
-              FontWeight.w700,
-              fontSize: 16,
+                  FontWeight.w700,
+              fontSize: 16.sp,
               color:
-              AppColors.textBlack,
+                  AppColors.textBlack,
             ),
           ),
 
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
 
           Row(
             children: [
               for (
-              final weekday
-              in mondayFirstWeekdays
+                final weekday
+                    in mondayFirstWeekdays
               )
                 _WeekLabel(weekday),
             ],
           ),
 
-          const SizedBox(height: 5),
+          SizedBox(height: 5.h),
 
           GridView.builder(
             shrinkWrap: true,
             physics:
-            const NeverScrollableScrollPhysics(),
+                const NeverScrollableScrollPhysics(),
             itemCount: dates.length,
             gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(
+                SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 7,
-              crossAxisSpacing: 7,
-              mainAxisSpacing: 6,
+              crossAxisSpacing: 7.w,
+              mainAxisSpacing: 6.h,
               childAspectRatio: 1.15,
             ),
             itemBuilder:
@@ -1186,7 +1182,7 @@ class _StatsScreenState extends State<StatsScreen>
             },
           ),
 
-          const SizedBox(height: 12),
+          SizedBox(height: 12.h),
 
           Row(
             children: [
@@ -1195,18 +1191,18 @@ class _StatsScreenState extends State<StatsScreen>
                 label: l10n.soberLabel,
               ),
 
-              const SizedBox(width: 12),
+              SizedBox(width: 12.w),
 
               _calendarLegend(
                 color: Colors.redAccent,
                 label: l10n.slipLabel,
               ),
 
-              const SizedBox(width: 12),
+              SizedBox(width: 12.w),
 
               _calendarLegend(
                 color:
-                AppColors.textLightGrey,
+                    AppColors.textLightGrey,
                 label: l10n.noDataLabel,
               ),
             ],
@@ -1221,25 +1217,28 @@ class _StatsScreenState extends State<StatsScreen>
     required String label,
   }) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize:
+          MainAxisSize.min,
       children: [
         Container(
-          width: 8,
-          height: 8,
+          width: 8.r,
+          height: 8.r,
           decoration: BoxDecoration(
             color: color,
-            shape: BoxShape.circle,
+            shape:
+                BoxShape.circle,
           ),
         ),
 
-        const SizedBox(width: 5),
+        SizedBox(width: 5.w),
 
         Text(
           label,
-          style: const TextStyle(
-            fontSize: 10,
+          style: TextStyle(
+            fontSize: 10.sp,
             color:
-            AppColors.textLightGrey,
+                AppColors
+                    .textLightGrey,
           ),
         ),
       ],
@@ -1256,19 +1255,22 @@ class _StatsScreenState extends State<StatsScreen>
 
     if (status == 1) {
       background =
-          Colors.green.withOpacity(0.18);
+          Colors.green.withOpacity(
+        0.18,
+      );
       textColor =
           Colors.green.shade700;
     } else if (status == 2) {
       background =
           Colors.redAccent.withOpacity(
-            0.16,
-          );
+        0.16,
+      );
       textColor =
           Colors.redAccent;
     } else {
       background =
-          AppColors.journalChipBackground;
+          AppColors
+              .journalChipBackground;
       textColor =
           AppColors.textLightGrey;
     }
@@ -1277,13 +1279,13 @@ class _StatsScreenState extends State<StatsScreen>
       decoration: BoxDecoration(
         color: background,
         borderRadius:
-        BorderRadius.circular(6),
+            BorderRadius.circular(6.r),
         border: isToday
             ? Border.all(
-          color:
-          AppColors.primary,
-          width: 1.5,
-        )
+                color:
+                    AppColors.primary,
+                width: 1.5.r,
+              )
             : null,
       ),
       alignment: Alignment.center,
@@ -1293,7 +1295,7 @@ class _StatsScreenState extends State<StatsScreen>
           fontWeight: isToday
               ? FontWeight.w800
               : FontWeight.w600,
-          fontSize: 11,
+          fontSize: 11.sp,
           color: textColor,
         ),
       ),
@@ -1307,7 +1309,7 @@ class _StatsScreenState extends State<StatsScreen>
   Widget _chartCard({
     required Widget child,
     EdgeInsetsGeometry padding =
-    const EdgeInsets.all(14),
+        const EdgeInsets.all(14),
   }) {
     return Container(
       width: double.infinity,
@@ -1315,10 +1317,10 @@ class _StatsScreenState extends State<StatsScreen>
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius:
-        BorderRadius.circular(12),
+            BorderRadius.circular(12.r),
         border: Border.all(
           color:
-          AppColors.outlineGrey,
+              AppColors.outlineGrey,
           width: 0.7,
         ),
         boxShadow: const [
@@ -1338,17 +1340,18 @@ class _StatsScreenState extends State<StatsScreen>
       child: Center(
         child: Padding(
           padding:
-          const EdgeInsets.symmetric(
-            vertical: 20,
+              EdgeInsets.symmetric(
+            vertical: 20.h,
           ),
           child: Text(
             text,
             textAlign:
-            TextAlign.center,
-            style: const TextStyle(
-              fontSize: 13,
+                TextAlign.center,
+            style: TextStyle(
+              fontSize: 13.sp,
               color:
-              AppColors.textLightGrey,
+                  AppColors
+                      .textLightGrey,
             ),
           ),
         ),
@@ -1390,12 +1393,13 @@ class _WeekLabel extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight:
-            FontWeight.w600,
-            fontSize: 11,
+                FontWeight.w600,
+            fontSize: 11.sp,
             color:
-            AppColors.textLightGrey,
+                AppColors
+                    .textLightGrey,
           ),
         ),
       ),
@@ -1417,8 +1421,8 @@ class _InteractiveMoodBarChart
 
   @override
   State<_InteractiveMoodBarChart>
-  createState() =>
-      _InteractiveMoodBarChartState();
+      createState() =>
+          _InteractiveMoodBarChartState();
 }
 
 class _InteractiveMoodBarChartState
@@ -1442,9 +1446,9 @@ class _InteractiveMoodBarChartState
   }
 
   String _moodLabel(
-      AppLocalizations l10n,
-      int mood,
-      ) {
+    AppLocalizations l10n,
+    int mood,
+  ) {
     switch (mood) {
       case 0:
         return l10n.moodBad;
@@ -1486,118 +1490,110 @@ class _InteractiveMoodBarChartState
   @override
   Widget build(BuildContext context) {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     final selected =
-    _selectedIndex != null &&
-        _selectedIndex! <
-            widget.data.length
-        ? widget
-        .data[_selectedIndex!]
-        : null;
+        _selectedIndex != null &&
+                _selectedIndex! <
+                    widget.data.length
+            ? widget.data[
+                _selectedIndex!]
+            : null;
 
     final selectedMood =
-    (selected?['moodIndex']
-    as num?)
-        ?.toInt();
+        (selected?['moodIndex']
+                as num?)
+            ?.toInt();
 
     final selectedDate =
-    selected?['date'] as DateTime?;
+        selected?['date'] as DateTime?;
 
     final dateFormatter =
-    MaterialLocalizations.of(
+        MaterialLocalizations.of(
       context,
     );
 
     return Column(
       children: [
         SizedBox(
-          height: 34,
+          height: 34.h,
           child: selectedMood != null
               ? Row(
-            mainAxisAlignment:
-            MainAxisAlignment
-                .center,
-            children: [
-              Text(
-                _moodEmoji(
-                  selectedMood,
-                ),
-                style:
-                const TextStyle(
-                  fontSize: 20,
-                ),
-              ),
+                  mainAxisAlignment:
+                      MainAxisAlignment
+                          .center,
+                  children: [
+                    Text(
+                      _moodEmoji(
+                        selectedMood,
+                      ),
+                      style: TextStyle(
+                        fontSize: 20.sp,
+                      ),
+                    ),
 
-              const SizedBox(
-                width: 7,
-              ),
+                    SizedBox(width: 7.w),
 
-              Text(
-                _moodLabel(
-                  l10n,
-                  selectedMood,
-                ),
-                style:
-                const TextStyle(
-                  fontWeight:
-                  FontWeight
-                      .w700,
-                  fontSize: 13,
-                  color: AppColors
-                      .textBlack,
-                ),
-              ),
+                    Text(
+                      _moodLabel(
+                        l10n,
+                        selectedMood,
+                      ),
+                      style: TextStyle(
+                        fontWeight:
+                            FontWeight.w700,
+                        fontSize: 13.sp,
+                        color:
+                            AppColors
+                                .textBlack,
+                      ),
+                    ),
 
-              if (selectedDate !=
-                  null) ...[
-                const SizedBox(
-                  width: 7,
-                ),
+                    if (selectedDate !=
+                        null) ...[
+                      SizedBox(width: 7.w),
 
-                Text(
-                  dateFormatter
-                      .formatShortDate(
-                    selectedDate,
-                  ),
-                  style:
-                  const TextStyle(
-                    fontSize: 11,
-                    color: AppColors
-                        .textLightGrey,
-                  ),
-                ),
-              ],
-            ],
-          )
+                      Text(
+                        dateFormatter
+                            .formatShortDate(
+                          selectedDate,
+                        ),
+                        style: TextStyle(
+                          fontSize: 11.sp,
+                          color: AppColors
+                              .textLightGrey,
+                        ),
+                      ),
+                    ],
+                  ],
+                )
               : const SizedBox.shrink(),
         ),
 
         SizedBox(
-          height: 125,
+          height: 125.h,
           child: Row(
             crossAxisAlignment:
-            CrossAxisAlignment
-                .end,
+                CrossAxisAlignment.end,
             children: List.generate(
               widget.data.length,
-                  (index) {
+              (index) {
                 final item =
-                widget.data[index];
+                    widget.data[index];
 
                 final mood =
-                (item['moodIndex']
-                as num?)
-                    ?.toInt();
+                    (item['moodIndex']
+                            as num?)
+                        ?.toInt();
 
                 final hasData =
                     item['hasData'] ==
-                        true &&
+                            true &&
                         mood != null;
 
                 final value = hasData
                     ? mood!.toDouble() +
-                    1
+                        1
                     : 0.08;
 
                 final isSelected =
@@ -1607,97 +1603,93 @@ class _InteractiveMoodBarChartState
                 return Expanded(
                   child: GestureDetector(
                     behavior:
-                    HitTestBehavior
-                        .opaque,
+                        HitTestBehavior
+                            .opaque,
                     onTap: hasData
                         ? () {
-                      setState(() {
-                        _selectedIndex =
-                        isSelected
-                            ? null
-                            : index;
-                      });
-                    }
+                            setState(() {
+                              _selectedIndex =
+                                  isSelected
+                                      ? null
+                                      : index;
+                            });
+                          }
                         : null,
                     child: Padding(
                       padding:
-                      EdgeInsets.only(
+                          EdgeInsets.only(
                         left: index == 0
                             ? 0
-                            : 3,
+                            : 3.w,
                         right: index ==
-                            widget.data
-                                .length -
-                                1
+                                widget.data
+                                        .length -
+                                    1
                             ? 0
-                            : 3,
+                            : 3.w,
                       ),
                       child: Column(
                         mainAxisAlignment:
-                        MainAxisAlignment
-                            .end,
+                            MainAxisAlignment
+                                .end,
                         children: [
                           Expanded(
                             child: Align(
                               alignment:
-                              Alignment
-                                  .bottomCenter,
+                                  Alignment
+                                      .bottomCenter,
                               child:
-                              AnimatedContainer(
+                                  AnimatedContainer(
                                 duration:
-                                const Duration(
+                                    const Duration(
                                   milliseconds:
-                                  250,
+                                      250,
                                 ),
                                 width:
-                                double.infinity,
-                                height:
-                                88 *
-                                    (value /
-                                        5),
+                                    double.infinity,
+                                height: 88.h *
+                                    (value / 5),
                                 decoration:
-                                BoxDecoration(
+                                    BoxDecoration(
                                   color: hasData
                                       ? _barColor(
-                                    mood!,
-                                  )
+                                          mood!,
+                                        )
                                       : AppColors
-                                      .textLightGrey
-                                      .withOpacity(
-                                    0.18,
-                                  ),
+                                          .textLightGrey
+                                          .withOpacity(
+                                          0.18,
+                                        ),
                                   borderRadius:
-                                  const BorderRadius
-                                      .vertical(
+                                      BorderRadius
+                                          .vertical(
                                     top:
-                                    Radius.circular(
-                                      5,
+                                        Radius.circular(
+                                      5.r,
                                     ),
                                   ),
                                   border:
-                                  isSelected
-                                      ? Border.all(
-                                    color:
-                                    AppColors.primary,
-                                    width:
-                                    2,
-                                  )
-                                      : null,
+                                      isSelected
+                                          ? Border.all(
+                                              color:
+                                                  AppColors
+                                                      .primary,
+                                              width:
+                                                  2.r,
+                                            )
+                                          : null,
                                 ),
                               ),
                             ),
                           ),
 
-                          const SizedBox(
-                            height: 6,
-                          ),
+                          SizedBox(height: 6.h),
 
                           Text(
                             item['label']
                                 .toString(),
-                            style:
-                            const TextStyle(
-                              fontSize: 10,
+                            style: TextStyle(
+                              fontSize: 10.sp,
                               color: AppColors
                                   .textLightGrey,
                             ),
@@ -1730,8 +1722,8 @@ class _InteractiveCravingBarChart
 
   @override
   State<_InteractiveCravingBarChart>
-  createState() =>
-      _InteractiveCravingBarChartState();
+      createState() =>
+          _InteractiveCravingBarChartState();
 }
 
 class _InteractiveCravingBarChartState
@@ -1757,9 +1749,9 @@ class _InteractiveCravingBarChartState
   }
 
   String _cravingLabel(
-      AppLocalizations l10n,
-      int level,
-      ) {
+    AppLocalizations l10n,
+    int level,
+  ) {
     switch (level) {
       case 3:
         return l10n.cravingStrong;
@@ -1779,104 +1771,99 @@ class _InteractiveCravingBarChartState
   @override
   Widget build(BuildContext context) {
     final l10n =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     final selected =
-    _selectedIndex != null &&
-        _selectedIndex! <
-            widget.data.length
-        ? widget
-        .data[_selectedIndex!]
-        : null;
+        _selectedIndex != null &&
+                _selectedIndex! <
+                    widget.data.length
+            ? widget.data[
+                _selectedIndex!]
+            : null;
 
     final selectedLevel =
-    (selected?['cravingLevel']
-    as num?)
-        ?.toInt();
+        (selected?['cravingLevel']
+                as num?)
+            ?.toInt();
 
     final selectedDate =
-    selected?['date'] as DateTime?;
+        selected?['date'] as DateTime?;
 
     final dateFormatter =
-    MaterialLocalizations.of(
+        MaterialLocalizations.of(
       context,
     );
 
     return Column(
       children: [
         SizedBox(
-          height: 34,
+          height: 34.h,
           child: selectedLevel != null
               ? Row(
-            mainAxisAlignment:
-            MainAxisAlignment
-                .center,
-            children: [
-              Text(
-                _cravingLabel(
-                  l10n,
-                  selectedLevel,
-                ),
-                style:
-                const TextStyle(
-                  fontWeight:
-                  FontWeight
-                      .w700,
-                  fontSize: 13,
-                  color: AppColors
-                      .textBlack,
-                ),
-              ),
+                  mainAxisAlignment:
+                      MainAxisAlignment
+                          .center,
+                  children: [
+                    Text(
+                      _cravingLabel(
+                        l10n,
+                        selectedLevel,
+                      ),
+                      style: TextStyle(
+                        fontWeight:
+                            FontWeight.w700,
+                        fontSize: 13.sp,
+                        color:
+                            AppColors
+                                .textBlack,
+                      ),
+                    ),
 
-              if (selectedDate !=
-                  null) ...[
-                const SizedBox(
-                  width: 7,
-                ),
+                    if (selectedDate !=
+                        null) ...[
+                      SizedBox(width: 7.w),
 
-                Text(
-                  dateFormatter
-                      .formatShortDate(
-                    selectedDate,
-                  ),
-                  style:
-                  const TextStyle(
-                    fontSize: 11,
-                    color: AppColors
-                        .textLightGrey,
-                  ),
-                ),
-              ],
-            ],
-          )
+                      Text(
+                        dateFormatter
+                            .formatShortDate(
+                          selectedDate,
+                        ),
+                        style: TextStyle(
+                          fontSize: 11.sp,
+                          color: AppColors
+                              .textLightGrey,
+                        ),
+                      ),
+                    ],
+                  ],
+                )
               : const SizedBox.shrink(),
         ),
 
         SizedBox(
-          height: 125,
+          height: 125.h,
           child: Row(
             crossAxisAlignment:
-            CrossAxisAlignment
-                .end,
+                CrossAxisAlignment.end,
             children: List.generate(
               widget.data.length,
-                  (index) {
+              (index) {
                 final item =
-                widget.data[index];
+                    widget.data[index];
 
                 final level =
-                (item['cravingLevel']
-                as num?)
-                    ?.toInt();
+                    (item['cravingLevel']
+                            as num?)
+                        ?.toInt();
 
                 final hasData =
                     item['hasData'] ==
-                        true &&
+                            true &&
                         level != null;
 
                 final value = hasData
                     ? level!.toDouble() +
-                    0.35
+                        0.35
                     : 0.08;
 
                 final isSelected =
@@ -1886,97 +1873,94 @@ class _InteractiveCravingBarChartState
                 return Expanded(
                   child: GestureDetector(
                     behavior:
-                    HitTestBehavior
-                        .opaque,
+                        HitTestBehavior
+                            .opaque,
                     onTap: hasData
                         ? () {
-                      setState(() {
-                        _selectedIndex =
-                        isSelected
-                            ? null
-                            : index;
-                      });
-                    }
+                            setState(() {
+                              _selectedIndex =
+                                  isSelected
+                                      ? null
+                                      : index;
+                            });
+                          }
                         : null,
                     child: Padding(
                       padding:
-                      EdgeInsets.only(
+                          EdgeInsets.only(
                         left: index == 0
                             ? 0
-                            : 3,
+                            : 3.w,
                         right: index ==
-                            widget.data
-                                .length -
-                                1
+                                widget.data
+                                        .length -
+                                    1
                             ? 0
-                            : 3,
+                            : 3.w,
                       ),
                       child: Column(
                         mainAxisAlignment:
-                        MainAxisAlignment
-                            .end,
+                            MainAxisAlignment
+                                .end,
                         children: [
                           Expanded(
                             child: Align(
                               alignment:
-                              Alignment
-                                  .bottomCenter,
+                                  Alignment
+                                      .bottomCenter,
                               child:
-                              AnimatedContainer(
+                                  AnimatedContainer(
                                 duration:
-                                const Duration(
+                                    const Duration(
                                   milliseconds:
-                                  250,
+                                      250,
                                 ),
                                 width:
-                                double.infinity,
-                                height:
-                                88 *
+                                    double.infinity,
+                                height: 88.h *
                                     (value /
                                         3.35),
                                 decoration:
-                                BoxDecoration(
+                                    BoxDecoration(
                                   color: hasData
                                       ? _barColor(
-                                    level!,
-                                  )
+                                          level!,
+                                        )
                                       : AppColors
-                                      .textLightGrey
-                                      .withOpacity(
-                                    0.18,
-                                  ),
+                                          .textLightGrey
+                                          .withOpacity(
+                                          0.18,
+                                        ),
                                   borderRadius:
-                                  const BorderRadius
-                                      .vertical(
+                                      BorderRadius
+                                          .vertical(
                                     top:
-                                    Radius.circular(
-                                      5,
+                                        Radius.circular(
+                                      5.r,
                                     ),
                                   ),
                                   border:
-                                  isSelected
-                                      ? Border.all(
-                                    color:
-                                    AppColors.primary,
-                                    width:
-                                    2,
-                                  )
-                                      : null,
+                                      isSelected
+                                          ? Border.all(
+                                              color:
+                                                  AppColors
+                                                      .primary,
+                                              width:
+                                                  2.r,
+                                            )
+                                          : null,
                                 ),
                               ),
                             ),
                           ),
 
-                          const SizedBox(
-                            height: 6,
-                          ),
+                          SizedBox(height: 6.h),
 
                           Text(
                             item['label']
                                 .toString(),
-                            style:
-                            const TextStyle(
-                              fontSize: 10,
+                            style: TextStyle(
+                              fontSize: 10.sp,
                               color: AppColors
                                   .textLightGrey,
                             ),
@@ -1994,3 +1978,4 @@ class _InteractiveCravingBarChartState
     );
   }
 }
+  
