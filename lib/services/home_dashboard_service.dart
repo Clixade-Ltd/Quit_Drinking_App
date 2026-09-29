@@ -85,7 +85,7 @@ class HomeDashboardService extends ChangeNotifier {
   }
 
   // =========================================================
-  // INITIAL PROFILE
+  // INITIAL PROFILE (legacy — kept for backward compatibility)
   // =========================================================
 
   Future<void> saveInitialProfile() async {
@@ -161,6 +161,154 @@ class HomeDashboardService extends ChangeNotifier {
       default:
         return today;
     }
+  }
+
+  // =========================================================
+  // COMPLETE ONBOARDING — LOCAL ONLY, NO AI / NO NETWORK
+  // =========================================================
+  //
+  // Saves the profile straight from the answers the user gave
+  // during onboarding, and immediately builds a personalized
+  // welcome message + health milestones from that same saved
+  // data (goal, triggers, motivations). No API call, no loader
+  // — everything here is synchronous/local, so this finishes
+  // instantly.
+  // =========================================================
+
+  Future<void> completeOnboardingLocally({
+    String? name,
+    required String goal,
+    required DateTime startDate,
+    required String drinkingLevel,
+    required num drinksPerWeek,
+    required num moneySpentPerWeek,
+    required List<String> triggers,
+    required List<String> quitReasons,
+  }) async {
+    final profile = await _readProfile();
+
+    profile.addAll({
+      if (name != null && name.trim().isNotEmpty)
+        'name': name.trim(),
+      'goal': goal,
+      'drinkingLevel': drinkingLevel,
+      'drinksPerWeek': drinksPerWeek,
+      'moneySpentPerWeek': moneySpentPerWeek,
+      'triggers': triggers,
+      'quitReasons': quitReasons,
+      'journeyStartDate': DateTime(
+        startDate.year,
+        startDate.month,
+        startDate.day,
+      ).toIso8601String(),
+      'onboardingCompleted': true,
+      'initialSetupCompletedAt':
+          DateTime.now().toIso8601String(),
+    });
+
+    await _writeProfile(profile);
+
+    // Build + save the personalized plan locally, from the
+    // answers this exact user just gave — no AI involved.
+    final plan = _buildLocalPersonalizedPlan(
+      name: name,
+      goal: goal,
+      triggers: triggers,
+      quitReasons: quitReasons,
+    );
+
+    await saveAIPlan(plan);
+
+    notifyListeners();
+  }
+
+  // ---------------------------------------------------------
+  // LOCAL PERSONALIZED PLAN BUILDER
+  // ---------------------------------------------------------
+  //
+  // Pure Dart — deterministic, based only on what THIS user
+  // answered (goal / triggers / motivations). No network call.
+  // ---------------------------------------------------------
+
+  Map<String, dynamic> _buildLocalPersonalizedPlan({
+    String? name,
+    required String goal,
+    required List<String> triggers,
+    required List<String> quitReasons,
+  }) {
+    final String displayName =
+        (name != null && name.trim().isNotEmpty)
+            ? name.trim()
+            : 'there';
+
+    final String topTrigger =
+        triggers.isNotEmpty ? triggers.first : 'cravings';
+
+    final String topMotivation =
+        quitReasons.isNotEmpty
+            ? quitReasons.first
+            : 'a healthier you';
+
+    final String goalPhrase =
+        goal.trim().isNotEmpty ? goal.trim() : 'your goal';
+
+    final String welcomeMessage =
+        'Welcome, $displayName! You\'re starting your journey '
+        'toward "$goalPhrase". We\'ll help you manage '
+        '$topTrigger and keep your focus on $topMotivation — '
+        'one day at a time.';
+
+    // Generic, day-based recovery milestones. These are
+    // informational, not medical advice, and apply to any
+    // user — the wording above is what's personalized.
+    final List<Map<String, dynamic>> healthMilestones = [
+      {
+        'day': 1,
+        'title': 'A fresh start',
+        'description':
+            'Day one — your body begins to reset.',
+      },
+      {
+        'day': 3,
+        'title': 'Sleep improving',
+        'description':
+            'Sleep quality typically starts improving '
+            'around this point.',
+      },
+      {
+        'day': 7,
+        'title': 'One week strong',
+        'description':
+            'Energy levels and focus often noticeably '
+            'improve by one week.',
+      },
+      {
+        'day': 14,
+        'title': 'Two weeks in',
+        'description':
+            'Skin hydration and digestion continue to '
+            'improve.',
+      },
+      {
+        'day': 30,
+        'title': 'One month milestone',
+        'description':
+            'A major milestone — many people report better '
+            'mood and clarity by 30 days.',
+      },
+      {
+        'day': 90,
+        'title': 'Ninety days',
+        'description':
+            'Long-term habits are forming — this is a huge '
+            'achievement.',
+      },
+    ];
+
+    return {
+      'welcomeMessage': welcomeMessage,
+      'healthMilestones': healthMilestones,
+    };
   }
 
   // =========================================================
@@ -309,6 +457,22 @@ class HomeDashboardService extends ChangeNotifier {
     return effectiveDays < 1
         ? 1
         : effectiveDays;
+  }
+
+  Future<DateTime?> getJourneyStartDate() async {
+    final profile =
+    await _readProfile();
+
+    final raw =
+    profile['journeyStartDate']
+    as String?;
+
+    if (raw == null) return null;
+
+    final start =
+    DateTime.tryParse(raw);
+
+    return start;
   }
 
   // =========================================================
@@ -494,6 +658,9 @@ class HomeDashboardService extends ChangeNotifier {
 
   // =========================================================
   // AI PERSONALIZED PLAN
+  // (name kept for compatibility — content is now always
+  // built locally by completeOnboardingLocally(), never via
+  // a network call)
   // =========================================================
 
   Future<void> saveAIPlan(
@@ -559,8 +726,55 @@ class HomeDashboardService extends ChangeNotifier {
   }
 
   // =========================================================
-  // DAILY AI UPDATE
+  // DAILY UPDATE — LOCAL, BASED ON SAVED ANSWERS
   // =========================================================
+  //
+  // Replaces the old Gemini-based daily update. Deterministic:
+  // picks a motivation quote + journal prompt using the day
+  // count and the user's own saved goal/triggers/motivations,
+  // so it still feels personalized to THAT user without any
+  // network call or loading wait.
+  // =========================================================
+
+  static const List<String> _motivationQuoteBank = [
+    'Every day you choose this is a day you\'re choosing yourself.',
+    'Progress isn\'t always loud — showing up today counts.',
+    'You\'re not giving something up, you\'re gaining yourself back.',
+    'One decision at a time. You\'ve already made a good one today.',
+    'The hardest days build the strongest habits.',
+    'Small consistent choices are what change a life.',
+    'You don\'t have to be perfect — you have to keep going.',
+    'Notice how far you\'ve already come.',
+  ];
+
+  static const List<String> _journalPromptBank = [
+    'What\'s one small win from today, no matter how small?',
+    'What triggered a craving today, and how did you respond?',
+    'What are you most looking forward to this week?',
+    'Who or what is supporting you most right now?',
+    'What would you tell yourself a week ago?',
+    'What does progress look like for you this month?',
+  ];
+
+  Map<String, dynamic> buildLocalDailyUpdate({
+    required Map<String, dynamic> profile,
+    required int daysSober,
+  }) {
+    final quote = _motivationQuoteBank[
+        daysSober % _motivationQuoteBank.length];
+
+    final prompt = _journalPromptBank[
+        daysSober % _journalPromptBank.length];
+
+    final healthScore =
+        (60 + daysSober).clamp(0, 100);
+
+    return {
+      'motivationQuote': quote,
+      'healthScore': healthScore,
+      'journalPrompt': prompt,
+    };
+  }
 
   Future<void> saveDailyAIUpdate(
       Map<String, dynamic> update,

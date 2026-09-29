@@ -9,7 +9,12 @@ import '../../services/home_dashboard_service.dart';
 import '../../services/analytics_service.dart';
 
 class DailyCheckInScreen extends StatefulWidget {
-  const DailyCheckInScreen({super.key});
+  final String? initialMood;
+
+  const DailyCheckInScreen({
+    super.key,
+    this.initialMood,
+  });
 
   @override
   State<DailyCheckInScreen> createState() =>
@@ -61,13 +66,30 @@ class _DailyCheckInScreenState
   bool _isSaving = false;
 
   bool _alreadyCheckedIn = false;
+@override
+void initState() {
+  super.initState();
+  _loadExistingCheckIn();
+  _analytics.checkInStarted();
 
-  @override
-  void initState() {
-    super.initState();
-    _loadExistingCheckIn();
-    _analytics.checkInStarted();
+  if (widget.initialMood != null) {
+    const moodKeys = [
+      'bad',
+      'low',
+      'okay',
+      'good',
+      'great',
+    ];
+
+    final index = moodKeys.indexOf(
+      widget.initialMood!,
+    );
+
+    if (index != -1) {
+      _moodIndex = index;
+    }
   }
+}
 
   @override
   void dispose() {
@@ -92,8 +114,16 @@ class _DailyCheckInScreenState
         _cravingLevel =
             existing.cravingLevel;
 
-        _moodIndex =
-            existing.moodIndex;
+       _moodIndex =
+    widget.initialMood != null
+        ? const [
+            'bad',
+            'low',
+            'okay',
+            'good',
+            'great',
+          ].indexOf(widget.initialMood!)
+        : existing.moodIndex;
 
         _noteController.text =
             existing.note;
@@ -736,8 +766,11 @@ class _DailyCheckInScreenState
 // MOOD OPTION
 // =============================================================
 
-class _MoodOption
-    extends StatelessWidget {
+// =============================================================
+// MOOD OPTION
+// =============================================================
+
+class _MoodOption extends StatefulWidget {
   final String emoji;
   final String label;
   final bool isSelected;
@@ -751,66 +784,113 @@ class _MoodOption
   });
 
   @override
+  State<_MoodOption> createState() => _MoodOptionState();
+}
+
+class _MoodOptionState extends State<_MoodOption> {
+  bool _isHovered = false;
+  bool _isPressed = false;
+
+  @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius:
-      BorderRadius.circular(14),
-      child: Container(
-        padding:
-        const EdgeInsets.symmetric(
-          vertical: 12,
-          horizontal: 4,
-        ),
-        decoration:
-        BoxDecoration(
-          color: isSelected
-              ? AppColors.primary
-              .withOpacity(0.08)
-              : AppColors.white,
-          borderRadius:
-          BorderRadius.circular(14),
-          border: Border.all(
-            color: isSelected
-                ? AppColors.primary
-                : AppColors.outlineGrey,
-            width: 1.4,
-          ),
-        ),
-        child: Column(
-          mainAxisSize:
-          MainAxisSize.min,
-          children: [
-            Text(
-              emoji,
-              style:
-              const TextStyle(
-                fontSize: 24,
-                height: 1.1,
-              ),
+    final bool active = widget.isSelected || _isHovered;
+
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() => _isHovered = true);
+      },
+      onExit: (_) {
+        setState(() => _isHovered = false);
+      },
+      child: GestureDetector(
+        onTapDown: (_) {
+          setState(() => _isPressed = true);
+        },
+        onTapUp: (_) {
+          setState(() => _isPressed = false);
+          widget.onTap();
+        },
+        onTapCancel: () {
+          setState(() => _isPressed = false);
+        },
+        child: AnimatedScale(
+          scale: _isPressed
+              ? 0.94
+              : _isHovered
+                  ? 1.03
+                  : 1.0,
+          duration: const Duration(milliseconds: 160),
+          curve: Curves.easeOut,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 220),
+            curve: Curves.easeOutCubic,
+            padding: const EdgeInsets.symmetric(
+              vertical: 12,
+              horizontal: 4,
             ),
-
-            const SizedBox(height: 6),
-
-            Text(
-              label,
-              style: TextStyle(
-                fontWeight:
-                FontWeight.w600,
-                fontSize: 11,
-                color: isSelected
+            decoration: BoxDecoration(
+              color: widget.isSelected
+                  ? AppColors.primary.withOpacity(0.14)
+                  : active
+                      ? AppColors.primary.withOpacity(0.05)
+                      : AppColors.white,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(
+                color: widget.isSelected
                     ? AppColors.primary
-                    : AppColors
-                    .textLightGrey,
+                    : active
+                        ? AppColors.primary.withOpacity(0.55)
+                        : AppColors.outlineGrey,
+                width: widget.isSelected ? 1.8 : 1.4,
               ),
+              boxShadow: widget.isSelected || _isHovered
+                  ? [
+                      BoxShadow(
+                        color: AppColors.primary.withOpacity(0.10),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      ),
+                    ]
+                  : null,
             ),
-          ],
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                AnimatedScale(
+                  scale: widget.isSelected ? 1.12 : 1.0,
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeOutBack,
+                  child: Text(
+                    widget.emoji,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      height: 1.1,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 6),
+
+                AnimatedDefaultTextStyle(
+                  duration: const Duration(milliseconds: 180),
+                  curve: Curves.easeOut,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: widget.isSelected ? 11.5 : 11,
+                    color: widget.isSelected
+                        ? AppColors.primary
+                        : AppColors.textLightGrey,
+                  ),
+                  child: Text(widget.label),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 }
-
 // =============================================================
 // CHOICE CARD
 // =============================================================

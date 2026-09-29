@@ -832,13 +832,28 @@ class _PersonalizedPlanScreenState
                 ? 2.w
                 : 1.w,
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x08000000),
-              blurRadius: 18,
-              offset: Offset(0, 4),
-            ),
-          ],
+
+          // ======================================================
+          // SELECTED CARD = TEAL SHADOW
+          // UNSELECTED CARD = NORMAL SHADOW
+          // ======================================================
+
+          boxShadow: selected
+              ? [
+                  BoxShadow(
+                    color: teal.withOpacity(0.35),
+                    blurRadius: 25,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 5),
+                  ),
+                ]
+              : const [
+                  BoxShadow(
+                    color: Color(0x08000000),
+                    blurRadius: 18,
+                    offset: Offset(0, 4),
+                  ),
+                ],
         ),
         child: Column(
           crossAxisAlignment:
@@ -941,7 +956,9 @@ class _PersonalizedPlanScreenState
       },
       borderRadius:
           BorderRadius.circular(16.r),
-      child: Container(
+      child: AnimatedContainer(
+        duration:
+            const Duration(milliseconds: 200),
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -955,13 +972,28 @@ class _PersonalizedPlanScreenState
                 ? 2.w
                 : 1.w,
           ),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x08000000),
-              blurRadius: 18,
-              offset: Offset(0, 4),
-            ),
-          ],
+
+          // ======================================================
+          // SELECTED CARD = TEAL SHADOW
+          // UNSELECTED CARD = NORMAL SHADOW
+          // ======================================================
+
+          boxShadow: _yearlySelected
+              ? [
+                  BoxShadow(
+                    color: teal.withOpacity(0.22),
+                    blurRadius: 18,
+                    spreadRadius: 1,
+                    offset: const Offset(0, 5),
+                  ),
+                ]
+              : const [
+                  BoxShadow(
+                    color: Color(0x08000000),
+                    blurRadius: 18,
+                    offset: Offset(0, 4),
+                  ),
+                ],
         ),
         child: Stack(
           children: [

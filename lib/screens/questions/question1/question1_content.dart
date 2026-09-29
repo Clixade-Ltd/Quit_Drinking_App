@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
@@ -36,7 +37,24 @@ class _Question1ContentState extends State<Question1Content>
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
 
-      widget.onCanContinueChanged(_selectedGoal != null);
+      // If no goal is already saved, select the first option by default.
+      if (_selectedGoal == null || _selectedGoal!.isEmpty) {
+        final l10n = AppLocalizations.of(context)!;
+        final defaultGoal = l10n.goalQuitCompletely;
+
+        setState(() {
+          _selectedGoal = defaultGoal;
+        });
+
+        UserDetailsDraft.instance.setGoal(defaultGoal);
+        OnboardingAnswers.instance.setGoal(defaultGoal);
+
+        AnalyticsService.instance.onboardingGoalSelected(defaultGoal);
+
+        widget.onCanContinueChanged(true);
+      } else {
+        widget.onCanContinueChanged(true);
+      }
     });
   }
 
@@ -112,3 +130,4 @@ class _Question1ContentState extends State<Question1Content>
     );
   }
 }
+

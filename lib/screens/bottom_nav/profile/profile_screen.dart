@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
@@ -11,13 +12,14 @@ import 'package:new_quit_drinking_app/constants/app_colors.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/premium_plan_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/edit_profile_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/recovery_goals_screen.dart';
+import 'package:new_quit_drinking_app/screens/bottom_nav/profile/daily_check_ins_screen.dart';
 import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
 import 'package:new_quit_drinking_app/services/local_storage_service.dart';
 import 'package:new_quit_drinking_app/services/analytics_service.dart';
 
-//import '../../details/details_screen.dart';
-
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+
+//import '../../details/details_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -27,9 +29,11 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  final HomeDashboardService _service = HomeDashboardService.instance;
+  final HomeDashboardService _service =
+      HomeDashboardService.instance;
 
-  final AnalyticsService _analytics = AnalyticsService.instance;
+  final AnalyticsService _analytics =
+      AnalyticsService.instance;
 
   bool _isLoading = true;
   String? _errorMessage;
@@ -617,8 +621,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            
             // _buildProfileHeaderCard(l10n),
 
             // SizedBox(height: 18.h),
@@ -776,24 +778,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // =====================================================================
 
   Widget _buildTopBar(
-  AppLocalizations l10n,
-) {
-  return Row(
-    children: [
-      const Spacer(),
+    AppLocalizations l10n,
+  ) {
+    return Row(
+      children: [
+        const Spacer(),
 
-      SizedBox(
-        width: 42.w,
-        height: 42.w,
-        child: Icon(
-          Icons.notifications_none,
-          color: AppColors.primary,
-          size: 22.sp,
+        SizedBox(
+          width: 42.w,
+          height: 42.w,
+          child: Icon(
+            Icons.notifications_none,
+            color: AppColors.primary,
+            size: 22.sp,
+          ),
         ),
-      ),
-    ],
-  );
-}
+      ],
+    );
+  }
 
   // =====================================================================
   // PROFILE HEADER
@@ -1081,6 +1083,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           child: Column(
             children: [
+              // ==========================================================
+              // DAILY CHECK-INS
+              // ==========================================================
+
+              _buildMenuItem(
+                icon: Icons.fact_check_outlined,
+                iconColor: AppColors.primary,
+                title: 'Daily Check-ins',
+                subtitle:
+                    'View your daily check-in history',
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          const DailyCheckInsScreen(),
+                    ),
+                  );
+                },
+              ),
+
+              _buildDivider(),
+
+              // ==========================================================
+              // PRIVACY POLICY
+              // ==========================================================
+
               _buildMenuItem(
                 icon: Icons.lock_outline,
                 iconColor: AppColors.primary,
@@ -1095,6 +1123,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
 
               _buildDivider(),
+
+              // ==========================================================
+              // TERMS OF SERVICE
+              // ==========================================================
 
               _buildMenuItem(
                 icon: Icons.help_outline,
@@ -1111,6 +1143,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               _buildDivider(),
 
+              // ==========================================================
+              // SHARE APP
+              // ==========================================================
+
               _buildMenuItem(
                 icon: Icons.share,
                 iconColor: AppColors.primary,
@@ -1125,6 +1161,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
 
               _buildDivider(),
+
+              // ==========================================================
+              // RESET DATA
+              // ==========================================================
 
               _buildMenuItem(
                 icon: Icons.restart_alt,
@@ -1308,3 +1348,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+

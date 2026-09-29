@@ -188,37 +188,52 @@ class _StartDateContentState extends State<StartDateContent>
           SizedBox(height: 22.h),
 
           // ======================================================
-          // GLASS CALENDAR CARD
+          // GLASS CALENDAR CARD (upgraded)
           // ======================================================
 
           GestureDetector(
             onTap: _openCalendar,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(22.r),
+              borderRadius: BorderRadius.circular(26.r),
               child: BackdropFilter(
                 filter: ImageFilter.blur(
-                  sigmaX: 12,
-                  sigmaY: 12,
+                  sigmaX: 20,
+                  sigmaY: 20,
                 ),
                 child: Container(
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(
-                    horizontal: 14.w,
-                    vertical: 16.h,
+                    horizontal: 16.w,
+                    vertical: 18.h,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.55),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Colors.white.withOpacity(0.65),
+                        Colors.white.withOpacity(0.35),
+                      ],
+                    ),
                     borderRadius:
-                        BorderRadius.circular(22.r),
+                        BorderRadius.circular(26.r),
                     border: Border.all(
-                      color: Colors.white.withOpacity(0.75),
-                      width: 1.2,
+                      color: Colors.white.withOpacity(0.9),
+                      width: 1.4,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.04),
-                        blurRadius: 18,
-                        offset: const Offset(0, 8),
+                        color: AppColors.primary
+                            .withOpacity(0.12),
+                        blurRadius: 26,
+                        spreadRadius: -4,
+                        offset: const Offset(0, 12),
+                      ),
+                      BoxShadow(
+                        color:
+                            Colors.black.withOpacity(0.03),
+                        blurRadius: 10,
+                        offset: const Offset(0, 2),
                       ),
                     ],
                   ),
@@ -229,13 +244,13 @@ class _StartDateContentState extends State<StartDateContent>
                       // ==================================================
 
                       _GlassArrowButton(
-                        icon: Icons.chevron_left,
+                        icon: Icons.chevron_left_rounded,
                         onTap: () {
                           _changeDateByDay(-1);
                         },
                       ),
 
-                      SizedBox(width: 12.w),
+                      SizedBox(width: 14.w),
 
                       // ==================================================
                       // SELECTED DATE
@@ -248,11 +263,12 @@ class _StartDateContentState extends State<StartDateContent>
                             Text(
                               _monthName(
                                 _selectedDate.month,
-                              ),
+                              ).toUpperCase(),
                               style: TextStyle(
                                 fontWeight:
-                                    FontWeight.w600,
-                                fontSize: 13.sp,
+                                    FontWeight.w700,
+                                fontSize: 12.sp,
+                                letterSpacing: 1.4,
                                 color:
                                     AppColors.textGrey,
                               ),
@@ -260,15 +276,25 @@ class _StartDateContentState extends State<StartDateContent>
 
                             SizedBox(height: 2.h),
 
-                            Text(
-                              '${_selectedDate.day}',
-                              style: TextStyle(
-                                fontWeight:
-                                    FontWeight.w800,
-                                fontSize: 30.sp,
-                                height: 1.05,
-                                color:
-                                    AppColors.primary,
+                            ShaderMask(
+                              shaderCallback: (bounds) =>
+                                  LinearGradient(
+                                colors: [
+                                  AppColors.primary,
+                                  AppColors.primary
+                                      .withOpacity(0.7),
+                                ],
+                              ).createShader(bounds),
+                              child: Text(
+                                '${_selectedDate.day}',
+                                style: TextStyle(
+                                  fontWeight:
+                                      FontWeight.w800,
+                                  fontSize: 34.sp,
+                                  height: 1.05,
+                                  // Base color is overridden by ShaderMask.
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
 
@@ -293,32 +319,40 @@ class _StartDateContentState extends State<StartDateContent>
                       // ==================================================
 
                       Container(
-                        width: 42.w,
-                        height: 42.w,
+                        width: 46.w,
+                        height: 46.w,
                         decoration: BoxDecoration(
-                          color: AppColors.primary
-                              .withOpacity(0.10),
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              AppColors.primary
+                                  .withOpacity(0.18),
+                              AppColors.primary
+                                  .withOpacity(0.06),
+                            ],
+                          ),
                           shape: BoxShape.circle,
                           border: Border.all(
                             color: AppColors.primary
-                                .withOpacity(0.10),
+                                .withOpacity(0.15),
                           ),
                         ),
                         child: Icon(
-                          Icons.calendar_month_outlined,
+                          Icons.calendar_month_rounded,
                           color: AppColors.primary,
-                          size: 21.sp,
+                          size: 22.sp,
                         ),
                       ),
 
-                      SizedBox(width: 12.w),
+                      SizedBox(width: 14.w),
 
                       // ==================================================
                       // RIGHT ARROW
                       // ==================================================
 
                       _GlassArrowButton(
-                        icon: Icons.chevron_right,
+                        icon: Icons.chevron_right_rounded,
                         onTap: () {
                           _changeDateByDay(1);
                         },
@@ -398,7 +432,7 @@ class _StartDateContentState extends State<StartDateContent>
 }
 
 // ============================================================
-// GLASS ARROW BUTTON
+// GLASS ARROW BUTTON (upgraded — ripple + depth)
 // ============================================================
 
 class _GlassArrowButton extends StatelessWidget {
@@ -412,23 +446,37 @@ class _GlassArrowButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 42.w,
-        height: 42.w,
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.55),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: Colors.white.withOpacity(0.8),
-            width: 1,
+    return ClipOval(
+      child: Material(
+        color: Colors.white.withOpacity(0.6),
+        child: InkWell(
+          onTap: onTap,
+          splashColor: AppColors.primary.withOpacity(0.15),
+          highlightColor:
+              AppColors.primary.withOpacity(0.08),
+          child: Container(
+            width: 44.w,
+            height: 44.w,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Colors.white.withOpacity(0.9),
+                width: 1.2,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 8,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Icon(
+              icon,
+              color: AppColors.primary,
+              size: 26.sp,
+            ),
           ),
-        ),
-        child: Icon(
-          icon,
-          color: AppColors.primary,
-          size: 27.sp,
         ),
       ),
     );
@@ -594,7 +642,7 @@ class _CalendarBottomSheetState
                   SizedBox(height: 12.h),
 
                   // ==================================================
-                  // CALENDAR
+                  // CALENDAR (upgraded theme)
                   // ==================================================
 
                   Theme(
@@ -603,10 +651,37 @@ class _CalendarBottomSheetState
                           Theme.of(context)
                               .colorScheme
                               .copyWith(
-                        primary:
-                            AppColors.primary,
-                        onPrimary:
-                            AppColors.white,
+                        primary: AppColors.primary,
+                        onPrimary: AppColors.white,
+                        surface: Colors.transparent,
+                        onSurface: AppColors.textBlack,
+                      ),
+                      datePickerTheme:
+                          DatePickerThemeData(
+                        backgroundColor:
+                            Colors.transparent,
+                        todayBorder: BorderSide(
+                          color: AppColors.primary
+                              .withOpacity(0.5),
+                          width: 1.4,
+                        ),
+                        dayShape: WidgetStatePropertyAll(
+                          RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(
+                              12.r,
+                            ),
+                          ),
+                        ),
+                        dayStyle: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14.sp,
+                        ),
+                        headerHeadlineStyle: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 18.sp,
+                          color: AppColors.textBlack,
+                        ),
                       ),
                     ),
                     child: CalendarDatePicker(
@@ -675,4 +750,4 @@ class _CalendarBottomSheetState
       ),
     );
   }
-} 
+}
