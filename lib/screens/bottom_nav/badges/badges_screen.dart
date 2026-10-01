@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
@@ -7,6 +8,7 @@ import '../../../models/milestone_definition.dart';
 import '../../../services/achievement_service.dart';
 import '../../../services/analytics_service.dart';
 import '../../../services/home_dashboard_service.dart';
+import '../../../widgets/badge_emblem.dart';
 
 // Used to open the already-existing milestone achieved screen.
 import '../../milestones/milestone_achieved_screen.dart';
@@ -27,19 +29,12 @@ class _BadgesScreenState extends State<BadgesScreen> {
   List<_BadgeItem> _achievements = [];
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
     if (!_hasLoadedOnce) {
       _hasLoadedOnce = true;
-
       AnalyticsService.instance.badgesScreenViewed();
-
       _load();
     }
   }
@@ -49,11 +44,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   Future<void> _load() async {
-    debugPrint('BADGES: _load() STARTED');
-
     final l10n = AppLocalizations.of(context)!;
-
-    debugPrint('BADGES: LOCALIZATION OK');
 
     if (mounted) {
       setState(() {
@@ -63,34 +54,18 @@ class _BadgesScreenState extends State<BadgesScreen> {
     }
 
     try {
-      // ============================================================
-      // LIVE SOBRIETY DATA
-      // ============================================================
-
-      debugPrint(
-        'BADGES: Loading days sober from Local Storage...',
-      );
-
       final daysSober =
           await HomeDashboardService.instance.getDaysSober();
-
-      debugPrint('BADGES: DAYS SOBER = $daysSober');
 
       final nextLocked =
           MilestoneDefinitions.nextLocked(daysSober);
 
-      debugPrint(
-        'BADGES: Next locked milestone = '
-        '${nextLocked?.days ?? 'none'} days',
-      );
-
-      // ============================================================
-      // LIVE SOBRIETY MILESTONES
-      // ============================================================
+      // ---------------- SOBRIETY MILESTONES ----------------
 
       final milestoneBadges =
           MilestoneDefinitions.all.map((def) {
-        final unlocked = daysSober >= def.days;
+        final unlocked =
+            daysSober >= def.days;
 
         double? progress;
         String subtitle;
@@ -99,240 +74,303 @@ class _BadgesScreenState extends State<BadgesScreen> {
           subtitle = l10n.unlocked;
         } else if (identical(def, nextLocked)) {
           final prevDays =
-              MilestoneDefinitions.previousThreshold(def);
+              MilestoneDefinitions.previousThreshold(
+            def,
+          );
 
           final span =
-              (def.days - prevDays).clamp(1, def.days);
+              (def.days - prevDays)
+                  .clamp(1, def.days);
 
           progress =
               ((daysSober - prevDays) / span)
                   .clamp(0.0, 1.0);
 
-          final daysLeft =
-              def.days - daysSober;
-
           subtitle =
-              l10n.daysLeft(daysLeft);
+              l10n.daysLeft(
+            def.days - daysSober,
+          );
         } else {
           subtitle =
-              l10n.daysCount(def.days);
+              l10n.daysCount(
+            def.days,
+          );
         }
 
+        final style =
+            _styleForDays(def.days);
+
         return _BadgeItem(
-          icon: unlocked
-              ? def.icon
-              : Icons.lock_outline,
-          title: _localizedMilestoneTitle(
+          icon: def.icon,
+
+          // hex -> number in the middle
+          // premium -> ribbon text
+          // shield -> icon only
+          label: style == BadgeStyle.hex
+              ? '${def.days}'
+              : (style == BadgeStyle.premium
+                  ? def.shortLabel
+                  : null),
+
+          style: style,
+          title:
+              _localizedMilestoneTitle(
             def,
             l10n,
           ),
           subtitle: subtitle,
           tier: def.tier,
-          category: BadgeCategory.milestone,
           unlocked: unlocked,
           progress: progress,
+          definition: def,
         );
       }).toList();
 
-      debugPrint(
-        'BADGES: Milestones loaded = '
-        '${milestoneBadges.length}',
-      );
+      // ---------------- JOURNEY BADGES ----------------
 
-      // ============================================================
-      // LIVE JOURNEY BADGES
-      // ============================================================
+      final achievementDefs =
+          <_AchievementDef>[
+        // ----------------------------------------------------
+        // JOURNAL
+        // ----------------------------------------------------
 
-      final achievementDefs = <_AchievementDef>[
-        // Journal
         _AchievementDef(
           icon: Icons.edit_note,
           title: l10n.firstReflection,
-          unlockedSubtitle: l10n.oneJournalEntry,
+          unlockedSubtitle:
+              l10n.oneJournalEntry,
           tier: BadgeTier.bronze,
           threshold: 1,
           getCount:
-              AchievementService.instance.getJournalEntries,
+              AchievementService
+                  .instance
+                  .getJournalEntries,
         ),
 
         _AchievementDef(
           icon: Icons.menu_book,
           title: l10n.openBook,
-          unlockedSubtitle: l10n.tenJournalEntries,
+          unlockedSubtitle:
+              l10n.tenJournalEntries,
           tier: BadgeTier.silver,
           threshold: 10,
           getCount:
-              AchievementService.instance.getJournalEntries,
+              AchievementService
+                  .instance
+                  .getJournalEntries,
         ),
 
         _AchievementDef(
           icon: Icons.history_edu,
           title: l10n.dedicatedWriter,
-          unlockedSubtitle: l10n.thirtyJournalEntries,
+          unlockedSubtitle:
+              l10n.thirtyJournalEntries,
           tier: BadgeTier.gold,
           threshold: 30,
           getCount:
-              AchievementService.instance.getJournalEntries,
+              AchievementService
+                  .instance
+                  .getJournalEntries,
         ),
 
-        // AI Coach
+        // ----------------------------------------------------
+        // AI COACH
+        // ----------------------------------------------------
+
         _AchievementDef(
           icon: Icons.smart_toy,
           title: l10n.firstConversation,
-          unlockedSubtitle: l10n.oneAiCoachChat,
+          unlockedSubtitle:
+              l10n.oneAiCoachChat,
           tier: BadgeTier.bronze,
           threshold: 1,
           getCount:
-              AchievementService.instance.getAiCoachConversations,
+              AchievementService
+                  .instance
+                  .getAiCoachConversations,
         ),
 
         _AchievementDef(
-          icon: Icons.chat_bubble_outline,
+          icon:
+              Icons.chat_bubble_outline,
           title: l10n.keepTalking,
-          unlockedSubtitle: l10n.fiveConversations,
+          unlockedSubtitle:
+              l10n.fiveConversations,
           tier: BadgeTier.silver,
           threshold: 5,
           getCount:
-              AchievementService.instance.getAiCoachConversations,
+              AchievementService
+                  .instance
+                  .getAiCoachConversations,
         ),
 
         _AchievementDef(
           icon: Icons.handshake,
           title: l10n.coachCompanion,
-          unlockedSubtitle: l10n.twentyConversations,
+          unlockedSubtitle:
+              l10n.twentyConversations,
           tier: BadgeTier.gold,
           threshold: 20,
           getCount:
-              AchievementService.instance.getAiCoachConversations,
+              AchievementService
+                  .instance
+                  .getAiCoachConversations,
         ),
 
-        // Check-ins
+        // ----------------------------------------------------
+        // CHECK-INS
+        // ----------------------------------------------------
+
         _AchievementDef(
           icon: Icons.calendar_today,
           title: l10n.checkInHabit,
-          unlockedSubtitle: l10n.sevenCheckIns,
+          unlockedSubtitle:
+              l10n.sevenCheckIns,
           tier: BadgeTier.bronze,
           threshold: 7,
           getCount:
-              AchievementService.instance.getCheckIns,
+              AchievementService
+                  .instance
+                  .getCheckIns,
         ),
 
         _AchievementDef(
           icon: Icons.autorenew,
           title: l10n.consistencyPro,
-          unlockedSubtitle: l10n.thirtyCheckIns,
+          unlockedSubtitle:
+              l10n.thirtyCheckIns,
           tier: BadgeTier.silver,
           threshold: 30,
           getCount:
-              AchievementService.instance.getCheckIns,
+              AchievementService
+                  .instance
+                  .getCheckIns,
         ),
 
         _AchievementDef(
           icon: Icons.star_outline,
           title: l10n.dedicatedJourney,
-          unlockedSubtitle: l10n.hundredCheckIns,
+          unlockedSubtitle:
+              l10n.hundredCheckIns,
           tier: BadgeTier.gold,
           threshold: 100,
           getCount:
-              AchievementService.instance.getCheckIns,
+              AchievementService
+                  .instance
+                  .getCheckIns,
         ),
 
-        // Goals
+        // ----------------------------------------------------
+        // GOALS
+        // ----------------------------------------------------
+
         _AchievementDef(
           icon: Icons.flag_outlined,
           title: l10n.goalGetter,
-          unlockedSubtitle: l10n.threeGoalsCompleted,
+          unlockedSubtitle:
+              l10n.threeGoalsCompleted,
           tier: BadgeTier.silver,
           threshold: 3,
           getCount:
-              AchievementService.instance.getPersonalGoalsCompleted,
+              AchievementService
+                  .instance
+                  .getPersonalGoalsCompleted,
         ),
 
         _AchievementDef(
           icon: Icons.emoji_events,
           title: l10n.goalAchiever,
-          unlockedSubtitle: l10n.tenGoalsCompleted,
+          unlockedSubtitle:
+              l10n.tenGoalsCompleted,
           tier: BadgeTier.gold,
           threshold: 10,
           getCount:
-              AchievementService.instance.getPersonalGoalsCompleted,
+              AchievementService
+                  .instance
+                  .getPersonalGoalsCompleted,
         ),
 
-        // Money Saved
+        // ----------------------------------------------------
+        // MONEY SAVED
+        // ----------------------------------------------------
+
         _AchievementDef(
           icon: Icons.savings,
           title: l10n.firstSavings,
-          unlockedSubtitle: l10n.fiveHundredSaved,
+          unlockedSubtitle:
+              l10n.fiveHundredSaved,
           tier: BadgeTier.bronze,
           threshold: 500,
           isCurrency: true,
           getCount:
-              AchievementService.instance.getMoneySaved,
+              AchievementService
+                  .instance
+                  .getMoneySaved,
         ),
 
         _AchievementDef(
           icon: Icons.attach_money,
           title: l10n.smartSaver,
-          unlockedSubtitle: l10n.oneThousandSaved,
+          unlockedSubtitle:
+              l10n.oneThousandSaved,
           tier: BadgeTier.silver,
           threshold: 1000,
           isCurrency: true,
           getCount:
-              AchievementService.instance.getMoneySaved,
+              AchievementService
+                  .instance
+                  .getMoneySaved,
         ),
 
         _AchievementDef(
           icon: Icons.diamond,
           title: l10n.bigSaver,
-          unlockedSubtitle: l10n.fiveThousandSaved,
+          unlockedSubtitle:
+              l10n.fiveThousandSaved,
           tier: BadgeTier.platinum,
           threshold: 5000,
           isCurrency: true,
           getCount:
-              AchievementService.instance.getMoneySaved,
+              AchievementService
+                  .instance
+                  .getMoneySaved,
         ),
       ];
 
-      debugPrint(
-        'BADGES: Achievement definitions = '
-        '${achievementDefs.length}',
-      );
+      final achievementBadges =
+          <_BadgeItem>[];
 
-      final achievementBadges = <_BadgeItem>[];
+      // ======================================================
+      // LOAD ACHIEVEMENT COUNTS
+      // ======================================================
 
-      // ============================================================
-      // LOAD EACH ACHIEVEMENT COUNTER
-      // ============================================================
-
-      for (final def in achievementDefs) {
+      for (final def
+          in achievementDefs) {
         num count;
 
         try {
-          debugPrint(
-            'BADGES: Loading achievement "${def.title}"...',
-          );
+          count =
+              await def.getCount().timeout(
+            const Duration(
+              seconds: 10,
+            ),
 
-          count = await def.getCount().timeout(
-            const Duration(seconds: 10),
+            // IMPORTANT:
+            // The Future expects an int-compatible
+            // timeout result. Do NOT return 0.0 here.
             onTimeout: () {
               debugPrint(
-                'BADGES: AchievementService timed out for '
-                '"${def.title}"',
+                'BADGES: timeout for "${def.title}"',
               );
+
               return 0;
             },
           );
-
-          debugPrint(
-            'BADGES: "${def.title}" count = $count',
-          );
         } catch (e, stackTrace) {
           debugPrint(
-            'BADGES: AchievementService error for '
-            '"${def.title}": $e',
+            'BADGES: error for "${def.title}": '
+            '$e\n$stackTrace',
           );
-
-          debugPrint('$stackTrace');
 
           count = 0;
         }
@@ -350,7 +388,8 @@ class _BadgesScreenState extends State<BadgesScreen> {
             def.isCurrency
                 ? l10n.currencyProgress(
                     count.toStringAsFixed(0),
-                    def.threshold.toStringAsFixed(0),
+                    def.threshold
+                        .toStringAsFixed(0),
                   )
                 : l10n.countProgress(
                     count.toInt(),
@@ -359,47 +398,38 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
         achievementBadges.add(
           _BadgeItem(
-            icon: unlocked
-                ? def.icon
-                : Icons.lock_outline,
+            icon: def.icon,
+            style: BadgeStyle.medal,
             title: def.title,
             subtitle: unlocked
                 ? def.unlockedSubtitle
                 : lockedSubtitle,
             tier: def.tier,
-            category: BadgeCategory.achievement,
             unlocked: unlocked,
-            progress: unlocked
-                ? null
-                : progress,
+            progress:
+                unlocked
+                    ? null
+                    : progress,
           ),
         );
       }
 
-      debugPrint(
-        'BADGES: Achievements loaded = '
-        '${achievementBadges.length}',
-      );
-
       if (!mounted) return;
 
       setState(() {
-        _milestones = milestoneBadges;
-        _achievements = achievementBadges;
+        _milestones =
+            milestoneBadges;
+
+        _achievements =
+            achievementBadges;
+
         _isLoading = false;
         _hasError = false;
       });
-
-      debugPrint(
-        'BADGES: LOAD COMPLETE ✓ '
-        '(${_milestones.length} milestones, '
-        '${_achievements.length} achievements)',
-      );
     } catch (e, stackTrace) {
-      debugPrint('BADGES: LOAD ERROR: $e');
-
       debugPrint(
-        'BADGES: STACK TRACE:\n$stackTrace',
+        'BADGES: LOAD ERROR: '
+        '$e\n$stackTrace',
       );
 
       if (!mounted) return;
@@ -412,8 +442,16 @@ class _BadgesScreenState extends State<BadgesScreen> {
   }
 
   // ============================================================
-  // LOCALIZED MILESTONE TITLES
+  // MILESTONE HELPERS
   // ============================================================
+
+  BadgeStyle _styleForDays(
+    int days,
+  ) {
+    return BadgeVisuals.styleForDays(
+      days,
+    );
+  }
 
   String _localizedMilestoneTitle(
     MilestoneDefinition def,
@@ -438,31 +476,18 @@ class _BadgesScreenState extends State<BadgesScreen> {
       case 365:
         return l10n.milestoneOneYear;
 
+      case 730:
+        return l10n.milestoneTwoYears;
+
+      case 1825:
+        return l10n.milestoneFiveYears;
+
       default:
         return l10n.milestoneDayCount(
           def.days,
         );
     }
   }
-
-  // ============================================================
-  // COUNTERS
-  // ============================================================
-
-  int get _unlockedCount =>
-      _milestones
-          .where((b) => b.unlocked)
-          .length +
-      _achievements
-          .where((b) => b.unlocked)
-          .length;
-
-  int get _totalCount =>
-      _milestones.length +
-      _achievements.length;
-
-  int get _remainingCount =>
-      _totalCount - _unlockedCount;
 
   _BadgeItem? get _nextMilestone {
     for (final b in _milestones) {
@@ -475,56 +500,64 @@ class _BadgesScreenState extends State<BadgesScreen> {
     return null;
   }
 
+  _BadgeItem? get _latestUnlockedMilestone {
+    for (final b
+        in _milestones.reversed) {
+      if (b.unlocked) {
+        return b;
+      }
+    }
+
+    return null;
+  }
+
   // ============================================================
-  // VIEW ACHIEVED MILESTONES
+  // OPEN MILESTONE SCREEN
   // ============================================================
 
-  void _viewAchievedMilestones() {
-    final l10n =
-        AppLocalizations.of(context)!;
+  void _openMilestone(
+    MilestoneDefinition def,
+  ) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) =>
+            MilestoneAchievedScreen(
+          milestone: def,
+          returnToPreviousScreen: true,
+        ),
+      ),
+    );
+  }
 
-    final unlockedMilestoneDefinitions =
-        MilestoneDefinitions.all
-            .where(
-              (milestone) => _milestones.any(
-                (badge) =>
-                    badge.title ==
-                        _localizedMilestoneTitle(
-                          milestone,
-                          l10n,
-                        ) &&
-                    badge.unlocked,
-              ),
-            )
-            .toList();
+  void _onMilestoneTap(
+    _BadgeItem item,
+  ) {
+    final def =
+        item.definition;
 
-    if (unlockedMilestoneDefinitions
-        .isEmpty) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(
+    if (def == null) {
+      return;
+    }
+
+    // Unlocked -> open celebration screen.
+    if (item.unlocked) {
+      _openMilestone(def);
+      return;
+    }
+
+    // Locked -> show progress.
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
         SnackBar(
           content: Text(
-            l10n.firstMilestoneWaiting,
+            '${item.title} · '
+            '${item.subtitle}',
           ),
           behavior:
               SnackBarBehavior.floating,
         ),
       );
-
-      return;
-    }
-
-    final latestMilestone =
-        unlockedMilestoneDefinitions.last;
-
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) =>
-            MilestoneAchievedScreen(
-          milestone: latestMilestone,
-        ),
-      ),
-    );
   }
 
   // ============================================================
@@ -532,16 +565,21 @@ class _BadgesScreenState extends State<BadgesScreen> {
   // ============================================================
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     final l10n =
-        AppLocalizations.of(context)!;
+        AppLocalizations.of(
+      context,
+    )!;
 
     if (_isLoading) {
-      return Scaffold(
+      return const Scaffold(
         backgroundColor:
             AppColors.dashboardBackground,
-        body: const Center(
-          child: CircularProgressIndicator(),
+        body: Center(
+          child:
+              CircularProgressIndicator(),
         ),
       );
     }
@@ -552,7 +590,8 @@ class _BadgesScreenState extends State<BadgesScreen> {
             AppColors.dashboardBackground,
         body: Center(
           child: Padding(
-            padding: EdgeInsets.all(24.w),
+            padding:
+                EdgeInsets.all(24.w),
             child: Column(
               mainAxisAlignment:
                   MainAxisAlignment.center,
@@ -564,7 +603,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
                       AppColors.textLightGrey,
                 ),
 
-                SizedBox(height: 16.h),
+                SizedBox(
+                  height: 16.h,
+                ),
 
                 Text(
                   l10n.unableToLoadProfile,
@@ -579,7 +620,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   ),
                 ),
 
-                SizedBox(height: 20.h),
+                SizedBox(
+                  height: 20.h,
+                ),
 
                 ElevatedButton(
                   onPressed: _load,
@@ -601,9 +644,6 @@ class _BadgesScreenState extends State<BadgesScreen> {
       );
     }
 
-    final nextMilestone =
-        _nextMilestone;
-
     return Scaffold(
       backgroundColor:
           AppColors.dashboardBackground,
@@ -615,12 +655,15 @@ class _BadgesScreenState extends State<BadgesScreen> {
             _buildAppBar(l10n),
 
             Expanded(
-              child: RefreshIndicator(
+              child:
+                  RefreshIndicator(
                 onRefresh: _load,
-                child: SingleChildScrollView(
+                child:
+                    SingleChildScrollView(
                   physics:
                       const AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.fromLTRB(
+                  padding:
+                      EdgeInsets.fromLTRB(
                     16.w,
                     4.h,
                     16.w,
@@ -628,55 +671,55 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   ),
                   child: Column(
                     crossAxisAlignment:
-                        CrossAxisAlignment.stretch,
+                        CrossAxisAlignment
+                            .stretch,
                     children: [
-                      _buildSummaryCard(l10n),
-
-                      SizedBox(height: 16.h),
-
-                      _buildAchievedMilestonesCard(
+                      _buildHeroCard(
                         l10n,
                       ),
 
-                      if (nextMilestone != null) ...[
-                        SizedBox(height: 16.h),
-                        _buildNextMilestoneCard(
-                          nextMilestone,
-                          l10n,
-                        ),
-                      ],
-
-                      SizedBox(height: 28.h),
+                      SizedBox(
+                        height: 28.h,
+                      ),
 
                       _buildSectionHeader(
-                        l10n.sobrietyMilestones,
+                        l10n
+                            .sobrietyMilestones,
                         _milestones
                             .where(
-                              (b) => b.unlocked,
+                              (b) =>
+                                  b.unlocked,
                             )
                             .length,
                         _milestones.length,
                       ),
 
-                      SizedBox(height: 12.h),
+                      SizedBox(
+                        height: 16.h,
+                      ),
 
                       _buildBadgeGrid(
                         _milestones,
                       ),
 
-                      SizedBox(height: 28.h),
+                      SizedBox(
+                        height: 28.h,
+                      ),
 
                       _buildSectionHeader(
                         l10n.journeyBadges,
                         _achievements
                             .where(
-                              (b) => b.unlocked,
+                              (b) =>
+                                  b.unlocked,
                             )
                             .length,
                         _achievements.length,
                       ),
 
-                      SizedBox(height: 12.h),
+                      SizedBox(
+                        height: 16.h,
+                      ),
 
                       _buildBadgeGrid(
                         _achievements,
@@ -693,166 +736,248 @@ class _BadgesScreenState extends State<BadgesScreen> {
   }
 
   // ============================================================
-  // YOUR MILESTONE JOURNEY CARD
+  // HERO CARD
   // ============================================================
 
-  Widget _buildAchievedMilestonesCard(
+  Widget _buildHeroCard(
     AppLocalizations l10n,
   ) {
+    final latest =
+        _latestUnlockedMilestone;
+
+    final next =
+        _nextMilestone;
+
     final unlockedCount =
         _milestones
             .where(
-              (badge) => badge.unlocked,
+              (b) => b.unlocked,
             )
             .length;
 
-    final hasMilestones =
-        unlockedCount > 0;
+    final _BadgeItem? shown =
+        latest ?? next;
+
+    if (shown == null) {
+      return const SizedBox.shrink();
+    }
+
+    const greenLight =
+        Color(0xFF1B6B47);
+
+    const greenDark =
+        Color(0xFF0A3D26);
 
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: hasMilestones
-            ? _viewAchievedMilestones
-            : null,
         borderRadius:
-            BorderRadius.circular(28.r),
+            BorderRadius.circular(
+          28.r,
+        ),
+        onTap:
+            latest?.definition != null
+                ? () =>
+                    _openMilestone(
+                      latest!.definition!,
+                    )
+                : null,
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(20.r),
-          decoration: BoxDecoration(
-            color: AppColors.white,
+          padding:
+              EdgeInsets.fromLTRB(
+            20.w,
+            24.h,
+            20.w,
+            20.h,
+          ),
+          decoration:
+              BoxDecoration(
             borderRadius:
-                BorderRadius.circular(28.r),
+                BorderRadius.circular(
+              28.r,
+            ),
+            gradient:
+                const LinearGradient(
+              begin:
+                  Alignment.topLeft,
+              end:
+                  Alignment.bottomRight,
+              colors: [
+                greenLight,
+                greenDark,
+              ],
+            ),
             border: Border.all(
-              color: AppColors.primary
-                  .withOpacity(0.12),
+              color: Colors.white
+                  .withOpacity(
+                0.18,
+              ),
               width: 1.w,
             ),
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
-                color: Color(0x0A000000),
-                blurRadius: 20,
-                offset: Offset(0, 4),
+                color: greenDark
+                    .withOpacity(
+                  0.35,
+                ),
+                blurRadius: 24,
+                offset:
+                    const Offset(
+                  0,
+                  8,
+                ),
               ),
             ],
           ),
-          child: Row(
+          child: Column(
             children: [
-              Container(
-                width: 54.w,
-                height: 54.w,
-                decoration:
-                    BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient:
-                      LinearGradient(
-                    begin:
-                        Alignment.topLeft,
-                    end:
-                        Alignment.bottomRight,
-                    colors: [
-                      AppColors.primary,
-                      AppColors.primary
-                          .withOpacity(0.72),
-                    ],
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors
-                          .primary
-                          .withOpacity(0.22),
-                      blurRadius: 12.r,
-                      offset:
-                          Offset(0, 5.h),
-                    ),
-                  ],
+              BadgeEmblem(
+                size: 96.w,
+                color:
+                    _tierColor(
+                  shown.tier,
                 ),
-                child: Icon(
-                  Icons
-                      .emoji_events_rounded,
+                style:
+                    shown.style,
+                label:
+                    shown.label,
+                icon:
+                    shown.icon,
+                locked:
+                    !shown.unlocked,
+              ),
+
+              SizedBox(
+                height: 14.h,
+              ),
+
+              Text(
+                shown.title,
+                textAlign:
+                    TextAlign.center,
+                maxLines: 2,
+                overflow:
+                    TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 22.sp,
+                  fontWeight:
+                      FontWeight.w800,
                   color:
-                      AppColors.white,
-                  size: 26.sp,
+                      Colors.white,
                 ),
               ),
 
-              SizedBox(width: 16.w),
+              SizedBox(
+                height: 4.h,
+              ),
 
-              Expanded(
-                child: Column(
-                  crossAxisAlignment:
-                      CrossAxisAlignment
-                          .start,
+              Text(
+                latest != null
+                    ? l10n
+                        .milestonesAchieved(
+                        unlockedCount,
+                      )
+                    : l10n
+                        .firstMilestoneWaiting,
+                textAlign:
+                    TextAlign.center,
+                maxLines: 3,
+                overflow:
+                    TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 13.sp,
+                  height: 1.35,
+                  color:
+                      Colors.white70,
+                ),
+              ),
+
+              if (next != null) ...[
+                SizedBox(
+                  height: 20.h,
+                ),
+
+                Row(
                   children: [
-                    Text(
-                      l10n
-                          .yourMilestoneJourney,
-                      maxLines: 2,
-                      overflow:
-                          TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight:
-                            FontWeight.w700,
-                        fontSize: 16.sp,
-                        color:
-                            AppColors
-                                .textBlack,
+                    Expanded(
+                      child: Text(
+                        l10n
+                            .nextMilestone,
+                        textAlign:
+                            TextAlign.start,
+                        maxLines: 1,
+                        overflow:
+                            TextOverflow
+                                .ellipsis,
+                        style:
+                            TextStyle(
+                          fontSize:
+                              12.sp,
+                          color:
+                              Colors.white70,
+                        ),
                       ),
                     ),
 
-                    SizedBox(height: 4.h),
+                    SizedBox(
+                      width: 8.w,
+                    ),
 
-                    Text(
-                      hasMilestones
-                          ? l10n
-                              .milestonesAchieved(
-                              unlockedCount,
-                            )
-                          : l10n
-                              .firstMilestoneWaiting,
-                      maxLines: 2,
-                      overflow:
-                          TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight:
-                            FontWeight.w400,
-                        fontSize: 12.sp,
-                        height: 1.35,
-                        color:
-                            AppColors
-                                .textGrey,
+                    Expanded(
+                      child: Text(
+                        next.subtitle,
+                        textAlign:
+                            TextAlign.end,
+                        maxLines: 1,
+                        overflow:
+                            TextOverflow
+                                .ellipsis,
+                        style:
+                            TextStyle(
+                          fontSize:
+                              12.sp,
+                          fontWeight:
+                              FontWeight.w700,
+                          color:
+                              Colors.white,
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
 
-              SizedBox(width: 10.w),
+                SizedBox(
+                  height: 8.h,
+                ),
 
-              Container(
-                width: 36.w,
-                height: 36.w,
-                decoration:
-                    BoxDecoration(
-                  color: hasMilestones
-                      ? AppColors.primary
-                          .withOpacity(0.10)
-                      : AppColors
-                          .progressBarBackground,
-                  shape:
-                      BoxShape.circle,
+                ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(
+                    10.r,
+                  ),
+                  child:
+                      LinearProgressIndicator(
+                    value: (next.progress ??
+                            0)
+                        .clamp(
+                      0.02,
+                      1.0,
+                    ),
+                    minHeight: 6.h,
+                    backgroundColor:
+                        Colors.white
+                            .withOpacity(
+                      0.25,
+                    ),
+                    valueColor:
+                        const AlwaysStoppedAnimation<
+                            Color>(
+                      Colors.white,
+                    ),
+                  ),
                 ),
-                child: Icon(
-                  Icons
-                      .arrow_forward_ios_rounded,
-                  size: 15.sp,
-                  color: hasMilestones
-                      ? AppColors.primary
-                      : AppColors
-                          .textLightGrey,
-                ),
-              ),
+              ],
             ],
           ),
         ),
@@ -868,7 +993,8 @@ class _BadgesScreenState extends State<BadgesScreen> {
     AppLocalizations l10n,
   ) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(
+      padding:
+          EdgeInsets.fromLTRB(
         16.w,
         12.h,
         16.w,
@@ -880,7 +1006,8 @@ class _BadgesScreenState extends State<BadgesScreen> {
           children: [
             Expanded(
               child: Text(
-                l10n.badgesAndMilestones,
+                l10n
+                    .badgesAndMilestones,
                 maxLines: 1,
                 overflow:
                     TextOverflow.ellipsis,
@@ -921,376 +1048,6 @@ class _BadgesScreenState extends State<BadgesScreen> {
   }
 
   // ============================================================
-  // SUMMARY CARD
-  // ============================================================
-
-  Widget _buildSummaryCard(
-    AppLocalizations l10n,
-  ) {
-    final double overallProgress =
-        _totalCount == 0
-            ? 0
-            : _unlockedCount /
-                _totalCount;
-
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius:
-            BorderRadius.circular(32.r),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x0A000000),
-            blurRadius: 30,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Text(
-            l10n.youAreDoingGreat,
-            textAlign:
-                TextAlign.center,
-            maxLines: 2,
-            overflow:
-                TextOverflow.ellipsis,
-            style: TextStyle(
-              fontWeight:
-                  FontWeight.w600,
-              fontSize: 18.sp,
-              color:
-                  AppColors.primary,
-            ),
-          ),
-
-          SizedBox(height: 6.h),
-
-          Text(
-            l10n
-                .unlockedMilestonesMessage(
-              _unlockedCount,
-              _totalCount,
-            ),
-            textAlign:
-                TextAlign.center,
-            maxLines: 3,
-            overflow:
-                TextOverflow.ellipsis,
-            style: TextStyle(
-              fontWeight:
-                  FontWeight.w400,
-              fontSize: 14.sp,
-              height: 1.4,
-              color:
-                  AppColors.textGrey,
-            ),
-          ),
-
-          SizedBox(height: 18.h),
-
-          ClipRRect(
-            borderRadius:
-                BorderRadius.circular(10.r),
-            child:
-                LinearProgressIndicator(
-              value: overallProgress
-                  .clamp(0.0, 1.0),
-              minHeight: 10.h,
-              backgroundColor:
-                  AppColors
-                      .progressBarBackground,
-              valueColor:
-                  const AlwaysStoppedAnimation<
-                      Color>(
-                AppColors.primary,
-              ),
-            ),
-          ),
-
-          SizedBox(height: 20.h),
-
-          IntrinsicHeight(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        '$_unlockedCount',
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w700,
-                          fontSize: 24.sp,
-                          color:
-                              AppColors
-                                  .primary,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        l10n.unlocked,
-                        maxLines: 1,
-                        overflow:
-                            TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w400,
-                          fontSize: 14.sp,
-                          color:
-                              AppColors
-                                  .textGrey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                VerticalDivider(
-                  width: 1.w,
-                  thickness: 1.w,
-                  color: AppColors
-                      .progressBarBackground,
-                ),
-
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        '$_remainingCount',
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w700,
-                          fontSize: 24.sp,
-                          color: AppColors
-                              .textLightGrey,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        l10n.remaining,
-                        maxLines: 1,
-                        overflow:
-                            TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w400,
-                          fontSize: 14.sp,
-                          color:
-                              AppColors
-                                  .textGrey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                VerticalDivider(
-                  width: 1.w,
-                  thickness: 1.w,
-                  color: AppColors
-                      .progressBarBackground,
-                ),
-
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        '${(overallProgress * 100).round()}%',
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w700,
-                          fontSize: 24.sp,
-                          color:
-                              AppColors
-                                  .primary,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        l10n.complete,
-                        maxLines: 1,
-                        overflow:
-                            TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w400,
-                          fontSize: 14.sp,
-                          color:
-                              AppColors
-                                  .textGrey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // ============================================================
-  // NEXT MILESTONE SPOTLIGHT
-  // ============================================================
-
-  Widget _buildNextMilestoneCard(
-    _BadgeItem item,
-    AppLocalizations l10n,
-  ) {
-    final percent =
-        ((item.progress ?? 0) * 100)
-            .round();
-
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        borderRadius:
-            BorderRadius.circular(28.r),
-        gradient:
-            LinearGradient(
-          begin:
-              Alignment.topLeft,
-          end:
-              Alignment.bottomRight,
-          colors: [
-            AppColors.primary,
-            AppColors.primary
-                .withOpacity(0.75),
-          ],
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.primary
-                .withOpacity(0.25),
-            blurRadius: 20.r,
-            offset:
-                Offset(0, 8.h),
-          ),
-        ],
-      ),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 56.w,
-            height: 56.w,
-            child: Stack(
-              alignment:
-                  Alignment.center,
-              children: [
-                CircularProgressIndicator(
-                  value: (item.progress ??
-                          0)
-                      .clamp(0.02, 1.0),
-                  strokeWidth: 5.w,
-                  strokeCap:
-                      StrokeCap.round,
-                  backgroundColor:
-                      AppColors.white
-                          .withOpacity(
-                    0.25,
-                  ),
-                  valueColor:
-                      const AlwaysStoppedAnimation<
-                          Color>(
-                    AppColors.white,
-                  ),
-                ),
-                Icon(
-                  item.icon,
-                  color:
-                      AppColors.white,
-                  size: 22.sp,
-                ),
-              ],
-            ),
-          ),
-
-          SizedBox(width: 16.w),
-
-          Expanded(
-            child: Column(
-              crossAxisAlignment:
-                  CrossAxisAlignment
-                      .start,
-              children: [
-                Row(
-                  children: [
-                    Flexible(
-                      child: Text(
-                        l10n.nextMilestone,
-                        overflow:
-                            TextOverflow
-                                .ellipsis,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight:
-                              FontWeight.w600,
-                          color:
-                              Colors.white70,
-                          letterSpacing:
-                              0.4,
-                        ),
-                      ),
-                    ),
-
-                    SizedBox(width: 8.w),
-
-                    _tierPill(
-                      item.tier,
-                      onDark: true,
-                      l10n: l10n,
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 4.h),
-
-                Text(
-                  item.title,
-                  maxLines: 2,
-                  overflow:
-                      TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                    fontWeight:
-                        FontWeight.w700,
-                    color:
-                        AppColors.white,
-                  ),
-                ),
-
-                SizedBox(height: 2.h),
-
-                Text(
-                  l10n.percentThere(
-                    item.subtitle,
-                    percent,
-                  ),
-                  maxLines: 2,
-                  overflow:
-                      TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 13.sp,
-                    color:
-                        Colors.white70,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // ============================================================
   // SECTION HEADER
   // ============================================================
 
@@ -1317,7 +1074,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
           ),
         ),
 
-        SizedBox(width: 8.w),
+        SizedBox(
+          width: 8.w,
+        ),
 
         Container(
           padding:
@@ -1327,8 +1086,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
           ),
           decoration:
               BoxDecoration(
-            color: AppColors
-                .progressBarBackground,
+            color:
+                AppColors
+                    .progressBarBackground,
             borderRadius:
                 BorderRadius.circular(
               20.r,
@@ -1356,50 +1116,54 @@ class _BadgesScreenState extends State<BadgesScreen> {
   Widget _buildBadgeGrid(
     List<_BadgeItem> items,
   ) {
-    final rows = <Widget>[];
+    const columns = 4;
+
+    final rows =
+        <Widget>[];
 
     for (
       int i = 0;
       i < items.length;
-      i += 2
+      i += columns
     ) {
-      final hasSecond =
-          i + 1 < items.length;
+      final cells =
+          <Widget>[];
+
+      for (
+        int j = 0;
+        j < columns;
+        j++
+      ) {
+        final index =
+            i + j;
+
+        cells.add(
+          Expanded(
+            child:
+                index < items.length
+                    ? _buildBadgeCell(
+                        items[index],
+                      )
+                    : const SizedBox.shrink(),
+          ),
+        );
+      }
 
       rows.add(
         Padding(
           padding:
               EdgeInsets.only(
             bottom:
-                i + 2 < items.length
-                    ? 16.h
+                i + columns <
+                        items.length
+                    ? 20.h
                     : 0,
           ),
-          child: IntrinsicHeight(
-            child: Row(
-              crossAxisAlignment:
-                  CrossAxisAlignment
-                      .stretch,
-              children: [
-                Expanded(
-                  child:
-                      _buildBadgeCard(
-                    items[i],
-                  ),
-                ),
-
-                SizedBox(width: 16.w),
-
-                Expanded(
-                  child: hasSecond
-                      ? _buildBadgeCard(
-                          items[i + 1],
-                        )
-                      : const SizedBox
-                          .shrink(),
-                ),
-              ],
-            ),
+          child: Row(
+            crossAxisAlignment:
+                CrossAxisAlignment
+                    .start,
+            children: cells,
           ),
         ),
       );
@@ -1411,128 +1175,66 @@ class _BadgesScreenState extends State<BadgesScreen> {
   }
 
   // ============================================================
-  // BADGE CARD
+  // BADGE CELL
   // ============================================================
 
-  Widget _buildBadgeCard(
+  Widget _buildBadgeCell(
     _BadgeItem item,
   ) {
-    final l10n =
-        AppLocalizations.of(context)!;
-
-    final bool isLocked =
-        !item.unlocked &&
-        item.progress == null;
-
-    final bool isInProgress =
-        !item.unlocked &&
-        item.progress != null;
-
-    return Container(
-      width: double.infinity,
-
-      // IMPORTANT:
-      // Fixed height was causing RenderFlex overflow.
-      // We now use minimum height so the card can grow
-      // when localized text needs more space.
-      constraints: BoxConstraints(
-        minHeight: 190.h,
-      ),
-
+    final cell =
+        Padding(
       padding:
           EdgeInsets.symmetric(
-        vertical: 18.h,
-        horizontal: 14.w,
+        horizontal: 2.w,
       ),
-
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius:
-            BorderRadius.circular(28.r),
-        border: item.unlocked
-            ? Border.all(
-                color: _tierColor(
-                  item.tier,
-                ).withOpacity(0.25),
-                width: 1.2.w,
-              )
-            : null,
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x0A000000),
-            blurRadius: 20,
-            offset: Offset(0, 4),
-          ),
-        ],
-      ),
-
       child: Column(
         mainAxisSize:
             MainAxisSize.min,
         children: [
-          // ------------------------------------------------------
-          // TIER PILL
-          // ------------------------------------------------------
+          BadgeEmblem(
+            size: 62.w,
+            color:
+                _tierColor(
+              item.tier,
+            ),
+            style:
+                item.style,
+            label:
+                item.label,
+            icon:
+                item.icon,
+            locked:
+                !item.unlocked,
+          ),
 
-          Align(
-            alignment:
-                Alignment.topRight,
-            child: SizedBox(
-              height: 18.h,
-              child: item.unlocked
-                  ? _tierPill(
-                      item.tier,
-                      l10n: l10n,
-                    )
-                  : null,
+          SizedBox(
+            height: 8.h,
+          ),
+
+          Text(
+            item.title,
+            textAlign:
+                TextAlign.center,
+            maxLines: 2,
+            overflow:
+                TextOverflow.ellipsis,
+            style: TextStyle(
+              fontWeight:
+                  FontWeight.w700,
+              fontSize: 11.sp,
+              height: 1.2,
+              color:
+                  item.unlocked
+                      ? AppColors
+                          .textBlack
+                      : AppColors
+                          .textLightGrey,
             ),
           ),
 
-          SizedBox(height: 4.h),
-
-          // ------------------------------------------------------
-          // BADGE ICON
-          // ------------------------------------------------------
-
-          _buildBadgeIcon(
-            item,
-            isLocked,
-            isInProgress,
+          SizedBox(
+            height: 2.h,
           ),
-
-          SizedBox(height: 10.h),
-
-          // ------------------------------------------------------
-          // TITLE
-          // ------------------------------------------------------
-
-          Flexible(
-            child: Text(
-              item.title,
-              textAlign:
-                  TextAlign.center,
-              maxLines: 2,
-              overflow:
-                  TextOverflow.ellipsis,
-              style: TextStyle(
-                fontWeight:
-                    FontWeight.w700,
-                fontSize: 14.sp,
-                height: 1.2,
-                color: isLocked
-                    ? AppColors
-                        .textLightGrey
-                    : AppColors
-                        .textBlack,
-              ),
-            ),
-          ),
-
-          SizedBox(height: 4.h),
-
-          // ------------------------------------------------------
-          // SUBTITLE
-          // ------------------------------------------------------
 
           Text(
             item.subtitle,
@@ -1542,9 +1244,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
             overflow:
                 TextOverflow.ellipsis,
             style: TextStyle(
-              fontWeight:
-                  FontWeight.w400,
-              fontSize: 12.sp,
+              fontSize: 9.sp,
               height: 1.2,
               color:
                   AppColors.textGrey,
@@ -1553,197 +1253,36 @@ class _BadgesScreenState extends State<BadgesScreen> {
         ],
       ),
     );
-  }
 
-  // ============================================================
-  // BADGE ICON
-  // ============================================================
-
-  Widget _buildBadgeIcon(
-    _BadgeItem item,
-    bool isLocked,
-    bool isInProgress,
-  ) {
-    if (isInProgress) {
-      return SizedBox(
-        width: 56.w,
-        height: 56.w,
-        child: Stack(
-          alignment:
-              Alignment.center,
-          children: [
-            CircularProgressIndicator(
-              value: item.progress!
-                  .clamp(0.02, 1.0),
-              strokeWidth: 5.w,
-              strokeCap:
-                  StrokeCap.round,
-              backgroundColor:
-                  AppColors
-                      .progressBarBackground,
-              valueColor:
-                  AlwaysStoppedAnimation<
-                      Color>(
-                _tierColor(
-                  item.tier,
-                ),
-              ),
-            ),
-
-            Icon(
-              item.icon,
-              size: 20.sp,
-              color: _tierColor(
-                item.tier,
-              ),
-            ),
-          ],
-        ),
-      );
+    // Only sobriety milestones
+    // are tappable.
+    if (item.definition ==
+        null) {
+      return cell;
     }
 
-    final Color bgColor =
-        isLocked
-            ? AppColors
-                .progressBarBackground
-            : _tierColor(item.tier);
-
-    return SizedBox(
-      width: 56.w,
-      height: 56.w,
-      child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          gradient: isLocked
-              ? null
-              : LinearGradient(
-                  begin:
-                      Alignment.topLeft,
-                  end:
-                      Alignment.bottomRight,
-                  colors: [
-                    bgColor,
-                    bgColor.withOpacity(
-                      0.75,
-                    ),
-                  ],
-                ),
-          color: isLocked
-              ? bgColor
-              : null,
-          boxShadow: isLocked
-              ? null
-              : [
-                  BoxShadow(
-                    color: bgColor
-                        .withOpacity(
-                      0.35,
-                    ),
-                    blurRadius: 10.r,
-                    offset:
-                        Offset(0, 4.h),
-                  ),
-                ],
-        ),
-        child: Icon(
-          item.icon,
-          size: 26.sp,
-          color: isLocked
-              ? AppColors
-                  .textLightGrey
-              : AppColors.white,
-        ),
+    return InkWell(
+      borderRadius:
+          BorderRadius.circular(
+        16.r,
       ),
+      onTap: () =>
+          _onMilestoneTap(
+        item,
+      ),
+      child: cell,
     );
   }
 
   // ============================================================
-  // TIER HELPERS
+  // TIER COLORS
   // ============================================================
 
   Color _tierColor(
     BadgeTier tier,
   ) {
-    switch (tier) {
-      case BadgeTier.bronze:
-        return const Color(0xFFB87A4B);
-
-      case BadgeTier.silver:
-        return const Color(0xFF9AA3AF);
-
-      case BadgeTier.gold:
-        return const Color(0xFFD9A441);
-
-      case BadgeTier.platinum:
-        return const Color(0xFF6C7BD1);
-
-      case BadgeTier.diamond:
-        return const Color(0xFF3FB6C9);
-    }
-  }
-
-  String _tierLabel(
-    BadgeTier tier,
-    AppLocalizations l10n,
-  ) {
-    switch (tier) {
-      case BadgeTier.bronze:
-        return l10n.bronze;
-
-      case BadgeTier.silver:
-        return l10n.silver;
-
-      case BadgeTier.gold:
-        return l10n.gold;
-
-      case BadgeTier.platinum:
-        return l10n.platinum;
-
-      case BadgeTier.diamond:
-        return l10n.diamond;
-    }
-  }
-
-  Widget _tierPill(
-    BadgeTier tier, {
-    bool onDark = false,
-    required AppLocalizations l10n,
-  }) {
-    final color = _tierColor(tier);
-
-    return Container(
-      padding:
-          EdgeInsets.symmetric(
-        horizontal: 7.w,
-        vertical: 2.h,
-      ),
-      decoration: BoxDecoration(
-        color: onDark
-            ? Colors.white
-                .withOpacity(0.2)
-            : color.withOpacity(0.12),
-        borderRadius:
-            BorderRadius.circular(20.r),
-      ),
-      child: Text(
-        _tierLabel(
-          tier,
-          l10n,
-        ),
-        maxLines: 1,
-        overflow:
-            TextOverflow.ellipsis,
-        style: TextStyle(
-          fontSize: 9.sp,
-          fontWeight:
-              FontWeight.w700,
-          letterSpacing: 0.4,
-          color: onDark
-              ? AppColors.white
-              : color,
-        ),
-      ),
-    );
+    return BadgeVisuals
+        .tierColor(tier);
   }
 }
 
@@ -1751,28 +1290,30 @@ class _BadgesScreenState extends State<BadgesScreen> {
 // LOCAL MODELS
 // =============================================================
 
-enum BadgeCategory {
-  milestone,
-  achievement,
-}
-
 class _BadgeItem {
   final IconData icon;
+  final String? label;
+  final BadgeStyle style;
   final String title;
   final String subtitle;
   final BadgeTier tier;
-  final BadgeCategory category;
   final bool unlocked;
   final double? progress;
 
+  // Set for sobriety milestones.
+  final MilestoneDefinition?
+      definition;
+
   const _BadgeItem({
     required this.icon,
+    required this.style,
     required this.title,
     required this.subtitle,
     required this.tier,
-    required this.category,
     required this.unlocked,
+    this.label,
     this.progress,
+    this.definition,
   });
 }
 
@@ -1783,7 +1324,9 @@ class _AchievementDef {
   final BadgeTier tier;
   final num threshold;
   final bool isCurrency;
-  final Future<num> Function() getCount;
+
+  final Future<num> Function()
+      getCount;
 
   const _AchievementDef({
     required this.icon,
@@ -1795,3 +1338,4 @@ class _AchievementDef {
     this.isCurrency = false,
   });
 }
+

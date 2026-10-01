@@ -38,6 +38,8 @@ dependencies:
   image_cropper: ^12.2.1
 
   flutter_screenutil: ^5.9.3
+  path_drawing: ^1.0.1
+  flutter_svg: ^2.1.0
   
   flutter_dotenv: ^5.2.1
 
@@ -63,3 +65,5 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/animations/breathing_bg.json
+    - assets/body/
+    - assets/body/organs/

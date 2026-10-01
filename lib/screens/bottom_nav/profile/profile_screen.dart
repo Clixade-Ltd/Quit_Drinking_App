@@ -1,4 +1,3 @@
-
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
@@ -13,6 +12,7 @@ import 'package:new_quit_drinking_app/screens/bottom_nav/profile/premium_plan_sc
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/edit_profile_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/recovery_goals_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/daily_check_ins_screen.dart';
+import 'package:new_quit_drinking_app/screens/bottom_nav/profile/health_care_disclaimer_screen.dart';
 import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
 import 'package:new_quit_drinking_app/services/local_storage_service.dart';
 import 'package:new_quit_drinking_app/services/analytics_service.dart';
@@ -470,6 +470,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
+  // =====================================================================
+  // RESET DATA
+  // =====================================================================
+
   Future<void> _resetData(
     BuildContext context,
   ) async {
@@ -632,6 +636,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             _buildAccountSupport(l10n),
 
             SizedBox(height: 25.h),
+
+            // ==========================================================
+            // APP VERSION
+            // ==========================================================
 
             Center(
               child: Text(
@@ -819,7 +827,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
         borderRadius: BorderRadius.circular(40.r),
         boxShadow: [
           BoxShadow(
-            color: AppColors.textBlack.withOpacity(0.03),
+            color: AppColors.textBlack.withValues(
+              alpha: 0.03,
+            ),
             blurRadius: 25.r,
             offset: Offset(0, 5.h),
           ),
@@ -850,8 +860,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.textBlack
-                              .withOpacity(0.09),
+                          color: AppColors.textBlack.withValues(
+                            alpha: 0.09,
+                          ),
                           blurRadius: 8.r,
                           offset: Offset(0, 3.h),
                         ),
@@ -982,7 +993,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
           borderRadius: BorderRadius.circular(28.r),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primary.withOpacity(0.12),
+              color: AppColors.primary.withValues(
+                alpha: 0.12,
+              ),
               blurRadius: 16.r,
               offset: Offset(0, 5.h),
             ),
@@ -994,7 +1007,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 42.w,
               height: 42.w,
               decoration: BoxDecoration(
-                color: AppColors.white.withOpacity(0.16),
+                color: AppColors.white.withValues(
+                  alpha: 0.16,
+                ),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -1163,6 +1178,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
               _buildDivider(),
 
               // ==========================================================
+              // HEALTH CARE DISCLAIMER
+              // ==========================================================
+
+              _buildMenuItem(
+                icon: Icons.health_and_safety_outlined,
+                iconColor: AppColors.primary,
+                title: 'Health Care Disclaimer',
+                subtitle:
+                    'Important information about using Quit Drinking',
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          const HealthCareDisclaimerScreen(),
+                    ),
+                  );
+                },
+              ),
+
+              _buildDivider(),
+
+              // ==========================================================
               // RESET DATA
               // ==========================================================
 
@@ -1259,7 +1296,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 38.w,
               height: 38.w,
               decoration: BoxDecoration(
-                color: iconColor.withOpacity(0.09),
+                color: iconColor.withValues(
+                  alpha: 0.09,
+                ),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -1348,4 +1387,3 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
-

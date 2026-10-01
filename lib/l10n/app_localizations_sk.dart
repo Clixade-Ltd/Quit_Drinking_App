@@ -254,6 +254,126 @@ class AppLocalizationsSk extends AppLocalizations {
   String get estimated => 'Odhadované';
 
   @override
+  String get bodyRebuildingTitle => 'Your Body Is Rebuilding';
+
+  @override
+  String percentRebuilt(Object percent) {
+    return '$percent% rebuilt';
+  }
+
+  @override
+  String get bodyTapOrganHint => 'Tap an organ to learn more';
+
+  @override
+  String get tabJourney => 'Journey';
+
+  @override
+  String get journeyThisWeek => 'Your Journey This Week';
+
+  @override
+  String get journeySoberScore => 'Sober score';
+
+  @override
+  String get journeyScoreExcellent => 'Excellent';
+
+  @override
+  String get journeyScoreGood => 'Good';
+
+  @override
+  String get journeyScoreBuilding => 'Building';
+
+  @override
+  String get journeyScoreStarting => 'Just starting';
+
+  @override
+  String journeyTrendingUp(int days) {
+    return 'Day $days • Trending up across the board';
+  }
+
+  @override
+  String journeyEveryDayCounts(int days) {
+    return 'Day $days • Every day counts';
+  }
+
+  @override
+  String get journeyCurrentStreak => 'Current streak';
+
+  @override
+  String get journeyLongestStreak => 'Longest streak';
+
+  @override
+  String get journeyTotalSoberDays => 'Total sober days';
+
+  @override
+  String get journeyPersonalBest => 'You\'re at your personal best';
+
+  @override
+  String journeyDaysToBest(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days to your personal best',
+      one: '$count day to your personal best',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get journeyYourJourney => 'Your journey';
+
+  @override
+  String get journeyYourJourneySubtitle =>
+      'Every day since you started, at a glance';
+
+  @override
+  String get tabBody => 'Body';
+
+  @override
+  String get tabPatterns => 'Patterns';
+
+  @override
+  String get organBrain => 'Brain';
+
+  @override
+  String get organBrainInfo =>
+      'Your brain gradually adapts as you stay alcohol-free, supporting clearer thinking, mood and sleep.';
+
+  @override
+  String get organHeart => 'Heart';
+
+  @override
+  String get organHeartInfo =>
+      'Staying alcohol-free supports your cardiovascular system and healthy circulation over time.';
+
+  @override
+  String get organLiver => 'Liver';
+
+  @override
+  String get organLiverInfo =>
+      'Your liver continues its natural recovery process as you maintain your alcohol-free journey.';
+
+  @override
+  String get organGut => 'Gut';
+
+  @override
+  String get organGutInfo =>
+      'Your digestive system can gradually move toward a healthier and more balanced state.';
+
+  @override
+  String get organKidneys => 'Kidneys';
+
+  @override
+  String get organKidneysInfo =>
+      'Your kidneys continue supporting fluid balance and normal body function.';
+
+  @override
+  String get organSkin => 'Skin';
+
+  @override
+  String get organSkinInfo =>
+      'Better hydration and circulation can support healthier-looking skin over time.';
+
+  @override
   String get aiGenerated => 'Vygenerované AI';
 
   @override
@@ -1318,6 +1438,12 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get milestoneOneYear => 'Jeden rok';
+
+  @override
+  String get milestoneTwoYears => 'Two Years';
+
+  @override
+  String get milestoneFiveYears => 'Five Years';
 
   @override
   String milestoneDayCount(int day) {

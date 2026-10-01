@@ -117,6 +117,27 @@ class MilestoneDefinitions {
       icon: Icons.military_tech,
       tier: BadgeTier.diamond,
     ),
+    // ---------------- NEW ----------------
+    MilestoneDefinition(
+      days: 730,
+      shortLabel: '2Y',
+      title: 'Two Years Free',
+      celebrationTitle: '2 Years Alcohol Free!',
+      celebrationMessage:
+      'Two full years. Sobriety is no longer something you try — it is who you are.',
+      icon: Icons.auto_awesome,
+      tier: BadgeTier.diamond,
+    ),
+    MilestoneDefinition(
+      days: 1825,
+      shortLabel: '5Y',
+      title: 'Five Years Free',
+      celebrationTitle: '5 Years Alcohol Free!',
+      celebrationMessage:
+      'Five years of freedom. A truly extraordinary, life-defining achievement.',
+      icon: Icons.stars,
+      tier: BadgeTier.diamond,
+    ),
   ];
 
   /// Highest milestone the user has already reached, or null.

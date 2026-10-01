@@ -664,6 +664,204 @@ abstract class AppLocalizations {
   /// **'Estimated'**
   String get estimated;
 
+  /// No description provided for @bodyRebuildingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Body Is Rebuilding'**
+  String get bodyRebuildingTitle;
+
+  /// No description provided for @percentRebuilt.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% rebuilt'**
+  String percentRebuilt(Object percent);
+
+  /// No description provided for @bodyTapOrganHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap an organ to learn more'**
+  String get bodyTapOrganHint;
+
+  /// No description provided for @tabJourney.
+  ///
+  /// In en, this message translates to:
+  /// **'Journey'**
+  String get tabJourney;
+
+  /// No description provided for @journeyThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Journey This Week'**
+  String get journeyThisWeek;
+
+  /// No description provided for @journeySoberScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Sober score'**
+  String get journeySoberScore;
+
+  /// No description provided for @journeyScoreExcellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent'**
+  String get journeyScoreExcellent;
+
+  /// No description provided for @journeyScoreGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get journeyScoreGood;
+
+  /// No description provided for @journeyScoreBuilding.
+  ///
+  /// In en, this message translates to:
+  /// **'Building'**
+  String get journeyScoreBuilding;
+
+  /// No description provided for @journeyScoreStarting.
+  ///
+  /// In en, this message translates to:
+  /// **'Just starting'**
+  String get journeyScoreStarting;
+
+  /// No description provided for @journeyTrendingUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {days} • Trending up across the board'**
+  String journeyTrendingUp(int days);
+
+  /// No description provided for @journeyEveryDayCounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {days} • Every day counts'**
+  String journeyEveryDayCounts(int days);
+
+  /// No description provided for @journeyCurrentStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Current streak'**
+  String get journeyCurrentStreak;
+
+  /// No description provided for @journeyLongestStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Longest streak'**
+  String get journeyLongestStreak;
+
+  /// No description provided for @journeyTotalSoberDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Total sober days'**
+  String get journeyTotalSoberDays;
+
+  /// No description provided for @journeyPersonalBest.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re at your personal best'**
+  String get journeyPersonalBest;
+
+  /// No description provided for @journeyDaysToBest.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} day to your personal best} other{{count} days to your personal best}}'**
+  String journeyDaysToBest(int count);
+
+  /// No description provided for @journeyYourJourney.
+  ///
+  /// In en, this message translates to:
+  /// **'Your journey'**
+  String get journeyYourJourney;
+
+  /// No description provided for @journeyYourJourneySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day since you started, at a glance'**
+  String get journeyYourJourneySubtitle;
+
+  /// No description provided for @tabBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Body'**
+  String get tabBody;
+
+  /// No description provided for @tabPatterns.
+  ///
+  /// In en, this message translates to:
+  /// **'Patterns'**
+  String get tabPatterns;
+
+  /// No description provided for @organBrain.
+  ///
+  /// In en, this message translates to:
+  /// **'Brain'**
+  String get organBrain;
+
+  /// No description provided for @organBrainInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Your brain gradually adapts as you stay alcohol-free, supporting clearer thinking, mood and sleep.'**
+  String get organBrainInfo;
+
+  /// No description provided for @organHeart.
+  ///
+  /// In en, this message translates to:
+  /// **'Heart'**
+  String get organHeart;
+
+  /// No description provided for @organHeartInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Staying alcohol-free supports your cardiovascular system and healthy circulation over time.'**
+  String get organHeartInfo;
+
+  /// No description provided for @organLiver.
+  ///
+  /// In en, this message translates to:
+  /// **'Liver'**
+  String get organLiver;
+
+  /// No description provided for @organLiverInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Your liver continues its natural recovery process as you maintain your alcohol-free journey.'**
+  String get organLiverInfo;
+
+  /// No description provided for @organGut.
+  ///
+  /// In en, this message translates to:
+  /// **'Gut'**
+  String get organGut;
+
+  /// No description provided for @organGutInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Your digestive system can gradually move toward a healthier and more balanced state.'**
+  String get organGutInfo;
+
+  /// No description provided for @organKidneys.
+  ///
+  /// In en, this message translates to:
+  /// **'Kidneys'**
+  String get organKidneys;
+
+  /// No description provided for @organKidneysInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Your kidneys continue supporting fluid balance and normal body function.'**
+  String get organKidneysInfo;
+
+  /// No description provided for @organSkin.
+  ///
+  /// In en, this message translates to:
+  /// **'Skin'**
+  String get organSkin;
+
+  /// No description provided for @organSkinInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Better hydration and circulation can support healthier-looking skin over time.'**
+  String get organSkinInfo;
+
   /// No description provided for @aiGenerated.
   ///
   /// In en, this message translates to:
@@ -2595,6 +2793,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'One Year'**
   String get milestoneOneYear;
+
+  /// No description provided for @milestoneTwoYears.
+  ///
+  /// In en, this message translates to:
+  /// **'Two Years'**
+  String get milestoneTwoYears;
+
+  /// No description provided for @milestoneFiveYears.
+  ///
+  /// In en, this message translates to:
+  /// **'Five Years'**
+  String get milestoneFiveYears;
 
   /// No description provided for @milestoneDayCount.
   ///

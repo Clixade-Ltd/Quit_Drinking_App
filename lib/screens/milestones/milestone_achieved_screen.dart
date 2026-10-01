@@ -10,15 +10,22 @@ import 'package:share_plus/share_plus.dart';
 import '../../models/milestone_definition.dart';
 import '../../services/analytics_service.dart';
 import '../../services/home_dashboard_service.dart';
+import '../../widgets/badge_emblem.dart';
 import '../bottom_nav/main_nav_screen.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 class MilestoneAchievedScreen extends StatefulWidget {
   final MilestoneDefinition milestone;
 
+  /// true => close / continue simply pops back to the previous screen
+  /// (used when this screen is opened from the Badges screen).
+  /// false (default) => old behaviour: go to MainNavScreen (home).
+  final bool returnToPreviousScreen;
+
   const MilestoneAchievedScreen({
     super.key,
     required this.milestone,
+    this.returnToPreviousScreen = false,
   });
 
   @override
@@ -32,7 +39,6 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
   bool _isLoading = true;
   bool _isSharing = false;
 
-  int _daysSober = 0;
   num _moneySaved = 0;
   num _drinksAvoided = 0;
   String _displayName = 'there';
@@ -76,18 +82,14 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
     final liveDrinksAvoided = (stats['drinksAvoided'] ?? 0) as num;
 
     final moneyPerDay =
-    liveDaysSober > 0 ? liveMoneySaved / liveDaysSober : 0;
+        liveDaysSober > 0 ? liveMoneySaved / liveDaysSober : 0;
 
     final drinksPerDay =
-    liveDaysSober > 0 ? liveDrinksAvoided / liveDaysSober : 0;
+        liveDaysSober > 0 ? liveDrinksAvoided / liveDaysSober : 0;
 
     setState(() {
-      // Pinned to the milestone being celebrated (e.g. "3 Days Alcohol
-      // Free!" always shows 3, "One Week" always shows 7, "One Month"
-      // always shows 30) — regardless of how far the live streak has
-      // actually gone.
-      _daysSober = widget.milestone.days;
-
+      // Stats are pinned to the milestone being celebrated, regardless of
+      // how far the live streak has actually gone.
       _moneySaved = moneyPerDay * widget.milestone.days;
       _drinksAvoided = drinksPerDay * widget.milestone.days;
 
@@ -98,15 +100,17 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
       _isLoading = false;
     });
 
-    // NEW — milestone unlocked/shown.
+    // Milestone unlocked/shown.
     // Using celebrationTitle as the milestone name since that's the
     // human-readable label available on MilestoneDefinition here. If the
     // model has a stable id/key field (e.g. "7_days"), swap it in below
     // for cleaner analytics values instead of the full title string.
-    AnalyticsService.instance.milestoneUnlocked(
-      widget.milestone.celebrationTitle,
-      widget.milestone.days,
-    );
+    if (!widget.returnToPreviousScreen) {
+      AnalyticsService.instance.milestoneUnlocked(
+        widget.milestone.celebrationTitle,
+        widget.milestone.days,
+      );
+    }
   }
 
   // ============================================================
@@ -127,7 +131,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
 
   /// Captures the visible milestone screen as a PNG and shares it.
   ///
-  /// The RepaintBoundary now covers the full celebration screen rather
+  /// The RepaintBoundary covers the full celebration screen rather
   /// than only the upper card.
   Future<void> _shareMilestone() async {
     if (_isSharing) return;
@@ -140,8 +144,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
 
       final renderObject = _captureKey.currentContext?.findRenderObject();
 
-      if (renderObject == null ||
-          renderObject is! RenderRepaintBoundary) {
+      if (renderObject == null || renderObject is! RenderRepaintBoundary) {
         throw Exception('Milestone screen is not ready for capture.');
       }
 
@@ -174,7 +177,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
         subject: l10n.shareMilestoneSubject,
       );
 
-      // NEW — milestone successfully shared
+      // Milestone successfully shared
       AnalyticsService.instance.milestoneShared(
         widget.milestone.celebrationTitle,
       );
@@ -198,10 +201,17 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
   }
 
   // ============================================================
-  // CONTINUE
+  // CONTINUE / CLOSE
   // ============================================================
 
   void _continue() {
+    // Opened from the Badges screen -> just go back to it.
+    if (widget.returnToPreviousScreen && Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+      return;
+    }
+
+    // Default (e.g. right after unlocking a milestone) -> go home.
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (_) => const MainNavScreen(),
@@ -255,7 +265,6 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
     return Container(
       width: double.infinity,
       height: double.infinity,
-
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -266,11 +275,9 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
           ],
         ),
 
-        // No bottom section anymore.
         // The complete screen itself is the celebration card.
         borderRadius: BorderRadius.zero,
       ),
-
       child: Stack(
         children: [
           // ======================================================
@@ -289,19 +296,16 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
               builder: (context, constraints) {
                 return SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-
                   padding: const EdgeInsets.fromLTRB(
                     24,
                     32,
                     24,
                     24,
                   ),
-
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
                       minHeight: constraints.maxHeight - 56,
                     ),
-
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
@@ -319,17 +323,13 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
                             milliseconds: 500,
                           ),
                           curve: Curves.easeOutBack,
-                          builder: (
-                              context,
-                              scale,
-                              child,
-                              ) {
+                          builder: (context, scale, child) {
                             return Transform.scale(
                               scale: scale,
                               child: child,
                             );
                           },
-                          child: _buildRing(),
+                          child: _buildBadge(),
                         ),
 
                         const SizedBox(height: 24),
@@ -387,7 +387,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
 
                         Text(
                           '${l10n.incredibleNamePrefix(_displayName)} '
-                              '${widget.milestone.celebrationMessage}',
+                          '${widget.milestone.celebrationMessage}',
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontWeight: FontWeight.w400,
@@ -413,9 +413,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
                               ),
                               accent: _shareYellow,
                             ),
-
                             const SizedBox(width: 12),
-
                             _buildStatPill(
                               icon: Icons.water_drop_outlined,
                               label: l10n.drinksAvoidedLabel(
@@ -435,8 +433,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed:
-                            _isSharing ? null : _shareMilestone,
+                            onPressed: _isSharing ? null : _shareMilestone,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: _shareYellow,
                               foregroundColor: Colors.black87,
@@ -454,33 +451,31 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
                             ),
                             child: _isSharing
                                 ? const SizedBox(
-                              width: 20,
-                              height: 20,
-                              child:
-                              CircularProgressIndicator(
-                                strokeWidth: 2.4,
-                                color: Colors.black87,
-                              ),
-                            )
+                                    width: 20,
+                                    height: 20,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2.4,
+                                      color: Colors.black87,
+                                    ),
+                                  )
                                 : Row(
-                              mainAxisAlignment:
-                              MainAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.share_outlined,
-                                  size: 18,
-                                ),
-                                const SizedBox(width: 8),
-                                Text(
-                                  l10n.shareMyMilestone,
-                                  style: const TextStyle(
-                                    fontWeight:
-                                    FontWeight.w700,
-                                    fontSize: 15,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                    children: [
+                                      const Icon(
+                                        Icons.share_outlined,
+                                        size: 18,
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        l10n.shareMyMilestone,
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
-                            ),
                           ),
                         ),
 
@@ -496,8 +491,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
                             onPressed: _continue,
                             style: OutlinedButton.styleFrom(
                               foregroundColor: Colors.white,
-                              backgroundColor:
-                              Colors.white.withValues(
+                              backgroundColor: Colors.white.withValues(
                                 alpha: 0.12,
                               ),
                               side: BorderSide(
@@ -509,8 +503,7 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
                                 vertical: 16,
                               ),
                               shape: RoundedRectangleBorder(
-                                borderRadius:
-                                BorderRadius.circular(9999),
+                                borderRadius: BorderRadius.circular(9999),
                               ),
                             ),
                             child: Text(
@@ -569,82 +562,26 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
   }
 
   // ============================================================
-  // SOBRIETY RING
+  // MILESTONE BADGE (same badge as on the Badges screen)
   // ============================================================
 
-  Widget _buildRing() {
-    // _daysSober here is always widget.milestone.days (see _load) —
-    // this progress arc is purely decorative "position within the
-    // current 30-day tier" flavor, tied to the milestone, not the live
-    // streak.
-    final progressWithinCurrentTier =
-    ((_daysSober % 30) / 30).clamp(0.02, 1.0);
-
+  Widget _buildBadge() {
     return SizedBox(
-      width: 168,
-      height: 168,
+      width: 190,
+      height: 190,
       child: Stack(
         alignment: Alignment.center,
+        clipBehavior: Clip.none,
         children: [
-          // Outer ring
-          Container(
-            width: 168,
-            height: 168,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Colors.white.withValues(alpha: 0.15),
-                width: 1,
-              ),
-            ),
-          ),
-
-          // Progress ring
-          SizedBox(
-            width: 140,
-            height: 140,
-            child: CircularProgressIndicator(
-              value: progressWithinCurrentTier,
-              strokeWidth: 10,
-              strokeCap: StrokeCap.round,
-              backgroundColor: Colors.white.withValues(
-                alpha: 0.15,
-              ),
-              valueColor:
-              const AlwaysStoppedAnimation<Color>(
-                Colors.white,
-              ),
-            ),
-          ),
-
-          // Days number — always matches the milestone being celebrated.
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                '$_daysSober',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 36,
-                  color: Colors.white,
-                ),
-              ),
-              Text(
-                l10n.daysCapsLabel,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13,
-                  letterSpacing: 1.4,
-                  color: Colors.white70,
-                ),
-              ),
-            ],
+          MilestoneBadge(
+            milestone: widget.milestone,
+            size: 170,
           ),
 
           // Star
           const Positioned(
-            top: 4,
-            right: 8,
+            top: 6,
+            right: 10,
             child: Icon(
               Icons.star,
               color: _shareYellow,
@@ -654,8 +591,8 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
 
           // Sparkle
           const Positioned(
-            bottom: 10,
-            left: 4,
+            bottom: 12,
+            left: 6,
             child: Icon(
               Icons.auto_awesome,
               color: Colors.white70,
@@ -769,19 +706,19 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
     return dots
         .map(
           (d) => Positioned(
-        top: d.top,
-        left: d.left,
-        right: d.right,
-        child: Container(
-          width: d.size,
-          height: d.size,
-          decoration: BoxDecoration(
-            color: d.color,
-            shape: BoxShape.circle,
+            top: d.top,
+            left: d.left,
+            right: d.right,
+            child: Container(
+              width: d.size,
+              height: d.size,
+              decoration: BoxDecoration(
+                color: d.color,
+                shape: BoxShape.circle,
+              ),
+            ),
           ),
-        ),
-      ),
-    )
+        )
         .toList();
   }
 }
