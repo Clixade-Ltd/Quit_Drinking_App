@@ -135,7 +135,10 @@ class _SplashScreenState extends State<SplashScreen>
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.white,
+      ),
       body: Stack(
         children: [
           // ==========================================================

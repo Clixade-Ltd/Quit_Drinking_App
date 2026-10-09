@@ -4,6 +4,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 import '../../constants/app_colors.dart';
 import '../../services/analytics_service.dart';
 import '../../services/local_storage_service.dart';
+import '../../theme/theme_controller.dart';
 import '../4_grids_screen/breathing_screen.dart';
 import '../4_grids_screen/coping_tips_screen.dart';
 import '../4_grids_screen/ride_the_wave_screen.dart';
@@ -18,6 +19,8 @@ class CravingScreen extends StatefulWidget {
 
 class _CravingScreenState extends State<CravingScreen> {
   static const String _cravingsBeatenKey = 'cravings_beaten_count';
+
+  bool get _isDark => AppColors.isDark(context);
 
   bool _isLoading = true;
   int _cravingsBeaten = 0;
@@ -52,8 +55,7 @@ class _CravingScreenState extends State<CravingScreen> {
 
   Future<int> _loadCravingsBeatenCount() async {
     try {
-      final saved =
-          await LocalStorageService.instance.getJson(
+      final saved = await LocalStorageService.instance.getJson(
         _cravingsBeatenKey,
       );
 
@@ -107,16 +109,24 @@ class _CravingScreenState extends State<CravingScreen> {
     final l10n = AppLocalizations.of(context)!;
 
     if (_isLoading) {
-      return const Scaffold(
-        backgroundColor: AppColors.dashboardBackground,
+      return Scaffold(
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
         body: Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            color: AppColors.accent(context),
+          ),
         ),
       );
     }
 
     return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -137,12 +147,14 @@ class _CravingScreenState extends State<CravingScreen> {
                     borderRadius: BorderRadius.circular(24),
                     onTap: () =>
                         Navigator.of(context).maybePop(),
-                    child: const SizedBox(
+                    child: SizedBox(
                       width: 44,
                       height: 44,
                       child: Icon(
                         Icons.arrow_back,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                         size: 22,
                       ),
                     ),
@@ -155,10 +167,12 @@ class _CravingScreenState extends State<CravingScreen> {
                       l10n.sosSupportTitle,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 20,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                       ),
                     ),
                   ),
@@ -166,11 +180,9 @@ class _CravingScreenState extends State<CravingScreen> {
               ),
             ),
 
-            const Divider(
-              height: 1,
-              thickness: 1,
-              color: AppColors.outlineGrey,
-            ),
+            // ==================================================
+            // DIVIDER REMOVED
+            // ==================================================
 
             // ==================================================
             // MAIN CONTENT
@@ -199,13 +211,17 @@ class _CravingScreenState extends State<CravingScreen> {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: const Color(
-                          0xFFDB7361,
-                        ).withOpacity(0.12),
+                        color: _isDark
+                            ? ThemeController.darkAccent
+                                .withOpacity(0.18)
+                            : const Color(0xFFDB7361)
+                                .withOpacity(0.12),
                       ),
-                      child: const Icon(
+                      child: Icon(
                         Icons.warning_amber_rounded,
-                        color: Color(0xFFDB7361),
+                        color: _isDark
+                            ? ThemeController.darkAccent
+                            : const Color(0xFFDB7361),
                         size: 30,
                       ),
                     ),
@@ -216,13 +232,15 @@ class _CravingScreenState extends State<CravingScreen> {
                     // TITLE
                     // ==================================================
 
-                    const Text(
+                    Text(
                       'You Are Not Alone',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 22,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                       ),
                     ),
 
@@ -235,11 +253,13 @@ class _CravingScreenState extends State<CravingScreen> {
                     Text(
                       l10n.cravingsPassMessage,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
                         height: 1.4,
-                        color: AppColors.textGrey,
+                        color: _isDark
+                            ? Colors.white70
+                            : AppColors.textGrey,
                       ),
                     ),
 
@@ -251,7 +271,9 @@ class _CravingScreenState extends State<CravingScreen> {
 
                     _buildSosItem(
                       icon: Icons.air,
-                      iconColor: AppColors.primary,
+                      iconColor: _isDark
+                          ? ThemeController.darkAccent
+                          : AppColors.primary,
                       title: l10n.breathingExercise,
                       subtitle:
                           l10n.breathingExerciseSubtitle,
@@ -271,7 +293,9 @@ class _CravingScreenState extends State<CravingScreen> {
 
                     _buildSosItem(
                       icon: Icons.access_time_outlined,
-                      iconColor: const Color(0xFF3B82F6),
+                      iconColor: _isDark
+                          ? ThemeController.darkAccent
+                          : const Color(0xFF3B82F6),
                       title: l10n.rideTheWave,
                       subtitle:
                           l10n.rideTheWaveSubtitle,
@@ -280,7 +304,9 @@ class _CravingScreenState extends State<CravingScreen> {
 
                     _buildSosItem(
                       icon: Icons.lightbulb_outline,
-                      iconColor: const Color(0xFFE0A93B),
+                      iconColor: _isDark
+                          ? ThemeController.darkAccent
+                          : const Color(0xFFE0A93B),
                       title: l10n.copingTips,
                       subtitle:
                           l10n.copingTipsSubtitle,
@@ -300,7 +326,9 @@ class _CravingScreenState extends State<CravingScreen> {
 
                     _buildSosItem(
                       icon: Icons.favorite_border,
-                      iconColor: const Color(0xFF7C7CE0),
+                      iconColor: _isDark
+                          ? ThemeController.darkAccent
+                          : const Color(0xFF7C7CE0),
                       title: l10n.talkToAiCoach,
                       subtitle:
                           l10n.talkToAiCoachSubtitle,
@@ -331,19 +359,29 @@ class _CravingScreenState extends State<CravingScreen> {
                         vertical: 16,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.primary
-                            .withOpacity(0.12),
+                        color: _isDark
+                            ? ThemeController.darkCard
+                            : AppColors.primary
+                                .withOpacity(0.12),
+                        border: _isDark
+                            ? Border.all(
+                                color:
+                                    ThemeController.darkAccent,
+                              )
+                            : null,
                         borderRadius:
                             BorderRadius.circular(20),
                       ),
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                             height: 1.4,
-                            color: AppColors.primary,
+                            color: _isDark
+                                ? Colors.white
+                                : AppColors.primary,
                           ),
                           children: [
                             TextSpan(
@@ -400,10 +438,14 @@ class _CravingScreenState extends State<CravingScreen> {
         child: Container(
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: _isDark
+                ? ThemeController.darkCard
+                : AppColors.white,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: AppColors.outlineGrey,
+              color: _isDark
+                  ? ThemeController.darkAccent
+                  : AppColors.outlineGrey,
             ),
           ),
           child: Row(
@@ -418,13 +460,18 @@ class _CravingScreenState extends State<CravingScreen> {
                 height: 48,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: iconColor.withOpacity(0.12),
+                  color: _isDark
+                      ? ThemeController.darkAccent
+                          .withOpacity(0.34)
+                      : iconColor.withOpacity(0.12),
                   borderRadius:
                       BorderRadius.circular(14),
                 ),
                 child: Icon(
                   icon,
-                  color: iconColor,
+                  color: _isDark
+                      ? Colors.white
+                      : iconColor,
                   size: 22,
                 ),
               ),
@@ -445,10 +492,12 @@ class _CravingScreenState extends State<CravingScreen> {
                       title,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                       ),
                     ),
 
@@ -458,11 +507,13 @@ class _CravingScreenState extends State<CravingScreen> {
                       subtitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 11,
                         height: 1.25,
-                        color: AppColors.textGrey,
+                        color: _isDark
+                            ? Colors.white70
+                            : AppColors.textGrey,
                       ),
                     ),
                   ],
@@ -475,9 +526,11 @@ class _CravingScreenState extends State<CravingScreen> {
               // ARROW
               // ==================================================
 
-              const Icon(
+              Icon(
                 Icons.chevron_right,
-                color: AppColors.textLightGrey,
+                color: _isDark
+                    ? Colors.white70
+                    : AppColors.textLightGrey,
               ),
             ],
           ),

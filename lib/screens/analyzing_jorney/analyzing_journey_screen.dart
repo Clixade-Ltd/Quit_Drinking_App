@@ -213,13 +213,22 @@ class _AnalyzingJourneyScreenState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final isDark = AppColors.isDark(context);
 
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
+        decoration: BoxDecoration(
+          color: isDark
+              ? AppColors.pageBackground(
+                  context,
+                  light: AppColors.gradientEnd,
+                )
+              : null,
+          gradient: isDark
+              ? null
+              : const LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
@@ -238,13 +247,13 @@ class _AnalyzingJourneyScreenState
                 child: Text(
                   l10n.analyzingYourJourney,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'SF Pro',
                     fontWeight: FontWeight.w700,
                     fontSize: 28,
                     letterSpacing: -0.56,
                     height: 36 / 28,
-                    color: AppColors.primary,
+                    color: isDark ? Colors.white : AppColors.primary,
                   ),
                 ),
               ),
@@ -256,12 +265,12 @@ class _AnalyzingJourneyScreenState
                 child: Text(
                   l10n.aiCreatingSanctuary,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'SF Pro',
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
                     height: 24 / 16,
-                    color: AppColors.textGrey,
+                    color: isDark ? Colors.white70 : AppColors.textGrey,
                   ),
                 ),
               ),

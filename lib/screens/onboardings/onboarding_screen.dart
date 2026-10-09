@@ -307,9 +307,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       drinkingLevel:
           answers.drinkingLevel ?? '',
       drinksPerWeek:
-          answers.drinksPerWeek ?? 0,
+          answers.drinksPerWeek,
       moneySpentPerWeek:
-          answers.moneySpentPerWeek ?? 0,
+          answers.moneySpentPerWeek,
+        caloriesPerDrink: answers.caloriesPerDrink,
       triggers: answers.triggers,
       quitReasons: answers.quitReasons,
     );
@@ -354,7 +355,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             : false;
 
     return Scaffold(
-      backgroundColor: AppColors.bgColor,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.bgColor,
+      ),
       body: SafeArea(
         child: Column(
           children: [

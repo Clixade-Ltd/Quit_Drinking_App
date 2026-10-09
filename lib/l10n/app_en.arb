@@ -95,6 +95,8 @@
 
   "moneySaved": "Money Saved",
   "caloriesSaved": "Calories Saved",
+  "averageCaloriesPerDrink": "Average calories per drink (optional)",
+  "calorieEstimateMissing": "Tap to add estimate",
   "healthScore": "Health Score",
   "drinksAvoided": "Drinks Avoided",
   "estimated": "Estimated",

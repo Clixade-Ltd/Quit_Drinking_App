@@ -244,6 +244,12 @@ class AppLocalizationsTe extends AppLocalizations {
   String get caloriesSaved => 'ఆదా చేసిన కేలరీలు';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'ఆరోగ్య స్కోర్';
 
   @override

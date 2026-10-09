@@ -242,6 +242,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get caloriesSaved => 'السعرات الموفرة';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'درجة الصحة';
 
   @override

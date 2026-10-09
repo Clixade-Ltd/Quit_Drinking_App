@@ -244,6 +244,12 @@ class AppLocalizationsBn extends AppLocalizations {
   String get caloriesSaved => 'সংরক্ষিত ক্যালোরি';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'স্বাস্থ্য স্কোর';
 
   @override

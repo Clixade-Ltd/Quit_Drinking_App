@@ -245,6 +245,12 @@ class AppLocalizationsKa extends AppLocalizations {
   String get caloriesSaved => 'დაზოგილი კალორიები';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'ჯანმრთელობის ქულა';
 
   @override

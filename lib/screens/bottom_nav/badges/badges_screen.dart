@@ -8,6 +8,7 @@ import '../../../models/milestone_definition.dart';
 import '../../../services/achievement_service.dart';
 import '../../../services/analytics_service.dart';
 import '../../../services/home_dashboard_service.dart';
+import '../../../theme/theme_controller.dart';
 import '../../../widgets/badge_emblem.dart';
 
 // Used to open the already-existing milestone achieved screen.
@@ -27,6 +28,8 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
   List<_BadgeItem> _milestones = [];
   List<_BadgeItem> _achievements = [];
+
+  bool get _isDark => AppColors.isDark(context);
 
   @override
   void didChangeDependencies() {
@@ -191,8 +194,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
         ),
 
         _AchievementDef(
-          icon:
-              Icons.chat_bubble_outline,
+          icon: Icons.chat_bubble_outline,
           title: l10n.keepTalking,
           unlockedSubtitle:
               l10n.fiveConversations,
@@ -344,8 +346,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
       // LOAD ACHIEVEMENT COUNTS
       // ======================================================
 
-      for (final def
-          in achievementDefs) {
+      for (final def in achievementDefs) {
         num count;
 
         try {
@@ -354,10 +355,6 @@ class _BadgesScreenState extends State<BadgesScreen> {
             const Duration(
               seconds: 10,
             ),
-
-            // IMPORTANT:
-            // The Future expects an int-compatible
-            // timeout result. Do NOT return 0.0 here.
             onTimeout: () {
               debugPrint(
                 'BADGES: timeout for "${def.title}"',
@@ -539,13 +536,11 @@ class _BadgesScreenState extends State<BadgesScreen> {
       return;
     }
 
-    // Unlocked -> open celebration screen.
     if (item.unlocked) {
       _openMilestone(def);
       return;
     }
 
-    // Locked -> show progress.
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
       ..showSnackBar(
@@ -574,12 +569,21 @@ class _BadgesScreenState extends State<BadgesScreen> {
     )!;
 
     if (_isLoading) {
-      return const Scaffold(
+      return Scaffold(
         backgroundColor:
-            AppColors.dashboardBackground,
+            AppColors.pageBackground(
+          context,
+          light:
+              AppColors.dashboardBackground,
+        ),
         body: Center(
           child:
-              CircularProgressIndicator(),
+              CircularProgressIndicator(
+            color: _isDark
+                ? ThemeController
+                    .darkAccent
+                : null,
+          ),
         ),
       );
     }
@@ -587,7 +591,11 @@ class _BadgesScreenState extends State<BadgesScreen> {
     if (_hasError) {
       return Scaffold(
         backgroundColor:
-            AppColors.dashboardBackground,
+            AppColors.pageBackground(
+          context,
+          light:
+              AppColors.dashboardBackground,
+        ),
         body: Center(
           child: Padding(
             padding:
@@ -600,7 +608,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   Icons.error_outline,
                   size: 52.sp,
                   color:
-                      AppColors.textLightGrey,
+                      _isDark
+                          ? Colors.white70
+                          : AppColors
+                              .textLightGrey,
                 ),
 
                 SizedBox(
@@ -615,8 +626,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
                     fontWeight:
                         FontWeight.w700,
                     fontSize: 18.sp,
-                    color:
-                        AppColors.textBlack,
+                    color: _isDark
+                        ? Colors.white
+                        : AppColors.textBlack,
                   ),
                 ),
 
@@ -646,7 +658,11 @@ class _BadgesScreenState extends State<BadgesScreen> {
 
     return Scaffold(
       backgroundColor:
-          AppColors.dashboardBackground,
+          AppColors.pageBackground(
+        context,
+        light:
+            AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         top: true,
         bottom: false,
@@ -657,6 +673,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
             Expanded(
               child:
                   RefreshIndicator(
+                color: _isDark
+                    ? ThemeController
+                        .darkAccent
+                    : AppColors.primary,
                 onRefresh: _load,
                 child:
                     SingleChildScrollView(
@@ -762,11 +782,43 @@ class _BadgesScreenState extends State<BadgesScreen> {
       return const SizedBox.shrink();
     }
 
+    // ----------------------------------------------------------
+    // LIGHT MODE
+    // Keep existing gradient exactly as it was.
+    // ----------------------------------------------------------
+
     const greenLight =
         Color(0xFF1B6B47);
 
     const greenDark =
         Color(0xFF0A3D26);
+
+    // ----------------------------------------------------------
+    // DARK MODE
+    // Light blue -> dark blue gradient.
+    // ----------------------------------------------------------
+
+    const darkBlueLight =
+        Color(0xFF2F80ED);
+
+    const darkBlueDark =
+        Color(0xFF102A43);
+
+    final gradientColors =
+        _isDark
+            ? const [
+                darkBlueLight,
+                darkBlueDark,
+              ]
+            : const [
+                greenLight,
+                greenDark,
+              ];
+
+    final shadowColor =
+        _isDark
+            ? darkBlueDark
+            : greenDark;
 
     return Material(
       color: Colors.transparent,
@@ -797,29 +849,38 @@ class _BadgesScreenState extends State<BadgesScreen> {
                 BorderRadius.circular(
               28.r,
             ),
+
+            // ------------------------------------------------
+            // DARK MODE: BLUE GRADIENT
+            // LIGHT MODE: ORIGINAL GREEN GRADIENT
+            // ------------------------------------------------
             gradient:
-                const LinearGradient(
+                LinearGradient(
               begin:
                   Alignment.topLeft,
               end:
                   Alignment.bottomRight,
-              colors: [
-                greenLight,
-                greenDark,
-              ],
+              colors:
+                  gradientColors,
             ),
+
             border: Border.all(
               color: Colors.white
                   .withOpacity(
-                0.18,
+                _isDark
+                    ? 0.24
+                    : 0.18,
               ),
               width: 1.w,
             ),
+
             boxShadow: [
               BoxShadow(
-                color: greenDark
+                color: shadowColor
                     .withOpacity(
-                  0.35,
+                  _isDark
+                      ? 0.40
+                      : 0.35,
                 ),
                 blurRadius: 24,
                 offset:
@@ -852,6 +913,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
                 height: 14.h,
               ),
 
+              // HERO TITLE
               Text(
                 shown.title,
                 textAlign:
@@ -863,6 +925,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   fontSize: 22.sp,
                   fontWeight:
                       FontWeight.w800,
+
+                  // White in BOTH modes,
+                  // matching existing hero design.
                   color:
                       Colors.white,
                 ),
@@ -872,6 +937,7 @@ class _BadgesScreenState extends State<BadgesScreen> {
                 height: 4.h,
               ),
 
+              // HERO SUBTITLE
               Text(
                 latest != null
                     ? l10n
@@ -958,9 +1024,10 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   ),
                   child:
                       LinearProgressIndicator(
-                    value: (next.progress ??
-                            0)
-                        .clamp(
+                    value:
+                        (next.progress ??
+                                0)
+                            .clamp(
                       0.02,
                       1.0,
                     ),
@@ -1015,8 +1082,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   fontWeight:
                       FontWeight.w600,
                   fontSize: 20.sp,
-                  color:
-                      AppColors.textBlack,
+                  color: _isDark
+                      ? Colors.white
+                      : AppColors.textBlack,
                 ),
               ),
             ),
@@ -1034,8 +1102,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
                   child: Icon(
                     Icons
                         .notifications_none_rounded,
-                    color:
-                        AppColors.textBlack,
+                    color: _isDark
+                        ? Colors.white
+                        : AppColors.textBlack,
                     size: 24.sp,
                   ),
                 ),
@@ -1068,8 +1137,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
               fontWeight:
                   FontWeight.w700,
               fontSize: 16.sp,
-              color:
-                  AppColors.textBlack,
+              color: _isDark
+                  ? Colors.white
+                  : AppColors.textBlack,
             ),
           ),
         ),
@@ -1086,13 +1156,26 @@ class _BadgesScreenState extends State<BadgesScreen> {
           ),
           decoration:
               BoxDecoration(
-            color:
-                AppColors
+            color: _isDark
+                ? ThemeController
+                    .darkCard
+                : AppColors
                     .progressBarBackground,
             borderRadius:
                 BorderRadius.circular(
               20.r,
             ),
+            border: _isDark
+                ? Border.all(
+                    color:
+                        ThemeController
+                            .darkAccent
+                            .withOpacity(
+                      0.45,
+                    ),
+                    width: 0.8,
+                  )
+                : null,
           ),
           child: Text(
             '$unlocked/$total',
@@ -1100,8 +1183,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
               fontSize: 12.sp,
               fontWeight:
                   FontWeight.w600,
-              color:
-                  AppColors.textGrey,
+              color: _isDark
+                  ? Colors.white70
+                  : AppColors.textGrey,
             ),
           ),
         ),
@@ -1225,10 +1309,14 @@ class _BadgesScreenState extends State<BadgesScreen> {
               height: 1.2,
               color:
                   item.unlocked
-                      ? AppColors
-                          .textBlack
-                      : AppColors
-                          .textLightGrey,
+                      ? (_isDark
+                          ? Colors.white
+                          : AppColors
+                              .textBlack)
+                      : (_isDark
+                          ? Colors.white54
+                          : AppColors
+                              .textLightGrey),
             ),
           ),
 
@@ -1246,8 +1334,9 @@ class _BadgesScreenState extends State<BadgesScreen> {
             style: TextStyle(
               fontSize: 9.sp,
               height: 1.2,
-              color:
-                  AppColors.textGrey,
+              color: _isDark
+                  ? Colors.white60
+                  : AppColors.textGrey,
             ),
           ),
         ],
@@ -1338,4 +1427,3 @@ class _AchievementDef {
     this.isCurrency = false,
   });
 }
-

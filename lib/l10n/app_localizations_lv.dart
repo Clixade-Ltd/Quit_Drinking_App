@@ -242,6 +242,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get caloriesSaved => 'Ietaupītās kalorijas';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Veselības rādītājs';
 
   @override

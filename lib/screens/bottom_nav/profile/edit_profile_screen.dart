@@ -112,7 +112,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     final loc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -249,7 +252,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             child: ElevatedButton(
               onPressed: _isSaving ? null : _save,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
+                backgroundColor: AppColors.accent(context),
                 foregroundColor: AppColors.white,
                 elevation: 0,
                 shape: RoundedRectangleBorder(

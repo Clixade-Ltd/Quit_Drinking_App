@@ -245,6 +245,7 @@ void initState() {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final isDark = AppColors.isDark(context);
 
     final List<String> cravingLabels = [
       l10n.cravingNone,
@@ -262,8 +263,10 @@ void initState() {
     ];
 
     return Scaffold(
-      backgroundColor:
-      AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         child: _isLoading
             ? const Center(
@@ -292,10 +295,10 @@ void initState() {
                         context,
                       ).pop();
                     },
-                    child: const Icon(
+                    child: Icon(
                       Icons.chevron_left,
                       color:
-                      AppColors.textBlack,
+                      isDark ? Colors.white : AppColors.textBlack,
                       size: 30,
                     ),
                   ),
@@ -304,23 +307,25 @@ void initState() {
 
                   Text(
                     l10n.dailyCheckInTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight:
                       FontWeight.w600,
                       fontSize: 20,
                       color:
-                      AppColors.textBlack,
+                      isDark ? Colors.white : AppColors.textBlack,
                     ),
                   ),
                 ],
               ),
             ),
 
-            const Divider(
+            Divider(
               height: 1,
               thickness: 1,
               color:
-              AppColors.outlineGrey,
+              isDark
+                  ? AppColors.accent(context)
+                  : AppColors.outlineGrey,
             ),
 
             Expanded(
@@ -343,12 +348,12 @@ void initState() {
 
                     Text(
                       l10n.howAreYouFeelingToday,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
                         FontWeight.w700,
                         fontSize: 15,
                         color:
-                        AppColors.textBlack,
+                        isDark ? Colors.white : AppColors.textBlack,
                       ),
                     ),
 
@@ -357,12 +362,12 @@ void initState() {
 
                     Text(
                       l10n.honestAnswerHelp,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
                         FontWeight.w400,
                         fontSize: 13,
                         color:
-                        AppColors.textGrey,
+                        isDark ? Colors.white70 : AppColors.textGrey,
                       ),
                     ),
 
@@ -423,12 +428,12 @@ void initState() {
 
                     Text(
                       l10n.didYouDrinkToday,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
                         FontWeight.w700,
                         fontSize: 15,
                         color:
-                        AppColors.textBlack,
+                        isDark ? Colors.white : AppColors.textBlack,
                       ),
                     ),
 
@@ -491,12 +496,12 @@ void initState() {
 
                     Text(
                       l10n.cravingLevelNow,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
                         FontWeight.w700,
                         fontSize: 15,
                         color:
-                        AppColors.textBlack,
+                        isDark ? Colors.white : AppColors.textBlack,
                       ),
                     ),
 
@@ -548,14 +553,13 @@ void initState() {
                       children: [
                         Text(
                           l10n.anythingOnMind,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight:
                             FontWeight
                                 .w700,
                             fontSize: 15,
                             color:
-                            AppColors
-                                .textBlack,
+                            isDark ? Colors.white : AppColors.textBlack,
                           ),
                         ),
 
@@ -563,14 +567,13 @@ void initState() {
 
                         Text(
                           l10n.optionalLabel,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight:
                             FontWeight
                                 .w400,
                             fontSize: 13,
                             color:
-                            AppColors
-                                .textGrey,
+                            isDark ? Colors.white70 : AppColors.textGrey,
                           ),
                         ),
                       ],
@@ -588,8 +591,12 @@ void initState() {
                           .all(12),
                       decoration:
                       BoxDecoration(
-                        color:
-                        AppColors.white,
+                        color: isDark
+                            ? AppColors.surface(
+                                context,
+                                light: AppColors.white,
+                              )
+                            : AppColors.white,
                         borderRadius:
                         BorderRadius
                             .circular(
@@ -597,8 +604,9 @@ void initState() {
                         ),
                         border:
                         Border.all(
-                          color: AppColors
-                              .outlineGrey,
+                            color: isDark
+                              ? AppColors.accent(context)
+                              : AppColors.outlineGrey,
                         ),
                       ),
                       child: TextField(
@@ -610,10 +618,11 @@ void initState() {
                         TextAlignVertical
                             .top,
                         style:
-                        const TextStyle(
+                        TextStyle(
                           fontSize: 14,
-                          color: AppColors
-                              .textBlack,
+                            color: isDark
+                              ? Colors.white
+                              : AppColors.textBlack,
                         ),
                         decoration:
                         InputDecoration(
@@ -623,9 +632,10 @@ void initState() {
                           hintText:
                           l10n.dailyNoteHint,
                           hintStyle:
-                          const TextStyle(
-                            color: AppColors
-                                .textLightGrey,
+                          TextStyle(
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLightGrey,
                           ),
                         ),
                       ),
@@ -651,8 +661,10 @@ void initState() {
               ),
               decoration:
               BoxDecoration(
-                color: AppColors
-                    .dashboardBackground,
+                color: AppColors.pageBackground(
+                  context,
+                  light: AppColors.dashboardBackground,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black
@@ -685,11 +697,9 @@ void initState() {
                       ElevatedButton
                           .styleFrom(
                         backgroundColor:
-                        AppColors
-                            .primary,
+                          AppColors.accent(context),
                         disabledBackgroundColor:
-                        AppColors
-                            .primary
+                        AppColors.accent(context)
                             .withOpacity(
                           0.6,
                         ),
@@ -744,12 +754,13 @@ void initState() {
                     l10n.checkInsHelpTrack,
                     textAlign:
                     TextAlign.center,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight:
                       FontWeight.w400,
                       fontSize: 12,
-                      color: AppColors
-                          .textLightGrey,
+                      color: isDark
+                          ? Colors.white70
+                          : AppColors.textLightGrey,
                     ),
                   ),
                 ],
@@ -794,6 +805,7 @@ class _MoodOptionState extends State<_MoodOption> {
   @override
   Widget build(BuildContext context) {
     final bool active = widget.isSelected || _isHovered;
+    final isDark = AppColors.isDark(context);
 
     return MouseRegion(
       onEnter: (_) {
@@ -830,23 +842,38 @@ class _MoodOptionState extends State<_MoodOption> {
             ),
             decoration: BoxDecoration(
               color: widget.isSelected
-                  ? AppColors.primary.withOpacity(0.14)
+                ? (isDark
+                  ? AppColors.accent(context)
+                  : AppColors.primary.withOpacity(0.14))
                   : active
-                      ? AppColors.primary.withOpacity(0.05)
-                      : AppColors.white,
+                  ? (isDark
+                    ? AppColors.accent(context).withOpacity(0.14)
+                    : AppColors.primary.withOpacity(0.05))
+                  : AppColors.surface(
+                    context,
+                    light: AppColors.white,
+                  ),
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: widget.isSelected
+                color: isDark
+                  ? widget.isSelected
+                    ? Colors.white
+                    : AppColors.accent(context)
+                  : widget.isSelected
                     ? AppColors.primary
                     : active
-                        ? AppColors.primary.withOpacity(0.55)
-                        : AppColors.outlineGrey,
-                width: widget.isSelected ? 1.8 : 1.4,
+                      ? AppColors.primary.withOpacity(0.55)
+                      : AppColors.outlineGrey,
+                width: isDark && widget.isSelected
+                    ? 2.4
+                    : widget.isSelected
+                        ? 1.8
+                        : 1.4,
               ),
               boxShadow: widget.isSelected || _isHovered
                   ? [
                       BoxShadow(
-                        color: AppColors.primary.withOpacity(0.10),
+                        color: AppColors.accent(context).withOpacity(0.10),
                         blurRadius: 8,
                         offset: const Offset(0, 3),
                       ),
@@ -877,7 +904,9 @@ class _MoodOptionState extends State<_MoodOption> {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: widget.isSelected ? 11.5 : 11,
-                    color: widget.isSelected
+                    color: isDark
+                      ? Colors.white
+                      : widget.isSelected
                         ? AppColors.primary
                         : AppColors.textLightGrey,
                   ),
@@ -911,6 +940,8 @@ class _ChoiceCard
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AppColors.isDark(context);
+
     return InkWell(
       onTap: onTap,
       borderRadius:
@@ -924,17 +955,24 @@ class _ChoiceCard
         ),
         decoration:
         BoxDecoration(
-          color: isSelected
-              ? AppColors.primary
-              .withOpacity(0.08)
-              : AppColors.white,
+            color: isDark
+              ? isSelected
+                ? AppColors.accent(context)
+                : AppColors.surface(context, light: AppColors.white)
+              : isSelected
+                ? AppColors.primary.withOpacity(0.08)
+                : AppColors.white,
           borderRadius:
           BorderRadius.circular(14),
           border: Border.all(
-            color: isSelected
+            color: isDark
+              ? isSelected
+                ? Colors.white
+                : AppColors.accent(context)
+              : isSelected
                 ? AppColors.primary
                 : AppColors.outlineGrey,
-            width: 1.4,
+            width: isDark && isSelected ? 2.2 : 1.4,
           ),
         ),
         child: Column(
@@ -944,10 +982,11 @@ class _ChoiceCard
             Icon(
               icon,
               size: 22,
-              color: isSelected
-                  ? AppColors.primary
-                  : AppColors
-                  .textLightGrey,
+                color: isDark
+                  ? Colors.white
+                  : isSelected
+                    ? AppColors.primary
+                    : AppColors.textLightGrey,
             ),
 
             const SizedBox(height: 8),
@@ -958,7 +997,9 @@ class _ChoiceCard
                 fontWeight:
                 FontWeight.w600,
                 fontSize: 15,
-                color: isSelected
+                color: isDark
+                  ? Colors.white
+                  : isSelected
                     ? AppColors.primary
                     : AppColors.textBlack,
               ),
@@ -988,6 +1029,8 @@ class _PillOption
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AppColors.isDark(context);
+
     return InkWell(
       onTap: onTap,
       borderRadius:
@@ -1000,17 +1043,24 @@ class _PillOption
         ),
         decoration:
         BoxDecoration(
-          color: isSelected
-              ? AppColors.primary
-              .withOpacity(0.08)
-              : AppColors.white,
+            color: isDark
+              ? isSelected
+                ? AppColors.accent(context)
+                : AppColors.surface(context, light: AppColors.white)
+              : isSelected
+                ? AppColors.primary.withOpacity(0.08)
+                : AppColors.white,
           borderRadius:
           BorderRadius.circular(999),
           border: Border.all(
-            color: isSelected
+            color: isDark
+              ? isSelected
+                ? Colors.white
+                : AppColors.accent(context)
+              : isSelected
                 ? AppColors.primary
                 : AppColors.outlineGrey,
-            width: 1.4,
+            width: isDark && isSelected ? 2.2 : 1.4,
           ),
         ),
         child: Text(
@@ -1019,7 +1069,9 @@ class _PillOption
             fontWeight:
             FontWeight.w600,
             fontSize: 13,
-            color: isSelected
+            color: isDark
+              ? Colors.white
+              : isSelected
                 ? AppColors.primary
                 : AppColors.textBlack,
           ),

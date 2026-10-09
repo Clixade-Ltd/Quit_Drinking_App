@@ -17,6 +17,7 @@ import 'package:new_quit_drinking_app/screens/weekly_report/weekly_report_screen
 import 'package:new_quit_drinking_app/services/daily_check_in_service.dart';
 import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
 import 'package:new_quit_drinking_app/services/premium_service.dart';
+import 'package:new_quit_drinking_app/theme/theme_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -55,8 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _welcomeMessage;
 
   String? _motivationQuote;
-
-  num? _healthScore;
 
   bool _isPremium = false;
 
@@ -141,7 +140,6 @@ class _HomeScreenState extends State<HomeScreen> {
     // ==========================================================
 
     String? motivationQuote;
-    num? healthScore;
 
     final todayAIUpdate =
         await service.getTodayAIUpdate();
@@ -156,17 +154,6 @@ class _HomeScreenState extends State<HomeScreen> {
             rawQuote.toString().trim();
       }
 
-      final rawHealthScore =
-          todayAIUpdate['healthScore'];
-
-      if (rawHealthScore is num) {
-        healthScore = rawHealthScore;
-      } else if (rawHealthScore != null) {
-        healthScore =
-            num.tryParse(
-          rawHealthScore.toString(),
-        );
-      }
     } else {
       final profile =
           await service.getProfile() ?? {};
@@ -190,17 +177,6 @@ class _HomeScreenState extends State<HomeScreen> {
             rawQuote.toString().trim();
       }
 
-      final rawHealthScore =
-          dailyUpdate['healthScore'];
-
-      if (rawHealthScore is num) {
-        healthScore = rawHealthScore;
-      } else if (rawHealthScore != null) {
-        healthScore =
-            num.tryParse(
-          rawHealthScore.toString(),
-        );
-      }
     }
 
     if (!mounted) return;
@@ -230,7 +206,6 @@ class _HomeScreenState extends State<HomeScreen> {
       _photoBytes = photoBytes;
       _welcomeMessage = welcomeMessage;
       _motivationQuote = motivationQuote;
-      _healthScore = healthScore;
       _isPremium = isPremium;
       _isLoading = false;
     });
@@ -299,6 +274,40 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return number.toStringAsFixed(2);
+  }
+
+  Future<void> _editCaloriesPerDrink() async {
+    final l10n = AppLocalizations.of(context)!;
+    final current = _stats['caloriesPerDrink'];
+    final initialValue = current is num && current > 0
+        ? current.round().toString()
+        : '';
+
+    final calories = await showDialog<int>(
+      context: context,
+      barrierDismissible: true,
+      builder: (dialogContext) {
+        return _CaloriesDialog(
+          initialValue: initialValue,
+          title: l10n.averageCaloriesPerDrink,
+          closeLabel: l10n.close,
+          doneLabel: l10n.done,
+        );
+      },
+    );
+
+    if (!mounted) return;
+
+    if (calories == null || calories <= 0) {
+      return;
+    }
+
+    await HomeDashboardService.instance
+        .updateCaloriesPerDrink(calories);
+
+    if (!mounted) return;
+
+    await _load();
   }
 
   // ============================================================
@@ -675,11 +684,14 @@ class _HomeScreenState extends State<HomeScreen> {
   ) {
     final l10n =
         AppLocalizations.of(context)!;
+    final isDark = AppColors.isDark(context);
 
     if (_isLoading) {
-      return const Scaffold(
-        backgroundColor:
-            AppColors.dashboardBackground,
+      return Scaffold(
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
         body: Center(
           child:
               CircularProgressIndicator(),
@@ -688,8 +700,10 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Scaffold(
-      backgroundColor:
-          AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -724,15 +738,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontSize:
                                 23.sp,
                           ),
-                          children:
-                              const [
+                          children: [
                             TextSpan(
                               text:
                                   'Quit ',
                               style:
                                   TextStyle(
                                 color:
-                                    AppColors.textBlack,
+                                    AppColors.primaryText(
+                                  context,
+                                  light: AppColors.textBlack,
+                                ),
                               ),
                             ),
                             TextSpan(
@@ -741,7 +757,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style:
                                   TextStyle(
                                 color:
-                                    AppColors.primary,
+                                  AppColors.accent(context),
                               ),
                             ),
                           ],
@@ -772,9 +788,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         alignment:
                             Alignment.center,
                         decoration:
-                            const BoxDecoration(
+                            BoxDecoration(
                           color:
-                              AppColors.primary,
+                              AppColors.accent(context),
                           shape:
                               BoxShape.circle,
                         ),
@@ -826,7 +842,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration:
                           BoxDecoration(
                         color:
-                            AppColors.white,
+                            AppColors.surface(
+                          context,
+                          light: AppColors.white,
+                        ),
                         borderRadius:
                             BorderRadius.circular(
                           40.r,
@@ -902,7 +921,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           decoration:
                               BoxDecoration(
                             color:
-                                AppColors.primary,
+                                AppColors.accent(context),
                             borderRadius:
                                 BorderRadius.circular(
                               24.r,
@@ -1031,11 +1050,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration:
                           BoxDecoration(
                         color:
-                            AppColors.white,
+                            isDark
+                                ? ThemeController.darkCard
+                                : AppColors.white,
                         borderRadius:
                             BorderRadius.circular(
                           40.r,
                         ),
+                        border: isDark
+                            ? Border.all(
+                                color: ThemeController.darkAccent,
+                              )
+                            : null,
                         boxShadow: [
                           BoxShadow(
                             color:
@@ -1068,7 +1094,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize:
                                   17.sp,
                               color:
-                                  AppColors.textBlack,
+                                  isDark
+                                    ? Colors.white
+                                    : AppColors.textBlack,
                             ),
                           ),
                           SizedBox(
@@ -1173,18 +1201,25 @@ class _HomeScreenState extends State<HomeScreen> {
                               l10n.estimated,
                         ),
 
-                        _buildCaloriesSavedCard(
-                          value:
-                              '${_stats['caloriesAvoided'] ?? 0}',
-                          subtitle:
-                              l10n.estimated,
+                        GestureDetector(
+                          onTap: _editCaloriesPerDrink,
+                          child: _buildCaloriesSavedCard(
+                          value: _stats['caloriesAvailable'] == 1
+                            ? '${_stats['caloriesAvoided'] ?? 0}'
+                            : '—',
+                          subtitle: _stats['caloriesAvailable'] == 1
+                            ? l10n.estimated
+                            : l10n.calorieEstimateMissing,
+                          ),
                         ),
 
                         _buildHealthScoreCard(
                           value:
-                              '${_healthScore ?? 0}/100',
+                            '${_stats['wellnessScore'] ?? 0}/100',
                           subtitle:
-                              l10n.aiGenerated,
+                            l10n.estimated,
+                          title:
+                            l10n.healthScore,
                         ),
 
                         _buildDrinksAvoidedCard(
@@ -1218,11 +1253,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration:
                           BoxDecoration(
                         color:
-                            AppColors.white,
+                            isDark
+                                ? ThemeController.darkCard
+                                : AppColors.white,
                         borderRadius:
                             BorderRadius.circular(
                           28.r,
                         ),
+                        border: isDark
+                            ? Border.all(
+                                color: ThemeController.darkAccent,
+                              )
+                            : null,
                         boxShadow: [
                           BoxShadow(
                             color:
@@ -1255,9 +1297,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 decoration:
                                     BoxDecoration(
                                   color:
-                                      const Color(
-                                    0xFFE8F6EF,
-                                  ),
+                                      isDark
+                                          ? Colors.white.withValues(alpha: 0.12)
+                                          : const Color(0xFFE8F6EF),
                                   shape:
                                       BoxShape.circle,
                                 ),
@@ -1266,7 +1308,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Icons
                                       .format_quote_rounded,
                                   color:
-                                      AppColors.primary,
+                                      isDark
+                                        ? Colors.white
+                                        : AppColors.primary,
                                   size:
                                       20.r,
                                 ),
@@ -1285,7 +1329,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize:
                                       16.sp,
                                   color:
-                                      AppColors.textBlack,
+                                      isDark
+                                        ? Colors.white
+                                        : AppColors.textBlack,
                                 ),
                               ),
                             ],
@@ -1309,7 +1355,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               height:
                                   1.5,
                               color:
-                                  AppColors.textGrey,
+                                  isDark
+                                    ? Colors.white
+                                    : AppColors.textGrey,
                             ),
                           ),
                         ],
@@ -1345,11 +1393,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         style:
                             OutlinedButton.styleFrom(
                           foregroundColor:
-                              AppColors.primary,
+                            isDark
+                              ? ThemeController.darkBackground
+                              : AppColors.primary,
+                          backgroundColor: isDark
+                            ? const Color(0xFFD9F0FF)
+                            : null,
                           side:
                               BorderSide(
                             color:
-                                AppColors.primary,
+                            isDark
+                              ? ThemeController.darkAccent
+                              : AppColors.primary,
                             width:
                                 1.2,
                           ),
@@ -1428,9 +1483,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration:
                             BoxDecoration(
                           color:
-                              const Color(
-                            0xFFDB7361,
-                          ),
+                              isDark
+                                  ? ThemeController.darkAccent
+                                  : const Color(0xFFDB7361),
                           borderRadius:
                               BorderRadius.circular(
                             32.r,
@@ -1438,9 +1493,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color:
-                                  const Color(
-                                0xFFDB7361,
-                              ).withValues(
+                                  (isDark
+                                          ? ThemeController.darkAccent
+                                          : const Color(0xFFDB7361))
+                                      .withValues(
                                 alpha:
                                     0.23,
                               ),
@@ -1548,6 +1604,7 @@ class _HomeScreenState extends State<HomeScreen> {
     required String value,
     required String subtitle,
   }) {
+    final isDark = AppColors.isDark(context);
     return Container(
       clipBehavior:
           Clip.antiAlias,
@@ -1558,20 +1615,19 @@ class _HomeScreenState extends State<HomeScreen> {
           28.r,
         ),
         gradient:
-            const LinearGradient(
+          LinearGradient(
           begin:
               Alignment.topLeft,
           end:
               Alignment.bottomRight,
-          colors: [
-            Color(0xFF176B4A),
-            Color(0xFF0F5138),
-          ],
+          colors: isDark
+              ? [ThemeController.darkCard, ThemeController.darkAccent]
+              : const [Color(0xFF176B4A), Color(0xFF0F5138)],
         ),
         boxShadow: [
           BoxShadow(
             color:
-                AppColors.primary
+                AppColors.accent(context)
                     .withValues(
               alpha:
                   0.22,
@@ -1793,6 +1849,7 @@ fontWeight: FontWeight.w600,
     required String value,
     required String subtitle,
   }) {
+    final isDark = AppColors.isDark(context);
     return Container(
       clipBehavior:
           Clip.antiAlias,
@@ -1803,22 +1860,19 @@ fontWeight: FontWeight.w600,
           28.r,
         ),
         gradient:
-            const LinearGradient(
+          LinearGradient(
           begin:
               Alignment.topLeft,
           end:
               Alignment.bottomRight,
-          colors: [
-            Color(0xFFFFA45B),
-            Color(0xFFE97845),
-          ],
+          colors: isDark
+              ? [ThemeController.darkBackground, ThemeController.darkCard]
+              : const [Color(0xFFFFA45B), Color(0xFFE97845)],
         ),
         boxShadow: [
           BoxShadow(
             color:
-                const Color(
-              0xFFE97845,
-            ).withValues(
+                (isDark ? ThemeController.darkAccent : const Color(0xFFE97845)).withValues(
               alpha:
                   0.20,
             ),
@@ -2039,9 +2093,15 @@ fontWeight: FontWeight.w900,
   Widget _buildHealthScoreCard({
     required String value,
     required String subtitle,
+    required String title,
   }) {
-    const startColor = Color(0xFFC95C78);
-    const endColor = Color(0xFF8F3554);
+    final isDark = AppColors.isDark(context);
+    final startColor = isDark
+      ? ThemeController.darkCard
+      : const Color(0xFFC95C78);
+    final endColor = isDark
+      ? ThemeController.darkAccent
+      : const Color(0xFF8F3554);
 
     return Container(
       clipBehavior:
@@ -2053,7 +2113,7 @@ fontWeight: FontWeight.w900,
           28.r,
         ),
         gradient:
-            const LinearGradient(
+          LinearGradient(
           begin:
               Alignment.topLeft,
           end:
@@ -2168,7 +2228,7 @@ fontWeight: FontWeight.w900,
                 const Spacer(),
 
                 Text(
-                  'Health Score',
+                  title,
                   maxLines:
                       1,
                   overflow:
@@ -2271,8 +2331,13 @@ fontWeight: FontWeight.w600,
     required String value,
     required String subtitle,
   }) {
-    const startColor = Color(0xFF3F83C4);
-    const endColor = Color(0xFF245F9B);
+    final isDark = AppColors.isDark(context);
+    final startColor = isDark
+      ? ThemeController.darkBackground
+      : const Color(0xFF3F83C4);
+    final endColor = isDark
+      ? ThemeController.darkAccent
+      : const Color(0xFF245F9B);
 
     return Container(
       clipBehavior:
@@ -2284,7 +2349,7 @@ fontWeight: FontWeight.w600,
           28.r,
         ),
         gradient:
-            const LinearGradient(
+          LinearGradient(
           begin:
               Alignment.topLeft,
           end:
@@ -2703,9 +2768,11 @@ class _MoodEmojiButtonState
                         ? FontWeight.w700
                         : FontWeight.w400,
                 color:
-                    widget.isSelected
-                        ? widget.color
-                        : AppColors.textLightGrey,
+                  AppColors.isDark(context)
+                    ? Colors.white
+                    : widget.isSelected
+                      ? widget.color
+                      : AppColors.textLightGrey,
               ),
             ),
           ],
@@ -2920,6 +2987,7 @@ class _StreakCounter
   Widget build(
     BuildContext context,
   ) {
+    final isDark = AppColors.isDark(context);
     const tabs = [
       'Hours',
       'Days',
@@ -2955,7 +3023,10 @@ class _StreakCounter
                   letterSpacing:
                       -0.3,
                   color:
-                      AppColors.textBlack,
+                      AppColors.primaryText(
+                    context,
+                    light: AppColors.textBlack,
+                  ),
                 ),
               ),
             ),
@@ -2980,7 +3051,7 @@ class _StreakCounter
                 decoration:
                     BoxDecoration(
                   color:
-                      AppColors.primary.withValues(
+                      AppColors.accent(context).withValues(
                     alpha:
                         0.08,
                   ),
@@ -2991,7 +3062,7 @@ class _StreakCounter
                   border:
                       Border.all(
                     color:
-                        AppColors.primary.withValues(
+                        AppColors.accent(context).withValues(
                       alpha:
                           0.12,
                     ),
@@ -3008,7 +3079,7 @@ class _StreakCounter
                       size:
                           16.r,
                       color:
-                          AppColors.primary,
+                          AppColors.accent(context),
                     ),
                     SizedBox(
                       width:
@@ -3023,7 +3094,7 @@ class _StreakCounter
                         fontSize:
                             12.5.sp,
                         color:
-                            AppColors.primary,
+                            AppColors.accent(context),
                       ),
                     ),
                   ],
@@ -3054,7 +3125,10 @@ class _StreakCounter
                   size:
                       13.r,
                   color:
-                      AppColors.textLightGrey,
+                      AppColors.secondaryText(
+                    context,
+                    light: AppColors.textLightGrey,
+                  ),
                 ),
                 SizedBox(
                   width:
@@ -3069,7 +3143,10 @@ class _StreakCounter
                     fontSize:
                         12.5.sp,
                     color:
-                        AppColors.textGrey,
+                        AppColors.secondaryText(
+                      context,
+                      light: AppColors.textGrey,
+                    ),
                   ),
                 ),
               ],
@@ -3111,7 +3188,7 @@ class _StreakCounter
               decoration:
                   BoxDecoration(
                 color:
-                    AppColors.primary.withValues(
+                    AppColors.accent(context).withValues(
                   alpha:
                       0.07,
                 ),
@@ -3122,7 +3199,7 @@ class _StreakCounter
                 border:
                     Border.all(
                   color:
-                      AppColors.primary.withValues(
+                      AppColors.accent(context).withValues(
                     alpha:
                         0.10,
                   ),
@@ -3174,8 +3251,8 @@ class _StreakCounter
                             end:
                                 Alignment.bottomRight,
                             colors: [
-                              AppColors.primary,
-                              AppColors.primary
+                              AppColors.accent(context),
+                              AppColors.accent(context)
                                   .withValues(
                                 alpha:
                                     0.88,
@@ -3254,7 +3331,9 @@ class _StreakCounter
                                     color:
                                         isSelected
                                             ? Colors.white
-                                            : const Color(
+                                            : isDark
+                                              ? Colors.white70
+                                              : const Color(
                                                 0xFF587068,
                                               ),
                                   ),
@@ -3337,6 +3416,7 @@ SizedBox(
 
           return Expanded(
             child: _buildCounterValue(
+              context: context,
               value: item.value,
               label: item.label,
             ),
@@ -3387,8 +3467,8 @@ SizedBox(
                     end:
                         Alignment.centerRight,
                     colors: [
-                      AppColors.primary,
-                      AppColors.primary.withValues(
+                      AppColors.accent(context),
+                      AppColors.accent(context).withValues(
                         alpha:
                             0.88,
                       ),
@@ -3401,7 +3481,7 @@ SizedBox(
                   boxShadow: [
                     BoxShadow(
                       color:
-                          AppColors.primary
+                          AppColors.accent(context)
                               .withValues(
                         alpha:
                             0.22,
@@ -3461,6 +3541,7 @@ SizedBox(
   // ============================================================
 
  Widget _buildCounterValue({
+  required BuildContext context,
   required String value,
   required String label,
 }) {
@@ -3483,7 +3564,10 @@ SizedBox(
                 fontSize: 43.sp,
                 height: 1.0,
                 letterSpacing: -1.2,
-                color: AppColors.textBlack,
+                color: AppColors.primaryText(
+                  context,
+                  light: AppColors.textBlack,
+                ),
               ),
             ),
           ),
@@ -3502,7 +3586,10 @@ SizedBox(
               fontWeight: FontWeight.w500,
               fontSize: 13.sp,
               height: 1.0,
-              color: AppColors.textGrey,
+              color: AppColors.secondaryText(
+                context,
+                light: AppColors.textGrey,
+              ),
             ),
           ),
         ),
@@ -3510,6 +3597,97 @@ SizedBox(
     ),
   );
 }
+}
+
+// ================================================================
+// CALORIES DIALOG
+// ================================================================
+
+class _CaloriesDialog extends StatefulWidget {
+  final String initialValue;
+  final String title;
+  final String closeLabel;
+  final String doneLabel;
+
+  const _CaloriesDialog({
+    required this.initialValue,
+    required this.title,
+    required this.closeLabel,
+    required this.doneLabel,
+  });
+
+  @override
+  State<_CaloriesDialog> createState() =>
+      _CaloriesDialogState();
+}
+
+class _CaloriesDialogState extends State<_CaloriesDialog> {
+  late final TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = TextEditingController(
+      text: widget.initialValue,
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _close() {
+    if (!mounted) return;
+
+    Navigator.of(context).pop();
+  }
+
+  void _done() {
+    final value = int.tryParse(
+      _controller.text.trim(),
+    );
+
+    if (!mounted) return;
+
+    Navigator.of(context).pop(value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      scrollable: true,
+      title: Text(widget.title),
+      content: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 320.w,
+        ),
+        child: TextField(
+          controller: _controller,
+          keyboardType: TextInputType.number,
+          textInputAction: TextInputAction.done,
+          decoration: const InputDecoration(
+            suffixText: 'kcal',
+          ),
+          onSubmitted: (_) {
+            _done();
+          },
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: _close,
+          child: Text(widget.closeLabel),
+        ),
+        FilledButton(
+          onPressed: _done,
+          child: Text(widget.doneLabel),
+        ),
+      ],
+    );
+  }
 }
 
 // ================================================================

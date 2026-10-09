@@ -22,9 +22,11 @@ class _Question3ContentState extends State<Question3Content>
     with AutomaticKeepAliveClientMixin {
   late TextEditingController _drinksController;
   late TextEditingController _moneyController;
+  late TextEditingController _caloriesController;
 
   final FocusNode _drinksFocus = FocusNode();
   final FocusNode _moneyFocus = FocusNode();
+  final FocusNode _caloriesFocus = FocusNode();
 
   String? _selectedDrinkingLevel;
 
@@ -32,6 +34,7 @@ class _Question3ContentState extends State<Question3Content>
 
   static const int _maxDrinks = 9999;
   static const int _maxMoney = 99999;
+  static const int _maxCalories = 5000;
 
   @override
   bool get wantKeepAlive => true;
@@ -50,11 +53,16 @@ class _Question3ContentState extends State<Question3Content>
       text: answers.moneySpentPerWeek.toString(),
     );
 
+    _caloriesController = TextEditingController(
+      text: answers.caloriesPerDrink?.toString() ?? '',
+    );
+
     _selectedDrinkingLevel = answers.drinkingLevel;
     _selectedTriggers.addAll(answers.triggers);
 
     _drinksController.addListener(_saveDrinks);
     _moneyController.addListener(_saveMoney);
+    _caloriesController.addListener(_saveCalories);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
@@ -68,6 +76,11 @@ class _Question3ContentState extends State<Question3Content>
 
   int get _money {
     return int.tryParse(_moneyController.text.trim()) ?? 0;
+  }
+
+  int? get _calories {
+    final text = _caloriesController.text.trim();
+    return text.isEmpty ? null : int.tryParse(text);
   }
 
   void _saveDrinks() {
@@ -98,6 +111,24 @@ class _Question3ContentState extends State<Question3Content>
     _updateValidation();
   }
 
+  void _saveCalories() {
+    final parsed = _calories;
+    if (parsed == null || parsed <= 0) {
+      UserDetailsDraft.instance.setCaloriesPerDrink(null);
+      return;
+    }
+
+    final value = parsed.clamp(0, _maxCalories);
+    if (value != parsed) {
+      _caloriesController.text = value.toString();
+      _caloriesController.selection = TextSelection.collapsed(
+        offset: _caloriesController.text.length,
+      );
+    }
+
+    UserDetailsDraft.instance.setCaloriesPerDrink(value);
+  }
+
   void _changeDrinks(int delta) {
     final value = (_drinks + delta).clamp(0, _maxDrinks);
 
@@ -124,6 +155,17 @@ class _Question3ContentState extends State<Question3Content>
 
     setState(() {});
     _updateValidation();
+  }
+
+  void _changeCalories(int delta) {
+    final value = ((_calories ?? 0) + delta).clamp(0, _maxCalories);
+    _caloriesController.text = value == 0 ? '' : value.toString();
+    _caloriesController.selection = TextSelection.collapsed(
+      offset: _caloriesController.text.length,
+    );
+    UserDetailsDraft.instance.setCaloriesPerDrink(
+      value == 0 ? null : value,
+    );
   }
 
   void _selectDrinkingLevel(String level) {
@@ -165,8 +207,10 @@ class _Question3ContentState extends State<Question3Content>
   void dispose() {
     _drinksController.dispose();
     _moneyController.dispose();
+    _caloriesController.dispose();
     _drinksFocus.dispose();
     _moneyFocus.dispose();
+    _caloriesFocus.dispose();
     super.dispose();
   }
 
@@ -176,12 +220,12 @@ class _Question3ContentState extends State<Question3Content>
 
     final l10n = AppLocalizations.of(context)!;
 
-    final List<String> drinkingLevels = [
-      l10n.levelSocial,
-      l10n.levelRegular,
-      l10n.levelHeavy,
-      l10n.levelDependent,
-    ];
+    final drinkingLevels = <String, String>{
+      'social': l10n.levelSocial,
+      'regular': l10n.levelRegular,
+      'heavy': l10n.levelHeavy,
+      'dependent': l10n.levelDependent,
+    };
 
     final List<String> triggers = [
       l10n.triggerStress,
@@ -262,6 +306,26 @@ class _Question3ContentState extends State<Question3Content>
             SizedBox(height: 22.h),
 
             Text(
+              l10n.averageCaloriesPerDrink,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15.sp,
+                color: AppColors.textBlack,
+              ),
+            ),
+
+            SizedBox(height: 10.h),
+
+            _StepperRow(
+              controller: _caloriesController,
+              focusNode: _caloriesFocus,
+              onDecrement: () => _changeCalories(-1),
+              onIncrement: () => _changeCalories(1),
+            ),
+
+            SizedBox(height: 22.h),
+
+            Text(
               l10n.drinkingLevel,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
@@ -275,12 +339,12 @@ class _Question3ContentState extends State<Question3Content>
             Wrap(
               spacing: 8.w,
               runSpacing: 8.h,
-              children: drinkingLevels
+              children: drinkingLevels.entries
                   .map(
-                    (level) => _SelectableChip(
-                      label: level,
-                      isSelected: level == _selectedDrinkingLevel,
-                      onTap: () => _selectDrinkingLevel(level),
+                    (entry) => _SelectableChip(
+                      label: entry.value,
+                      isSelected: entry.key == _selectedDrinkingLevel,
+                      onTap: () => _selectDrinkingLevel(entry.key),
                     ),
                   )
                   .toList(),

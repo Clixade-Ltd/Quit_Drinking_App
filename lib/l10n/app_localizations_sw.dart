@@ -245,6 +245,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get caloriesSaved => 'Kalori Zilizoepukwa';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Alama ya Afya';
 
   @override

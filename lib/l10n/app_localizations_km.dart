@@ -245,6 +245,12 @@ class AppLocalizationsKm extends AppLocalizations {
   String get caloriesSaved => 'កាឡូរីដែលបានសន្សំ';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'ពិន្ទុសុខភាព';
 
   @override

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/constants/app_colors.dart';
 import 'package:new_quit_drinking_app/models/daily_check_in.dart';
 import 'package:new_quit_drinking_app/services/daily_check_in_service.dart';
+import 'package:new_quit_drinking_app/theme/theme_controller.dart';
 
 class DailyCheckInsScreen extends StatefulWidget {
   const DailyCheckInsScreen({super.key});
@@ -16,6 +17,8 @@ class DailyCheckInsScreen extends StatefulWidget {
 
 class _DailyCheckInsScreenState
     extends State<DailyCheckInsScreen> {
+  bool get _isDark => AppColors.isDark(context);
+
   bool _isLoading = true;
   List<DailyCheckIn> _checkIns = [];
 
@@ -52,16 +55,22 @@ class _DailyCheckInsScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       appBar: AppBar(
-        backgroundColor: AppColors.dashboardBackground,
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
           icon: Icon(
             Icons.arrow_back_ios_new,
-            color: AppColors.textBlack,
+            color: _isDark ? Colors.white : AppColors.textBlack,
             size: 19.sp,
           ),
         ),
@@ -70,21 +79,21 @@ class _DailyCheckInsScreenState
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 18.sp,
-            color: AppColors.textBlack,
+            color: _isDark ? Colors.white : AppColors.textBlack,
           ),
         ),
         centerTitle: false,
       ),
       body: _isLoading
-          ? const Center(
+          ?  Center(
               child: CircularProgressIndicator(
-                color: AppColors.primary,
+                color: AppColors.accent(context),
               ),
             )
           : _checkIns.isEmpty
               ? _buildEmptyState()
               : RefreshIndicator(
-                  color: AppColors.primary,
+                  color: AppColors.accent(context),
                   onRefresh: _loadCheckIns,
                   child: ListView.separated(
                     physics:
@@ -119,13 +128,14 @@ class _DailyCheckInsScreenState
               width: 64.w,
               height: 64.w,
               decoration: BoxDecoration(
-                color:
-                    AppColors.primary.withOpacity(0.09),
+                color: _isDark
+                  ? ThemeController.darkAccent.withOpacity(0.28)
+                  : AppColors.primary.withOpacity(0.09),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 Icons.fact_check_outlined,
-                color: AppColors.primary,
+                color: _isDark ? Colors.white : AppColors.accent(context),
                 size: 30.sp,
               ),
             ),
@@ -138,7 +148,7 @@ class _DailyCheckInsScreenState
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 16.sp,
-                color: AppColors.textBlack,
+                color: _isDark ? Colors.white : AppColors.textBlack,
               ),
             ),
 
@@ -150,7 +160,7 @@ class _DailyCheckInsScreenState
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 12.sp,
-                color: AppColors.textGrey,
+                color: _isDark ? Colors.white70 : AppColors.textGrey,
               ),
             ),
           ],
@@ -204,8 +214,11 @@ class _DailyCheckInsScreenState
       width: double.infinity,
       padding: EdgeInsets.all(18.w),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: _isDark ? ThemeController.darkCard : AppColors.white,
         borderRadius: BorderRadius.circular(28.r),
+        border: _isDark
+          ? Border.all(color: ThemeController.darkAccent)
+          : null,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -218,7 +231,9 @@ class _DailyCheckInsScreenState
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color:
-                      AppColors.primary.withOpacity(0.09),
+                        _isDark
+                          ? ThemeController.darkAccent.withOpacity(0.28)
+                          : AppColors.primary.withOpacity(0.09),
                   shape: BoxShape.circle,
                 ),
                 child: Text(
@@ -241,7 +256,7 @@ class _DailyCheckInsScreenState
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.sp,
-                        color: AppColors.textBlack,
+                        color: _isDark ? Colors.white : AppColors.textBlack,
                       ),
                     ),
 
@@ -252,7 +267,7 @@ class _DailyCheckInsScreenState
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 11.sp,
-                        color: AppColors.textGrey,
+                        color: _isDark ? Colors.white70 : AppColors.textGrey,
                       ),
                     ),
                   ],
@@ -267,8 +282,11 @@ class _DailyCheckInsScreenState
                   vertical: 7.h,
                 ),
                 decoration: BoxDecoration(
-                  color: checkIn.stayedOnTrack
-                      ? AppColors.primary.withOpacity(0.09)
+                    color: checkIn.stayedOnTrack
+                      ? (_isDark
+                        ? ThemeController.darkAccent
+                          .withOpacity(0.30)
+                        : AppColors.primary.withOpacity(0.09))
                       : AppColors.alertColor
                           .withOpacity(0.09),
                   borderRadius:
@@ -282,7 +300,9 @@ class _DailyCheckInsScreenState
                     fontWeight: FontWeight.w600,
                     fontSize: 9.sp,
                     color: checkIn.stayedOnTrack
-                        ? AppColors.primary
+                      ? (_isDark
+                        ? Colors.white
+                        : AppColors.primary)
                         : AppColors.alertColor,
                   ),
                 ),
@@ -305,7 +325,9 @@ class _DailyCheckInsScreenState
               width: double.infinity,
               padding: EdgeInsets.all(12.w),
               decoration: BoxDecoration(
-                color: AppColors.cardBackground,
+                color: _isDark
+                  ? ThemeController.darkBackground
+                  : AppColors.cardBackground,
                 borderRadius:
                     BorderRadius.circular(16.r),
               ),
@@ -315,7 +337,7 @@ class _DailyCheckInsScreenState
                   fontWeight: FontWeight.w400,
                   fontSize: 11.sp,
                   height: 1.4,
-                  color: AppColors.textGrey,
+                  color: _isDark ? Colors.white70 : AppColors.textGrey,
                 ),
               ),
             ),
@@ -334,7 +356,7 @@ class _DailyCheckInsScreenState
         Icon(
           icon,
           size: 16.sp,
-          color: AppColors.textLightGrey,
+          color: _isDark ? Colors.white70 : AppColors.textLightGrey,
         ),
 
         SizedBox(width: 6.w),
@@ -344,7 +366,7 @@ class _DailyCheckInsScreenState
           style: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 11.sp,
-            color: AppColors.textGrey,
+            color: _isDark ? Colors.white70 : AppColors.textGrey,
           ),
         ),
       ],

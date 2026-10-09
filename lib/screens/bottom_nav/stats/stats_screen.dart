@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../../constants/app_colors.dart';
+import '../../../models/body_recovery.dart';
 import '../../../services/analytics_service.dart';
 import '../../../services/home_dashboard_service.dart';
 import '../../../services/premium_service.dart';
@@ -46,6 +47,16 @@ class _StatsScreenState extends State<StatsScreen>
   // =========================================================
 
   StatsTab _tab = StatsTab.journey;
+
+    bool get _isDark => AppColors.isDark(context);
+    Color get _surface => AppColors.surface(context, light: AppColors.white);
+    Color get _primaryText =>
+      AppColors.primaryText(context, light: AppColors.textBlack);
+    Color get _secondaryText =>
+      AppColors.secondaryText(context, light: AppColors.textGrey);
+    Color get _accent => AppColors.accent(context);
+    Color get _border =>
+      _isDark ? _accent : AppColors.outlineGrey;
 
   DrinkingLevel _drinkingLevel = DrinkingLevel.regular;
 
@@ -134,11 +145,13 @@ class _StatsScreenState extends State<StatsScreen>
   /// Drinking level chosen by the user in onboarding
   /// (Social / Regular / Heavy / Dependent).
   ///
-  /// TODO: read the saved value here and return
-  /// `DrinkingLevel.fromValue(savedValue)`.
-  /// Until then everybody is treated as "Regular".
   Future<DrinkingLevel> _loadDrinkingLevel() async {
-    return DrinkingLevel.regular;
+    final profile = await _service.getProfile();
+    final savedValue = profile?['drinkingLevel'];
+
+    return DrinkingLevel.fromValue(
+      savedValue is String ? savedValue : null,
+    );
   }
 
   // =========================================================
@@ -150,16 +163,22 @@ class _StatsScreenState extends State<StatsScreen>
     final l10n = AppLocalizations.of(context)!;
 
     if (_isLoading) {
-      return const Scaffold(
-        backgroundColor: AppColors.dashboardBackground,
+      return Scaffold(
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
         body: Center(
-          child: CircularProgressIndicator(color: AppColors.primary),
+          child: CircularProgressIndicator(color: _accent),
         ),
       );
     }
 
     return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         top: true,
         bottom: false,
@@ -168,7 +187,7 @@ class _StatsScreenState extends State<StatsScreen>
             _buildAppBar(l10n),
             Expanded(
               child: RefreshIndicator(
-                color: AppColors.primary,
+                color: _accent,
                 onRefresh: () => _loadStats(),
                 child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
@@ -240,7 +259,7 @@ class _StatsScreenState extends State<StatsScreen>
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 20.sp,
-                    color: AppColors.textBlack,
+                    color: _primaryText,
                   ),
                 ),
               ),
@@ -251,7 +270,9 @@ class _StatsScreenState extends State<StatsScreen>
                   height: 36.h,
                   padding: EdgeInsets.all(3.r),
                   decoration: BoxDecoration(
-                    color: AppColors.white.withOpacity(0.35),
+                    color: _isDark
+                      ? _surface
+                      : AppColors.white.withOpacity(0.35),
                     borderRadius: BorderRadius.circular(9.r),
                   ),
                   child: Row(
@@ -275,7 +296,8 @@ class _StatsScreenState extends State<StatsScreen>
 
           SizedBox(height: 12.h),
 
-          Container(height: 1.h, color: AppColors.outlineGrey),
+          if (!_isDark)
+            Container(height: 1.h, color: _border),
         ],
       ),
     );
@@ -305,7 +327,7 @@ class _StatsScreenState extends State<StatsScreen>
         padding: EdgeInsets.symmetric(horizontal: 12.w),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: selected ? AppColors.primary : Colors.transparent,
+          color: selected ? _accent : Colors.transparent,
           borderRadius: BorderRadius.circular(7.r),
         ),
         child: Text(
@@ -313,7 +335,7 @@ class _StatsScreenState extends State<StatsScreen>
           style: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 13.sp,
-            color: selected ? AppColors.white : AppColors.textGrey,
+            color: selected ? Colors.white : _secondaryText,
           ),
         ),
       ),
@@ -362,10 +384,10 @@ class _StatsScreenState extends State<StatsScreen>
         vertical: 8.h,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: _surface,
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
-          color: AppColors.outlineGrey,
+          color: _border,
           width: 0.7,
         ),
       ),
@@ -379,7 +401,7 @@ class _StatsScreenState extends State<StatsScreen>
             style: TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 20.sp,
-              color: AppColors.primary,
+               color: _isDark ? Colors.white : _accent,
             ),
           ),
           SizedBox(height: 2.h),
@@ -395,7 +417,7 @@ class _StatsScreenState extends State<StatsScreen>
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 13.sp,
-                  color: AppColors.textGrey,
+                  color: _secondaryText,
                 ),
               ),
             ),
@@ -433,7 +455,7 @@ class _StatsScreenState extends State<StatsScreen>
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 16.sp,
-              color: AppColors.textBlack,
+              color: _primaryText,
             ),
           ),
           SizedBox(height: 12.h),
@@ -477,7 +499,7 @@ class _StatsScreenState extends State<StatsScreen>
                           _moneyChart[i]['label'].toString(),
                           style: TextStyle(
                             fontSize: 11.sp,
-                            color: AppColors.textLightGrey,
+                            color: _secondaryText,
                           ),
                         ),
                       ],
@@ -509,7 +531,7 @@ class _StatsScreenState extends State<StatsScreen>
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16.sp,
-                color: AppColors.textBlack,
+                color: _primaryText,
               ),
             ),
             SizedBox(height: 10.h),
@@ -537,7 +559,7 @@ class _StatsScreenState extends State<StatsScreen>
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 16.sp,
-                color: AppColors.textBlack,
+                color: _primaryText,
               ),
             ),
             SizedBox(height: 10.h),
@@ -575,10 +597,17 @@ class _StatsScreenState extends State<StatsScreen>
             chart,
             Positioned.fill(
               child: Container(
-                color: AppColors.white.withOpacity(0.58),
+                color: _isDark
+                    ? AppColors.pageBackground(
+                        context,
+                        light: AppColors.white,
+                      ).withOpacity(0.72)
+                    : AppColors.white.withOpacity(0.58),
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
-                  child: Container(color: Colors.white.withOpacity(0.10)),
+                  child: Container(
+                    color: Colors.white.withOpacity(_isDark ? 0.04 : 0.10),
+                  ),
                 ),
               ),
             ),
@@ -591,7 +620,7 @@ class _StatsScreenState extends State<StatsScreen>
                   vertical: 4.h,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.white,
+                  color: _surface,
                   borderRadius: BorderRadius.circular(4.r),
                 ),
                 child: Text(
@@ -599,7 +628,7 @@ class _StatsScreenState extends State<StatsScreen>
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 12.sp,
-                    color: AppColors.primary,
+                    color: _isDark ? Colors.white : _accent,
                   ),
                 ),
               ),
@@ -612,7 +641,7 @@ class _StatsScreenState extends State<StatsScreen>
                     vertical: 10.h,
                   ),
                   decoration: BoxDecoration(
-                    color: AppColors.white,
+                    color: _surface,
                     borderRadius: BorderRadius.circular(10.r),
                     boxShadow: const [
                       BoxShadow(
@@ -627,7 +656,7 @@ class _StatsScreenState extends State<StatsScreen>
                       Icon(
                         Icons.lock_outline,
                         size: 17.r,
-                        color: AppColors.primary,
+                        color: _isDark ? Colors.white : _accent,
                       ),
                       SizedBox(width: 7.w),
                       Text(
@@ -635,7 +664,7 @@ class _StatsScreenState extends State<StatsScreen>
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 13.sp,
-                          color: AppColors.primary,
+                          color: _isDark ? Colors.white : _accent,
                         ),
                       ),
                     ],
@@ -656,11 +685,17 @@ class _StatsScreenState extends State<StatsScreen>
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: AppColors.white,
+          backgroundColor: AppColors.surface(
+            context,
+            light: AppColors.white,
+          ),
           title: Text(
             l10n.unlockFullStats,
             style: TextStyle(
-              color: AppColors.textBlack,
+              color: AppColors.primaryText(
+                context,
+                light: AppColors.textBlack,
+              ),
               fontWeight: FontWeight.w700,
               fontSize: 20.sp,
             ),
@@ -668,7 +703,10 @@ class _StatsScreenState extends State<StatsScreen>
           content: Text(
             l10n.premiumStatsMessage,
             style: TextStyle(
-              color: AppColors.textGrey,
+              color: AppColors.secondaryText(
+                context,
+                light: AppColors.textGrey,
+              ),
               fontSize: 14.sp,
             ),
           ),
@@ -692,7 +730,7 @@ class _StatsScreenState extends State<StatsScreen>
               child: Text(
                 l10n.upgrade,
                 style: TextStyle(
-                  color: AppColors.primary,
+                  color: AppColors.accent(context),
                   fontWeight: FontWeight.w600,
                   fontSize: 14.sp,
                 ),
@@ -742,7 +780,7 @@ class _StatsScreenState extends State<StatsScreen>
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 16.sp,
-              color: AppColors.textBlack,
+              color: _primaryText,
             ),
           ),
           SizedBox(height: 12.h),
@@ -779,7 +817,7 @@ class _StatsScreenState extends State<StatsScreen>
     } else if (isNext) {
       iconColor = Colors.orange;
     } else {
-      iconColor = AppColors.textLightGrey;
+      iconColor = _secondaryText;
     }
 
     return IntrinsicHeight(
@@ -811,7 +849,7 @@ class _StatsScreenState extends State<StatsScreen>
                         top: 4.h,
                         bottom: 4.h,
                       ),
-                      color: AppColors.outlineGrey,
+                      color: _border,
                     ),
                   ),
               ],
@@ -832,7 +870,7 @@ class _StatsScreenState extends State<StatsScreen>
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 14.sp,
-                            color: AppColors.textBlack,
+                            color: _primaryText,
                           ),
                         ),
                       ),
@@ -853,7 +891,7 @@ class _StatsScreenState extends State<StatsScreen>
                     style: TextStyle(
                       fontSize: 12.sp,
                       height: 1.35,
-                      color: AppColors.textGrey,
+                          color: _secondaryText,
                     ),
                   ),
                 ],
@@ -909,7 +947,7 @@ class _StatsScreenState extends State<StatsScreen>
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 16.sp,
-              color: AppColors.textBlack,
+              color: _primaryText,
             ),
           ),
           SizedBox(height: 10.h),
@@ -961,7 +999,7 @@ class _StatsScreenState extends State<StatsScreen>
               ),
               SizedBox(width: 12.w),
               _calendarLegend(
-                color: AppColors.textLightGrey,
+                color: _secondaryText,
                 label: l10n.noDataLabel,
               ),
             ],
@@ -991,7 +1029,7 @@ class _StatsScreenState extends State<StatsScreen>
           label,
           style: TextStyle(
             fontSize: 10.sp,
-            color: AppColors.textLightGrey,
+            color: _secondaryText,
           ),
         ),
       ],
@@ -1003,18 +1041,21 @@ class _StatsScreenState extends State<StatsScreen>
     required int status,
     required bool isToday,
   }) {
+    final isDark = _isDark;
     Color background;
     Color textColor;
 
     if (status == 1) {
-      background = Colors.green.withOpacity(0.18);
-      textColor = Colors.green.shade700;
+      background = Colors.green.withOpacity(isDark ? 0.30 : 0.18);
+      textColor = isDark ? Colors.greenAccent : Colors.green.shade700;
     } else if (status == 2) {
       background = Colors.redAccent.withOpacity(0.16);
       textColor = Colors.redAccent;
     } else {
-      background = AppColors.journalChipBackground;
-      textColor = AppColors.textLightGrey;
+        background = isDark
+          ? AppColors.surface(context, light: AppColors.journalChipBackground)
+          : AppColors.journalChipBackground;
+        textColor = _secondaryText;
     }
 
     return Container(
@@ -1023,7 +1064,7 @@ class _StatsScreenState extends State<StatsScreen>
         borderRadius: BorderRadius.circular(6.r),
         border: isToday
             ? Border.all(
-                color: AppColors.primary,
+                color: _accent,
                 width: 1.5.r,
               )
             : null,
@@ -1052,10 +1093,10 @@ class _StatsScreenState extends State<StatsScreen>
       width: double.infinity,
       padding: padding,
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: _surface,
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
-          color: AppColors.outlineGrey,
+          color: _border,
           width: 0.7,
         ),
         boxShadow: const [
@@ -1080,7 +1121,7 @@ class _StatsScreenState extends State<StatsScreen>
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 13.sp,
-              color: AppColors.textLightGrey,
+              color: _secondaryText,
             ),
           ),
         ),
@@ -1125,7 +1166,10 @@ class _WeekLabel extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 11.sp,
-            color: AppColors.textLightGrey,
+              color: AppColors.secondaryText(
+                context,
+                light: AppColors.textLightGrey,
+              ),
           ),
         ),
       ),
@@ -1237,7 +1281,10 @@ class _InteractiveMoodBarChartState extends State<_InteractiveMoodBarChart> {
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 13.sp,
-                        color: AppColors.textBlack,
+                        color: AppColors.primaryText(
+                          context,
+                          light: AppColors.textBlack,
+                        ),
                       ),
                     ),
                     if (selectedDate != null) ...[
@@ -1246,7 +1293,10 @@ class _InteractiveMoodBarChartState extends State<_InteractiveMoodBarChart> {
                         dateFormatter.formatShortDate(selectedDate),
                         style: TextStyle(
                           fontSize: 11.sp,
-                          color: AppColors.textLightGrey,
+                          color: AppColors.secondaryText(
+                            context,
+                            light: AppColors.textLightGrey,
+                          ),
                         ),
                       ),
                     ],
@@ -1299,14 +1349,17 @@ class _InteractiveMoodBarChartState extends State<_InteractiveMoodBarChart> {
                                 decoration: BoxDecoration(
                                   color: hasData
                                       ? _barColor(mood)
-                                      : AppColors.textLightGrey
+                                      : AppColors.secondaryText(
+                                              context,
+                                              light: AppColors.textLightGrey,
+                                            )
                                           .withOpacity(0.18),
                                   borderRadius: BorderRadius.vertical(
                                     top: Radius.circular(5.r),
                                   ),
                                   border: isSelected
                                       ? Border.all(
-                                          color: AppColors.primary,
+                                          color: AppColors.accent(context),
                                           width: 2.r,
                                         )
                                       : null,
@@ -1319,7 +1372,10 @@ class _InteractiveMoodBarChartState extends State<_InteractiveMoodBarChart> {
                             item['label'].toString(),
                             style: TextStyle(
                               fontSize: 10.sp,
-                              color: AppColors.textLightGrey,
+                              color: AppColors.secondaryText(
+                                context,
+                                light: AppColors.textLightGrey,
+                              ),
                             ),
                           ),
                         ],
@@ -1367,7 +1423,10 @@ class _InteractiveCravingBarChartState
 
       case 0:
       default:
-        return AppColors.textLightGrey;
+        return AppColors.secondaryText(
+          context,
+          light: AppColors.textLightGrey,
+        );
     }
   }
 
@@ -1416,7 +1475,10 @@ class _InteractiveCravingBarChartState
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 13.sp,
-                        color: AppColors.textBlack,
+                        color: AppColors.primaryText(
+                          context,
+                          light: AppColors.textBlack,
+                        ),
                       ),
                     ),
                     if (selectedDate != null) ...[
@@ -1425,7 +1487,10 @@ class _InteractiveCravingBarChartState
                         dateFormatter.formatShortDate(selectedDate),
                         style: TextStyle(
                           fontSize: 11.sp,
-                          color: AppColors.textLightGrey,
+                          color: AppColors.secondaryText(
+                            context,
+                            light: AppColors.textLightGrey,
+                          ),
                         ),
                       ),
                     ],
@@ -1478,14 +1543,17 @@ class _InteractiveCravingBarChartState
                                 decoration: BoxDecoration(
                                   color: hasData
                                       ? _barColor(level)
-                                      : AppColors.textLightGrey
+                                      : AppColors.secondaryText(
+                                              context,
+                                              light: AppColors.textLightGrey,
+                                            )
                                           .withOpacity(0.18),
                                   borderRadius: BorderRadius.vertical(
                                     top: Radius.circular(5.r),
                                   ),
                                   border: isSelected
                                       ? Border.all(
-                                          color: AppColors.primary,
+                                          color: AppColors.accent(context),
                                           width: 2.r,
                                         )
                                       : null,
@@ -1498,7 +1566,10 @@ class _InteractiveCravingBarChartState
                             item['label'].toString(),
                             style: TextStyle(
                               fontSize: 10.sp,
-                              color: AppColors.textLightGrey,
+                              color: AppColors.secondaryText(
+                                context,
+                                light: AppColors.textLightGrey,
+                              ),
                             ),
                           ),
                         ],

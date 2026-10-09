@@ -119,7 +119,10 @@ class _QuestionsFlowScreenState extends State<QuestionsFlowScreen> {
     final bool isLastPage = _currentPage == _pageCount - 1;
 
     return Scaffold(
-      backgroundColor: AppColors.bgColor,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.bgColor,
+      ),
       body: SafeArea(
         child: Column(
           children: [

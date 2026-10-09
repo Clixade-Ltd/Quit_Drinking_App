@@ -7,6 +7,7 @@ import '../../../services/premium_service.dart';
 import '../../../services/analytics_service.dart';
 import 'journal_prompt_cards.dart';
 import '../../../services/achievement_service.dart';
+import '../../../theme/theme_controller.dart';
 
 /// Which field a "Quick Prompt" tap on the main journal screen should
 /// jump straight into and focus.
@@ -53,6 +54,7 @@ class _TodayReflectionScreenState
   int _entriesUsedThisWeek = 0;
 
   bool get _isEditing => widget.existingEntry != null;
+  bool get _isDark => AppColors.isDark(context);
 
   @override
   void initState() {
@@ -179,18 +181,20 @@ class _TodayReflectionScreenState
       context: context,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: AppColors.white,
+          backgroundColor: _isDark
+              ? ThemeController.darkCard
+              : AppColors.white,
           title: Text(
             title,
-            style: const TextStyle(
-              color: AppColors.textBlack,
+            style: TextStyle(
+              color: _isDark ? Colors.white : AppColors.textBlack,
               fontWeight: FontWeight.w700,
             ),
           ),
           content: Text(
             message,
-            style: const TextStyle(
-              color: AppColors.textGrey,
+            style: TextStyle(
+              color: _isDark ? Colors.white70 : AppColors.textGrey,
             ),
           ),
           actions: [
@@ -208,8 +212,10 @@ class _TodayReflectionScreenState
               },
               child: Text(
                 l10n.upgrade,
-                style: const TextStyle(
-                  color: AppColors.primary,
+                style: TextStyle(
+                  color: _isDark
+                      ? ThemeController.darkAccent
+                      : AppColors.primary,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -229,7 +235,10 @@ class _TodayReflectionScreenState
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.white,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -245,9 +254,11 @@ class _TodayReflectionScreenState
                   InkWell(
                     onTap: () =>
                         Navigator.of(context).maybePop(),
-                    child: const Icon(
+                    child: Icon(
                       Icons.close,
-                      color: AppColors.textBlack,
+                      color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -255,10 +266,12 @@ class _TodayReflectionScreenState
                     _isEditing
                         ? l10n.editEntry
                         : l10n.newEntry,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: AppColors.textBlack,
+                        color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                     ),
                   ),
                   const Spacer(),
@@ -268,9 +281,11 @@ class _TodayReflectionScreenState
                       widget.existingEntry?.date ??
                           DateTime.now(),
                     ),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
-                      color: AppColors.textLightGrey,
+                      color: _isDark
+                          ? Colors.white70
+                          : AppColors.textLightGrey,
                     ),
                   ),
                 ],
@@ -297,10 +312,12 @@ class _TodayReflectionScreenState
 
                     Text(
                       l10n.howAreYouFeeling,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 15,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                       ),
                     ),
 
@@ -326,17 +343,23 @@ class _TodayReflectionScreenState
                               height: 52,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
-                                color: isSelected
-                                    ? AppColors.primary
-                                    .withOpacity(0.12)
-                                    : AppColors
-                                    .journalChipBackground,
+                                color: _isDark
+                                  ? isSelected
+                                    ? ThemeController.darkAccent.withOpacity(0.36)
+                                    : ThemeController.darkCard
+                                  : isSelected
+                                    ? AppColors.primary.withOpacity(0.12)
+                                    : AppColors.journalChipBackground,
                                 borderRadius:
                                 BorderRadius.circular(12),
                                 border: Border.all(
-                                  color: isSelected
-                                      ? AppColors.primary
-                                      : Colors.transparent,
+                                    color: _isDark
+                                      ? isSelected
+                                        ? Colors.white
+                                        : ThemeController.darkAccent
+                                      : isSelected
+                                        ? AppColors.primary
+                                        : Colors.transparent,
                                   width: 1.5,
                                 ),
                               ),
@@ -377,8 +400,14 @@ class _TodayReflectionScreenState
                             vertical: 10,
                           ),
                           decoration: BoxDecoration(
-                            color: AppColors
-                                .journalChipBackground,
+                            color: _isDark
+                              ? ThemeController.darkCard
+                              : AppColors.journalChipBackground,
+                            border: _isDark
+                              ? Border.all(
+                                color: ThemeController.darkAccent,
+                                )
+                              : null,
                             borderRadius:
                             BorderRadius.circular(12),
                           ),
@@ -394,10 +423,12 @@ class _TodayReflectionScreenState
                               _freeWeeklyLimit.toString(),
                             ),
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
-                              color: AppColors.textGrey,
+                                color: _isDark
+                                  ? Colors.white70
+                                  : AppColors.textGrey,
                             ),
                           ),
                         ),
@@ -409,8 +440,7 @@ class _TodayReflectionScreenState
                       child: ElevatedButton(
                         onPressed: _save,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                          AppColors.primary,
+                          backgroundColor: AppColors.accent(context),
                           elevation: 0,
                           shape:
                           RoundedRectangleBorder(
@@ -464,10 +494,12 @@ class _ReflectionField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 15,
-            color: AppColors.textBlack,
+            color: AppColors.isDark(context)
+              ? Colors.white
+              : AppColors.textBlack,
           ),
         ),
         const SizedBox(height: 8),
@@ -475,33 +507,44 @@ class _ReflectionField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode,
           maxLines: maxLines,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
-            color: AppColors.textBlack,
+            color: AppColors.isDark(context)
+              ? Colors.white
+              : AppColors.textBlack,
           ),
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(
-              color: AppColors.textLightGrey,
+            hintStyle: TextStyle(
+              color: AppColors.isDark(context)
+                  ? Colors.white70
+                  : AppColors.textLightGrey,
             ),
-            contentPadding:
-            const EdgeInsets.all(14),
+            contentPadding: const EdgeInsets.all(14),
+            filled: AppColors.isDark(context),
+            fillColor: AppColors.isDark(context)
+              ? ThemeController.darkCard
+              : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.outlineGrey,
+              borderSide: BorderSide(
+                color: AppColors.isDark(context)
+                    ? ThemeController.darkAccent
+                    : AppColors.outlineGrey,
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.outlineGrey,
+              borderSide: BorderSide(
+                color: AppColors.isDark(context)
+                    ? ThemeController.darkAccent
+                    : AppColors.outlineGrey,
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: AppColors.primary,
+              borderSide: BorderSide(
+                color: AppColors.accent(context),
               ),
             ),
           ),

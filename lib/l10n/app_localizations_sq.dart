@@ -243,6 +243,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get caloriesSaved => 'Kalori të Ruajtura';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Pikët e Shëndetit';
 
   @override

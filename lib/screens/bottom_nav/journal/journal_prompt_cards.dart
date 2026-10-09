@@ -6,6 +6,7 @@ import '../../../constants/app_colors.dart';
 import '../../../models/daily_update_cache.dart';
 import '../../../services/premium_service.dart';
 import '../../../services/weekly_report_service.dart';
+import '../../../theme/theme_controller.dart';
 
 class TodayPromptCard extends StatefulWidget {
   const TodayPromptCard({
@@ -44,31 +45,39 @@ class _TodayPromptCardState extends State<TodayPromptCard> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final isDark = AppColors.isDark(context);
 
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(0.12),
+        color: isDark
+            ? ThemeController.darkCard
+            : AppColors.primary.withOpacity(0.12),
         borderRadius: BorderRadius.circular(16),
+        border: isDark
+            ? Border.all(color: ThemeController.darkAccent)
+            : null,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              const Icon(
+              Icon(
                 Icons.auto_awesome,
                 size: 18,
-                color: AppColors.primary,
+                color: isDark
+                    ? ThemeController.darkAccent
+                    : AppColors.primary,
               ),
               const SizedBox(width: 6),
               Text(
                 l10n.todaysPrompt,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 13,
-                  color: AppColors.primary,
+                  color: isDark ? Colors.white : AppColors.primary,
                 ),
               ),
               const Spacer(),
@@ -78,15 +87,17 @@ class _TodayPromptCardState extends State<TodayPromptCard> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.22),
+                  color: isDark
+                      ? ThemeController.darkAccent
+                      : AppColors.primary.withOpacity(0.22),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   l10n.aiGenerated,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 9.5,
-                    color: AppColors.primary,
+                    color: isDark ? Colors.white : AppColors.primary,
                   ),
                 ),
               ),
@@ -95,41 +106,31 @@ class _TodayPromptCardState extends State<TodayPromptCard> {
           const SizedBox(height: 10),
           FutureBuilder<String>(
             future: _promptFuture,
-            builder: (
-                context,
-                snapshot,
-                ) {
+            builder: (context, snapshot) {
               if (snapshot.connectionState != ConnectionState.done) {
-                return const SizedBox(
+                return SizedBox(
                   height: 18,
                   width: 18,
                   child: CircularProgressIndicator(
                     strokeWidth: 2,
+                    color: AppColors.accent(context),
                   ),
                 );
               }
 
-              if (snapshot.hasError ||
-                  !snapshot.hasData ||
-                  snapshot.data!.trim().isEmpty) {
-                return Text(
-                  l10n.defaultJournalPrompt,
-                  style: const TextStyle(
-                    fontSize: 15,
-                    height: 1.4,
-                    fontStyle: FontStyle.italic,
-                    color: AppColors.textBlack,
-                  ),
-                );
-              }
+              final prompt = snapshot.hasError ||
+                      !snapshot.hasData ||
+                      snapshot.data!.trim().isEmpty
+                  ? l10n.defaultJournalPrompt
+                  : '"${snapshot.data!.trim()}"';
 
               return Text(
-                '"${snapshot.data!.trim()}"',
-                style: const TextStyle(
+                prompt,
+                style: TextStyle(
                   fontSize: 15,
                   height: 1.4,
                   fontStyle: FontStyle.italic,
-                  color: AppColors.textBlack,
+                  color: isDark ? Colors.white : AppColors.textBlack,
                 ),
               );
             },
@@ -241,6 +242,7 @@ class _JournalInsightsPremiumCardState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final isDark = AppColors.isDark(context);
 
     return InkWell(
       onTap: _isLoading ? null : _handleTap,
@@ -249,10 +251,14 @@ class _JournalInsightsPremiumCardState
         width: double.infinity,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: AppColors.primary.withOpacity(0.08),
+          color: isDark
+              ? ThemeController.darkCard
+              : AppColors.primary.withOpacity(0.08),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: AppColors.primary.withOpacity(0.25),
+            color: isDark
+                ? ThemeController.darkAccent
+                : AppColors.primary.withOpacity(0.25),
           ),
         ),
         child: Column(
@@ -261,19 +267,19 @@ class _JournalInsightsPremiumCardState
             Row(
               children: [
                 Icon(
-                  _isPremium
-                      ? Icons.auto_awesome
-                      : Icons.lock_outline,
+                  _isPremium ? Icons.auto_awesome : Icons.lock_outline,
                   size: 18,
-                  color: AppColors.primary,
+                  color: isDark
+                      ? ThemeController.darkAccent
+                      : AppColors.primary,
                 ),
                 const SizedBox(width: 6),
                 Text(
                   l10n.aiJournalInsights,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 15,
-                    color: AppColors.textBlack,
+                    color: isDark ? Colors.white : AppColors.textBlack,
                   ),
                 ),
                 const Spacer(),
@@ -284,15 +290,17 @@ class _JournalInsightsPremiumCardState
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: AppColors.primary.withOpacity(0.18),
+                      color: isDark
+                          ? ThemeController.darkAccent
+                          : AppColors.primary.withOpacity(0.18),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
                       l10n.premiumBadgeLabel,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 11,
-                        color: AppColors.primary,
+                        color: isDark ? Colors.white : AppColors.primary,
                       ),
                     ),
                   ),
@@ -300,64 +308,69 @@ class _JournalInsightsPremiumCardState
             ),
             const SizedBox(height: 8),
             if (_isLoading)
-              const SizedBox(
+              SizedBox(
                 height: 18,
                 width: 18,
                 child: CircularProgressIndicator(
                   strokeWidth: 2,
+                  color: AppColors.accent(context),
                 ),
               )
             else if (!_isPremium)
               Text(
                 l10n.unlockJournalInsightsMessage,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   height: 1.4,
-                  color: AppColors.textGrey,
+                  color: isDark ? Colors.white70 : AppColors.textGrey,
                 ),
               )
             else if (_hasError || _insights.isEmpty)
-                Text(
-                  l10n.notEnoughJournalData,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    height: 1.4,
-                    color: AppColors.textGrey,
-                  ),
-                )
-              else
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    for (final insight in _insights.take(3)) ...[
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.only(top: 6),
-                            child: Icon(
-                              Icons.circle,
-                              size: 5,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: Text(
-                              insight,
-                              style: const TextStyle(
-                                fontSize: 13,
-                                height: 1.4,
-                                color: AppColors.textGrey,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 6),
-                    ],
-                  ],
+              Text(
+                l10n.notEnoughJournalData,
+                style: TextStyle(
+                  fontSize: 13,
+                  height: 1.4,
+                  color: isDark ? Colors.white70 : AppColors.textGrey,
                 ),
+              )
+            else
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  for (final insight in _insights.take(3)) ...[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6),
+                          child: Icon(
+                            Icons.circle,
+                            size: 5,
+                            color: isDark
+                                ? ThemeController.darkAccent
+                                : AppColors.primary,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            insight,
+                            style: TextStyle(
+                              fontSize: 13,
+                              height: 1.4,
+                              color: isDark
+                                  ? Colors.white70
+                                  : AppColors.textGrey,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 6),
+                  ],
+                ],
+              ),
           ],
         ),
       ),

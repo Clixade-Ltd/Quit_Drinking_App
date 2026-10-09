@@ -646,6 +646,18 @@ abstract class AppLocalizations {
   /// **'Calories Saved'**
   String get caloriesSaved;
 
+  /// No description provided for @averageCaloriesPerDrink.
+  ///
+  /// In en, this message translates to:
+  /// **'Average calories per drink (optional)'**
+  String get averageCaloriesPerDrink;
+
+  /// No description provided for @calorieEstimateMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to add estimate'**
+  String get calorieEstimateMissing;
+
   /// No description provided for @healthScore.
   ///
   /// In en, this message translates to:

@@ -243,6 +243,12 @@ class AppLocalizationsMy extends AppLocalizations {
   String get caloriesSaved => 'လျှော့ချနိုင်ခဲ့သော ကယ်လိုရီ';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'ကျန်းမာရေး ရမှတ်';
 
   @override

@@ -247,6 +247,12 @@ class AppLocalizationsFil extends AppLocalizations {
   String get caloriesSaved => 'Kalarong Naipon';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Iskor sa Kalusugan';
 
   @override

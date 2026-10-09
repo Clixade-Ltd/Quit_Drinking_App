@@ -245,6 +245,12 @@ class AppLocalizationsZu extends AppLocalizations {
   String get caloriesSaved => 'Ama-calorie Agciniwe';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Amaphuzu Ezempilo';
 
   @override

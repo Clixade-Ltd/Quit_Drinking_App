@@ -237,6 +237,12 @@ class AppLocalizationsAm extends AppLocalizations {
   String get caloriesSaved => 'የተቆጠበ ካሎሪ';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'የጤና ነጥብ';
 
   @override

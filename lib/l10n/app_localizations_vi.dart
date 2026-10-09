@@ -243,6 +243,12 @@ class AppLocalizationsVi extends AppLocalizations {
   String get caloriesSaved => 'Calo tiết kiệm';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Điểm sức khỏe';
 
   @override

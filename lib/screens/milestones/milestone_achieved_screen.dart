@@ -7,6 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../constants/app_colors.dart';
 import '../../models/milestone_definition.dart';
 import '../../services/analytics_service.dart';
 import '../../services/home_dashboard_service.dart';
@@ -228,8 +229,11 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
     l10n = AppLocalizations.of(context)!;
 
     if (_isLoading) {
-      return const Scaffold(
-        backgroundColor: _cardBottom,
+      return Scaffold(
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: _cardBottom,
+        ),
         body: Center(
           child: CircularProgressIndicator(
             color: Colors.white,
@@ -239,7 +243,10 @@ class _MilestoneAchievedScreenState extends State<MilestoneAchievedScreen> {
     }
 
     return Scaffold(
-      backgroundColor: _cardBottom,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: _cardBottom,
+      ),
 
       // ==========================================================
       // FULL SCREEN MILESTONE

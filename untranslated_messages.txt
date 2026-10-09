@@ -1,5 +1,7 @@
 {
   "af": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -38,6 +40,8 @@
   ],
 
   "am": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -76,6 +80,8 @@
   ],
 
   "ar": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -114,6 +120,8 @@
   ],
 
   "az": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -152,6 +160,8 @@
   ],
 
   "be": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -190,6 +200,8 @@
   ],
 
   "bg": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -228,6 +240,8 @@
   ],
 
   "bn": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -266,6 +280,8 @@
   ],
 
   "ca": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -304,6 +320,8 @@
   ],
 
   "cs": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -342,6 +360,8 @@
   ],
 
   "da": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -381,6 +401,8 @@
   ],
 
   "de": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -419,6 +441,8 @@
   ],
 
   "es": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -457,6 +481,8 @@
   ],
 
   "et": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -496,6 +522,8 @@
   ],
 
   "eu": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -534,6 +562,8 @@
   ],
 
   "fa": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -572,6 +602,8 @@
   ],
 
   "fi": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -611,6 +643,8 @@
   ],
 
   "fil": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -650,6 +684,8 @@
   ],
 
   "fr": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -689,6 +725,8 @@
   ],
 
   "gl": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -727,6 +765,8 @@
   ],
 
   "gu": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -765,6 +805,8 @@
   ],
 
   "he": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -803,6 +845,8 @@
   ],
 
   "hi": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -841,6 +885,8 @@
   ],
 
   "hr": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -879,6 +925,8 @@
   ],
 
   "hu": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -917,6 +965,8 @@
   ],
 
   "hy": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -955,6 +1005,8 @@
   ],
 
   "id": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -993,6 +1045,8 @@
   ],
 
   "is": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1031,6 +1085,8 @@
   ],
 
   "it": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1147,6 +1203,8 @@
   ],
 
   "ja": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1185,6 +1243,8 @@
   ],
 
   "ka": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1223,6 +1283,8 @@
   ],
 
   "kk": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1261,6 +1323,8 @@
   ],
 
   "km": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1299,6 +1363,8 @@
   ],
 
   "kn": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1337,6 +1403,8 @@
   ],
 
   "ko": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1375,6 +1443,8 @@
   ],
 
   "ky": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1413,6 +1483,8 @@
   ],
 
   "lo": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1451,6 +1523,8 @@
   ],
 
   "lt": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1489,6 +1563,8 @@
   ],
 
   "lv": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1527,6 +1603,8 @@
   ],
 
   "mk": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1565,6 +1643,8 @@
   ],
 
   "ml": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1603,6 +1683,8 @@
   ],
 
   "mn": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1641,6 +1723,8 @@
   ],
 
   "mr": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1679,6 +1763,8 @@
   ],
 
   "ms": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1717,6 +1803,8 @@
   ],
 
   "my": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1755,6 +1843,8 @@
   ],
 
   "nb": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1793,6 +1883,8 @@
   ],
 
   "ne": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1831,6 +1923,8 @@
   ],
 
   "nl": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1870,6 +1964,8 @@
   ],
 
   "pl": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1908,6 +2004,8 @@
   ],
 
   "rm": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1946,6 +2044,8 @@
   ],
 
   "ro": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -1984,6 +2084,8 @@
   ],
 
   "ru": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2022,6 +2124,8 @@
   ],
 
   "si": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2060,6 +2164,8 @@
   ],
 
   "sk": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2098,6 +2204,8 @@
   ],
 
   "sl": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2136,6 +2244,8 @@
   ],
 
   "sq": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2174,6 +2284,8 @@
   ],
 
   "sr": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2212,6 +2324,8 @@
   ],
 
   "sv": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2250,6 +2364,8 @@
   ],
 
   "sw": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2288,6 +2404,8 @@
   ],
 
   "ta": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2326,6 +2444,8 @@
   ],
 
   "te": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2364,6 +2484,8 @@
   ],
 
   "th": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2402,6 +2524,8 @@
   ],
 
   "tr": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2440,6 +2564,8 @@
   ],
 
   "uk": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2478,6 +2604,8 @@
   ],
 
   "ur": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2516,6 +2644,8 @@
   ],
 
   "vi": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -2623,6 +2753,8 @@
     "moodGood",
     "moneySaved",
     "caloriesSaved",
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "healthScore",
     "drinksAvoided",
     "estimated",
@@ -2989,6 +3121,8 @@
   ],
 
   "zh_CN": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -3027,6 +3161,8 @@
   ],
 
   "zh_TW": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",
@@ -3065,6 +3201,8 @@
   ],
 
   "zu": [
+    "averageCaloriesPerDrink",
+    "calorieEstimateMissing",
     "bodyRebuildingTitle",
     "percentRebuilt",
     "bodyTapOrganHint",

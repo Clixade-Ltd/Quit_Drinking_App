@@ -1,4 +1,3 @@
-
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -26,28 +25,50 @@ class StatsTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final isDark = AppColors.isDark(context);
 
     return Container(
       padding: EdgeInsets.all(4.r),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.surface(
+          context,
+          light: AppColors.white,
+        ),
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
-          color: AppColors.outlineGrey,
+          color: isDark
+              ? AppColors.accent(context)
+              : AppColors.outlineGrey,
           width: 0.7,
         ),
       ),
       child: Row(
         children: [
-          _tab(l10n.tabJourney, StatsTab.journey),
-          _tab(l10n.tabBody, StatsTab.body),
-          _tab(l10n.tabPatterns, StatsTab.patterns),
+          _tab(
+            context,
+            l10n.tabJourney,
+            StatsTab.journey,
+          ),
+          _tab(
+            context,
+            l10n.tabBody,
+            StatsTab.body,
+          ),
+          _tab(
+            context,
+            l10n.tabPatterns,
+            StatsTab.patterns,
+          ),
         ],
       ),
     );
   }
 
-  Widget _tab(String text, StatsTab tab) {
+  Widget _tab(
+    BuildContext context,
+    String text,
+    StatsTab tab,
+  ) {
     final isSelected = selected == tab;
 
     return Expanded(
@@ -64,7 +85,7 @@ class StatsTabBar extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: isSelected
-                ? AppColors.primary
+                ? AppColors.accent(context)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(10.r),
           ),
@@ -76,8 +97,11 @@ class StatsTabBar extends StatelessWidget {
               fontWeight: FontWeight.w700,
               fontSize: 13.sp,
               color: isSelected
-                  ? AppColors.white
-                  : AppColors.textGrey,
+                  ? Colors.white
+                  : AppColors.secondaryText(
+                      context,
+                      light: AppColors.textGrey,
+                    ),
             ),
           ),
         ),
@@ -124,6 +148,7 @@ class JourneyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+
     final stats = _JourneyStats.from(
       daysSober,
       calendarData,
@@ -132,13 +157,28 @@ class JourneyView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _buildScoreCard(l10n, stats),
+        _buildScoreCard(
+          context,
+          l10n,
+          stats,
+        ),
         SizedBox(height: 14.h),
-        _buildStreakRow(l10n, stats),
+        _buildStreakRow(
+          context,
+          l10n,
+          stats,
+        ),
         SizedBox(height: 10.h),
-        _buildBanner(l10n, stats),
+        _buildBanner(
+          context,
+          l10n,
+          stats,
+        ),
         SizedBox(height: 14.h),
-        _buildJourneyCard(l10n),
+        _buildJourneyCard(
+          context,
+          l10n,
+        ),
       ],
     );
   }
@@ -148,6 +188,7 @@ class JourneyView extends StatelessWidget {
   // ===========================================================
 
   Widget _buildScoreCard(
+     BuildContext context,
     AppLocalizations l10n,
     _JourneyStats stats,
   ) {
@@ -171,25 +212,45 @@ class JourneyView extends StatelessWidget {
         20.w,
         18.h,
       ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24.r),
-        gradient: const LinearGradient(
+    decoration: BoxDecoration(
+  borderRadius: BorderRadius.circular(24.r),
+
+  gradient: AppColors.isDark(context)
+      ? const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            _darkGreen,
-            _midGreen,
-            Color(0xFF065F46),
+            Color(0xFF2F80ED),
+            Color(0xFF102A43),
+          ],
+        )
+      : const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFF0B8F6A),
+            Color(0xFF087A5B),
+            Color(0xFF056548),
           ],
         ),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x33064E3B),
-            blurRadius: 22,
-            offset: Offset(0, 8),
-          ),
-        ],
-      ),
+
+  border: Border.all(
+    color: AppColors.isDark(context)
+        ? const Color(0xFF38BDF8).withValues(alpha: 0.45)
+        : const Color(0xFF0B8F6A).withValues(alpha: 0.35),
+    width: 0.8,
+  ),
+
+  boxShadow: [
+    BoxShadow(
+      color: AppColors.isDark(context)
+          ? const Color(0xFF0EA5E9).withValues(alpha: 0.18)
+          : const Color(0xFF087A5B).withValues(alpha: 0.18),
+      blurRadius: 22,
+      offset: const Offset(0, 8),
+    ),
+  ],
+),
       child: TweenAnimationBuilder<double>(
         tween: Tween<double>(
           begin: 0,
@@ -202,6 +263,7 @@ class JourneyView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // ---------------- icon + level chip ----------------
+
               Row(
                 children: [
                   Container(
@@ -259,6 +321,7 @@ class JourneyView extends StatelessWidget {
               SizedBox(height: 14.h),
 
               // ---------------- label ----------------
+
               Text(
                 l10n.journeySoberScore.toUpperCase(),
                 style: TextStyle(
@@ -274,6 +337,7 @@ class JourneyView extends StatelessWidget {
               SizedBox(height: 2.h),
 
               // ---------------- big number ----------------
+
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -289,7 +353,9 @@ class JourneyView extends StatelessWidget {
                   ),
                   SizedBox(width: 6.w),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 9.h),
+                    padding: EdgeInsets.only(
+                      bottom: 9.h,
+                    ),
                     child: Text(
                       '/100',
                       style: TextStyle(
@@ -307,6 +373,7 @@ class JourneyView extends StatelessWidget {
               SizedBox(height: 12.h),
 
               // ---------------- 5 segments ----------------
+
               Row(
                 children: [
                   for (int i = 0; i < 5; i++) ...[
@@ -325,6 +392,7 @@ class JourneyView extends StatelessWidget {
               SizedBox(height: 12.h),
 
               // ---------------- footer ----------------
+
               Text(
                 footer,
                 maxLines: 2,
@@ -379,9 +447,12 @@ class JourneyView extends StatelessWidget {
   // ===========================================================
 
   Widget _buildStreakRow(
+    BuildContext context,
     AppLocalizations l10n,
     _JourneyStats stats,
   ) {
+    final isDark = AppColors.isDark(context);
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -390,6 +461,7 @@ class JourneyView extends StatelessWidget {
             value: '${stats.current}',
             label: l10n.journeyCurrentStreak,
             color: AppColors.primary,
+            isDark: isDark,
           ),
         ),
         SizedBox(width: 10.w),
@@ -399,6 +471,7 @@ class JourneyView extends StatelessWidget {
             label: l10n.journeyLongestStreak,
             color: _amber,
             tinted: true,
+            isDark: isDark,
           ),
         ),
         SizedBox(width: 10.w),
@@ -407,157 +480,178 @@ class JourneyView extends StatelessWidget {
             value: '${stats.totalSober}',
             label: l10n.journeyTotalSoberDays,
             color: AppColors.primary,
+            isDark: isDark,
           ),
         ),
       ],
     );
   }
 
+  Widget _streakCard({
+    required String value,
+    required String label,
+    required Color color,
+    required bool isDark,
+    bool tinted = false,
+  }) {
+    // -----------------------------------------------------------
+    // CURRENT + TOTAL = VIBRANT GREEN
+    // LONGEST = BRIGHT SHINING SKY BLUE
+    // -----------------------------------------------------------
 
-Widget _streakCard({
-  required String value,
-  required String label,
-  required Color color,
-  bool tinted = false,
-}) {
-  // -----------------------------------------------------------
-  // CURRENT + TOTAL = VIBRANT GREEN
-  // LONGEST = BRIGHT SHINING SKY BLUE
-  // -----------------------------------------------------------
+    const green = Color(0xFF10B981);
+    const greenLight = Color(0xFFDFFBF0);
+    const greenGlow = Color(0xFF34D399);
 
-  const green = Color(0xFF10B981);
-  const greenLight = Color(0xFFDFFBF0);
-  const greenGlow = Color(0xFF34D399);
+    const skyBlue = Color(0xFF0EA5E9);
+    const skyBlueLight = Color(0xFFDFF6FF);
+    const skyBlueBright = Color(0xFF38BDF8);
 
-  const skyBlue = Color(0xFF0EA5E9);
-  const skyBlueLight = Color(0xFFDFF6FF);
-  const skyBlueBright = Color(0xFF38BDF8);
+    final isLongest = tinted;
 
-  final isLongest = tinted;
+    final accent = isLongest ? skyBlue : green;
 
-  final accent = isLongest ? skyBlue : green;
+    final cardGradient = isLongest
+        ? const [
+            Colors.white,
+            Color(0xFFF2FBFF),
+            skyBlueLight,
+          ]
+        : const [
+            Colors.white,
+            Color(0xFFF3FCF8),
+            greenLight,
+          ];
 
-  final cardGradient = isLongest
-      ? const [
-          Colors.white,
-          Color(0xFFF2FBFF),
-          skyBlueLight,
-        ]
-      : const [
-          Colors.white,
-          Color(0xFFF3FCF8),
-          greenLight,
-        ];
+    return Container(
+      constraints: BoxConstraints(
+        minHeight: 112.h,
+      ),
+      padding: EdgeInsets.symmetric(
+        horizontal: 9.w,
+        vertical: 14.h,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.r),
 
-  return Container(
-    constraints: BoxConstraints(
-      minHeight: 112.h,
-    ),
-    padding: EdgeInsets.symmetric(
-      horizontal: 9.w,
-      vertical: 14.h,
-    ),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20.r),
+        // -------------------------------------------------------
+        // GLASS GRADIENT
+        // -------------------------------------------------------
 
-      // -------------------------------------------------------
-      // GLASS GRADIENT
-      // -------------------------------------------------------
-      gradient: const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-          Colors.white,
-          Color(0xFFF3FCF8),
-          Color(0xFFDFFBF0),
+        gradient: isDark
+            ? const LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF0A4170),
+                  Color(0xFF002E51),
+                ],
+              )
+            : LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: cardGradient,
+              ),
+
+        // -------------------------------------------------------
+        // BLUE GLASS FOR LONGEST
+        // -------------------------------------------------------
+
+        border: Border.all(
+          color: isDark
+              ? (isLongest
+                      ? skyBlueBright
+                      : greenGlow)
+                  .withValues(alpha: 0.55)
+              : accent.withValues(alpha: 0.30),
+          width: 1.0,
+        ),
+
+        // -------------------------------------------------------
+        // SOFT SHINING GLOW
+        // -------------------------------------------------------
+
+        boxShadow: [
+          BoxShadow(
+            color: accent.withValues(alpha: 0.16),
+            blurRadius: 20,
+            spreadRadius: -2,
+            offset: const Offset(0, 7),
+          ),
+          BoxShadow(
+            color: accent.withValues(alpha: 0.07),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
         ],
       ),
 
-      // -------------------------------------------------------
-      // BLUE GLASS FOR LONGEST
-      // -------------------------------------------------------
-      border: Border.all(
-        color: accent.withValues(alpha: 0.30),
-        width: 1.0,
-      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          // -------------------------------------------------------
+          // VALUE
+          // -------------------------------------------------------
 
-      // -------------------------------------------------------
-      // SOFT SHINING GLOW
-      // -------------------------------------------------------
-      boxShadow: [
-        BoxShadow(
-          color: accent.withValues(alpha: 0.16),
-          blurRadius: 20,
-          spreadRadius: -2,
-          offset: const Offset(0, 7),
-        ),
-        BoxShadow(
-          color: accent.withValues(alpha: 0.07),
-          blurRadius: 8,
-          offset: const Offset(0, 2),
-        ),
-      ],
-    ),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              value,
+              maxLines: 1,
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 30.sp,
+                height: 1.0,
+                letterSpacing: -1.1,
 
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        // -------------------------------------------------------
-        // VALUE
-        // -------------------------------------------------------
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            value,
-            maxLines: 1,
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 30.sp,
-              height: 1.0,
-              letterSpacing: -1.1,
-
-              // Green for Current/Total,
-              // bright sky-blue for Longest.
-              color: isLongest
-                  ? const Color(0xFF0284C7)
-                  : const Color(0xFF059669),
+                // Green for Current/Total,
+                // bright sky-blue for Longest.
+                color: isDark
+                    ? Colors.white
+                    : isLongest
+                        ? const Color(0xFF0284C7)
+                        : const Color(0xFF059669),
+              ),
             ),
           ),
-        ),
 
-        SizedBox(height: 7.h),
+          SizedBox(height: 7.h),
 
-        // -------------------------------------------------------
-        // LABEL
-        // -------------------------------------------------------
-        Text(
-          label,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 11.5.sp,
-            height: 1.15,
-            letterSpacing: -0.1,
-            color: const Color(0xFF475569),
+          // -------------------------------------------------------
+          // LABEL
+          // -------------------------------------------------------
+
+          Text(
+            label,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 11.5.sp,
+              height: 1.15,
+              letterSpacing: -0.1,
+              color: isDark
+                  ? Colors.white70
+                  : const Color(0xFF475569),
+            ),
           ),
-        ),
-      ],
-    ),
-  );
-}
-
-
+        ],
+      ),
+    );
+  }
 
   // ===========================================================
   // 3. PERSONAL BEST BANNER
   // ===========================================================
 
   Widget _buildBanner(
+    BuildContext context,
     AppLocalizations l10n,
     _JourneyStats stats,
   ) {
+    final isDark = AppColors.isDark(context);
+
     final atBest =
         stats.current > 0 &&
         stats.current >= stats.longest;
@@ -575,17 +669,28 @@ Widget _streakCard({
         horizontal: 12.w,
       ),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [
-            _darkGreen.withValues(alpha: 0.08),
-            _emerald.withValues(alpha: 0.045),
-          ],
-        ),
+        gradient: isDark
+            ? const LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  Color(0xFF2F80ED),
+                  Color(0xFF102A43),
+                ],
+              )
+            : LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [
+                  _darkGreen.withValues(alpha: 0.08),
+                  _emerald.withValues(alpha: 0.045),
+                ],
+              ),
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
-          color: _emerald.withValues(alpha: 0.18),
+          color: isDark
+              ? const Color(0xFF38BDF8).withValues(alpha: 0.75)
+              : _emerald.withValues(alpha: 0.18),
         ),
       ),
       child: Text(
@@ -596,7 +701,7 @@ Widget _streakCard({
         style: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 13.sp,
-          color: _midGreen,
+          color: isDark ? Colors.white : _midGreen,
         ),
       ),
     );
@@ -607,8 +712,11 @@ Widget _streakCard({
   // ===========================================================
 
   Widget _buildJourneyCard(
+    BuildContext context,
     AppLocalizations l10n,
   ) {
+    final isDark = AppColors.isDark(context);
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.fromLTRB(
@@ -618,10 +726,15 @@ Widget _streakCard({
         14.h,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.surface(
+          context,
+          light: AppColors.white,
+        ),
         borderRadius: BorderRadius.circular(18.r),
         border: Border.all(
-          color: AppColors.outlineGrey,
+          color: isDark
+              ? AppColors.accent(context)
+              : AppColors.outlineGrey,
           width: 0.8,
         ),
         boxShadow: const [
@@ -640,7 +753,10 @@ Widget _streakCard({
             style: TextStyle(
               fontWeight: FontWeight.w800,
               fontSize: 18.sp,
-              color: AppColors.textBlack,
+              color: AppColors.primaryText(
+                context,
+                light: AppColors.textBlack,
+              ),
             ),
           ),
 
@@ -650,13 +766,18 @@ Widget _streakCard({
             l10n.journeyYourJourneySubtitle,
             style: TextStyle(
               fontSize: 12.sp,
-              color: AppColors.textLightGrey,
+              color: AppColors.secondaryText(
+                context,
+                light: AppColors.textLightGrey,
+              ),
             ),
           ),
 
           SizedBox(height: 14.h),
 
-          _heatmap(),
+          _heatmap(
+            isDark: isDark,
+          ),
 
           SizedBox(height: 14.h),
 
@@ -667,14 +788,19 @@ Widget _streakCard({
               _legend(
                 _emerald,
                 l10n.soberLabel,
+                isDark: isDark,
               ),
               _legend(
                 Colors.redAccent,
                 l10n.slipLabel,
+                isDark: isDark,
               ),
               _legend(
-                AppColors.journalChipBackground,
+                isDark
+                    ? const Color(0xFF163B56)
+                    : AppColors.journalChipBackground,
                 l10n.noDataLabel,
+                isDark: isDark,
               ),
             ],
           ),
@@ -683,11 +809,14 @@ Widget _streakCard({
     );
   }
 
-  Widget _heatmap() {
+  Widget _heatmap({
+    required bool isDark,
+  }) {
     const cols = 26;
     const rows = 7;
 
     final now = DateTime.now();
+
     final today = DateTime(
       now.year,
       now.month,
@@ -710,6 +839,7 @@ Widget _streakCard({
     return LayoutBuilder(
       builder: (context, constraints) {
         final gap = 3.w;
+
         final cell =
             (constraints.maxWidth -
                     gap * (cols - 1)) /
@@ -737,6 +867,7 @@ Widget _streakCard({
                             start.day + c * 7 + r,
                           ),
                           today: today,
+                          isDark: isDark,
                         ),
                       ),
                   ],
@@ -752,6 +883,7 @@ Widget _streakCard({
     required double size,
     required DateTime date,
     required DateTime today,
+    required bool isDark,
   }) {
     // Days after today stay empty.
     if (date.isAfter(today)) {
@@ -773,7 +905,9 @@ Widget _streakCard({
     } else if (status == 2) {
       color = Colors.redAccent;
     } else {
-      color = AppColors.journalChipBackground;
+      color = isDark
+          ? const Color(0xFF163B56)
+          : AppColors.journalChipBackground;
     }
 
     // ---------------------------------------------------------
@@ -801,7 +935,9 @@ Widget _streakCard({
         ),
         border: Border.all(
           color: isToday
-              ? AppColors.textBlack
+              ? (isDark
+                  ? Colors.white
+                  : AppColors.textBlack)
               : status == 1
                   ? const Color(0xFF6EE7B7)
                       .withValues(alpha: 0.42)
@@ -849,8 +985,9 @@ Widget _streakCard({
 
   Widget _legend(
     Color color,
-    String label,
-  ) {
+    String label, {
+    required bool isDark,
+  }) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -859,8 +996,7 @@ Widget _streakCard({
           height: 10.r,
           decoration: BoxDecoration(
             color: color,
-            borderRadius:
-                BorderRadius.circular(3.r),
+            borderRadius: BorderRadius.circular(3.r),
             boxShadow: color == _emerald
                 ? [
                     BoxShadow(
@@ -878,7 +1014,9 @@ Widget _streakCard({
           label,
           style: TextStyle(
             fontSize: 11.sp,
-            color: AppColors.textGrey,
+            color: isDark
+                ? Colors.white70
+                : AppColors.textGrey,
           ),
         ),
       ],

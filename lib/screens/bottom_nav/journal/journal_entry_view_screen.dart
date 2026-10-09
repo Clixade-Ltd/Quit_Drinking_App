@@ -126,7 +126,10 @@ class _JournalEntryViewScreenState
 
     if (entry == null) {
       return Scaffold(
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.white,
+        ),
         body: SafeArea(
           child: Center(
             child: Padding(
@@ -187,7 +190,10 @@ class _JournalEntryViewScreenState
     }
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.white,
+      ),
       body: SafeArea(
         child: Column(
           children: [

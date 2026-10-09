@@ -16,6 +16,7 @@ import 'package:new_quit_drinking_app/screens/bottom_nav/profile/health_care_dis
 import 'package:new_quit_drinking_app/services/home_dashboard_service.dart';
 import 'package:new_quit_drinking_app/services/local_storage_service.dart';
 import 'package:new_quit_drinking_app/services/analytics_service.dart';
+import 'package:new_quit_drinking_app/theme/theme_controller.dart';
 
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
@@ -43,6 +44,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int _daysSober = 0;
 
   bool _isUploadingPhoto = false;
+
+  // =====================================================================
+  // THEME COLORS (Light / Dark)
+  // Dark background = #002E51, text = white
+  // =====================================================================
+
+  bool get _dark => ThemeController.instance.isDark;
+
+  Color get _bg => _dark
+      ? ThemeController.darkBackground
+      : AppColors.dashboardBackground;
+
+  Color get _card =>
+      _dark ? ThemeController.darkCard : AppColors.white;
+
+  Color get _innerCard => _dark
+      ? Colors.white.withValues(alpha: 0.08)
+      : AppColors.cardBackground;
+
+  Color get _text =>
+      _dark ? Colors.white : AppColors.textBlack;
+
+  Color get _subText =>
+      _dark ? Colors.white70 : AppColors.textGrey;
+
+  Color get _divider =>
+      _dark ? Colors.white24 : AppColors.outlineGrey;
+
+  Color get _accent =>
+      _dark ? ThemeController.darkAccent : AppColors.primary;
 
   @override
   void initState() {
@@ -503,7 +534,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Text(
                 l10n.cancel,
                 style: TextStyle(
-                  color: AppColors.textGrey,
+                  color: _subText,
                   fontSize: 14.sp,
                 ),
               ),
@@ -563,28 +594,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
-      body: SafeArea(
-        top: true,
-        bottom: false,
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                18.w,
-                12.h,
-                18.w,
-                0,
-              ),
-              child: _buildTopBar(l10n),
+    // Theme badalte hi ye screen rebuild hogi
+    return ListenableBuilder(
+      listenable: ThemeController.instance,
+      builder: (context, _) {
+        return Scaffold(
+          backgroundColor: _bg,
+          body: SafeArea(
+            top: true,
+            bottom: false,
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(
+                    18.w,
+                    12.h,
+                    18.w,
+                    0,
+                  ),
+                  child: _buildTopBar(l10n),
+                ),
+                Expanded(
+                  child: _buildBody(l10n),
+                ),
+              ],
             ),
-            Expanded(
-              child: _buildBody(l10n),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -596,9 +633,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
     AppLocalizations l10n,
   ) {
     if (_isLoading) {
-      return const Center(
+      return Center(
         child: CircularProgressIndicator(
-          color: AppColors.primary,
+          color: _accent,
         ),
       );
     }
@@ -647,7 +684,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 10.sp,
-                  color: AppColors.textLightGrey,
+                  color: _dark
+                      ? Colors.white54
+                      : AppColors.textLightGrey,
                 ),
               ),
             ),
@@ -673,7 +712,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Icon(
               Icons.error_outline,
               size: 52.sp,
-              color: AppColors.textLightGrey,
+              color: _dark
+                  ? Colors.white54
+                  : AppColors.textLightGrey,
             ),
 
             SizedBox(height: 16.h),
@@ -684,7 +725,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 18.sp,
-                color: AppColors.textBlack,
+                color: _text,
               ),
             ),
 
@@ -695,7 +736,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 13.sp,
-                color: AppColors.textGrey,
+                color: _subText,
               ),
             ),
 
@@ -704,7 +745,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ElevatedButton(
               onPressed: _loadProfile,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
+                backgroundColor: AppColors.accent(context),
                 foregroundColor: AppColors.white,
                 elevation: 0,
                 padding: EdgeInsets.symmetric(
@@ -741,7 +782,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Icon(
               Icons.person_off_outlined,
               size: 52.sp,
-              color: AppColors.textLightGrey,
+              color: _dark
+                  ? Colors.white54
+                  : AppColors.textLightGrey,
             ),
 
             SizedBox(height: 16.h),
@@ -752,7 +795,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 18.sp,
-                color: AppColors.textBlack,
+                color: _text,
               ),
             ),
 
@@ -761,7 +804,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ElevatedButton(
               onPressed: _loadProfile,
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
+                backgroundColor: AppColors.accent(context),
                 foregroundColor: AppColors.white,
                 padding: EdgeInsets.symmetric(
                   horizontal: 20.w,
@@ -797,7 +840,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           height: 42.w,
           child: Icon(
             Icons.notifications_none,
-            color: AppColors.primary,
+            color: _accent,
             size: 22.sp,
           ),
         ),
@@ -823,7 +866,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         24.h,
       ),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: _card,
         borderRadius: BorderRadius.circular(40.r),
         boxShadow: [
           BoxShadow(
@@ -855,7 +898,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       shape: BoxShape.circle,
                       color: AppColors.iconBackground,
                       border: Border.all(
-                        color: AppColors.white,
+                        color: _card,
                         width: 4.w,
                       ),
                       boxShadow: [
@@ -922,7 +965,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 28.sp,
-              color: AppColors.textBlack,
+              color: _text,
             ),
           ),
 
@@ -935,7 +978,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               fontWeight: FontWeight.w400,
               fontSize: 14.sp,
               height: 1.4,
-              color: AppColors.textGrey,
+              color: _subText,
             ),
           ),
 
@@ -988,19 +1031,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
           horizontal: 18.w,
           vertical: 16.h,
         ),
-        decoration: BoxDecoration(
-          color: AppColors.primary,
-          borderRadius: BorderRadius.circular(28.r),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.primary.withValues(
-                alpha: 0.12,
-              ),
-              blurRadius: 16.r,
-              offset: Offset(0, 5.h),
-            ),
-          ],
-        ),
+       decoration: BoxDecoration(
+  color: _dark
+      ? ThemeController.darkAccent
+      : AppColors.primary,
+  borderRadius: BorderRadius.circular(28.r),
+  boxShadow: [
+    BoxShadow(
+      color: (_dark
+              ? ThemeController.darkAccent
+              : AppColors.primary)
+          .withValues(alpha: 0.12),
+      blurRadius: 16.r,
+      offset: Offset(0, 5.h),
+    ),
+  ],
+),
         child: Row(
           children: [
             Container(
@@ -1083,7 +1129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               fontWeight: FontWeight.w500,
               fontSize: 12.sp,
               letterSpacing: 0.5,
-              color: AppColors.textGrey,
+              color: _subText,
             ),
           ),
         ),
@@ -1093,11 +1139,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: _card,
             borderRadius: BorderRadius.circular(34.r),
           ),
           child: Column(
             children: [
+              // ==========================================================
+              // DARK MODE TOGGLE
+              // ==========================================================
+
+              _buildThemeToggle(),
+
+              _buildDivider(),
+
               // ==========================================================
               // DAILY CHECK-INS
               // ==========================================================
@@ -1219,6 +1273,82 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   // =====================================================================
+  // THEME TOGGLE (Light / Dark)
+  // =====================================================================
+
+  Widget _buildThemeToggle() {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: 18.w,
+        vertical: 8.h,
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 38.w,
+            height: 38.w,
+            decoration: BoxDecoration(
+              color: AppColors.primary.withValues(
+                alpha: _dark ? 0.35 : 0.09,
+              ),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(
+              _dark ? Icons.dark_mode : Icons.light_mode,
+              color: _accent,
+              size: 19.sp,
+            ),
+          ),
+
+          SizedBox(width: 12.w),
+
+          Expanded(
+            child: Column(
+              crossAxisAlignment:
+                  CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Dark Mode',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13.sp,
+                    color: _text,
+                  ),
+                ),
+
+                SizedBox(height: 2.h),
+
+                Text(
+                  _dark
+                      ? 'Dark theme is on'
+                      : 'Light theme is on',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 10.sp,
+                    color: _subText,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+         Switch(
+  value: _dark,
+  activeColor: Colors.white,
+  activeTrackColor: ThemeController.darkAccent,
+  inactiveThumbColor: Colors.white,
+  inactiveTrackColor: AppColors.primary.withValues(
+    alpha: 0.25,
+  ),
+  onChanged: (value) =>
+      ThemeController.instance.setDark(value),
+),
+        ],
+      ),
+    );
+  }
+
+  // =====================================================================
   // PROFILE STAT
   // =====================================================================
 
@@ -1234,7 +1364,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         vertical: 8.h,
       ),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
+        color: _innerCard,
         borderRadius: BorderRadius.circular(30.r),
       ),
       child: Column(
@@ -1249,7 +1379,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               fontWeight: FontWeight.w500,
               fontSize: 9.sp,
               letterSpacing: 0.6,
-              color: AppColors.textGrey,
+              color: _subText,
             ),
           ),
 
@@ -1263,7 +1393,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 14.sp,
-              color: AppColors.primary,
+              color: _accent,
             ),
           ),
         ],
@@ -1281,8 +1411,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     required String title,
     required String subtitle,
     required VoidCallback onTap,
-    Color titleColor = AppColors.textBlack,
+    Color? titleColor,
   }) {
+    final resolvedIconColor = _dark && iconColor == AppColors.primary
+        ? const Color(0xFF7DD3FC)
+        : iconColor;
+
     return InkWell(
       onTap: onTap,
       child: Padding(
@@ -1296,14 +1430,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 38.w,
               height: 38.w,
               decoration: BoxDecoration(
-                color: iconColor.withValues(
-                  alpha: 0.09,
+                color: resolvedIconColor.withValues(
+                  alpha: _dark ? 0.28 : 0.09,
                 ),
                 shape: BoxShape.circle,
               ),
               child: Icon(
                 icon,
-                color: iconColor,
+                color: resolvedIconColor,
                 size: 19.sp,
               ),
             ),
@@ -1322,7 +1456,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 13.sp,
-                      color: titleColor,
+                      color: titleColor ?? _text,
                     ),
                   ),
 
@@ -1337,7 +1471,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         fontWeight: FontWeight.w400,
                         fontSize: 10.sp,
                         height: 1.3,
-                        color: AppColors.textGrey,
+                        color: _subText,
                       ),
                     ),
                   ],
@@ -1347,7 +1481,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             Icon(
               Icons.chevron_right,
-              color: AppColors.textLightGrey,
+              color: _dark
+                  ? Colors.white70
+                  : AppColors.textLightGrey,
               size: 20.sp,
             ),
           ],
@@ -1366,7 +1502,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       thickness: 1.h,
       indent: 68.w,
       endIndent: 0,
-      color: AppColors.outlineGrey,
+      color: _divider,
     );
   }
 

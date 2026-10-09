@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 import '../../constants/app_colors.dart';
 import '../../services/home_dashboard_service.dart';
@@ -25,23 +26,30 @@ class _RecoveryCoachChatScreenState
   // LOCAL STORAGE
   // ============================================================
 
-  static const String _chatStorageKey = 'recovery_coach_chat_history';
+  static const String _chatsStorageKey =
+      'recovery_coach_chats_v2';
+
+  static const String _legacyChatStorageKey =
+      'recovery_coach_chat_history';
 
   // ============================================================
   // FREE-TIER LIMIT
   // ============================================================
 
-  static const int _freeDailyLimit = 3;
+  static const int _freeDailyLimit = 6;
 
   // ============================================================
-  // CONTROLLERS
+  // CONTROLLERS / KEYS
   // ============================================================
+
+  final GlobalKey<ScaffoldState> _scaffoldKey =
+      GlobalKey<ScaffoldState>();
 
   final TextEditingController _messageController =
-  TextEditingController();
+      TextEditingController();
 
   final ScrollController _scrollController =
-  ScrollController();
+      ScrollController();
 
   // ============================================================
   // SERVICES
@@ -60,11 +68,26 @@ class _RecoveryCoachChatScreenState
       AnalyticsService.instance;
 
   // ============================================================
-  // CHAT MESSAGES
+  // VOICE
   // ============================================================
 
+  final stt.SpeechToText _speech =
+      stt.SpeechToText();
+
+  bool _speechAvailable = false;
+  bool _isListening = false;
+
+  // ============================================================
+  // CHATS
+  // ============================================================
+
+  final List<Map<String, dynamic>> _chats =
+      <Map<String, dynamic>>[];
+
   final List<Map<String, String>> _messages =
-  <Map<String, String>>[];
+      <Map<String, String>>[];
+
+  String _activeChatId = '';
 
   // ============================================================
   // STATE
@@ -74,40 +97,257 @@ class _RecoveryCoachChatScreenState
   bool _isSending = false;
 
   int _daysSober = 0;
-
   String _userName = 'there';
 
   bool _isPremium = false;
   int _messagesUsedToday = 0;
 
+    bool get _isDark => AppColors.isDark(context);
+    Color get _chatSurface =>
+      AppColors.surface(context, light: AppColors.white);
+    Color get _chatPrimaryText =>
+      AppColors.primaryText(context, light: AppColors.textBlack);
+    Color get _chatSecondaryText =>
+      AppColors.secondaryText(context, light: AppColors.textGrey);
+    Color get _chatAccent => AppColors.accent(context);
+    Color get _chatAccentText =>
+      _isDark ? Colors.white : _chatAccent;
+    Color get _chatBorder =>
+      _isDark ? _chatAccent : AppColors.outlineGrey;
+
   // ============================================================
-  // INIT
+  // INIT / DISPOSE
   // ============================================================
 
   @override
   void initState() {
     super.initState();
+
     _loadChat();
+    _initSpeech();
     _analytics.chatOpened();
   }
 
-  // ============================================================
-  // DISPOSE
-  // ============================================================
-
   @override
   void dispose() {
+    _speech.cancel();
     _messageController.dispose();
     _scrollController.dispose();
     super.dispose();
   }
 
-  // ============================================================
-  // DISMISS KEYBOARD
-  // ============================================================
-
   void _dismissKeyboard() {
     FocusManager.instance.primaryFocus?.unfocus();
+  }
+
+  String _newChatId() {
+    return DateTime.now()
+        .microsecondsSinceEpoch
+        .toString();
+  }
+
+  // ============================================================
+  // VOICE INPUT
+  // ============================================================
+
+  Future<void> _initSpeech() async {
+    try {
+      _speechAvailable = await _speech.initialize(
+        onStatus: (status) {
+          if ((status == 'done' ||
+                  status == 'notListening') &&
+              mounted) {
+            setState(() {
+              _isListening = false;
+            });
+          }
+        },
+        onError: (error) {
+          debugPrint(
+            'Speech error: ${error.errorMsg}',
+          );
+
+          if (mounted) {
+            setState(() {
+              _isListening = false;
+            });
+          }
+        },
+      );
+    } catch (e) {
+      debugPrint(
+        'Speech init error: $e',
+      );
+
+      _speechAvailable = false;
+    }
+  }
+
+  Future<void> _toggleListening() async {
+    if (_isSending) return;
+
+    // Stop if already listening.
+    if (_isListening) {
+      await _speech.stop();
+
+      if (mounted) {
+        setState(() {
+          _isListening = false;
+        });
+      }
+
+      return;
+    }
+
+    // Try to initialise again.
+    if (!_speechAvailable) {
+      await _initSpeech();
+    }
+
+    if (!_speechAvailable) {
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Voice input is not available. Please allow microphone access.',
+          ),
+        ),
+      );
+
+      return;
+    }
+
+    _dismissKeyboard();
+
+    setState(() {
+      _isListening = true;
+    });
+
+    await _speech.listen(
+      onResult: (result) {
+        if (!mounted) return;
+
+        setState(() {
+          _messageController.text =
+              result.recognizedWords;
+
+          _messageController.selection =
+              TextSelection.fromPosition(
+            TextPosition(
+              offset:
+                  _messageController.text.length,
+            ),
+          );
+        });
+      },
+      listenFor:
+          const Duration(seconds: 60),
+      pauseFor:
+          const Duration(seconds: 4),
+      listenOptions:
+          stt.SpeechListenOptions(
+        partialResults: true,
+        cancelOnError: true,
+      ),
+    );
+  }
+
+  Future<void> _stopListeningIfNeeded() async {
+    if (_isListening) {
+      await _speech.stop();
+
+      if (mounted) {
+        setState(() {
+          _isListening = false;
+        });
+      }
+    }
+  }
+
+  // ============================================================
+  // HELPERS
+  // ============================================================
+
+  List<Map<String, String>> _parseMessages(
+    dynamic raw,
+  ) {
+    final result =
+        <Map<String, String>>[];
+
+    if (raw is List) {
+      for (final item in raw) {
+        if (item is Map) {
+          final role =
+              item['role']?.toString().trim();
+
+          final text =
+              item['text']?.toString().trim();
+
+          if ((role == 'user' ||
+                  role == 'model') &&
+              text != null &&
+              text.isNotEmpty) {
+            result.add({
+              'role': role!,
+              'text': text,
+            });
+          }
+        }
+      }
+    }
+
+    return result;
+  }
+
+  String _makeTitle(String text) {
+    final clean = text
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim();
+
+    if (clean.isEmpty) {
+      return 'New chat';
+    }
+
+    return clean.length > 40
+        ? '${clean.substring(0, 40)}…'
+        : clean;
+  }
+
+  String _formatDate(String iso) {
+    final date =
+        DateTime.tryParse(iso);
+
+    if (date == null) {
+      return '';
+    }
+
+    final now = DateTime.now();
+
+    final today = DateTime(
+      now.year,
+      now.month,
+      now.day,
+    );
+
+    final day = DateTime(
+      date.year,
+      date.month,
+      date.day,
+    );
+
+    final diff =
+        today.difference(day).inDays;
+
+    if (diff == 0) {
+      return 'Today';
+    }
+
+    if (diff == 1) {
+      return 'Yesterday';
+    }
+
+    return '${date.day}/${date.month}/${date.year}';
   }
 
   // ============================================================
@@ -116,73 +356,143 @@ class _RecoveryCoachChatScreenState
 
   Future<void> _loadChat() async {
     try {
-      // ----------------------------------------------------------
-      // LOAD LOCAL CHAT
-      // ----------------------------------------------------------
-
       final Map<String, dynamic>? saved =
-      await _storage.getJson(_chatStorageKey);
-
-      // ----------------------------------------------------------
-      // LOAD USER DATA
-      // ----------------------------------------------------------
+          await _storage.getJson(
+        _chatsStorageKey,
+      );
 
       final days =
-      await _dashboardService.getDaysSober();
+          await _dashboardService
+              .getDaysSober();
 
       final name =
-      await _dashboardService.getUserName();
-
-      // ----------------------------------------------------------
-      // LOAD PREMIUM + USAGE STATE
-      // ----------------------------------------------------------
+          await _dashboardService
+              .getUserName();
 
       final isPremium =
-      await PremiumService.instance.isPremium();
+          await PremiumService
+              .instance
+              .isPremium();
 
       final messagesUsedToday =
-      await ChatUsageService.instance
-          .getTodayCount();
+          await ChatUsageService
+              .instance
+              .getTodayCount();
 
-      // ----------------------------------------------------------
-      // CLEAR CURRENT MEMORY
-      // ----------------------------------------------------------
-
+      _chats.clear();
       _messages.clear();
 
-      // ----------------------------------------------------------
-      // READ SAVED CHAT
-      // ----------------------------------------------------------
+      String activeId = '';
 
-      if (saved != null) {
-        final rawMessages = saved['messages'];
+      if (saved != null &&
+          saved['chats'] is List) {
+        // ======================================================
+        // NEW FORMAT
+        // ======================================================
 
-        if (rawMessages is List) {
-          for (final item in rawMessages) {
-            if (item is Map) {
-              final role =
-              item['role']?.toString().trim();
+        for (final c
+            in (saved['chats'] as List)) {
+          if (c is! Map) continue;
 
-              final text =
-              item['text']?.toString().trim();
+          final msgs =
+              _parseMessages(
+            c['messages'],
+          );
 
-              if ((role == 'user' ||
-                  role == 'model') &&
-                  text != null &&
-                  text.isNotEmpty) {
-                _messages.add({
-                  'role': role!,
-                  'text': text,
-                });
-              }
-            }
-          }
+          if (msgs.isEmpty) continue;
+
+          _chats.add({
+            'id':
+                c['id']?.toString() ??
+                    _newChatId(),
+            'title':
+                c['title']?.toString() ??
+                    _makeTitle(
+                      msgs.first['text']!,
+                    ),
+            'updatedAt':
+                c['updatedAt']
+                        ?.toString() ??
+                    DateTime.now()
+                        .toIso8601String(),
+            'messages': msgs,
+          });
+        }
+
+        activeId =
+            saved['activeId']
+                    ?.toString() ??
+                '';
+      } else {
+        // ======================================================
+        // MIGRATE OLD SINGLE CHAT
+        // ======================================================
+
+        final Map<String, dynamic>? legacy =
+            await _storage.getJson(
+          _legacyChatStorageKey,
+        );
+
+        final legacyMsgs =
+            _parseMessages(
+          legacy?['messages'],
+        );
+
+        if (legacyMsgs.isNotEmpty) {
+          final id = _newChatId();
+
+          _chats.add({
+            'id': id,
+            'title': _makeTitle(
+              legacyMsgs
+                      .firstWhere(
+                        (m) =>
+                            m['role'] ==
+                            'user',
+                        orElse: () =>
+                            legacyMsgs.first,
+                      )['text'] ??
+                  '',
+            ),
+            'updatedAt':
+                DateTime.now()
+                    .toIso8601String(),
+            'messages': legacyMsgs,
+          });
+
+          activeId = id;
         }
       }
 
-      // ----------------------------------------------------------
-      // UPDATE STATE
-      // ----------------------------------------------------------
+      // ========================================================
+      // OPEN ACTIVE CHAT
+      // ========================================================
+
+      final activeIndex =
+          _chats.indexWhere(
+        (c) => c['id'] == activeId,
+      );
+
+      if (activeIndex != -1) {
+        _activeChatId = activeId;
+
+        _messages.addAll(
+          List<Map<String, String>>.from(
+            (_chats[activeIndex]
+                    ['messages']
+                as List)
+                .map(
+              (m) =>
+                  Map<String, String>.from(
+                m as Map,
+              ),
+            ),
+          ),
+        );
+      } else {
+        _activeChatId =
+            _newChatId();
+      }
 
       if (!mounted) return;
 
@@ -191,10 +501,12 @@ class _RecoveryCoachChatScreenState
 
         if (name != null &&
             name.trim().isNotEmpty) {
-          _userName =
-              name.trim().split(
+          _userName = name
+              .trim()
+              .split(
                 RegExp(r'\s+'),
-              ).first;
+              )
+              .first;
         } else {
           _userName = 'there';
         }
@@ -212,6 +524,11 @@ class _RecoveryCoachChatScreenState
         'Recovery Coach load error: $e',
       );
 
+      if (_activeChatId.isEmpty) {
+        _activeChatId =
+            _newChatId();
+      }
+
       if (!mounted) return;
 
       setState(() {
@@ -221,22 +538,16 @@ class _RecoveryCoachChatScreenState
   }
 
   // ============================================================
-  // SAVE CHAT LOCALLY
+  // SAVE CHAT
   // ============================================================
 
-  Future<void> _saveChat() async {
+  Future<void> _persist() async {
     try {
       await _storage.setJson(
-        _chatStorageKey,
+        _chatsStorageKey,
         {
-          'messages': _messages
-              .map(
-                (message) => {
-              'role': message['role'],
-              'text': message['text'],
-            },
-          )
-              .toList(),
+          'activeId': _activeChatId,
+          'chats': _chats,
         },
       );
     } catch (e) {
@@ -246,6 +557,229 @@ class _RecoveryCoachChatScreenState
     }
   }
 
+  Future<void> _saveChat() async {
+    final index =
+        _chats.indexWhere(
+      (c) => c['id'] == _activeChatId,
+    );
+
+    if (_messages.isEmpty) {
+      if (index != -1) {
+        _chats.removeAt(index);
+      }
+    } else {
+      final firstUser =
+          _messages.firstWhere(
+        (m) => m['role'] == 'user',
+        orElse: () =>
+            _messages.first,
+      );
+
+      final entry =
+          <String, dynamic>{
+        'id': _activeChatId,
+        'title': _makeTitle(
+          firstUser['text'] ?? '',
+        ),
+        'updatedAt':
+            DateTime.now()
+                .toIso8601String(),
+        'messages': _messages
+            .map(
+              (m) => {
+                'role': m['role'],
+                'text': m['text'],
+              },
+            )
+            .toList(),
+      };
+
+      if (index == -1) {
+        _chats.add(entry);
+      } else {
+        _chats[index] = entry;
+      }
+    }
+
+    await _persist();
+  }
+
+  // ============================================================
+  // NEW CHAT
+  // ============================================================
+
+  Future<void> _startNewChat() async {
+    if (_isSending) return;
+
+    await _stopListeningIfNeeded();
+    _dismissKeyboard();
+
+    if (_scaffoldKey.currentState
+            ?.isEndDrawerOpen ??
+        false) {
+      Navigator.of(context).pop();
+    }
+
+    _messageController.clear();
+
+    setState(() {
+      _messages.clear();
+      _activeChatId = _newChatId();
+    });
+
+    await _persist();
+  }
+
+  // ============================================================
+  // OPEN CHAT
+  // ============================================================
+
+  Future<void> _openChat(
+    String id,
+  ) async {
+    if (_isSending) return;
+
+    final index =
+        _chats.indexWhere(
+      (c) => c['id'] == id,
+    );
+
+    if (index == -1) return;
+
+    await _stopListeningIfNeeded();
+    _dismissKeyboard();
+
+    if (_scaffoldKey.currentState
+            ?.isEndDrawerOpen ??
+        false) {
+      Navigator.of(context).pop();
+    }
+
+    _messageController.clear();
+
+    setState(() {
+      _activeChatId = id;
+
+      _messages
+        ..clear()
+        ..addAll(
+          List<Map<String, String>>.from(
+            (_chats[index]['messages']
+                    as List)
+                .map(
+              (m) =>
+                  Map<String, String>.from(
+                m as Map,
+              ),
+            ),
+          ),
+        );
+    });
+
+    await _persist();
+
+    _scrollToBottom();
+  }
+
+  // ============================================================
+  // DELETE CHAT
+  // ============================================================
+
+  Future<void> _confirmDeleteChat(
+    String id,
+  ) async {
+    if (_isSending &&
+        id == _activeChatId) {
+      return;
+    }
+
+    final shouldDelete =
+        await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) {
+        return AlertDialog(
+          backgroundColor:
+              _chatSurface,
+          shape:
+              RoundedRectangleBorder(
+            borderRadius:
+                BorderRadius.circular(
+              20,
+            ),
+          ),
+          title: Text(
+            'Delete this chat?',
+            style: TextStyle(
+              color: _chatPrimaryText,
+              fontWeight:
+                  FontWeight.w700,
+              fontSize: 19,
+            ),
+          ),
+          content: Text(
+            'This conversation will be permanently deleted.',
+            style: TextStyle(
+              color: _chatSecondaryText,
+              height: 1.4,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () =>
+                  Navigator.of(
+                dialogContext,
+              ).pop(false),
+              child: Text(
+                AppLocalizations.of(
+                  context,
+                )!
+                    .cancelLabel,
+              ),
+            ),
+            TextButton(
+              onPressed: () =>
+                  Navigator.of(
+                dialogContext,
+              ).pop(true),
+              child: const Text(
+                'Delete',
+                style: TextStyle(
+                  color:
+                      Colors.redAccent,
+                  fontWeight:
+                      FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (shouldDelete != true) {
+      return;
+    }
+
+    _chats.removeWhere(
+      (c) => c['id'] == id,
+    );
+
+    if (id == _activeChatId) {
+      _messages.clear();
+      _activeChatId =
+          _newChatId();
+      _messageController.clear();
+    }
+
+    await _persist();
+
+    _analytics.chatCleared();
+
+    if (!mounted) return;
+
+    setState(() {});
+  }
+
   // ============================================================
   // SEND MESSAGE
   // ============================================================
@@ -253,126 +787,117 @@ class _RecoveryCoachChatScreenState
   Future<void> _sendMessage([
     String? quickPrompt,
   ]) async {
+    await _stopListeningIfNeeded();
+
     final text =
-    (quickPrompt ?? _messageController.text)
-        .trim();
+        (quickPrompt ??
+                _messageController.text)
+            .trim();
 
-    // ----------------------------------------------------------
-    // VALIDATE
-    // ----------------------------------------------------------
-
-    if (text.isEmpty || _isSending) {
+    if (text.isEmpty ||
+        _isSending) {
       return;
     }
 
     final loc =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
-    // ----------------------------------------------------------
+    // ==========================================================
     // FREE-TIER DAILY LIMIT
-    // ----------------------------------------------------------
+    // ==========================================================
 
     if (!_isPremium &&
         _messagesUsedToday >=
             _freeDailyLimit) {
-      _analytics.chatDailyLimitReached();
+      _analytics
+          .chatDailyLimitReached();
 
       _showPaywallDialog(
-        title: loc.dailyLimitReachedTitle,
+        title:
+            loc.dailyLimitReachedTitle,
         message:
-        loc.dailyLimitReachedMessage(
+            loc.dailyLimitReachedMessage(
           _freeDailyLimit,
         ),
       );
+
       return;
     }
 
-    // ----------------------------------------------------------
-    // CLEAR INPUT
-    // ----------------------------------------------------------
+    // ==========================================================
+    // IMPORTANT:
+    // Clear the input immediately after capturing the text.
+    // This also clears voice-to-text content.
+    // ==========================================================
 
     _messageController.clear();
 
-    // ----------------------------------------------------------
-    // ADD USER MESSAGE TO UI
-    // ----------------------------------------------------------
+    if (mounted) {
+      setState(() {
+        _messages.add({
+          'role': 'user',
+          'text': text,
+        });
 
-    setState(() {
-      _messages.add({
-        'role': 'user',
-        'text': text,
+        _isSending = true;
       });
-
-      _isSending = true;
-    });
+    }
 
     _scrollToBottom();
-
-    // ----------------------------------------------------------
-    // SAVE USER MESSAGE LOCALLY
-    // ----------------------------------------------------------
 
     await _saveChat();
 
     try {
-      // ========================================================
-      // GET PROFILE
-      // ========================================================
-
       final profile =
-          await _dashboardService.getProfile() ??
+          await _dashboardService
+                  .getProfile() ??
               <String, dynamic>{};
 
-      // ========================================================
-      // GET STATS
-      // ========================================================
-
       final stats =
-      await _dashboardService.getStats();
-
-      // ========================================================
-      // BUILD USER DATA
-      // ========================================================
+          await _dashboardService
+              .getStats();
 
       final userData =
-      <String, dynamic>{
+          <String, dynamic>{
         'name':
-        profile['name'] ?? _userName,
+            profile['name'] ??
+                _userName,
         'goal':
-        profile['goal'] ??
-            'Reduce drinking',
+            profile['goal'] ??
+                'Reduce drinking',
         'drinkingLevel':
-        profile['drinkingLevel'] ?? '',
+            profile['drinkingLevel'] ??
+                '',
         'drinksPerWeek':
-        profile['drinksPerWeek'] ?? 0,
+            profile['drinksPerWeek'] ??
+                0,
         'triggers':
-        profile['triggers'] ??
-            <dynamic>[],
+            profile['triggers'] ??
+                <dynamic>[],
         'quitReasons':
-        profile['quitReasons'] ??
-            <dynamic>[],
+            profile['quitReasons'] ??
+                <dynamic>[],
         'daysSober':
-        _daysSober,
+            _daysSober,
         'currentStreak':
-        _daysSober,
+            _daysSober,
         'moneySaved':
-        stats['moneySaved'] ?? 0,
+            stats['moneySaved'] ?? 0,
         'drinksAvoided':
-        stats['drinksAvoided'] ?? 0,
+            stats['drinksAvoided'] ??
+                0,
       };
 
-      // ========================================================
-      // CREATE GEMINI HISTORY
-      // ========================================================
-
       final conversationHistory =
-      <Map<String, dynamic>>[];
+          <Map<String, dynamic>>[];
 
-      for (final message in _messages) {
-        final role = message['role'];
+      for (final message
+          in _messages) {
+        final role =
+            message['role'];
 
         final messageText =
-        message['text'];
+            message['text'];
 
         if (role == null ||
             messageText == null ||
@@ -387,47 +912,18 @@ class _RecoveryCoachChatScreenState
 
         conversationHistory.add({
           'role': role,
-          'text': messageText.trim(),
+          'text':
+              messageText.trim(),
         });
       }
 
-      // ========================================================
-      // DEBUG
-      // ========================================================
-
-      debugPrint(
-        '================================================',
-      );
-      debugPrint('RECOVERY COACH');
-      debugPrint(
-        'Messages: ${conversationHistory.length}',
-      );
-      debugPrint(
-        'Latest role: '
-            '${conversationHistory.isNotEmpty ? conversationHistory.last['role'] : 'NONE'}',
-      );
-      debugPrint(
-        'Latest text: '
-            '${conversationHistory.isNotEmpty ? conversationHistory.last['text'] : 'NONE'}',
-      );
-      debugPrint(
-        '================================================',
-      );
-
-      // ========================================================
-      // SEND TO GEMINI
-      // ========================================================
-
       final response =
-      await _coachService.sendMessage(
+          await _coachService
+              .sendMessage(
         userData: userData,
         conversationHistory:
-        conversationHistory,
+            conversationHistory,
       );
-
-      // ========================================================
-      // ADD AI RESPONSE
-      // ========================================================
 
       if (!mounted) return;
 
@@ -438,55 +934,41 @@ class _RecoveryCoachChatScreenState
         });
 
         _isSending = false;
-      });
 
-      // ========================================================
-      // LOG SUCCESSFUL MESSAGE SEND
-      // ========================================================
+        // Make absolutely sure the input
+        // remains empty after a voice send.
+        _messageController.clear();
+      });
 
       _analytics.chatMessageSent(
         isQuickPrompt:
-        quickPrompt != null,
-        promptLabel: quickPrompt,
+            quickPrompt != null,
+        promptLabel:
+            quickPrompt,
       );
 
-      // ========================================================
-      // RECORD USAGE (only on success — a failed send shouldn't
-      // cost the user a free message)
-      // ========================================================
-
       final updatedCount =
-      await ChatUsageService.instance
-          .incrementTodayCount();
+          await ChatUsageService
+              .instance
+              .incrementTodayCount();
 
       if (mounted) {
         setState(() {
           _messagesUsedToday =
               updatedCount;
+
+          // Keep the field empty after
+          // successful response as well.
+          _messageController.clear();
         });
       }
-
-      // ========================================================
-      // SAVE COMPLETE CHAT
-      // ========================================================
 
       await _saveChat();
 
       _scrollToBottom();
     } catch (e) {
-      // ========================================================
-      // ERROR
-      // ========================================================
-
       debugPrint(
-        '================================================',
-      );
-      debugPrint(
-        'RECOVERY COACH ERROR',
-      );
-      debugPrint(e.toString());
-      debugPrint(
-        '================================================',
+        'RECOVERY COACH ERROR: $e',
       );
 
       _analytics.chatError(
@@ -494,10 +976,6 @@ class _RecoveryCoachChatScreenState
       );
 
       if (!mounted) return;
-
-      // --------------------------------------------------------
-      // REMOVE FAILED USER MESSAGE
-      // --------------------------------------------------------
 
       if (_messages.isNotEmpty &&
           _messages.last['role'] ==
@@ -509,13 +987,14 @@ class _RecoveryCoachChatScreenState
 
       setState(() {
         _isSending = false;
+
+        // Also clear after an error so
+        // the voice message does not remain
+        // in the input field.
+        _messageController.clear();
       });
 
       await _saveChat();
-
-      // --------------------------------------------------------
-      // SHOW ERROR
-      // --------------------------------------------------------
 
       if (!mounted) return;
 
@@ -523,7 +1002,9 @@ class _RecoveryCoachChatScreenState
           .showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!
+            AppLocalizations.of(
+              context,
+            )!
                 .coachConnectError,
           ),
         ),
@@ -534,7 +1015,7 @@ class _RecoveryCoachChatScreenState
   }
 
   // ============================================================
-  // PAYWALL DIALOG
+  // PAYWALL
   // ============================================================
 
   Future<void> _showPaywallDialog({
@@ -550,21 +1031,27 @@ class _RecoveryCoachChatScreenState
       builder: (context) {
         return AlertDialog(
           backgroundColor:
-          AppColors.white,
+              _chatSurface,
+          shape:
+              RoundedRectangleBorder(
+            borderRadius:
+                BorderRadius.circular(
+              20,
+            ),
+          ),
           title: Text(
             title,
-            style: const TextStyle(
-              color:
-              AppColors.textBlack,
+            style: TextStyle(
+              color: _chatPrimaryText,
               fontWeight:
-              FontWeight.w700,
+                  FontWeight.w700,
             ),
           ),
           content: Text(
             message,
-            style: const TextStyle(
-              color:
-              AppColors.textGrey,
+            style: TextStyle(
+              color: _chatSecondaryText,
+              height: 1.4,
             ),
           ),
           actions: [
@@ -574,13 +1061,15 @@ class _RecoveryCoachChatScreenState
                     .paywallDismissed(
                   'recovery_coach_chat',
                 );
+
                 Navigator.of(context)
                     .pop();
               },
               child: Text(
                 AppLocalizations.of(
                   context,
-                )!.maybeLaterLabel,
+                )!
+                    .maybeLaterLabel,
               ),
             ),
             TextButton(
@@ -589,18 +1078,19 @@ class _RecoveryCoachChatScreenState
                     .premiumPurchaseStarted(
                   'unknown',
                 );
+
                 Navigator.of(context)
                     .pop();
-                // TODO: navigate to PremiumPlanScreen once its route
-                // is reachable from here.
+
+                // TODO:
+                // Navigate to PremiumPlanScreen.
               },
-              child: const Text(
+              child: Text(
                 'Upgrade',
                 style: TextStyle(
-                  color:
-                  AppColors.primary,
+                  color: _chatAccentText,
                   fontWeight:
-                  FontWeight.w600,
+                      FontWeight.w600,
                 ),
               ),
             ),
@@ -610,13 +1100,9 @@ class _RecoveryCoachChatScreenState
     );
   }
 
-  // ============================================================
-  // QUICK PROMPT
-  // ============================================================
-
   void _sendQuickPrompt(
-      String prompt,
-      ) {
+    String prompt,
+  ) {
     _sendMessage(prompt);
   }
 
@@ -634,109 +1120,15 @@ class _RecoveryCoachChatScreenState
 
       _scrollController.animateTo(
         _scrollController
-            .position
-            .maxScrollExtent,
+            .position.maxScrollExtent,
         duration:
-        const Duration(
+            const Duration(
           milliseconds: 250,
         ),
-        curve: Curves.easeOut,
+        curve:
+            Curves.easeOut,
       );
     });
-  }
-
-  // ============================================================
-  // CLEAR CHAT
-  // ============================================================
-
-  Future<void> _clearChat() async {
-    final loc =
-    AppLocalizations.of(context)!;
-
-    final shouldClear =
-    await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor:
-          AppColors.white,
-          title: Text(
-            loc.clearConversationTitle,
-            style: const TextStyle(
-              color:
-              AppColors.textBlack,
-              fontWeight:
-              FontWeight.w700,
-            ),
-          ),
-          content: Text(
-            loc.clearConversationMessage,
-            style: const TextStyle(
-              color:
-              AppColors.textGrey,
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .pop(false);
-              },
-              child: Text(
-                AppLocalizations.of(
-                  context,
-                )!.cancelLabel,
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .pop(true);
-              },
-              child: Text(
-                loc.clearLabel,
-                style: const TextStyle(
-                  color:
-                  AppColors.primary,
-                  fontWeight:
-                  FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (shouldClear != true) {
-      return;
-    }
-
-    // ----------------------------------------------------------
-    // CLEAR MEMORY
-    // ----------------------------------------------------------
-
-    _messages.clear();
-
-    // ----------------------------------------------------------
-    // CLEAR LOCAL STORAGE
-    // ----------------------------------------------------------
-
-    await _storage.setJson(
-      _chatStorageKey,
-      {
-        'messages':
-        <Map<String, String>>[],
-      },
-    );
-
-    _analytics.chatCleared();
-
-    if (!mounted) return;
-
-    setState(() {});
-
-    _scrollToBottom();
   }
 
   // ============================================================
@@ -744,14 +1136,18 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     if (_isLoading) {
-      return const Scaffold(
-        backgroundColor:
-        AppColors.dashboardBackground,
+      return Scaffold(
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
         body: Center(
           child:
-          CircularProgressIndicator(),
+              CircularProgressIndicator(),
         ),
       );
     }
@@ -766,19 +1162,24 @@ class _RecoveryCoachChatScreenState
         _dismissKeyboard();
       },
       child: Scaffold(
-        backgroundColor:
-        AppColors.dashboardBackground,
-        resizeToAvoidBottomInset: true,
+        key: _scaffoldKey,
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
+        resizeToAvoidBottomInset:
+            true,
+        endDrawer:
+            _buildHistoryDrawer(),
         body: SafeArea(
           child: Column(
             children: [
               _buildHeader(),
 
-              const Divider(
+              Divider(
                 height: 1,
                 thickness: 1,
-                color:
-                AppColors.outlineGrey,
+                color: _chatBorder,
               ),
 
               Expanded(
@@ -796,84 +1197,503 @@ class _RecoveryCoachChatScreenState
   }
 
   // ============================================================
+  // HISTORY DRAWER
+  // ============================================================
+
+  Widget _buildHistoryDrawer() {
+    final sorted =
+        List<Map<String, dynamic>>.from(
+      _chats,
+    )..sort(
+        (a, b) =>
+            (b['updatedAt'] as String)
+                .compareTo(
+          a['updatedAt'] as String,
+        ),
+      );
+
+    return Drawer(
+      backgroundColor:
+          AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment:
+              CrossAxisAlignment.start,
+          children: [
+            // ==================================================
+            // DRAWER HEADER
+            // ==================================================
+
+            Padding(
+              padding:
+                  const EdgeInsets.fromLTRB(
+                20,
+                20,
+                20,
+                12,
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    width: 42,
+                    height: 42,
+                    decoration:
+                        BoxDecoration(
+                      color: _isDark
+                          ? _chatSurface
+                          : const Color(0xFFE0F3EF),
+                      borderRadius:
+                          BorderRadius
+                              .circular(
+                        13,
+                      ),
+                    ),
+                    child:
+                      Icon(
+                      Icons
+                          .chat_bubble_outline,
+                      color:
+                        _chatAccent,
+                      size: 21,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 12,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment:
+                          CrossAxisAlignment
+                              .start,
+                      children: [
+                        Text(
+                          'Chat history',
+                            style:
+                              TextStyle(
+                            fontWeight:
+                                FontWeight
+                                    .w700,
+                            fontSize: 19,
+                            color: _chatPrimaryText,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        Text(
+                          'Continue a previous conversation',
+                            style:
+                              TextStyle(
+                            fontWeight:
+                                FontWeight
+                                    .w400,
+                            fontSize: 12,
+                            color: _chatSecondaryText,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // ==================================================
+            // NEW CHAT BUTTON
+            // ==================================================
+
+            Padding(
+              padding:
+                  const EdgeInsets.fromLTRB(
+                16,
+                8,
+                16,
+                12,
+              ),
+              child: SizedBox(
+                width:
+                    double.infinity,
+                child:
+                    ElevatedButton.icon(
+                  onPressed:
+                      _isSending
+                          ? null
+                          : _startNewChat,
+                  icon:
+                      const Icon(
+                    Icons.add,
+                    color:
+                        AppColors.white,
+                  ),
+                  label:
+                      const Text(
+                    'New chat',
+                    style:
+                        TextStyle(
+                      color:
+                          AppColors
+                              .white,
+                      fontWeight:
+                          FontWeight
+                              .w600,
+                      fontSize: 15,
+                    ),
+                  ),
+                  style:
+                      ElevatedButton
+                          .styleFrom(
+                    backgroundColor: _chatAccent,
+                    disabledBackgroundColor:
+                      _chatAccent.withValues(
+                      alpha:
+                          0.45,
+                    ),
+                    padding:
+                        const EdgeInsets
+                            .symmetric(
+                      vertical: 14,
+                    ),
+                    elevation: 0,
+                    shape:
+                        RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius
+                              .circular(
+                        14,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            Divider(
+              height: 1,
+              color: _chatBorder,
+            ),
+
+            // ==================================================
+            // SAVED CHATS
+            // ==================================================
+
+            Expanded(
+              child: sorted.isEmpty
+                  ? Center(
+                      child: Padding(
+                        padding:
+                            EdgeInsets
+                                .all(
+                          24,
+                        ),
+                        child: Column(
+                          mainAxisSize:
+                              MainAxisSize
+                                  .min,
+                          children: [
+                            Icon(
+                              Icons
+                                  .chat_bubble_outline,
+                              size: 42,
+                                color: _chatSecondaryText,
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              'No saved chats yet',
+                              style:
+                                  TextStyle(
+                                color: _chatSecondaryText,
+                                fontWeight:
+                                    FontWeight
+                                        .w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  : ListView
+                      .separated(
+                      padding:
+                          const EdgeInsets
+                              .symmetric(
+                        vertical: 8,
+                      ),
+                      itemCount:
+                          sorted.length,
+                        separatorBuilder:
+                          (_, __) =>
+                            Divider(
+                        height: 1,
+                        indent: 16,
+                        endIndent: 16,
+                        color: _chatBorder,
+                      ),
+                      itemBuilder:
+                          (context, index) {
+                        final chat =
+                            sorted[index];
+
+                        final id =
+                            chat['id']
+                                as String;
+
+                        final isActive =
+                            id ==
+                                _activeChatId;
+
+                        return Padding(
+                          padding:
+                              const EdgeInsets
+                                  .symmetric(
+                            horizontal: 8,
+                            vertical: 2,
+                          ),
+                          child:
+                              Material(
+                            color: isActive
+                                ? _chatAccent.withValues(
+                                    alpha:
+                                        0.08,
+                                  )
+                                : Colors
+                                    .transparent,
+                            borderRadius:
+                                BorderRadius
+                                    .circular(
+                              14,
+                            ),
+                            child:
+                                InkWell(
+                              borderRadius:
+                                  BorderRadius
+                                      .circular(
+                                14,
+                              ),
+                              onTap: () =>
+                                  _openChat(
+                                id,
+                              ),
+                              child:
+                                  Padding(
+                                padding:
+                                    const EdgeInsets
+                                        .symmetric(
+                                  horizontal:
+                                      8,
+                                  vertical:
+                                      8,
+                                ),
+                                child:
+                                    Row(
+                                  children: [
+                                    Container(
+                                      width:
+                                          40,
+                                      height:
+                                          40,
+                                      decoration:
+                                          BoxDecoration(
+                                        color: isActive
+                                            ? _chatAccent.withValues(
+                                                alpha:
+                                                    0.12,
+                                              )
+                                            : _chatSurface,
+                                        borderRadius:
+                                            BorderRadius
+                                                .circular(
+                                          12,
+                                        ),
+                                      ),
+                                      child:
+                                          Icon(
+                                        Icons
+                                            .chat_bubble_outline,
+                                        color: isActive
+                                          ? _chatAccent
+                                          : _chatSecondaryText,
+                                        size:
+                                            19,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width:
+                                          10,
+                                    ),
+                                    Expanded(
+                                      child:
+                                          Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment
+                                                .start,
+                                        children: [
+                                          Text(
+                                            chat['title']
+                                                as String,
+                                            maxLines:
+                                                1,
+                                            overflow:
+                                                TextOverflow
+                                                    .ellipsis,
+                                            style:
+                                                TextStyle(
+                                              fontWeight: isActive
+                                                  ? FontWeight
+                                                      .w700
+                                                  : FontWeight
+                                                      .w500,
+                                              fontSize:
+                                                  14,
+                                                color: _chatPrimaryText,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height:
+                                                3,
+                                          ),
+                                          Text(
+                                            _formatDate(
+                                              chat['updatedAt']
+                                                  as String,
+                                            ),
+                                            style:
+                                              TextStyle(
+                                              fontSize:
+                                                  11,
+                                                color: _chatSecondaryText,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    IconButton(
+                                      tooltip:
+                                          'Delete chat',
+                                      splashRadius:
+                                          22,
+                                      icon:
+                                          const Icon(
+                                        Icons
+                                            .delete_outline,
+                                        color:
+                                            Colors
+                                                .redAccent,
+                                        size:
+                                            21,
+                                      ),
+                                      onPressed:
+                                          () =>
+                                              _confirmDeleteChat(
+                                        id,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ============================================================
   // HEADER
   // ============================================================
 
   Widget _buildHeader() {
     final loc =
-    AppLocalizations.of(context)!;
-    final hasMessages =
-        _messages.isNotEmpty;
+        AppLocalizations.of(context)!;
 
     return Padding(
       padding:
-      const EdgeInsets.fromLTRB(
+          const EdgeInsets.fromLTRB(
         12,
         10,
-        12,
+        8,
         10,
       ),
       child: Row(
         children: [
+          // ==================================================
+          // BACK
+          // ==================================================
+
           InkWell(
             borderRadius:
-            BorderRadius.circular(
-              24,
-            ),
+                BorderRadius.circular(24),
             onTap: () {
               _dismissKeyboard();
-              Navigator.of(context)
-                  .pop();
+              Navigator.of(context).pop();
             },
-            child: const SizedBox(
+            child: SizedBox(
               width: 44,
               height: 44,
               child: Icon(
                 Icons.chevron_left,
-                color:
-                AppColors.textBlack,
+                color: _chatPrimaryText,
                 size: 32,
               ),
             ),
           ),
 
-          const SizedBox(width: 4),
+          const SizedBox(
+            width: 4,
+          ),
+
+          // ==================================================
+          // COACH ICON
+          // ==================================================
 
           Container(
             width: 44,
             height: 44,
             decoration:
-            const BoxDecoration(
-              shape:
-              BoxShape.circle,
-              color:
-              Color(0xFFE0F3EF),
+                BoxDecoration(
+              shape: BoxShape.circle,
+              color: _isDark
+                  ? _chatSurface
+                  : const Color(0xFFE0F3EF),
             ),
-            child: const Icon(
+            child: Icon(
               Icons.favorite_border,
-              color:
-              AppColors.primary,
+              color: _chatAccent,
               size: 25,
             ),
           ),
 
-          const SizedBox(width: 12),
+          const SizedBox(
+            width: 12,
+          ),
+
+          // ==================================================
+          // TITLE
+          // ==================================================
 
           Expanded(
             child: Column(
               crossAxisAlignment:
-              CrossAxisAlignment
-                  .start,
+                  CrossAxisAlignment
+                      .start,
               children: [
                 Text(
                   loc.recoveryCoachTitle,
-                  style:
-                  const TextStyle(
+                    style:
+                      TextStyle(
                     fontWeight:
-                    FontWeight.w700,
+                        FontWeight.w700,
                     fontSize: 18,
-                    color: AppColors
-                        .textBlack,
+                    color: _chatPrimaryText,
                   ),
                 ),
                 const SizedBox(
@@ -881,43 +1701,82 @@ class _RecoveryCoachChatScreenState
                 ),
                 Text(
                   loc.onlineLabel,
-                  style:
-                  const TextStyle(
+                    style:
+                      TextStyle(
                     fontWeight:
-                    FontWeight.w500,
+                        FontWeight.w500,
                     fontSize: 14,
-                    color: AppColors
-                        .primary,
+                    color: _chatAccentText,
                   ),
                 ),
               ],
             ),
           ),
 
-          if (hasMessages)
-            PopupMenuButton<String>(
-              icon: const Icon(
-                Icons.more_vert,
-                color: AppColors
-                    .textGrey,
-              ),
-              onSelected:
-                  (value) {
-                if (value ==
-                    'clear') {
-                  _clearChat();
-                }
-              },
-              itemBuilder: (_) => [
-                PopupMenuItem(
-                  value: 'clear',
-                  child: Text(
-                    loc
-                        .clearConversationMenuItem,
-                  ),
-                ),
-              ],
+          // ==================================================
+          // VERTICAL THREE DOTS / HISTORY
+          // ==================================================
+
+          Padding(
+            padding:
+                const EdgeInsets.only(
+              left: 4,
             ),
+            child: Material(
+              color:
+                  Colors.transparent,
+              child: InkWell(
+                borderRadius:
+                    BorderRadius.circular(
+                  14,
+                ),
+                onTap: () {
+                  _dismissKeyboard();
+
+                  _scaffoldKey
+                      .currentState
+                      ?.openEndDrawer();
+                },
+                child: Container(
+                  width: 44,
+                  height: 44,
+                  decoration:
+                      BoxDecoration(
+                    color: _chatSurface,
+                    borderRadius:
+                        BorderRadius.circular(
+                      14,
+                    ),
+                    border: Border.all(
+                      color:
+                          AppColors
+                              .outlineGrey,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            Colors.black
+                                .withValues(
+                          alpha: 0.035,
+                        ),
+                        blurRadius: 8,
+                        offset:
+                            const Offset(
+                          0,
+                          2,
+                        ),
+                      ),
+                    ],
+                  ),
+                 child: Icon(
+  Icons.menu,
+  color: _chatSecondaryText,
+  size: 24,
+),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -929,11 +1788,11 @@ class _RecoveryCoachChatScreenState
 
   Widget _buildEmptyChat() {
     final loc =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
 
     return SingleChildScrollView(
       padding:
-      const EdgeInsets.fromLTRB(
+          const EdgeInsets.fromLTRB(
         24,
         40,
         24,
@@ -941,28 +1800,28 @@ class _RecoveryCoachChatScreenState
       ),
       child: Column(
         children: [
-          // --------------------------------------------------------
-          // HERO AVATAR
-          // --------------------------------------------------------
+          // ==================================================
+          // COACH HERO ICON
+          // ==================================================
 
           Container(
             width: 92,
             height: 92,
             decoration:
-            BoxDecoration(
+                BoxDecoration(
               shape:
-              BoxShape.circle,
+                  BoxShape.circle,
               gradient:
-              LinearGradient(
+                  LinearGradient(
                 begin:
-                Alignment.topLeft,
+                    Alignment.topLeft,
                 end:
-                Alignment.bottomRight,
+                    Alignment.bottomRight,
                 colors: [
-                  AppColors.primary,
-                  AppColors.primary
-                      .withOpacity(
-                    0.7,
+                  _chatAccent,
+                  _chatAccent
+                      .withValues(
+                    alpha: 0.70,
                   ),
                 ],
               ),
@@ -970,12 +1829,12 @@ class _RecoveryCoachChatScreenState
                 BoxShadow(
                   color: AppColors
                       .primary
-                      .withOpacity(
-                    0.28,
+                      .withValues(
+                    alpha: 0.28,
                   ),
                   blurRadius: 26,
                   offset:
-                  const Offset(
+                      const Offset(
                     0,
                     12,
                   ),
@@ -985,7 +1844,7 @@ class _RecoveryCoachChatScreenState
             child: const Icon(
               Icons.favorite,
               color:
-              AppColors.white,
+                  AppColors.white,
               size: 38,
             ),
           ),
@@ -994,21 +1853,16 @@ class _RecoveryCoachChatScreenState
             height: 22,
           ),
 
-          // --------------------------------------------------------
-          // GREETING
-          // --------------------------------------------------------
-
           Text(
             loc.chatGreeting(
               _userName,
             ),
             style:
-            const TextStyle(
+                TextStyle(
               fontWeight:
-              FontWeight.w700,
+                  FontWeight.w700,
               fontSize: 24,
-              color:
-              AppColors.textBlack,
+                color: _chatPrimaryText,
             ),
           ),
 
@@ -1021,15 +1875,14 @@ class _RecoveryCoachChatScreenState
               _daysSober,
             ),
             textAlign:
-            TextAlign.center,
+                TextAlign.center,
             style:
-            const TextStyle(
+              TextStyle(
               fontWeight:
-              FontWeight.w400,
+                  FontWeight.w400,
               fontSize: 15,
               height: 1.5,
-              color:
-              AppColors.textGrey,
+                color: _chatSecondaryText,
             ),
           ),
 
@@ -1037,44 +1890,40 @@ class _RecoveryCoachChatScreenState
             height: 34,
           ),
 
-          // --------------------------------------------------------
-          // SECTION DIVIDER
-          // --------------------------------------------------------
+          // ==================================================
+          // QUICK PROMPTS TITLE
+          // ==================================================
 
           Row(
             children: [
-              const Expanded(
+              Expanded(
                 child: Divider(
-                  color: AppColors
-                      .outlineGrey,
+                  color: _chatBorder,
                   thickness: 1,
                 ),
               ),
               Padding(
                 padding:
-                const EdgeInsets
-                    .symmetric(
+                    const EdgeInsets
+                        .symmetric(
                   horizontal: 12,
                 ),
                 child: Text(
-                  loc
-                      .quickPromptsLabel,
-                  style:
-                  const TextStyle(
+                  loc.quickPromptsLabel,
+                    style:
+                      TextStyle(
                     fontWeight:
-                    FontWeight.w600,
+                        FontWeight.w600,
                     fontSize: 12,
                     letterSpacing:
-                    0.8,
-                    color: AppColors
-                        .textLightGrey,
+                        0.8,
+                    color: _chatSecondaryText,
                   ),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Divider(
-                  color: AppColors
-                      .outlineGrey,
+                  color: _chatBorder,
                   thickness: 1,
                 ),
               ),
@@ -1085,15 +1934,15 @@ class _RecoveryCoachChatScreenState
             height: 18,
           ),
 
-          // --------------------------------------------------------
-          // QUICK PROMPT CARDS
-          // --------------------------------------------------------
+          // ==================================================
+          // QUICK PROMPTS
+          // ==================================================
 
           GridView.count(
             crossAxisCount: 2,
             shrinkWrap: true,
             physics:
-            const NeverScrollableScrollPhysics(),
+                const NeverScrollableScrollPhysics(),
             mainAxisSpacing: 12,
             crossAxisSpacing: 12,
             childAspectRatio: 1.35,
@@ -1102,35 +1951,35 @@ class _RecoveryCoachChatScreenState
                 icon: Icons
                     .local_fire_department_outlined,
                 label:
-                loc.promptCravingLabel,
+                    loc.promptCravingLabel,
                 subtitle:
-                loc.promptCravingSubtitle,
+                    loc.promptCravingSubtitle,
                 iconColor:
-                const Color(
+                    const Color(
                   0xFFE96B45,
                 ),
               ),
               _buildQuickPrompt(
                 icon:
-                Icons.auto_awesome,
+                    Icons.auto_awesome,
                 label:
-                loc.promptMotivationLabel,
+                    loc.promptMotivationLabel,
                 subtitle:
-                loc.promptMotivationSubtitle,
+                    loc.promptMotivationSubtitle,
                 iconColor:
-                const Color(
+                    const Color(
                   0xFFE8A51C,
                 ),
               ),
               _buildQuickPrompt(
                 icon:
-                Icons.people_outline,
+                    Icons.people_outline,
                 label:
-                loc.promptSocialLabel,
+                    loc.promptSocialLabel,
                 subtitle:
-                loc.promptSocialSubtitle,
+                    loc.promptSocialSubtitle,
                 iconColor:
-                const Color(
+                    const Color(
                   0xFF3985C6,
                 ),
               ),
@@ -1138,11 +1987,11 @@ class _RecoveryCoachChatScreenState
                 icon: Icons
                     .sentiment_dissatisfied_outlined,
                 label:
-                loc.promptSlippedLabel,
+                    loc.promptSlippedLabel,
                 subtitle:
-                loc.promptSlippedSubtitle,
+                    loc.promptSlippedSubtitle,
                 iconColor:
-                const Color(
+                    const Color(
                   0xFFD95353,
                 ),
               ),
@@ -1160,56 +2009,45 @@ class _RecoveryCoachChatScreenState
   Widget _buildChatMessages() {
     return ListView.builder(
       controller:
-      _scrollController,
+          _scrollController,
       padding:
-      const EdgeInsets.fromLTRB(
+          const EdgeInsets.fromLTRB(
         16,
         24,
         16,
         20,
       ),
       itemCount:
-      _messages.length +
-          (_isSending ? 1 : 0),
+          _messages.length +
+              (_isSending ? 1 : 0),
       itemBuilder:
           (context, index) {
         if (_isSending &&
-            index ==
-                _messages.length) {
+            index == _messages.length) {
           return _buildTypingIndicator();
         }
 
         final message =
-        _messages[index];
+            _messages[index];
 
         final role =
-        message['role'];
+            message['role'];
 
         final text =
             message['text'] ?? '';
 
-        if (role == 'user') {
-          return Padding(
-            padding:
-            const EdgeInsets.only(
-              bottom: 18,
-            ),
-            child:
-            _buildUserMessage(
-              text,
-            ),
-          );
-        }
-
         return Padding(
           padding:
-          const EdgeInsets.only(
+              const EdgeInsets.only(
             bottom: 18,
           ),
-          child:
-          _buildCoachMessage(
-            text,
-          ),
+          child: role == 'user'
+              ? _buildUserMessage(
+                  text,
+                )
+              : _buildCoachMessage(
+                  text,
+                ),
         );
       },
     );
@@ -1220,153 +2058,129 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   Widget _buildCoachMessage(
-      String text,
-      ) {
+    String text,
+  ) {
     return Row(
       crossAxisAlignment:
-      CrossAxisAlignment
-          .start,
+          CrossAxisAlignment.start,
       children: [
         Container(
           width: 44,
           height: 44,
           decoration:
-          const BoxDecoration(
+            BoxDecoration(
             shape:
-            BoxShape.circle,
-            color:
-            Color(0xFFE0F3EF),
+                BoxShape.circle,
+          color: _isDark
+            ? _chatSurface
+            : const Color(0xFFE0F3EF),
           ),
-          child: const Icon(
+          child: Icon(
             Icons.favorite_border,
-            color:
-            AppColors.primary,
+          color: _chatAccent,
             size: 23,
           ),
         ),
 
-        const SizedBox(width: 10),
+        const SizedBox(
+          width: 10,
+        ),
 
         Flexible(
           child: Container(
             padding:
-            const EdgeInsets
-                .symmetric(
+                const EdgeInsets
+                    .symmetric(
               horizontal: 16,
               vertical: 14,
             ),
             decoration:
-            BoxDecoration(
-              color:
-              AppColors.white,
+                BoxDecoration(
+                color: _chatSurface,
               borderRadius:
-              const BorderRadius
-                  .only(
+                  const BorderRadius
+                      .only(
                 topLeft:
-                Radius.circular(
-                  4,
-                ),
+                    Radius.circular(4),
                 topRight:
-                Radius.circular(
-                  20,
-                ),
+                    Radius.circular(20),
                 bottomLeft:
-                Radius.circular(
-                  20,
-                ),
+                    Radius.circular(20),
                 bottomRight:
-                Radius.circular(
-                  20,
-                ),
+                    Radius.circular(20),
               ),
               border: Border.all(
-                color:
-                AppColors
-                    .outlineGrey,
+                color: _chatBorder,
               ),
             ),
             child:
-            MarkdownBody(
+                MarkdownBody(
               data: text,
               selectable: true,
               styleSheet:
-              MarkdownStyleSheet(
+                  MarkdownStyleSheet(
                 p:
-                const TextStyle(
+                    TextStyle(
                   fontWeight:
-                  FontWeight.w400,
+                      FontWeight.w400,
                   fontSize: 15,
                   height: 1.45,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 strong:
-                const TextStyle(
+                    TextStyle(
                   fontWeight:
-                  FontWeight.w700,
+                      FontWeight.w700,
                   fontSize: 15,
                   height: 1.45,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 em:
-                const TextStyle(
+                    TextStyle(
                   fontStyle:
-                  FontStyle.italic,
+                      FontStyle.italic,
                   fontSize: 15,
                   height: 1.45,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 listBullet:
-                const TextStyle(
+                    TextStyle(
                   fontWeight:
-                  FontWeight.w400,
+                      FontWeight.w400,
                   fontSize: 15,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 h1:
-                const TextStyle(
+                    TextStyle(
                   fontWeight:
-                  FontWeight.w700,
+                      FontWeight.w700,
                   fontSize: 18,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 h2:
-                const TextStyle(
+                    TextStyle(
                   fontWeight:
-                  FontWeight.w700,
+                      FontWeight.w700,
                   fontSize: 17,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 h3:
-                const TextStyle(
+                    TextStyle(
                   fontWeight:
-                  FontWeight.w700,
+                      FontWeight.w700,
                   fontSize: 16,
-                  color:
-                  AppColors
-                      .textBlack,
+                    color: _chatPrimaryText,
                 ),
                 code:
-                const TextStyle(
+                    TextStyle(
                   fontSize: 13,
-                  backgroundColor:
-                  Color(
-                    0xFFF0F0F0,
-                  ),
-                  color:
-                  AppColors
-                      .textBlack,
+                  backgroundColor: _isDark
+                      ? AppColors.pageBackground(
+                          context,
+                          light: const Color(0xFFF0F0F0),
+                        )
+                      : const Color(0xFFF0F0F0),
+                    color: _chatPrimaryText,
                 ),
                 blockSpacing: 8,
                 listIndent: 20,
@@ -1383,56 +2197,51 @@ class _RecoveryCoachChatScreenState
   // ============================================================
 
   Widget _buildUserMessage(
-      String text,
-      ) {
+    String text,
+  ) {
     return Align(
       alignment:
-      Alignment.centerRight,
+          Alignment.centerRight,
       child: Container(
         constraints:
-        const BoxConstraints(
+            const BoxConstraints(
           maxWidth: 310,
         ),
         padding:
-        const EdgeInsets
-            .symmetric(
+            const EdgeInsets
+                .symmetric(
           horizontal: 18,
           vertical: 14,
         ),
         decoration:
-        const BoxDecoration(
-          color:
-          AppColors.primary,
+            BoxDecoration(
+          color: AppColors.isDark(context)
+              ? const Color(0xFF1976D2)
+              : AppColors.primary,
           borderRadius:
-          BorderRadius.only(
+              BorderRadius.only(
             topLeft:
-            Radius.circular(
-              20,
-            ),
+                Radius.circular(20),
             topRight:
-            Radius.circular(
-              4,
-            ),
+                Radius.circular(4),
             bottomLeft:
-            Radius.circular(
-              20,
-            ),
+                Radius.circular(20),
             bottomRight:
-            Radius.circular(
-              20,
-            ),
+                Radius.circular(20),
           ),
         ),
         child: Text(
           text,
           style:
-          const TextStyle(
+              TextStyle(
             fontWeight:
-            FontWeight.w500,
+                FontWeight.w500,
             fontSize: 15,
             height: 1.45,
-            color:
-            AppColors.white,
+            color: AppColors.primaryText(
+              context,
+              light: AppColors.white,
+            ),
           ),
         ),
       ),
@@ -1446,62 +2255,59 @@ class _RecoveryCoachChatScreenState
   Widget _buildTypingIndicator() {
     return Row(
       crossAxisAlignment:
-      CrossAxisAlignment
-          .start,
+          CrossAxisAlignment.start,
       children: [
         Container(
           width: 44,
           height: 44,
           decoration:
-          const BoxDecoration(
+            BoxDecoration(
             shape:
-            BoxShape.circle,
-            color:
-            Color(0xFFE0F3EF),
+                BoxShape.circle,
+          color: _isDark
+            ? _chatSurface
+            : const Color(0xFFE0F3EF),
           ),
-          child: const Icon(
+          child: Icon(
             Icons.favorite_border,
-            color:
-            AppColors.primary,
+          color: _chatAccent,
             size: 23,
           ),
         ),
 
-        const SizedBox(width: 10),
+        const SizedBox(
+          width: 10,
+        ),
 
         Container(
           padding:
-          const EdgeInsets
-              .symmetric(
+              const EdgeInsets
+                  .symmetric(
             horizontal: 18,
             vertical: 15,
           ),
           decoration:
-          BoxDecoration(
-            color:
-            AppColors.white,
+              BoxDecoration(
+            color: _chatSurface,
             borderRadius:
-            BorderRadius.circular(
+                BorderRadius.circular(
               20,
             ),
             border: Border.all(
-              color:
-              AppColors
-                  .outlineGrey,
+                color: _chatBorder,
             ),
           ),
-          child:
-          const SizedBox(
+          child: SizedBox(
             width: 30,
             height: 16,
             child: Center(
               child: Text(
                 '•••',
-                style: TextStyle(
+                style:
+                    TextStyle(
                   fontSize: 18,
                   letterSpacing: 3,
-                  color: AppColors
-                      .textGrey,
+                    color: _chatSecondaryText,
                 ),
               ),
             ),
@@ -1512,7 +2318,7 @@ class _RecoveryCoachChatScreenState
   }
 
   // ============================================================
-  // QUICK PROMPT
+  // QUICK PROMPT CARD
   // ============================================================
 
   Widget _buildQuickPrompt({
@@ -1521,113 +2327,112 @@ class _RecoveryCoachChatScreenState
     required String subtitle,
     required Color iconColor,
   }) {
-    return InkWell(
-      borderRadius:
-      BorderRadius.circular(
-        20,
-      ),
-      onTap: () {
-        _sendQuickPrompt(
-          label,
-        );
-      },
-      child: Container(
-        padding:
-        const EdgeInsets.all(
-          14,
+    return Material(
+      color:
+          Colors.transparent,
+      child: InkWell(
+        borderRadius:
+            BorderRadius.circular(
+          20,
         ),
-        decoration:
-        BoxDecoration(
-          color:
-          AppColors.white,
-          borderRadius:
-          BorderRadius.circular(
-            20,
+        onTap: () {
+          _sendQuickPrompt(
+            label,
+          );
+        },
+        child: Container(
+          padding:
+              const EdgeInsets.all(
+            14,
           ),
-          border: Border.all(
-            color:
-            AppColors
-                .outlineGrey,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black
-                  .withOpacity(
-                0.03,
-              ),
-              blurRadius: 12,
-              offset:
-              const Offset(
-                0,
-                4,
-              ),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment:
-          CrossAxisAlignment
-              .start,
-          mainAxisAlignment:
-          MainAxisAlignment
-              .spaceBetween,
-          children: [
-            Container(
-              width: 36,
-              height: 36,
-              decoration:
+          decoration:
               BoxDecoration(
-                color: iconColor
-                    .withOpacity(
-                  0.12,
+            color: _chatSurface,
+            borderRadius:
+                BorderRadius.circular(
+              20,
+            ),
+            border: Border.all(
+                color: _chatBorder,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black
+                    .withValues(
+                  alpha: 0.03,
                 ),
-                shape:
-                BoxShape.circle,
+                blurRadius: 12,
+                offset:
+                    const Offset(
+                  0,
+                  4,
+                ),
               ),
-              child: Icon(
-                icon,
-                size: 18,
-                color:
-                iconColor,
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment:
+                CrossAxisAlignment
+                    .start,
+            mainAxisAlignment:
+                MainAxisAlignment
+                    .spaceBetween,
+            children: [
+              Container(
+                width: 36,
+                height: 36,
+                decoration:
+                    BoxDecoration(
+                  color: iconColor
+                      .withValues(
+                    alpha: 0.12,
+                  ),
+                  shape:
+                      BoxShape.circle,
+                ),
+                child: Icon(
+                  icon,
+                  size: 18,
+                  color:
+                      iconColor,
+                ),
               ),
-            ),
-            const Spacer(),
-            Text(
-              label,
-              maxLines: 1,
-              overflow:
-              TextOverflow
-                  .ellipsis,
-              style:
-              const TextStyle(
-                fontWeight:
-                FontWeight.w600,
-                fontSize: 14,
-                color:
-                AppColors
-                    .textBlack,
+
+              const Spacer(),
+
+              Text(
+                label,
+                maxLines: 1,
+                overflow:
+                    TextOverflow.ellipsis,
+                style:
+                  TextStyle(
+                  fontWeight:
+                      FontWeight.w600,
+                  fontSize: 14,
+                    color: _chatPrimaryText,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 3,
-            ),
-            Text(
-              subtitle,
-              maxLines: 1,
-              overflow:
-              TextOverflow
-                  .ellipsis,
-              style:
-              const TextStyle(
-                fontWeight:
-                FontWeight.w400,
-                fontSize: 11,
-                color:
-                AppColors
-                    .textGrey,
+
+              const SizedBox(
+                height: 3,
               ),
-            ),
-          ],
+
+              Text(
+                subtitle,
+                maxLines: 1,
+                overflow:
+                    TextOverflow.ellipsis,
+                style:
+                  TextStyle(
+                  fontWeight:
+                      FontWeight.w400,
+                  fontSize: 11,
+                    color: _chatSecondaryText,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -1639,145 +2444,293 @@ class _RecoveryCoachChatScreenState
 
   Widget _buildMessageInput() {
     final loc =
-    AppLocalizations.of(context)!;
+        AppLocalizations.of(context)!;
+
+    final int remaining =
+        (_freeDailyLimit -
+                _messagesUsedToday)
+            .clamp(
+      0,
+      _freeDailyLimit,
+    );
 
     return Container(
       padding:
-      const EdgeInsets.fromLTRB(
+          const EdgeInsets.fromLTRB(
         16,
         10,
         16,
         16,
       ),
       decoration:
-      BoxDecoration(
-        color:
-        AppColors
-            .dashboardBackground,
+          BoxDecoration(
+        color: AppColors.pageBackground(
+          context,
+          light: AppColors.dashboardBackground,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black
-                .withOpacity(
-              0.04,
+                .withValues(
+              alpha: 0.04,
             ),
             blurRadius: 12,
             offset:
-            const Offset(
+                const Offset(
               0,
               -3,
             ),
           ),
         ],
       ),
-      child: Row(
-        crossAxisAlignment:
-        CrossAxisAlignment.end,
+      child: Column(
+        mainAxisSize:
+            MainAxisSize.min,
         children: [
-          Expanded(
-            child: Container(
-              constraints:
-              const BoxConstraints(
-                minHeight: 52,
-                maxHeight: 120,
+          Row(
+            crossAxisAlignment:
+                CrossAxisAlignment
+                    .end,
+            children: [
+              // ==================================================
+              // TEXT FIELD
+              // ==================================================
+
+              Expanded(
+                child: Container(
+                  constraints:
+                      const BoxConstraints(
+                    minHeight: 52,
+                    maxHeight: 120,
+                  ),
+                  decoration:
+                      BoxDecoration(
+                    color: _chatSurface,
+                    borderRadius:
+                        BorderRadius.circular(
+                      28,
+                    ),
+                    border: _isListening
+                        ? Border.all(
+                            color: Colors.redAccent,
+                          )
+                        : _isDark
+                            ? null
+                            : Border.all(
+                                color: _chatBorder,
+                              ),
+                  ),
+                  child:
+                      TextField(
+                    controller:
+                        _messageController,
+                    enabled:
+                        !_isSending,
+                    minLines: 1,
+                    maxLines: 4,
+                    textInputAction:
+                        TextInputAction
+                            .newline,
+                    style:
+                      TextStyle(
+                      fontSize: 15,
+                        color: _chatPrimaryText,
+                    ),
+                    decoration:
+                        InputDecoration(
+                      hintText:
+                          _isListening
+                              ? 'Listening…'
+                              : loc
+                                  .typeMessageHint,
+                      hintStyle:
+                          TextStyle(
+                        color: _isDark
+                            ? Colors.white70
+                            : AppColors.textLightGrey,
+                        fontSize: 15,
+                      ),
+                      contentPadding:
+                          const EdgeInsets
+                              .symmetric(
+                        horizontal: 20,
+                        vertical: 14,
+                      ),
+                      border:
+                          InputBorder.none,
+                        enabledBorder:
+                          InputBorder.none,
+                        focusedBorder:
+                          InputBorder.none,
+                        disabledBorder:
+                          InputBorder.none,
+                        errorBorder:
+                          InputBorder.none,
+                        focusedErrorBorder:
+                          InputBorder.none,
+                    ),
+                    onSubmitted: (_) {
+                      if (!_isSending) {
+                        _sendMessage();
+                      }
+                    },
+                  ),
+                ),
               ),
-              decoration:
-              BoxDecoration(
+
+              const SizedBox(
+                width: 8,
+              ),
+
+              // ==================================================
+              // MIC
+              // ==================================================
+
+              Material(
                 color:
-                AppColors.white,
-                borderRadius:
-                BorderRadius
-                    .circular(
-                  28,
-                ),
-                border: Border.all(
-                  color: AppColors
-                      .outlineGrey,
+                    Colors.transparent,
+                child: InkWell(
+                  borderRadius:
+                      BorderRadius.circular(
+                    30,
+                  ),
+                  onTap: _isSending
+                      ? null
+                      : _toggleListening,
+                  child:
+                      AnimatedContainer(
+                    duration:
+                        const Duration(
+                      milliseconds: 180,
+                    ),
+                    width: 54,
+                    height: 54,
+                    decoration:
+                        BoxDecoration(
+                      shape:
+                          BoxShape.circle,
+                      color: _isListening
+                          ? Colors
+                              .redAccent
+                            : _chatSurface,
+                      border:
+                          Border.all(
+                        color: _isListening
+                            ? Colors
+                                .redAccent
+                            : _chatBorder,
+                      ),
+                      boxShadow: [
+                        if (!_isListening)
+                          BoxShadow(
+                            color: Colors
+                                .black
+                                .withValues(
+                              alpha:
+                                  0.025,
+                            ),
+                            blurRadius:
+                                8,
+                            offset:
+                                const Offset(
+                              0,
+                              2,
+                            ),
+                          ),
+                      ],
+                    ),
+                    child: Icon(
+                      _isListening
+                          ? Icons.stop
+                          : Icons
+                              .mic_none,
+                      color:
+                          _isListening
+                              ? AppColors
+                                  .white
+                                : _chatAccent,
+                      size: 25,
+                    ),
+                  ),
                 ),
               ),
-              child: TextField(
-                controller:
-                _messageController,
-                enabled:
-                !_isSending,
-                minLines: 1,
-                maxLines: 4,
-                textInputAction:
-                TextInputAction
-                    .newline,
+
+              const SizedBox(
+                width: 8,
+              ),
+
+              // ==================================================
+              // SEND
+              // ==================================================
+
+              Material(
+                color:
+                    Colors.transparent,
+                child: InkWell(
+                  borderRadius:
+                      BorderRadius.circular(
+                    30,
+                  ),
+                  onTap: _isSending
+                      ? null
+                      : () {
+                          _sendMessage();
+                        },
+                  child:
+                      AnimatedContainer(
+                    duration:
+                        const Duration(
+                      milliseconds: 180,
+                    ),
+                    width: 54,
+                    height: 54,
+                    decoration:
+                        BoxDecoration(
+                      shape:
+                          BoxShape.circle,
+                      color: _isSending
+                            ? _chatAccent.withValues(
+                              alpha:
+                                  0.5,
+                            )
+                            : _chatAccent,
+                    ),
+                    child:
+                        const Icon(
+                      Icons
+                          .send_outlined,
+                      color:
+                          AppColors.white,
+                      size: 25,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          // ==================================================
+          // FREE MESSAGES LEFT
+          // ==================================================
+
+          if (!_isPremium)
+            Padding(
+              padding:
+                  const EdgeInsets.only(
+                top: 8,
+              ),
+              child: Text(
+                '$remaining / $_freeDailyLimit free messages left today',
                 style:
-                const TextStyle(
-                  fontSize: 15,
-                  color: AppColors
-                      .textBlack,
+                    TextStyle(
+                  fontSize: 12,
+                  color: remaining == 0
+                      ? Colors
+                          .redAccent
+                        : _chatSecondaryText,
                 ),
-                decoration:
-                InputDecoration(
-                  hintText:
-                  loc.typeMessageHint,
-                  hintStyle:
-                  const TextStyle(
-                    color: AppColors
-                        .textLightGrey,
-                    fontSize: 15,
-                  ),
-                  contentPadding:
-                  const EdgeInsets
-                      .symmetric(
-                    horizontal: 20,
-                    vertical: 14,
-                  ),
-                  border:
-                  InputBorder
-                      .none,
-                ),
-                onSubmitted:
-                    (_) {
-                  if (!_isSending) {
-                    _sendMessage();
-                  }
-                },
               ),
             ),
-          ),
-
-          const SizedBox(
-            width: 10,
-          ),
-
-          InkWell(
-            borderRadius:
-            BorderRadius.circular(
-              30,
-            ),
-            onTap: _isSending
-                ? null
-                : () {
-              _sendMessage();
-            },
-            child: Container(
-              width: 54,
-              height: 54,
-              decoration:
-              BoxDecoration(
-                shape:
-                BoxShape.circle,
-                color: _isSending
-                    ? AppColors
-                    .primary
-                    .withOpacity(
-                  0.5,
-                )
-                    : AppColors
-                    .primary,
-              ),
-              child: const Icon(
-                Icons.send_outlined,
-                color:
-                AppColors.white,
-                size: 25,
-              ),
-            ),
-          ),
         ],
       ),
     );

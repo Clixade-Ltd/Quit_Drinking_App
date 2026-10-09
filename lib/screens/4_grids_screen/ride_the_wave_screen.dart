@@ -6,6 +6,7 @@ import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 import '../../constants/app_colors.dart';
 import '../../services/local_storage_service.dart';
 import '../../services/analytics_service.dart';
+import '../../theme/theme_controller.dart';
 
 class RideTheWaveScreen extends StatefulWidget {
   const RideTheWaveScreen({super.key});
@@ -18,17 +19,20 @@ class RideTheWaveScreen extends StatefulWidget {
 class _RideTheWaveScreenState
     extends State<RideTheWaveScreen> {
   static const Duration _timerDuration =
-  Duration(minutes: 15);
+      Duration(minutes: 15);
 
   static const String _cravingsBeatenKey =
       'cravings_beaten_count';
 
-  final AnalyticsService _analytics = AnalyticsService.instance;
+  final AnalyticsService _analytics =
+      AnalyticsService.instance;
 
   Timer? _countdownTimer;
   Duration _remaining = _timerDuration;
   bool _isTimerRunning = false;
   bool _isComplete = false;
+
+  bool get _isDark => AppColors.isDark(context);
 
   @override
   void dispose() {
@@ -47,7 +51,7 @@ class _RideTheWaveScreenState
 
     _countdownTimer = Timer.periodic(
       const Duration(seconds: 1),
-          (timer) {
+      (timer) {
         if (!mounted) return;
 
         if (_remaining.inSeconds <= 1) {
@@ -65,7 +69,7 @@ class _RideTheWaveScreenState
 
         setState(() {
           _remaining -=
-          const Duration(seconds: 1);
+              const Duration(seconds: 1);
         });
       },
     );
@@ -94,7 +98,8 @@ class _RideTheWaveScreenState
         content: Text(
           l10n.rideTheWaveCompletedMessage,
         ),
-        backgroundColor: AppColors.primary,
+        backgroundColor:
+            AppColors.accent(context),
       ),
     );
   }
@@ -105,7 +110,9 @@ class _RideTheWaveScreenState
           LocalStorageService.instance;
 
       final saved =
-      await storage.getJson(_cravingsBeatenKey);
+          await storage.getJson(
+        _cravingsBeatenKey,
+      );
 
       final current =
           (saved?['count'] as num?)?.toInt() ?? 0;
@@ -123,39 +130,42 @@ class _RideTheWaveScreenState
 
   String get _formattedRemaining {
     final minutes =
-    _remaining.inMinutes
-        .toString()
-        .padLeft(2, '0');
+        _remaining.inMinutes
+            .toString()
+            .padLeft(2, '0');
 
     final seconds =
-    (_remaining.inSeconds % 60)
-        .toString()
-        .padLeft(2, '0');
+        (_remaining.inSeconds % 60)
+            .toString()
+            .padLeft(2, '0');
 
     return '$minutes:$seconds';
   }
 
   double get _progress =>
       1 -
-          (_remaining.inSeconds /
-              _timerDuration.inSeconds);
+      (_remaining.inSeconds /
+          _timerDuration.inSeconds);
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor:
-      AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         child: Column(
           children: [
             // =========================
             // HEADER
             // =========================
+
             Padding(
               padding:
-              const EdgeInsets.fromLTRB(
+                  const EdgeInsets.fromLTRB(
                 8,
                 12,
                 16,
@@ -165,31 +175,35 @@ class _RideTheWaveScreenState
                 children: [
                   InkWell(
                     borderRadius:
-                    BorderRadius.circular(24),
+                        BorderRadius.circular(24),
                     onTap: () =>
                         Navigator.of(context)
                             .maybePop(),
-                    child: const SizedBox(
+                    child: SizedBox(
                       width: 44,
                       height: 44,
                       child: Icon(
                         Icons.arrow_back,
-                        color:
-                        AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                         size: 24,
                       ),
                     ),
                   ),
+
                   const SizedBox(width: 4),
+
                   Expanded(
                     child: Text(
                       l10n.rideTheWave,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
-                        FontWeight.w700,
+                            FontWeight.w700,
                         fontSize: 20,
-                        color:
-                        AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                       ),
                     ),
                   ),
@@ -200,42 +214,52 @@ class _RideTheWaveScreenState
             Expanded(
               child: SingleChildScrollView(
                 padding:
-                const EdgeInsets.symmetric(
+                    const EdgeInsets.symmetric(
                   horizontal: 24,
                 ),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
 
+                    // =========================
+                    // MAIN HEADING
+                    // =========================
+
                     Text(
                       l10n.cravingsPeakAndPass,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
-                        FontWeight.w700,
+                            FontWeight.w700,
                         fontSize: 26,
                         height: 1.2,
-                        color:
-                        AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                       ),
                     ),
 
                     const SizedBox(height: 10),
+
+                    // =========================
+                    // DESCRIPTION
+                    // =========================
 
                     SizedBox(
                       width: 280,
                       child: Text(
                         l10n.rideTheWaveDescription,
                         textAlign:
-                        TextAlign.center,
-                        style: const TextStyle(
+                            TextAlign.center,
+                        style: TextStyle(
                           fontWeight:
-                          FontWeight.w400,
+                              FontWeight.w400,
                           fontSize: 15,
                           height: 1.4,
-                          color:
-                          AppColors
-                              .textLightGrey,
+                          color: _isDark
+                              ? Colors.white70
+                              : AppColors
+                                  .textLightGrey,
                         ),
                       ),
                     ),
@@ -245,80 +269,87 @@ class _RideTheWaveScreenState
                     // =========================
                     // TIMER RING
                     // =========================
+
                     SizedBox(
                       width: 220,
                       height: 220,
                       child: Stack(
                         alignment:
-                        Alignment.center,
+                            Alignment.center,
                         children: [
                           SizedBox(
                             width: 220,
                             height: 220,
                             child:
-                            CircularProgressIndicator(
+                                CircularProgressIndicator(
                               value:
-                              _isTimerRunning ||
-                                  _isComplete
-                                  ? _progress.clamp(
-                                0.0,
-                                1.0,
-                              )
-                                  : 0,
+                                  _isTimerRunning ||
+                                          _isComplete
+                                      ? _progress.clamp(
+                                          0.0,
+                                          1.0,
+                                        )
+                                      : 0,
                               strokeWidth: 14,
                               strokeCap:
-                              StrokeCap.round,
-                              backgroundColor:
-                              AppColors
-                                  .progressBarBackground,
+                                  StrokeCap.round,
+                              backgroundColor: _isDark
+                                  ? const Color(
+                                      0xFF263746,
+                                    )
+                                  : AppColors
+                                      .progressBarBackground,
                               valueColor:
-                              const AlwaysStoppedAnimation<
-                                  Color>(
-                                AppColors.primary,
+                                  AlwaysStoppedAnimation<
+                                      Color>(
+                                _isDark
+                                    ? ThemeController
+                                        .darkAccent
+                                    : AppColors.primary,
                               ),
                             ),
                           ),
 
                           Column(
                             mainAxisSize:
-                            MainAxisSize.min,
+                                MainAxisSize.min,
                             children: [
                               Text(
                                 _isComplete
                                     ? l10n.done
                                     : _formattedRemaining,
-                                style:
-                                const TextStyle(
+                                style: TextStyle(
                                   fontWeight:
-                                  FontWeight.w700,
+                                      FontWeight.w700,
                                   fontSize: 36,
-                                  color:
-                                  AppColors
-                                      .textBlack,
+                                  color: _isDark
+                                      ? Colors.white
+                                      : AppColors
+                                          .textBlack,
                                 ),
                               ),
+
                               const SizedBox(
                                 height: 4,
                               ),
+
                               Text(
                                 _isTimerRunning
-                                    ? l10n
-                                    .stayWithIt
+                                    ? l10n.stayWithIt
                                     : (_isComplete
-                                    ? l10n
-                                    .youMadeIt
-                                    : l10n
-                                    .readyWhenYouAre),
-                                style:
-                                const TextStyle(
+                                        ? l10n.youMadeIt
+                                        : l10n
+                                            .readyWhenYouAre),
+                                style: TextStyle(
                                   fontWeight:
-                                  FontWeight.w500,
+                                      FontWeight.w500,
                                   fontSize: 13,
                                   letterSpacing:
-                                  0.6,
-                                  color:
-                                  AppColors
-                                      .textLightGrey,
+                                      0.6,
+                                  color: _isDark
+                                      ? Colors.white70
+                                      : AppColors
+                                          .textLightGrey,
                                 ),
                               ),
                             ],
@@ -332,42 +363,52 @@ class _RideTheWaveScreenState
                     // =========================
                     // ACTION BUTTON
                     // =========================
+
                     if (_isTimerRunning)
                       InkWell(
                         borderRadius:
-                        BorderRadius.circular(
+                            BorderRadius.circular(
                           9999,
                         ),
                         onTap: _cancelTimer,
                         child: Container(
                           padding:
-                          const EdgeInsets
-                              .symmetric(
+                              const EdgeInsets
+                                  .symmetric(
                             horizontal: 28,
                             vertical: 14,
                           ),
                           decoration:
-                          BoxDecoration(
-                            color:
-                            const Color(
-                              0xFFD7E5E2,
-                            ),
+                              BoxDecoration(
+                            color: _isDark
+                                ? ThemeController
+                                    .darkCard
+                                : const Color(
+                                    0xFFD7E5E2,
+                                  ),
                             borderRadius:
-                            BorderRadius
-                                .circular(
+                                BorderRadius.circular(
                               9999,
                             ),
+                            border: _isDark
+                                ? Border.all(
+                                    color:
+                                        ThemeController
+                                            .darkAccent,
+                                    width: 0.8,
+                                  )
+                                : null,
                           ),
                           child: Text(
                             l10n.cancel,
-                            style:
-                            const TextStyle(
+                            style: TextStyle(
                               fontWeight:
-                              FontWeight.w600,
+                                  FontWeight.w600,
                               fontSize: 15,
-                              color:
-                              AppColors
-                                  .textGrey,
+                              color: _isDark
+                                  ? Colors.white
+                                  : AppColors
+                                      .textGrey,
                             ),
                           ),
                         ),
@@ -375,24 +416,25 @@ class _RideTheWaveScreenState
                     else
                       InkWell(
                         borderRadius:
-                        BorderRadius.circular(
+                            BorderRadius.circular(
                           9999,
                         ),
                         onTap: _startTimer,
                         child: Container(
                           padding:
-                          const EdgeInsets
-                              .symmetric(
+                              const EdgeInsets
+                                  .symmetric(
                             horizontal: 28,
                             vertical: 14,
                           ),
                           decoration:
-                          BoxDecoration(
-                            color:
-                            AppColors.primary,
+                              BoxDecoration(
+                            color: _isDark
+                                ? ThemeController
+                                    .darkAccent
+                                : AppColors.primary,
                             borderRadius:
-                            BorderRadius
-                                .circular(
+                                BorderRadius.circular(
                               9999,
                             ),
                           ),
@@ -400,14 +442,13 @@ class _RideTheWaveScreenState
                             _isComplete
                                 ? l10n.rideItAgain
                                 : l10n
-                                .start15MinuteTimer,
-                            style:
-                            const TextStyle(
+                                    .start15MinuteTimer,
+                            style: const TextStyle(
                               fontWeight:
-                              FontWeight.w600,
+                                  FontWeight.w600,
                               fontSize: 15,
                               color:
-                              AppColors.white,
+                                  AppColors.white,
                             ),
                           ),
                         ),

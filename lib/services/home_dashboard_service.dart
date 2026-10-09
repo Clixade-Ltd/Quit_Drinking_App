@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../models/body_recovery.dart';
 import '../models/onboarding_answers.dart';
 import '../models/user_details_draft.dart';
 import 'daily_check_in_service.dart';
@@ -182,6 +183,7 @@ class HomeDashboardService extends ChangeNotifier {
     required String drinkingLevel,
     required num drinksPerWeek,
     required num moneySpentPerWeek,
+    int? caloriesPerDrink,
     required List<String> triggers,
     required List<String> quitReasons,
   }) async {
@@ -194,6 +196,8 @@ class HomeDashboardService extends ChangeNotifier {
       'drinkingLevel': drinkingLevel,
       'drinksPerWeek': drinksPerWeek,
       'moneySpentPerWeek': moneySpentPerWeek,
+      if (caloriesPerDrink != null)
+        'caloriesPerDrink': caloriesPerDrink,
       'triggers': triggers,
       'quitReasons': quitReasons,
       'journeyStartDate': DateTime(
@@ -437,6 +441,10 @@ class HomeDashboardService extends ChangeNotifier {
             .inDays +
             1;
 
+    if (calendarDays <= 0) {
+      return 0;
+    }
+
     final checkIns =
     await DailyCheckInService
         .instance
@@ -446,7 +454,15 @@ class HomeDashboardService extends ChangeNotifier {
 
     for (final checkIn
     in checkIns) {
-      if (!checkIn.stayedOnTrack) {
+      final checkInDay = DateTime(
+        checkIn.date.year,
+        checkIn.date.month,
+        checkIn.date.day,
+      );
+
+      if (!checkIn.stayedOnTrack &&
+          !checkInDay.isBefore(startDay) &&
+          !checkInDay.isAfter(todayDay)) {
         drinkDays++;
       }
     }
@@ -454,9 +470,7 @@ class HomeDashboardService extends ChangeNotifier {
     final effectiveDays =
         calendarDays - drinkDays;
 
-    return effectiveDays < 1
-        ? 1
-        : effectiveDays;
+    return effectiveDays < 0 ? 0 : effectiveDays;
   }
 
   Future<DateTime?> getJourneyStartDate() async {
@@ -621,28 +635,34 @@ class HomeDashboardService extends ChangeNotifier {
     final drinksAvoided =
         drinksPerDay * days;
 
-    const caloriesPerDrink =
-    150;
+    final savedCaloriesPerDrink =
+        (profile['caloriesPerDrink'] as num?)?.toDouble();
+    final caloriesPerDrink =
+        savedCaloriesPerDrink != null &&
+                savedCaloriesPerDrink > 0
+            ? savedCaloriesPerDrink
+            : 150.0;
 
     final caloriesAvoided =
-    (drinksAvoided *
-        caloriesPerDrink)
-        .round();
+        (drinksAvoided * caloriesPerDrink).round();
 
     final moneySpentPerDay =
         moneySpentPerWeek / 7.0;
 
     final dailyMoneySaved =
-        drinksPerDay *
-            moneySpentPerDay;
+      moneySpentPerDay;
 
     final moneySaved =
     (dailyMoneySaved * days)
         .round();
 
-    final wellnessScore =
-    (60 + days)
-        .clamp(0, 100);
+    final drinkingLevel = DrinkingLevel.fromValue(
+      profile['drinkingLevel'] as String?,
+    );
+    final wellnessScore = BodyRecovery(
+      daysSober: days,
+      drinkingLevel: drinkingLevel,
+    ).overall.round();
 
     return {
       'drinksAvoided':
@@ -651,9 +671,18 @@ class HomeDashboardService extends ChangeNotifier {
       moneySaved,
       'caloriesAvoided':
       caloriesAvoided,
+      'caloriesPerDrink': caloriesPerDrink ?? 0,
+      'caloriesAvailable': 1,
       'wellnessScore':
       wellnessScore,
     };
+  }
+
+  Future<void> updateCaloriesPerDrink(int calories) async {
+    final profile = await _readProfile();
+    profile['caloriesPerDrink'] = calories.clamp(1, 5000);
+    await _writeProfile(profile);
+    notifyListeners();
   }
 
   // =========================================================
@@ -766,8 +795,13 @@ class HomeDashboardService extends ChangeNotifier {
     final prompt = _journalPromptBank[
         daysSober % _journalPromptBank.length];
 
-    final healthScore =
-        (60 + daysSober).clamp(0, 100);
+    final drinkingLevel = DrinkingLevel.fromValue(
+      profile['drinkingLevel'] as String?,
+    );
+    final healthScore = BodyRecovery(
+      daysSober: daysSober,
+      drinkingLevel: drinkingLevel,
+    ).overall.round();
 
     return {
       'motivationQuote': quote,
@@ -852,12 +886,6 @@ class HomeDashboardService extends ChangeNotifier {
     final profile =
     await _readProfile();
 
-    final drinksPerWeek =
-        (profile['drinksPerWeek']
-        as num?)
-            ?.toDouble() ??
-            0.0;
-
     final moneySpentPerWeek =
         (profile[
         'moneySpentPerWeek']
@@ -865,15 +893,11 @@ class HomeDashboardService extends ChangeNotifier {
             ?.toDouble() ??
             0.0;
 
-    final drinksPerDay =
-        drinksPerWeek / 7.0;
-
     final moneySpentPerDay =
         moneySpentPerWeek / 7.0;
 
     final dailyMoneySaved =
-        drinksPerDay *
-            moneySpentPerDay;
+      moneySpentPerDay;
 
     final checkIns =
     await DailyCheckInService

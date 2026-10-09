@@ -7,6 +7,7 @@ import 'package:new_quit_drinking_app/screens/bottom_nav/journal/today_reflectio
 import '../../../constants/app_colors.dart';
 import '../../../models/journal_draft_store.dart';
 import '../../../services/analytics_service.dart';
+import '../../../theme/theme_controller.dart';
 import '../profile/premium_plan_screen.dart';
 import 'journal_entry_view_screen.dart';
 import 'journal_prompt_cards.dart';
@@ -28,7 +29,10 @@ class _JournalScreenState extends State<JournalScreen> {
     Icons.sentiment_very_satisfied,
   ];
 
-  final AnalyticsService _analytics = AnalyticsService.instance;
+  final AnalyticsService _analytics =
+      AnalyticsService.instance;
+
+  bool get _isDark => AppColors.isDark(context);
 
   bool _searchVisible = false;
 
@@ -77,7 +81,8 @@ class _JournalScreenState extends State<JournalScreen> {
           .toList();
     }
 
-    final query = _searchController.text.trim().toLowerCase();
+    final query =
+        _searchController.text.trim().toLowerCase();
 
     if (query.isNotEmpty) {
       entries = entries.where((e) {
@@ -98,9 +103,26 @@ class _JournalScreenState extends State<JournalScreen> {
   Future<void> _pickDateFilter() async {
     final picked = await showDatePicker(
       context: context,
-      initialDate: _dateFilter ?? DateTime.now(),
+      initialDate:
+          _dateFilter ?? DateTime.now(),
       firstDate: DateTime(2020),
       lastDate: DateTime.now(),
+      builder: (context, child) {
+        if (!_isDark) {
+          return child!;
+        }
+
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: const ColorScheme.dark(
+              primary: Color(0xFF38BDF8),
+              surface: Color(0xFF17232D),
+              onSurface: Colors.white,
+            ),
+          ),
+          child: child!,
+        );
+      },
     );
 
     if (picked != null) {
@@ -114,7 +136,9 @@ class _JournalScreenState extends State<JournalScreen> {
     }
   }
 
-  void _openComposer({ReflectionField? focusField}) {
+  void _openComposer({
+    ReflectionField? focusField,
+  }) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -136,13 +160,20 @@ class _JournalScreenState extends State<JournalScreen> {
     );
   }
 
-  void _onLongPressEntry(JournalEntryData entry) {
-    final l10n = AppLocalizations.of(context)!;
+  void _onLongPressEntry(
+    JournalEntryData entry,
+  ) {
+    final l10n =
+        AppLocalizations.of(context)!;
 
     showModalBottomSheet(
       context: context,
+      backgroundColor: _isDark
+          ? ThemeController.darkCard
+          : AppColors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
+        borderRadius:
+            BorderRadius.vertical(
           top: Radius.circular(20.r),
         ),
       ),
@@ -153,13 +184,16 @@ class _JournalScreenState extends State<JournalScreen> {
             ListTile(
               leading: Icon(
                 Icons.open_in_new,
-                color: AppColors.primary,
+                color: AppColors.accent(context),
                 size: 24.r,
               ),
               title: Text(
                 l10n.openEntry,
                 style: TextStyle(
                   fontSize: 16.sp,
+                  color: _isDark
+                      ? Colors.white
+                      : AppColors.textBlack,
                 ),
               ),
               onTap: () {
@@ -170,13 +204,16 @@ class _JournalScreenState extends State<JournalScreen> {
             ListTile(
               leading: Icon(
                 Icons.edit_outlined,
-                color: AppColors.primary,
+                color: AppColors.accent(context),
                 size: 24.r,
               ),
               title: Text(
                 l10n.editEntry,
                 style: TextStyle(
                   fontSize: 16.sp,
+                  color: _isDark
+                      ? Colors.white
+                      : AppColors.textBlack,
                 ),
               ),
               onTap: () {
@@ -185,7 +222,8 @@ class _JournalScreenState extends State<JournalScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => TodayReflectionScreen(
+                    builder: (_) =>
+                        TodayReflectionScreen(
                       existingEntry: entry,
                     ),
                   ),
@@ -207,8 +245,10 @@ class _JournalScreenState extends State<JournalScreen> {
               ),
               onTap: () {
                 Navigator.pop(context);
-                JournalDraftStore.instance.deleteEntry(entry.id);
-                _analytics.journalEntryDeleted();
+                JournalDraftStore.instance
+                    .deleteEntry(entry.id);
+                _analytics
+                    .journalEntryDeleted();
               },
             ),
           ],
@@ -219,7 +259,8 @@ class _JournalScreenState extends State<JournalScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n =
+        AppLocalizations.of(context)!;
 
     final entries = _visibleEntries;
 
@@ -227,7 +268,11 @@ class _JournalScreenState extends State<JournalScreen> {
         JournalDraftStore.instance.entries.isNotEmpty;
 
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor:
+          AppColors.pageBackground(
+        context,
+        light: AppColors.white,
+      ),
       body: SafeArea(
         top: true,
         bottom: false,
@@ -239,7 +284,8 @@ class _JournalScreenState extends State<JournalScreen> {
             24.h,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment:
+                CrossAxisAlignment.start,
             children: [
               // ------------------------------------------------------------
               // HEADER
@@ -250,11 +296,15 @@ class _JournalScreenState extends State<JournalScreen> {
                     child: Text(
                       l10n.navJournalLabel,
                       maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      overflow:
+                          TextOverflow.ellipsis,
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
+                        fontWeight:
+                            FontWeight.w600,
                         fontSize: 20.sp,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                            ? Colors.white
+                            : AppColors.textBlack,
                       ),
                     ),
                   ),
@@ -262,22 +312,40 @@ class _JournalScreenState extends State<JournalScreen> {
                   // Calendar
                   InkWell(
                     onTap: _pickDateFilter,
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius:
+                        BorderRadius.circular(
+                      20.r,
+                    ),
                     child: Container(
                       width: 40.w,
                       height: 40.w,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                        color:
-                            AppColors.journalHeaderIconBackground,
+                      alignment:
+                          Alignment.center,
+                      decoration: BoxDecoration(
+                        color: _isDark
+                            ? ThemeController
+                                .darkCard
+                            : AppColors
+                                .journalHeaderIconBackground,
                         shape: BoxShape.circle,
+                        border: _isDark
+                            ? Border.all(
+                                color:
+                                    ThemeController
+                                        .darkAccent,
+                                width: 0.7,
+                              )
+                            : null,
                       ),
                       child: Icon(
-                        Icons.calendar_today_outlined,
+                        Icons
+                            .calendar_today_outlined,
                         size: 18.r,
                         color: _dateFilter != null
-                            ? AppColors.primary
-                            : AppColors.textBlack,
+                            ? AppColors.accent(context)
+                            : (_isDark
+                                ? Colors.white
+                                : AppColors.textBlack),
                       ),
                     ),
                   ),
@@ -287,24 +355,42 @@ class _JournalScreenState extends State<JournalScreen> {
                   // Search
                   InkWell(
                     onTap: () => setState(
-                      () => _searchVisible = !_searchVisible,
+                      () => _searchVisible =
+                          !_searchVisible,
                     ),
-                    borderRadius: BorderRadius.circular(20.r),
+                    borderRadius:
+                        BorderRadius.circular(
+                      20.r,
+                    ),
                     child: Container(
                       width: 40.w,
                       height: 40.w,
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                        color:
-                            AppColors.journalHeaderIconBackground,
+                      alignment:
+                          Alignment.center,
+                      decoration: BoxDecoration(
+                        color: _isDark
+                            ? ThemeController
+                                .darkCard
+                            : AppColors
+                                .journalHeaderIconBackground,
                         shape: BoxShape.circle,
+                        border: _isDark
+                            ? Border.all(
+                                color:
+                                    ThemeController
+                                        .darkAccent,
+                                width: 0.7,
+                              )
+                            : null,
                       ),
                       child: Icon(
                         Icons.search,
                         size: 18.r,
                         color: _searchVisible
-                            ? AppColors.primary
-                            : AppColors.textBlack,
+                            ? AppColors.accent(context)
+                            : (_isDark
+                                ? Colors.white
+                                : AppColors.textBlack),
                       ),
                     ),
                   ),
@@ -317,26 +403,82 @@ class _JournalScreenState extends State<JournalScreen> {
               if (_searchVisible) ...[
                 SizedBox(height: 12.h),
                 TextField(
-                  controller: _searchController,
+                  controller:
+                      _searchController,
                   autofocus: true,
                   style: TextStyle(
                     fontSize: 14.sp,
+                    color: _isDark
+                        ? Colors.white
+                        : AppColors.textBlack,
                   ),
-                  decoration: InputDecoration(
-                    hintText: l10n.searchJournalEntries,
+                  cursorColor:
+                      AppColors.accent(context),
+                  decoration:
+                      InputDecoration(
+                    hintText:
+                        l10n.searchJournalEntries,
                     hintStyle: TextStyle(
                       fontSize: 14.sp,
+                      color: _isDark
+                          ? Colors.white54
+                          : AppColors.textLightGrey,
                     ),
                     prefixIcon: Icon(
                       Icons.search,
                       size: 20.r,
+                      color: _isDark
+                          ? Colors.white70
+                          : AppColors.textGrey,
                     ),
-                    contentPadding: EdgeInsets.symmetric(
+                    contentPadding:
+                        EdgeInsets.symmetric(
                       vertical: 12.h,
                       horizontal: 12.w,
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12.r),
+                    filled: true,
+                    fillColor: _isDark
+                        ? ThemeController
+                            .darkCard
+                        : AppColors.white,
+                    border:
+                        OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(
+                        12.r,
+                      ),
+                      borderSide: BorderSide(
+                        color: _isDark
+                            ? ThemeController
+                                .darkAccent
+                            : AppColors.outlineGrey,
+                      ),
+                    ),
+                    enabledBorder:
+                        OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(
+                        12.r,
+                      ),
+                      borderSide: BorderSide(
+                        color: _isDark
+                            ? ThemeController
+                                .darkAccent
+                            : AppColors.outlineGrey,
+                      ),
+                    ),
+                    focusedBorder:
+                        OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(
+                        12.r,
+                      ),
+                      borderSide:
+                          BorderSide(
+                        color:
+                            AppColors.accent(context),
+                        width: 1.2,
+                      ),
                     ),
                   ),
                 ),
@@ -348,16 +490,36 @@ class _JournalScreenState extends State<JournalScreen> {
               if (_dateFilter != null) ...[
                 SizedBox(height: 12.h),
                 InputChip(
+                  backgroundColor: _isDark
+                      ? ThemeController
+                          .darkCard
+                      : null,
+                  side: _isDark
+                      ? BorderSide(
+                          color:
+                              ThemeController
+                                  .darkAccent,
+                        )
+                      : null,
                   label: Text(
-                    MaterialLocalizations.of(context)
-                        .formatMediumDate(_dateFilter!),
+                    MaterialLocalizations
+                            .of(context)
+                        .formatMediumDate(
+                      _dateFilter!,
+                    ),
                     style: TextStyle(
                       fontSize: 13.sp,
+                      color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                     ),
                   ),
                   onDeleted: () => setState(
                     () => _dateFilter = null,
                   ),
+                  deleteIconColor: _isDark
+                      ? Colors.white70
+                      : null,
                 ),
               ],
 
@@ -367,7 +529,8 @@ class _JournalScreenState extends State<JournalScreen> {
               SizedBox(height: 16.h),
 
               TodayPromptCard(
-                userData: _buildDailyUpdateUserData(),
+                userData:
+                    _buildDailyUpdateUserData(),
               ),
 
               SizedBox(height: 16.h),
@@ -379,16 +542,27 @@ class _JournalScreenState extends State<JournalScreen> {
                 width: double.infinity,
                 height: 50.h,
                 child: ElevatedButton(
-                  onPressed: () => _openComposer(),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
-                    foregroundColor: AppColors.white,
+                  onPressed: () =>
+                      _openComposer(),
+                  style:
+                      ElevatedButton.styleFrom(
+                    backgroundColor:
+                        AppColors.accent(
+                      context,
+                    ),
+                    foregroundColor:
+                        AppColors.white,
                     elevation: 0,
-                    padding: EdgeInsets.symmetric(
+                    padding:
+                        EdgeInsets.symmetric(
                       horizontal: 20.w,
                     ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.r),
+                    shape:
+                        RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(
+                        20.r,
+                      ),
                     ),
                   ),
                   child: Row(
@@ -399,7 +573,8 @@ class _JournalScreenState extends State<JournalScreen> {
                         angle: -0.7,
                         child: Icon(
                           Icons.edit_outlined,
-                          color: AppColors.white,
+                          color:
+                              AppColors.white,
                           size: 20.r,
                         ),
                       ),
@@ -408,11 +583,15 @@ class _JournalScreenState extends State<JournalScreen> {
                         child: Text(
                           l10n.writeNewEntry,
                           maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.center,
+                          overflow:
+                              TextOverflow.ellipsis,
+                          textAlign:
+                              TextAlign.center,
                           style: TextStyle(
-                            color: AppColors.white,
-                            fontWeight: FontWeight.w500,
+                            color:
+                                AppColors.white,
+                            fontWeight:
+                                FontWeight.w500,
                             fontSize: 17.sp,
                           ),
                         ),
@@ -430,9 +609,12 @@ class _JournalScreenState extends State<JournalScreen> {
               Text(
                 l10n.recentEntries,
                 style: TextStyle(
-                  fontWeight: FontWeight.w700,
+                  fontWeight:
+                      FontWeight.w700,
                   fontSize: 18.sp,
-                  color: AppColors.textBlack,
+                  color: _isDark
+                      ? Colors.white
+                      : AppColors.textBlack,
                 ),
               ),
 
@@ -440,15 +622,19 @@ class _JournalScreenState extends State<JournalScreen> {
 
               if (!hasAnyEntries)
                 Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding:
+                      EdgeInsets.symmetric(
                     vertical: 40.h,
                   ),
                   child: Center(
                     child: Text(
                       l10n.noJournalEntriesYet,
-                      textAlign: TextAlign.center,
+                      textAlign:
+                          TextAlign.center,
                       style: TextStyle(
-                        color: AppColors.textLightGrey,
+                        color: _isDark
+                            ? Colors.white70
+                            : AppColors.textLightGrey,
                         fontSize: 14.sp,
                       ),
                     ),
@@ -456,15 +642,19 @@ class _JournalScreenState extends State<JournalScreen> {
                 )
               else if (entries.isEmpty)
                 Padding(
-                  padding: EdgeInsets.symmetric(
+                  padding:
+                      EdgeInsets.symmetric(
                     vertical: 40.h,
                   ),
                   child: Center(
                     child: Text(
                       l10n.noEntriesMatchFilters,
-                      textAlign: TextAlign.center,
+                      textAlign:
+                          TextAlign.center,
                       style: TextStyle(
-                        color: AppColors.textLightGrey,
+                        color: _isDark
+                            ? Colors.white70
+                            : AppColors.textLightGrey,
                         fontSize: 14.sp,
                       ),
                     ),
@@ -474,12 +664,18 @@ class _JournalScreenState extends State<JournalScreen> {
                 for (final entry in entries) ...[
                   _EntryCard(
                     entry: entry,
-                    moodIcon: entry.moodIndex != null
-                        ? _moodIcons[entry.moodIndex!]
-                        : null,
-                    onTap: () => _openEntry(entry),
+                    moodIcon:
+                        entry.moodIndex != null
+                            ? _moodIcons[
+                                entry.moodIndex!
+                              ]
+                            : null,
+                    onTap: () =>
+                        _openEntry(entry),
                     onLongPress: () =>
-                        _onLongPressEntry(entry),
+                        _onLongPressEntry(
+                      entry,
+                    ),
                   ),
                   SizedBox(height: 12.h),
                 ],
@@ -529,18 +725,27 @@ class _EntryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark =
+        AppColors.isDark(context);
+
     return InkWell(
       onTap: onTap,
       onLongPress: onLongPress,
-      borderRadius: BorderRadius.circular(16.r),
+      borderRadius:
+          BorderRadius.circular(16.r),
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(16.w),
         decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(16.r),
+          color: isDark
+              ? ThemeController.darkCard
+              : AppColors.white,
+          borderRadius:
+              BorderRadius.circular(16.r),
           border: Border.all(
-            color: AppColors.outlineGrey,
+            color: isDark
+                ? ThemeController.darkAccent
+                : AppColors.outlineGrey,
             width: 1.r,
           ),
         ),
@@ -552,18 +757,26 @@ class _EntryCard extends StatelessWidget {
             // DATE + MOOD
             // --------------------------------------------------------------
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment:
+                  CrossAxisAlignment.center,
               children: [
                 Expanded(
                   child: Text(
-                    MaterialLocalizations.of(context)
-                        .formatMediumDate(entry.date),
+                    MaterialLocalizations
+                            .of(context)
+                        .formatMediumDate(
+                      entry.date,
+                    ),
                     maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    overflow:
+                        TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontWeight: FontWeight.w700,
+                      fontWeight:
+                          FontWeight.w700,
                       fontSize: 15.sp,
-                      color: AppColors.textBlack,
+                      color: isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                     ),
                   ),
                 ),
@@ -572,7 +785,7 @@ class _EntryCard extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Icon(
                     moodIcon,
-                    color: AppColors.primary,
+                    color: AppColors.accent(context),
                     size: 22.r,
                   ),
                 ],
@@ -587,11 +800,14 @@ class _EntryCard extends StatelessWidget {
               Text(
                 entry.previewText,
                 maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+                overflow:
+                    TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 14.sp,
                   height: 1.4,
-                  color: AppColors.textGrey,
+                  color: isDark
+                      ? Colors.white70
+                      : AppColors.textGrey,
                 ),
               ),
             ],

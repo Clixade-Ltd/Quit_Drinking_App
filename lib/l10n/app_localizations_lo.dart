@@ -241,6 +241,12 @@ class AppLocalizationsLo extends AppLocalizations {
   String get caloriesSaved => 'ແຄລໍຣີທີ່ປະຫຍັດ';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'ຄະແນນສຸຂະພາບ';
 
   @override

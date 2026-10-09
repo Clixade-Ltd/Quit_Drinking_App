@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
 
 import '../../constants/app_colors.dart';
+import '../../theme/theme_controller.dart';
 import '../../services/home_dashboard_service.dart';
 import '../../services/analytics_service.dart';
 
@@ -14,6 +15,8 @@ class CopingTipsScreen extends StatefulWidget {
 
 class _CopingTipsScreenState extends State<CopingTipsScreen> {
   final AnalyticsService _analytics = AnalyticsService.instance;
+
+  bool get _isDark => AppColors.isDark(context);
 
   bool _isLoading = true;
 
@@ -76,7 +79,10 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.dashboardBackground,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: AppColors.dashboardBackground,
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -93,12 +99,14 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
                     BorderRadius.circular(24),
                     onTap: () =>
                         Navigator.of(context).maybePop(),
-                    child: const SizedBox(
+                    child: SizedBox(
                       width: 44,
                       height: 44,
                       child: Icon(
                         Icons.arrow_back,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                         size: 24,
                       ),
                     ),
@@ -107,10 +115,12 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
                   Expanded(
                     child: Text(
                       l10n.copingTips,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 20,
-                        color: AppColors.textBlack,
+                        color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                       ),
                     ),
                   ),
@@ -118,16 +128,20 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
               ),
             ),
 
-            const Divider(
+            Divider(
               height: 1,
               thickness: 1,
-              color: AppColors.outlineGrey,
+              color: _isDark
+                  ? ThemeController.darkAccent
+                  : AppColors.outlineGrey,
             ),
 
             Expanded(
               child: _isLoading
-                  ? const Center(
-                child: CircularProgressIndicator(),
+                  ? Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.accent(context),
+                ),
               )
                   : _copingStrategies.isEmpty
                   ? _buildEmptyState(l10n)
@@ -157,9 +171,9 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color:
-                const Color(0xFFE0A93B)
-                    .withOpacity(0.12),
+                color: _isDark
+                  ? ThemeController.darkCard
+                  : const Color(0xFFE0A93B).withOpacity(0.12),
               ),
               child: const Icon(
                 Icons.lightbulb_outline,
@@ -171,21 +185,25 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
             Text(
               l10n.noCopingTipsYet,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 18,
-                color: AppColors.textBlack,
+                color: _isDark
+                  ? Colors.white
+                  : AppColors.textBlack,
               ),
             ),
             const SizedBox(height: 8),
             Text(
               l10n.copingStrategiesWillAppear,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
                 height: 1.4,
-                color: AppColors.textGrey,
+                color: _isDark
+                  ? Colors.white70
+                  : AppColors.textGrey,
               ),
             ),
           ],
@@ -211,10 +229,12 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
         children: [
           Text(
             l10n.strategiesTailoredToTriggers,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 14,
-              color: AppColors.textGrey,
+                color: _isDark
+                  ? Colors.white70
+                  : AppColors.textGrey,
             ),
           ),
 
@@ -226,8 +246,9 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
               tips:
               _copingStrategies[triggers[i]] ??
                   const [],
-              color: _triggerColors[
-              i % _triggerColors.length],
+                color: _isDark
+                  ? ThemeController.darkAccent
+                  : _triggerColors[i % _triggerColors.length],
             ),
         ],
       ),
@@ -245,11 +266,15 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
       width: double.infinity,
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: _isDark
+          ? ThemeController.darkCard
+          : AppColors.white,
         borderRadius:
         BorderRadius.circular(20),
         border: Border.all(
-          color: AppColors.outlineGrey,
+            color: _isDark
+              ? ThemeController.darkAccent
+              : AppColors.outlineGrey,
         ),
       ),
       child: Column(
@@ -263,8 +288,9 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
                 height: 36,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color:
-                  color.withOpacity(0.12),
+                    color: _isDark
+                      ? ThemeController.darkAccent.withOpacity(0.30)
+                      : color.withOpacity(0.12),
                   borderRadius:
                   BorderRadius.circular(12),
                 ),
@@ -278,12 +304,13 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
               Expanded(
                 child: Text(
                   trigger,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight:
                     FontWeight.w700,
                     fontSize: 16,
-                    color:
-                    AppColors.textBlack,
+                    color: _isDark
+                      ? Colors.white
+                      : AppColors.textBlack,
                   ),
                 ),
               ),
@@ -322,13 +349,14 @@ class _CopingTipsScreenState extends State<CopingTipsScreen> {
                   Expanded(
                     child: Text(
                       tip,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight:
                         FontWeight.w400,
                         fontSize: 14,
                         height: 1.45,
-                        color:
-                        AppColors.textBlack,
+                        color: _isDark
+                          ? Colors.white
+                          : AppColors.textBlack,
                       ),
                     ),
                   ),

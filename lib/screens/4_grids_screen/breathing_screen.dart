@@ -153,15 +153,24 @@ class _BreathingScreenState extends State<BreathingScreen> {
         BreathingSessionStore.instance.sessionsCompletedToday;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: Colors.transparent,
+      ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              AppColors.primary,
-              Color(0xFF0B3D3B),
+              AppColors.pageBackground(
+                context,
+                light: AppColors.primary,
+              ),
+              AppColors.surface(
+                context,
+                light: const Color(0xFF0B3D3B),
+              ),
             ],
           ),
         ),

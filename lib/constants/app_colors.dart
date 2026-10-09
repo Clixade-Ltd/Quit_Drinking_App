@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import '../theme/theme_controller.dart';
 
 class AppColors {
   AppColors._(); // prevent instantiation
 
-  // Brand
-  static const Color primary = Color(0xFF006565); // main teal
+    // Brand
+    static const Color primary = Color(0xFF006565); // main teal
   static const Color divider = Color(0xFF008080);
   // border/divider teal
 
@@ -13,28 +14,28 @@ class AppColors {
   static const Color gradientEnd = Color(0xFFF7F9FB);
 
   // Text
-  static const Color textBlack = Color(0xFF000000);
-  static const Color textGrey = Color(0xFF6E7979); //
-  static const Color textLightGrey = Color(0xFFA1A1A1); // subtitles / captions
+      static const Color textBlack = Color(0xFF000000);
+      static const Color textGrey = Color(0xFF6E7979);
+      static const Color textLightGrey = Color(0xFFA1A1A1);
 
   // Surfaces
   static const Color white = Color(0xFFFFFFFF);
-  static const Color cardBackground = Color(0xFFF5F5F5); // goal option cards
-  static const Color iconBackground = Color(0xFFE2F5F6); // circular icon bg
+      static const Color cardBackground = Color(0xFFF5F5F5); // goal option cards
+      static const Color iconBackground = Color(0xFFE2F5F6); // circular icon bg
   static const Color arrowIcon = Color(0xFFE3FFFE);
-  static const Color iconbg = Color(0xFFE0EFF0); // arrow icon color
+      static const Color iconbg = Color(0xFFE0EFF0); // arrow icon color
 
-  static const Color bgColor = Color(0xFFF2F6F8);
+      static const Color bgColor = Color(0xFFF2F6F8);
 
   // Dashboard screen
-  static const Color statCardBackground = Color(0xFFF5F9FA); // streak/saved/etc cards
-  static const Color moodChipBackground = Color(0xFFD4EAFD); // Calm/Focused/Grateful chips
-  static const Color progressBarBackground = Color(0xFFECEEF0); // liver/sleep bar track
-  static const Color dashboardBackground = Color(0xFFF7F9FB); // page background
-  static const Color gradientButtonStart = Color(0xFF006565); // "Start Activity" gradient
-  static const Color gradientButtonEnd = Color(0xFF0061A4);
-  static const Color bottomNavBackground = Color(0xB2F7F9FB); // ~70% opacity
-  static const Color bottomNavBorder = Color(0x66FFFFFF); // ~40% opacity
+      static const Color statCardBackground = Color(0xFFF5F9FA); // streak/saved/etc cards
+      static const Color moodChipBackground = Color(0xFFD4EAFD); // Calm/Focused/Grateful chips
+      static const Color progressBarBackground = Color(0xFFECEEF0); // liver/sleep bar track
+      static const Color dashboardBackground = Color(0xFFF7F9FB); // page background
+      static const Color gradientButtonStart = Color(0xFF006565); // "Start Activity" gradient
+      static const Color gradientButtonEnd = Color(0xFF0061A4);
+      static const Color bottomNavBackground = Color(0xB2F7F9FB); // ~70% opacity
+      static const Color bottomNavBorder = Color(0x66FFFFFF); // ~40% opacity
 
   // Personalized Plan Loading screen
   static const Color planLoadingGradientStart = Color(0xFFEAF6FF);
@@ -64,9 +65,9 @@ class AppColors {
   static const Color reminderIconColor = Color(0xFFC1592E);
 
   // New onboarding redesign (Steps 1-4)
-  static const Color outlineGrey = Color(0xFFD9DEE3);
-  static const Color outlineGrey2 = Color(0xFFE9E9EF);
-  static const Color icongrey = Color(0xFF3D4949);
+      static const Color outlineGrey = Color(0xFFD9DEE3);
+      static const Color outlineGrey2 = Color(0xFFE9E9EF);
+      static const Color icongrey = Color(0xFF3D4949);
 
   static const Color progressbar = Color(0xFF8EF5E3);
 
@@ -74,5 +75,35 @@ class AppColors {
   static const Color journalPromptCardBackground = Color(0xFFE3F3F0);
   static const Color journalChipBackground = Color(0xFFE3F3F0);
   static const Color journalHeaderIconBackground = Color(0xFFF0F1F3);
+
+    static bool isDark(BuildContext context) =>
+            Theme.of(context).brightness == Brightness.dark;
+
+      static Color accent(BuildContext context) =>
+          isDark(context) ? ThemeController.darkAccent : primary;
+
+    static Color pageBackground(
+        BuildContext context, {
+        required Color light,
+    }) =>
+            isDark(context) ? ThemeController.darkBackground : light;
+
+    static Color surface(
+        BuildContext context, {
+        required Color light,
+    }) =>
+            isDark(context) ? ThemeController.darkCard : light;
+
+    static Color primaryText(
+        BuildContext context, {
+        required Color light,
+    }) =>
+            isDark(context) ? Colors.white : light;
+
+    static Color secondaryText(
+        BuildContext context, {
+        required Color light,
+    }) =>
+            isDark(context) ? Colors.white70 : light;
 
 }

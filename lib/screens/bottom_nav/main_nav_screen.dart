@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/profile/profile_screen.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/stats/stats_screen.dart';
+import 'package:new_quit_drinking_app/theme/theme_controller.dart';
 import 'package:new_quit_drinking_app/utils/responsive.dart';
 import '../../constants/app_colors.dart';
 import 'badges/badges_screen.dart';
@@ -64,6 +65,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
       canPop: false,
@@ -83,7 +85,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
           children: _tabs,
         ),
       bottomNavigationBar: SafeArea(
-  top: true,
+  top: false,
    bottom: true,
   child: Padding(
     padding: EdgeInsets.fromLTRB(
@@ -103,16 +105,20 @@ class _MainNavScreenState extends State<MainNavScreen> {
           height: Responsive.navHeight(),
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           decoration: BoxDecoration(
-            color: AppColors.white,
-            border: const Border(
-              top: BorderSide(
-                color: AppColors.bottomNavBorder,
-                width: 1,
-              ),
-            ),
-            boxShadow: const [
+            color: isDark ? ThemeController.darkCard : AppColors.white,
+            border: isDark
+                ? null
+                : const Border(
+                    top: BorderSide(
+                      color: AppColors.bottomNavBorder,
+                      width: 1,
+                    ),
+                  ),
+            boxShadow: [
               BoxShadow(
-                color: Color(0x0D008080),
+                color: isDark
+                    ? Colors.black26
+                    : const Color(0x0D008080),
                 blurRadius: 30,
                 offset: Offset(0, -10),
               ),
@@ -125,30 +131,35 @@ class _MainNavScreenState extends State<MainNavScreen> {
                 icon: Icons.home_outlined,
                 label: loc.navHomeLabel,
                 isSelected: _currentIndex == 0,
+                isDark: isDark,
                 onTap: () => setState(() => _currentIndex = 0),
               ),
               _NavItem(
                 icon: Icons.bar_chart_outlined,
                 label: loc.navStatsLabel,
                 isSelected: _currentIndex == 1,
+                isDark: isDark,
                 onTap: () => setState(() => _currentIndex = 1),
               ),
               _NavItem(
                 icon: Icons.edit_note_outlined,
                 label: loc.navJournalLabel,
                 isSelected: _currentIndex == 2,
+                isDark: isDark,
                 onTap: () => setState(() => _currentIndex = 2),
               ),
               _NavItem(
                 icon: Icons.emoji_events_outlined,
                 label: loc.navBadgesLabel,
                 isSelected: _currentIndex == 3,
+                isDark: isDark,
                 onTap: () => setState(() => _currentIndex = 3),
               ),
               _NavItem(
                 icon: Icons.person_outline,
                 label: loc.navProfileLabel,
                 isSelected: _currentIndex == 4,
+                isDark: isDark,
                 onTap: () => setState(() => _currentIndex = 4),
               ),
             ],
@@ -167,12 +178,14 @@ class _NavItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final bool isSelected;
+  final bool isDark;
   final VoidCallback onTap;
 
   const _NavItem({
     required this.icon,
     required this.label,
     required this.isSelected,
+    required this.isDark,
     required this.onTap,
   });
 
@@ -190,12 +203,16 @@ class _NavItem extends StatelessWidget {
               vertical: 8,
             ),
             decoration: BoxDecoration(
-              color: isSelected ? AppColors.primary : Colors.transparent,
+                color: isSelected
+                  ? (isDark ? ThemeController.darkAccent : AppColors.primary)
+                  : Colors.transparent,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Icon(
               icon,
-              color: isSelected ? AppColors.white : AppColors.textLightGrey,
+                color: isDark
+                  ? Colors.white
+                  : (isSelected ? AppColors.white : AppColors.textLightGrey),
               size: Responsive.iconSize(),
             ),
           ),
@@ -205,7 +222,9 @@ class _NavItem extends StatelessWidget {
             style: TextStyle(
               fontSize: Responsive.labelFontSize(),
               fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
-              color: isSelected ? AppColors.primary : AppColors.textLightGrey,
+                color: isDark
+                  ? Colors.white
+                  : (isSelected ? AppColors.primary : AppColors.textLightGrey),
             ),
           ),
         ],

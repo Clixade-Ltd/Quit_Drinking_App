@@ -246,6 +246,12 @@ class AppLocalizationsMn extends AppLocalizations {
   String get caloriesSaved => 'Хэмнэсэн калори';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'Эрүүл мэндийн оноо';
 
   @override

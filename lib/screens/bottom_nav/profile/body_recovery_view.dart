@@ -1,148 +1,15 @@
 
 import 'dart:math' as math;
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+import 'package:new_quit_drinking_app/models/body_recovery.dart';
 import 'package:path_drawing/path_drawing.dart';
 
-// =============================================================
-// MODELS
-// =============================================================
-
-enum DrinkingLevel {
-  social(0.75),
-  regular(1.0),
-  heavy(1.35),
-  dependent(1.75);
-
-  const DrinkingLevel(this.multiplier);
-
-  final double multiplier;
-
-  static DrinkingLevel fromValue(String? value) {
-    switch (value?.toLowerCase()) {
-      case 'social':
-        return DrinkingLevel.social;
-      case 'heavy':
-        return DrinkingLevel.heavy;
-      case 'dependent':
-        return DrinkingLevel.dependent;
-      case 'regular':
-      default:
-        return DrinkingLevel.regular;
-    }
-  }
-}
-
-enum Organ {
-  brain,
-  heart,
-  liver,
-  gut,
-  kidneys,
-  skin,
-}
-
-// =============================================================
-// BODY RECOVERY
-// =============================================================
-
-class BodyRecovery {
-  BodyRecovery({
-    required this.daysSober,
-    required this.drinkingLevel,
-  });
-
-  final int daysSober;
-  final DrinkingLevel drinkingLevel;
-
-  static const Map<Organ, double> _fullRecoveryDays = {
-    Organ.kidneys: 45,
-    Organ.skin: 60,
-    Organ.gut: 90,
-    Organ.brain: 180,
-    Organ.liver: 240,
-    Organ.heart: 365,
-  };
-
-  double percent(Organ organ) {
-    final fullDays = _fullRecoveryDays[organ] ?? 90;
-
-    final adjustedDays =
-        daysSober / drinkingLevel.multiplier;
-
-    final progress =
-        (adjustedDays / fullDays).clamp(0.0, 1.0);
-
-    final eased =
-        1 -
-        math.pow(
-          1 - progress,
-          1.8,
-        ).toDouble();
-
-    return (eased * 100).clamp(0.0, 100.0);
-  }
-
-  double get overall {
-    final values = Organ.values
-        .map(percent)
-        .toList(growable: false);
-
-    if (values.isEmpty) {
-      return 0;
-    }
-
-    return values.reduce((a, b) => a + b) / values.length;
-  }
-
-  Color colorFor(double percentage) {
-    final value =
-        (percentage / 100).clamp(0.0, 1.0);
-
-    if (value <= 0.35) {
-      return Color.lerp(
-        const Color(0xFFE5484D),
-        const Color(0xFFF08A4B),
-        value / 0.35,
-      )!;
-    }
-
-    if (value <= 0.65) {
-      return Color.lerp(
-        const Color(0xFFF08A4B),
-        const Color(0xFFE3B84D),
-        (value - 0.35) / 0.30,
-      )!;
-    }
-
-    return Color.lerp(
-      const Color(0xFFE3B84D),
-      const Color(0xFF36B982),
-      (value - 0.65) / 0.35,
-    )!;
-  }
-
-  String label(Organ organ) {
-    switch (organ) {
-      case Organ.brain:
-        return 'Brain';
-      case Organ.heart:
-        return 'Heart';
-      case Organ.liver:
-        return 'Liver';
-      case Organ.gut:
-        return 'Gut';
-      case Organ.kidneys:
-        return 'Kidneys';
-      case Organ.skin:
-        return 'Skin';
-    }
-  }
-}
+import '../../../constants/app_colors.dart';
+import '../../../theme/theme_controller.dart';
 
 // =============================================================
 // SVG DATA
@@ -205,7 +72,7 @@ class BodyShapes {
         '${organDirectory}gut.svg',
 
     Organ.kidneys:
-        '${organDirectory}kidneys.svg',
+        '${organDirectory}kidney.svg',
   };
 
   // ===========================================================
@@ -214,7 +81,7 @@ class BodyShapes {
   //
   // IMPORTANT:
   //
-  // kidneys.svg contains ONLY ONE kidney.
+  // kidney.svg contains ONLY ONE kidney.
   //
   // Therefore we create TWO separate slots:
   // left kidney + right kidney.
@@ -256,25 +123,34 @@ class BodyShapes {
   //
   // Anatomically positioned beside the left side
   // of the spine and slightly higher.
+  // Kept close to the torso so the kidneys read as part of the
+  // body while staying clear of the gut.
   static const Rect leftKidneySlot =
       Rect.fromLTRB(
     615,
-    1335,
-    785,
-    1535,
+    1315,
+    770,
+    1550,
   );
 
-  // RIGHT KIDNEY
-  //
-  // Slightly lower than the left kidney,
-  // which gives a more natural anatomical position.
   static const Rect rightKidneySlot =
       Rect.fromLTRB(
-    995,
-    1370,
-    1165,
-    1570,
+    1008,
+    1315,
+    1163,
+    1550,
   );
+
+  static const List<Offset> kidneyLabelPositions = [
+    Offset(
+      692.5,
+      1432.5,
+    ),
+    Offset(
+      1085.5,
+      1432.5,
+    ),
+  ];
 
   // ===========================================================
   // LABEL POSITIONS
@@ -297,14 +173,11 @@ class BodyShapes {
     ),
 
     Organ.gut: Offset(
-      1035,
-      1425,
+      890,
+      1430,
     ),
 
-    Organ.kidneys: Offset(
-      1080,
-      1590,
-    ),
+    Organ.kidneys: Offset.zero,
 
     Organ.skin: Offset.zero,
   };
@@ -405,24 +278,25 @@ class BodyShapes {
         // KIDNEYS
         // -----------------------------------------------------
         //
-        // kidneys.svg contains ONE kidney only.
+        // kidney.svg contains ONE kidney only.
         //
         // Create two copies:
         //
         // 1. Left kidney
         // 2. Right kidney
         //
-        // The right one is horizontally mirrored.
+        // The left one is horizontally mirrored so both kidney
+        // notches face inward toward the other organs.
         // -----------------------------------------------------
 
         final leftKidney =
-            _fit(
+            _fitMirroredHorizontal(
           sourcePaths,
           leftKidneySlot,
         );
 
         final rightKidney =
-            _fitMirroredHorizontal(
+            _fit(
           sourcePaths,
           rightKidneySlot,
         );
@@ -872,10 +746,6 @@ class BodyShapes {
                 scaledHeight) /
             2;
 
-    final right =
-        left + scaledWidth;
-
-    // First fit the kidney.
     final fitDx =
         left -
         sourceBounds.left * scale;
@@ -895,17 +765,15 @@ class BodyShapes {
             scale,
           );
 
-    final fitted =
-        paths
-            .map(
-              (path) =>
-                  path.transform(
-                fitMatrix.storage,
-              ),
-            )
-            .toList();
+    final fitted = paths
+        .map(
+          (path) =>
+              path.transform(
+            fitMatrix.storage,
+          ),
+        )
+        .toList();
 
-    // Mirror around the center of the target.
     final centerX =
         left + scaledWidth / 2;
 
@@ -916,8 +784,8 @@ class BodyShapes {
             0,
           )
           ..scale(
-            -1,
-            1,
+            -1.0,
+            1.0,
           )
           ..translate(
             -centerX,
@@ -933,7 +801,6 @@ class BodyShapes {
         )
         .toList();
   }
-
   // ===========================================================
   // BOUNDS
   // ===========================================================
@@ -1561,6 +1428,16 @@ class _BodyPainter extends CustomPainter {
       final isSelected =
           selectedOrgan == organ;
 
+      if (organ == Organ.kidneys) {
+        _paintKidneyLabels(
+          canvas,
+          textPainter,
+          percentage,
+          isSelected,
+        );
+        continue;
+      }
+
       textPainter.text =
           TextSpan(
         text:
@@ -1617,6 +1494,57 @@ class _BodyPainter extends CustomPainter {
         ),
         isSelected ? 6 : 4,
         dotPaint,
+      );
+    }
+  }
+
+  void _paintKidneyLabels(
+    Canvas canvas,
+    TextPainter textPainter,
+    double percentage,
+    bool isSelected,
+  ) {
+    textPainter.text =
+        TextSpan(
+      text:
+          '${percentage.round()}%',
+      style: TextStyle(
+        color:
+            Colors.white.withValues(
+          alpha:
+              isSelected
+                  ? 1
+                  : 0.94,
+        ),
+        fontSize:
+            isSelected
+                ? 34
+                : 30,
+        fontWeight:
+            FontWeight.w800,
+        shadows: const [
+          Shadow(
+            blurRadius: 8,
+            color:
+                Colors.black54,
+          ),
+        ],
+      ),
+    );
+
+    textPainter.layout();
+
+    for (final position
+        in BodyShapes
+            .kidneyLabelPositions) {
+      textPainter.paint(
+        canvas,
+        Offset(
+          position.dx -
+              textPainter.width / 2,
+          position.dy -
+              textPainter.height / 2,
+        ),
       );
     }
   }
@@ -1752,6 +1680,7 @@ class _BodyRecoveryViewState
   Widget build(
     BuildContext context,
   ) {
+    final isDark = AppColors.isDark(context);
     final l10n =
         AppLocalizations.of(
       context,
@@ -1773,10 +1702,9 @@ class _BodyRecoveryViewState
                   fontSize: 20.sp,
                   fontWeight:
                       FontWeight.w800,
-                  color:
-                      const Color(
-                    0xFF173B40,
-                  ),
+                  color: isDark
+                      ? Colors.white
+                      : const Color(0xFF173B40),
                 ),
               ),
             ),
@@ -1878,7 +1806,10 @@ class _BodyRecoveryViewState
           fontSize: 13.sp,
           fontWeight:
               FontWeight.w800,
-          color: color,
+          color: AppColors.primaryText(
+            context,
+            light: color,
+          ),
         ),
       ),
     );
@@ -1901,20 +1832,18 @@ class _BodyRecoveryViewState
       ),
       decoration:
           BoxDecoration(
-        color:
-            const Color(
-          0xFFF1F8F6,
-        ),
+        color: AppColors.isDark(context)
+            ? ThemeController.darkCard
+            : const Color(0xFFF1F8F6),
         borderRadius:
             BorderRadius.circular(
           14.r,
         ),
         border:
             Border.all(
-          color:
-              const Color(
-            0xFFD7ECE6,
-          ),
+          color: AppColors.isDark(context)
+              ? AppColors.accent(context)
+              : const Color(0xFFD7ECE6),
         ),
       ),
       child: Row(
@@ -1954,9 +1883,9 @@ class _BodyRecoveryViewState
                 height: 1.35,
                 fontWeight:
                     FontWeight.w600,
-                color:
-                    const Color(
-                  0xFF557276,
+                color: AppColors.primaryText(
+                  context,
+                  light: const Color(0xFF557276),
                 ),
               ),
             ),
@@ -1992,10 +1921,9 @@ class _BodyRecoveryViewState
           EdgeInsets.all(14.w),
       decoration:
           BoxDecoration(
-        color:
-            color.withValues(
-          alpha: 0.08,
-        ),
+        color: AppColors.isDark(context)
+          ? ThemeController.darkCard
+            : color.withValues(alpha: 0.08),
         borderRadius:
             BorderRadius.circular(
           16.r,
@@ -2046,9 +1974,9 @@ class _BodyRecoveryViewState
                         14.5.sp,
                     fontWeight:
                         FontWeight.w800,
-                    color:
-                        const Color(
-                      0xFF173B40,
+                    color: AppColors.primaryText(
+                      context,
+                      light: const Color(0xFF173B40),
                     ),
                   ),
                 ),
@@ -2061,7 +1989,10 @@ class _BodyRecoveryViewState
                     fontSize: 12.sp,
                     fontWeight:
                         FontWeight.w600,
-                    color: color,
+                    color: AppColors.primaryText(
+                      context,
+                      light: color,
+                    ),
                   ),
                 ),
               ],
@@ -2078,10 +2009,9 @@ class _BodyRecoveryViewState
               Icons
                   .close_rounded,
               size: 19.sp,
-              color:
-                  const Color(
-                0xFF789093,
-              ),
+              color: AppColors.isDark(context)
+                  ? Colors.white70
+                  : const Color(0xFF789093),
             ),
           ),
         ],
@@ -2347,6 +2277,7 @@ class _BodyRecoveryViewState
       percentage,
     );
 
+    final isDark = AppColors.isDark(context);
     final selected =
         _selectedOrgan == organ;
 
@@ -2374,11 +2305,13 @@ class _BodyRecoveryViewState
         ),
         decoration:
             BoxDecoration(
-          color: selected
-              ? color.withValues(
-                  alpha: 0.13,
-                )
-              : Colors.white,
+            color: selected
+              ? isDark
+                ? ThemeController.darkAccent.withValues(alpha: 0.34)
+                : color.withValues(alpha: 0.13)
+              : isDark
+                ? ThemeController.darkCard
+                : Colors.white,
           borderRadius:
               BorderRadius.circular(
             14.r,
@@ -2386,12 +2319,12 @@ class _BodyRecoveryViewState
           border:
               Border.all(
             color: selected
-                ? color.withValues(
-                    alpha: 0.55,
-                  )
-                : const Color(
-                    0xFFE1ECE9,
-                  ),
+              ? isDark
+                ? Colors.white
+                : color.withValues(alpha: 0.55)
+              : isDark
+                ? ThemeController.darkAccent
+                : const Color(0xFFE1ECE9),
             width:
                 selected
                     ? 1.4
@@ -2462,9 +2395,9 @@ class _BodyRecoveryViewState
                           13.sp,
                       fontWeight:
                           FontWeight.w700,
-                      color:
-                          const Color(
-                        0xFF294B50,
+                      color: AppColors.primaryText(
+                        context,
+                        light: const Color(0xFF294B50),
                       ),
                     ),
                   ),
@@ -2478,7 +2411,10 @@ class _BodyRecoveryViewState
                           13.sp,
                       fontWeight:
                           FontWeight.w800,
-                      color: color,
+                      color: AppColors.primaryText(
+                        context,
+                        light: color,
+                      ),
                     ),
                   ),
                 ],
@@ -2503,10 +2439,9 @@ class _BodyRecoveryViewState
       ),
       decoration:
           BoxDecoration(
-        color:
-            const Color(
-          0xFFF7FAF9,
-        ),
+        color: AppColors.isDark(context)
+            ? ThemeController.darkCard
+            : const Color(0xFFF7FAF9),
         borderRadius:
             BorderRadius.circular(
           14.r,
@@ -2518,9 +2453,9 @@ class _BodyRecoveryViewState
             Icons
                 .info_outline_rounded,
             size: 17.sp,
-            color:
-                const Color(
-              0xFF7A9093,
+            color: AppColors.secondaryText(
+              context,
+              light: const Color(0xFF7A9093),
             ),
           ),
           SizedBox(
@@ -2534,9 +2469,9 @@ class _BodyRecoveryViewState
                 height: 1.35,
                 fontWeight:
                     FontWeight.w500,
-                color:
-                    const Color(
-                  0xFF718588,
+                color: AppColors.secondaryText(
+                  context,
+                  light: const Color(0xFF718588),
                 ),
               ),
             ),

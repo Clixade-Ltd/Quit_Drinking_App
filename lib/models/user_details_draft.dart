@@ -25,6 +25,7 @@ class UserDetailsDraft {
   // ---- Question 3: Routine ----
   int drinksPerWeek = 0;
   int moneySpentPerWeek = 0;
+  int? caloriesPerDrink;
   String? drinkingLevel;
   List<String> triggers = [];
 
@@ -71,6 +72,10 @@ class UserDetailsDraft {
     moneySpentPerWeek = value;
   }
 
+  void setCaloriesPerDrink(int? value) {
+    caloriesPerDrink = value;
+  }
+
   void setDrinkingLevel(String value) {
     drinkingLevel = value;
   }
@@ -107,6 +112,8 @@ class UserDetailsDraft {
 
       'drinksPerWeek': drinksPerWeek,
       'moneySpentPerWeek': moneySpentPerWeek,
+      if (caloriesPerDrink != null)
+        'caloriesPerDrink': caloriesPerDrink,
       'drinkingLevel': drinkingLevel,
       'triggers': triggers,
       'quitReasons': quitReasons,
@@ -124,6 +131,7 @@ class UserDetailsDraft {
         drinkingLevel != null ||
         drinksPerWeek != 0 ||
         moneySpentPerWeek != 0 ||
+        caloriesPerDrink != null ||
         triggers.isNotEmpty ||
         quitReasons.isNotEmpty;
   }
@@ -145,6 +153,7 @@ class UserDetailsDraft {
 
     drinksPerWeek = 0;
     moneySpentPerWeek = 0;
+    caloriesPerDrink = null;
     drinkingLevel = null;
 
     triggers = [];

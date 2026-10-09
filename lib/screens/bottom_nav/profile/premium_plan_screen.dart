@@ -2,58 +2,98 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_quit_drinking_app/screens/bottom_nav/main_nav_screen.dart';
 
+import '../../../constants/app_colors.dart';
 import '../../../services/premium_service.dart';
 import '../../../services/analytics_service.dart';
-import '../home_screen.dart';
-
-import 'package:new_quit_drinking_app/l10n/app_localizations.dart';
+import '../../../theme/theme_controller.dart';
 
 class PremiumPlanScreen extends StatefulWidget {
   const PremiumPlanScreen({super.key});
 
   @override
-  State<PremiumPlanScreen> createState() =>
-      _PersonalizedPlanScreenState();
+  State<PremiumPlanScreen> createState() => _PremiumPlanScreenState();
 }
 
-class _PersonalizedPlanScreenState
-    extends State<PremiumPlanScreen> {
-  static const Color teal = Color(0xFF087F7B);
-  static const Color lightTeal = Color(0xFFEAF6F5);
+class _PremiumPlanScreenState extends State<PremiumPlanScreen> {
+  // ============================================================
+  // COLORS
+  // ============================================================
+
+  static const Color teal = Color(0xFF018080);
+  static const Color lightTeal = Color(0x1A018080);
   static const Color textBlack = Color(0xFF171717);
   static const Color textGrey = Color(0xFF777777);
+  static const Color borderGrey = Color(0xFFD6D6D6);
 
-  final AnalyticsService _analytics =
-      AnalyticsService.instance;
+  static const Color darkPlanBlue = Color(0xFF0066B2);
+  static const Color darkPlanBlueDark = Color(0xFF002B4C);
+
+  bool get _dark => AppColors.isDark(context);
+  Color get _accent => _dark ? ThemeController.darkAccent : teal;
+  Color get _heading => _dark ? Colors.white : teal;
+  Color get _copy => _dark ? Colors.white : textBlack;
+  Color get _muted => _dark ? Colors.white70 : textGrey;
+
+  // ============================================================
+  // TABLET SCALE
+  // _tabletAdjust: tablet pe sab ka size yahan se kam/zyada karo
+  //   chhota karna ho -> 0.85 se kam (0.80, 0.75)
+  //   bara karna ho   -> 0.85 se zyada (0.90, 1.0)
+  // ============================================================
+
+  static const double _tabletAdjust = 0.85;
+
+  bool get _isTablet => MediaQuery.sizeOf(context).width >= 600;
+
+  // (tablet card width) / (Figma card width 356.96) * adjust
+  double get _tabletRatio {
+    final double screenW = MediaQuery.sizeOf(context).width;
+    final double cardW = (screenW > 620 ? 620 : screenW) - 2 * 32;
+    return cardW / 356.96 * _tabletAdjust;
+  }
+
+  double _tw(double v) => _isTablet ? v * _tabletRatio : v.w;
+  double _th(double v) => _isTablet ? v * _tabletRatio : v.h;
+  double _tsp(double v) => _isTablet ? v * _tabletRatio : v.sp;
+  double _tr(double v) => _isTablet ? v * _tabletRatio : v.r;
+
+  // ============================================================
+  // ASSET
+  // ============================================================
+
+  static const String heroImage = 'assets/images/premium_hero.png';
+  static const String darkHeroImage = 'assets/images/dark_hero.png';
+  static const String darkCirclesImage = 'assets/images/dark_circles.png';
+  static const String darkCheckImage = 'assets/images/dark_check.png';
+
+  // ============================================================
+  // DATA
+  // ============================================================
+
+  static const String yearlyPrice = '\$00.00';
+  static const String yearlyPerWeek = '\$0.00';
+  static const String monthlyPrice = '\$0.00';
+  static const String trialPrice = '\$29.99';
+  static const int trialDays = 3;
+
+  static const List<String> _features = [
+    'Watch every sober day',
+    'Track how your body recovers',
+    'Milestones that celebrate every win',
+    'AI coach that learns your patterns',
+  ];
+
+  final AnalyticsService _analytics = AnalyticsService.instance;
 
   bool _yearlySelected = true;
-
-  // ============================================================
-  // PREMIUM STATUS
-  // ============================================================
-
   bool _isLoading = true;
   bool _isProcessing = false;
   bool _isPremium = false;
   bool _isCancelling = false;
 
   // ============================================================
-  // FEATURE TITLES
+  // INIT
   // ============================================================
-
-  List<String> _featureTitles(
-    AppLocalizations loc,
-  ) =>
-      [
-        loc.featureAdvancedInsights,
-        loc.featureUnlimitedJournal,
-        loc.featureUnlimitedChat,
-        loc.featureCommunityGroups,
-        loc.featurePrioritySupport,
-        loc.featureThemePacks,
-        loc.featureDataExport,
-        loc.featureAdFree,
-      ];
 
   @override
   void initState() {
@@ -62,52 +102,35 @@ class _PersonalizedPlanScreenState
   }
 
   // ============================================================
-  // LOAD PREMIUM STATUS
+  // LOGIC
   // ============================================================
 
   Future<void> _loadPremiumStatus() async {
-    final isPremium =
-        await PremiumService.instance.isPremium();
-
-    final planType =
-        await PremiumService.instance.getPlanType();
+    final isPremium = await PremiumService.instance.isPremium();
+    final planType = await PremiumService.instance.getPlanType();
 
     if (!mounted) return;
 
     setState(() {
       _isPremium = isPremium;
-
       if (isPremium && planType != null) {
-        _yearlySelected =
-            planType == 'yearly';
+        _yearlySelected = planType == 'yearly';
       }
-
       _isLoading = false;
     });
   }
 
-  // ============================================================
-  // GO TO HOME
-  // ============================================================
-
   void _goToHome() {
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(
-        builder: (_) => const MainNavScreen(),
-      ),
+      MaterialPageRoute(builder: (_) => const MainNavScreen()),
       (route) => false,
     );
   }
 
-  // ============================================================
-  // START PREMIUM
-  // ============================================================
-
   Future<void> _startPremium() async {
     if (_isProcessing || _isPremium) return;
 
-    final plan =
-        _yearlySelected ? 'yearly' : 'monthly';
+    final plan = _yearlySelected ? 'yearly' : 'monthly';
 
     _analytics.premiumPurchaseStarted(plan);
 
@@ -115,10 +138,7 @@ class _PersonalizedPlanScreenState
       _isProcessing = true;
     });
 
-    await PremiumService.instance.setPremium(
-      true,
-      planType: plan,
-    );
+    await PremiumService.instance.setPremium(true, planType: plan);
 
     if (!mounted) return;
 
@@ -128,92 +148,65 @@ class _PersonalizedPlanScreenState
     });
 
     _analytics.purchase(
-      value: _yearlySelected
-          ? 71.88
-          : 9.99,
+      value: _yearlySelected ? 71.88 : 9.99,
       currency: 'USD',
       plan: plan,
     );
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          AppLocalizations.of(context)!
-              .nowPremiumMessage,
-        ),
-      ),
+      const SnackBar(content: Text('You are now Premium!')),
     );
 
     _goToHome();
   }
 
-  // ============================================================
-  // CANCEL PREMIUM
-  // ============================================================
-
   Future<void> _cancelPremium() async {
     if (_isCancelling || !_isPremium) return;
 
-    final loc =
-        AppLocalizations.of(context)!;
-
-    final confirmed =
-        await showDialog<bool>(
+    final confirmed = await showDialog<bool>(
       context: context,
-      builder: (context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          title: Text(
-            loc.cancelPremiumTitle,
-            style: TextStyle(
-              color: textBlack,
-              fontWeight:
-                  FontWeight.w700,
-              fontSize: 20.sp,
-            ),
+      builder: (context) => AlertDialog(
+        backgroundColor: _dark ? ThemeController.darkCard : Colors.white,
+        title: Text(
+          'Cancel Premium?',
+          style: TextStyle(
+            color: _copy,
+            fontWeight: FontWeight.w700,
+            fontSize: 20.sp,
           ),
-          content: Text(
-            loc.cancelPremiumMessage,
-            style: TextStyle(
-              color: textGrey,
-              fontSize: 14.sp,
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () =>
-                  Navigator.of(context)
-                      .pop(false),
-              child: Text(
-                loc.keepPremiumLabel,
-                style: TextStyle(
-                  color: teal,
-                  fontWeight:
-                      FontWeight.w600,
-                  fontSize: 14.sp,
-                ),
+        ),
+        content: Text(
+          'You will lose access to all premium features.',
+          style: TextStyle(color: _muted, fontSize: 14.sp),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(
+              'Keep Premium',
+              style: TextStyle(
+                color: _accent,
+                fontWeight: FontWeight.w600,
+                fontSize: 14.sp,
               ),
             ),
-            TextButton(
-              onPressed: () =>
-                  Navigator.of(context)
-                      .pop(true),
-              child: Text(
-                loc.cancelPremiumLabel,
-                style: TextStyle(
-                  color: Colors.redAccent,
-                  fontSize: 14.sp,
-                ),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(
+              'Cancel Premium',
+              style: TextStyle(
+                color: Colors.redAccent,
+                fontSize: 14.sp,
               ),
             ),
-          ],
-        );
-      },
+          ),
+        ],
+      ),
     );
 
     if (confirmed != true) {
-      _analytics
-          .premiumCancelAborted();
+      _analytics.premiumCancelAborted();
       return;
     }
 
@@ -221,8 +214,7 @@ class _PersonalizedPlanScreenState
       _isCancelling = true;
     });
 
-    await PremiumService.instance
-        .setPremium(false);
+    await PremiumService.instance.setPremium(false);
 
     if (!mounted) return;
 
@@ -234,13 +226,12 @@ class _PersonalizedPlanScreenState
     _analytics.premiumCancelled();
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          AppLocalizations.of(context)!
-              .premiumCancelledMessage,
-        ),
-      ),
+      const SnackBar(content: Text('Premium cancelled')),
     );
+  }
+
+  void _restore() {
+    // TODO: restore purchases
   }
 
   // ============================================================
@@ -250,689 +241,425 @@ class _PersonalizedPlanScreenState
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
-      return const Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: CircularProgressIndicator(
-            color: teal,
-          ),
+      return Scaffold(
+        backgroundColor: AppColors.pageBackground(
+          context,
+          light: Colors.white,
+        ),
+        body: const Center(
+          child: CircularProgressIndicator(color: teal),
         ),
       );
     }
 
-    final loc =
-        AppLocalizations.of(context)!;
-
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.pageBackground(
+        context,
+        light: Colors.white,
+      ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics:
-              const BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(
-              20.w,
-              8.h,
-              20.w,
-              14.h,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final bool isTablet = constraints.maxWidth >= 600;
+
+            // Tablet pe plain values (scale nahi), phone pe .w
+            final double horizontalPadding = isTablet ? 32 : 20.w;
+
+            // Tablet: cards ko dono (left + right) taraf se wide karne ke liye
+            // content area bada (620). Baqi widgets ko `inset` se pehle jaisi
+            // width (456) pe rakha hai.
+            final double contentMaxWidth = isTablet ? 620 : double.infinity;
+            final double inset = isTablet ? 50 : 0;
+
+            Widget pad(Widget w) => Padding(
+                  padding: EdgeInsets.symmetric(horizontal: inset),
+                  child: w,
+                );
+
+            return SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: contentMaxWidth),
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(
+                      horizontalPadding,
+                      0,
+                      horizontalPadding,
+                      _th(20),
+                    ),
+                    child: Column(
+                      children: [
+                        _buildTopBar(),
+                        _buildHero(),
+                        SizedBox(height: _th(4)),
+                        pad(_buildTitle()),
+                        SizedBox(height: _th(14)),
+                        // Features ka left edge bilkul card ke left edge se start
+                        _buildFeatures(),
+                        SizedBox(height: _th(18)),
+                        _buildYearlyCard(),
+                        SizedBox(height: _th(16)),
+                        _buildMonthlyCard(),
+                        SizedBox(height: _th(14)),
+                        _buildTrialText(),
+                        SizedBox(height: _th(10)),
+                        _buildContinueButton(),
+                        SizedBox(height: _th(10)),
+                        Text(
+                          'No Commitment, Cancel Anytime',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: _tsp(11),
+                            color: _muted,
+                          ),
+                        ),
+                        SizedBox(height: _th(6)),
+                        if (_isPremium) _buildCancelLink(),
+                        SizedBox(height: _th(4)),
+                        pad(_buildLinksRow()),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  // ============================================================
+  // TOP BAR
+  // ============================================================
+
+  Widget _buildTopBar() {
+    return LayoutBuilder(
+      builder: (context, c) {
+        final bool tablet = MediaQuery.sizeOf(context).width >= 600;
+
+        // Same tablet ratio jo features/cards use karte hain
+        final double ratio = tablet ? _tabletRatio : 1.0;
+
+        double sw(double v) => tablet ? v * ratio : v.w;
+        double sh(double v) => tablet ? v * ratio : v.h;
+        double ssp(double v) => tablet ? v * ratio : v.sp;
+        double sr(double v) => tablet ? v * ratio : v.r;
+
+        return SizedBox(
+          height: sh(40),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // CLOSE (cross) — tablet pe card ke left edge se start
+              InkWell(
+                onTap: () => Navigator.of(context).pop(),
+                borderRadius: BorderRadius.circular(sr(20)),
+                child: Padding(
+                  padding: tablet
+                      ? EdgeInsets.symmetric(vertical: sr(7))
+                      : EdgeInsets.all(7.r),
+                  child: Icon(Icons.close, color: _copy, size: ssp(22)),
+                ),
+              ),
+
+              // RESTORE — tablet pe card ke right edge pe end
+              InkWell(
+                onTap: _restore,
+                borderRadius: BorderRadius.circular(sr(26.64)),
+                child: Container(
+                  constraints: BoxConstraints(
+                    minWidth: sw(68),
+                    minHeight: sh(25),
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: sw(10),
+                    vertical: sh(3),
+                  ),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: _dark ? Colors.transparent : Colors.white,
+                    borderRadius: BorderRadius.circular(sr(26.64)),
+                    border: Border.all(
+                      color: _dark ? Colors.white : _accent,
+                      width: sw(0.87),
+                    ),
+                  ),
+                  child: Text(
+                    'Restore',
+                    maxLines: 1,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: _dark ? Colors.white : teal,
+                      fontSize: ssp(12),
+                      fontWeight: FontWeight.w500,
+                      height: 1.0,
+                      letterSpacing: 0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // ============================================================
+  // HERO
+  // ============================================================
+
+  Widget _buildHero() {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth;
+
+        final heroHeight = width >= 600 ? 190.h : 0.25.sh;
+
+        return SizedBox(
+          width: double.infinity,
+          height: heroHeight,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              // DARK MODE ONLY: BACK CIRCLES
+              if (_dark)
+                Positioned(
+                  left: 180,
+                  top: 57,
+                  width: 176,
+                  height: 166,
+                  child: Image.asset(
+                    darkCirclesImage,
+                    fit: BoxFit.contain,
+                    errorBuilder: (_, __, ___) {
+                      return const SizedBox.shrink();
+                    },
+                  ),
+                ),
+
+              // LIGHT MODE ONLY: BACKGROUND IMAGE
+              if (!_dark)
+                Positioned(
+                  left: 182,
+                  top: 44,
+                  width: 174.1016,
+                  height: 166.1016,
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/hero_back_image.png',
+                      width: 174.1016,
+                      height: 174.1016,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, __, ___) {
+                        return const SizedBox.shrink();
+                      },
+                    ),
+                  ),
+                ),
+
+              // PREMIUM HERO IMAGE — FRONT
+              Positioned.fill(
+                child: Image.asset(
+                  _dark ? darkHeroImage : heroImage,
+                  fit: BoxFit.contain,
+                  errorBuilder: (_, __, ___) {
+                    return const SizedBox.shrink();
+                  },
+                ),
+              ),
+
+              // BOTTOM WHITE FADE — LIGHT MODE ONLY
+              if (!_dark)
+                Positioned(
+                  left: -12,
+                  bottom: 0,
+                  child: IgnorePointer(
+                    child: Container(
+                      width: 413,
+                      height: 117,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color.fromRGBO(255, 255, 255, 0),
+                            Colors.white,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+              // BOTTOM DARK FADE — DARK MODE ONLY
+              if (_dark)
+                Positioned(
+                  left: -9.65,
+                  bottom: 0,
+                  child: IgnorePointer(
+                    child: Container(
+                      width: 412.2991027832031,
+                      height: 60.84821319580078,
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color.fromRGBO(0, 46, 81, 0),
+                            Color(0xFF002E51),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // ============================================================
+  // TITLE
+  // ============================================================
+
+  Widget _buildTitle() {
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              'Quit Drinking',
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              style: TextStyle(
+                fontSize: _tsp(41.02),
+                fontWeight: FontWeight.w700,
+                height: 1.0,
+                letterSpacing: 0,
+                color: _heading,
+              ),
             ),
+          ),
+          SizedBox(height: _th(4)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              'Stay Sober, Feel Better',
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              style: TextStyle(
+                fontSize: _tsp(32.39),
+                fontWeight: FontWeight.w700,
+                height: 41.02 / 32.39,
+                letterSpacing: 0,
+                color: _heading,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ============================================================
+  // FEATURES
+  // ============================================================
+
+  Widget _buildFeatures() {
+    return LayoutBuilder(
+      builder: (context, c) {
+        final bool tablet = MediaQuery.sizeOf(context).width >= 600;
+
+        // Figma specs: width 356.96, height 152.85, gap 6
+        const double designW = 356.96;
+        const double designH = 152.85;
+        const double designGap = 6;
+
+        // Tablet ratio = (cards ki width) / (Figma features width)
+        final double ratio = tablet ? _tabletRatio : 1.0;
+
+        double sw(double v) => tablet ? v * ratio : v.w;
+        double sh(double v) => tablet ? v * ratio : v.h;
+        double ssp(double v) => tablet ? v * ratio : v.sp;
+
+        final double gap = sh(designGap);
+        // 4 rows + 3 gaps = poori height (152.85)
+        final double rowH = sh((designH - designGap * 3) / 4);
+
+        final double phoneW = designW.w;
+        final double blockW = tablet
+            ? c.maxWidth
+            : (phoneW > c.maxWidth ? c.maxWidth : phoneW);
+
+        return Align(
+          alignment: Alignment.centerLeft,
+          child: SizedBox(
+            width: blockW,
+            height: sh(designH),
             child: Column(
               children: [
-                // ==================================================
-                // TOP BAR
-                // ==================================================
-
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () =>
-                          Navigator.of(context)
-                              .pop(),
-                      borderRadius:
-                          BorderRadius.circular(
-                        20.r,
-                      ),
-                      child: Padding(
-                        padding:
-                            EdgeInsets.all(8.r),
-                        child: Icon(
-                          Icons.close,
-                          color:
-                              const Color(
-                            0xFF666666,
-                          ),
-                          size: 22.sp,
-                        ),
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Center(
-                        child: Text(
-                          loc.premiumBadgeLabel,
-                          maxLines: 1,
-                          overflow:
-                              TextOverflow
-                                  .ellipsis,
-                          style: TextStyle(
-                            fontWeight:
-                                FontWeight.w700,
-                            fontSize: 12.sp,
-                            letterSpacing: 1.2,
-                            color: teal,
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Keeps PREMIUM centered
-                    SizedBox(width: 38.w),
-                  ],
-                ),
-
-                SizedBox(height: 12.h),
-
-                // ==================================================
-                // PREMIUM ICON
-                // ==================================================
-
-                Container(
-                  width: 46.w,
-                  height: 46.w,
-                  decoration:
-                      BoxDecoration(
-                    color: teal,
-                    borderRadius:
-                        BorderRadius.circular(
-                      13.r,
-                    ),
-                  ),
-                  child: Icon(
-                    Icons.diamond_outlined,
-                    color: Colors.white,
-                    size: 26.sp,
-                  ),
-                ),
-
-                SizedBox(height: 14.h),
-
-                // ==================================================
-                // TITLE
-                // ==================================================
-
-                Text(
-                  _isPremium
-                      ? loc.premiumMemberTitle
-                      : loc.unlockFullRecoveryTitle,
-                  textAlign:
-                      TextAlign.center,
-                  maxLines: 3,
-                  overflow:
-                      TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontWeight:
-                        FontWeight.w700,
-                    fontSize: 20.sp,
-                    height: 1.15,
-                    color: teal,
-                  ),
-                ),
-
-                SizedBox(height: 10.h),
-
-                Text(
-                  _isPremium
-                      ? loc.premiumMemberSubtitle
-                      : loc.premiumJoinSubtitle,
-                  textAlign:
-                      TextAlign.center,
-                  maxLines: 4,
-                  overflow:
-                      TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontWeight:
-                        FontWeight.w400,
-                    fontSize: 12.sp,
-                    height: 1.4,
-                    color: textGrey,
-                  ),
-                ),
-
-                // ==================================================
-                // FEATURE CHECKLIST
-                // ==================================================
-
-                SizedBox(height: 14.h),
-
-                Column(
-                  mainAxisSize:
-                      MainAxisSize.min,
-                  children: [
-                    for (final title
-                        in _featureTitles(loc))
-                      Padding(
-                        padding:
-                            EdgeInsets.symmetric(
-                          vertical: 5.h,
-                        ),
-                        child:
-                            _buildChecklistItem(
-                          title,
-                        ),
-                      ),
-                  ],
-                ),
-
-                SizedBox(height: 12.h),
-
-                // ==================================================
-                // MONTHLY / YEARLY PLANS
-                // ==================================================
-
-                Row(
-                  crossAxisAlignment:
-                      CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child:
-                          _buildPlanCard(
-                        title:
-                            loc.monthlyPlanLabel,
-                        price: '\$9.99',
-                        suffix:
-                            loc.perMonthSuffix,
-                        bottomText:
-                            loc.cancelAnytimeLabel,
-                        selected:
-                            !_yearlySelected,
-                        onTap: () {
-                          setState(() {
-                            _yearlySelected =
-                                false;
-                          });
-
-                          _analytics
-                              .premiumPlanSelected(
-                            'monthly',
-                          );
-                        },
-                      ),
-                    ),
-
-                    SizedBox(width: 12.w),
-
-                    Expanded(
-                      child:
-                          _buildYearlyCard(loc),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 16.h),
-
-                // ==================================================
-                // START PREMIUM
-                // ==================================================
-
-                SizedBox(
-                  width: double.infinity,
-                  height: 46.h,
-                  child: ElevatedButton(
-                    onPressed:
-                        (_isProcessing ||
-                                _isPremium)
-                            ? null
-                            : _startPremium,
-                    style:
-                        ElevatedButton.styleFrom(
-                      backgroundColor:
-                          teal,
-                      foregroundColor:
-                          Colors.white,
-                      disabledBackgroundColor:
-                          teal.withOpacity(
-                        0.6,
-                      ),
-                      disabledForegroundColor:
-                          Colors.white,
-                      elevation: 3,
-                      shadowColor:
-                          teal.withOpacity(
-                        0.25,
-                      ),
-                      shape:
-                          RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius
-                                .circular(
-                          11.r,
-                        ),
-                      ),
-                    ),
-                    child: _isProcessing
-                        ? SizedBox(
-                            width: 18.w,
-                            height: 18.w,
-                            child:
-                                const CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor:
-                                  AlwaysStoppedAnimation<
-                                      Color>(
-                                Colors.white,
+                for (int i = 0; i < _features.length; i++) ...[
+                  SizedBox(
+                    height: rowH,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        _dark
+                            ? Image.asset(
+                                darkCheckImage,
+                                width: sw(20),
+                                height: sw(20),
+                                fit: BoxFit.contain,
+                                errorBuilder: (_, __, ___) {
+                                  return Icon(
+                                    Icons.check,
+                                    size: ssp(20),
+                                    color: Colors.white,
+                                  );
+                                },
+                              )
+                            : Image.asset(
+                                'assets/images/check.png',
+                                width: sw(20),
+                                height: sw(20),
+                                fit: BoxFit.contain,
+                              ),
+                        SizedBox(width: sw(10)),
+                        Expanded(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              _features[i],
+                              maxLines: 1,
+                              style: TextStyle(
+                                fontSize: ssp(19),
+                                fontWeight: FontWeight.w400,
+                                height: 1.0,
+                                letterSpacing: 0,
+                                color: _copy,
                               ),
                             ),
-                          )
-                        : Text(
-                            _isPremium
-                                ? loc
-                                    .alreadyPremiumLabel
-                                : loc
-                                    .startPremiumLabel,
-                            style:
-                                TextStyle(
-                              fontWeight:
-                                  FontWeight
-                                      .w600,
-                              fontSize: 13.sp,
-                            ),
                           ),
-                  ),
-                ),
-
-                SizedBox(height: 8.h),
-
-                // ==================================================
-                // COMMITMENT TEXT
-                // ==================================================
-
-                Text(
-                  _isPremium
-                      ? loc.manageSubscriptionLabel
-                      : loc.noCommitmentLabel,
-                  textAlign:
-                      TextAlign.center,
-                  maxLines: 2,
-                  overflow:
-                      TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontWeight:
-                        FontWeight.w400,
-                    fontSize: 11.sp,
-                    color: textGrey,
-                  ),
-                ),
-
-                SizedBox(height: 6.h),
-
-                // ==================================================
-                // FREE / HOME / CANCEL
-                // ==================================================
-
-                if (!_isPremium)
-                  InkWell(
-                    onTap: _goToHome,
-                    borderRadius:
-                        BorderRadius.circular(
-                      20.r,
+                        ),
+                      ],
                     ),
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: 4.h,
-                      ),
-                      child: Text(
-                        loc
-                            .continueFreePlanLabel,
-                        style: TextStyle(
-                          fontWeight:
-                              FontWeight.w600,
-                          fontSize: 12.sp,
-                          color: teal,
-                        ),
-                      ),
-                    ),
-                  )
-                else
-                  Column(
-                    children: [
-                      InkWell(
-                        onTap: _goToHome,
-                        borderRadius:
-                            BorderRadius.circular(
-                          20.r,
-                        ),
-                        child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 4.h,
-                          ),
-                          child: Text(
-                            loc.backToHomeLabel,
-                            style: TextStyle(
-                              fontWeight:
-                                  FontWeight
-                                      .w600,
-                              fontSize: 12.sp,
-                              color: teal,
-                            ),
-                          ),
-                        ),
-                      ),
-
-                      SizedBox(height: 2.h),
-
-                      InkWell(
-                        onTap: _isCancelling
-                            ? null
-                            : _cancelPremium,
-                        borderRadius:
-                            BorderRadius.circular(
-                          20.r,
-                        ),
-                        child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 4.h,
-                          ),
-                          child: _isCancelling
-                              ? SizedBox(
-                                  width: 14.w,
-                                  height: 14.w,
-                                  child:
-                                      const CircularProgressIndicator(
-                                    strokeWidth:
-                                        2,
-                                    valueColor:
-                                        AlwaysStoppedAnimation<
-                                            Color>(
-                                      Colors
-                                          .redAccent,
-                                    ),
-                                  ),
-                                )
-                              : Text(
-                                  loc
-                                      .cancelPremiumLabel,
-                                  style:
-                                      TextStyle(
-                                    fontWeight:
-                                        FontWeight
-                                            .w600,
-                                    fontSize:
-                                        12.sp,
-                                    color: Colors
-                                        .redAccent,
-                                  ),
-                                ),
-                        ),
-                      ),
-                    ],
                   ),
-
-                SizedBox(height: 4.h),
-
-                // ==================================================
-                // TERMS / PRIVACY
-                // ==================================================
-
-                Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: InkWell(
-                        onTap: () {
-                          // TODO: open Terms of Use
-                        },
-                        child: Text(
-                          loc.termsOfUseLabel,
-                          maxLines: 1,
-                          overflow:
-                              TextOverflow
-                                  .ellipsis,
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            color: textGrey,
-                            decoration:
-                                TextDecoration
-                                    .underline,
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(
-                        horizontal: 6.w,
-                      ),
-                      child: Text(
-                        '|',
-                        style: TextStyle(
-                          fontSize: 11.sp,
-                          color: textGrey,
-                        ),
-                      ),
-                    ),
-
-                    Flexible(
-                      child: InkWell(
-                        onTap: () {
-                          // TODO: open Privacy Policy
-                        },
-                        child: Text(
-                          loc.privacyPolicy,
-                          maxLines: 1,
-                          overflow:
-                              TextOverflow
-                                  .ellipsis,
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            color: textGrey,
-                            decoration:
-                                TextDecoration
-                                    .underline,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  // ============================================================
-  // CHECKLIST ITEM
-  // ============================================================
-
-  Widget _buildChecklistItem(
-    String title,
-  ) {
-    return Row(
-      children: [
-        Container(
-          width: 17.w,
-          height: 17.w,
-          decoration:
-              const BoxDecoration(
-            color: teal,
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            Icons.check,
-            color: Colors.white,
-            size: 12.sp,
-          ),
-        ),
-
-        SizedBox(width: 10.w),
-
-        Expanded(
-          child: Text(
-            title,
-            maxLines: 2,
-            overflow:
-                TextOverflow.ellipsis,
-            style: TextStyle(
-              fontWeight:
-                  FontWeight.w500,
-              fontSize: 12.sp,
-              color: textBlack,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  // ============================================================
-  // MONTHLY CARD
-  // ============================================================
-
-  Widget _buildPlanCard({
-    required String title,
-    required String price,
-    required String suffix,
-    required String bottomText,
-    required bool selected,
-    required VoidCallback onTap,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius:
-          BorderRadius.circular(16.r),
-      child: AnimatedContainer(
-        duration:
-            const Duration(milliseconds: 200),
-        width: double.infinity,
-        padding: EdgeInsets.fromLTRB(
-          16.w,
-          16.h,
-          16.w,
-          14.h,
-        ),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius:
-              BorderRadius.circular(16.r),
-          border: Border.all(
-            color: selected
-                ? teal
-                : const Color(0xFFF1F1F1),
-            width: selected
-                ? 2.w
-                : 1.w,
-          ),
-
-          // ======================================================
-          // SELECTED CARD = TEAL SHADOW
-          // UNSELECTED CARD = NORMAL SHADOW
-          // ======================================================
-
-          boxShadow: selected
-              ? [
-                  BoxShadow(
-                    color: teal.withOpacity(0.35),
-                    blurRadius: 25,
-                    spreadRadius: 2,
-                    offset: const Offset(0, 5),
-                  ),
-                ]
-              : const [
-                  BoxShadow(
-                    color: Color(0x08000000),
-                    blurRadius: 18,
-                    offset: Offset(0, 4),
-                  ),
+                  if (i != _features.length - 1) SizedBox(height: gap),
                 ],
-        ),
-        child: Column(
-          crossAxisAlignment:
-              CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              maxLines: 1,
-              overflow:
-                  TextOverflow.ellipsis,
-              style: TextStyle(
-                fontWeight:
-                    FontWeight.w500,
-                fontSize: 14.sp,
-                color: selected
-                    ? teal
-                    : textBlack,
-              ),
-            ),
-
-            SizedBox(height: 10.h),
-
-            Row(
-              crossAxisAlignment:
-                  CrossAxisAlignment.end,
-              children: [
-                Flexible(
-                  child: Text(
-                    price,
-                    maxLines: 1,
-                    overflow:
-                        TextOverflow
-                            .ellipsis,
-                    style: TextStyle(
-                      fontWeight:
-                          FontWeight.w700,
-                      fontSize: 20.sp,
-                      color: teal,
-                    ),
-                  ),
-                ),
-
-                SizedBox(width: 3.w),
-
-                Padding(
-                  padding:
-                      EdgeInsets.only(
-                    bottom: 3.h,
-                  ),
-                  child: Text(
-                    suffix,
-                    maxLines: 1,
-                    overflow:
-                        TextOverflow
-                            .ellipsis,
-                    style: TextStyle(
-                      fontSize: 11.sp,
-                      color: textGrey,
-                    ),
-                  ),
-                ),
               ],
             ),
-
-            SizedBox(height: 4.h),
-
-            Text(
-              bottomText,
-              maxLines: 2,
-              overflow:
-                  TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 10.sp,
-                color: textGrey,
-              ),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -940,194 +667,330 @@ class _PersonalizedPlanScreenState
   // YEARLY CARD
   // ============================================================
 
-  Widget _buildYearlyCard(
-    AppLocalizations loc,
-  ) {
+  Widget _buildYearlyCard() {
     return InkWell(
       onTap: () {
         setState(() {
           _yearlySelected = true;
         });
-
-        _analytics
-            .premiumPlanSelected(
-          'yearly',
-        );
+        _analytics.premiumPlanSelected('yearly');
       },
-      borderRadius:
-          BorderRadius.circular(16.r),
-      child: AnimatedContainer(
-        duration:
-            const Duration(milliseconds: 200),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius:
-              BorderRadius.circular(16.r),
-          border: Border.all(
-            color: _yearlySelected
-                ? teal
-                : const Color(0xFFE7E7E7),
-            width: _yearlySelected
-                ? 2.w
-                : 1.w,
-          ),
-
-          // ======================================================
-          // SELECTED CARD = TEAL SHADOW
-          // UNSELECTED CARD = NORMAL SHADOW
-          // ======================================================
-
-          boxShadow: _yearlySelected
-              ? [
-                  BoxShadow(
-                    color: teal.withOpacity(0.22),
-                    blurRadius: 18,
-                    spreadRadius: 1,
-                    offset: const Offset(0, 5),
-                  ),
-                ]
-              : const [
-                  BoxShadow(
-                    color: Color(0x08000000),
-                    blurRadius: 18,
-                    offset: Offset(0, 4),
-                  ),
-                ],
-        ),
-        child: Stack(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                16.w,
-                18.h,
-                16.w,
-                14.h,
+      borderRadius: BorderRadius.circular(_tr(68)),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: double.infinity,
+            height: _th(80),
+            padding: EdgeInsets.symmetric(horizontal: _tw(22)),
+            decoration: BoxDecoration(
+              gradient: _dark
+                  ? const LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [darkPlanBlue, darkPlanBlueDark],
+                    )
+                  : null,
+              color: _dark
+                  ? null
+                  : (_yearlySelected ? lightTeal : Colors.white),
+              borderRadius: BorderRadius.circular(_tr(68)),
+              border: Border.all(
+                color: _dark
+                    ? (_yearlySelected ? Colors.white : _accent)
+                    : (_yearlySelected ? teal : borderGrey),
+                width: _yearlySelected ? _tw(2) : _tw(1),
               ),
-              child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    loc.yearlyPlanLabel,
-                    maxLines: 1,
-                    overflow:
-                        TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontWeight:
-                          FontWeight.w500,
-                      fontSize: 14.sp,
-                      color: teal,
-                    ),
-                  ),
-
-                  SizedBox(height: 10.h),
-
-                  Row(
-                    crossAxisAlignment:
-                        CrossAxisAlignment.end,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Flexible(
-                        child: Text(
-                          '\$5.99',
-                          maxLines: 1,
-                          overflow:
-                              TextOverflow
-                                  .ellipsis,
-                          style: TextStyle(
-                            fontWeight:
-                                FontWeight.w700,
-                            fontSize: 20.sp,
-                            color: teal,
-                          ),
+                      Text(
+                        'Yearly',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: _tsp(20),
+                          fontWeight: FontWeight.w500,
+                          height: 1.0,
+                          letterSpacing: 0,
+                          color: _copy,
                         ),
                       ),
-
-                      SizedBox(width: 3.w),
-
-                      Padding(
-                        padding:
-                            EdgeInsets.only(
-                          bottom: 3.h,
-                        ),
-                        child: Text(
-                          loc.perMonthSuffix,
-                          maxLines: 1,
-                          overflow:
-                              TextOverflow
-                                  .ellipsis,
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            color: textGrey,
-                          ),
+                      SizedBox(height: _th(3)),
+                      Text(
+                        '$yearlyPerWeek/week',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: _tsp(15),
+                          color: _dark ? Colors.white70 : _muted,
                         ),
                       ),
                     ],
                   ),
-
-                  SizedBox(height: 4.h),
-
-                  Text(
-                    loc.billedAnnuallyLabel(
-                      '\$71.88',
-                    ),
-                    maxLines: 2,
-                    overflow:
-                        TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 10.sp,
-                      color: textGrey,
-                    ),
+                ),
+                SizedBox(width: _tw(12)),
+                Text(
+                  '$yearlyPrice/year',
+                  maxLines: 1,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                    fontSize: _tsp(18),
+                    fontWeight: FontWeight.w500,
+                    height: 1.0,
+                    letterSpacing: 0,
+                    color: _copy,
                   ),
-                ],
+                ),
+              ],
+            ),
+          ),
+
+          // FREE TRIAL BADGE
+          Positioned(
+            top: -_th(10),
+            right: _tw(48),
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: _tw(9),
+                vertical: _th(3),
+              ),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: _accent,
+                borderRadius: BorderRadius.circular(_tr(39)),
+              ),
+              child: Text(
+                'Free Trial',
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: const Color(0xFFFFFFFF),
+                  fontSize: _tsp(13.72),
+                  fontWeight: FontWeight.w500,
+                  height: 1.0,
+                  letterSpacing: 0,
+                ),
               ),
             ),
+          ),
+        ],
+      ),
+    );
+  }
 
-            // ==================================================
-            // BEST VALUE BADGE
-            // ==================================================
+  // ============================================================
+  // MONTHLY CARD
+  // ============================================================
 
-            Positioned(
-              top: 0,
-              right: 0,
-              child: Container(
-                padding:
-                    EdgeInsets.symmetric(
-                  horizontal: 10.w,
-                  vertical: 5.h,
+  Widget _buildMonthlyCard() {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _yearlySelected = false;
+        });
+        _analytics.premiumPlanSelected('monthly');
+      },
+      borderRadius: BorderRadius.circular(_tr(68)),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        width: double.infinity,
+        height: _th(80),
+        padding: EdgeInsets.symmetric(horizontal: _tw(22)),
+        decoration: BoxDecoration(
+          color: _dark
+              ? darkPlanBlue
+              : (!_yearlySelected ? lightTeal : Colors.white),
+          borderRadius: BorderRadius.circular(_tr(68)),
+          border: Border.all(
+            color: _dark
+                ? (!_yearlySelected ? Colors.white : _accent)
+                : (!_yearlySelected ? teal : borderGrey),
+            width: !_yearlySelected ? _tw(2) : _tw(1),
+          ),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                'Monthly',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: _tsp(18),
+                  fontWeight: FontWeight.w500,
+                  height: 1.0,
+                  letterSpacing: 0,
+                  color: _copy,
                 ),
-                decoration:
-                    BoxDecoration(
-                  color: teal,
-                  borderRadius:
-                      BorderRadius.only(
-                    topRight:
-                        Radius.circular(
-                      14.r,
-                    ),
-                    bottomLeft:
-                        Radius.circular(
-                      8.r,
-                    ),
-                  ),
-                ),
-                child: Text(
-                  loc.bestValueLabel,
-                  maxLines: 1,
-                  overflow:
-                      TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontWeight:
-                        FontWeight.w500,
-                    fontSize: 9.sp,
-                    color: Colors.white,
-                  ),
-                ),
+              ),
+            ),
+            SizedBox(width: _tw(12)),
+            Text(
+              '$monthlyPrice/month',
+              maxLines: 1,
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                fontSize: _tsp(18),
+                fontWeight: FontWeight.w500,
+                height: 1.0,
+                letterSpacing: 0,
+                color: _copy,
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  // ============================================================
+  // TRIAL TEXT
+  // ============================================================
+
+  Widget _buildTrialText() {
+    return Text(
+      '$trialDays days free trial, then pay $trialPrice',
+      textAlign: TextAlign.center,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(
+        fontSize: _tsp(11),
+        color: _muted,
+        height: 1.2,
+      ),
+    );
+  }
+
+  // ============================================================
+  // CONTINUE BUTTON
+  // ============================================================
+
+  Widget _buildContinueButton() {
+    return SizedBox(
+      width: double.infinity,
+      height: _th(50),
+      child: ElevatedButton(
+        onPressed: (_isProcessing || _isPremium) ? null : _startPremium,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: _dark ? Colors.white : teal,
+          foregroundColor: _dark ? ThemeController.darkAccent : Colors.white,
+          disabledBackgroundColor:
+              (_dark ? Colors.white : teal).withValues(alpha: 0.6),
+          disabledForegroundColor: Colors.white,
+          elevation: 0,
+          padding: EdgeInsets.symmetric(horizontal: _tw(20)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(_tr(30)),
+          ),
+        ),
+        child: _isProcessing
+            ? SizedBox(
+                width: _tw(20),
+                height: _tw(20),
+                child: const CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              )
+            : Text(
+                _isPremium ? 'Already Premium' : 'Continue',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: _tsp(16),
+                ),
+              ),
+      ),
+    );
+  }
+
+  // ============================================================
+  // CANCEL LINK
+  // ============================================================
+
+  Widget _buildCancelLink() {
+    return InkWell(
+      onTap: _isCancelling ? null : _cancelPremium,
+      borderRadius: BorderRadius.circular(_tr(20)),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: _tw(16),
+          vertical: _th(4),
+        ),
+        child: _isCancelling
+            ? SizedBox(
+                width: _tw(14),
+                height: _tw(14),
+                child: const CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor:
+                      AlwaysStoppedAnimation<Color>(Colors.redAccent),
+                ),
+              )
+            : Text(
+                'Cancel Premium',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: _tsp(12),
+                  color: Colors.redAccent,
+                ),
+              ),
+      ),
+    );
+  }
+
+  // ============================================================
+  // PRIVACY / TERMS
+  // ============================================================
+
+  Widget _buildLinksRow() {
+    final style = TextStyle(
+      fontSize: _tsp(10),
+      color: _copy,
+    );
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Flexible(
+          child: InkWell(
+            onTap: () {
+              // TODO: open Privacy Policy
+            },
+            child: Text(
+              'Privacy Policy',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: style,
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: _tw(8)),
+          child: Text('•', style: style),
+        ),
+        Flexible(
+          child: InkWell(
+            onTap: () {
+              // TODO: open Terms & Conditions
+            },
+            child: Text(
+              'Terms & Conditions',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: style,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

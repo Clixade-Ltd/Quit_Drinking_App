@@ -241,6 +241,12 @@ class AppLocalizationsGu extends AppLocalizations {
   String get caloriesSaved => 'બચાવેલી કેલરી';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'હેલ્થ સ્કોર';
 
   @override

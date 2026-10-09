@@ -242,6 +242,12 @@ class AppLocalizationsUr extends AppLocalizations {
   String get caloriesSaved => 'بچائی گئی کیلوریز';
 
   @override
+  String get averageCaloriesPerDrink => 'Average calories per drink (optional)';
+
+  @override
+  String get calorieEstimateMissing => 'Tap to add estimate';
+
+  @override
   String get healthScore => 'صحت کا اسکور';
 
   @override
